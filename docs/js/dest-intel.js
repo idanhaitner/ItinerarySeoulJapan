@@ -1,10 +1,10 @@
-/* Live destination snapshot: weather + FX */
+/* Live destination snapshot: weather + FX ticker */
 window.DestIntel = (function () {
   const CITIES = [
-    { id: "Seoul", he: "סיאול", lat: 37.5665, lng: 126.978, tz: "Asia/Seoul", flag: "KR" },
-    { id: "Tokyo", he: "טוקיו", lat: 35.6762, lng: 139.6503, tz: "Asia/Tokyo", flag: "JP" },
-    { id: "Kyoto", he: "קיוטו", lat: 35.0116, lng: 135.7681, tz: "Asia/Tokyo", flag: "JP" },
-    { id: "Osaka", he: "אוסקה", lat: 34.6937, lng: 135.5023, tz: "Asia/Tokyo", flag: "JP" },
+    { id: "Seoul", he: "סיאול", lat: 37.5665, lng: 126.978, tz: "Asia/Seoul" },
+    { id: "Tokyo", he: "טוקיו", lat: 35.6762, lng: 139.6503, tz: "Asia/Tokyo" },
+    { id: "Kyoto", he: "קיוטו", lat: 35.0116, lng: 135.7681, tz: "Asia/Tokyo" },
+    { id: "Osaka", he: "אוסקה", lat: 34.6937, lng: 135.5023, tz: "Asia/Tokyo" },
   ];
 
   const WX = {
@@ -124,17 +124,10 @@ window.DestIntel = (function () {
 
   function skeletonHtml() {
     return `
-      <div class="dest-intel-head">
-        <div>
-          <p class="plan-kicker">עכשיו ביעדים</p>
-          <h2 class="dest-intel-title">מזג אוויר ושערים</h2>
-        </div>
-        <p class="dest-intel-note">מתעדכן מהרשת…</p>
-      </div>
+      <div class="dest-ticker is-loading" aria-hidden="true"><div class="dest-skel"></div></div>
       <div class="dest-weather-grid">
         ${CITIES.map(() => `<div class="dest-weather-card is-loading"><div class="dest-skel"></div></div>`).join("")}
-      </div>
-      <div class="dest-fx is-loading"><div class="dest-skel"></div></div>`;
+      </div>`;
   }
 
   function weatherCard(city, wx, err) {
@@ -145,7 +138,7 @@ window.DestIntel = (function () {
             <span class="dest-city">${escape(city.he)}</span>
             <span class="dest-time">${escape(localTime(city.tz))}</span>
           </div>
-          <p class="dest-weather-empty">לא זמין כרגע</p>
+          <p class="dest-weather-empty">לא זמין</p>
         </article>`;
     }
     return `
@@ -154,32 +147,45 @@ window.DestIntel = (function () {
           <span class="dest-city">${escape(city.he)}</span>
           <span class="dest-time">${escape(localTime(city.tz))}</span>
         </div>
-        <div class="dest-temp">${wx.temp}°</div>
-        <div class="dest-wx-label">${escape(wx.label)}</div>
+        <div class="dest-weather-main">
+          <span class="dest-temp">${wx.temp}°</span>
+          <span class="dest-wx-label">${escape(wx.label)}</span>
+        </div>
         <div class="dest-wx-meta">
-          <span>מרגיש כמו ${wx.feels}°</span>
-          <span>לחות ${wx.humidity}%</span>
+          <span>מרגיש ${wx.feels}°</span>
+          <span>${wx.humidity}%</span>
         </div>
       </article>`;
   }
 
-  function ratesHtml(rates, err) {
+  function ratesTickerHtml(rates, err) {
     if (err || !rates) {
-      return `<div class="dest-fx"><p class="dest-weather-empty">שערי חליפין לא זמינים כרגע</p></div>`;
+      return `<div class="dest-ticker"><div class="dest-ticker-static">שערי חליפין לא זמינים כרגע</div></div>`;
     }
     const fmt = (n, digits) =>
       n == null ? "—" : Number(n).toLocaleString("he-IL", { maximumFractionDigits: digits });
+    const items = [
+      { sym: "₩", val: fmt(rates.ILS_KRW, 0), label: "וון" },
+      { sym: "¥", val: fmt(rates.ILS_JPY, 1), label: "ין" },
+      { sym: "$", val: fmt(rates.ILS_USD, 3), label: "דולר" },
+      { sym: "€", val: fmt(rates.ILS_EUR, 3), label: "אירו" },
+    ];
+    const chunk = items
+      .map(
+        (it) =>
+          `<span class="dest-ticker-item"><em>${it.sym}</em><strong>${it.val}</strong><span>${it.label}</span></span>`
+      )
+      .join('<span class="dest-ticker-sep" aria-hidden="true">·</span>');
+    const lead = `<span class="dest-ticker-lead">שערים חיים · ₪1</span><span class="dest-ticker-sep" aria-hidden="true">·</span>`;
+    const updated = `<span class="dest-ticker-sep" aria-hidden="true">·</span><span class="dest-ticker-meta">עודכן ${escape(
+      rates.updated || ""
+    )}</span>`;
+    const sequence = `${lead}${chunk}${updated}<span class="dest-ticker-sep" aria-hidden="true">·</span>`;
     return `
-      <div class="dest-fx">
-        <div class="dest-fx-head">
-          <h3>שערים חיים · ₪1</h3>
-          <span>עודכן ${escape(rates.updated || "")}</span>
-        </div>
-        <div class="dest-fx-grid">
-          <div class="dest-fx-item"><em>₩</em><strong>${fmt(rates.ILS_KRW, 0)}</strong><span>וון קוריאני</span></div>
-          <div class="dest-fx-item"><em>¥</em><strong>${fmt(rates.ILS_JPY, 1)}</strong><span>ין יפני</span></div>
-          <div class="dest-fx-item"><em>$</em><strong>${fmt(rates.ILS_USD, 3)}</strong><span>דולר</span></div>
-          <div class="dest-fx-item"><em>€</em><strong>${fmt(rates.ILS_EUR, 3)}</strong><span>אירו</span></div>
+      <div class="dest-ticker" aria-label="שערי חליפין חיים">
+        <div class="dest-ticker-track">
+          <div class="dest-ticker-group">${sequence}</div>
+          <div class="dest-ticker-group" aria-hidden="true">${sequence}</div>
         </div>
       </div>`;
   }
@@ -208,17 +214,10 @@ window.DestIntel = (function () {
     const [weatherRows, ratesResult] = await Promise.all([weatherPromise, ratesPromise]);
 
     root.innerHTML = `
-      <div class="dest-intel-head">
-        <div>
-          <p class="plan-kicker">עכשיו ביעדים</p>
-          <h2 class="dest-intel-title">מזג אוויר ושערים</h2>
-        </div>
-        <p class="dest-intel-note">מתעדכן אוטומטית</p>
-      </div>
-      <div class="dest-weather-grid">
+      ${ratesTickerHtml(ratesResult.rates, ratesResult.err)}
+      <div class="dest-weather-grid" aria-label="מזג אוויר ביעדים">
         ${weatherRows.map(({ city, wx, err }) => weatherCard(city, wx, err)).join("")}
       </div>
-      ${ratesHtml(ratesResult.rates, ratesResult.err)}
     `;
   }
 
