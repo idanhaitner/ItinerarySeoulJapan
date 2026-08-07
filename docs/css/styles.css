@@ -35,6 +35,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -46,6 +47,8 @@ body {
   background: var(--paper);
   line-height: 1.6;
   letter-spacing: 0.01em;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: rgba(47, 43, 40, 0.08);
 }
 
 .bg-layer {
@@ -566,7 +569,7 @@ a { color: inherit; }
   outline: 0;
   background: transparent;
   width: 100%;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text);
   min-width: 0;
 }
@@ -591,8 +594,10 @@ a { color: inherit; }
   display: flex;
   gap: 0;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   border-top: 1px solid var(--line);
+  touch-action: pan-x;
 }
 
 .city-row::-webkit-scrollbar { display: none; }
@@ -603,6 +608,7 @@ a { color: inherit; }
   border: 0;
   background: transparent;
   padding: 12px 14px;
+  min-height: 44px;
   cursor: pointer;
   color: var(--soft);
   font-weight: 500;
@@ -653,6 +659,8 @@ a { color: inherit; }
   display: flex;
   gap: 12px;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
   margin: 0 -18px;
   padding: 12px 18px 14px;
   background: rgba(242, 240, 235, 0.94);
@@ -660,6 +668,7 @@ a { color: inherit; }
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   scrollbar-width: none;
+  touch-action: pan-x;
 }
 
 .day-rail::-webkit-scrollbar { display: none; }
@@ -722,8 +731,9 @@ a { color: inherit; }
 
 .day-rail-btn {
   flex-shrink: 0;
-  min-width: 34px;
-  height: 32px;
+  min-width: 40px;
+  min-height: 40px;
+  height: 40px;
   border: 0;
   background: transparent;
   color: var(--soft);
@@ -1350,6 +1360,7 @@ a { color: inherit; }
   justify-content: space-between;
   gap: 12px;
   padding: 14px 16px;
+  min-height: 52px;
   cursor: pointer;
   list-style: none;
   border-left: 3px solid var(--ink);
@@ -1461,10 +1472,11 @@ a { color: inherit; }
 .journey-map {
   width: 100%;
   height: min(520px, 62vh);
-  min-height: 340px;
+  min-height: 280px;
   border: 1px solid var(--line);
   background: var(--surface);
   z-index: 1;
+  touch-action: manipulation;
 }
 
 .journey-map .leaflet-container {
@@ -1702,7 +1714,8 @@ a { color: inherit; }
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  padding: 11px 8px;
+  padding: 12px 8px;
+  min-height: 44px;
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -1960,13 +1973,15 @@ a { color: inherit; }
   background: rgba(250, 248, 244, 0.94);
   border-top: 1px solid var(--line);
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .mobile-nav button {
   border: 0;
   background: transparent;
   color: var(--soft);
-  padding: 14px 4px 12px;
+  padding: 12px 4px calc(12px + 2px);
+  min-height: 52px;
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.14em;
@@ -2018,33 +2033,168 @@ a { color: inherit; }
 }
 
 @media (max-width: 700px) {
-  .masthead-stage {
-    min-height: auto;
-    padding: 36px 18px 32px;
+  .masthead {
+    padding-top: calc(8px + var(--safe-top));
+    padding-bottom: 18px;
   }
-  .masthead-frame { inset: 10px; }
-  .route-stop { padding: 8px 10px; }
-  .route-stop .en { font-size: 10px; }
-  .masthead-names { letter-spacing: 0; }
-  .masthead-trip { letter-spacing: 0.12em; }
+  .masthead-stage {
+    min-height: min(78dvh, 640px);
+    padding: 28px 16px 28px;
+  }
+  .masthead-frame { inset: 8px; }
+  .masthead-seal {
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+  .masthead-kicker {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    margin-bottom: 12px;
+  }
+  .masthead-names {
+    font-size: clamp(28px, 9vw, 40px);
+    letter-spacing: 0;
+  }
+  .masthead-trip {
+    font-size: clamp(32px, 10vw, 46px);
+    letter-spacing: 0.1em;
+  }
+  .masthead-sub {
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+  .masthead-route {
+    gap: 6px;
+    margin-bottom: 22px;
+  }
+  .route-stop {
+    padding: 8px 10px;
+    flex: 1 1 auto;
+    min-width: calc(33.33% - 6px);
+  }
+  .route-stop .en { font-size: 9px; letter-spacing: 0.08em; }
+  .route-stop .local { font-size: 11px; }
+  .masthead-stats {
+    gap: 12px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-bottom: 22px;
+  }
+  .masthead-stats em { font-size: 28px; }
+  .masthead-cta {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
+  }
+
+  .topbar {
+    padding-top: 10px;
+    gap: 8px;
+  }
+  .brand-name { font-size: 15px; }
+  .brand-meta { max-width: 48vw; font-size: 9px; }
+  .search { min-height: 46px; }
+  .result-count {
+    min-width: 56px;
+    padding: 0 8px;
+    font-size: 9px;
+  }
+
   .fx-grid { grid-template-columns: 1fr; }
+  .fx-grid input,
+  .fx-grid select,
+  .fx-rate-grid input {
+    font-size: 16px;
+    min-height: 44px;
+  }
   .tabs { display: none; }
   .day-row {
-    grid-template-columns: 64px 1fr;
+    grid-template-columns: 58px 1fr;
     gap: 10px;
   }
-  .day-row-meta {
-    display: none;
+  .day-row-meta { display: none; }
+  .day-row-num { padding: 18px 0 18px 10px; }
+  .day-row-num .n { font-size: 24px; }
+  .day-row-body { padding: 16px 0; }
+  .day-row-body h3 { font-size: 18px; }
+  .day-row-body p { font-size: 13px; -webkit-line-clamp: 3; }
+
+  .timeline-item { grid-template-columns: 64px 1fr; }
+  .timeline-time {
+    font-size: 13px;
+    padding: 16px 10px 16px 0;
   }
-  .day-row-num .n { font-size: 26px; }
-  .timeline-item { grid-template-columns: 72px 1fr; }
-  .timeline-time { font-size: 15px; padding-right: 12px; }
-  .timeline-title { font-size: 18px; }
-  .detail-hero { padding: 24px 18px 22px; }
-  .detail-hero h2 { max-width: none; }
+  .timeline-card { padding: 14px 4px 14px 16px; }
+  .timeline-title { font-size: 17px; }
+  .timeline-actions {
+    gap: 10px 14px;
+  }
+  .timeline-actions a,
+  .timeline-actions button {
+    min-height: 36px;
+    padding: 6px 0;
+  }
+
+  .detail-hero { padding: 20px 16px 18px; }
+  .detail-hero h2 { max-width: none; font-size: clamp(26px, 7vw, 34px); }
+  .detail-hero-grid { gap: 14px; }
   .chip .chip-local { display: none; }
-  .app { padding-left: 14px; padding-right: 14px; }
-  .topbar, .day-rail { margin-left: -14px; margin-right: -14px; padding-left: 14px; padding-right: 14px; }
+  .chip { padding: 10px 12px; }
+
+  .app {
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: calc(88px + var(--safe-bottom));
+  }
+  .topbar, .day-rail, .masthead {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  .topbar, .day-rail {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .masthead { padding-left: 0; padding-right: 0; }
+  .masthead-stage { border-left: 0; border-right: 0; }
+
+  .journey-map {
+    height: min(420px, 55dvh);
+    min-height: 260px;
+  }
+  .journey-legend {
+    max-height: 280px;
+  }
+  .journey-legend-item {
+    min-height: 52px;
+    padding: 12px;
+  }
+
+  .maps-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .city-fold-label .local { display: none; }
+  .city-fold-body {
+    padding: 4px 10px 12px;
+  }
+
+  .booking-item {
+    padding: 14px 0;
+    gap: 12px;
+  }
+  .booking-item input {
+    width: 20px;
+    height: 20px;
+  }
+
+  .plan-title { font-size: 26px; }
+}
+
+@media (max-width: 380px) {
+  .masthead-stats em { font-size: 24px; }
+  .day-row-num .n { font-size: 20px; }
+  .route-stop .local { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
