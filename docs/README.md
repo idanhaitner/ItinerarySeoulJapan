@@ -1,35 +1,28 @@
 # Korea + Japan 2026 Trip Guide
 
-Static mobile + desktop website for the Haitner trip (**Aug 27 – Sep 25, 2026**).
+Dark travel-app UI for the Haitner trip (**Aug 27 – Sep 25, 2026**).
+
+**Live:** https://idanhaitner.github.io/ItinerarySeoulJapan/
 
 ## Features
 
-- **30 days** with hour-by-hour timelines (Seoul + Japan)
-- Search across days, places, and timeline stops
-- City filters
-- Maps:
-  - **Google Maps** everywhere
-  - **Kakao Map / Naver Map** in Korea
-  - **Yahoo! MAP / Apple Maps** in Japan
-- Plain HTML/CSS/JS — no build step
+- Hour-by-hour timelines with category icons
+- Day carousel + city/category filters
+- Inter-city transfer banners
+- Booking checklist with localStorage progress
+- Maps links (Google / Kakao / Naver / Yahoo! / Apple)
+- Currency converter, taxi cards, transit tips
+- Complete / favorite stops (persisted locally)
 
-## Run locally
+## Local preview
 
 ```bash
 cd docs
 python3 -m http.server 8080
 ```
 
-Open http://localhost:8080
+## Edit content
 
-## Edit the trip
-
-1. Edit `js/_build_data.py` (source of truth for days/places/timelines)
+1. Update `js/_build_data.py`
 2. Run `python3 js/_build_data.py`
-3. Refresh the site
-
-Or edit `js/data.js` directly.
-
-## Host on GitHub Pages
-
-Settings → Pages → branch `main` → folder `/docs`
+3. Commit & push (`main` + redeploy `gh-pages`)
