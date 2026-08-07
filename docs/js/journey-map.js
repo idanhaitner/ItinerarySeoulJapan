@@ -18,25 +18,68 @@ window.JourneyMap = (function () {
     return CITY_COLORS[city] || "#2f2b28";
   }
 
-  function dayPoint(day, places) {
-    const hotel = day.hotelId ? places[day.hotelId] : null;
-    if (hotel && hotel.lat != null && hotel.lng != null) {
-      return { lat: hotel.lat, lng: hotel.lng, label: hotel.name, placeId: hotel.id };
-    }
-    for (const id of day.placeIds || []) {
+  function placeScore(place, hotelId) {
+    const tags = place.tags || [];
+    if (place.id === hotelId || tags.includes("hotel")) return 0;
+    if (tags.includes("transport")) return 1;
+    if (tags.includes("must-see")) return 5;
+    if (tags.includes("temple") || tags.includes("shrine") || tags.includes("culture")) return 4;
+    if (tags.includes("attraction") || tags.includes("view") || tags.includes("park")) return 3;
+    return 2;
+  }
+
+  function placeCandidates(day, places) {
+    const hotelId = day.hotelId;
+    const seen = new Set();
+    const list = [];
+
+    function add(id) {
+      if (!id || seen.has(id)) return;
       const p = places[id];
-      if (p && p.lat != null && p.lng != null) {
-        return { lat: p.lat, lng: p.lng, label: p.name, placeId: p.id };
-      }
+      if (!p || p.lat == null || p.lng == null) return;
+      seen.add(id);
+      list.push(p);
     }
-    return null;
+
+    (day.timeline || []).forEach((item) => add(item.placeId));
+    (day.placeIds || []).forEach(add);
+    if (hotelId) add(hotelId);
+
+    return list.sort((a, b) => placeScore(b, hotelId) - placeScore(a, hotelId));
+  }
+
+  function coordKey(lat, lng) {
+    return `${Number(lat).toFixed(4)},${Number(lng).toFixed(4)}`;
+  }
+
+  function dayPoint(day, places, usedCoords) {
+    const candidates = placeCandidates(day, places);
+    if (!candidates.length) return null;
+
+    for (const p of candidates) {
+      const key = coordKey(p.lat, p.lng);
+      if (usedCoords && usedCoords.has(key)) continue;
+      if (usedCoords) usedCoords.add(key);
+      return { lat: p.lat, lng: p.lng, label: p.name, placeId: p.id };
+    }
+
+    const fallback = candidates[0];
+    const key = coordKey(fallback.lat, fallback.lng);
+    if (usedCoords) usedCoords.add(key);
+    return {
+      lat: fallback.lat,
+      lng: fallback.lng,
+      label: fallback.name,
+      placeId: fallback.id,
+    };
   }
 
   function buildStops(days, places, filterCity) {
+    const usedCoords = new Set();
     return days
       .map((day, index) => {
         if (filterCity && filterCity !== "all" && day.city !== filterCity) return null;
-        const pt = dayPoint(day, places);
+        const pt = dayPoint(day, places, usedCoords);
         if (!pt) return null;
         return {
           day,
@@ -192,15 +235,14 @@ window.JourneyMap = (function () {
 
   function focusDay(dayId, days, places) {
     if (!map) return;
-    const index = days.findIndex((d) => d.id === dayId);
-    if (index < 0) return;
-    const pt = dayPoint(days[index], places);
-    if (!pt) return;
-    map.flyTo([pt.lat, pt.lng], 14, { animate: true, duration: 0.85 });
+    const stops = buildStops(days, places, "all");
+    const stop = stops.find((s) => s.day.id === dayId);
+    if (!stop) return;
+    map.flyTo([stop.lat, stop.lng], 14, { animate: true, duration: 0.85 });
     layerGroup.eachLayer((layer) => {
       if (layer instanceof L.Marker) {
         const ll = layer.getLatLng();
-        if (Math.abs(ll.lat - pt.lat) < 1e-6 && Math.abs(ll.lng - pt.lng) < 1e-6) {
+        if (Math.abs(ll.lat - stop.lat) < 1e-6 && Math.abs(ll.lng - stop.lng) < 1e-6) {
           layer.openPopup();
         }
       }
