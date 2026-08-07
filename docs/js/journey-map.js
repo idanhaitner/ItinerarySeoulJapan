@@ -10,12 +10,26 @@ window.JourneyMap = (function () {
     Osaka: "#9c6b2f",
   };
 
+  const CITY_HE = {
+    Seoul: "סיאול",
+    Tokyo: "טוקיו",
+    Hakone: "הקונה",
+    Kawaguchiko: "קוואגוצ׳יקו",
+    Kyoto: "קיוטו",
+    Hiroshima: "הירושימה",
+    Osaka: "אוסקה",
+  };
+
   let map = null;
   let layerGroup = null;
   let resizeObserver = null;
 
   function cityColor(city) {
     return CITY_COLORS[city] || "#2f2b28";
+  }
+
+  function cityLabel(city) {
+    return CITY_HE[city] || city;
   }
 
   function placeScore(place, hotelId) {
@@ -180,7 +194,7 @@ window.JourneyMap = (function () {
       const marker = L.marker([s.lat, s.lng], { icon: markerIcon(s.n, s.day.city) }).addTo(layerGroup);
       marker.bindPopup(
         `<div class="journey-popup">
-          <div class="jp-day">יום ${String(s.n).padStart(2, "0")} · ${s.day.city}</div>
+          <div class="jp-day">יום ${String(s.n).padStart(2, "0")} · ${cityLabel(s.day.city)}</div>
           <div class="jp-title">${escape(s.day.title)}</div>
           <div class="jp-meta">${escape(s.label)}</div>
           <button type="button" class="jp-open" data-open-day="${s.day.id}">פתח יום</button>
@@ -216,7 +230,7 @@ window.JourneyMap = (function () {
             <button type="button" class="journey-legend-item" data-jump-day="${s.day.id}">
               <span class="jl-num" style="background:${cityColor(s.day.city)}">${String(s.n).padStart(2, "0")}</span>
               <span class="jl-copy">
-                <strong>${escape(s.day.city)}</strong>
+                <strong>${escape(cityLabel(s.day.city))}<span class="jl-en">${escape(s.day.city)}</span></strong>
                 <em>${escape(s.day.title)}</em>
               </span>
             </button>
