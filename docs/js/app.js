@@ -330,21 +330,33 @@
 
   function placeCardHtml(p) {
     const links = mapsLinks(p);
+    const primary = links.actions.find((a) => a.primary) || links.actions[0];
+    const secondary = links.actions.filter((a) => a !== primary);
     return `
       <article class="place-card city-accent-${p.city}" data-place="${p.id}">
-        <span class="city-pill ${cityClass(p.city)}">${cityLocal(p.city)} · ${p.city}</span>
+        <div class="place-card-top">
+          <span class="city-pill ${cityClass(p.city)}">${cityLocal(p.city)}</span>
+          <span class="place-city-en">${escapeHtml(p.city)}</span>
+        </div>
         <h3>${escapeHtml(p.name)}</h3>
-        <div class="place-ja">${escapeHtml(p.nameJa || "")}</div>
-        <p class="place-blurb">${escapeHtml(p.blurb || "")}</p>
+        ${p.nameJa ? `<div class="place-ja">${escapeHtml(p.nameJa)}</div>` : ""}
+        ${p.blurb ? `<p class="place-blurb">${escapeHtml(p.blurb)}</p>` : ""}
         <div class="tag-row">${(p.tags || []).slice(0, 4).map((t) => `<span class="tag">${tagLabel(t)}</span>`).join("")}</div>
         <div class="maps-actions">
-          ${links.actions
-            .map(
-              (a) =>
-                `<a class="maps-btn${a.primary ? " primary" : ""}" href="${a.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(a.label)}</a>`
-            )
-            .join("")}
-          <button type="button" class="maps-btn" data-copy="${p.id}">העתק שם</button>
+          ${
+            primary
+              ? `<a class="maps-btn primary" href="${primary.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(primary.label)}</a>`
+              : ""
+          }
+          <div class="maps-secondary">
+            ${secondary
+              .map(
+                (a) =>
+                  `<a class="maps-link" href="${a.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(a.label)}</a>`
+              )
+              .join("")}
+            <button type="button" class="maps-link" data-copy="${p.id}">העתק שם</button>
+          </div>
         </div>
       </article>`;
   }

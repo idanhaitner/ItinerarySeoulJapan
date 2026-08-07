@@ -1413,18 +1413,19 @@ a { color: inherit; }
 .tag-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
+  margin-top: 12px;
 }
 
 .tag {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--muted);
-  border: 1px solid var(--line);
-  padding: 5px 10px;
-  background: transparent;
+  border: 0;
+  padding: 4px 10px;
+  background: rgba(47, 43, 40, 0.05);
 }
 
 /* ——— Places / cards ——— */
@@ -1771,7 +1772,35 @@ a { color: inherit; }
   position: relative;
 }
 
-.place-card::before,
+.place-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.25s ease;
+  animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.place-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(47, 43, 40, 0.08);
+  border-color: rgba(47, 43, 40, 0.16);
+}
+
+.place-card::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  bottom: auto;
+  width: 100%;
+  height: 3px;
+  background: var(--navy);
+}
+
 .taxi-card::before {
   content: "";
   position: absolute;
@@ -1790,27 +1819,61 @@ a { color: inherit; }
 .city-accent-Hiroshima::before { background: var(--hiroshima); }
 .city-accent-Osaka::before { background: var(--osaka); }
 
-.city-pill {
-  display: inline-block;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  background: transparent;
-  border: 0;
-  padding: 0;
+.place-card.city-accent-Seoul { background: linear-gradient(165deg, color-mix(in srgb, var(--seoul) 10%, var(--surface)) 0%, var(--surface) 42%); }
+.place-card.city-accent-Tokyo { background: linear-gradient(165deg, color-mix(in srgb, var(--tokyo) 10%, var(--surface)) 0%, var(--surface) 42%); }
+.place-card.city-accent-Hakone { background: linear-gradient(165deg, color-mix(in srgb, var(--hakone) 10%, var(--surface)) 0%, var(--surface) 42%); }
+.place-card.city-accent-Kawaguchiko { background: linear-gradient(165deg, color-mix(in srgb, var(--kawaguchiko) 10%, var(--surface)) 0%, var(--surface) 42%); }
+.place-card.city-accent-Kyoto { background: linear-gradient(165deg, color-mix(in srgb, var(--kyoto) 10%, var(--surface)) 0%, var(--surface) 42%); }
+.place-card.city-accent-Hiroshima { background: linear-gradient(165deg, color-mix(in srgb, var(--hiroshima) 10%, var(--surface)) 0%, var(--surface) 42%); }
+.place-card.city-accent-Osaka { background: linear-gradient(165deg, color-mix(in srgb, var(--osaka) 10%, var(--surface)) 0%, var(--surface) 42%); }
+
+.place-card-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 18px 0;
 }
 
-.city-pill.city-Seoul { color: var(--seoul); }
-.city-pill.city-Tokyo { color: var(--tokyo); }
-.city-pill.city-Hakone { color: var(--hakone); }
-.city-pill.city-Kawaguchiko { color: var(--kawaguchiko); }
-.city-pill.city-Kyoto { color: var(--kyoto); }
-.city-pill.city-Hiroshima { color: var(--hiroshima); }
-.city-pill.city-Osaka { color: var(--osaka); }
+.city-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-bottom: 0;
+  border: 0;
+  padding: 5px 10px;
+  color: #fff;
+  background: var(--navy);
+}
 
-.place-card h3,
+.city-pill.city-Seoul { background: var(--seoul); color: #fff; }
+.city-pill.city-Tokyo { background: var(--tokyo); color: #fff; }
+.city-pill.city-Hakone { background: var(--hakone); color: #fff; }
+.city-pill.city-Kawaguchiko { background: var(--kawaguchiko); color: #fff; }
+.city-pill.city-Kyoto { background: var(--kyoto); color: #fff; }
+.city-pill.city-Hiroshima { background: var(--hiroshima); color: #fff; }
+.city-pill.city-Osaka { background: var(--osaka); color: #fff; }
+
+.place-city-en {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+
+.place-card h3 {
+  font-family: var(--font-ui);
+  font-size: clamp(22px, 3vw, 26px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 12px 18px 4px;
+  color: var(--navy);
+  line-height: 1.2;
+}
+
 .tool-card h3,
 .booking-group h3 {
   font-size: 24px;
@@ -1820,24 +1883,44 @@ a { color: inherit; }
 
 .place-ja {
   color: var(--soft);
-  font-size: 14px;
-  margin-bottom: 8px;
-  font-family: var(--font-display);
+  font-size: 15px;
+  margin: 0 18px 8px;
+  font-family: var(--font-ui);
+  font-weight: 400;
 }
 
-.place-blurb,
+.place-blurb {
+  margin: 0 18px;
+  color: var(--muted);
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
 .tool-sub {
   margin: 0;
   color: var(--muted);
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
 }
+
+.place-card .tag-row {
+  margin: 12px 18px 0;
+}
+
+.place-card.city-accent-Seoul .tag { background: color-mix(in srgb, var(--seoul) 12%, transparent); color: color-mix(in srgb, var(--seoul) 75%, var(--ink)); }
+.place-card.city-accent-Tokyo .tag { background: color-mix(in srgb, var(--tokyo) 12%, transparent); color: color-mix(in srgb, var(--tokyo) 75%, var(--ink)); }
+.place-card.city-accent-Hakone .tag { background: color-mix(in srgb, var(--hakone) 12%, transparent); color: color-mix(in srgb, var(--hakone) 75%, var(--ink)); }
+.place-card.city-accent-Kawaguchiko .tag { background: color-mix(in srgb, var(--kawaguchiko) 12%, transparent); color: color-mix(in srgb, var(--kawaguchiko) 75%, var(--ink)); }
+.place-card.city-accent-Kyoto .tag { background: color-mix(in srgb, var(--kyoto) 12%, transparent); color: color-mix(in srgb, var(--kyoto) 75%, var(--ink)); }
+.place-card.city-accent-Hiroshima .tag { background: color-mix(in srgb, var(--hiroshima) 12%, transparent); color: color-mix(in srgb, var(--hiroshima) 75%, var(--ink)); }
+.place-card.city-accent-Osaka .tag { background: color-mix(in srgb, var(--osaka) 12%, transparent); color: color-mix(in srgb, var(--osaka) 75%, var(--ink)); }
 
 .maps-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-top: 16px;
+  gap: 10px;
+  margin-top: auto;
+  padding: 16px 18px 18px;
 }
 
 .maps-btn {
@@ -1845,24 +1928,61 @@ a { color: inherit; }
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  padding: 12px 8px;
+  padding: 12px 14px;
   min-height: 44px;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
   border: 1px solid var(--line);
   background: transparent;
   cursor: pointer;
   color: var(--text);
-  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
 }
 
-.maps-btn:hover,
 .maps-btn.primary {
   background: var(--ink);
   border-color: var(--ink);
   color: #faf8f4;
+}
+
+.place-card.city-accent-Seoul .maps-btn.primary { background: var(--seoul); border-color: var(--seoul); }
+.place-card.city-accent-Tokyo .maps-btn.primary { background: var(--tokyo); border-color: var(--tokyo); }
+.place-card.city-accent-Hakone .maps-btn.primary { background: var(--hakone); border-color: var(--hakone); }
+.place-card.city-accent-Kawaguchiko .maps-btn.primary { background: var(--kawaguchiko); border-color: var(--kawaguchiko); }
+.place-card.city-accent-Kyoto .maps-btn.primary { background: var(--kyoto); border-color: var(--kyoto); }
+.place-card.city-accent-Hiroshima .maps-btn.primary { background: var(--hiroshima); border-color: var(--hiroshima); }
+.place-card.city-accent-Osaka .maps-btn.primary { background: var(--osaka); border-color: var(--osaka); }
+
+.maps-btn:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.maps-secondary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 14px;
+}
+
+.maps-link {
+  border: 0;
+  background: transparent;
+  padding: 6px 0;
+  min-height: 36px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.maps-link:hover {
+  color: var(--ink);
 }
 
 .btn-ghost,
