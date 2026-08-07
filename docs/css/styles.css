@@ -1316,6 +1316,118 @@ a { color: inherit; }
   width: 100%;
 }
 
+.places-all-head {
+  margin-top: 28px;
+  margin-bottom: 14px;
+}
+
+.places-all-head .section-title {
+  margin-bottom: 6px;
+}
+
+.places-by-city {
+  display: grid;
+  gap: 10px;
+}
+
+.city-fold {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.city-fold-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  list-style: none;
+  border-left: 3px solid var(--ink);
+  transition: background 0.2s ease;
+}
+
+.city-fold-summary::-webkit-details-marker { display: none; }
+.city-fold-summary::marker { content: ""; }
+
+.city-fold-summary:hover {
+  background: rgba(47, 43, 40, 0.03);
+}
+
+.city-fold.city-Seoul > .city-fold-summary { border-left-color: var(--seoul); }
+.city-fold.city-Tokyo > .city-fold-summary { border-left-color: var(--tokyo); }
+.city-fold.city-Hakone > .city-fold-summary { border-left-color: var(--hakone); }
+.city-fold.city-Kawaguchiko > .city-fold-summary { border-left-color: var(--kawaguchiko); }
+.city-fold.city-Kyoto > .city-fold-summary { border-left-color: var(--kyoto); }
+.city-fold.city-Hiroshima > .city-fold-summary { border-left-color: var(--hiroshima); }
+.city-fold.city-Osaka > .city-fold-summary { border-left-color: var(--osaka); }
+
+.city-fold-label {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  min-width: 0;
+}
+
+.city-fold-label .en {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.city-fold.city-Seoul .city-fold-label .en { color: var(--seoul); }
+.city-fold.city-Tokyo .city-fold-label .en { color: var(--tokyo); }
+.city-fold.city-Hakone .city-fold-label .en { color: var(--hakone); }
+.city-fold.city-Kawaguchiko .city-fold-label .en { color: var(--kawaguchiko); }
+.city-fold.city-Kyoto .city-fold-label .en { color: var(--kyoto); }
+.city-fold.city-Hiroshima .city-fold-label .en { color: var(--hiroshima); }
+.city-fold.city-Osaka .city-fold-label .en { color: var(--osaka); }
+
+.city-fold-label .local {
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.city-fold-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.city-fold-meta .count {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--soft);
+  border: 1px solid var(--line);
+  padding: 4px 8px;
+}
+
+.city-fold-meta .chev {
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid var(--soft);
+  border-bottom: 1.5px solid var(--soft);
+  transform: rotate(45deg);
+  transition: transform 0.25s ease;
+  margin-top: -4px;
+}
+
+.city-fold[open] .city-fold-meta .chev {
+  transform: rotate(225deg);
+  margin-top: 4px;
+}
+
+.city-fold-body {
+  padding: 4px 14px 16px;
+  border-top: 1px solid var(--line);
+}
+
 /* ——— Journey map ——— */
 .journey-section {
   margin-bottom: 8px;

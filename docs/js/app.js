@@ -328,6 +328,56 @@
       .join("");
   }
 
+  function placesByCity(list) {
+    const order = trip.route.filter((c, i, arr) => arr.indexOf(c) === i);
+    const groups = new Map();
+    list.forEach((p) => {
+      if (!groups.has(p.city)) groups.set(p.city, []);
+      groups.get(p.city).push(p);
+    });
+    const ordered = [];
+    order.forEach((city) => {
+      if (groups.has(city)) {
+        ordered.push({ city, items: groups.get(city) });
+        groups.delete(city);
+      }
+    });
+    [...groups.keys()]
+      .sort((a, b) => a.localeCompare(b))
+      .forEach((city) => ordered.push({ city, items: groups.get(city) }));
+    return ordered;
+  }
+
+  function placesGroupedHtml(list) {
+    if (!list.length) return `<div class="empty">No places match.</div>`;
+    const groups = placesByCity(list);
+    const openCity = state.city !== "all" ? state.city : groups[0] && groups[0].city;
+    return `
+      <div class="places-by-city">
+        ${groups
+          .map((g) => {
+            const open = g.city === openCity ? "open" : "";
+            return `
+          <details class="city-fold ${cityClass(g.city)}" data-city-fold="${g.city}" ${open}>
+            <summary class="city-fold-summary">
+              <span class="city-fold-label">
+                <span class="en">${g.city}</span>
+                <span class="local">${cityLocal(g.city)}</span>
+              </span>
+              <span class="city-fold-meta">
+                <span class="count">${g.items.length}</span>
+                <span class="chev" aria-hidden="true"></span>
+              </span>
+            </summary>
+            <div class="places-grid city-fold-body">
+              ${g.items.map(placeCardHtml).join("")}
+            </div>
+          </details>`;
+          })
+          .join("")}
+      </div>`;
+  }
+
   function renderMaps() {
     if (window.JourneyMap) window.JourneyMap.destroy();
 
@@ -351,12 +401,11 @@
           <ol id="journey-legend" class="journey-legend"></ol>
         </div>
       </section>
-      <div class="section-title" style="margin-top:28px">All places · 場所</div>
-      ${
-        list.length
-          ? `<div class="places-grid">${list.map(placeCardHtml).join("")}</div>`
-          : `<div class="empty">No places match.</div>`
-      }
+      <div class="places-all-head">
+        <div class="section-title">All places · 場所</div>
+        <p class="journey-sub">Grouped by city — expand a city to browse its places.</p>
+      </div>
+      ${placesGroupedHtml(list)}
     `;
 
     const mapEl = document.getElementById("journey-map");
