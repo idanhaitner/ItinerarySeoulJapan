@@ -140,6 +140,9 @@ window.JourneyMap = (function () {
           <button type="button" class="jp-open" data-open-day="${s.day.id}">Open day</button>
         </div>`
       );
+      marker.on("click", () => {
+        map.flyTo([s.lat, s.lng], 14, { animate: true, duration: 0.85 });
+      });
       marker.on("popupopen", () => {
         const btn = document.querySelector(`[data-open-day="${s.day.id}"]`);
         if (btn) {
@@ -193,7 +196,15 @@ window.JourneyMap = (function () {
     if (index < 0) return;
     const pt = dayPoint(days[index], places);
     if (!pt) return;
-    map.setView([pt.lat, pt.lng], Math.max(map.getZoom(), 10), { animate: true });
+    map.flyTo([pt.lat, pt.lng], 14, { animate: true, duration: 0.85 });
+    layerGroup.eachLayer((layer) => {
+      if (layer instanceof L.Marker) {
+        const ll = layer.getLatLng();
+        if (Math.abs(ll.lat - pt.lat) < 1e-6 && Math.abs(ll.lng - pt.lng) < 1e-6) {
+          layer.openPopup();
+        }
+      }
+    });
   }
 
   return { render, destroy, focusDay, buildStops };

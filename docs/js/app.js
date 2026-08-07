@@ -423,7 +423,6 @@
         if (!btn) return;
         const id = btn.dataset.jumpDay;
         if (window.JourneyMap) window.JourneyMap.focusDay(id, days, places);
-        openDay(id);
       };
     }
   }
