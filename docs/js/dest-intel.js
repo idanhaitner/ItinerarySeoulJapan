@@ -1,4 +1,4 @@
-/* Live destination snapshot: weather (Skycons) + FX strip */
+/* Live destination snapshot: weather (amCharts animated SVG) + FX strip */
 window.DestIntel = (function () {
   const CITIES = [
     { id: "Seoul", he: "סיאול", lat: 37.5665, lng: 126.978, tz: "Asia/Seoul" },
@@ -6,13 +6,6 @@ window.DestIntel = (function () {
     { id: "Kyoto", he: "קיוטו", lat: 35.0116, lng: 135.7681, tz: "Asia/Tokyo" },
     { id: "Osaka", he: "אוסקה", lat: 34.6937, lng: 135.5023, tz: "Asia/Tokyo" },
   ];
-
-  const CITY_COLOR = {
-    Seoul: "#b54a6a",
-    Tokyo: "#5b7388",
-    Kyoto: "#c46a52",
-    Osaka: "#a8844e",
-  };
 
   const WX = {
     0: "בהיר",
@@ -38,7 +31,22 @@ window.DestIntel = (function () {
     99: "סופת רעמים",
   };
 
-  let skyconsInstances = [];
+  /** Open-Meteo WMO → amcharts animated SVG filename (no extension) */
+  const ICON_FILE = {
+    "clear-day": "day",
+    "mostly-clear-day": "cloudy-day-1",
+    "partly-cloudy-day": "cloudy-day-2",
+    overcast: "cloudy-day-3",
+    cloudy: "cloudy",
+    fog: "cloudy",
+    drizzle: "rainy-4",
+    rain: "rainy-3",
+    showers: "rainy-6",
+    snow: "snowy-3",
+    thunder: "thunder",
+  };
+
+  const svgCache = new Map();
 
   function wxLabel(code) {
     if (WX[code]) return WX[code];
@@ -131,74 +139,66 @@ window.DestIntel = (function () {
     window.TripStorage.setRates(next);
   }
 
-  /** Map Open-Meteo WMO code → Skycons name */
   function wxIcon(code) {
     const c = Number(code);
     if (!Number.isFinite(c)) return "cloudy";
     if (c === 0) return "clear-day";
-    if (c === 1) return "clear-day";
+    if (c === 1) return "mostly-clear-day";
     if (c === 2) return "partly-cloudy-day";
-    if (c === 3) return "cloudy";
+    if (c === 3) return "overcast";
     if (c === 45 || c === 48) return "fog";
-    if (c >= 51 && c <= 57) return "rain";
-    if ((c >= 61 && c <= 67) || (c >= 80 && c <= 82)) return "rain";
+    if (c >= 51 && c <= 57) return "drizzle";
+    if (c >= 61 && c <= 67) return "rain";
+    if (c >= 80 && c <= 82) return "showers";
     if ((c >= 71 && c <= 77) || (c >= 85 && c <= 86)) return "snow";
-    if (c >= 95) return "rain";
+    if (c >= 95) return "thunder";
     return "cloudy";
   }
 
-  function wxAnimHtml(icon, cityId, uid) {
-    const color = CITY_COLOR[cityId] || "#5C534A";
-    return `
-      <div class="wx-anim" aria-hidden="true">
-        <canvas
-          id="${escape(uid)}"
-          class="wx-canvas"
-          width="128"
-          height="128"
-          data-skycon="${escape(icon)}"
-          data-skycon-color="${escape(color)}"
-        ></canvas>
-      </div>`;
+  function iconFile(kind) {
+    return ICON_FILE[kind] || "cloudy";
   }
 
-  function mountWxAnims(root) {
-    if (!root || !window.Skycons) return;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const canvases = [...root.querySelectorAll("canvas[data-skycon]")];
-    if (!canvases.length) return;
-
-    skyconsInstances.forEach((inst) => {
-      try {
-        inst.pause();
-      } catch (_) {
-        /* ignore */
-      }
-    });
-    skyconsInstances = [];
-
-    const byColor = new Map();
-    canvases.forEach((el) => {
-      const color = el.getAttribute("data-skycon-color") || "#5C534A";
-      const icon = el.getAttribute("data-skycon") || "cloudy";
-      if (!byColor.has(color)) {
-        byColor.set(color, new window.Skycons({ color, resizeClear: true }));
-      }
-      byColor.get(color).add(el, icon);
-    });
-
-    byColor.forEach((inst) => {
-      skyconsInstances.push(inst);
-      if (reduce) {
-        inst.play();
-        setTimeout(() => inst.pause(), 40);
-      } else {
-        inst.play();
-      }
-    });
+  function wxAnimHtml(kind) {
+    const file = iconFile(kind);
+    return `<div class="wx-anim" data-wx-src="assets/weather/${file}.svg" aria-hidden="true"></div>`;
   }
 
-  function weatherCard(city, wx, err, idx) {
+  async function loadSvg(src) {
+    if (svgCache.has(src)) return svgCache.get(src);
+    const res = await fetch(src);
+    if (!res.ok) throw new Error("svg");
+    const text = await res.text();
+    svgCache.set(src, text);
+    return text;
+  }
+
+  async function mountWxAnims(root) {
+    if (!root) return;
+    const nodes = [...root.querySelectorAll("[data-wx-src]")];
+    await Promise.all(
+      nodes.map(async (el) => {
+        const src = el.getAttribute("data-wx-src");
+        if (!src || el.dataset.wxMounted) return;
+        el.dataset.wxMounted = "1";
+        try {
+          const svg = await loadSvg(src);
+          el.innerHTML = svg;
+          const svgEl = el.querySelector("svg");
+          if (svgEl) {
+            svgEl.removeAttribute("width");
+            svgEl.removeAttribute("height");
+            svgEl.setAttribute("class", "wx-svg");
+            svgEl.setAttribute("focusable", "false");
+          }
+        } catch {
+          el.innerHTML = `<img class="wx-fallback" src="${escape(src)}" alt="" width="64" height="64" />`;
+        }
+      })
+    );
+  }
+
+  function weatherCard(city, wx, err) {
     if (err || !wx) {
       return `
         <article class="dest-weather-card city-accent-${city.id}">
@@ -210,10 +210,9 @@ window.DestIntel = (function () {
         </article>`;
     }
     const icon = wxIcon(wx.code);
-    const uid = `wx-${city.id}-${idx}`;
     return `
       <article class="dest-weather-card city-accent-${city.id}">
-        ${wxAnimHtml(icon, city.id, uid)}
+        ${wxAnimHtml(icon)}
         <div class="dest-weather-top">
           <span class="dest-city">${escape(city.he)}</span>
           <span class="dest-time">${escape(localTime(city.tz))}</span>
@@ -298,11 +297,11 @@ window.DestIntel = (function () {
     const [weatherRows, ratesResult] = await Promise.all([weatherPromise, ratesPromise]);
 
     weatherEl.innerHTML = `
-      <div class="dest-weather-grid" aria-label="מזג אוויר ביעדים">
-        ${weatherRows.map(({ city, wx, err }, i) => weatherCard(city, wx, err, i)).join("")}
+      <div class="dest-weather-grid" aria-label="מזג אוויר ביעדים" title="Weather icons by amCharts">
+        ${weatherRows.map(({ city, wx, err }) => weatherCard(city, wx, err)).join("")}
       </div>
       ${ratesStripHtml(ratesResult.rates, ratesResult.err)}`;
-    mountWxAnims(weatherEl);
+    await mountWxAnims(weatherEl);
   }
 
   return { render, CITIES };

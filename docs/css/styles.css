@@ -651,17 +651,21 @@ a { color: inherit; }
   inset-inline-end: 2px;
   top: 50%;
   transform: translateY(-50%);
-  width: 64px;
-  height: 64px;
+  width: 68px;
+  height: 68px;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.92;
 }
 
-.wx-canvas {
+.wx-anim .wx-svg,
+.wx-anim .wx-fallback {
   display: block;
-  width: 64px;
-  height: 64px;
+  width: 68px;
+  height: 68px;
+}
+
+.wx-anim .wx-svg {
+  overflow: visible;
 }
 
 .dest-weather-card::before {
@@ -763,6 +767,10 @@ a { color: inherit; }
   }
   .fx-strip-group[aria-hidden="true"] {
     display: none;
+  }
+  .wx-anim .wx-svg *,
+  .wx-anim .wx-svg {
+    animation: none !important;
   }
 }
 
@@ -2730,9 +2738,10 @@ a { color: inherit; }
     min-height: 76px;
   }
   .wx-anim,
-  .wx-canvas {
-    width: 52px;
-    height: 52px;
+  .wx-anim .wx-svg,
+  .wx-anim .wx-fallback {
+    width: 56px;
+    height: 56px;
   }
   .dest-temp { font-size: 20px; }
   .dest-wx-meta { font-size: 10px; }
