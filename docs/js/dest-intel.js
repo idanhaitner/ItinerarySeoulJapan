@@ -1,4 +1,4 @@
-/* Live destination snapshot: weather + FX ticker */
+/* Live destination snapshot: weather + fixed FX rail */
 window.DestIntel = (function () {
   const CITIES = [
     { id: "Seoul", he: "סיאול", lat: 37.5665, lng: 126.978, tz: "Asia/Seoul" },
@@ -124,7 +124,6 @@ window.DestIntel = (function () {
 
   function skeletonHtml() {
     return `
-      <div class="dest-ticker is-loading" aria-hidden="true"><div class="dest-skel"></div></div>
       <div class="dest-weather-grid">
         ${CITIES.map(() => `<div class="dest-weather-card is-loading"><div class="dest-skel"></div></div>`).join("")}
       </div>`;
@@ -199,9 +198,9 @@ window.DestIntel = (function () {
       </article>`;
   }
 
-  function ratesTickerHtml(rates, err) {
+  function ratesRailHtml(rates, err) {
     if (err || !rates) {
-      return `<div class="dest-ticker"><div class="dest-ticker-static">שערי חליפין לא זמינים כרגע</div></div>`;
+      return `<div class="fx-rail-static">שערים לא זמינים</div>`;
     }
     const fmt = (n, digits) =>
       n == null ? "—" : Number(n).toLocaleString("he-IL", { maximumFractionDigits: digits });
@@ -214,26 +213,28 @@ window.DestIntel = (function () {
     const chunk = items
       .map(
         (it) =>
-          `<span class="dest-ticker-item"><em>${it.sym}</em><strong>${it.val}</strong><span>${it.label}</span></span>`
+          `<div class="fx-rail-item"><em>${it.sym}</em><strong>${it.val}</strong><span>${it.label}</span></div>`
       )
-      .join('<span class="dest-ticker-sep" aria-hidden="true">·</span>');
-    const lead = "";
-    const updated = `<span class="dest-ticker-meta">עודכן ${escape(
-      rates.updated || ""
-    )}</span>`;
-    const sequence = `${chunk}<span class="dest-ticker-sep" aria-hidden="true">·</span>${updated}<span class="dest-ticker-sep" aria-hidden="true">·</span>`;
+      .join("");
+    const updated = `<div class="fx-rail-meta">עודכן<br>${escape(rates.updated || "")}</div>`;
+    const sequence = `${chunk}${updated}`;
     return `
-      <div class="dest-ticker" aria-label="שערי חליפין חיים">
-        <div class="dest-ticker-track">
-          <div class="dest-ticker-group">${sequence}</div>
-          <div class="dest-ticker-group" aria-hidden="true">${sequence}</div>
+      <div class="fx-rail-viewport">
+        <div class="fx-rail-track">
+          <div class="fx-rail-group">${sequence}</div>
+          <div class="fx-rail-group" aria-hidden="true">${sequence}</div>
         </div>
       </div>`;
   }
 
-  async function render(root) {
-    if (!root) return;
-    root.innerHTML = skeletonHtml();
+  async function render(weatherRoot, railRoot) {
+    const weatherEl = weatherRoot || document.getElementById("dest-intel");
+    const railEl = railRoot || document.getElementById("fx-rail");
+    if (weatherEl) weatherEl.innerHTML = skeletonHtml();
+    if (railEl) {
+      railEl.hidden = false;
+      railEl.innerHTML = `<div class="fx-rail-static">טוען…</div>`;
+    }
 
     const weatherPromise = Promise.all(
       CITIES.map(async (city) => {
@@ -254,12 +255,16 @@ window.DestIntel = (function () {
 
     const [weatherRows, ratesResult] = await Promise.all([weatherPromise, ratesPromise]);
 
-    root.innerHTML = `
-      ${ratesTickerHtml(ratesResult.rates, ratesResult.err)}
-      <div class="dest-weather-grid" aria-label="מזג אוויר ביעדים">
-        ${weatherRows.map(({ city, wx, err }) => weatherCard(city, wx, err)).join("")}
-      </div>
-    `;
+    if (weatherEl) {
+      weatherEl.innerHTML = `
+        <div class="dest-weather-grid" aria-label="מזג אוויר ביעדים">
+          ${weatherRows.map(({ city, wx, err }) => weatherCard(city, wx, err)).join("")}
+        </div>`;
+    }
+    if (railEl) {
+      railEl.hidden = false;
+      railEl.innerHTML = ratesRailHtml(ratesResult.rates, ratesResult.err);
+    }
   }
 
   return { render, CITIES };

@@ -858,6 +858,9 @@
   bind();
   showView("itinerary");
   if (window.DestIntel) {
-    window.DestIntel.render(document.getElementById("dest-intel"));
+    window.DestIntel.render(
+      document.getElementById("dest-intel"),
+      document.getElementById("fx-rail")
+    );
   }
 })();
