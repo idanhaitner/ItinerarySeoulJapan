@@ -246,14 +246,12 @@ window.DestIntel = (function () {
           `<div class="fx-strip-item"><em>${it.sym}</em><strong>${it.val}</strong><span>${it.label}</span></div>`
       )
       .join("");
-    const updated = `<div class="fx-strip-meta">₪1 · עודכן ${escape(rates.updated || "")}</div>`;
-    const sequence = `${chunk}${updated}`;
     return `
       <div class="fx-strip" aria-label="שערי חליפין">
         <div class="fx-strip-viewport">
           <div class="fx-strip-track">
-            <div class="fx-strip-group">${sequence}</div>
-            <div class="fx-strip-group" aria-hidden="true">${sequence}</div>
+            <div class="fx-strip-group">${chunk}</div>
+            <div class="fx-strip-group" aria-hidden="true">${chunk}</div>
           </div>
         </div>
       </div>`;
