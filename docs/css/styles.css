@@ -22,14 +22,14 @@
   --font-jp: "Shippori Mincho", serif;
   --font-ui: "Assistant", system-ui, sans-serif;
 
-  /* Clear, distinct city accents */
-  --seoul: #e11d48;
-  --tokyo: #2563eb;
-  --hakone: #059669;
-  --kawaguchiko: #0891b2;
-  --kyoto: #ea580c;
-  --hiroshima: #6366f1;
-  --osaka: #ca8a04;
+  /* Soft editorial city accents */
+  --seoul: #b54a6a;
+  --tokyo: #5b7388;
+  --hakone: #4a7a68;
+  --kawaguchiko: #5a8490;
+  --kyoto: #c46a52;
+  --hiroshima: #7a748c;
+  --osaka: #a8844e;
 }
 
 * { box-sizing: border-box; }
@@ -763,16 +763,16 @@ a { color: inherit; }
   padding: 8px 12px 10px;
   background: rgba(250, 248, 244, 0.9);
   border: 1px solid var(--line);
-  border-top: 4px solid var(--soft);
+  border-top: 3px solid var(--soft);
 }
 
-.day-group.city-Seoul { border-top-color: var(--seoul); background: color-mix(in srgb, var(--seoul) 7%, var(--surface)); }
-.day-group.city-Tokyo { border-top-color: var(--tokyo); background: color-mix(in srgb, var(--tokyo) 7%, var(--surface)); }
-.day-group.city-Hakone { border-top-color: var(--hakone); background: color-mix(in srgb, var(--hakone) 7%, var(--surface)); }
-.day-group.city-Kawaguchiko { border-top-color: var(--kawaguchiko); background: color-mix(in srgb, var(--kawaguchiko) 7%, var(--surface)); }
-.day-group.city-Kyoto { border-top-color: var(--kyoto); background: color-mix(in srgb, var(--kyoto) 7%, var(--surface)); }
-.day-group.city-Hiroshima { border-top-color: var(--hiroshima); background: color-mix(in srgb, var(--hiroshima) 7%, var(--surface)); }
-.day-group.city-Osaka { border-top-color: var(--osaka); background: color-mix(in srgb, var(--osaka) 7%, var(--surface)); }
+.day-group.city-Seoul { border-top-color: var(--seoul); background: color-mix(in srgb, var(--seoul) 5%, var(--surface)); }
+.day-group.city-Tokyo { border-top-color: var(--tokyo); background: color-mix(in srgb, var(--tokyo) 5%, var(--surface)); }
+.day-group.city-Hakone { border-top-color: var(--hakone); background: color-mix(in srgb, var(--hakone) 5%, var(--surface)); }
+.day-group.city-Kawaguchiko { border-top-color: var(--kawaguchiko); background: color-mix(in srgb, var(--kawaguchiko) 5%, var(--surface)); }
+.day-group.city-Kyoto { border-top-color: var(--kyoto); background: color-mix(in srgb, var(--kyoto) 5%, var(--surface)); }
+.day-group.city-Hiroshima { border-top-color: var(--hiroshima); background: color-mix(in srgb, var(--hiroshima) 5%, var(--surface)); }
+.day-group.city-Osaka { border-top-color: var(--osaka); background: color-mix(in srgb, var(--osaka) 5%, var(--surface)); }
 
 .day-group.is-dim { opacity: 0.35; }
 
@@ -826,13 +826,13 @@ a { color: inherit; }
   transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
-.day-group.city-Seoul .day-rail-btn { border-color: color-mix(in srgb, var(--seoul) 45%, transparent); }
-.day-group.city-Tokyo .day-rail-btn { border-color: color-mix(in srgb, var(--tokyo) 45%, transparent); }
-.day-group.city-Hakone .day-rail-btn { border-color: color-mix(in srgb, var(--hakone) 45%, transparent); }
-.day-group.city-Kawaguchiko .day-rail-btn { border-color: color-mix(in srgb, var(--kawaguchiko) 45%, transparent); }
-.day-group.city-Kyoto .day-rail-btn { border-color: color-mix(in srgb, var(--kyoto) 45%, transparent); }
-.day-group.city-Hiroshima .day-rail-btn { border-color: color-mix(in srgb, var(--hiroshima) 45%, transparent); }
-.day-group.city-Osaka .day-rail-btn { border-color: color-mix(in srgb, var(--osaka) 45%, transparent); }
+.day-group.city-Seoul .day-rail-btn { border-color: color-mix(in srgb, var(--seoul) 28%, transparent); }
+.day-group.city-Tokyo .day-rail-btn { border-color: color-mix(in srgb, var(--tokyo) 28%, transparent); }
+.day-group.city-Hakone .day-rail-btn { border-color: color-mix(in srgb, var(--hakone) 28%, transparent); }
+.day-group.city-Kawaguchiko .day-rail-btn { border-color: color-mix(in srgb, var(--kawaguchiko) 28%, transparent); }
+.day-group.city-Kyoto .day-rail-btn { border-color: color-mix(in srgb, var(--kyoto) 28%, transparent); }
+.day-group.city-Hiroshima .day-rail-btn { border-color: color-mix(in srgb, var(--hiroshima) 28%, transparent); }
+.day-group.city-Osaka .day-rail-btn { border-color: color-mix(in srgb, var(--osaka) 28%, transparent); }
 
 .day-rail-btn:hover {
   color: var(--ink);
@@ -1838,13 +1838,13 @@ a { color: inherit; }
 .city-accent-Hiroshima::before { background: var(--hiroshima); }
 .city-accent-Osaka::before { background: var(--osaka); }
 
-.place-card.city-accent-Seoul { background: linear-gradient(165deg, color-mix(in srgb, var(--seoul) 10%, var(--surface)) 0%, var(--surface) 42%); }
-.place-card.city-accent-Tokyo { background: linear-gradient(165deg, color-mix(in srgb, var(--tokyo) 10%, var(--surface)) 0%, var(--surface) 42%); }
-.place-card.city-accent-Hakone { background: linear-gradient(165deg, color-mix(in srgb, var(--hakone) 10%, var(--surface)) 0%, var(--surface) 42%); }
-.place-card.city-accent-Kawaguchiko { background: linear-gradient(165deg, color-mix(in srgb, var(--kawaguchiko) 10%, var(--surface)) 0%, var(--surface) 42%); }
-.place-card.city-accent-Kyoto { background: linear-gradient(165deg, color-mix(in srgb, var(--kyoto) 10%, var(--surface)) 0%, var(--surface) 42%); }
-.place-card.city-accent-Hiroshima { background: linear-gradient(165deg, color-mix(in srgb, var(--hiroshima) 10%, var(--surface)) 0%, var(--surface) 42%); }
-.place-card.city-accent-Osaka { background: linear-gradient(165deg, color-mix(in srgb, var(--osaka) 10%, var(--surface)) 0%, var(--surface) 42%); }
+.place-card.city-accent-Seoul { background: linear-gradient(165deg, color-mix(in srgb, var(--seoul) 6%, var(--surface)) 0%, var(--surface) 42%); }
+.place-card.city-accent-Tokyo { background: linear-gradient(165deg, color-mix(in srgb, var(--tokyo) 6%, var(--surface)) 0%, var(--surface) 42%); }
+.place-card.city-accent-Hakone { background: linear-gradient(165deg, color-mix(in srgb, var(--hakone) 6%, var(--surface)) 0%, var(--surface) 42%); }
+.place-card.city-accent-Kawaguchiko { background: linear-gradient(165deg, color-mix(in srgb, var(--kawaguchiko) 6%, var(--surface)) 0%, var(--surface) 42%); }
+.place-card.city-accent-Kyoto { background: linear-gradient(165deg, color-mix(in srgb, var(--kyoto) 6%, var(--surface)) 0%, var(--surface) 42%); }
+.place-card.city-accent-Hiroshima { background: linear-gradient(165deg, color-mix(in srgb, var(--hiroshima) 6%, var(--surface)) 0%, var(--surface) 42%); }
+.place-card.city-accent-Osaka { background: linear-gradient(165deg, color-mix(in srgb, var(--osaka) 6%, var(--surface)) 0%, var(--surface) 42%); }
 
 .place-card-top {
   display: flex;
