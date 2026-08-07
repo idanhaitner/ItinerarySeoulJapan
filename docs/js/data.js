@@ -32,7 +32,8 @@ window.PLACES = {
     ],
     "lat": 37.5563,
     "lng": 126.9236,
-    "blurb": "Hongdae base for Seoul."
+    "blurb": "Hongdae base for Seoul.",
+    "taxiAddress": "서울특별시 마포구 와우산로 94, 나인브릭호텔"
   },
   "icn": {
     "id": "icn",
@@ -362,7 +363,8 @@ window.PLACES = {
     ],
     "lat": 35.6906,
     "lng": 139.6921,
-    "blurb": "Shinjuku base."
+    "blurb": "Shinjuku base.",
+    "taxiAddress": "東京都新宿区西新宿2-2-1 京王プラザホテル"
   },
   "narita": {
     "id": "narita",
@@ -686,7 +688,8 @@ window.PLACES = {
     ],
     "lat": 35.2335,
     "lng": 139.0885,
-    "blurb": "Hakone onsen stay."
+    "blurb": "Hakone onsen stay.",
+    "taxiAddress": "神奈川県足柄下郡箱根町湯本692 ホテルかじか荘"
   },
   "owakudani": {
     "id": "owakudani",
@@ -803,7 +806,7 @@ window.PLACES = {
   "musse-kyoto": {
     "id": "musse-kyoto",
     "name": "Hotel Musse Kyoto",
-    "nameJa": "ホテルミュッセ京都",
+    "nameJa": "ホテルミュッセ京都四条河原町名鉄",
     "city": "Kyoto",
     "country": "JP",
     "tags": [
@@ -811,7 +814,8 @@ window.PLACES = {
     ],
     "lat": 35.0037,
     "lng": 135.7685,
-    "blurb": "Kawaramachi base."
+    "blurb": "Kawaramachi base.",
+    "taxiAddress": "京都府京都市下京区四条通河原町東入真町70 ホテルミュッセ京都四条河原町名鉄"
   },
   "kenninji": {
     "id": "kenninji",
@@ -1150,7 +1154,7 @@ window.PLACES = {
   "daiwa-hiroshima": {
     "id": "daiwa-hiroshima",
     "name": "Daiwa Roynet Hiroshima",
-    "nameJa": "ダイワロイネット広島",
+    "nameJa": "ダイワロイネットホテル広島",
     "city": "Hiroshima",
     "country": "JP",
     "tags": [
@@ -1158,7 +1162,8 @@ window.PLACES = {
     ],
     "lat": 34.3927,
     "lng": 132.4553,
-    "blurb": "Central Hiroshima."
+    "blurb": "Central Hiroshima.",
+    "taxiAddress": "広島県広島市中区三川町1-1 ダイワロイネットホテル広島"
   },
   "shukkeien": {
     "id": "shukkeien",
@@ -1241,7 +1246,8 @@ window.PLACES = {
     ],
     "lat": 34.6693,
     "lng": 135.5013,
-    "blurb": "Namba / Dotonbori base."
+    "blurb": "Namba / Dotonbori base.",
+    "taxiAddress": "大阪府大阪市中央区宗右衛門町2-5-15 クロスホテル大阪"
   },
   "kuromon": {
     "id": "kuromon",
@@ -1381,7 +1387,8 @@ window.PLACES = {
     ],
     "lat": 35.6695,
     "lng": 139.7668,
-    "blurb": "Ginza return hotel."
+    "blurb": "Ginza return hotel.",
+    "taxiAddress": "東京都中央区銀座1-9-8 ソラリア西鉄ホテル銀座"
   },
   "ryogoku": {
     "id": "ryogoku",
@@ -1442,32 +1449,37 @@ window.DAYS = [
         "time": "14:00",
         "title": "Land at Incheon (ICN)",
         "note": "Clear immigration, grab T-money / SIM.",
-        "placeId": "icn"
+        "placeId": "icn",
+        "category": "transit"
       },
       {
         "time": "15:30",
         "title": "Transfer to Hongdae hotel",
         "note": "AREX + subway or taxi (~60–75m).",
-        "placeId": "brick-hotel"
+        "placeId": "brick-hotel",
+        "category": "hotel"
       },
       {
         "time": "17:00",
         "title": "Check in & freshen up",
         "note": "Shower, short rest.",
-        "placeId": "brick-hotel"
+        "placeId": "brick-hotel",
+        "category": "hotel"
       },
       {
         "time": "18:30",
         "title": "Myeongdong evening stroll",
         "note": "Shopping + street-food dinner.",
         "placeId": "myeongdong",
-        "end": "21:30"
+        "end": "21:30",
+        "category": "dining"
       },
       {
         "time": "21:45",
         "title": "Optional Hongdae nightcap",
         "note": "Only if energy remains — otherwise sleep.",
-        "placeId": "hongdae"
+        "placeId": "hongdae",
+        "category": "dining"
       }
     ]
   },
@@ -1503,42 +1515,48 @@ window.DAYS = [
         "time": "09:00",
         "title": "Café breakfast in Hongdae",
         "note": "Easy start near the hotel.",
-        "placeId": "hongdae"
+        "placeId": "hongdae",
+        "category": "dining"
       },
       {
         "time": "10:15",
         "title": "Gyeongbokgung Palace",
         "note": "Rent hanbok if you want the full look. Watch for changing of the guard timing.",
         "placeId": "gyeongbokgung",
-        "end": "12:30"
+        "end": "12:30",
+        "category": "culture"
       },
       {
         "time": "12:45",
         "title": "Bukchon Hanok Village walk",
         "note": "Hill lanes + photo stops — be respectful of residents.",
         "placeId": "bukchon",
-        "end": "14:00"
+        "end": "14:00",
+        "category": "culture"
       },
       {
         "time": "14:15",
         "title": "Ikseon-dong wander",
         "note": "Cafés in renovated hanok alleys.",
         "placeId": "ikseon",
-        "end": "16:00"
+        "end": "16:00",
+        "category": "dining"
       },
       {
         "time": "16:15",
         "title": "Insadong afternoon",
         "note": "Tea, crafts, souvenirs.",
         "placeId": "insadong",
-        "end": "18:00"
+        "end": "18:00",
+        "category": "dining"
       },
       {
         "time": "18:30",
         "title": "Dinner at Gwangjang Market",
         "note": "Market open late — go hungry (≈19:00–22:30).",
         "placeId": "gwangjang",
-        "end": "22:00"
+        "end": "22:00",
+        "category": "dining"
       }
     ]
   },
@@ -1572,41 +1590,47 @@ window.DAYS = [
         "time": "08:30",
         "title": "Convenience-store breakfast",
         "note": "Quick fuel before the park.",
-        "placeId": "brick-hotel"
+        "placeId": "brick-hotel",
+        "category": "hotel"
       },
       {
         "time": "10:00",
         "title": "Lotte World Adventure",
         "note": "Indoor + outdoor zones — full park day.",
         "placeId": "lotte-world",
-        "end": "17:30"
+        "end": "17:30",
+        "category": "attraction"
       },
       {
         "time": "18:00",
         "title": "Lotte World Tower Seoul Sky",
         "note": "Observatory sunset/evening views.",
         "placeId": "lotte-tower",
-        "end": "19:30"
+        "end": "19:30",
+        "category": "attraction"
       },
       {
         "time": "19:45",
         "title": "Seokchon Lake stroll",
         "note": "Easy wind-down by the water.",
         "placeId": "seokchon",
-        "end": "20:30"
+        "end": "20:30",
+        "category": "attraction"
       },
       {
         "time": "21:00",
         "title": "Jimjilbang session",
         "note": "Heat rooms + rest culture — classic Korea.",
         "placeId": "jimjilbang",
-        "end": "23:00"
+        "end": "23:00",
+        "category": "culture"
       },
       {
         "time": "23:30",
         "title": "Back to Hongdae",
         "note": "Shower at hotel; optional late bar if still awake.",
-        "placeId": "hongdae"
+        "placeId": "hongdae",
+        "category": "dining"
       }
     ]
   },
@@ -1641,49 +1665,56 @@ window.DAYS = [
         "time": "09:00",
         "title": "Hongdae animal café / easy breakfast",
         "note": "Fun, chill start.",
-        "placeId": "hongdae"
+        "placeId": "hongdae",
+        "category": "dining"
       },
       {
         "time": "10:15",
         "title": "Jogyesa Temple",
         "note": "Calm Buddhist stop near downtown.",
         "placeId": "jogyesa",
-        "end": "11:15"
+        "end": "11:15",
+        "category": "culture"
       },
       {
         "time": "11:30",
         "title": "Changdeokgung + Secret Garden",
         "note": "Timed Secret Garden tour is the highlight.",
         "placeId": "changdeokgung",
-        "end": "14:00"
+        "end": "14:00",
+        "category": "culture"
       },
       {
         "time": "14:30",
         "title": "Travel to Gangnam",
         "note": "Optional booked skin / beauty treatment window.",
         "placeId": "gangnam",
-        "end": "16:30"
+        "end": "16:30",
+        "category": "shopping"
       },
       {
         "time": "16:45",
         "title": "Bongeunsa Temple",
         "note": "Quick temple pause beside the malls.",
         "placeId": "bongeunsa",
-        "end": "17:30"
+        "end": "17:30",
+        "category": "culture"
       },
       {
         "time": "17:45",
         "title": "COEX & Starfield Library",
         "note": "Photos + shopping + AC break.",
         "placeId": "coex",
-        "end": "19:30"
+        "end": "19:30",
+        "category": "shopping"
       },
       {
         "time": "20:00",
         "title": "Dongdaemun night market & malls",
         "note": "DDP, APM, night fashion energy.",
         "placeId": "dongdaemun",
-        "end": "23:00"
+        "end": "23:00",
+        "category": "dining"
       }
     ]
   },
@@ -1717,33 +1748,38 @@ window.DAYS = [
         "title": "Seongsu-dong brunch + wander",
         "note": "Cafés, pop-ups, design shops. Optional 2nd treatment here.",
         "placeId": "seongsu",
-        "end": "13:30"
+        "end": "13:30",
+        "category": "dining"
       },
       {
         "time": "14:00",
         "title": "Free / rest / packing buffer",
         "note": "Or keep exploring Seongsu.",
-        "placeId": "brick-hotel"
+        "placeId": "brick-hotel",
+        "category": "hotel"
       },
       {
         "time": "16:30",
         "title": "Head to Namsan",
         "note": "Arrive before sunset queues.",
-        "placeId": "n-tower"
+        "placeId": "n-tower",
+        "category": "attraction"
       },
       {
         "time": "17:30",
         "title": "N Seoul Tower sunset",
         "note": "Views + love locks.",
         "placeId": "n-tower",
-        "end": "19:30"
+        "end": "19:30",
+        "category": "attraction"
       },
       {
         "time": "20:00",
         "title": "Itaewon evening",
         "note": "Dinner, bars, nightlife.",
         "placeId": "itaewon",
-        "end": "24:00"
+        "end": "24:00",
+        "category": "dining"
       }
     ]
   },
@@ -1777,39 +1813,53 @@ window.DAYS = [
         "time": "08:00",
         "title": "Pack & checkout",
         "note": "Leave bags ready.",
-        "placeId": "brick-hotel"
+        "placeId": "brick-hotel",
+        "category": "hotel"
       },
       {
         "time": "09:30",
         "title": "Transfer to Incheon",
         "note": "Aim for airport 2.5–3h before flight.",
-        "placeId": "icn"
+        "placeId": "icn",
+        "category": "transit"
       },
       {
         "time": "13:00",
         "title": "Flight to Tokyo",
         "note": "Adjust to your actual flight time.",
-        "placeId": "icn"
+        "placeId": "icn",
+        "category": "transit"
       },
       {
         "time": "17:30",
         "title": "Land Narita & transfer",
         "note": "Driver or Narita Express / Keisei.",
-        "placeId": "narita"
+        "placeId": "narita",
+        "category": "transit"
       },
       {
         "time": "19:30",
         "title": "Check in Shinjuku",
         "note": "Freshen up.",
-        "placeId": "keio-plaza"
+        "placeId": "keio-plaza",
+        "category": "hotel"
       },
       {
         "time": "20:30",
         "title": "Light Shinjuku dinner",
         "note": "Near hotel only — early sleep.",
-        "placeId": "shinjuku"
+        "placeId": "shinjuku",
+        "category": "dining"
       }
-    ]
+    ],
+    "transfer": {
+      "mode": "flight",
+      "label": "Seoul → Tokyo",
+      "detail": "ICN → NRT (placeholder flight time)",
+      "duration": "~2.5h flight + transfers",
+      "fromCity": "Seoul",
+      "toCity": "Tokyo"
+    }
   },
   {
     "id": "d07",
@@ -1843,48 +1893,55 @@ window.DAYS = [
         "time": "09:00",
         "title": "Breakfast near hotel",
         "note": "",
-        "placeId": "shinjuku"
+        "placeId": "shinjuku",
+        "category": "dining"
       },
       {
         "time": "10:00",
         "title": "Shibuya Crossing + Hachiko",
         "note": "Hikarie 11F free view if clear.",
         "placeId": "shibuya-crossing",
-        "end": "11:30"
+        "end": "11:30",
+        "category": "attraction"
       },
       {
         "time": "11:45",
         "title": "Meiji Jingu",
         "note": "Forest shrine — write an ema wish.",
         "placeId": "meiji-jingu",
-        "end": "13:00"
+        "end": "13:00",
+        "category": "culture"
       },
       {
         "time": "13:15",
         "title": "Takeshita Street lunch snacks",
         "note": "Crepes + people-watching.",
         "placeId": "takeshita",
-        "end": "14:30"
+        "end": "14:30",
+        "category": "dining"
       },
       {
         "time": "14:45",
         "title": "Cat Street",
         "note": "Calmer boutiques.",
         "placeId": "cat-street",
-        "end": "16:00"
+        "end": "16:00",
+        "category": "shopping"
       },
       {
         "time": "16:15",
         "title": "Omotesando stroll",
         "note": "Architecture + coffee.",
         "placeId": "omotesando",
-        "end": "18:00"
+        "end": "18:00",
+        "category": "shopping"
       },
       {
         "time": "18:30",
         "title": "Return Shinjuku / dinner",
         "note": "",
-        "placeId": "shinjuku"
+        "placeId": "shinjuku",
+        "category": "dining"
       }
     ]
   },
@@ -1914,40 +1971,46 @@ window.DAYS = [
         "time": "07:30",
         "title": "Depart Shinjuku",
         "note": "Buffer for security/entry.",
-        "placeId": "keio-plaza"
+        "placeId": "keio-plaza",
+        "category": "hotel"
       },
       {
         "time": "09:00",
         "title": "Park open / rope drop",
         "note": "Hit headliners first.",
         "placeId": "disneysea",
-        "end": "12:30"
+        "end": "12:30",
+        "category": "attraction"
       },
       {
         "time": "12:30",
         "title": "Lunch in park",
         "note": "",
-        "placeId": "disneysea"
+        "placeId": "disneysea",
+        "category": "dining"
       },
       {
         "time": "13:30",
         "title": "Afternoon attractions",
         "note": "Shows + secondary rides.",
         "placeId": "disneysea",
-        "end": "18:00"
+        "end": "18:00",
+        "category": "attraction"
       },
       {
         "time": "18:00",
         "title": "Dinner + evening vibe",
         "note": "Stay for night atmosphere if energy allows.",
         "placeId": "disneysea",
-        "end": "21:00"
+        "end": "21:00",
+        "category": "dining"
       },
       {
         "time": "21:30",
         "title": "Return Shinjuku",
         "note": "",
-        "placeId": "keio-plaza"
+        "placeId": "keio-plaza",
+        "category": "hotel"
       }
     ]
   },
@@ -1980,40 +2043,46 @@ window.DAYS = [
         "time": "09:00",
         "title": "Travel to Asakusa",
         "note": "",
-        "placeId": "asakusa"
+        "placeId": "asakusa",
+        "category": "dining"
       },
       {
         "time": "09:30",
         "title": "Senso-ji & Nakamise",
         "note": "Info center 8F view first if you want the overview.",
         "placeId": "asakusa",
-        "end": "12:00"
+        "end": "12:00",
+        "category": "dining"
       },
       {
         "time": "12:15",
         "title": "Lunch in Asakusa",
         "note": "",
-        "placeId": "asakusa"
+        "placeId": "asakusa",
+        "category": "dining"
       },
       {
         "time": "13:30",
         "title": "Kappabashi kitchen street",
         "note": "Knives / plastic food souvenirs.",
         "placeId": "kappabashi",
-        "end": "15:00"
+        "end": "15:00",
+        "category": "dining"
       },
       {
         "time": "15:30",
         "title": "Tokyo Skytree + Solamachi",
         "note": "Observatory timed entry.",
         "placeId": "skytree",
-        "end": "18:30"
+        "end": "18:30",
+        "category": "attraction"
       },
       {
         "time": "19:00",
         "title": "Dinner & return Shinjuku",
         "note": "",
-        "placeId": "shinjuku"
+        "placeId": "shinjuku",
+        "category": "dining"
       }
     ]
   },
@@ -2045,32 +2114,37 @@ window.DAYS = [
         "title": "Arrive teamLab Planets",
         "note": "Be 10–15m early for timed entry.",
         "placeId": "teamlab-planets",
-        "end": "12:00"
+        "end": "12:00",
+        "category": "culture"
       },
       {
         "time": "12:30",
         "title": "Travel to Odaiba",
         "note": "",
-        "placeId": "odaiba"
+        "placeId": "odaiba",
+        "category": "shopping"
       },
       {
         "time": "13:00",
         "title": "Lunch + DiverCity Gundam",
         "note": "Optional Joypolis if you want more rides.",
         "placeId": "odaiba",
-        "end": "17:00"
+        "end": "17:00",
+        "category": "dining"
       },
       {
         "time": "17:30",
         "title": "Bay area free time / return",
         "note": "",
-        "placeId": "odaiba"
+        "placeId": "odaiba",
+        "category": "shopping"
       },
       {
         "time": "19:00",
         "title": "Dinner Shinjuku",
         "note": "",
-        "placeId": "shinjuku"
+        "placeId": "shinjuku",
+        "category": "dining"
       }
     ]
   },
@@ -2102,41 +2176,55 @@ window.DAYS = [
         "time": "08:30",
         "title": "Checkout & Romancecar",
         "note": "Send luggage ahead if using takkyubin.",
-        "placeId": "keio-plaza"
+        "placeId": "keio-plaza",
+        "category": "hotel"
       },
       {
         "time": "11:00",
         "title": "Arrive Hakone-Yumoto",
         "note": "Drop bags if possible.",
-        "placeId": "kajikaso"
+        "placeId": "kajikaso",
+        "category": "hotel"
       },
       {
         "time": "12:00",
         "title": "Optional Open-Air Museum",
         "note": "Skip if you prefer more mountain time.",
         "placeId": "open-air",
-        "end": "14:00"
+        "end": "14:00",
+        "category": "culture"
       },
       {
         "time": "14:30",
         "title": "Owakudani",
         "note": "Black eggs + Fuji views if clear.",
         "placeId": "owakudani",
-        "end": "16:30"
+        "end": "16:30",
+        "category": "dining"
       },
       {
         "time": "17:30",
         "title": "Check in + onsen",
         "note": "Rinse first; enjoy baths before dinner.",
-        "placeId": "kajikaso"
+        "placeId": "kajikaso",
+        "category": "hotel"
       },
       {
         "time": "19:00",
         "title": "Ryokan dinner",
         "note": "Early night — sunrise shrine tomorrow.",
-        "placeId": "kajikaso"
+        "placeId": "kajikaso",
+        "category": "hotel"
       }
-    ]
+    ],
+    "transfer": {
+      "mode": "train",
+      "label": "Tokyo → Hakone",
+      "detail": "Odakyu Romancecar from Shinjuku",
+      "duration": "~1h 20–1h 45m",
+      "fromCity": "Tokyo",
+      "toCity": "Hakone"
+    }
   },
   {
     "id": "d12",
@@ -2166,58 +2254,75 @@ window.DAYS = [
         "time": "05:15",
         "title": "Wake for sunrise",
         "note": "",
-        "placeId": "kajikaso"
+        "placeId": "kajikaso",
+        "category": "hotel"
       },
       {
         "time": "05:45",
         "title": "Hakone Shrine torii",
         "note": "Best light & fewer people.",
         "placeId": "hakone-shrine",
-        "end": "07:15"
+        "end": "07:15",
+        "category": "culture"
       },
       {
         "time": "07:30",
         "title": "Breakfast / checkout",
         "note": "",
-        "placeId": "kajikaso"
+        "placeId": "kajikaso",
+        "category": "hotel"
       },
       {
         "time": "08:30",
         "title": "Optional Lake Ashi cruise",
         "note": "Skip if transferring early.",
         "placeId": "lake-ashi",
-        "end": "09:30"
+        "end": "09:30",
+        "category": "transit"
       },
       {
         "time": "10:00",
         "title": "Bus transfer toward Kawaguchiko",
         "note": "Gotemba change → Fujikyu bus.",
-        "end": "12:30"
+        "end": "12:30",
+        "category": "transit"
       },
       {
         "time": "13:00",
         "title": "Fuji Lawson photo stop",
         "note": "Icon shot near the station.",
-        "placeId": "fuji-lawson"
+        "placeId": "fuji-lawson",
+        "category": "attraction"
       },
       {
         "time": "14:00",
         "title": "Check in & rest",
-        "note": "Kawaguchiko hotel."
+        "note": "Kawaguchiko hotel.",
+        "category": "attraction"
       },
       {
         "time": "16:30",
         "title": "Oishi Park sunset",
         "note": "Lakeside Fuji views.",
         "placeId": "oishi-park",
-        "end": "18:30"
+        "end": "18:30",
+        "category": "attraction"
       },
       {
         "time": "19:00",
         "title": "Dinner & early sleep",
-        "note": "Tomorrow is sunrise + Fuji-Q."
+        "note": "Tomorrow is sunrise + Fuji-Q.",
+        "category": "dining"
       }
-    ]
+    ],
+    "transfer": {
+      "mode": "bus",
+      "label": "Hakone → Kawaguchiko",
+      "detail": "Local bus via Gotemba + Fujikyu bus",
+      "duration": "~1.5–2h",
+      "fromCity": "Hakone",
+      "toCity": "Kawaguchiko"
+    }
   },
   {
     "id": "d13",
@@ -2247,39 +2352,53 @@ window.DAYS = [
         "time": "04:45",
         "title": "Depart for Chureito Pagoda",
         "note": "~400 stairs — headlamp helpful.",
-        "placeId": "chureito"
+        "placeId": "chureito",
+        "category": "transit"
       },
       {
         "time": "05:30",
         "title": "Sunrise at Chureito",
         "note": "Classic Fuji + pagoda shot.",
         "placeId": "chureito",
-        "end": "07:00"
+        "end": "07:00",
+        "category": "attraction"
       },
       {
         "time": "07:30",
         "title": "Breakfast back near hotel",
-        "note": ""
+        "note": "",
+        "category": "dining"
       },
       {
         "time": "09:00",
         "title": "Fuji-Q Highland",
         "note": "Full amusement park day.",
         "placeId": "fuji-q",
-        "end": "18:30"
+        "end": "18:30",
+        "category": "attraction"
       },
       {
         "time": "19:00",
         "title": "Dinner / rest",
-        "note": ""
+        "note": "",
+        "category": "dining"
       },
       {
         "time": "21:00",
         "title": "Optional night bus to Kyoto",
         "note": "Willer / Fujikyu / Kintetsu from Fujisan or Fuji-Q BT.",
-        "end": "06:00"
+        "end": "06:00",
+        "category": "transit"
       }
-    ]
+    ],
+    "transfer": {
+      "mode": "bus",
+      "label": "Optional night bus → Kyoto",
+      "detail": "Willer / Fujikyu / Kintetsu from Fujisan or Fuji-Q BT",
+      "duration": "~8.5–9.5h overnight",
+      "fromCity": "Kawaguchiko",
+      "toCity": "Kyoto"
+    }
   },
   {
     "id": "d14",
@@ -2310,42 +2429,56 @@ window.DAYS = [
         "time": "06:30",
         "title": "Arrive Kyoto / hotel drop",
         "note": "Nap if room ready.",
-        "placeId": "musse-kyoto"
+        "placeId": "musse-kyoto",
+        "category": "hotel"
       },
       {
         "time": "10:00",
         "title": "Brunch near Kawaramachi",
         "note": "Or hotel area café.",
-        "placeId": "nishiki"
+        "placeId": "nishiki",
+        "category": "dining"
       },
       {
         "time": "11:30",
         "title": "Kennin-ji",
         "note": "Quiet Zen reset.",
         "placeId": "kenninji",
-        "end": "13:00"
+        "end": "13:00",
+        "category": "culture"
       },
       {
         "time": "15:00",
         "title": "Rest / shower / free time",
         "note": "",
-        "placeId": "musse-kyoto"
+        "placeId": "musse-kyoto",
+        "category": "hotel"
       },
       {
         "time": "17:00",
         "title": "Gion at dusk",
         "note": "Hanamikoji + Shirakawa lanes.",
         "placeId": "gion",
-        "end": "18:30"
+        "end": "18:30",
+        "category": "attraction"
       },
       {
         "time": "19:00",
         "title": "Dinner in Pontocho",
         "note": "Then Kamogawa stroll.",
         "placeId": "pontocho",
-        "end": "21:30"
+        "end": "21:30",
+        "category": "dining"
       }
-    ]
+    ],
+    "transfer": {
+      "mode": "train",
+      "label": "Arrive Kyoto",
+      "detail": "Night bus arrival or Mishima → Shinkansen morning route",
+      "duration": "Overnight or ~3.5–4h day route",
+      "fromCity": "Kawaguchiko",
+      "toCity": "Kyoto"
+    }
   },
   {
     "id": "d15",
@@ -2378,40 +2511,46 @@ window.DAYS = [
         "title": "Fushimi Inari Taisha",
         "note": "Climb beyond first gates.",
         "placeId": "fushimi-inari",
-        "end": "10:00"
+        "end": "10:00",
+        "category": "culture"
       },
       {
         "time": "10:30",
         "title": "Café break",
-        "note": "Recover with coffee/matcha."
+        "note": "Recover with coffee/matcha.",
+        "category": "dining"
       },
       {
         "time": "11:30",
         "title": "Kiyomizu-dera",
         "note": "Wooden stage + views.",
         "placeId": "kiyomizu",
-        "end": "13:00"
+        "end": "13:00",
+        "category": "culture"
       },
       {
         "time": "13:15",
         "title": "Sannenzaka & Ninenzaka",
         "note": "Matcha snacks + alleys.",
         "placeId": "sannenzaka",
-        "end": "15:00"
+        "end": "15:00",
+        "category": "dining"
       },
       {
         "time": "15:45",
         "title": "Kinkaku-ji (Golden Pavilion)",
         "note": "Taxi/bus across town.",
         "placeId": "kinkakuji",
-        "end": "17:15"
+        "end": "17:15",
+        "category": "transit"
       },
       {
         "time": "18:00",
         "title": "Nishiki Market dinner graze",
         "note": "Back in center.",
         "placeId": "nishiki",
-        "end": "20:00"
+        "end": "20:00",
+        "category": "dining"
       }
     ]
   },
@@ -2449,53 +2588,61 @@ window.DAYS = [
         "title": "Otagi Nenbutsu-ji",
         "note": "1,200 rakan statues.",
         "placeId": "otagi",
-        "end": "09:15"
+        "end": "09:15",
+        "category": "culture"
       },
       {
         "time": "09:30",
         "title": "Adashino Nenbutsu-ji",
         "note": "Bamboo & stone Buddhas.",
         "placeId": "adashino",
-        "end": "10:30"
+        "end": "10:30",
+        "category": "culture"
       },
       {
         "time": "10:45",
         "title": "Saga Toriimoto street",
         "note": "Preserved approach road.",
-        "placeId": "saga-toriimoto"
+        "placeId": "saga-toriimoto",
+        "category": "attraction"
       },
       {
         "time": "11:15",
         "title": "Bamboo Grove + Tenryu-ji",
         "note": "Optional temple garden next door.",
         "placeId": "bamboo",
-        "end": "12:45"
+        "end": "12:45",
+        "category": "culture"
       },
       {
         "time": "13:00",
         "title": "Kimono Forest + lunch",
         "note": "Eat near the station/bridge.",
         "placeId": "kimono-forest",
-        "end": "14:30"
+        "end": "14:30",
+        "category": "dining"
       },
       {
         "time": "14:45",
         "title": "Togetsukyo Bridge area",
         "note": "",
-        "placeId": "togetsukyo"
+        "placeId": "togetsukyo",
+        "category": "attraction"
       },
       {
         "time": "15:15",
         "title": "Monkey Park Iwatayama",
         "note": "~20m uphill; ¥600.",
         "placeId": "monkey-park",
-        "end": "17:00"
+        "end": "17:00",
+        "category": "attraction"
       },
       {
         "time": "18:30",
         "title": "Return center + dinner",
         "note": "",
-        "placeId": "musse-kyoto"
+        "placeId": "musse-kyoto",
+        "category": "hotel"
       }
     ]
   },
@@ -2529,47 +2676,54 @@ window.DAYS = [
         "time": "08:30",
         "title": "Train to Kurama",
         "note": "Via Demachiyanagi + Eizan.",
-        "placeId": "kurama-dera"
+        "placeId": "kurama-dera",
+        "category": "transit"
       },
       {
         "time": "09:30",
         "title": "Kurama-dera visit",
         "note": "Temple on the mountain.",
         "placeId": "kurama-dera",
-        "end": "10:45"
+        "end": "10:45",
+        "category": "culture"
       },
       {
         "time": "11:00",
         "title": "Forest trek to Kibune",
         "note": "About 45 minutes through cedar forest.",
-        "end": "11:45"
+        "end": "11:45",
+        "category": "attraction"
       },
       {
         "time": "12:00",
         "title": "Kifune Shrine",
         "note": "Lantern stone stairs.",
         "placeId": "kifune",
-        "end": "13:00"
+        "end": "13:00",
+        "category": "culture"
       },
       {
         "time": "13:15",
         "title": "Kawadoko lunch",
         "note": "Platforms above the cool stream.",
         "placeId": "kawadoko",
-        "end": "15:00"
+        "end": "15:00",
+        "category": "dining"
       },
       {
         "time": "15:30",
         "title": "Kurama Onsen soak",
         "note": "Optional but perfect after hiking.",
         "placeId": "kurama-onsen",
-        "end": "17:30"
+        "end": "17:30",
+        "category": "attraction"
       },
       {
         "time": "18:30",
         "title": "Return Kyoto + easy dinner",
         "note": "",
-        "placeId": "musse-kyoto"
+        "placeId": "musse-kyoto",
+        "category": "hotel"
       }
     ]
   },
@@ -2601,33 +2755,38 @@ window.DAYS = [
         "title": "Ginkaku-ji (Silver Pavilion)",
         "note": "Gardens in morning light.",
         "placeId": "ginkakuji",
-        "end": "10:15"
+        "end": "10:15",
+        "category": "culture"
       },
       {
         "time": "10:30",
         "title": "Philosopher’s Path stroll",
         "note": "Cafés + slow canal walk.",
         "placeId": "philosophers-path",
-        "end": "12:30"
+        "end": "12:30",
+        "category": "dining"
       },
       {
         "time": "12:45",
         "title": "Nanzen-ji + lunch",
         "note": "See the brick aqueduct.",
         "placeId": "nanzenji",
-        "end": "15:00"
+        "end": "15:00",
+        "category": "dining"
       },
       {
         "time": "16:00",
         "title": "Free time / packing",
         "note": "",
-        "placeId": "musse-kyoto"
+        "placeId": "musse-kyoto",
+        "category": "hotel"
       },
       {
         "time": "19:00",
         "title": "Farewell Kyoto dinner",
         "note": "Or anywhere you loved.",
-        "placeId": "pontocho"
+        "placeId": "pontocho",
+        "category": "dining"
       }
     ]
   },
@@ -2658,36 +2817,49 @@ window.DAYS = [
       {
         "time": "09:00",
         "title": "Shinkansen to Hiroshima",
-        "note": "From Kyoto Station."
+        "note": "From Kyoto Station.",
+        "category": "transit"
       },
       {
         "time": "12:00",
         "title": "Check in / drop bags",
         "note": "",
-        "placeId": "daiwa-hiroshima"
+        "placeId": "daiwa-hiroshima",
+        "category": "hotel"
       },
       {
         "time": "13:00",
         "title": "Shukkeien Garden",
         "note": "Gentle landing walk.",
         "placeId": "shukkeien",
-        "end": "14:30"
+        "end": "14:30",
+        "category": "culture"
       },
       {
         "time": "15:00",
         "title": "Peace Memorial Park & Museum",
         "note": "Allow 1.5–2h.",
         "placeId": "peace-park",
-        "end": "17:30"
+        "end": "17:30",
+        "category": "culture"
       },
       {
         "time": "18:30",
         "title": "Okonomiyaki dinner",
         "note": "Okonomi-mura food hall.",
         "placeId": "okonomiyaki",
-        "end": "20:30"
+        "end": "20:30",
+        "category": "dining"
       }
-    ]
+    ],
+    "transfer": {
+      "mode": "train",
+      "label": "Kyoto → Hiroshima",
+      "detail": "Nozomi Shinkansen",
+      "duration": "~2h 30m",
+      "fromCity": "Kyoto",
+      "toCity": "Hiroshima"
+    }
   },
   {
     "id": "d20",
@@ -2715,45 +2887,52 @@ window.DAYS = [
         "time": "08:00",
         "title": "Depart hotel for Miyajima",
         "note": "",
-        "placeId": "daiwa-hiroshima"
+        "placeId": "daiwa-hiroshima",
+        "category": "hotel"
       },
       {
         "time": "09:30",
         "title": "Ferry + Omotesando snacks",
         "note": "",
-        "placeId": "miyajima"
+        "placeId": "miyajima",
+        "category": "transit"
       },
       {
         "time": "10:15",
         "title": "Itsukushima Shrine",
         "note": "Match visit to tide if possible.",
         "placeId": "miyajima",
-        "end": "12:00"
+        "end": "12:00",
+        "category": "culture"
       },
       {
         "time": "12:30",
         "title": "Lunch on the island",
         "note": "",
-        "placeId": "miyajima"
+        "placeId": "miyajima",
+        "category": "dining"
       },
       {
         "time": "13:30",
         "title": "Mt. Misen ropeway & summit",
         "note": "Extra walk beyond ropeway.",
         "placeId": "misen",
-        "end": "16:30"
+        "end": "16:30",
+        "category": "transit"
       },
       {
         "time": "17:00",
         "title": "Low-tide torii revisit (if timing works)",
         "note": "Or café rest.",
-        "placeId": "miyajima"
+        "placeId": "miyajima",
+        "category": "dining"
       },
       {
         "time": "18:30",
         "title": "Return Hiroshima",
         "note": "",
-        "placeId": "daiwa-hiroshima"
+        "placeId": "daiwa-hiroshima",
+        "category": "hotel"
       }
     ]
   },
@@ -2784,42 +2963,56 @@ window.DAYS = [
       {
         "time": "09:00",
         "title": "Shinkansen to Osaka",
-        "note": ""
+        "note": "",
+        "category": "transit"
       },
       {
         "time": "12:00",
         "title": "Check in Cross Hotel",
         "note": "",
-        "placeId": "cross-osaka"
+        "placeId": "cross-osaka",
+        "category": "hotel"
       },
       {
         "time": "12:30",
         "title": "Kuromon Market lunch graze",
         "note": "Arrive hungry.",
         "placeId": "kuromon",
-        "end": "14:30"
+        "end": "14:30",
+        "category": "dining"
       },
       {
         "time": "15:00",
         "title": "Osaka Castle",
         "note": "Museum + grounds.",
         "placeId": "osaka-castle",
-        "end": "17:00"
+        "end": "17:00",
+        "category": "culture"
       },
       {
         "time": "17:30",
         "title": "Hotel rest",
         "note": "",
-        "placeId": "cross-osaka"
+        "placeId": "cross-osaka",
+        "category": "hotel"
       },
       {
         "time": "19:00",
         "title": "Dotonbori food crawl",
         "note": "Glico sign photos + street food.",
         "placeId": "dotonbori",
-        "end": "22:00"
+        "end": "22:00",
+        "category": "dining"
       }
-    ]
+    ],
+    "transfer": {
+      "mode": "train",
+      "label": "Hiroshima → Osaka",
+      "detail": "Nozomi to Shin-Osaka + Midosuji to Namba",
+      "duration": "~2h 30m",
+      "fromCity": "Hiroshima",
+      "toCity": "Osaka"
+    }
   },
   {
     "id": "d22",
@@ -2846,40 +3039,46 @@ window.DAYS = [
         "time": "07:45",
         "title": "Depart hotel",
         "note": "",
-        "placeId": "cross-osaka"
+        "placeId": "cross-osaka",
+        "category": "hotel"
       },
       {
         "time": "09:00",
         "title": "USJ rope drop",
         "note": "Priority headliners / Nintendo World.",
         "placeId": "usj",
-        "end": "12:30"
+        "end": "12:30",
+        "category": "attraction"
       },
       {
         "time": "12:30",
         "title": "Lunch in park",
         "note": "",
-        "placeId": "usj"
+        "placeId": "usj",
+        "category": "dining"
       },
       {
         "time": "13:30",
         "title": "Afternoon rides & shows",
         "note": "Continue headliners and shows.",
         "placeId": "usj",
-        "end": "18:30"
+        "end": "18:30",
+        "category": "attraction"
       },
       {
         "time": "18:30",
         "title": "Evening park / parade options",
         "note": "Stay for night vibe if energy allows.",
         "placeId": "usj",
-        "end": "21:00"
+        "end": "21:00",
+        "category": "attraction"
       },
       {
         "time": "21:30",
         "title": "Return Namba",
         "note": "",
-        "placeId": "cross-osaka"
+        "placeId": "cross-osaka",
+        "category": "hotel"
       }
     ]
   },
@@ -2909,38 +3108,44 @@ window.DAYS = [
         "time": "08:15",
         "title": "Train to Nara",
         "note": "",
-        "placeId": "nara-park"
+        "placeId": "nara-park",
+        "category": "transit"
       },
       {
         "time": "09:15",
         "title": "Nara Park & deer",
         "note": "Todai-ji, Kasuga area.",
         "placeId": "nara-park",
-        "end": "13:00"
+        "end": "13:00",
+        "category": "culture"
       },
       {
         "time": "13:15",
         "title": "Lunch + Nakatanidou mochi if timing works",
         "note": "",
-        "placeId": "nara-park"
+        "placeId": "nara-park",
+        "category": "dining"
       },
       {
         "time": "15:00",
         "title": "Return toward Osaka",
-        "note": ""
+        "note": "",
+        "category": "attraction"
       },
       {
         "time": "17:00",
         "title": "Rest at hotel",
         "note": "",
-        "placeId": "cross-osaka"
+        "placeId": "cross-osaka",
+        "category": "hotel"
       },
       {
         "time": "19:00",
         "title": "Shinsekai & Tsutenkaku",
         "note": "Retro vibes + kushikatsu.",
         "placeId": "shinsekai",
-        "end": "22:00"
+        "end": "22:00",
+        "category": "dining"
       }
     ]
   },
@@ -2973,27 +3178,31 @@ window.DAYS = [
         "title": "Tenjinbashi-suji arcade",
         "note": "Japan’s longest covered street.",
         "placeId": "tenjinbashi",
-        "end": "12:30"
+        "end": "12:30",
+        "category": "dining"
       },
       {
         "time": "13:00",
         "title": "Umeda Sky Building",
         "note": "Floating Garden Observatory.",
         "placeId": "umeda-sky",
-        "end": "15:00"
+        "end": "15:00",
+        "category": "culture"
       },
       {
         "time": "15:45",
         "title": "Instant Ramen Museum (Ikeda)",
         "note": "Design your Cup Noodle.",
         "placeId": "ramen-museum",
-        "end": "18:00"
+        "end": "18:00",
+        "category": "dining"
       },
       {
         "time": "19:30",
         "title": "Final Osaka dinner near Dotonbori",
         "note": "",
-        "placeId": "dotonbori"
+        "placeId": "dotonbori",
+        "category": "dining"
       }
     ]
   },
@@ -3022,28 +3231,40 @@ window.DAYS = [
       {
         "time": "09:30",
         "title": "Shinkansen to Tokyo",
-        "note": ""
+        "note": "",
+        "category": "transit"
       },
       {
         "time": "13:00",
         "title": "Check in Solaria",
         "note": "",
-        "placeId": "solaria"
+        "placeId": "solaria",
+        "category": "hotel"
       },
       {
         "time": "14:30",
         "title": "Ginza / Marunouchi wander",
         "note": "Architecture + shopping.",
         "placeId": "ginza",
-        "end": "18:00"
+        "end": "18:00",
+        "category": "dining"
       },
       {
         "time": "18:30",
         "title": "Depachika dinner picnic",
         "note": "",
-        "placeId": "ginza"
+        "placeId": "ginza",
+        "category": "dining"
       }
-    ]
+    ],
+    "transfer": {
+      "mode": "train",
+      "label": "Osaka → Tokyo",
+      "detail": "Nozomi Shinkansen + local to Ginza",
+      "duration": "~2.5–3h",
+      "fromCity": "Osaka",
+      "toCity": "Tokyo"
+    }
   },
   {
     "id": "d26",
@@ -3072,27 +3293,31 @@ window.DAYS = [
         "title": "Tsukiji Outer Market breakfast",
         "note": "Graze stall to stall.",
         "placeId": "tsukiji",
-        "end": "10:30"
+        "end": "10:30",
+        "category": "dining"
       },
       {
         "time": "11:00",
         "title": "Imperial Palace East Gardens",
         "note": "Quiet green reset.",
         "placeId": "imperial-east",
-        "end": "13:00"
+        "end": "13:00",
+        "category": "culture"
       },
       {
         "time": "13:30",
         "title": "Lunch + Ginza afternoon",
         "note": "Uniqlo flagship, GINZA SIX, Loft.",
         "placeId": "ginza",
-        "end": "18:00"
+        "end": "18:00",
+        "category": "dining"
       },
       {
         "time": "19:00",
         "title": "Dinner of choice",
         "note": "",
-        "placeId": "ginza"
+        "placeId": "ginza",
+        "category": "dining"
       }
     ]
   },
@@ -3123,27 +3348,31 @@ window.DAYS = [
         "title": "Ameyoko Market",
         "note": "Street food under the tracks.",
         "placeId": "ameyoko",
-        "end": "12:30"
+        "end": "12:30",
+        "category": "dining"
       },
       {
         "time": "13:00",
         "title": "Akihabara arcades & shops",
         "note": "Optional maid café for laughs.",
         "placeId": "akihabara",
-        "end": "17:00"
+        "end": "17:00",
+        "category": "dining"
       },
       {
         "time": "17:30",
         "title": "Return / rest",
         "note": "",
-        "placeId": "solaria"
+        "placeId": "solaria",
+        "category": "hotel"
       },
       {
         "time": "20:00",
         "title": "Golden Gai night",
         "note": "1–2 tiny bars.",
         "placeId": "golden-gai",
-        "end": "23:00"
+        "end": "23:00",
+        "category": "dining"
       }
     ]
   },
@@ -3177,26 +3406,30 @@ window.DAYS = [
         "title": "Ryogoku Kokugikan (if tickets)",
         "note": "Afternoon session popular with visitors.",
         "placeId": "ryogoku",
-        "end": "16:00"
+        "end": "16:00",
+        "category": "culture"
       },
       {
         "time": "12:00",
         "title": "ALT: Shimokitazawa wander",
         "note": "Only if no sumo.",
         "placeId": "shimokitazawa",
-        "end": "16:00"
+        "end": "16:00",
+        "category": "shopping"
       },
       {
         "time": "17:30",
         "title": "Optional Daikanyama + Nakameguro",
         "note": "",
-        "placeId": "nakameguro"
+        "placeId": "nakameguro",
+        "category": "dining"
       },
       {
         "time": "20:00",
         "title": "Optional New York Bar",
         "note": "Smart casual.",
-        "placeId": "ny-bar"
+        "placeId": "ny-bar",
+        "category": "dining"
       }
     ]
   },
@@ -3227,30 +3460,35 @@ window.DAYS = [
         "time": "10:00",
         "title": "Choose your encore neighborhood",
         "note": "Or Ginza shopping finish.",
-        "placeId": "daikanyama"
+        "placeId": "daikanyama",
+        "category": "dining"
       },
       {
         "time": "13:00",
         "title": "Lunch favorite",
-        "note": ""
+        "note": "",
+        "category": "dining"
       },
       {
         "time": "15:00",
         "title": "Souvenir run (Don Quijote / depachika)",
         "note": "",
-        "placeId": "ginza"
+        "placeId": "ginza",
+        "category": "dining"
       },
       {
         "time": "17:00",
         "title": "Pack at hotel",
         "note": "",
-        "placeId": "solaria"
+        "placeId": "solaria",
+        "category": "hotel"
       },
       {
         "time": "19:30",
         "title": "Farewell dinner",
         "note": "Celebrate the trip.",
-        "placeId": "ginza"
+        "placeId": "ginza",
+        "category": "dining"
       }
     ]
   },
@@ -3280,32 +3518,45 @@ window.DAYS = [
         "time": "08:00",
         "title": "Optional Tsukiji goodbye breakfast",
         "note": "",
-        "placeId": "tsukiji"
+        "placeId": "tsukiji",
+        "category": "dining"
       },
       {
         "time": "11:00",
         "title": "Final pack / checkout",
         "note": "",
-        "placeId": "solaria"
+        "placeId": "solaria",
+        "category": "hotel"
       },
       {
         "time": "14:00",
         "title": "Depart for Narita",
         "note": "Adjust to your flight — leave earlier if needed.",
-        "placeId": "narita"
+        "placeId": "narita",
+        "category": "transit"
       },
       {
         "time": "17:00",
         "title": "Airport buffer",
         "note": "Security, food, duty-free.",
-        "placeId": "narita"
+        "placeId": "narita",
+        "category": "transit"
       },
       {
         "time": "22:30",
         "title": "Departure (example evening slot)",
         "note": "Replace with your real flight time.",
-        "placeId": "narita"
+        "placeId": "narita",
+        "category": "transit"
       }
-    ]
+    ],
+    "transfer": {
+      "mode": "flight",
+      "label": "Tokyo → Home",
+      "detail": "Narita evening departure (placeholder)",
+      "duration": "Allow 2.5–3h to airport",
+      "fromCity": "Tokyo",
+      "toCity": "Home"
+    }
   }
 ];

@@ -6,11 +6,14 @@ from pathlib import Path
 
 OUT = Path(__file__).with_name("data.js")
 
-def place(id, name, name_local, city, country, tags, lat, lng, blurb):
-    return {
+def place(id, name, name_local, city, country, tags, lat, lng, blurb, taxi_address=None):
+    p = {
         "id": id, "name": name, "nameJa": name_local, "city": city, "country": country,
         "tags": tags, "lat": lat, "lng": lng, "blurb": blurb,
     }
+    if taxi_address:
+        p["taxiAddress"] = taxi_address
+    return p
 
 PLACES = {}
 
@@ -19,7 +22,7 @@ def add(p):
 
 # --- Seoul ---
 for p in [
-    place("brick-hotel", "9 Brick Hotel Hongdae", "나인브릭호텔", "Seoul", "KR", ["hotel"], 37.5563, 126.9236, "Hongdae base for Seoul."),
+    place("brick-hotel", "9 Brick Hotel Hongdae", "나인브릭호텔", "Seoul", "KR", ["hotel"], 37.5563, 126.9236, "Hongdae base for Seoul.", "서울특별시 마포구 와우산로 94, 나인브릭호텔"),
     place("icn", "Incheon Airport (ICN)", "인천국제공항", "Seoul", "KR", ["transport"], 37.4602, 126.4407, "Seoul arrival / departure."),
     place("myeongdong", "Myeongdong", "명동", "Seoul", "KR", ["shopping", "food", "neighborhood"], 37.5636, 126.9869, "K-beauty, street food, neon shopping."),
     place("hongdae", "Hongdae", "홍대", "Seoul", "KR", ["nightlife", "food", "neighborhood"], 37.5563, 126.9236, "Student arts district — cafés, bars, street performers."),
@@ -47,7 +50,7 @@ for p in [
 
 # --- Japan (existing + a few extras) ---
 for p in [
-    place("keio-plaza", "Keio Plaza Hotel Tokyo", "京王プラザホテル", "Tokyo", "JP", ["hotel"], 35.6906, 139.6921, "Shinjuku base."),
+    place("keio-plaza", "Keio Plaza Hotel Tokyo", "京王プラザホテル", "Tokyo", "JP", ["hotel"], 35.6906, 139.6921, "Shinjuku base.", "東京都新宿区西新宿2-2-1 京王プラザホテル"),
     place("narita", "Narita Airport (NRT)", "成田国際空港", "Tokyo", "JP", ["transport"], 35.7720, 140.3929, "Tokyo arrival/departure."),
     place("shinjuku", "Shinjuku", "新宿", "Tokyo", "JP", ["neighborhood", "food", "nightlife"], 35.6938, 139.7034, "Neon, shopping, Godzilla."),
     place("shibuya-crossing", "Shibuya Crossing", "渋谷スクランブル交差点", "Tokyo", "JP", ["must-see", "icon"], 35.6595, 139.7005, "Scramble + Hachiko."),
@@ -70,7 +73,7 @@ for p in [
     place("daikanyama", "Daikanyama T-Site", "代官山T-SITE", "Tokyo", "JP", ["culture", "food"], 35.6492, 139.7032, "Bookstore complex."),
     place("nakameguro", "Nakameguro / Meguro River", "中目黒", "Tokyo", "JP", ["neighborhood", "food"], 35.6442, 139.6988, "Riverside boutiques."),
     place("ny-bar", "New York Bar (Park Hyatt)", "ニューヨークバー", "Tokyo", "JP", ["nightlife", "view"], 35.6855, 139.6905, "Lost in Translation bar."),
-    place("kajikaso", "Hotel Kajikaso", "ホテルかじか荘", "Hakone", "JP", ["hotel", "onsen"], 35.2335, 139.0885, "Hakone onsen stay."),
+    place("kajikaso", "Hotel Kajikaso", "ホテルかじか荘", "Hakone", "JP", ["hotel", "onsen"], 35.2335, 139.0885, "Hakone onsen stay.", "神奈川県足柄下郡箱根町湯本692 ホテルかじか荘"),
     place("owakudani", "Owakudani", "大涌谷", "Hakone", "JP", ["must-see", "nature", "food"], 35.2424, 139.0204, "Volcanic valley + black eggs."),
     place("hakone-shrine", "Hakone Shrine", "箱根神社", "Hakone", "JP", ["must-see", "shrine"], 35.2051, 139.0256, "Lakeside torii — best at sunrise."),
     place("lake-ashi", "Lake Ashi Pirate Ship", "箱根海賊船", "Hakone", "JP", ["nature", "park"], 35.2065, 139.0250, "Sightseeing cruise."),
@@ -79,7 +82,7 @@ for p in [
     place("oishi-park", "Oishi Park", "大石公園", "Kawaguchiko", "JP", ["must-see", "view"], 35.5245, 138.7470, "Sunset Fuji lakeside."),
     place("chureito", "Chureito Pagoda", "忠霊塔", "Kawaguchiko", "JP", ["must-see", "icon"], 35.5012, 138.8013, "Sunrise pagoda + Fuji."),
     place("fuji-q", "Fuji-Q Highland", "富士急ハイランド", "Kawaguchiko", "JP", ["must-see", "park"], 35.4871, 138.7806, "World-class coasters."),
-    place("musse-kyoto", "Hotel Musse Kyoto", "ホテルミュッセ京都", "Kyoto", "JP", ["hotel"], 35.0037, 135.7685, "Kawaramachi base."),
+    place("musse-kyoto", "Hotel Musse Kyoto", "ホテルミュッセ京都四条河原町名鉄", "Kyoto", "JP", ["hotel"], 35.0037, 135.7685, "Kawaramachi base.", "京都府京都市下京区四条通河原町東入真町70 ホテルミュッセ京都四条河原町名鉄"),
     place("kenninji", "Kennin-ji", "建仁寺", "Kyoto", "JP", ["temple", "culture"], 35.0008, 135.7735, "Oldest Zen temple in Kyoto."),
     place("gion", "Gion", "祇園", "Kyoto", "JP", ["must-see", "neighborhood"], 35.0037, 135.7788, "Geisha district."),
     place("pontocho", "Pontocho Alley", "先斗町", "Kyoto", "JP", ["food", "nightlife"], 35.0045, 135.7712, "Dinner alley by the river."),
@@ -104,13 +107,13 @@ for p in [
     place("philosophers-path", "Philosopher’s Path", "哲学の道", "Kyoto", "JP", ["neighborhood", "nature"], 35.0205, 135.7955, "Canal stroll."),
     place("nanzenji", "Nanzen-ji", "南禅寺", "Kyoto", "JP", ["temple", "culture"], 35.0116, 135.7945, "Zen temple + aqueduct."),
     place("uji", "Uji / Byodo-in", "宇治・平等院", "Kyoto", "JP", ["food", "temple"], 34.8894, 135.8077, "Matcha capital + Phoenix Hall."),
-    place("daiwa-hiroshima", "Daiwa Roynet Hiroshima", "ダイワロイネット広島", "Hiroshima", "JP", ["hotel"], 34.3927, 132.4553, "Central Hiroshima."),
+    place("daiwa-hiroshima", "Daiwa Roynet Hiroshima", "ダイワロイネットホテル広島", "Hiroshima", "JP", ["hotel"], 34.3927, 132.4553, "Central Hiroshima.", "広島県広島市中区三川町1-1 ダイワロイネットホテル広島"),
     place("shukkeien", "Shukkeien Garden", "縮景園", "Hiroshima", "JP", ["culture", "park"], 34.3995, 132.4674, "Miniature landscape garden."),
     place("peace-park", "Peace Memorial Park", "平和記念公園", "Hiroshima", "JP", ["must-see", "culture"], 34.3955, 132.4536, "Dome + museum."),
     place("okonomiyaki", "Okonomi-mura", "お好み村", "Hiroshima", "JP", ["food", "must-see"], 34.3938, 132.4622, "Hiroshima okonomiyaki hall."),
     place("miyajima", "Itsukushima Shrine", "厳島神社", "Hiroshima", "JP", ["must-see", "shrine"], 34.2960, 132.3198, "Floating torii."),
     place("misen", "Mt. Misen Ropeway", "弥山ロープウェイ", "Hiroshima", "JP", ["nature", "view"], 34.2905, 132.3185, "Island summit."),
-    place("cross-osaka", "Cross Hotel Osaka", "クロスホテル大阪", "Osaka", "JP", ["hotel"], 34.6693, 135.5013, "Namba / Dotonbori base."),
+    place("cross-osaka", "Cross Hotel Osaka", "クロスホテル大阪", "Osaka", "JP", ["hotel"], 34.6693, 135.5013, "Namba / Dotonbori base.", "大阪府大阪市中央区宗右衛門町2-5-15 クロスホテル大阪"),
     place("kuromon", "Kuromon Market", "黒門市場", "Osaka", "JP", ["must-see", "food"], 34.6664, 135.5064, "Osaka’s kitchen."),
     place("osaka-castle", "Osaka Castle", "大阪城", "Osaka", "JP", ["culture", "must-see"], 34.6873, 135.5262, "Castle + park."),
     place("dotonbori", "Dotonbori", "道頓堀", "Osaka", "JP", ["must-see", "food", "nightlife"], 34.6687, 135.5013, "Neon food crawl."),
@@ -120,24 +123,127 @@ for p in [
     place("tenjinbashi", "Tenjinbashi-suji", "天神橋筋商店街", "Osaka", "JP", ["shopping", "food"], 34.7045, 135.5110, "Longest arcade."),
     place("umeda-sky", "Umeda Sky Building", "梅田スカイビル", "Osaka", "JP", ["must-see", "view"], 34.7055, 135.4897, "Floating Garden view."),
     place("ramen-museum", "Instant Ramen Museum", "カップヌードルミュージアム池田", "Osaka", "JP", ["food", "park"], 34.8195, 135.4258, "Make your Cup Noodle."),
-    place("solaria", "Solaria Nishitetsu Ginza", "ソラリア西鉄ホテル銀座", "Tokyo", "JP", ["hotel"], 35.6695, 139.7668, "Ginza return hotel."),
+    place("solaria", "Solaria Nishitetsu Ginza", "ソラリア西鉄ホテル銀座", "Tokyo", "JP", ["hotel"], 35.6695, 139.7668, "Ginza return hotel.", "東京都中央区銀座1-9-8 ソラリア西鉄ホテル銀座"),
     place("ryogoku", "Ryogoku Kokugikan", "両国国技館", "Tokyo", "JP", ["must-see", "culture"], 35.6971, 139.7935, "Sumo stadium."),
     place("shimokitazawa", "Shimokitazawa", "下北沢", "Tokyo", "JP", ["neighborhood", "shopping"], 35.6616, 139.6683, "Vintage & indie cafés."),
 ]:
     add(p)
 
-def day(id, date, weekday, city, country, hotel_id, title, summary, food, place_ids, transport, tips, timeline):
-    return {
+def day(id, date, weekday, city, country, hotel_id, title, summary, food, place_ids, transport, tips, timeline, transfer=None):
+    d = {
         "id": id, "date": date, "weekday": weekday, "city": city, "country": country,
         "hotelId": hotel_id, "title": title, "summary": summary, "food": food,
         "placeIds": place_ids, "transport": transport, "tips": tips, "timeline": timeline,
     }
+    if transfer:
+        d["transfer"] = transfer
+    return d
 
-def t(time, title, place_id=None, note="", end=None):
+def infer_category(title, place_id, note=""):
+    text = f"{title} {note}".lower()
+    tags = []
+    if place_id and place_id in PLACES:
+        tags = PLACES[place_id].get("tags") or []
+    if place_id and place_id in PLACES and "hotel" in tags:
+        return "hotel"
+    if any(k in text for k in ("flight", "train", "shinkansen", "romancecar", "subway", "bus", "ferry", "transfer", "depart", "airport", "ropeway", "monorail")) or "transport" in tags:
+        return "transit"
+    if any(k in text for k in ("breakfast", "lunch", "dinner", "food", "market", "crepe", "ramen", "sushi", "café", "cafe", "okonomi", "graze", "snack", "brunch")) or "food" in tags or "market" in tags:
+        return "dining"
+    if any(k in text for k in ("shop", "souvenir", "arcade street", "ginza", "depachika", "don quijote")) or "shopping" in tags:
+        return "shopping"
+    if any(k in text for k in ("temple", "shrine", "palace", "garden", "museum", "zen", "sumo", "tea", "hanok", "secret garden")) or "culture" in tags or "temple" in tags or "shrine" in tags:
+        return "culture"
+    if "park" in tags or any(k in text for k in ("disney", "universal", "fuji-q", "lotte world", "teamlab", "skytree", "tower", "park", "monkey", "cruise", "rope drop")):
+        return "attraction"
+    if "nightlife" in tags:
+        return "dining"
+    return "attraction"
+
+def t(time, title, place_id=None, note="", end=None, category=None):
     item = {"time": time, "title": title, "note": note}
-    if place_id: item["placeId"] = place_id
-    if end: item["end"] = end
+    if place_id:
+        item["placeId"] = place_id
+    if end:
+        item["end"] = end
+    if category:
+        item["category"] = category
     return item
+
+TRANSFERS = {
+    "d06": {
+        "mode": "flight",
+        "label": "Seoul → Tokyo",
+        "detail": "ICN → NRT (placeholder flight time)",
+        "duration": "~2.5h flight + transfers",
+        "fromCity": "Seoul",
+        "toCity": "Tokyo",
+    },
+    "d11": {
+        "mode": "train",
+        "label": "Tokyo → Hakone",
+        "detail": "Odakyu Romancecar from Shinjuku",
+        "duration": "~1h 20–1h 45m",
+        "fromCity": "Tokyo",
+        "toCity": "Hakone",
+    },
+    "d12": {
+        "mode": "bus",
+        "label": "Hakone → Kawaguchiko",
+        "detail": "Local bus via Gotemba + Fujikyu bus",
+        "duration": "~1.5–2h",
+        "fromCity": "Hakone",
+        "toCity": "Kawaguchiko",
+    },
+    "d13": {
+        "mode": "bus",
+        "label": "Optional night bus → Kyoto",
+        "detail": "Willer / Fujikyu / Kintetsu from Fujisan or Fuji-Q BT",
+        "duration": "~8.5–9.5h overnight",
+        "fromCity": "Kawaguchiko",
+        "toCity": "Kyoto",
+    },
+    "d14": {
+        "mode": "train",
+        "label": "Arrive Kyoto",
+        "detail": "Night bus arrival or Mishima → Shinkansen morning route",
+        "duration": "Overnight or ~3.5–4h day route",
+        "fromCity": "Kawaguchiko",
+        "toCity": "Kyoto",
+    },
+    "d19": {
+        "mode": "train",
+        "label": "Kyoto → Hiroshima",
+        "detail": "Nozomi Shinkansen",
+        "duration": "~2h 30m",
+        "fromCity": "Kyoto",
+        "toCity": "Hiroshima",
+    },
+    "d21": {
+        "mode": "train",
+        "label": "Hiroshima → Osaka",
+        "detail": "Nozomi to Shin-Osaka + Midosuji to Namba",
+        "duration": "~2h 30m",
+        "fromCity": "Hiroshima",
+        "toCity": "Osaka",
+    },
+    "d25": {
+        "mode": "train",
+        "label": "Osaka → Tokyo",
+        "detail": "Nozomi Shinkansen + local to Ginza",
+        "duration": "~2.5–3h",
+        "fromCity": "Osaka",
+        "toCity": "Tokyo",
+    },
+    "d30": {
+        "mode": "flight",
+        "label": "Tokyo → Home",
+        "detail": "Narita evening departure (placeholder)",
+        "duration": "Allow 2.5–3h to airport",
+        "fromCity": "Tokyo",
+        "toCity": "Home",
+    },
+}
 
 DAYS = [
   # SEOUL
@@ -599,6 +705,13 @@ TRIP = {
     ],
 }
 
+for d in DAYS:
+    if d["id"] in TRANSFERS:
+        d["transfer"] = TRANSFERS[d["id"]]
+    for item in d.get("timeline") or []:
+        if not item.get("category"):
+            item["category"] = infer_category(item.get("title", ""), item.get("placeId"), item.get("note", ""))
+
 def dumps(obj):
     return json.dumps(obj, ensure_ascii=False, indent=2)
 
@@ -610,3 +723,5 @@ window.DAYS = {dumps(DAYS)};
 OUT.write_text(js, encoding="utf-8")
 print(f"Wrote {OUT} ({OUT.stat().st_size} bytes)")
 print(f"Days: {len(DAYS)}, Places: {len(PLACES)}")
+print("Transfers:", sum(1 for d in DAYS if d.get("transfer")))
+print("Sample category:", DAYS[0]["timeline"][0].get("category"))

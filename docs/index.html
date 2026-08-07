@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#13233b" />
-  <meta name="description" content="Haitner Korea + Japan trip — Aug 27–Sep 25, 2026. Detailed timelines, search, and maps links." />
+  <meta name="theme-color" content="#070b14" />
+  <meta name="description" content="Haitner Korea + Japan trip — Aug 27–Sep 25, 2026. Timelines, bookings checklist, maps, and travel tools." />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>Korea + Japan 2026 · Haitner Trip</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Outfit:wght@350;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -20,21 +20,22 @@
         <div>Haitner Family Journey</div>
         <div class="seal" aria-hidden="true">日</div>
       </div>
-      <div class="hero-kicker">Korea · Japan · Timelines · Maps</div>
+      <div class="hero-kicker">Korea · Japan · Timelines · Tools</div>
       <h1>Trip 2026</h1>
-      <p class="hero-sub">Seoul to Tokyo — detailed hour-by-hour plans with one-tap maps for every stop.</p>
+      <p class="hero-sub">Seoul to Tokyo — hour-by-hour plans, booking checklist, maps, and travel tools.</p>
       <div class="hero-stats">
-        <div>Dates<strong id="stat-dates">Sep 1–25</strong></div>
-        <div>Days<strong id="stat-days">25</strong></div>
-        <div>Regions<strong id="stat-regions">6</strong></div>
+        <div>Dates<strong id="stat-dates">Aug 27–Sep 25</strong></div>
+        <div>Days<strong id="stat-days">30</strong></div>
+        <div>Regions<strong id="stat-regions">7</strong></div>
         <div>Places<strong id="stat-places">—</strong></div>
       </div>
     </header>
 
     <nav class="bottom-nav" aria-label="Primary">
-      <button type="button" data-nav="itinerary" class="active"><span class="nav-icon" aria-hidden="true">☰</span>Days</button>
-      <button type="button" data-nav="places"><span class="nav-icon" aria-hidden="true">⌖</span>Places</button>
-      <button type="button" data-nav="about"><span class="nav-icon" aria-hidden="true">✦</span>About</button>
+      <button type="button" data-nav="itinerary" class="active"><span class="nav-icon" aria-hidden="true">☰</span>Itinerary</button>
+      <button type="button" data-nav="bookings"><span class="nav-icon" aria-hidden="true">☑</span>Bookings</button>
+      <button type="button" data-nav="maps"><span class="nav-icon" aria-hidden="true">⌖</span>Maps</button>
+      <button type="button" data-nav="tools"><span class="nav-icon" aria-hidden="true">✦</span>Tools</button>
     </nav>
 
     <div class="search-bar">
@@ -49,50 +50,37 @@
       <div id="result-count" class="filter-btn" aria-live="polite">—</div>
     </div>
 
+    <div id="day-carousel" class="day-carousel" aria-label="Jump to day"></div>
     <div id="city-chips" class="chip-row" aria-label="Filter by city"></div>
+    <div id="cat-chips" class="cat-row" aria-label="Filter by category"></div>
 
     <main>
       <section id="panel-itinerary" class="panel active" aria-label="Day by day">
         <div id="day-list" class="day-list"></div>
       </section>
 
-      <section id="panel-places" class="panel" aria-label="All places">
+      <section id="panel-bookings" class="panel" aria-label="Booking checklist">
+        <div id="bookings-root"></div>
+      </section>
+
+      <section id="panel-maps" class="panel" aria-label="Places and maps">
         <div id="place-list" class="place-list"></div>
+      </section>
+
+      <section id="panel-tools" class="panel" aria-label="Travel tools">
+        <div id="tools-root"></div>
       </section>
 
       <section id="panel-detail" class="panel" aria-label="Day detail">
         <div id="detail-root"></div>
       </section>
-
-      <section id="panel-about" class="panel" aria-label="About this trip">
-        <div class="notes">
-          <h2>Smart merge</h2>
-          <div class="route" id="about-route"></div>
-          <ul id="about-notes"></ul>
-        </div>
-        <div class="notes">
-          <h2>Maps</h2>
-          <ul>
-            <li><strong>Google Maps</strong> — best default; opens the app on your phone.</li>
-            <li><strong>Japan:</strong> Yahoo! MAP + Apple Maps.</li>
-            <li><strong>Korea:</strong> Kakao Map + Naver Map (the local favorites).</li>
-            <li>Every timeline stop with a place has a Maps button.</li>
-          </ul>
-        </div>
-        <div class="notes">
-          <h2>What’s in this merge</h2>
-          <ul>
-            <li><strong>Seoul Aug 27–Sep 1:</strong> Myeongdong, palaces, Lotte World, Secret Garden, Seongsu, N Tower, Itaewon.</li>
-            <li><strong>From his Japan plan:</strong> Kawaguchiko, Chureito, Fuji-Q, Kurama–Kibune, Otagi, Ginkaku-ji path.</li>
-            <li><strong>From our Japan plan:</strong> DisneySea, teamLab, Hiroshima/Miyajima, Universal, Nara, Golden Gai.</li>
-            <li>Every day now has an hour-by-hour timeline.</li>
-          </ul>
-        </div>
-      </section>
     </main>
   </div>
 
   <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/checklist.js"></script>
+  <script src="js/tools.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
