@@ -1,0 +1,29 @@
+---
+description: Keep the live trip website and journey map in sync whenever the schedule changes
+alwaysApply: true
+---
+
+# Sync schedule → website + map
+
+Whenever the trip schedule / itinerary changes in this project, **always update the interactive website** so days, places, timelines, and the journey map stay accurate.
+
+## Source of truth
+
+- Narrative / planning notes: `ideas/itinerary.txt` (and related files under `ideas/`)
+- Structured site data builder: `docs/js/_build_data.py`
+- Generated runtime data: `docs/js/data.js` (do not hand-edit unless necessary)
+- Site UI: `docs/index.html`, `docs/js/app.js`, `docs/js/journey-map.js`, `docs/css/`
+
+## Required workflow after any schedule change
+
+1. Update `docs/js/_build_data.py` so `PLACES`, `DAYS` (dates, cities, titles, summaries, `placeIds`, `timeline`, transfers, hotels) match the new plan.
+2. Regenerate data: `python3 docs/js/_build_data.py`
+3. Confirm each day has distinct highlight places with `lat`/`lng` so the Maps journey markers do not stack on the hotel.
+4. If the user wants the live site updated (or says “update the website” / “deploy”), commit the `docs/` changes and push `main` so GitHub Pages redeploys.
+5. Briefly tell the user what itinerary days/places changed on the site/map.
+
+## Do not forget
+
+- Changing only `ideas/itinerary.txt` or the PDF is **not enough** — the website reads `docs/js/data.js`.
+- The journey map plots from day timelines/places; hotel-only points cause overlapping markers — prefer unique attractions per day.
+- Keep booking checklist (`docs/js/checklist.js`) aligned if bookings/tickets change with the schedule.
