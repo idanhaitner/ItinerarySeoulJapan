@@ -81,11 +81,12 @@
     const localName = place.nameJa || place.name;
     const q =
       country === "KR"
-        ? `${place.name} ${localName} Seoul`
+        ? `${localName} ${place.name}`
         : place.nameJa
           ? `${place.nameJa} ${place.name}`
           : `${place.name}, ${place.city}, Japan`;
     const encoded = encodeURIComponent(q);
+    const localEncoded = encodeURIComponent(localName);
     const google =
       place.lat != null && place.lng != null
         ? `https://www.google.com/maps/search/?api=1&query=${place.lat},${place.lng}`
@@ -94,19 +95,40 @@
       place.lat != null && place.lng != null
         ? `https://maps.apple.com/?ll=${place.lat},${place.lng}&q=${encoded}`
         : `https://maps.apple.com/?q=${encoded}`;
+
     if (country === "KR") {
       const kakao =
         place.lat != null && place.lng != null
-          ? `https://map.kakao.com/link/map/${encodeURIComponent(localName)},${place.lat},${place.lng}`
-          : `https://map.kakao.com/?q=${encoded}`;
-      const naver = `https://map.naver.com/v5/search/${encoded}`;
-      return { google, apple, local: kakao, localLabel: "Kakao Map", secondary: naver, secondaryLabel: "Naver Map" };
+          ? `https://map.kakao.com/link/map/${localEncoded},${place.lat},${place.lng}`
+          : `https://map.kakao.com/?q=${localEncoded}`;
+      const naver =
+        place.lat != null && place.lng != null
+          ? `https://map.naver.com/v5/?c=${place.lng},${place.lat},16,0,0,0,dh&query=${localEncoded}`
+          : `https://map.naver.com/v5/search/${localEncoded}`;
+      return {
+        country,
+        primary: { href: kakao, label: "Kakao Map" },
+        actions: [
+          { href: kakao, label: "Kakao Map", primary: true },
+          { href: naver, label: "Naver Map" },
+          { href: google, label: "Google Maps" },
+        ],
+      };
     }
+
     const yahoo =
       place.lat != null && place.lng != null
         ? `https://map.yahoo.co.jp/place?lat=${place.lat}&lon=${place.lng}&zoom=16`
         : `https://map.yahoo.co.jp/search?q=${encoded}`;
-    return { google, apple, local: yahoo, localLabel: "Yahoo! MAP", secondary: apple, secondaryLabel: "Apple Maps" };
+    return {
+      country,
+      primary: { href: yahoo, label: "Yahoo! MAP" },
+      actions: [
+        { href: yahoo, label: "Yahoo! MAP", primary: true },
+        { href: google, label: "Google Maps" },
+        { href: apple, label: "Apple Maps" },
+      ],
+    };
   }
 
   function matchesQuery(text, query) {
@@ -252,9 +274,12 @@
         <p class="place-blurb">${escapeHtml(p.blurb || "")}</p>
         <div class="tag-row">${(p.tags || []).slice(0, 4).map((t) => `<span class="tag">${t}</span>`).join("")}</div>
         <div class="maps-actions">
-          <a class="maps-btn primary" href="${links.google}" target="_blank" rel="noopener noreferrer">Google Maps</a>
-          <a class="maps-btn" href="${links.local}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.localLabel)}</a>
-          <a class="maps-btn" href="${links.secondary}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.secondaryLabel)}</a>
+          ${links.actions
+            .map(
+              (a) =>
+                `<a class="maps-btn${a.primary ? " primary" : ""}" href="${a.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(a.label)}</a>`
+            )
+            .join("")}
           <button type="button" class="maps-btn" data-copy="${p.id}">Copy name</button>
         </div>
       </article>`;
@@ -282,7 +307,7 @@
                 ${place ? `<div class="timeline-place">${escapeHtml(place.name)}${place.nameJa ? ` · ${escapeHtml(place.nameJa)}` : ""}</div>` : ""}
                 ${item.note ? `<p class="timeline-note">${escapeHtml(item.note)}</p>` : ""}
                 <div class="timeline-actions">
-                  ${links ? `<a href="${links.google}" target="_blank" rel="noopener noreferrer">Maps</a>` : ""}
+                  ${links ? `<a href="${links.primary.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.primary.label)}</a>` : ""}
                   <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "Done" : "Complete"}</button>
                   <button type="button" class="${storage.isFavorite(day.id, item) ? "active-fav" : ""}" data-fav="${idx}">${storage.isFavorite(day.id, item) ? "Saved" : "Save"}</button>
                 </div>
