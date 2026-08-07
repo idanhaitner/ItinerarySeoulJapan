@@ -19,7 +19,7 @@
   --safe-top: env(safe-area-inset-top, 0px);
   --topbar-h: 0px;
   --font-display: "Shippori Mincho", "Times New Roman", serif;
-  --font-ui: "Zen Kaku Gothic New", system-ui, sans-serif;
+  --font-ui: "Heebo", "Zen Kaku Gothic New", system-ui, sans-serif;
 
   --seoul: #a61e4d;
   --tokyo: #5a6f7a;
@@ -775,7 +775,7 @@ a { color: inherit; }
 /* ——— Homepage day rows ——— */
 .day-row {
   width: 100%;
-  text-align: left;
+  text-align: start;
   cursor: pointer;
   color: inherit;
   border: 0;
@@ -795,7 +795,7 @@ a { color: inherit; }
 }
 
 .day-row:hover .day-row-arrow {
-  transform: translateX(4px);
+  transform: translateX(-4px);
   color: var(--seal);
 }
 
@@ -804,18 +804,18 @@ a { color: inherit; }
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 22px 0 22px 4px;
-  border-left: 3px solid var(--navy);
-  padding-left: 14px;
+  padding: 22px 0;
+  border-inline-start: 3px solid var(--navy);
+  padding-inline-start: 14px;
 }
 
-.day-row.city-Seoul .day-row-num { border-left-color: var(--seoul); }
-.day-row.city-Tokyo .day-row-num { border-left-color: var(--tokyo); }
-.day-row.city-Hakone .day-row-num { border-left-color: var(--hakone); }
-.day-row.city-Kawaguchiko .day-row-num { border-left-color: var(--kawaguchiko); }
-.day-row.city-Kyoto .day-row-num { border-left-color: var(--kyoto); }
-.day-row.city-Hiroshima .day-row-num { border-left-color: var(--hiroshima); }
-.day-row.city-Osaka .day-row-num { border-left-color: var(--osaka); }
+.day-row.city-Seoul .day-row-num { border-inline-start-color: var(--seoul); }
+.day-row.city-Tokyo .day-row-num { border-inline-start-color: var(--tokyo); }
+.day-row.city-Hakone .day-row-num { border-inline-start-color: var(--hakone); }
+.day-row.city-Kawaguchiko .day-row-num { border-inline-start-color: var(--kawaguchiko); }
+.day-row.city-Kyoto .day-row-num { border-inline-start-color: var(--kyoto); }
+.day-row.city-Hiroshima .day-row-num { border-inline-start-color: var(--hiroshima); }
+.day-row.city-Osaka .day-row-num { border-inline-start-color: var(--osaka); }
 
 .day-row-num .n {
   font-family: var(--font-display);
@@ -924,7 +924,7 @@ a { color: inherit; }
   margin-bottom: 18px;
   background: linear-gradient(135deg, rgba(196, 60, 44, 0.06), rgba(42, 107, 90, 0.07));
   border: 1px solid rgba(47, 43, 40, 0.1);
-  border-left: 3px solid var(--seal);
+  border-inline-start: 3px solid var(--seal);
 }
 
 .transfer-banner .tb-mode {
@@ -976,7 +976,7 @@ a { color: inherit; }
 .detail-hero::before {
   content: "";
   position: absolute;
-  left: 0;
+  inset-inline-start: 0;
   top: 0;
   bottom: 0;
   width: 4px;
@@ -1167,25 +1167,27 @@ a { color: inherit; }
 }
 
 .timeline-time {
-  padding: 20px 16px 20px 0;
+  padding: 20px 0;
+  padding-inline-end: 16px;
   font-family: var(--font-display);
   font-size: 18px;
   font-weight: 600;
   color: var(--navy);
   font-variant-numeric: tabular-nums;
-  border-right: 1px solid var(--line);
-  text-align: right;
+  border-inline-end: 1px solid var(--line);
+  text-align: end;
 }
 
 .timeline-card {
-  padding: 18px 8px 18px 22px;
+  padding: 18px 8px;
+  padding-inline-start: 22px;
   position: relative;
 }
 
 .timeline-card::before {
   content: "";
   position: absolute;
-  left: 0;
+  inset-inline-start: 0;
   top: 22px;
   bottom: 22px;
   width: 2px;
@@ -1363,7 +1365,7 @@ a { color: inherit; }
   min-height: 52px;
   cursor: pointer;
   list-style: none;
-  border-left: 3px solid var(--ink);
+  border-inline-start: 3px solid var(--ink);
   transition: background 0.2s ease;
 }
 
@@ -1374,13 +1376,13 @@ a { color: inherit; }
   background: rgba(47, 43, 40, 0.03);
 }
 
-.city-fold.city-Seoul > .city-fold-summary { border-left-color: var(--seoul); }
-.city-fold.city-Tokyo > .city-fold-summary { border-left-color: var(--tokyo); }
-.city-fold.city-Hakone > .city-fold-summary { border-left-color: var(--hakone); }
-.city-fold.city-Kawaguchiko > .city-fold-summary { border-left-color: var(--kawaguchiko); }
-.city-fold.city-Kyoto > .city-fold-summary { border-left-color: var(--kyoto); }
-.city-fold.city-Hiroshima > .city-fold-summary { border-left-color: var(--hiroshima); }
-.city-fold.city-Osaka > .city-fold-summary { border-left-color: var(--osaka); }
+.city-fold.city-Seoul > .city-fold-summary { border-inline-start-color: var(--seoul); }
+.city-fold.city-Tokyo > .city-fold-summary { border-inline-start-color: var(--tokyo); }
+.city-fold.city-Hakone > .city-fold-summary { border-inline-start-color: var(--hakone); }
+.city-fold.city-Kawaguchiko > .city-fold-summary { border-inline-start-color: var(--kawaguchiko); }
+.city-fold.city-Kyoto > .city-fold-summary { border-inline-start-color: var(--kyoto); }
+.city-fold.city-Hiroshima > .city-fold-summary { border-inline-start-color: var(--hiroshima); }
+.city-fold.city-Osaka > .city-fold-summary { border-inline-start-color: var(--osaka); }
 
 .city-fold-label {
   display: flex;
@@ -1526,7 +1528,7 @@ a { color: inherit; }
   border: 0;
   border-bottom: 1px solid var(--line);
   background: transparent;
-  text-align: left;
+  text-align: start;
   cursor: pointer;
   color: inherit;
   transition: background 0.2s ease;
@@ -1644,7 +1646,7 @@ a { color: inherit; }
 .taxi-card::before {
   content: "";
   position: absolute;
-  left: 0;
+  inset-inline-start: 0;
   top: 0;
   bottom: 0;
   width: 3px;
@@ -1960,7 +1962,7 @@ a { color: inherit; }
 }
 
 .tips-cols h3 { margin-bottom: 8px; font-size: 20px; color: var(--navy); }
-.tips-cols ul { margin: 0; padding-left: 18px; color: var(--muted); font-weight: 300; }
+.tips-cols ul { margin: 0; padding-inline-start: 18px; color: var(--muted); font-weight: 300; }
 
 /* ——— Mobile nav ——— */
 .mobile-nav {
@@ -2206,4 +2208,30 @@ a { color: inherit; }
     transition: none !important;
   }
   .masthead-photo { transform: none; }
+}
+
+
+/* ——— RTL / Hebrew ——— */
+html[dir="rtl"] body {
+  font-family: var(--font-ui);
+}
+
+html[dir="rtl"] .leaflet-container,
+html[dir="rtl"] .journey-map {
+  direction: ltr;
+  text-align: left;
+}
+
+html[dir="rtl"] .journey-popup {
+  direction: rtl;
+  text-align: right;
+  font-family: var(--font-ui);
+}
+
+html[dir="rtl"] .day-row-num {
+  align-items: flex-start;
+}
+
+html[dir="rtl"] .search svg {
+  order: 1;
 }

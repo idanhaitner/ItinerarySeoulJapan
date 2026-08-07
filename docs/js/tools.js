@@ -1,11 +1,11 @@
 window.TripTools = (function () {
   const CAT_META = {
-    dining: { icon: "", label: "Dining" },
-    culture: { icon: "", label: "Culture" },
-    shopping: { icon: "", label: "Shopping" },
-    transit: { icon: "", label: "Transit" },
-    attraction: { icon: "", label: "Sight" },
-    hotel: { icon: "", label: "Hotel" },
+    dining: { icon: "", label: "אוכל" },
+    culture: { icon: "", label: "תרבות" },
+    shopping: { icon: "", label: "קניות" },
+    transit: { icon: "", label: "תחבורה" },
+    attraction: { icon: "", label: "אטרקציה" },
+    hotel: { icon: "", label: "מלון" },
   };
 
   function categoryMeta(cat) {
@@ -35,6 +35,15 @@ window.TripTools = (function () {
   }
 
   function hotelTaxiCards(places) {
+    const cityHe = {
+      Seoul: "סיאול",
+      Tokyo: "טוקיו",
+      Hakone: "הקונה",
+      Kawaguchiko: "קוואגוצ׳יקו",
+      Kyoto: "קיוטו",
+      Osaka: "אוסקה",
+      Hiroshima: "הירושימה",
+    };
     return Object.values(places)
       .filter((p) => (p.tags || []).includes("hotel") && p.taxiAddress)
       .map((p) => ({
@@ -43,6 +52,7 @@ window.TripTools = (function () {
         local: p.nameJa,
         address: p.taxiAddress,
         city: p.city,
+        cityLabel: cityHe[p.city] || p.city,
         country: p.country,
       }));
   }
@@ -51,11 +61,11 @@ window.TripTools = (function () {
     const rates = TripStorage.getRates();
     root.innerHTML = `
       <div class="tool-card">
-        <h3>Currency converter</h3>
-        <p class="tool-sub">Edit rates anytime — saved on this device.</p>
+        <h3>מחשבון מטבע</h3>
+        <p class="tool-sub">אפשר לערוך שערים בכל רגע — נשמר במכשיר.</p>
         <div class="fx-grid">
-          <label>Amount<input type="number" id="fx-amount" value="10000" inputmode="decimal" /></label>
-          <label>From
+          <label>סכום<input type="number" id="fx-amount" value="10000" inputmode="decimal" /></label>
+          <label>מ־
             <select id="fx-from">
               <option value="JPY">JPY ¥</option>
               <option value="KRW">KRW ₩</option>
@@ -64,11 +74,11 @@ window.TripTools = (function () {
               <option value="ILS">ILS ₪</option>
             </select>
           </label>
-          <label>To
+          <label>ל־
             <select id="fx-to">
+              <option value="ILS" selected>ILS ₪</option>
               <option value="USD">USD $</option>
               <option value="EUR">EUR €</option>
-              <option value="ILS">ILS ₪</option>
               <option value="JPY">JPY ¥</option>
               <option value="KRW">KRW ₩</option>
             </select>
@@ -76,7 +86,7 @@ window.TripTools = (function () {
         </div>
         <div class="fx-result" id="fx-result">—</div>
         <details class="fx-rates">
-          <summary>Editable exchange rates</summary>
+          <summary>שערי חליפין לעריכה</summary>
           <div class="fx-rate-grid">
             <label>USD→JPY<input type="number" data-rate="USD_JPY" value="${rates.USD_JPY}" /></label>
             <label>USD→KRW<input type="number" data-rate="USD_KRW" value="${rates.USD_KRW}" /></label>
@@ -93,7 +103,7 @@ window.TripTools = (function () {
       const r = TripStorage.getRates();
       const out = convert(amount, from, to, r);
       document.getElementById("fx-result").textContent =
-        `${Number(amount).toLocaleString()} ${from} ≈ ${out.toLocaleString(undefined, { maximumFractionDigits: 2 })} ${to}`;
+        `${Number(amount).toLocaleString("he-IL")} ${from} ≈ ${out.toLocaleString("he-IL", { maximumFractionDigits: 2 })} ${to}`;
     }
 
     root.querySelectorAll("[data-rate]").forEach((input) => {
@@ -115,16 +125,16 @@ window.TripTools = (function () {
     const cards = hotelTaxiCards(places);
     root.innerHTML = `
       <div class="tool-card">
-        <h3>Taxi & hotel cards</h3>
-        <p class="tool-sub">Show local script to drivers — tap copy.</p>
+        <h3>כרטיסי מונית ומלון</h3>
+        <p class="tool-sub">הציגו לנהג בשפה המקומית — לחצו להעתקה.</p>
         <div class="taxi-grid">
           ${cards.map((c) => `
             <article class="taxi-card city-accent-${c.city}">
-              <div class="taxi-city">${c.city}</div>
+              <div class="taxi-city">${c.cityLabel || c.city}</div>
               <div class="taxi-name">${escape(c.name)}</div>
               <div class="taxi-local">${escape(c.local || "")}</div>
               <div class="taxi-address">${escape(c.address)}</div>
-              <button type="button" class="btn-ghost" data-copy-taxi="${escape(c.address)}">Copy address</button>
+              <button type="button" class="btn-ghost" data-copy-taxi="${escape(c.address)}">העתק כתובת</button>
             </article>`).join("")}
         </div>
       </div>`;
@@ -146,23 +156,23 @@ window.TripTools = (function () {
       modal.className = "modal-backdrop";
       modal.innerHTML = `
         <div class="modal" role="dialog" aria-modal="true" aria-labelledby="tips-title">
-          <button type="button" class="modal-close" id="tips-close" aria-label="Close">×</button>
-          <h2 id="tips-title">Transit quick tips</h2>
+          <button type="button" class="modal-close" id="tips-close" aria-label="סגור">×</button>
+          <h2 id="tips-title">טיפים מהירים לתחבורה</h2>
           <div class="tips-cols">
             <section>
-              <h3>Korea</h3>
+              <h3>קוריאה</h3>
               <ul>
-                <li>Use <strong>Naver Map</strong> or <strong>Kakao Map</strong> for transit — better than Google in Seoul.</li>
-                <li>Get a <strong>T-money</strong> card (or Climate Card) for subway/bus.</li>
-                <li>Keep right on escalators in Seoul (local norm).</li>
+                <li>השתמשו ב־<strong>Naver Map</strong> או <strong>Kakao Map</strong> לתחבורה — טוב יותר מגוגל בסיאול.</li>
+                <li>קחו כרטיס <strong>T-money</strong> (או Climate Card) למטרו/אוטובוס.</li>
+                <li>בסיאול עומדים בדרך כלל מימין בדרגנוע.</li>
               </ul>
             </section>
             <section>
-              <h3>Japan</h3>
+              <h3>יפן</h3>
               <ul>
-                <li>Add <strong>Suica / Pasmo</strong> to Apple Wallet before you go (or buy an IC card on arrival).</li>
-                <li>Stay quiet on trains — phone calls are frowned upon.</li>
-                <li>Queue orderly; priority seats are real — offer them freely.</li>
+                <li>הוסיפו <strong>Suica / Pasmo</strong> ל־Apple Wallet לפני הנסיעה (או קנו IC בהגעה).</li>
+                <li>שקט ברכבות — שיחות טלפון לא מקובלות.</li>
+                <li>תור מסודר; מושבי עדיפות אמיתיים — הציעו אותם בלב שלם.</li>
               </ul>
             </section>
           </div>

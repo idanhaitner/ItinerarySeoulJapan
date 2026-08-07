@@ -11,14 +11,58 @@
   const MASTHEAD_VIEWS = new Set(["itinerary"]);
 
   const CITY_LOCAL = {
-    Seoul: "서울",
-    Tokyo: "東京",
-    Hakone: "箱根",
-    Kawaguchiko: "河口湖",
-    Kyoto: "京都",
-    Osaka: "大阪",
-    Hiroshima: "広島",
+    Seoul: "סיאול",
+    Tokyo: "טוקיו",
+    Hakone: "הקונה",
+    Kawaguchiko: "קוואגוצ׳יקו",
+    Kyoto: "קיוטו",
+    Osaka: "אוסקה",
+    Hiroshima: "הירושימה",
   };
+
+  const WEEKDAY_HE = {
+    Sunday: "יום ראשון",
+    Monday: "יום שני",
+    Tuesday: "יום שלישי",
+    Wednesday: "יום רביעי",
+    Thursday: "יום חמישי",
+    Friday: "יום שישי",
+    Saturday: "יום שבת",
+  };
+
+  const WEEKDAY_SHORT_HE = {
+    Sunday: "א׳",
+    Monday: "ב׳",
+    Tuesday: "ג׳",
+    Wednesday: "ד׳",
+    Thursday: "ה׳",
+    Friday: "ו׳",
+    Saturday: "ש׳",
+  };
+
+  const TAG_HE = {
+    architecture: "אדריכלות",
+    culture: "תרבות",
+    food: "אוכל",
+    hotel: "מלון",
+    icon: "אייקון",
+    market: "שוק",
+    "must-see": "חובה",
+    nature: "טבע",
+    neighborhood: "שכונה",
+    nightlife: "חיי לילה",
+    onsen: "אונסן",
+    park: "פארק",
+    shopping: "קניות",
+    shrine: "מקדש שינטו",
+    temple: "מקדש",
+    transport: "תחבורה",
+    view: "נוף",
+  };
+
+  function tagLabel(t) {
+    return TAG_HE[t] || t;
+  }
 
   const state = {
     view: "itinerary",
@@ -69,7 +113,15 @@
 
   function formatDate(iso) {
     const d = new Date(iso + "T12:00:00");
-    return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+    return d.toLocaleDateString("he-IL", { day: "numeric", month: "short" });
+  }
+
+  function weekdayHe(day) {
+    return WEEKDAY_HE[day.weekday] || day.weekday;
+  }
+
+  function weekdayShortHe(day) {
+    return WEEKDAY_SHORT_HE[day.weekday] || day.weekday.slice(0, 3);
   }
 
   function dayIndex(day) {
@@ -229,7 +281,7 @@
             ? "is-dim"
             : "";
         return `<div class="day-group ${cityClass(g.city)} ${dim}">
-          <div class="day-group-label">${g.city}<span class="local">${cityLocal(g.city)}</span></div>
+          <div class="day-group-label">${cityLocal(g.city)}<span class="local">${g.city}</span></div>
           <div class="day-group-days">
             ${g.items
               .map(({ day, index }) => {
@@ -248,17 +300,29 @@
     els.chips.innerHTML = cities
       .map((c) => {
         if (c === "all") {
-          return `<button type="button" class="chip ${state.city === c ? "active" : ""}" data-city="${c}">All<span class="chip-local">全体</span></button>`;
+          return `<button type="button" class="chip ${state.city === c ? "active" : ""}" data-city="${c}">הכל<span class="chip-local">全体</span></button>`;
         }
-        return `<button type="button" class="chip ${state.city === c ? "active" : ""}" data-city="${c}">${c}<span class="chip-local">${cityLocal(c)}</span></button>`;
+        return `<button type="button" class="chip ${state.city === c ? "active" : ""}" data-city="${c}">${cityLocal(c)}<span class="chip-local">${c}</span></button>`;
       })
       .join("");
+  }
+
+  function transferModeHe(mode) {
+    const map = {
+      flight: "טיסה",
+      train: "רכבת",
+      bus: "אוטובוס",
+      ferry: "מעבורת",
+      car: "רכב",
+      walk: "הליכה",
+    };
+    return map[String(mode || "").toLowerCase()] || mode || "העברה";
   }
 
   function transferHtml(transfer) {
     if (!transfer) return "";
     return `<div class="transfer-banner">
-      <div class="tb-mode">${escapeHtml(transfer.mode)} transfer</div>
+      <div class="tb-mode">${escapeHtml(transferModeHe(transfer.mode))}</div>
       <div class="tb-label">${escapeHtml(transfer.label)}</div>
       <div class="tb-meta">${escapeHtml(transfer.detail)} · ${escapeHtml(transfer.duration)}</div>
     </div>`;
@@ -268,11 +332,11 @@
     const links = mapsLinks(p);
     return `
       <article class="place-card city-accent-${p.city}" data-place="${p.id}">
-        <span class="city-pill ${cityClass(p.city)}">${p.city} · ${cityLocal(p.city)}</span>
+        <span class="city-pill ${cityClass(p.city)}">${cityLocal(p.city)} · ${p.city}</span>
         <h3>${escapeHtml(p.name)}</h3>
         <div class="place-ja">${escapeHtml(p.nameJa || "")}</div>
         <p class="place-blurb">${escapeHtml(p.blurb || "")}</p>
-        <div class="tag-row">${(p.tags || []).slice(0, 4).map((t) => `<span class="tag">${t}</span>`).join("")}</div>
+        <div class="tag-row">${(p.tags || []).slice(0, 4).map((t) => `<span class="tag">${tagLabel(t)}</span>`).join("")}</div>
         <div class="maps-actions">
           ${links.actions
             .map(
@@ -280,7 +344,7 @@
                 `<a class="maps-btn${a.primary ? " primary" : ""}" href="${a.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(a.label)}</a>`
             )
             .join("")}
-          <button type="button" class="maps-btn" data-copy="${p.id}">Copy name</button>
+          <button type="button" class="maps-btn" data-copy="${p.id}">העתק שם</button>
         </div>
       </article>`;
   }
@@ -288,7 +352,7 @@
   function timelineHtml(day) {
     const items = day.timeline || [];
     return `
-      <div class="section-title">Schedule · 日程</div>
+      <div class="section-title">לוח זמנים · 日程</div>
       <ol class="timeline">
         ${items
           .map((item, idx) => {
@@ -308,8 +372,8 @@
                 ${item.note ? `<p class="timeline-note">${escapeHtml(item.note)}</p>` : ""}
                 <div class="timeline-actions">
                   ${links ? `<a href="${links.primary.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.primary.label)}</a>` : ""}
-                  <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "Done" : "Complete"}</button>
-                  <button type="button" class="${storage.isFavorite(day.id, item) ? "active-fav" : ""}" data-fav="${idx}">${storage.isFavorite(day.id, item) ? "Saved" : "Save"}</button>
+                  <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "בוצע" : "סיימתי"}</button>
+                  <button type="button" class="${storage.isFavorite(day.id, item) ? "active-fav" : ""}" data-fav="${idx}">${storage.isFavorite(day.id, item) ? "שמור" : "שמירה"}</button>
                 </div>
               </div>
             </li>`;
@@ -320,9 +384,9 @@
 
   function renderDayList() {
     const list = filteredDays();
-    setResultCount(`${list.length} days`);
+    setResultCount(`${list.length} ימים`);
     if (!list.length) {
-      els.dayList.innerHTML = `<div class="empty">No days match your filters.</div>`;
+      els.dayList.innerHTML = `<div class="empty">אין ימים שמתאימים לסינון.</div>`;
       return;
     }
     els.dayList.innerHTML = list
@@ -337,16 +401,16 @@
             </div>
             <div class="day-row-body">
               <div class="day-row-city">
-                <span class="en">${d.city}</span>
-                <span class="local">${cityLocal(d.city)}</span>
+                <span class="en">${cityLocal(d.city)}</span>
+                <span class="local">${d.city}</span>
               </div>
               <h3>${escapeHtml(d.title)}</h3>
               <p>${escapeHtml(d.summary)}</p>
             </div>
             <div class="day-row-meta">
-              <span>${d.weekday.slice(0, 3)}</span>
-              <span>${steps ? `${steps} stops` : "—"}</span>
-              <span class="day-row-arrow" aria-hidden="true">→</span>
+              <span>${weekdayShortHe(d)}</span>
+              <span>${steps ? `${steps} עצירות` : "—"}</span>
+              <span class="day-row-arrow" aria-hidden="true">←</span>
             </div>
           </button>`;
       })
@@ -374,7 +438,7 @@
   }
 
   function placesGroupedHtml(list) {
-    if (!list.length) return `<div class="empty">No places match.</div>`;
+    if (!list.length) return `<div class="empty">אין מקומות שמתאימים לסינון.</div>`;
     const groups = placesByCity(list);
     const openCity = state.city !== "all" ? state.city : groups[0] && groups[0].city;
     return `
@@ -386,8 +450,8 @@
           <details class="city-fold ${cityClass(g.city)}" data-city-fold="${g.city}" ${open}>
             <summary class="city-fold-summary">
               <span class="city-fold-label">
-                <span class="en">${g.city}</span>
-                <span class="local">${cityLocal(g.city)}</span>
+                <span class="en">${cityLocal(g.city)}</span>
+                <span class="local">${g.city}</span>
               </span>
               <span class="city-fold-meta">
                 <span class="count">${g.items.length}</span>
@@ -410,25 +474,25 @@
     const stopCount = window.JourneyMap
       ? window.JourneyMap.buildStops(days, places, state.city).length
       : 0;
-    setResultCount(`${stopCount} stops`);
+    setResultCount(`${stopCount} עצירות`);
 
     els.placeList.innerHTML = `
       <section class="journey-section">
         <div class="journey-head">
           <div>
-            <p class="plan-kicker">Journey map · 旅程</p>
-            <h2 class="plan-title">Follow the route</h2>
-            <p class="journey-sub">Days plotted in chronological order across Korea &amp; Japan. Tap a marker or stop to open that day.</p>
+            <p class="plan-kicker">מפת המסע · 旅程</p>
+            <h2 class="plan-title">עקבו אחרי המסלול</h2>
+            <p class="journey-sub">הימים מוצגים בסדר כרונולוגי בקוריאה וביפן. לחצו על סימון או עצירה כדי לפתוח את היום.</p>
           </div>
         </div>
         <div class="journey-layout">
-          <div id="journey-map" class="journey-map" role="img" aria-label="Map of trip days in order"></div>
+          <div id="journey-map" class="journey-map" role="img" aria-label="מפת ימי הטיול לפי סדר"></div>
           <ol id="journey-legend" class="journey-legend"></ol>
         </div>
       </section>
       <div class="places-all-head">
-        <div class="section-title">All places · 場所</div>
-        <p class="journey-sub">Grouped by city — expand a city to browse its places.</p>
+        <div class="section-title">כל המקומות · 場所</div>
+        <p class="journey-sub">מקובצים לפי עיר — פתחו עיר כדי לדפדף במקומות שלה.</p>
       </div>
       ${placesGroupedHtml(list)}
     `;
@@ -461,22 +525,22 @@
     const local = cityLocal(day.city);
 
     els.detail.innerHTML = `
-      <button type="button" class="detail-back" id="back-btn">← Back to itinerary</button>
+      <button type="button" class="detail-back" id="back-btn">חזרה למסלול →</button>
       ${transferHtml(day.transfer)}
       <div class="detail-hero ${cityClass(day.city)}">
         <div class="detail-hero-top">
-          <span class="day-num">Day ${String(n).padStart(2, "0")}</span>
-          <span class="city-en">${day.city}</span>
-          <span class="city-local">${local}</span>
-          <span class="day-num">${day.weekday} · ${formatDate(day.date)}</span>
+          <span class="day-num">יום ${String(n).padStart(2, "0")}</span>
+          <span class="city-en">${local}</span>
+          <span class="city-local">${day.city}</span>
+          <span class="day-num">${weekdayHe(day)} · ${formatDate(day.date)}</span>
         </div>
         <div class="detail-hero-grid">
           <div>
             <h2>${escapeHtml(day.title)}</h2>
             <div class="detail-meta">${escapeHtml(day.summary)}</div>
-            ${hotel ? `<div class="tag-row" style="margin-top:16px"><span class="tag">Stay · ${escapeHtml(hotel.name)}</span></div>` : ""}
+            ${hotel ? `<div class="tag-row" style="margin-top:16px"><span class="tag">לינה · ${escapeHtml(hotel.name)}</span></div>` : ""}
           </div>
-          ${day.food ? `<div class="food-banner"><strong>Food focus</strong><span>${escapeHtml(day.food)}</span></div>` : ""}
+          ${day.food ? `<div class="food-banner"><strong>אוכל היום</strong><span>${escapeHtml(day.food)}</span></div>` : ""}
         </div>
       </div>
       <div class="detail-layout">
@@ -485,21 +549,21 @@
         </div>
         <div>
           <div class="side-block">
-            <div class="side-block-head">Getting around</div>
+            <div class="side-block-head">איך מגיעים</div>
             <ol>${(day.transport || []).map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ol>
           </div>
           <div class="side-block">
-            <div class="side-block-head">Recommendations</div>
+            <div class="side-block-head">המלצות</div>
             <ul>${(day.tips || []).map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ul>
           </div>
         </div>
       </div>
       <section class="places-section">
-        <div class="section-title">Places · 場所</div>
+        <div class="section-title">מקומות · 場所</div>
         <div class="places-grid">${dayPlaces.map(placeCardHtml).join("")}</div>
       </section>
     `;
-    setResultCount(`Day ${String(n).padStart(2, "0")}`);
+    setResultCount(`יום ${String(n).padStart(2, "0")}`);
   }
 
   function renderBookings() {
@@ -511,10 +575,10 @@
 
     els.bookingsRoot.innerHTML = `
       <div class="progress-wrap">
-        <div class="progress-label"><span>${done} of ${total} items booked</span><span>${pct}%</span></div>
+        <div class="progress-label"><span>${done} מתוך ${total} פריטים הוזמנו</span><span>${pct}%</span></div>
         <div class="progress-bar"><span style="width:${pct}%"></span></div>
         <div style="margin-top:14px">
-          <button type="button" class="btn-ghost" id="reset-checklist">Reset checklist</button>
+          <button type="button" class="btn-ghost" id="reset-checklist">איפוס רשימה</button>
         </div>
       </div>
       <div class="bookings-list">
@@ -545,21 +609,21 @@
   function renderTools() {
     els.toolsRoot.innerHTML = `
       <div class="tools-actions">
-        <button type="button" class="btn-primary" id="open-tips">Transit tips</button>
+        <button type="button" class="btn-primary" id="open-tips">טיפים לתחבורה</button>
       </div>
       <div id="fx-root"></div>
       <div id="taxi-root" style="margin-top:12px"></div>
       <div class="tool-card" style="margin-top:12px">
-        <h3>About this trip</h3>
+        <h3>על הטיול</h3>
         <p class="tool-sub">${escapeHtml(trip.dates)}</p>
-        <div class="tag-row" style="margin-top:10px">${trip.route.map((c) => `<span class="tag">${c}</span>`).join("")}</div>
-        <ul style="color:var(--muted);font-size:14px;font-weight:300;margin:12px 0 0;padding-left:18px">
+        <div class="tag-row" style="margin-top:10px">${trip.route.map((c) => `<span class="tag">${cityLocal(c)}</span>`).join("")}</div>
+        <ul style="color:var(--muted);font-size:14px;font-weight:300;margin:12px 0 0;padding-inline-start:18px">
           ${(trip.notes || []).map((n) => `<li>${escapeHtml(n)}</li>`).join("")}
         </ul>
       </div>`;
     tools.renderConverter(document.getElementById("fx-root"));
     tools.renderTaxiCards(document.getElementById("taxi-root"), places);
-    setResultCount("Tools");
+    setResultCount("כלים");
   }
 
   function applyPanelVisibility() {
@@ -652,7 +716,7 @@
       const bar = els.bookingsRoot.querySelector(".progress-bar > span");
       const lab = els.bookingsRoot.querySelector(".progress-label");
       if (bar) bar.style.width = `${pct}%`;
-      if (lab) lab.innerHTML = `<span>${done} of ${total} items booked</span><span>${pct}%</span>`;
+      if (lab) lab.innerHTML = `<span>${done} מתוך ${total} פריטים הוזמנו</span><span>${pct}%</span>`;
       setResultCount(`${done}/${total}`);
     });
 
@@ -721,8 +785,8 @@
       routeEl.innerHTML = uniqueCities
         .map((c) => {
           return `<div class="route-stop city-${c}">
-            <span class="en">${c}</span>
-            <span class="local">${cityLocal(c)}</span>
+            <span class="en">${cityLocal(c)}</span>
+            <span class="local">${c}</span>
           </div>`;
         })
         .join("");
@@ -744,11 +808,13 @@
   }
 
   const dateShort = (trip.dates || "")
-    .replace("August", "Aug")
-    .replace("September", "Sep")
-    .replace(", 2026", "");
+    .replace("August", "אוג׳")
+    .replace("September", "ספט׳")
+    .replace(", 2026", "")
+    .replace("אוגוסט", "אוג׳")
+    .replace("ספטמבר", "ספט׳");
   if (els.brandMeta) {
-    els.brandMeta.textContent = `${dateShort || "Aug 27–Sep 23"} · ${days.length} days`;
+    els.brandMeta.textContent = `${dateShort || "27 אוג׳–23 ספט׳"} · ${days.length} ימים`;
   }
 
   initMasthead();

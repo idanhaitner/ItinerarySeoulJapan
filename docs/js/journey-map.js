@@ -157,7 +157,7 @@ window.JourneyMap = (function () {
     const legend = document.getElementById("journey-legend");
 
     if (!stops.length) {
-      if (legend) legend.innerHTML = `<li class="journey-empty">No mapped stops for this filter.</li>`;
+      if (legend) legend.innerHTML = `<li class="journey-empty">אין עצירות במפה לסינון הזה.</li>`;
       if (map) {
         layerGroup.clearLayers();
       }
@@ -180,10 +180,10 @@ window.JourneyMap = (function () {
       const marker = L.marker([s.lat, s.lng], { icon: markerIcon(s.n, s.day.city) }).addTo(layerGroup);
       marker.bindPopup(
         `<div class="journey-popup">
-          <div class="jp-day">Day ${String(s.n).padStart(2, "0")} · ${s.day.city}</div>
+          <div class="jp-day">יום ${String(s.n).padStart(2, "0")} · ${s.day.city}</div>
           <div class="jp-title">${escape(s.day.title)}</div>
           <div class="jp-meta">${escape(s.label)}</div>
-          <button type="button" class="jp-open" data-open-day="${s.day.id}">Open day</button>
+          <button type="button" class="jp-open" data-open-day="${s.day.id}">פתח יום</button>
         </div>`
       );
       marker.on("click", () => {
