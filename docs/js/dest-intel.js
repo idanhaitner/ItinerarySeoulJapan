@@ -217,11 +217,11 @@ window.DestIntel = (function () {
           `<span class="dest-ticker-item"><em>${it.sym}</em><strong>${it.val}</strong><span>${it.label}</span></span>`
       )
       .join('<span class="dest-ticker-sep" aria-hidden="true">·</span>');
-    const lead = `<span class="dest-ticker-lead">שערים חיים · ₪1</span><span class="dest-ticker-sep" aria-hidden="true">·</span>`;
-    const updated = `<span class="dest-ticker-sep" aria-hidden="true">·</span><span class="dest-ticker-meta">עודכן ${escape(
+    const lead = "";
+    const updated = `<span class="dest-ticker-meta">עודכן ${escape(
       rates.updated || ""
     )}</span>`;
-    const sequence = `${lead}${chunk}${updated}<span class="dest-ticker-sep" aria-hidden="true">·</span>`;
+    const sequence = `${chunk}<span class="dest-ticker-sep" aria-hidden="true">·</span>${updated}<span class="dest-ticker-sep" aria-hidden="true">·</span>`;
     return `
       <div class="dest-ticker" aria-label="שערי חליפין חיים">
         <div class="dest-ticker-track">
