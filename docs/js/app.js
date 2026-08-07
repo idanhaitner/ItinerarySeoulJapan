@@ -494,7 +494,7 @@
   }
 
   document.getElementById("stat-days").textContent = String(days.length);
-  document.getElementById("stat-dates").textContent = "Aug 27–Sep 25";
+  document.getElementById("stat-dates").textContent = TRIP.dates.replace("August", "Aug").replace("September", "Sep").replace(", 2026", "") || "Aug 27–Sep 23/24";
   document.getElementById("stat-regions").textContent = String(new Set(days.map((d) => d.city)).size);
   document.getElementById("stat-places").textContent = String(Object.keys(places).length);
 
