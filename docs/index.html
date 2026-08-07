@@ -10,8 +10,8 @@
   <title>הטיול של עידן ושחר · קוריאה + יפן 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=15" />
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Rubik:wght@300;400;500;600;700&family=Shippori+Mincho:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css?v=16" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 </head>
 <body>
@@ -34,28 +34,29 @@
           fetchpriority="high"
         />
         <div class="masthead-scrim" aria-hidden="true"></div>
+        <div class="masthead-glow" aria-hidden="true"></div>
         <div class="masthead-frame" aria-hidden="true"></div>
 
         <div class="masthead-content">
-          <div class="masthead-seal" aria-hidden="true">旅</div>
-          <p class="masthead-kicker anim-fade">קוריאה · יפן · קיץ 2026</p>
+          <div class="masthead-seal" aria-hidden="true"><span>旅</span></div>
+          <p class="masthead-kicker anim-kicker">קוריאה · יפן · קיץ 2026</p>
           <h1 class="masthead-title">
-            <span class="masthead-names anim-title">הטיול של עידן ושחר</span>
-            <span class="masthead-trip anim-title delay-title">קוריאה ויפן</span>
+            <span class="masthead-names"><span class="title-clip"><span class="anim-title">הטיול של עידן ושחר</span></span></span>
+            <span class="masthead-trip"><span class="title-clip"><span class="anim-title delay-title">קוריאה ויפן</span></span></span>
           </h1>
-          <p class="masthead-sub anim-fade delay-1">28 ימים מסאול הנייאונית עד מקדשי קיוטו השקטים</p>
+          <p class="masthead-sub anim-rise delay-1">28 ימים מסיאול התוססת עד מקדשי קיוטו השקטים</p>
 
           <div class="masthead-divider anim-line" aria-hidden="true"></div>
 
-          <div class="masthead-route anim-fade delay-2" id="masthead-route"></div>
+          <div class="masthead-route" id="masthead-route"></div>
 
-          <div class="masthead-stats anim-fade delay-3">
-            <div><em id="stat-days">28</em><span>ימים</span></div>
-            <div><em id="stat-cities">7</em><span>ערים</span></div>
-            <div><em id="stat-places">115</em><span>מקומות</span></div>
+          <div class="masthead-stats">
+            <div class="anim-stat delay-stat-1"><em id="stat-days">0</em><span>ימים</span></div>
+            <div class="anim-stat delay-stat-2"><em id="stat-cities">0</em><span>ערים</span></div>
+            <div class="anim-stat delay-stat-3"><em id="stat-places">0</em><span>מקומות</span></div>
           </div>
 
-          <button type="button" class="masthead-cta anim-fade delay-4" id="scroll-to-plan">
+          <button type="button" class="masthead-cta anim-cta" id="scroll-to-plan">
             <span>לתוכנית הטיול</span>
             <span class="cta-arrow" aria-hidden="true">↓</span>
           </button>
@@ -136,8 +137,8 @@
   <script src="js/he-data.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/checklist.js"></script>
-  <script src="js/tools.js?v=15"></script>
-  <script src="js/journey-map.js?v=15"></script>
-  <script src="js/app.js?v=15"></script>
+  <script src="js/tools.js?v=16"></script>
+  <script src="js/journey-map.js?v=16"></script>
+  <script src="js/app.js?v=16"></script>
 </body>
 </html>

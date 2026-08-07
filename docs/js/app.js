@@ -781,6 +781,24 @@
     window.addEventListener("resize", updateTopbarHeight);
   }
 
+  function animateCount(el, target, duration) {
+    if (!el) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      el.textContent = String(target);
+      return;
+    }
+    const start = performance.now();
+    const from = 0;
+    const tick = (now) => {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = String(Math.round(from + (target - from) * eased));
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
   function initMasthead() {
     const routeEl = document.getElementById("masthead-route");
     const uniqueCities = trip.route.filter((c, i, arr) => arr.indexOf(c) === i);
@@ -797,9 +815,11 @@
     const daysEl = document.getElementById("stat-days");
     const citiesEl = document.getElementById("stat-cities");
     const placesEl = document.getElementById("stat-places");
-    if (daysEl) daysEl.textContent = String(days.length);
-    if (citiesEl) citiesEl.textContent = String(new Set(days.map((d) => d.city)).size);
-    if (placesEl) placesEl.textContent = String(Object.keys(places).length);
+    const cityCount = new Set(days.map((d) => d.city)).size;
+    const placeCount = Object.keys(places).length;
+    animateCount(daysEl, days.length, 1100);
+    animateCount(citiesEl, cityCount, 900);
+    animateCount(placesEl, placeCount, 1300);
 
     const cta = document.getElementById("scroll-to-plan");
     if (cta) {
