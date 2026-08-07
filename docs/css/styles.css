@@ -863,10 +863,12 @@ a { color: inherit; }
   border-bottom: 1px solid var(--line);
   background: transparent;
   padding: 0;
+  padding-inline-end: 10px;
   display: grid;
   grid-template-columns: 76px minmax(0, 1fr);
   gap: 18px;
   align-items: stretch;
+  overflow: hidden;
   transition: background 0.3s ease;
   animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -876,7 +878,7 @@ a { color: inherit; }
 }
 
 .day-row:hover .day-row-arrow {
-  transform: translateX(-3px);
+  transform: translateX(3px);
   color: var(--seal);
 }
 
@@ -987,6 +989,7 @@ a { color: inherit; }
   justify-content: flex-end;
   gap: 6px;
   padding: 0;
+  padding-inline-end: 2px;
   color: var(--soft);
   font-size: 12px;
   letter-spacing: 0;
@@ -994,6 +997,8 @@ a { color: inherit; }
   font-weight: 500;
   white-space: nowrap;
   margin-inline-start: auto;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .day-row-meta .dot {
@@ -1003,7 +1008,8 @@ a { color: inherit; }
 .day-row-arrow {
   font-size: 15px;
   color: var(--soft);
-  margin-inline-start: 2px;
+  margin-inline-end: 2px;
+  flex-shrink: 0;
   transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), color 0.25s ease;
 }
 
