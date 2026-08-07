@@ -400,17 +400,20 @@
               <span class="d">${formatDate(d.date)}</span>
             </div>
             <div class="day-row-body">
-              <div class="day-row-city">
-                <span class="en">${cityLocal(d.city)}</span>
-                <span class="local">${d.city}</span>
+              <div class="day-row-top">
+                <div class="day-row-city">
+                  <span class="he">${cityLocal(d.city)}</span>
+                  <span class="en">${d.city}</span>
+                </div>
+                <div class="day-row-meta">
+                  <span>${weekdayShortHe(d)}</span>
+                  <span class="dot" aria-hidden="true">·</span>
+                  <span>${steps ? `${steps} עצירות` : "—"}</span>
+                  <span class="day-row-arrow" aria-hidden="true">←</span>
+                </div>
               </div>
               <h3>${escapeHtml(d.title)}</h3>
               <p>${escapeHtml(d.summary)}</p>
-            </div>
-            <div class="day-row-meta">
-              <span>${weekdayShortHe(d)}</span>
-              <span>${steps ? `${steps} עצירות` : "—"}</span>
-              <span class="day-row-arrow" aria-hidden="true">←</span>
             </div>
           </button>`;
       })
