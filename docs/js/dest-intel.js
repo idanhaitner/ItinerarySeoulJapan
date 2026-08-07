@@ -79,20 +79,37 @@ window.DestIntel = (function () {
   }
 
   async function fetchRates() {
-    const res = await fetch("https://api.frankfurter.app/latest?from=ILS&to=USD,JPY,KRW,EUR");
-    if (!res.ok) throw new Error("fx");
-    const data = await res.json();
-    const r = data.rates || {};
-    return {
-      updated: data.date,
-      ILS_USD: r.USD,
-      ILS_JPY: r.JPY,
-      ILS_KRW: r.KRW,
-      ILS_EUR: r.EUR,
-      USD_JPY: r.USD && r.JPY ? r.JPY / r.USD : null,
-      USD_KRW: r.USD && r.KRW ? r.KRW / r.USD : null,
-      EUR_USD: r.EUR && r.USD ? r.USD / r.EUR : null,
-    };
+    try {
+      const res = await fetch("https://api.frankfurter.app/latest?from=ILS&to=USD,JPY,KRW,EUR");
+      if (!res.ok) throw new Error("fx");
+      const data = await res.json();
+      const r = data.rates || {};
+      return {
+        updated: data.date,
+        ILS_USD: r.USD,
+        ILS_JPY: r.JPY,
+        ILS_KRW: r.KRW,
+        ILS_EUR: r.EUR,
+        USD_JPY: r.USD && r.JPY ? r.JPY / r.USD : null,
+        USD_KRW: r.USD && r.KRW ? r.KRW / r.USD : null,
+        EUR_USD: r.EUR && r.USD ? r.USD / r.EUR : null,
+      };
+    } catch {
+      const res = await fetch("https://open.er-api.com/v6/latest/ILS");
+      if (!res.ok) throw new Error("fx");
+      const data = await res.json();
+      const r = data.rates || {};
+      return {
+        updated: (data.time_last_update_utc || "").slice(0, 16),
+        ILS_USD: r.USD,
+        ILS_JPY: r.JPY,
+        ILS_KRW: r.KRW,
+        ILS_EUR: r.EUR,
+        USD_JPY: r.USD && r.JPY ? r.JPY / r.USD : null,
+        USD_KRW: r.USD && r.KRW ? r.KRW / r.USD : null,
+        EUR_USD: r.EUR && r.USD ? r.USD / r.EUR : null,
+      };
+    }
   }
 
   function syncStorageRates(live) {
@@ -196,7 +213,7 @@ window.DestIntel = (function () {
           <p class="plan-kicker">עכשיו ביעדים</p>
           <h2 class="dest-intel-title">מזג אוויר ושערים</h2>
         </div>
-        <p class="dest-intel-note">מתעדכן אוטומטית · Open-Meteo + Frankfurter</p>
+        <p class="dest-intel-note">מתעדכן אוטומטית</p>
       </div>
       <div class="dest-weather-grid">
         ${weatherRows.map(({ city, wx, err }) => weatherCard(city, wx, err)).join("")}
