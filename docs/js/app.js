@@ -241,6 +241,8 @@
 
     const planIntro = document.getElementById("plan-intro");
     if (planIntro) planIntro.classList.toggle("is-hidden", !showMasthead);
+    const destIntel = document.getElementById("dest-intel");
+    if (destIntel) destIntel.classList.toggle("is-hidden", !showMasthead || state.view !== "itinerary");
 
     els.navButtons.forEach((btn) => {
       const nav = btn.dataset.nav;
@@ -855,4 +857,7 @@
   initMasthead();
   bind();
   showView("itinerary");
+  if (window.DestIntel) {
+    window.DestIntel.render(document.getElementById("dest-intel"));
+  }
 })();
