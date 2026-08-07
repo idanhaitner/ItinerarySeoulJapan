@@ -33,6 +33,12 @@ window.TripStorage = (function () {
       this.setChecklist(map);
       return !!map[id];
     },
+    setChecklistItem(id, value) {
+      const map = this.getChecklist();
+      map[id] = !!value;
+      this.setChecklist(map);
+      return !!map[id];
+    },
     getCompleted() {
       return get("completed", {});
     },

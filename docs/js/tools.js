@@ -1,11 +1,11 @@
 window.TripTools = (function () {
   const CAT_META = {
-    dining: { icon: "🍽️", label: "Dining" },
-    culture: { icon: "⛩️", label: "Culture" },
-    shopping: { icon: "🛍️", label: "Shopping" },
-    transit: { icon: "🚆", label: "Transit" },
-    attraction: { icon: "🎢", label: "Attraction" },
-    hotel: { icon: "🏨", label: "Hotel" },
+    dining: { icon: "", label: "Dining" },
+    culture: { icon: "", label: "Culture" },
+    shopping: { icon: "", label: "Shopping" },
+    transit: { icon: "", label: "Transit" },
+    attraction: { icon: "", label: "Sight" },
+    hotel: { icon: "", label: "Hotel" },
   };
 
   function categoryMeta(cat) {
@@ -50,7 +50,7 @@ window.TripTools = (function () {
   function renderConverter(root) {
     const rates = TripStorage.getRates();
     root.innerHTML = `
-      <div class="tool-card glass">
+      <div class="tool-card">
         <h3>Currency converter</h3>
         <p class="tool-sub">Edit rates anytime — saved on this device.</p>
         <div class="fx-grid">
@@ -114,7 +114,7 @@ window.TripTools = (function () {
   function renderTaxiCards(root, places) {
     const cards = hotelTaxiCards(places);
     root.innerHTML = `
-      <div class="tool-card glass">
+      <div class="tool-card">
         <h3>Taxi & hotel cards</h3>
         <p class="tool-sub">Show local script to drivers — tap copy.</p>
         <div class="taxi-grid">
@@ -145,7 +145,7 @@ window.TripTools = (function () {
       modal.id = "tips-modal";
       modal.className = "modal-backdrop";
       modal.innerHTML = `
-        <div class="modal glass" role="dialog" aria-modal="true" aria-labelledby="tips-title">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="tips-title">
           <button type="button" class="modal-close" id="tips-close" aria-label="Close">×</button>
           <h2 id="tips-title">Transit quick tips</h2>
           <div class="tips-cols">

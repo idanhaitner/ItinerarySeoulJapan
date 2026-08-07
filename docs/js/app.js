@@ -6,10 +6,23 @@
   const tools = window.TripTools;
   const checklistData = window.CHECKLIST;
 
+  const FILTER_VIEWS = new Set(["itinerary", "maps", "detail"]);
+  const RIBBON_VIEWS = new Set(["itinerary", "detail"]);
+  const MASTHEAD_VIEWS = new Set(["itinerary"]);
+
+  const CITY_LOCAL = {
+    Seoul: "서울",
+    Tokyo: "東京",
+    Hakone: "箱根",
+    Kawaguchiko: "河口湖",
+    Kyoto: "京都",
+    Osaka: "大阪",
+    Hiroshima: "広島",
+  };
+
   const state = {
     view: "itinerary",
     city: "all",
-    category: "all",
     query: "",
     dayId: null,
   };
@@ -27,12 +40,15 @@
     detail: document.getElementById("detail-root"),
     search: document.getElementById("search-input"),
     chips: document.getElementById("city-chips"),
-    cats: document.getElementById("cat-chips"),
-    carousel: document.getElementById("day-carousel"),
+    ribbon: document.getElementById("day-ribbon"),
+    topbarFilters: document.getElementById("topbar-filters"),
+    topbar: document.getElementById("topbar"),
+    masthead: document.getElementById("masthead"),
     bookingsRoot: document.getElementById("bookings-root"),
     toolsRoot: document.getElementById("tools-root"),
-    nav: document.querySelectorAll("[data-nav]"),
+    navButtons: document.querySelectorAll("[data-nav]"),
     resultCount: document.getElementById("result-count"),
+    brandMeta: document.getElementById("brand-meta"),
   };
 
   function escapeHtml(str) {
@@ -47,9 +63,17 @@
     return `city-${city}`;
   }
 
+  function cityLocal(city) {
+    return CITY_LOCAL[city] || city;
+  }
+
   function formatDate(iso) {
     const d = new Date(iso + "T12:00:00");
     return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+  }
+
+  function dayIndex(day) {
+    return days.indexOf(day) + 1;
   }
 
   function mapsLinks(place) {
@@ -98,20 +122,26 @@
     const placeText = day.placeIds.map((id) => placeSearchBlob(places[id] || { name: id })).join(" ");
     const timelineText = (day.timeline || []).map((x) => `${x.title} ${x.note || ""} ${x.category || ""}`).join(" ");
     const transferText = day.transfer ? `${day.transfer.label} ${day.transfer.detail}` : "";
-    return [day.title, day.summary, day.food, day.city, day.weekday, day.country, placeText, timelineText, transferText, ...(day.tips || []), ...(day.transport || [])].join(" ");
-  }
-
-  function dayHasCategory(day, category) {
-    if (category === "all") return true;
-    return (day.timeline || []).some((t) => t.category === category);
+    return [
+      day.title,
+      day.summary,
+      day.food,
+      day.city,
+      day.weekday,
+      day.country,
+      placeText,
+      timelineText,
+      transferText,
+      ...(day.tips || []),
+      ...(day.transport || []),
+    ].join(" ");
   }
 
   function filteredDays() {
     return days.filter((d) => {
       const cityOk = state.city === "all" || d.city === state.city;
-      const catOk = dayHasCategory(d, state.category);
       const qOk = matchesQuery(daySearchBlob(d), state.query);
-      return cityOk && catOk && qOk;
+      return cityOk && qOk;
     });
   }
 
@@ -125,14 +155,68 @@
       .sort((a, b) => a.name.localeCompare(b.name));
   }
 
-  function renderCarousel() {
-    els.carousel.innerHTML = days
-      .map((d, i) => {
-        const active = state.dayId === d.id ? "active" : "";
-        return `<button type="button" class="day-pill ${cityClass(d.city)} ${active}" data-jump="${d.id}">
-          <span class="dp-num">D${String(i + 1).padStart(2, "0")}</span>
-          <span class="dp-city" aria-hidden="true"></span>
-        </button>`;
+  function syncChrome() {
+    const showFilters = FILTER_VIEWS.has(state.view);
+    const showRibbon = RIBBON_VIEWS.has(state.view);
+    const showMasthead = MASTHEAD_VIEWS.has(state.view) && !state.query && state.city === "all";
+
+    els.topbarFilters.hidden = !showFilters;
+    els.chips.hidden = !showFilters;
+    els.ribbon.hidden = !showRibbon;
+    if (els.masthead) els.masthead.classList.toggle("is-compact", !showMasthead);
+
+    const planIntro = document.getElementById("plan-intro");
+    if (planIntro) planIntro.classList.toggle("is-hidden", !showMasthead);
+
+    els.navButtons.forEach((btn) => {
+      const nav = btn.dataset.nav;
+      const active = state.view === "detail" ? nav === "itinerary" : nav === state.view;
+      btn.classList.toggle("active", active);
+    });
+
+    requestAnimationFrame(updateTopbarHeight);
+  }
+
+  function updateTopbarHeight() {
+    if (!els.topbar) return;
+    const h = Math.ceil(els.topbar.getBoundingClientRect().height);
+    document.documentElement.style.setProperty("--topbar-h", `${h}px`);
+  }
+
+  function setResultCount(text) {
+    els.resultCount.textContent = text;
+  }
+
+  function renderRibbon() {
+    const visible = new Set(filteredDays().map((d) => d.id));
+    const groups = [];
+    days.forEach((d, i) => {
+      const last = groups[groups.length - 1];
+      if (!last || last.city !== d.city) {
+        groups.push({ city: d.city, items: [{ day: d, index: i }] });
+      } else {
+        last.items.push({ day: d, index: i });
+      }
+    });
+
+    els.ribbon.innerHTML = groups
+      .map((g) => {
+        const anyVisible = g.items.some(({ day }) => visible.has(day.id));
+        const dim =
+          state.view === "itinerary" && (state.query || state.city !== "all") && !anyVisible
+            ? "is-dim"
+            : "";
+        return `<div class="day-group ${cityClass(g.city)} ${dim}">
+          <div class="day-group-label">${g.city}<span class="local">${cityLocal(g.city)}</span></div>
+          <div class="day-group-days">
+            ${g.items
+              .map(({ day, index }) => {
+                const active = state.dayId === day.id ? "active" : "";
+                return `<button type="button" class="day-rail-btn ${active}" data-jump="${day.id}" title="${escapeHtml(day.title)}">${String(index + 1).padStart(2, "0")}</button>`;
+              })
+              .join("")}
+          </div>
+        </div>`;
       })
       .join("");
   }
@@ -141,33 +225,18 @@
     const cities = ["all", ...trip.route.filter((c, i, arr) => arr.indexOf(c) === i)];
     els.chips.innerHTML = cities
       .map((c) => {
-        const label = c === "all" ? "All cities" : c;
-        return `<button type="button" class="chip ${state.city === c ? "active" : ""}" data-city="${c}">${label}</button>`;
+        if (c === "all") {
+          return `<button type="button" class="chip ${state.city === c ? "active" : ""}" data-city="${c}">All<span class="chip-local">全体</span></button>`;
+        }
+        return `<button type="button" class="chip ${state.city === c ? "active" : ""}" data-city="${c}">${c}<span class="chip-local">${cityLocal(c)}</span></button>`;
       })
-      .join("");
-
-    const cats = [
-      ["all", "All"],
-      ["dining", "🍽️ Food"],
-      ["culture", "⛩️ Culture"],
-      ["shopping", "🛍️ Shop"],
-      ["transit", "🚆 Transit"],
-      ["attraction", "🎢 Fun"],
-      ["hotel", "🏨 Hotel"],
-    ];
-    els.cats.innerHTML = cats
-      .map(
-        ([id, label]) =>
-          `<button type="button" class="chip ${state.category === id ? "active" : ""}" data-category="${id}">${label}</button>`
-      )
       .join("");
   }
 
   function transferHtml(transfer) {
     if (!transfer) return "";
-    const modeIcon = { flight: "✈️", train: "🚄", bus: "🚌" }[transfer.mode] || "🚆";
     return `<div class="transfer-banner">
-      <div class="tb-mode">${modeIcon} ${escapeHtml(transfer.mode)} transfer</div>
+      <div class="tb-mode">${escapeHtml(transfer.mode)} transfer</div>
       <div class="tb-label">${escapeHtml(transfer.label)}</div>
       <div class="tb-meta">${escapeHtml(transfer.detail)} · ${escapeHtml(transfer.duration)}</div>
     </div>`;
@@ -177,9 +246,9 @@
     const links = mapsLinks(p);
     return `
       <article class="place-card city-accent-${p.city}" data-place="${p.id}">
-        <span class="city-pill ${cityClass(p.city)}">${p.city}</span>
+        <span class="city-pill ${cityClass(p.city)}">${p.city} · ${cityLocal(p.city)}</span>
         <h3>${escapeHtml(p.name)}</h3>
-        <div class="place-ja" style="color:var(--soft);font-size:13px;margin-bottom:6px">${escapeHtml(p.nameJa || "")}</div>
+        <div class="place-ja">${escapeHtml(p.nameJa || "")}</div>
         <p class="place-blurb">${escapeHtml(p.blurb || "")}</p>
         <div class="tag-row">${(p.tags || []).slice(0, 4).map((t) => `<span class="tag">${t}</span>`).join("")}</div>
         <div class="maps-actions">
@@ -194,7 +263,7 @@
   function timelineHtml(day) {
     const items = day.timeline || [];
     return `
-      <div class="section-title">Timeline</div>
+      <div class="section-title">Schedule · 日程</div>
       <ol class="timeline">
         ${items
           .map((item, idx) => {
@@ -202,21 +271,20 @@
             const links = place ? mapsLinks(place) : null;
             const meta = tools.categoryMeta(item.category || "attraction");
             const timeLabel = item.end ? `${item.time}–${item.end}` : item.time;
-            const hidden = state.category !== "all" && item.category !== state.category ? "hidden" : "";
             const done = storage.isCompleted(day.id, item) ? "done" : "";
             const fav = storage.isFavorite(day.id, item) ? "fav" : "";
             return `
-            <li class="timeline-item ${hidden} ${done} ${fav}" data-tl-idx="${idx}">
+            <li class="timeline-item city-line-${day.city} ${done} ${fav}" data-tl-idx="${idx}">
               <div class="timeline-time">${escapeHtml(timeLabel)}</div>
               <div class="timeline-card">
-                <div class="cat-chip">${meta.icon} ${meta.label}</div>
+                <div class="cat-chip">${meta.label}</div>
                 <div class="timeline-title">${escapeHtml(item.title)}</div>
                 ${place ? `<div class="timeline-place">${escapeHtml(place.name)}${place.nameJa ? ` · ${escapeHtml(place.nameJa)}` : ""}</div>` : ""}
                 ${item.note ? `<p class="timeline-note">${escapeHtml(item.note)}</p>` : ""}
                 <div class="timeline-actions">
                   ${links ? `<a href="${links.google}" target="_blank" rel="noopener noreferrer">Maps</a>` : ""}
-                  <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "Done ✓" : "Complete"}</button>
-                  <button type="button" class="${storage.isFavorite(day.id, item) ? "active-fav" : ""}" data-fav="${idx}">${storage.isFavorite(day.id, item) ? "Saved ★" : "Save"}</button>
+                  <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "Done" : "Complete"}</button>
+                  <button type="button" class="${storage.isFavorite(day.id, item) ? "active-fav" : ""}" data-fav="${idx}">${storage.isFavorite(day.id, item) ? "Saved" : "Save"}</button>
                 </div>
               </div>
             </li>`;
@@ -227,29 +295,33 @@
 
   function renderDayList() {
     const list = filteredDays();
-    els.resultCount.textContent = `${list.length} day${list.length === 1 ? "" : "s"}`;
+    setResultCount(`${list.length} days`);
     if (!list.length) {
       els.dayList.innerHTML = `<div class="empty">No days match your filters.</div>`;
       return;
     }
     els.dayList.innerHTML = list
       .map((d) => {
-        const n = days.indexOf(d) + 1;
+        const n = dayIndex(d);
         const steps = (d.timeline || []).length;
-        const tags = [...new Set((d.timeline || []).map((t) => t.category).filter(Boolean))].slice(0, 3);
         return `
-          <button type="button" class="day-card ${cityClass(d.city)}" data-day="${d.id}">
-            <div class="day-card-top">
-              <span class="day-num">Day ${String(n).padStart(2, "0")}</span>
-              <span class="day-date">${d.weekday} · ${formatDate(d.date)}</span>
+          <button type="button" class="day-row ${cityClass(d.city)}" data-day="${d.id}">
+            <div class="day-row-num">
+              <span class="n">${String(n).padStart(2, "0")}</span>
+              <span class="d">${formatDate(d.date)}</span>
             </div>
-            <span class="city-pill ${cityClass(d.city)}">${d.city}</span>
-            <h3>${escapeHtml(d.title)}</h3>
-            <p>${escapeHtml(d.summary)}</p>
-            ${d.transfer ? `<div class="tag-row"><span class="tag">${d.transfer.mode} transfer</span></div>` : ""}
-            <div class="tag-row">
-              ${steps ? `<span class="tag">${steps} stops</span>` : ""}
-              ${tags.map((t) => `<span class="tag">${t}</span>`).join("")}
+            <div class="day-row-body">
+              <div class="day-row-city">
+                <span class="en">${d.city}</span>
+                <span class="local">${cityLocal(d.city)}</span>
+              </div>
+              <h3>${escapeHtml(d.title)}</h3>
+              <p>${escapeHtml(d.summary)}</p>
+            </div>
+            <div class="day-row-meta">
+              <span>${d.weekday.slice(0, 3)}</span>
+              <span>${steps ? `${steps} stops` : "—"}</span>
+              <span class="day-row-arrow" aria-hidden="true">→</span>
             </div>
           </button>`;
       })
@@ -257,38 +329,86 @@
   }
 
   function renderMaps() {
+    if (window.JourneyMap) window.JourneyMap.destroy();
+
     const list = filteredPlaces();
-    els.resultCount.textContent = `${list.length} place${list.length === 1 ? "" : "s"}`;
-    if (!list.length) {
-      els.placeList.innerHTML = `<div class="empty">No places match.</div>`;
-      return;
+    const stopCount = window.JourneyMap
+      ? window.JourneyMap.buildStops(days, places, state.city).length
+      : 0;
+    setResultCount(`${stopCount} stops`);
+
+    els.placeList.innerHTML = `
+      <section class="journey-section">
+        <div class="journey-head">
+          <div>
+            <p class="plan-kicker">Journey map · 旅程</p>
+            <h2 class="plan-title">Follow the route</h2>
+            <p class="journey-sub">Days plotted in chronological order across Korea &amp; Japan. Tap a marker or stop to open that day.</p>
+          </div>
+        </div>
+        <div class="journey-layout">
+          <div id="journey-map" class="journey-map" role="img" aria-label="Map of trip days in order"></div>
+          <ol id="journey-legend" class="journey-legend"></ol>
+        </div>
+      </section>
+      <div class="section-title" style="margin-top:28px">All places · 場所</div>
+      ${
+        list.length
+          ? `<div class="places-grid">${list.map(placeCardHtml).join("")}</div>`
+          : `<div class="empty">No places match.</div>`
+      }
+    `;
+
+    const mapEl = document.getElementById("journey-map");
+    if (mapEl && window.JourneyMap && window.L) {
+      window.JourneyMap.render(mapEl, days, places, {
+        city: state.city,
+        onOpenDay: (id) => openDay(id),
+      });
     }
-    els.placeList.innerHTML = `<div class="places-grid day-list">${list.map(placeCardHtml).join("")}</div>`;
+
+    const legend = document.getElementById("journey-legend");
+    if (legend) {
+      legend.onclick = (e) => {
+        const btn = e.target.closest("[data-jump-day]");
+        if (!btn) return;
+        const id = btn.dataset.jumpDay;
+        if (window.JourneyMap) window.JourneyMap.focusDay(id, days, places);
+        openDay(id);
+      };
+    }
   }
 
   function renderDetail(dayId) {
     const day = days.find((d) => d.id === dayId);
     if (!day) return;
-    const n = days.indexOf(day) + 1;
+    const n = dayIndex(day);
     const hotel = day.hotelId ? places[day.hotelId] : null;
     const dayPlaces = day.placeIds.map((id) => places[id]).filter(Boolean);
+    const local = cityLocal(day.city);
 
     els.detail.innerHTML = `
-      <button type="button" class="detail-back" id="back-btn">← Back to days</button>
+      <button type="button" class="detail-back" id="back-btn">← Back to itinerary</button>
       ${transferHtml(day.transfer)}
       <div class="detail-hero ${cityClass(day.city)}">
-        <span class="day-num">Day ${String(n).padStart(2, "0")}</span>
-        <span class="city-pill ${cityClass(day.city)}" style="margin-left:8px">${day.city}</span>
-        <h2>${escapeHtml(day.title)}</h2>
-        <div class="detail-meta">${day.weekday} · ${formatDate(day.date)} · ${escapeHtml(day.summary)}</div>
-        ${hotel ? `<div class="tag-row"><span class="tag">Stay · ${escapeHtml(hotel.name)}</span></div>` : ""}
-        ${day.food ? `<div class="food-banner"><strong>Today’s food focus</strong><span>${escapeHtml(day.food)}</span></div>` : ""}
+        <div class="detail-hero-top">
+          <span class="day-num">Day ${String(n).padStart(2, "0")}</span>
+          <span class="city-en">${day.city}</span>
+          <span class="city-local">${local}</span>
+          <span class="day-num">${day.weekday} · ${formatDate(day.date)}</span>
+        </div>
+        <div class="detail-hero-grid">
+          <div>
+            <h2>${escapeHtml(day.title)}</h2>
+            <div class="detail-meta">${escapeHtml(day.summary)}</div>
+            ${hotel ? `<div class="tag-row" style="margin-top:16px"><span class="tag">Stay · ${escapeHtml(hotel.name)}</span></div>` : ""}
+          </div>
+          ${day.food ? `<div class="food-banner"><strong>Food focus</strong><span>${escapeHtml(day.food)}</span></div>` : ""}
+        </div>
       </div>
       <div class="detail-layout">
         <div>
           ${timelineHtml(day)}
-          <div class="section-title">Places on this day</div>
-          <div class="day-list">${dayPlaces.map(placeCardHtml).join("")}</div>
         </div>
         <div>
           <div class="side-block">
@@ -301,7 +421,12 @@
           </div>
         </div>
       </div>
+      <section class="places-section">
+        <div class="section-title">Places · 場所</div>
+        <div class="places-grid">${dayPlaces.map(placeCardHtml).join("")}</div>
+      </section>
     `;
+    setResultCount(`Day ${String(n).padStart(2, "0")}`);
   }
 
   function renderBookings() {
@@ -315,7 +440,7 @@
       <div class="progress-wrap">
         <div class="progress-label"><span>${done} of ${total} items booked</span><span>${pct}%</span></div>
         <div class="progress-bar"><span style="width:${pct}%"></span></div>
-        <div style="margin-top:10px">
+        <div style="margin-top:14px">
           <button type="button" class="btn-ghost" id="reset-checklist">Reset checklist</button>
         </div>
       </div>
@@ -323,7 +448,7 @@
         ${checklistData.groups
           .map(
             (g) => `
-          <section class="booking-group glass">
+          <section class="booking-group">
             <h3>${escapeHtml(g.title)}</h3>
             ${g.items
               .map(
@@ -341,6 +466,7 @@
           )
           .join("")}
       </div>`;
+    setResultCount(`${done}/${total}`);
   }
 
   function renderTools() {
@@ -350,66 +476,75 @@
       </div>
       <div id="fx-root"></div>
       <div id="taxi-root" style="margin-top:12px"></div>
-      <div class="tool-card glass" style="margin-top:12px">
+      <div class="tool-card" style="margin-top:12px">
         <h3>About this trip</h3>
         <p class="tool-sub">${escapeHtml(trip.dates)}</p>
         <div class="tag-row" style="margin-top:10px">${trip.route.map((c) => `<span class="tag">${c}</span>`).join("")}</div>
-        <ul style="color:var(--muted);font-size:14px;margin:12px 0 0;padding-left:18px">
+        <ul style="color:var(--muted);font-size:14px;font-weight:300;margin:12px 0 0;padding-left:18px">
           ${(trip.notes || []).map((n) => `<li>${escapeHtml(n)}</li>`).join("")}
         </ul>
       </div>`;
     tools.renderConverter(document.getElementById("fx-root"));
     tools.renderTaxiCards(document.getElementById("taxi-root"), places);
+    setResultCount("Tools");
+  }
+
+  function applyPanelVisibility() {
+    Object.entries(els.panels).forEach(([key, el]) => {
+      if (!el) return;
+      const on = key === state.view;
+      el.classList.toggle("active", on);
+      el.hidden = !on;
+    });
   }
 
   function showView(view) {
+    if (!els.panels[view] && view !== "detail") return;
     state.view = view;
     if (view !== "detail") state.dayId = null;
-    Object.entries(els.panels).forEach(([key, el]) => {
-      if (!el) return;
-      el.classList.toggle("active", key === view);
-    });
-    els.nav.forEach((btn) => btn.classList.toggle("active", btn.dataset.nav === view));
+    applyPanelVisibility();
+    syncChrome();
     render();
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function openDay(dayId) {
+    const day = days.find((d) => d.id === dayId);
+    if (!day) return;
     state.dayId = dayId;
     state.view = "detail";
-    Object.entries(els.panels).forEach(([key, el]) => {
-      if (!el) return;
-      el.classList.toggle("active", key === "detail");
-    });
-    els.nav.forEach((btn) => btn.classList.remove("active"));
-    renderCarousel();
+    applyPanelVisibility();
+    syncChrome();
+    renderRibbon();
     renderDetail(dayId);
-    const pill = els.carousel.querySelector(`[data-jump="${dayId}"]`);
+    const pill = els.ribbon.querySelector(`[data-jump="${dayId}"]`);
     if (pill) pill.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function render() {
     renderChips();
-    renderCarousel();
+    if (RIBBON_VIEWS.has(state.view)) renderRibbon();
+
     if (state.view === "itinerary") renderDayList();
-    if (state.view === "maps") renderMaps();
-    if (state.view === "bookings") {
-      els.resultCount.textContent = "Bookings";
-      renderBookings();
-    }
-    if (state.view === "tools") {
-      els.resultCount.textContent = "Tools";
-      renderTools();
-    }
-    if (state.view === "detail" && state.dayId) renderDetail(state.dayId);
+    else if (state.view === "maps") renderMaps();
+    else if (state.view === "bookings") renderBookings();
+    else if (state.view === "tools") renderTools();
+    else if (state.view === "detail" && state.dayId) renderDetail(state.dayId);
+
+    syncChrome();
   }
 
   function bind() {
+    let searchTimer = null;
     els.search.addEventListener("input", (e) => {
-      state.query = e.target.value.trim();
-      if (state.view === "detail") showView("itinerary");
-      else render();
+      const value = e.target.value.trim();
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(() => {
+        state.query = value;
+        if (state.view === "detail") showView("itinerary");
+        else if (state.view === "itinerary" || state.view === "maps") render();
+      }, 120);
     });
 
     els.chips.addEventListener("click", (e) => {
@@ -417,24 +552,35 @@
       if (!btn) return;
       state.city = btn.dataset.city;
       if (state.view === "detail") showView("itinerary");
-      else render();
+      else if (FILTER_VIEWS.has(state.view)) render();
     });
 
-    els.cats.addEventListener("click", (e) => {
-      const btn = e.target.closest("[data-category]");
-      if (!btn) return;
-      state.category = btn.dataset.category;
-      render();
-    });
-
-    els.carousel.addEventListener("click", (e) => {
+    els.ribbon.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-jump]");
       if (btn) openDay(btn.dataset.jump);
     });
 
     els.dayList.addEventListener("click", (e) => {
-      const card = e.target.closest("[data-day]");
-      if (card) openDay(card.dataset.day);
+      const row = e.target.closest("[data-day]");
+      if (row) openDay(row.dataset.day);
+    });
+
+    els.bookingsRoot.addEventListener("change", (e) => {
+      const input = e.target.closest("input[data-check]");
+      if (!input) return;
+      storage.setChecklistItem(input.dataset.check, input.checked);
+      const label = input.closest(".booking-item");
+      if (label) label.classList.toggle("done", input.checked);
+      const checked = storage.getChecklist();
+      const allItems = checklistData.groups.flatMap((g) => g.items);
+      const done = allItems.filter((i) => checked[i.id]).length;
+      const total = allItems.length;
+      const pct = total ? Math.round((done / total) * 100) : 0;
+      const bar = els.bookingsRoot.querySelector(".progress-bar > span");
+      const lab = els.bookingsRoot.querySelector(".progress-label");
+      if (bar) bar.style.width = `${pct}%`;
+      if (lab) lab.innerHTML = `<span>${done} of ${total} items booked</span><span>${pct}%</span>`;
+      setResultCount(`${done}/${total}`);
     });
 
     document.body.addEventListener("click", (e) => {
@@ -448,12 +594,6 @@
       }
       if (e.target.id === "reset-checklist") {
         storage.resetChecklist();
-        renderBookings();
-        return;
-      }
-      const check = e.target.closest("[data-check]");
-      if (check) {
-        storage.toggleChecklist(check.dataset.check);
         renderBookings();
         return;
       }
@@ -483,21 +623,62 @@
       if ((completeBtn || favBtn) && state.dayId) {
         const day = days.find((d) => d.id === state.dayId);
         const idx = Number((completeBtn || favBtn).dataset.complete || (completeBtn || favBtn).dataset.fav);
-        const item = day.timeline[idx];
+        const item = day && day.timeline[idx];
+        if (!item) return;
         if (completeBtn) storage.toggleCompleted(day.id, item);
         if (favBtn) storage.toggleFavorite(day.id, item);
         renderDetail(state.dayId);
       }
     });
 
-    els.nav.forEach((btn) => btn.addEventListener("click", () => showView(btn.dataset.nav)));
+    els.navButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const view = btn.dataset.nav;
+        if (view) showView(view);
+      });
+    });
+
+    window.addEventListener("resize", updateTopbarHeight);
   }
 
-  document.getElementById("stat-days").textContent = String(days.length);
-  document.getElementById("stat-dates").textContent = TRIP.dates.replace("August", "Aug").replace("September", "Sep").replace(", 2026", "") || "Aug 27–Sep 23/24";
-  document.getElementById("stat-regions").textContent = String(new Set(days.map((d) => d.city)).size);
-  document.getElementById("stat-places").textContent = String(Object.keys(places).length);
+  function initMasthead() {
+    const routeEl = document.getElementById("masthead-route");
+    const uniqueCities = trip.route.filter((c, i, arr) => arr.indexOf(c) === i);
+    if (routeEl) {
+      routeEl.innerHTML = uniqueCities
+        .map((c) => {
+          return `<div class="route-stop city-${c}">
+            <span class="en">${c}</span>
+            <span class="local">${cityLocal(c)}</span>
+          </div>`;
+        })
+        .join("");
+    }
+    const daysEl = document.getElementById("stat-days");
+    const citiesEl = document.getElementById("stat-cities");
+    const placesEl = document.getElementById("stat-places");
+    if (daysEl) daysEl.textContent = String(days.length);
+    if (citiesEl) citiesEl.textContent = String(new Set(days.map((d) => d.city)).size);
+    if (placesEl) placesEl.textContent = String(Object.keys(places).length);
 
+    const cta = document.getElementById("scroll-to-plan");
+    if (cta) {
+      cta.addEventListener("click", () => {
+        const target = document.getElementById("topbar") || document.getElementById("day-list");
+        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+  }
+
+  const dateShort = (trip.dates || "")
+    .replace("August", "Aug")
+    .replace("September", "Sep")
+    .replace(", 2026", "");
+  if (els.brandMeta) {
+    els.brandMeta.textContent = `${dateShort || "Aug 27–Sep 23"} · ${days.length} days`;
+  }
+
+  initMasthead();
   bind();
   showView("itinerary");
 })();
