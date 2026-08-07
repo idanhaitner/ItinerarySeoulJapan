@@ -18,17 +18,18 @@
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-top: env(safe-area-inset-top, 0px);
   --topbar-h: 0px;
-  --font-display: "Rubik", "Assistant", system-ui, sans-serif;
+  --font-display: "Assistant", system-ui, sans-serif;
   --font-jp: "Shippori Mincho", serif;
-  --font-ui: "Assistant", "Rubik", system-ui, sans-serif;
+  --font-ui: "Assistant", system-ui, sans-serif;
 
-  --seoul: #a61e4d;
-  --tokyo: #5a6f7a;
-  --hakone: #2a6b5a;
-  --kawaguchiko: #4a7d8a;
-  --kyoto: #c43c2c;
-  --hiroshima: #7a746c;
-  --osaka: #9c6b2f;
+  /* Clear, distinct city accents */
+  --seoul: #e11d48;
+  --tokyo: #2563eb;
+  --hakone: #059669;
+  --kawaguchiko: #0891b2;
+  --kyoto: #ea580c;
+  --hiroshima: #6366f1;
+  --osaka: #ca8a04;
 }
 
 * { box-sizing: border-box; }
@@ -405,13 +406,13 @@ a { color: inherit; }
   backdrop-filter: blur(4px);
 }
 
-.route-stop:nth-child(1) { animation-delay: 0.55s; border-bottom-color: #e07a9b; }
-.route-stop:nth-child(2) { animation-delay: 0.65s; border-bottom-color: #9bb0bb; }
-.route-stop:nth-child(3) { animation-delay: 0.75s; border-bottom-color: #6fbfa8; }
-.route-stop:nth-child(4) { animation-delay: 0.85s; border-bottom-color: #7eb8c6; }
-.route-stop:nth-child(5) { animation-delay: 0.95s; border-bottom-color: #e8897a; }
-.route-stop:nth-child(6) { animation-delay: 1.05s; border-bottom-color: #d4a86a; }
-.route-stop:nth-child(7) { animation-delay: 1.15s; border-bottom-color: #b5aea5; }
+.route-stop:nth-child(1) { animation-delay: 0.55s; border-bottom-color: var(--seoul); }
+.route-stop:nth-child(2) { animation-delay: 0.65s; border-bottom-color: var(--tokyo); }
+.route-stop:nth-child(3) { animation-delay: 0.75s; border-bottom-color: var(--hakone); }
+.route-stop:nth-child(4) { animation-delay: 0.85s; border-bottom-color: var(--kawaguchiko); }
+.route-stop:nth-child(5) { animation-delay: 0.95s; border-bottom-color: var(--kyoto); }
+.route-stop:nth-child(6) { animation-delay: 1.05s; border-bottom-color: var(--osaka); }
+.route-stop:nth-child(7) { animation-delay: 1.15s; border-bottom-color: var(--hiroshima); }
 
 .route-stop .en {
   font-size: 14px;
@@ -760,18 +761,18 @@ a { color: inherit; }
   gap: 8px;
   min-width: max-content;
   padding: 8px 12px 10px;
-  background: rgba(250, 248, 244, 0.75);
+  background: rgba(250, 248, 244, 0.9);
   border: 1px solid var(--line);
-  border-top: 2px solid var(--soft);
+  border-top: 4px solid var(--soft);
 }
 
-.day-group.city-Seoul { border-top-color: var(--seoul); }
-.day-group.city-Tokyo { border-top-color: var(--tokyo); }
-.day-group.city-Hakone { border-top-color: var(--hakone); }
-.day-group.city-Kawaguchiko { border-top-color: var(--kawaguchiko); }
-.day-group.city-Kyoto { border-top-color: var(--kyoto); }
-.day-group.city-Hiroshima { border-top-color: var(--hiroshima); }
-.day-group.city-Osaka { border-top-color: var(--osaka); }
+.day-group.city-Seoul { border-top-color: var(--seoul); background: color-mix(in srgb, var(--seoul) 7%, var(--surface)); }
+.day-group.city-Tokyo { border-top-color: var(--tokyo); background: color-mix(in srgb, var(--tokyo) 7%, var(--surface)); }
+.day-group.city-Hakone { border-top-color: var(--hakone); background: color-mix(in srgb, var(--hakone) 7%, var(--surface)); }
+.day-group.city-Kawaguchiko { border-top-color: var(--kawaguchiko); background: color-mix(in srgb, var(--kawaguchiko) 7%, var(--surface)); }
+.day-group.city-Kyoto { border-top-color: var(--kyoto); background: color-mix(in srgb, var(--kyoto) 7%, var(--surface)); }
+.day-group.city-Hiroshima { border-top-color: var(--hiroshima); background: color-mix(in srgb, var(--hiroshima) 7%, var(--surface)); }
+.day-group.city-Osaka { border-top-color: var(--osaka); background: color-mix(in srgb, var(--osaka) 7%, var(--surface)); }
 
 .day-group.is-dim { opacity: 0.35; }
 
@@ -779,8 +780,8 @@ a { color: inherit; }
   display: flex;
   align-items: baseline;
   gap: 8px;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   letter-spacing: 0;
   text-transform: none;
   color: var(--muted);
@@ -885,7 +886,7 @@ a { color: inherit; }
   justify-content: center;
   align-items: flex-start;
   padding: 22px 0;
-  border-inline-start: 3px solid var(--navy);
+  border-inline-start: 4px solid var(--navy);
   padding-inline-start: 14px;
 }
 
@@ -1294,13 +1295,13 @@ a { color: inherit; }
   opacity: 0.2;
 }
 
-.timeline-item.city-line-Seoul .timeline-card::before { background: var(--seoul); opacity: 0.55; }
-.timeline-item.city-line-Tokyo .timeline-card::before { background: var(--tokyo); opacity: 0.55; }
-.timeline-item.city-line-Hakone .timeline-card::before { background: var(--hakone); opacity: 0.55; }
-.timeline-item.city-line-Kawaguchiko .timeline-card::before { background: var(--kawaguchiko); opacity: 0.55; }
-.timeline-item.city-line-Kyoto .timeline-card::before { background: var(--kyoto); opacity: 0.55; }
-.timeline-item.city-line-Osaka .timeline-card::before { background: var(--osaka); opacity: 0.55; }
-.timeline-item.city-line-Hiroshima .timeline-card::before { background: var(--hiroshima); opacity: 0.55; }
+.timeline-item.city-line-Seoul .timeline-card::before { background: var(--seoul); opacity: 0.85; }
+.timeline-item.city-line-Tokyo .timeline-card::before { background: var(--tokyo); opacity: 0.85; }
+.timeline-item.city-line-Hakone .timeline-card::before { background: var(--hakone); opacity: 0.85; }
+.timeline-item.city-line-Kawaguchiko .timeline-card::before { background: var(--kawaguchiko); opacity: 0.85; }
+.timeline-item.city-line-Kyoto .timeline-card::before { background: var(--kyoto); opacity: 0.85; }
+.timeline-item.city-line-Osaka .timeline-card::before { background: var(--osaka); opacity: 0.85; }
+.timeline-item.city-line-Hiroshima .timeline-card::before { background: var(--hiroshima); opacity: 0.85; }
 
 .cat-chip {
   display: inline-block;
