@@ -173,7 +173,7 @@ a { color: inherit; }
 /* ——— Masthead ——— */
 .masthead {
   position: relative;
-  padding: calc(20px + var(--safe-top)) 0 28px;
+  padding: calc(12px + var(--safe-top)) 0 28px;
   overflow: visible;
 }
 
@@ -185,63 +185,65 @@ a { color: inherit; }
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  min-height: min(78vh, 720px);
+  min-height: min(88vh, 820px);
   display: grid;
   place-items: center;
-  padding: 48px 28px 40px;
+  padding: 56px 28px 48px;
+  background: #1a1614;
+  border: 1px solid rgba(47, 43, 40, 0.2);
+  box-shadow: 0 28px 70px rgba(47, 43, 40, 0.14);
+}
+
+.masthead-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  z-index: 0;
+  transform: scale(1.04);
+  animation: photoDrift 18s ease-in-out infinite alternate;
+  filter: saturate(1.05) contrast(1.04);
+}
+
+@keyframes photoDrift {
+  from { transform: scale(1.04) translate3d(0, 0, 0); }
+  to { transform: scale(1.1) translate3d(-1.5%, -1%, 0); }
+}
+
+.masthead-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
   background:
-    linear-gradient(160deg, rgba(250, 248, 244, 0.92), rgba(242, 240, 235, 0.75));
-  border: 1px solid var(--line);
-  box-shadow: 0 24px 60px rgba(47, 43, 40, 0.06);
+    linear-gradient(180deg, rgba(18, 14, 12, 0.55) 0%, rgba(18, 14, 12, 0.28) 38%, rgba(18, 14, 12, 0.62) 100%),
+    radial-gradient(ellipse 70% 55% at 50% 35%, rgba(18, 14, 12, 0.15), rgba(18, 14, 12, 0.55));
 }
 
 .masthead-frame {
   position: absolute;
   inset: 14px;
-  border: 1px solid rgba(47, 43, 40, 0.08);
+  border: 1px solid rgba(250, 248, 244, 0.18);
   pointer-events: none;
-  z-index: 1;
-}
-
-.masthead-glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(40px);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.masthead-glow-a {
-  width: min(420px, 70vw);
-  height: min(420px, 70vw);
-  left: -8%;
-  top: -12%;
-  background: radial-gradient(circle, rgba(166, 30, 77, 0.18), transparent 68%);
-  animation: glowDrift 10s ease-in-out infinite;
-}
-
-.masthead-glow-b {
-  width: min(380px, 65vw);
-  height: min(380px, 65vw);
-  right: -10%;
-  bottom: -16%;
-  background: radial-gradient(circle, rgba(42, 107, 90, 0.16), transparent 68%);
-  animation: glowDrift 12s ease-in-out 1s infinite reverse;
+  z-index: 2;
 }
 
 .masthead-content {
   position: relative;
-  z-index: 2;
-  width: min(720px, 100%);
+  z-index: 3;
+  width: min(760px, 100%);
   text-align: center;
+  color: #f7f3ec;
 }
 
 .masthead-seal {
   width: 72px;
   height: 72px;
   margin: 0 auto 26px;
-  border: 2px solid var(--seal);
-  color: var(--seal);
+  border: 2px solid rgba(247, 243, 236, 0.85);
+  color: #f7f3ec;
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -249,8 +251,9 @@ a { color: inherit; }
   font-size: 30px;
   letter-spacing: 0;
   animation: sealIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both, floatSeal 6s ease-in-out 1s infinite;
-  box-shadow: 0 0 0 8px rgba(196, 60, 44, 0.06);
-  background: rgba(250, 248, 244, 0.65);
+  box-shadow: 0 0 0 8px rgba(247, 243, 236, 0.08);
+  background: rgba(18, 14, 12, 0.28);
+  backdrop-filter: blur(6px);
 }
 
 .masthead-kicker {
@@ -258,7 +261,7 @@ a { color: inherit; }
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.32em;
-  color: var(--seal);
+  color: rgba(247, 243, 236, 0.78);
 }
 
 .masthead-title {
@@ -271,8 +274,9 @@ a { color: inherit; }
   font-size: clamp(36px, 8.5vw, 68px);
   font-weight: 600;
   letter-spacing: 0.01em;
-  color: var(--ink);
+  color: #f7f3ec;
   line-height: 1.05;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.28);
 }
 
 .masthead-trip {
@@ -280,14 +284,15 @@ a { color: inherit; }
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--seal);
+  color: #f0c9b0;
   line-height: 1;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
 }
 
 .masthead-sub {
   margin: 0 auto 28px;
   max-width: 38ch;
-  color: var(--muted);
+  color: rgba(247, 243, 236, 0.82);
   font-size: clamp(15px, 2.2vw, 17px);
   font-weight: 300;
   line-height: 1.65;
@@ -297,7 +302,7 @@ a { color: inherit; }
   width: min(180px, 40%);
   height: 1px;
   margin: 0 auto 28px;
-  background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
+  background: linear-gradient(90deg, transparent, rgba(247, 243, 236, 0.55), transparent);
 }
 
 .masthead-route {
@@ -316,29 +321,31 @@ a { color: inherit; }
   padding: 10px 14px;
   text-align: center;
   animation: routeIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid rgba(247, 243, 236, 0.35);
+  background: rgba(18, 14, 12, 0.18);
+  backdrop-filter: blur(4px);
 }
 
-.route-stop:nth-child(1) { animation-delay: 0.45s; border-bottom-color: var(--seoul); }
-.route-stop:nth-child(2) { animation-delay: 0.52s; border-bottom-color: var(--tokyo); }
-.route-stop:nth-child(3) { animation-delay: 0.59s; border-bottom-color: var(--hakone); }
-.route-stop:nth-child(4) { animation-delay: 0.66s; border-bottom-color: var(--kawaguchiko); }
-.route-stop:nth-child(5) { animation-delay: 0.73s; border-bottom-color: var(--kyoto); }
-.route-stop:nth-child(6) { animation-delay: 0.8s; border-bottom-color: var(--osaka); }
-.route-stop:nth-child(7) { animation-delay: 0.87s; border-bottom-color: var(--hiroshima); }
+.route-stop:nth-child(1) { animation-delay: 0.45s; border-bottom-color: #e07a9b; }
+.route-stop:nth-child(2) { animation-delay: 0.52s; border-bottom-color: #9bb0bb; }
+.route-stop:nth-child(3) { animation-delay: 0.59s; border-bottom-color: #6fbfa8; }
+.route-stop:nth-child(4) { animation-delay: 0.66s; border-bottom-color: #7eb8c6; }
+.route-stop:nth-child(5) { animation-delay: 0.73s; border-bottom-color: #e8897a; }
+.route-stop:nth-child(6) { animation-delay: 0.8s; border-bottom-color: #d4a86a; }
+.route-stop:nth-child(7) { animation-delay: 0.87s; border-bottom-color: #b5aea5; }
 
 .route-stop .en {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ink);
+  color: #f7f3ec;
 }
 
 .route-stop .local {
   font-family: var(--font-display);
   font-size: 13px;
-  color: var(--muted);
+  color: rgba(247, 243, 236, 0.65);
 }
 
 .route-sep {
@@ -364,7 +371,7 @@ a { color: inherit; }
   font-style: normal;
   font-size: clamp(36px, 6vw, 48px);
   font-weight: 600;
-  color: var(--ink);
+  color: #f7f3ec;
   line-height: 1;
 }
 
@@ -372,7 +379,7 @@ a { color: inherit; }
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--soft);
+  color: rgba(247, 243, 236, 0.6);
   font-weight: 500;
 }
 
@@ -380,21 +387,22 @@ a { color: inherit; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  border: 1px solid var(--ink);
-  background: var(--ink);
-  color: #faf8f4;
+  border: 1px solid rgba(247, 243, 236, 0.9);
+  background: rgba(247, 243, 236, 0.94);
+  color: var(--ink);
   padding: 14px 22px;
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
 }
 
 .masthead-cta:hover {
   background: transparent;
-  color: var(--ink);
+  color: #f7f3ec;
+  border-color: rgba(247, 243, 236, 0.9);
 }
 
 .masthead-cta .cta-arrow {
@@ -1989,8 +1997,8 @@ a { color: inherit; }
   .tips-cols { grid-template-columns: 1fr 1fr; }
   .fx-rate-grid { grid-template-columns: 1fr 1fr; }
   .masthead-stage {
-    min-height: min(82vh, 760px);
-    padding: 64px 40px 52px;
+    min-height: min(90vh, 860px);
+    padding: 72px 40px 56px;
   }
   .masthead { padding-top: calc(28px + var(--safe-top)); padding-bottom: 36px; }
   .journey-layout {
@@ -2042,9 +2050,10 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   *,
   .masthead-seal,
-  .masthead-glow,
+  .masthead-photo,
   .masthead-cta .cta-arrow {
     animation: none !important;
     transition: none !important;
   }
+  .masthead-photo { transform: none; }
 }
