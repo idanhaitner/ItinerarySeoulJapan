@@ -807,7 +807,7 @@ a { color: inherit; }
 
 .day-group-days {
   display: flex;
-  gap: 2px;
+  gap: 4px;
 }
 
 .day-rail-btn {
@@ -815,26 +815,45 @@ a { color: inherit; }
   min-width: 40px;
   min-height: 40px;
   height: 40px;
-  border: 0;
-  background: transparent;
-  color: var(--soft);
+  border: 1px solid rgba(47, 43, 40, 0.16);
+  background: rgba(250, 248, 244, 0.7);
+  color: var(--muted);
   font-family: var(--font-display);
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   cursor: pointer;
-  transition: color 0.2s ease, background 0.2s ease;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
+
+.day-group.city-Seoul .day-rail-btn { border-color: color-mix(in srgb, var(--seoul) 45%, transparent); }
+.day-group.city-Tokyo .day-rail-btn { border-color: color-mix(in srgb, var(--tokyo) 45%, transparent); }
+.day-group.city-Hakone .day-rail-btn { border-color: color-mix(in srgb, var(--hakone) 45%, transparent); }
+.day-group.city-Kawaguchiko .day-rail-btn { border-color: color-mix(in srgb, var(--kawaguchiko) 45%, transparent); }
+.day-group.city-Kyoto .day-rail-btn { border-color: color-mix(in srgb, var(--kyoto) 45%, transparent); }
+.day-group.city-Hiroshima .day-rail-btn { border-color: color-mix(in srgb, var(--hiroshima) 45%, transparent); }
+.day-group.city-Osaka .day-rail-btn { border-color: color-mix(in srgb, var(--osaka) 45%, transparent); }
 
 .day-rail-btn:hover {
   color: var(--ink);
   background: rgba(47, 43, 40, 0.05);
+  border-color: rgba(47, 43, 40, 0.28);
+  transform: translateY(-1px);
 }
 
 .day-rail-btn.active {
   color: #faf8f4;
   background: var(--seal);
+  border-color: var(--seal);
 }
+
+.day-group.city-Seoul .day-rail-btn.active { background: var(--seoul); border-color: var(--seoul); }
+.day-group.city-Tokyo .day-rail-btn.active { background: var(--tokyo); border-color: var(--tokyo); }
+.day-group.city-Hakone .day-rail-btn.active { background: var(--hakone); border-color: var(--hakone); }
+.day-group.city-Kawaguchiko .day-rail-btn.active { background: var(--kawaguchiko); border-color: var(--kawaguchiko); }
+.day-group.city-Kyoto .day-rail-btn.active { background: var(--kyoto); border-color: var(--kyoto); }
+.day-group.city-Hiroshima .day-rail-btn.active { background: var(--hiroshima); border-color: var(--hiroshima); }
+.day-group.city-Osaka .day-rail-btn.active { background: var(--osaka); border-color: var(--osaka); }
 
 /* ——— Main / panels ——— */
 .main { padding-top: 20px; }
