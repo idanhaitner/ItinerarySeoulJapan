@@ -1,4 +1,4 @@
-/* Live destination snapshot: weather + fixed FX rail */
+/* Live destination snapshot: weather (Skycons) + FX strip */
 window.DestIntel = (function () {
   const CITIES = [
     { id: "Seoul", he: "סיאול", lat: 37.5665, lng: 126.978, tz: "Asia/Seoul" },
@@ -6,6 +6,13 @@ window.DestIntel = (function () {
     { id: "Kyoto", he: "קיוטו", lat: 35.0116, lng: 135.7681, tz: "Asia/Tokyo" },
     { id: "Osaka", he: "אוסקה", lat: 34.6937, lng: 135.5023, tz: "Asia/Tokyo" },
   ];
+
+  const CITY_COLOR = {
+    Seoul: "#b54a6a",
+    Tokyo: "#5b7388",
+    Kyoto: "#c46a52",
+    Osaka: "#a8844e",
+  };
 
   const WX = {
     0: "בהיר",
@@ -30,6 +37,8 @@ window.DestIntel = (function () {
     96: "סופת רעמים",
     99: "סופת רעמים",
   };
+
+  let skyconsInstances = [];
 
   function wxLabel(code) {
     if (WX[code]) return WX[code];
@@ -122,53 +131,74 @@ window.DestIntel = (function () {
     window.TripStorage.setRates(next);
   }
 
-  function skeletonHtml() {
-    return `
-      <div class="dest-weather-grid">
-        ${CITIES.map(() => `<div class="dest-weather-card is-loading"><div class="dest-skel"></div></div>`).join("")}
-      </div>`;
-  }
-
-  function wxKind(code) {
+  /** Map Open-Meteo WMO code → Skycons name */
+  function wxIcon(code) {
     const c = Number(code);
     if (!Number.isFinite(c)) return "cloudy";
-    if (c === 0) return "sunny";
-    if (c === 1 || c === 2) return "partly";
+    if (c === 0) return "clear-day";
+    if (c === 1) return "clear-day";
+    if (c === 2) return "partly-cloudy-day";
     if (c === 3) return "cloudy";
     if (c === 45 || c === 48) return "fog";
-    if (c >= 51 && c <= 57) return "drizzle";
+    if (c >= 51 && c <= 57) return "rain";
     if ((c >= 61 && c <= 67) || (c >= 80 && c <= 82)) return "rain";
     if ((c >= 71 && c <= 77) || (c >= 85 && c <= 86)) return "snow";
-    if (c >= 95) return "storm";
+    if (c >= 95) return "rain";
     return "cloudy";
   }
 
-  function wxAnimHtml(kind) {
-    if (kind === "sunny") {
-      return `<div class="wx-anim wx-sunny" aria-hidden="true"><span class="wx-sun"></span><span class="wx-ray"></span></div>`;
-    }
-    if (kind === "partly") {
-      return `<div class="wx-anim wx-partly" aria-hidden="true"><span class="wx-sun"></span><span class="wx-cloud"></span></div>`;
-    }
-    if (kind === "cloudy") {
-      return `<div class="wx-anim wx-cloudy" aria-hidden="true"><span class="wx-cloud c1"></span><span class="wx-cloud c2"></span></div>`;
-    }
-    if (kind === "fog") {
-      return `<div class="wx-anim wx-fog" aria-hidden="true"><span class="wx-fog-line l1"></span><span class="wx-fog-line l2"></span><span class="wx-fog-line l3"></span></div>`;
-    }
-    if (kind === "drizzle") {
-      return `<div class="wx-anim wx-drizzle" aria-hidden="true"><span class="wx-cloud"></span><span class="wx-drop d1"></span><span class="wx-drop d2"></span><span class="wx-drop d3"></span></div>`;
-    }
-    if (kind === "rain") {
-      return `<div class="wx-anim wx-rain" aria-hidden="true"><span class="wx-cloud"></span><span class="wx-drop d1"></span><span class="wx-drop d2"></span><span class="wx-drop d3"></span><span class="wx-drop d4"></span></div>`;
-    }
-    if (kind === "snow") {
-      return `<div class="wx-anim wx-snow" aria-hidden="true"><span class="wx-cloud"></span><span class="wx-flake f1"></span><span class="wx-flake f2"></span><span class="wx-flake f3"></span></div>`;
-    }
-    return `<div class="wx-anim wx-storm" aria-hidden="true"><span class="wx-cloud"></span><span class="wx-bolt"></span><span class="wx-drop d1"></span><span class="wx-drop d2"></span></div>`;
+  function wxAnimHtml(icon, cityId, uid) {
+    const color = CITY_COLOR[cityId] || "#5C534A";
+    return `
+      <div class="wx-anim" aria-hidden="true">
+        <canvas
+          id="${escape(uid)}"
+          class="wx-canvas"
+          width="128"
+          height="128"
+          data-skycon="${escape(icon)}"
+          data-skycon-color="${escape(color)}"
+        ></canvas>
+      </div>`;
   }
 
-  function weatherCard(city, wx, err) {
+  function mountWxAnims(root) {
+    if (!root || !window.Skycons) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const canvases = [...root.querySelectorAll("canvas[data-skycon]")];
+    if (!canvases.length) return;
+
+    skyconsInstances.forEach((inst) => {
+      try {
+        inst.pause();
+      } catch (_) {
+        /* ignore */
+      }
+    });
+    skyconsInstances = [];
+
+    const byColor = new Map();
+    canvases.forEach((el) => {
+      const color = el.getAttribute("data-skycon-color") || "#5C534A";
+      const icon = el.getAttribute("data-skycon") || "cloudy";
+      if (!byColor.has(color)) {
+        byColor.set(color, new window.Skycons({ color, resizeClear: true }));
+      }
+      byColor.get(color).add(el, icon);
+    });
+
+    byColor.forEach((inst) => {
+      skyconsInstances.push(inst);
+      if (reduce) {
+        inst.play();
+        setTimeout(() => inst.pause(), 40);
+      } else {
+        inst.play();
+      }
+    });
+  }
+
+  function weatherCard(city, wx, err, idx) {
     if (err || !wx) {
       return `
         <article class="dest-weather-card city-accent-${city.id}">
@@ -179,10 +209,11 @@ window.DestIntel = (function () {
           <p class="dest-weather-empty">לא זמין</p>
         </article>`;
     }
-    const kind = wxKind(wx.code);
+    const icon = wxIcon(wx.code);
+    const uid = `wx-${city.id}-${idx}`;
     return `
-      <article class="dest-weather-card city-accent-${city.id} wx-${kind}">
-        ${wxAnimHtml(kind)}
+      <article class="dest-weather-card city-accent-${city.id}">
+        ${wxAnimHtml(icon, city.id, uid)}
         <div class="dest-weather-top">
           <span class="dest-city">${escape(city.he)}</span>
           <span class="dest-time">${escape(localTime(city.tz))}</span>
@@ -193,14 +224,14 @@ window.DestIntel = (function () {
         </div>
         <div class="dest-wx-meta">
           <span>מרגיש ${wx.feels}°</span>
-          <span>${wx.humidity}%</span>
+          <span>לחות ${wx.humidity}%</span>
         </div>
       </article>`;
   }
 
-  function ratesRailHtml(rates, err) {
+  function ratesStripHtml(rates, err) {
     if (err || !rates) {
-      return `<div class="fx-rail-static">שערים לא זמינים</div>`;
+      return `<div class="fx-strip"><div class="fx-strip-static">שערים לא זמינים</div></div>`;
     }
     const fmt = (n, digits) =>
       n == null ? "—" : Number(n).toLocaleString("he-IL", { maximumFractionDigits: digits });
@@ -213,28 +244,39 @@ window.DestIntel = (function () {
     const chunk = items
       .map(
         (it) =>
-          `<div class="fx-rail-item"><em>${it.sym}</em><strong>${it.val}</strong><span>${it.label}</span></div>`
+          `<div class="fx-strip-item"><em>${it.sym}</em><strong>${it.val}</strong><span>${it.label}</span></div>`
       )
       .join("");
-    const updated = `<div class="fx-rail-meta">עודכן<br>${escape(rates.updated || "")}</div>`;
+    const updated = `<div class="fx-strip-meta">₪1 · עודכן ${escape(rates.updated || "")}</div>`;
     const sequence = `${chunk}${updated}`;
     return `
-      <div class="fx-rail-viewport">
-        <div class="fx-rail-track">
-          <div class="fx-rail-group">${sequence}</div>
-          <div class="fx-rail-group" aria-hidden="true">${sequence}</div>
+      <div class="fx-strip" aria-label="שערי חליפין">
+        <div class="fx-strip-viewport">
+          <div class="fx-strip-track">
+            <div class="fx-strip-group">${sequence}</div>
+            <div class="fx-strip-group" aria-hidden="true">${sequence}</div>
+          </div>
         </div>
       </div>`;
   }
 
-  async function render(weatherRoot, railRoot) {
+  function skeletonHtml() {
+    return `
+      <div class="dest-weather-grid">
+        ${CITIES.map(() => `<div class="dest-weather-card is-loading"><div class="dest-skel"></div></div>`).join("")}
+      </div>
+      <div class="fx-strip is-loading"><div class="dest-skel"></div></div>`;
+  }
+
+  async function render(weatherRoot) {
     const weatherEl = weatherRoot || document.getElementById("dest-intel");
-    const railEl = railRoot || document.getElementById("fx-rail");
-    if (weatherEl) weatherEl.innerHTML = skeletonHtml();
-    if (railEl) {
-      railEl.hidden = false;
-      railEl.innerHTML = `<div class="fx-rail-static">טוען…</div>`;
+    const legacyRail = document.getElementById("fx-rail");
+    if (legacyRail) {
+      legacyRail.hidden = true;
+      legacyRail.innerHTML = "";
     }
+    if (!weatherEl) return;
+    weatherEl.innerHTML = skeletonHtml();
 
     const weatherPromise = Promise.all(
       CITIES.map(async (city) => {
@@ -255,16 +297,12 @@ window.DestIntel = (function () {
 
     const [weatherRows, ratesResult] = await Promise.all([weatherPromise, ratesPromise]);
 
-    if (weatherEl) {
-      weatherEl.innerHTML = `
-        <div class="dest-weather-grid" aria-label="מזג אוויר ביעדים">
-          ${weatherRows.map(({ city, wx, err }) => weatherCard(city, wx, err)).join("")}
-        </div>`;
-    }
-    if (railEl) {
-      railEl.hidden = false;
-      railEl.innerHTML = ratesRailHtml(ratesResult.rates, ratesResult.err);
-    }
+    weatherEl.innerHTML = `
+      <div class="dest-weather-grid" aria-label="מזג אוויר ביעדים">
+        ${weatherRows.map(({ city, wx, err }, i) => weatherCard(city, wx, err, i)).join("")}
+      </div>
+      ${ratesStripHtml(ratesResult.rates, ratesResult.err)}`;
+    mountWxAnims(weatherEl);
   }
 
   return { render, CITIES };
