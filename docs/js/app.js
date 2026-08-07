@@ -418,7 +418,7 @@
                   <span class="en">${d.city}</span>
                 </div>
                 <div class="day-row-meta">
-                  <span>${weekdayShortHe(d)}</span>
+                  <span>${weekdayHe(d)}</span>
                   <span class="dot" aria-hidden="true">·</span>
                   <span>${steps ? `${steps} עצירות` : "—"}</span>
                   <span class="day-row-arrow" aria-hidden="true">←</span>
