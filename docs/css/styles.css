@@ -637,6 +637,187 @@ a { color: inherit; }
   min-height: 0;
 }
 
+.dest-weather-card > *:not(.wx-anim) {
+  position: relative;
+  z-index: 1;
+}
+
+.wx-anim {
+  position: absolute;
+  inset-inline-end: 8px;
+  top: 28px;
+  width: 46px;
+  height: 46px;
+  pointer-events: none;
+  opacity: 0.9;
+  z-index: 0;
+}
+
+.wx-sun {
+  position: absolute;
+  inset-inline-end: 8px;
+  top: 8px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffe7a8, #e2b15a 70%);
+  box-shadow: 0 0 12px rgba(226, 177, 90, 0.45);
+  animation: wxPulse 3.2s ease-in-out infinite;
+}
+
+.wx-sunny .wx-ray {
+  position: absolute;
+  inset-inline-end: 4px;
+  top: 4px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background:
+    conic-gradient(from 0deg, transparent 0 12deg, rgba(226, 177, 90, 0.35) 12deg 20deg, transparent 20deg 57deg, rgba(226, 177, 90, 0.35) 57deg 65deg, transparent 65deg 102deg, rgba(226, 177, 90, 0.35) 102deg 110deg, transparent 110deg 147deg, rgba(226, 177, 90, 0.35) 147deg 155deg, transparent 155deg 192deg, rgba(226, 177, 90, 0.35) 192deg 200deg, transparent 200deg 237deg, rgba(226, 177, 90, 0.35) 237deg 245deg, transparent 245deg 282deg, rgba(226, 177, 90, 0.35) 282deg 290deg, transparent 290deg 327deg, rgba(226, 177, 90, 0.35) 327deg 335deg, transparent 335deg 360deg);
+  animation: wxSpin 12s linear infinite;
+}
+
+.wx-cloud {
+  position: absolute;
+  width: 28px;
+  height: 12px;
+  border-radius: 20px;
+  background: rgba(120, 130, 140, 0.35);
+  box-shadow: 8px -4px 0 rgba(120, 130, 140, 0.28), -7px -2px 0 rgba(120, 130, 140, 0.25);
+}
+
+.wx-partly .wx-sun {
+  inset-inline-end: 16px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+}
+
+.wx-partly .wx-cloud,
+.wx-cloudy .wx-cloud,
+.wx-drizzle .wx-cloud,
+.wx-rain .wx-cloud,
+.wx-snow .wx-cloud,
+.wx-storm .wx-cloud {
+  inset-inline-end: 4px;
+  top: 14px;
+}
+
+.wx-cloudy .c1 {
+  inset-inline-end: 10px;
+  top: 10px;
+  animation: wxDrift 4.5s ease-in-out infinite;
+}
+
+.wx-cloudy .c2 {
+  inset-inline-end: 0;
+  top: 18px;
+  width: 22px;
+  opacity: 0.75;
+  animation: wxDrift 5.5s ease-in-out infinite reverse;
+}
+
+.wx-partly .wx-cloud {
+  animation: wxDrift 5s ease-in-out infinite;
+}
+
+.wx-fog-line {
+  position: absolute;
+  height: 3px;
+  border-radius: 3px;
+  background: rgba(130, 135, 140, 0.35);
+  inset-inline-end: 2px;
+}
+
+.wx-fog .l1 { top: 14px; width: 34px; animation: wxFog 3.4s ease-in-out infinite; }
+.wx-fog .l2 { top: 22px; width: 28px; animation: wxFog 3.4s ease-in-out 0.4s infinite; }
+.wx-fog .l3 { top: 30px; width: 32px; animation: wxFog 3.4s ease-in-out 0.8s infinite; }
+
+.wx-drop {
+  position: absolute;
+  width: 2px;
+  height: 8px;
+  border-radius: 2px;
+  background: rgba(90, 132, 176, 0.7);
+  animation: wxFall 1.1s linear infinite;
+}
+
+.wx-drizzle .d1 { inset-inline-end: 22px; top: 28px; animation-delay: 0s; }
+.wx-drizzle .d2 { inset-inline-end: 14px; top: 30px; animation-delay: 0.25s; height: 6px; }
+.wx-drizzle .d3 { inset-inline-end: 6px; top: 29px; animation-delay: 0.45s; }
+
+.wx-rain .d1 { inset-inline-end: 24px; top: 28px; animation-delay: 0s; }
+.wx-rain .d2 { inset-inline-end: 17px; top: 30px; animation-delay: 0.15s; }
+.wx-rain .d3 { inset-inline-end: 10px; top: 27px; animation-delay: 0.3s; }
+.wx-rain .d4 { inset-inline-end: 4px; top: 29px; animation-delay: 0.45s; height: 10px; }
+
+.wx-flake {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(170, 190, 210, 0.85);
+  box-shadow: 0 0 0 1px rgba(170, 190, 210, 0.25);
+  animation: wxSnow 2.2s linear infinite;
+}
+
+.wx-snow .f1 { inset-inline-end: 22px; top: 28px; }
+.wx-snow .f2 { inset-inline-end: 12px; top: 30px; animation-delay: 0.4s; }
+.wx-snow .f3 { inset-inline-end: 4px; top: 27px; animation-delay: 0.8s; width: 4px; height: 4px; }
+
+.wx-bolt {
+  position: absolute;
+  inset-inline-end: 14px;
+  top: 24px;
+  width: 8px;
+  height: 14px;
+  background: linear-gradient(135deg, transparent 35%, #d4a017 35% 45%, transparent 45% 55%, #d4a017 55% 68%, transparent 68%);
+  clip-path: polygon(55% 0, 20% 55%, 48% 55%, 35% 100%, 80% 40%, 52% 40%);
+  background: #d4a017;
+  animation: wxFlash 1.8s ease-in-out infinite;
+  opacity: 0.85;
+}
+
+.wx-storm .d1 { inset-inline-end: 24px; top: 30px; }
+.wx-storm .d2 { inset-inline-end: 6px; top: 28px; animation-delay: 0.2s; }
+
+@keyframes wxPulse {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.06); filter: brightness(1.08); }
+}
+
+@keyframes wxSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes wxDrift {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-4px); }
+}
+
+@keyframes wxFog {
+  0%, 100% { opacity: 0.35; transform: translateX(0); }
+  50% { opacity: 0.7; transform: translateX(4px); }
+}
+
+@keyframes wxFall {
+  0% { transform: translateY(0); opacity: 0; }
+  15% { opacity: 0.9; }
+  100% { transform: translateY(12px); opacity: 0; }
+}
+
+@keyframes wxSnow {
+  0% { transform: translate(0, 0); opacity: 0; }
+  20% { opacity: 0.9; }
+  100% { transform: translate(-4px, 14px); opacity: 0; }
+}
+
+@keyframes wxFlash {
+  0%, 40%, 60%, 100% { opacity: 0.15; }
+  45%, 55% { opacity: 1; }
+}
+
 .dest-weather-card::before {
   content: "";
   position: absolute;
@@ -739,6 +920,10 @@ a { color: inherit; }
   }
   .dest-ticker-group[aria-hidden="true"] {
     display: none;
+  }
+  .wx-anim,
+  .wx-anim * {
+    animation: none !important;
   }
 }
 

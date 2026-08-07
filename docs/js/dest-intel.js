@@ -130,6 +130,45 @@ window.DestIntel = (function () {
       </div>`;
   }
 
+  function wxKind(code) {
+    const c = Number(code);
+    if (!Number.isFinite(c)) return "cloudy";
+    if (c === 0) return "sunny";
+    if (c === 1 || c === 2) return "partly";
+    if (c === 3) return "cloudy";
+    if (c === 45 || c === 48) return "fog";
+    if (c >= 51 && c <= 57) return "drizzle";
+    if ((c >= 61 && c <= 67) || (c >= 80 && c <= 82)) return "rain";
+    if ((c >= 71 && c <= 77) || (c >= 85 && c <= 86)) return "snow";
+    if (c >= 95) return "storm";
+    return "cloudy";
+  }
+
+  function wxAnimHtml(kind) {
+    if (kind === "sunny") {
+      return `<div class="wx-anim wx-sunny" aria-hidden="true"><span class="wx-sun"></span><span class="wx-ray"></span></div>`;
+    }
+    if (kind === "partly") {
+      return `<div class="wx-anim wx-partly" aria-hidden="true"><span class="wx-sun"></span><span class="wx-cloud"></span></div>`;
+    }
+    if (kind === "cloudy") {
+      return `<div class="wx-anim wx-cloudy" aria-hidden="true"><span class="wx-cloud c1"></span><span class="wx-cloud c2"></span></div>`;
+    }
+    if (kind === "fog") {
+      return `<div class="wx-anim wx-fog" aria-hidden="true"><span class="wx-fog-line l1"></span><span class="wx-fog-line l2"></span><span class="wx-fog-line l3"></span></div>`;
+    }
+    if (kind === "drizzle") {
+      return `<div class="wx-anim wx-drizzle" aria-hidden="true"><span class="wx-cloud"></span><span class="wx-drop d1"></span><span class="wx-drop d2"></span><span class="wx-drop d3"></span></div>`;
+    }
+    if (kind === "rain") {
+      return `<div class="wx-anim wx-rain" aria-hidden="true"><span class="wx-cloud"></span><span class="wx-drop d1"></span><span class="wx-drop d2"></span><span class="wx-drop d3"></span><span class="wx-drop d4"></span></div>`;
+    }
+    if (kind === "snow") {
+      return `<div class="wx-anim wx-snow" aria-hidden="true"><span class="wx-cloud"></span><span class="wx-flake f1"></span><span class="wx-flake f2"></span><span class="wx-flake f3"></span></div>`;
+    }
+    return `<div class="wx-anim wx-storm" aria-hidden="true"><span class="wx-cloud"></span><span class="wx-bolt"></span><span class="wx-drop d1"></span><span class="wx-drop d2"></span></div>`;
+  }
+
   function weatherCard(city, wx, err) {
     if (err || !wx) {
       return `
@@ -141,8 +180,10 @@ window.DestIntel = (function () {
           <p class="dest-weather-empty">לא זמין</p>
         </article>`;
     }
+    const kind = wxKind(wx.code);
     return `
-      <article class="dest-weather-card city-accent-${city.id}">
+      <article class="dest-weather-card city-accent-${city.id} wx-${kind}">
+        ${wxAnimHtml(kind)}
         <div class="dest-weather-top">
           <span class="dest-city">${escape(city.he)}</span>
           <span class="dest-time">${escape(localTime(city.tz))}</span>
