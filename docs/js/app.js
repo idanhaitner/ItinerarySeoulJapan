@@ -352,10 +352,10 @@
             ${secondary
               .map(
                 (a) =>
-                  `<a class="maps-link" href="${a.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(a.label)}</a>`
+                  `<a class="maps-link" href="${a.href}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(a.label)}</span></a>`
               )
               .join("")}
-            <button type="button" class="maps-link" data-copy="${p.id}">העתק שם</button>
+            <button type="button" class="maps-link" data-copy="${p.id}"><span>העתק שם</span></button>
           </div>
         </div>
       </article>`;
