@@ -16,6 +16,7 @@ Whenever the trip schedule / itinerary changes in this project, **always update 
 
 ## Source of truth
 
+- Collaborative planning draft: shared Google Sheet (`collab/config.json`, `source: "sheets"`) — check/sync first via `google-sheets-collab-sync` rule
 - Structured builder: `scripts/build_data.py`
 - Generated runtime data: `docs/js/data.js` (do not hand-edit unless necessary)
 - Hebrew copy: `docs/js/he-data.js`
@@ -23,7 +24,7 @@ Whenever the trip schedule / itinerary changes in this project, **always update 
 
 ## Required workflow after any schedule change
 
-1. Update `scripts/build_data.py` so `PLACES`, `DAYS` (dates, cities, titles, summaries, `placeIds`, `timeline`, transfers, hotels) match the new plan.
+1. Prefer reading the Google Sheet (`python3 scripts/fetch_collab_sheets.py`) when collab planning changed; then update `scripts/build_data.py` so `PLACES`, `DAYS` (dates, cities, titles, summaries, `placeIds`, `timeline`, transfers, hotels) match the new plan.
 2. Regenerate data: `python3 scripts/build_data.py`
 3. Update Hebrew strings in `docs/js/he-data.js` when titles/summaries/timeline notes change.
 4. Confirm each day has distinct highlight places with `lat`/`lng` so the Maps journey markers do not stack on the hotel.

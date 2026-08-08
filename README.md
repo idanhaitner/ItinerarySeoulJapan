@@ -10,7 +10,8 @@
 
 ```
 docs/          ← האתר (GitHub Pages)
-scripts/       ← סקריפטי בנייה
+scripts/       ← סקריפטי בנייה + Google Sheets sync
+collab/        ← הגדרות שיתוף פעולה (Google Sheets)
 reference/     ← אקסל השראה מהמשפחה
 ```
 
@@ -23,9 +24,18 @@ python3 -m http.server 8080
 
 Open http://localhost:8080
 
+## שיתוף פעולה במסלול (Google Sheets)
+
+טיוטת התכנון המשותפת: Google Sheets. פרטים ב־`collab/README.md`.
+
+```bash
+python3 scripts/fetch_collab_sheets.py   # משיכת ה־Sheet
+python3 scripts/push_collab_sheets.py    # ריענון/עיצוב ה־Sheet מהמסלול
+```
+
 ## עדכון תוכן האתר
 
-1. ערכו את `scripts/build_data.py` (מבנה ימים / מקומות)
+1. עדכנו את Google Sheets (או ערכו ישירות את `scripts/build_data.py`)
 2. הריצו `python3 scripts/build_data.py`
 3. עדכנו עברית ב־`docs/js/he-data.js` אם צריך
 4. Commit + push ל־`main` → GitHub Pages מתעדכן

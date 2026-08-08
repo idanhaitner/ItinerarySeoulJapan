@@ -119,6 +119,16 @@
     return d.toLocaleDateString("he-IL", { day: "numeric", month: "short" });
   }
 
+  function formatDateParts(iso) {
+    const d = new Date(iso + "T12:00:00");
+    return {
+      day: String(d.getDate()),
+      month: d.toLocaleDateString("he-IL", { month: "short" }),
+      short: `${d.getDate()}.${d.getMonth() + 1}`,
+      label: d.toLocaleDateString("he-IL", { weekday: "short", day: "numeric", month: "short" }),
+    };
+  }
+
   function weekdayHe(day) {
     return WEEKDAY_HE[day.weekday] || day.weekday;
   }
@@ -297,9 +307,13 @@
           <div class="day-group-label">${cityLocal(g.city)}<span class="local">${g.city}</span></div>
           <div class="day-group-days">
             ${g.items
-              .map(({ day, index }) => {
+              .map(({ day }) => {
                 const active = state.dayId === day.id ? "active" : "";
-                return `<button type="button" class="day-rail-btn ${active}" data-jump="${day.id}" title="${escapeHtml(day.title)}">${String(index + 1).padStart(2, "0")}</button>`;
+                const parts = formatDateParts(day.date);
+                return `<button type="button" class="day-rail-btn ${active}" data-jump="${day.id}" title="${escapeHtml(parts.label + " · " + day.title)}">
+                  <span class="dr-day">${parts.day}</span>
+                  <span class="dr-mon">${escapeHtml(parts.month)}</span>
+                </button>`;
               })
               .join("")}
           </div>
@@ -418,13 +432,13 @@
     }
     els.dayList.innerHTML = list
       .map((d) => {
-        const n = dayIndex(d);
+        const parts = formatDateParts(d.date);
         const steps = (d.timeline || []).length;
         return `
           <button type="button" class="day-row ${cityClass(d.city)}" data-day="${d.id}">
             <div class="day-row-num">
-              <span class="n">${String(n).padStart(2, "0")}</span>
-              <span class="d">${formatDate(d.date)}</span>
+              <span class="n">${parts.day}</span>
+              <span class="d">${escapeHtml(parts.month)}</span>
             </div>
             <div class="day-row-body">
               <div class="day-row-top">
@@ -558,7 +572,7 @@
   function renderDetail(dayId) {
     const day = days.find((d) => d.id === dayId);
     if (!day) return;
-    const n = dayIndex(day);
+    const parts = formatDateParts(day.date);
     const hotel = day.hotelId ? places[day.hotelId] : null;
     const dayPlaces = day.placeIds.map((id) => places[id]).filter(Boolean);
     const local = cityLocal(day.city);
@@ -568,10 +582,10 @@
       ${transferHtml(day.transfer)}
       <div class="detail-hero ${cityClass(day.city)}">
         <div class="detail-hero-top">
-          <span class="day-num">יום ${String(n).padStart(2, "0")}</span>
+          <span class="day-num">${parts.day} ${escapeHtml(parts.month)}</span>
           <span class="city-en">${local}</span>
           <span class="city-local">${day.city}</span>
-          <span class="day-num">${weekdayHe(day)} · ${formatDate(day.date)}</span>
+          <span class="day-num">${weekdayHe(day)}</span>
         </div>
         <div class="detail-hero-grid">
           <div>
@@ -608,7 +622,7 @@
         <div class="places-grid">${dayPlaces.map(placeCardHtml).join("")}</div>
       </section>
     `;
-    setResultCount(`יום ${String(n).padStart(2, "0")}`);
+    setResultCount(`${parts.day} ${parts.month}`);
   }
 
   function renderBookings() {

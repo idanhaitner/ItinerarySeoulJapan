@@ -26,18 +26,18 @@ window.CHECKLIST = {
       items: [
         { id: "h-seoul", label: "מלון — 9 Brick Hotel Hongdae", window: "1–3 שבועות לפני", priority: "low" },
         { id: "k-tmoney", label: "Climate Card / T-Money לתחבורה", window: "בהגעה או לפני", priority: "medium" },
-        { id: "k-secret", label: "גן הסודי ב־Changdeokgung", window: "להזמין מוקדם ככל האפשר", priority: "high" },
-        { id: "k-lotte", label: "כרטיסים ללוטה וורלד", window: "להזמין 2–4 שבועות לפני", priority: "high" },
-        { id: "k-ntower", label: "כרטיסים ל־N Seoul Tower (שקיעה)", window: "להזמין 1–2 שבועות לפני", priority: "medium" },
+        { id: "k-secret", label: "גן הסודי ב־Changdeokgung (יום א׳ 30 באוג׳ — סגור בימי שני)", window: "להזמין מוקדם ככל האפשר", priority: "high" },
+        { id: "k-lotte", label: "כרטיסים ללוטה וורלד (שישי 28 באוג׳ — לא שבת)", window: "להזמין 2–4 שבועות לפני", priority: "high" },
+        { id: "k-ntower", label: "כרטיסים ל־N Seoul Tower (שקיעה · יום א׳ 30 באוג׳)", window: "להזמין 1–2 שבועות לפני", priority: "medium" },
         {
           id: "s-skin",
-          label: "טיפול פנים ב־Seoulistique בסאונגסו (Instagram @seoulistique.skin / WhatsApp)",
+          label: "טיפול פנים ב־Seoulistique (Instagram @seoulistique.skin / WhatsApp)",
           window: "להזמין 1–3 שבועות לפני · 31 באוג׳ אחה״צ",
           priority: "high",
         },
         {
           id: "s-headspa",
-          label: "Head Spa בהונגדה 10:00–11:30 (Parkjun / Eco Jardin) לפני סאונגסו",
+          label: "Head Spa בהונגדה 10:00–11:30 (Parkjun / Eco Jardin) לפני Seoulistique",
           window: "להזמין 1–3 שבועות לפני · 31 באוג׳",
           priority: "high",
         },

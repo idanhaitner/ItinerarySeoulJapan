@@ -5,3 +5,12 @@ __pycache__/
 .venv/
 node_modules/
 scripts/cache/
+# Google OAuth secrets (never commit)
+collab/google_oauth_client.json
+collab/google_token.json
+collab/*credentials*.json
+# Generated sync artifacts
+collab/CURRENT_FROM_SHEETS.txt
+collab/LAST_FETCH.json
+collab/LAST_SYNCED_SNAPSHOT.txt
+collab/from_sheets/

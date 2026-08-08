@@ -107,13 +107,23 @@ window.JourneyMap = (function () {
       .filter(Boolean);
   }
 
-  function markerIcon(n, city) {
+  function dateParts(iso) {
+    const d = new Date(String(iso) + "T12:00:00");
+    if (Number.isNaN(d.getTime())) return { day: "?", month: "", short: "?" };
+    return {
+      day: String(d.getDate()),
+      month: d.toLocaleDateString("he-IL", { month: "short" }),
+      short: `${d.getDate()}.${d.getMonth() + 1}`,
+    };
+  }
+
+  function markerIcon(label, city) {
     const color = cityColor(city);
     return L.divIcon({
       className: "journey-marker",
-      html: `<span class="journey-marker-dot" style="background:${color}">${String(n).padStart(2, "0")}</span>`,
-      iconSize: [34, 34],
-      iconAnchor: [17, 17],
+      html: `<span class="journey-marker-dot" style="background:${color}">${escape(label)}</span>`,
+      iconSize: [36, 36],
+      iconAnchor: [18, 18],
       popupAnchor: [0, -16],
     });
   }
@@ -191,10 +201,11 @@ window.JourneyMap = (function () {
     }).addTo(layerGroup);
 
     stops.forEach((s) => {
-      const marker = L.marker([s.lat, s.lng], { icon: markerIcon(s.n, s.day.city) }).addTo(layerGroup);
+      const parts = dateParts(s.day.date);
+      const marker = L.marker([s.lat, s.lng], { icon: markerIcon(parts.day, s.day.city) }).addTo(layerGroup);
       marker.bindPopup(
         `<div class="journey-popup">
-          <div class="jp-day">יום ${String(s.n).padStart(2, "0")} · ${cityLabel(s.day.city)}</div>
+          <div class="jp-day">${escape(parts.day)} ${escape(parts.month)} · ${cityLabel(s.day.city)}</div>
           <div class="jp-title">${escape(s.day.title)}</div>
           <div class="jp-meta">${escape(s.label)}</div>
           <button type="button" class="jp-open" data-open-day="${s.day.id}">פתח יום</button>
@@ -226,12 +237,13 @@ window.JourneyMap = (function () {
     if (legend) {
       legend.innerHTML = stops
         .map((s) => {
+          const parts = dateParts(s.day.date);
           return `<li>
             <button type="button" class="journey-legend-item" data-jump-day="${s.day.id}">
-              <span class="jl-num" style="background:${cityColor(s.day.city)}">${String(s.n).padStart(2, "0")}</span>
+              <span class="jl-num" style="background:${cityColor(s.day.city)}">${escape(parts.day)}</span>
               <span class="jl-copy">
                 <strong>${escape(cityLabel(s.day.city))}<span class="jl-en">${escape(s.day.city)}</span></strong>
-                <em>${escape(s.day.title)}</em>
+                <em>${escape(parts.month)} · ${escape(s.day.title)}</em>
               </span>
             </button>
           </li>`;

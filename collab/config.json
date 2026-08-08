@@ -1,0 +1,33 @@
+{
+  "source": "sheets",
+  "googleSheetsUrl": "https://docs.google.com/spreadsheets/d/1RosT5Y5WAh1to3w4OtDkmiACJDzZ2U7Ha2qrRtZUkIg/edit",
+  "googleSheetsId": "1RosT5Y5WAh1to3w4OtDkmiACJDzZ2U7Ha2qrRtZUkIg",
+  "access": {
+    "mode": "oauth",
+    "oauthClientFile": "collab/google_oauth_client.json",
+    "tokenFile": "collab/google_token.json"
+  },
+  "notes": "OAuth lets Cursor read+write the shared Sheet. Run: python3 scripts/sheets_auth.py",
+  "tabs": {
+    "לוח זמנים": {
+      "gid": "2113787466",
+      "name": "לוח זמנים"
+    },
+    "ימים": {
+      "gid": "117198632",
+      "name": "ימים"
+    },
+    "מלונות": {
+      "gid": "1341695145",
+      "name": "מלונות"
+    },
+    "להזמין": {
+      "gid": "1409773322",
+      "name": "להזמין"
+    },
+    "רעיונות": {
+      "gid": "1108041304",
+      "name": "רעיונות"
+    }
+  }
+}

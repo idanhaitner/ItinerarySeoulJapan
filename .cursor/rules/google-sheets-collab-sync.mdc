@@ -1,0 +1,28 @@
+---
+description: Always check the collaborative Google Sheet for itinerary updates before other work
+alwaysApply: true
+---
+
+# Google Sheets collab → website sync
+
+Planning source of truth: the shared **Google Sheet** (Idan + boyfriend). Website still builds from `scripts/build_data.py`, but Sheet edits come first.
+
+## Config / files
+
+- `collab/config.json` — Sheet URL + tab gids
+- `collab/google_token.json` — OAuth (gitignored)
+- `collab/README.md` — short how-to
+- Generated (ok to recreate): `CURRENT_FROM_SHEETS.txt`, `LAST_FETCH.json`, `LAST_SYNCED_SNAPSHOT.txt`
+
+## On every conversation
+
+1. If token/Sheet URL missing, remind once (don’t block unrelated work).
+2. Run `python3 scripts/fetch_collab_sheets.py` when itinerary might have changed.
+3. If `changedSinceLastSync` and relevant, sync into `scripts/build_data.py` → `python3 scripts/build_data.py` → Hebrew/checklist as needed → write `LAST_SYNCED_SNAPSHOT.txt`.
+4. Prefer tabs: **לוח זמנים**, **ימים**, **מלונות**, **להזמין**.
+5. Use `python3 scripts/push_collab_sheets.py` to refresh/format the Sheet when asked.
+6. Deploy only when the user asks.
+
+## Status tags in the Sheet
+
+`לטפל` · `הוזמן` · `סגור` · `רעיון` · `לדלג`
