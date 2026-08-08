@@ -1865,29 +1865,27 @@ window.DAYS = [
     "city": "Seoul",
     "country": "KR",
     "hotelId": "brick-hotel",
-    "title": "Temples, K-beauty & night shopping",
-    "summary": "Temples and the pre-booked Changdeokgung Secret Garden, an optional Gangnam beauty stop, then COEX and late Dongdaemun shopping.",
-    "food": "Temple-area cafés; Dongdaemun snacks.",
+    "title": "Temples, Myeongdong glow & night shopping",
+    "summary": "Jogyesa and pre-booked Changdeokgung Secret Garden, then a Myeongdong skin treatment (PPEUM/Lienjang) instead of Gangnam, and Dongdaemun night malls.",
+    "food": "Temple-area cafés; Myeongdong snacks; Dongdaemun bites.",
     "placeIds": [
       "jogyesa",
       "changdeokgung",
-      "gangnam",
-      "bongeunsa",
-      "coex",
+      "myeongdong",
       "dongdaemun"
     ],
     "transport": [
       "Book Secret Garden timed tickets online in advance.",
-      "Gangnam → COEX short hop; evening to Dongdaemun."
+      "Stay in Myeongdong for the glow treatment — skips ~90 minutes of Gangnam transit."
     ],
     "tips": [
       "Secret Garden sells out — reserve early.",
-      "Beauty treatment #1 is optional."
+      "Book English-friendly Myeongdong clinic (PPEUM / Lienjang / ToxnFill)."
     ],
     "timeline": [
       {
         "time": "09:00",
-        "title": "Hongdae aesthetic café",
+        "title": "Hongdae café breakfast",
         "note": "",
         "placeId": "hongdae",
         "category": "dining"
@@ -1909,27 +1907,20 @@ window.DAYS = [
         "category": "culture"
       },
       {
-        "time": "14:30",
-        "title": "Gangnam — beauty treatment #1",
-        "note": "Optional booked clinic window.",
-        "placeId": "gangnam",
-        "end": "16:30",
-        "category": "shopping"
+        "time": "15:00",
+        "title": "Myeongdong skin treatment",
+        "note": "Glow / Aqua Peel at PPEUM, Lienjang, or ToxnFill — tourist-friendly English.",
+        "placeId": "myeongdong",
+        "end": "17:00",
+        "category": "dining"
       },
       {
-        "time": "16:45",
-        "title": "Bongeunsa Temple",
-        "note": "",
-        "placeId": "bongeunsa",
-        "category": "culture"
-      },
-      {
-        "time": "17:30",
-        "title": "COEX & Starfield Library",
-        "note": "Photos + shopping + AC.",
-        "placeId": "coex",
-        "end": "19:30",
-        "category": "shopping"
+        "time": "17:15",
+        "title": "Myeongdong browse & snacks",
+        "note": "K-beauty shopping while you’re already there.",
+        "placeId": "myeongdong",
+        "end": "19:00",
+        "category": "dining"
       },
       {
         "time": "20:00",
@@ -1948,29 +1939,39 @@ window.DAYS = [
     "city": "Seoul",
     "country": "KR",
     "hotelId": "brick-hotel",
-    "title": "Hipster Seoul, views & Itaewon night",
-    "summary": "Trendier Seongsu for boutiques and an optional second treatment, N Seoul Tower for sunset, then Itaewon nightlife.",
-    "food": "Seongsu brunch; Itaewon international dinner.",
+    "title": "Head Spa, Seongsu & Itaewon night",
+    "summary": "Morning Head Spa near Hongdae (5-minute walk from 9 Brick), then Seongsu boutiques, N Seoul Tower sunset, and Itaewon nightlife.",
+    "food": "Light post-spa lunch in Seongsu; Itaewon international dinner.",
     "placeIds": [
+      "hongdae",
       "seongsu",
       "n-tower",
       "itaewon"
     ],
     "transport": [
-      "Hongdae → Seongsu (~35–45m).",
+      "Head Spa first (Parkjun / Eco Jardin), then subway to Seongsu (~35–45m).",
       "Seongsu → Namsan (~40m)."
     ],
     "tips": [
+      "Book Head Spa 10:00–11:30 near the hotel.",
       "Book N Tower for sunset.",
       "Itaewon is LGBTQ+ friendly."
     ],
     "timeline": [
       {
         "time": "10:00",
+        "title": "Head Spa in Hongdae",
+        "note": "Parkjun Beauty Lab / Eco Jardin / WT Methode — refreshing reset before a walking day.",
+        "placeId": "hongdae",
+        "end": "11:30",
+        "category": "dining"
+      },
+      {
+        "time": "12:30",
         "title": "Seongsu-dong explore",
-        "note": "Trendy boutiques, cafés, Seongsu Yeonbang. Treatment #2 optional.",
+        "note": "Trendy boutiques, cafés, Seongsu Yeonbang.",
         "placeId": "seongsu",
-        "end": "15:00",
+        "end": "16:00",
         "category": "dining"
       },
       {
@@ -2319,7 +2320,7 @@ window.DAYS = [
     "country": "JP",
     "hotelId": null,
     "title": "Romancecar & volcanic valleys",
-    "summary": "Romancecar into Hakone, Owakudani volcanic valley, then a ryokan night with onsen and kaiseki. Ryokan still to book.",
+    "summary": "Morning Takkyubin of big bags Tokyo→Kyoto, Romancecar (try Observation Car) into Hakone, Owakudani, then ryokan onsen + kaiseki. Ryokan still to book.",
     "food": "Black eggs; kaiseki dinner at ryokan.",
     "placeIds": [
       "owakudani"
@@ -2329,14 +2330,21 @@ window.DAYS = [
       "Ropeway to Owakudani."
     ],
     "tips": [
-      "Forward big bags to Kyoto.",
+      "Send large suitcases Tokyo→Kyoto via hotel Takkyubin; travel Hakone/Fuji with backpacks only.",
+      "Book Romancecar ~1 month ahead — request front Observation Car seats.",
       "Enjoy onsen etiquette."
     ],
     "timeline": [
       {
+        "time": "08:00",
+        "title": "Takkyubin drop at Tokyo hotel",
+        "note": "Forward big bags straight to the Kyoto hotel — 2-night backpack mode starts now.",
+        "category": "attraction"
+      },
+      {
         "time": "09:00",
         "title": "Romancecar from Shinjuku",
-        "note": "~80 minutes to Hakone-Yumoto.",
+        "note": "~80 minutes to Hakone-Yumoto. Aim for Observation Car.",
         "category": "transit"
       },
       {
@@ -2362,7 +2370,7 @@ window.DAYS = [
       {
         "time": "19:00",
         "title": "Kaiseki dinner",
-        "note": "Early night — sunrise shrine tomorrow.",
+        "note": "Early night — dawn shrine tomorrow.",
         "category": "dining"
       }
     ],
@@ -2382,20 +2390,22 @@ window.DAYS = [
     "city": "Kawaguchiko",
     "country": "JP",
     "hotelId": null,
-    "title": "Torii sunrise & Fuji shorelines",
-    "summary": "Dawn at Hakone Shrine, Lake Ashi cruise, bus to Kawaguchiko, Fuji Lawson photos and Oishi Park sunset. Hotel still to book.",
+    "title": "Torii dawn, Fuji shores & Chureito sunset",
+    "summary": "Dawn at Hakone Shrine, Lake Ashi cruise, bus to Kawaguchiko, Fuji Lawson, then Chureito Pagoda at sunset (kept separate from Fuji-Q). Hotel still to book.",
     "food": "Lakeside dinner near Kawaguchiko.",
     "placeIds": [
       "hakone-shrine",
       "lake-ashi",
       "fuji-lawson",
+      "chureito",
       "oishi-park"
     ],
     "transport": [
-      "Hakone → Gotemba → Fujikyu to Kawaguchiko (~1.5–2h, ¥1,600–2,100)."
+      "Hakone → Gotemba → Fujikyu to Kawaguchiko (~1.5–2h, ¥1,600–2,100).",
+      "Late taxi/bus to Chureito for sunset."
     ],
     "tips": [
-      "Sleep early for Chureito sunrise.",
+      "Chureito at sunset today so tomorrow’s Fuji-Q day starts fresh.",
       "Book Kawaguchiko lodging before this night."
     ],
     "timeline": [
@@ -2436,11 +2446,19 @@ window.DAYS = [
         "category": "attraction"
       },
       {
-        "time": "16:30",
-        "title": "Oishi Park sunset",
-        "note": "Lake Kawaguchiko shore.",
+        "time": "15:30",
+        "title": "Optional Oishi Park stroll",
+        "note": "Lake shore if energy remains.",
         "placeId": "oishi-park",
-        "end": "18:30",
+        "end": "16:30",
+        "category": "attraction"
+      },
+      {
+        "time": "17:15",
+        "title": "Chureito Pagoda sunset",
+        "note": "Iconic Fuji + pagoda shot — no 05:30 wake-up tomorrow.",
+        "placeId": "chureito",
+        "end": "18:45",
         "category": "attraction"
       }
     ],
@@ -2460,16 +2478,14 @@ window.DAYS = [
     "city": "Kawaguchiko",
     "country": "JP",
     "hotelId": null,
-    "title": "Sunrise pagoda & Fuji-Q thrills",
-    "summary": "Sunrise at Chureito Pagoda, a full Fuji-Q Highland day, hoto noodles, and an early night before Kyoto.",
+    "title": "Fuji-Q thrills (fresh start)",
+    "summary": "Full Fuji-Q Highland day with a normal wake-up (Chureito already done at sunset), hoto noodles, and an early night before Kyoto.",
     "food": "Park food; local hoto noodle dinner.",
     "placeIds": [
-      "chureito",
       "fuji-q"
     ],
     "transport": [
-      "Early taxi/bus to Chureito + stairs.",
-      "Fuji-Q for opening."
+      "Fuji-Q for opening — no pre-dawn Chureito detour."
     ],
     "tips": [
       "Prefer Mishima Shinkansen tomorrow — rest well tonight.",
@@ -2477,19 +2493,11 @@ window.DAYS = [
     ],
     "timeline": [
       {
-        "time": "04:45",
-        "title": "Depart for Chureito Pagoda",
-        "note": "",
-        "placeId": "chureito",
+        "time": "08:30",
+        "title": "Depart for Fuji-Q Highland",
+        "note": "Rested legs after yesterday’s sunset pagoda.",
+        "placeId": "fuji-q",
         "category": "transit"
-      },
-      {
-        "time": "05:30",
-        "title": "Sunrise at Chureito",
-        "note": "Iconic Fuji + pagoda shot.",
-        "placeId": "chureito",
-        "end": "07:00",
-        "category": "attraction"
       },
       {
         "time": "09:00",
@@ -2514,10 +2522,11 @@ window.DAYS = [
     "city": "Kyoto",
     "country": "JP",
     "hotelId": null,
-    "title": "Transfer to Kansai & historic Gion",
-    "summary": "Comfortable Mishima Shinkansen transfer to Kyoto (~3.5–4h), then Kennin-ji, Gion and Pontocho. Hotel still to book.",
-    "food": "Pontocho riverside dinner.",
+    "title": "Transfer to Kansai, Nishiki & Gion",
+    "summary": "Comfortable Mishima Shinkansen to Kyoto (~3.5–4h), hotel drop, Nishiki Market snacks (moved off the heavy Higashiyama day), then Gion and Pontocho. Hotel still to book.",
+    "food": "Nishiki snacks; Pontocho riverside dinner.",
     "placeIds": [
+      "nishiki",
       "kenninji",
       "gion",
       "pontocho"
@@ -2528,7 +2537,9 @@ window.DAYS = [
     ],
     "tips": [
       "Far more comfortable than overnight bus after Fuji-Q.",
-      "Respectful photos in Gion."
+      "Nishiki here keeps tomorrow’s Fushimi/Kiyomizu day under ~25k steps.",
+      "Respectful photos in Gion.",
+      "Collect Takkyubin bags at hotel."
     ],
     "timeline": [
       {
@@ -2545,20 +2556,28 @@ window.DAYS = [
       },
       {
         "time": "13:00",
-        "title": "Hotel drop & rest",
+        "title": "Hotel drop & collect forwarded bags",
         "note": "",
         "category": "attraction"
       },
       {
-        "time": "15:00",
+        "time": "14:30",
+        "title": "Nishiki Market graze",
+        "note": "Moved here from the Higashiyama day to save your legs.",
+        "placeId": "nishiki",
+        "end": "16:00",
+        "category": "dining"
+      },
+      {
+        "time": "16:30",
         "title": "Kennin-ji Temple",
-        "note": "Tranquil Zen start.",
+        "note": "Short Zen stop near Gion.",
         "placeId": "kenninji",
-        "end": "16:30",
+        "end": "17:30",
         "category": "culture"
       },
       {
-        "time": "17:30",
+        "time": "17:45",
         "title": "Gion dusk stroll",
         "note": "Geisha district lanes.",
         "placeId": "gion",
@@ -2591,17 +2610,17 @@ window.DAYS = [
     "country": "JP",
     "hotelId": null,
     "title": "Torii gates & ancient slopes",
-    "summary": "Sunrise climb at Fushimi Inari, Kiyomizu-dera and the old streets, then Nishiki snacks and Shijo shopping.",
-    "food": "Convenience breakfast; Nishiki street-food snacks.",
+    "summary": "Sunrise climb at Fushimi Inari, Kiyomizu-dera and the old streets — Nishiki removed to keep the day walkable.",
+    "food": "Convenience breakfast; Higashiyama café lunch.",
     "placeIds": [
       "fushimi-inari",
       "kiyomizu",
-      "sannenzaka",
-      "nishiki"
+      "sannenzaka"
     ],
     "transport": [
       "Early Keihan/JR to Fushimi.",
-      "Bus/walk Higashiyama cluster."
+      "Bus/walk Higashiyama cluster.",
+      "Stop when stairs win — no market add-on today."
     ],
     "tips": [
       "Hike higher at Fushimi to beat crowds.",
@@ -2633,17 +2652,15 @@ window.DAYS = [
       {
         "time": "13:15",
         "title": "Sannenzaka & Ninenzaka",
-        "note": "Preserved stone streets.",
+        "note": "Preserved stone streets — then rest / early dinner nearby.",
         "placeId": "sannenzaka",
-        "end": "15:00",
+        "end": "16:00",
         "category": "dining"
       },
       {
-        "time": "16:00",
-        "title": "Nishiki Market & Shijo shopping",
-        "note": "Snacks + Kawaramachi browse.",
-        "placeId": "nishiki",
-        "end": "19:00",
+        "time": "18:30",
+        "title": "Easy dinner near hotel",
+        "note": "Recovery night after the climbs.",
         "category": "dining"
       }
     ]
@@ -2745,8 +2762,8 @@ window.DAYS = [
     "country": "JP",
     "hotelId": null,
     "title": "Kurama & Kibune mountain day",
-    "summary": "Mountain day trip to Kurama and Kibune — temple, forest walk, riverside kawadoko lunch, optional onsen.",
-    "food": "Kawadoko lunch over the river — book if possible.",
+    "summary": "Mountain day trip to Kurama and Kibune — temple, forest walk, must-book kawadoko riverside lunch (Hirobun / Fujiya), optional onsen.",
+    "food": "Booked kawadoko lunch over the river — romantic highlight.",
     "placeIds": [
       "kurama-dera",
       "kifune",
@@ -2759,6 +2776,7 @@ window.DAYS = [
       "Return Kibuneguchi."
     ],
     "tips": [
+      "Reserve kawadoko weeks ahead (Hirobun or Fujiya) — early September is classic season end.",
       "One of the trip highlights — go if weather is decent."
     ],
     "timeline": [
@@ -2795,7 +2813,7 @@ window.DAYS = [
       {
         "time": "13:15",
         "title": "Kawadoko riverside lunch",
-        "note": "Decks over the stream.",
+        "note": "Decks over the stream — Hirobun / Fujiya reserved.",
         "placeId": "kawadoko",
         "end": "15:00",
         "category": "dining"
@@ -2967,7 +2985,7 @@ window.DAYS = [
     "country": "JP",
     "hotelId": null,
     "title": "Universal Studios Japan",
-    "summary": "All day at Universal Studios Japan — Nintendo World and Harry Potter. Express Passes well in advance.",
+    "summary": "All day at Universal Studios Japan — Nintendo World and Harry Potter. Express Pass must be booked exactly 2 months ahead at midnight JST.",
     "food": "Park snacks; late Namba ramen optional.",
     "placeIds": [
       "usj"
@@ -2976,7 +2994,7 @@ window.DAYS = [
       "Subway to Universal City (~25–35m). Leave by ~07:45."
     ],
     "tips": [
-      "Pre-book Express Passes.",
+      "Book Express Pass exactly 2 months prior at 00:00 Japan time — locks Nintendo World entry window and skips the rope-drop sprint.",
       "Check Nintendo World entry rules."
     ],
     "timeline": [
@@ -2988,8 +3006,8 @@ window.DAYS = [
       },
       {
         "time": "09:00",
-        "title": "USJ rope drop",
-        "note": "Nintendo World & Harry Potter priority.",
+        "title": "USJ with Express Pass",
+        "note": "Timed Nintendo World + Harry Potter priority.",
         "placeId": "usj",
         "end": "12:30",
         "category": "attraction"
@@ -3221,9 +3239,10 @@ window.DAYS = [
     "country": "JP",
     "hotelId": null,
     "title": "Return to Tokyo & nightlife",
-    "summary": "Shinkansen back to Tokyo (~2.5h), Roppongi or Azabudai, Tokyo Tower at night and Kabukicho. Hotel still to book.",
+    "summary": "Shinkansen back to Tokyo (~2.5h), check into a Ginza/Shiodome-area hotel (best for NRT+HND), then Roppongi or Azabudai, Tokyo Tower night and Kabukicho.",
     "food": "Roppongi/Azabudai dinner.",
     "placeIds": [
+      "ginza",
       "roppongi",
       "azabudai",
       "tokyo-tower",
@@ -3231,9 +3250,10 @@ window.DAYS = [
     ],
     "transport": [
       "Nozomi Osaka → Tokyo (~2.5h).",
-      "Local transfer to Tokyo hotel (still to book)."
+      "Local transfer to Ginza / Shiodome hotel."
     ],
     "tips": [
+      "Prefer Ginza/Shiodome lodging for easy access to both Narita and Haneda.",
       "Neon night finale energy."
     ],
     "timeline": [
@@ -3245,9 +3265,10 @@ window.DAYS = [
       },
       {
         "time": "12:30",
-        "title": "Hotel check-in",
-        "note": "",
-        "category": "attraction"
+        "title": "Hotel check-in — Ginza / Shiodome",
+        "note": "Shopping + dual-airport access.",
+        "placeId": "ginza",
+        "category": "transit"
       },
       {
         "time": "14:30",
@@ -3288,7 +3309,7 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
-    "title": "Subcultures & vintage shopping",
+    "title": "Soft Tokyo day",
     "summary": "Calm morning in Shinjuku Gyoen, then Shimokitazawa or Nakano Broadway, and a specialty wagyu dinner.",
     "food": "Wagyu BBQ dinner.",
     "placeIds": [
@@ -3335,54 +3356,41 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
-    "title": "Kamakura coastal day trip (optional)",
-    "summary": "Optional Kamakura coast day — Great Buddha, Enoden line and beach cafés — or a rest day in Tokyo.",
-    "food": "Kamakura café lunch; Tokyo dinner.",
+    "title": "Flex day in Tokyo",
+    "summary": "No Kamakura — after nearly four weeks of walking, keep a free Tokyo day: late wake-up, cafés in Shimokitazawa/Harajuku, or light last shopping.",
+    "food": "Café hopping; easy dinner near the hotel.",
     "placeIds": [
-      "kamakura"
+      "shimokitazawa",
+      "takeshita",
+      "ginza"
     ],
     "transport": [
-      "JR to Kamakura (~1h).",
-      "Enoden line for coastal hops."
+      "Stay local — Ginza / Harajuku / Shimokita on a whim."
     ],
     "tips": [
-      "Skip if you want a rest day — fully optional.",
-      "Great Buddha is the must-see."
+      "Protect recovery before departure.",
+      "Kamakura dropped on purpose."
     ],
     "timeline": [
       {
-        "time": "08:30",
-        "title": "Train to Kamakura",
-        "note": "",
-        "placeId": "kamakura",
-        "category": "transit"
-      },
-      {
-        "time": "10:00",
-        "title": "Kotoku-in Great Buddha",
-        "note": "Plus temple streets.",
-        "placeId": "kamakura",
-        "end": "12:30",
-        "category": "culture"
-      },
-      {
-        "time": "13:00",
-        "title": "Enoden coastal ride & beach cafés",
-        "note": "Scenic side of the day.",
-        "placeId": "kamakura",
-        "end": "16:00",
+        "time": "10:30",
+        "title": "Late start — café of choice",
+        "note": "Sleep in without guilt.",
         "category": "dining"
       },
       {
-        "time": "17:00",
-        "title": "Return to Tokyo",
-        "note": "",
-        "category": "attraction"
+        "time": "13:00",
+        "title": "Flex: Shimokitazawa / Harajuku / Ginza",
+        "note": "Pick one neighborhood and wander.",
+        "placeId": "shimokitazawa",
+        "end": "17:30",
+        "category": "shopping"
       },
       {
         "time": "19:30",
-        "title": "Dinner in Tokyo",
+        "title": "Easy dinner near hotel",
         "note": "",
+        "placeId": "ginza",
         "category": "dining"
       }
     ]
@@ -3395,7 +3403,7 @@ window.DAYS = [
     "country": "JP",
     "hotelId": null,
     "title": "Last-minute shopping & fine dining",
-    "summary": "Last shopping day in Ginza, Akihabara or Shibuya, then a celebratory farewell dinner.",
+    "summary": "Last focused shopping day in Ginza (you’re already based nearby), Akihabara or Shibuya if needed, then a celebratory farewell dinner.",
     "food": "Farewell fine dining in Tokyo.",
     "placeIds": [
       "ginza",
@@ -3406,12 +3414,13 @@ window.DAYS = [
       "Pick one shopping focus to avoid rushing."
     ],
     "tips": [
-      "Pack non-essentials tonight."
+      "Pack non-essentials tonight.",
+      "Ginza base makes airport morning simpler."
     ],
     "timeline": [
       {
         "time": "10:00",
-        "title": "Shopping — Ginza / Akihabara / Shibuya",
+        "title": "Shopping — Ginza focus (or Akihabara / Shibuya)",
         "note": "Choose your lane.",
         "placeId": "ginza",
         "end": "17:00",
