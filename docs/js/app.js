@@ -555,7 +555,13 @@
           <div>
             <h2>${escapeHtml(day.title)}</h2>
             <div class="detail-meta">${escapeHtml(day.summary)}</div>
-            ${hotel ? `<div class="tag-row" style="margin-top:16px"><span class="tag">לינה · ${escapeHtml(hotel.name)}</span></div>` : ""}
+            ${
+              hotel
+                ? `<div class="tag-row" style="margin-top:16px"><span class="tag">לינה · ${escapeHtml(hotel.name)}</span></div>`
+                : day.city !== "Seoul"
+                  ? `<div class="tag-row" style="margin-top:16px"><span class="tag tag-warn">לינה · עדיין לא הוזמן</span></div>`
+                  : ""
+            }
           </div>
           ${day.food ? `<div class="food-banner"><strong>אוכל היום</strong><span>${escapeHtml(day.food)}</span></div>` : ""}
         </div>

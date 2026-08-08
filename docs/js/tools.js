@@ -45,7 +45,7 @@ window.TripTools = (function () {
       Hiroshima: "הירושימה",
     };
     return Object.values(places)
-      .filter((p) => (p.tags || []).includes("hotel") && p.taxiAddress)
+      .filter((p) => (p.tags || []).includes("hotel") && (p.tags || []).includes("booked") && p.taxiAddress)
       .map((p) => ({
         id: p.id,
         name: p.name,

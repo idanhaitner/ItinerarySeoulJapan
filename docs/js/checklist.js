@@ -1,6 +1,54 @@
 window.CHECKLIST = {
   groups: [
     {
+      id: "hotels",
+      title: "מלונות — עדיין להזמין",
+      items: [
+        {
+          id: "h-seoul",
+          label: "סיאול — 9 Brick Hotel Hongdae (כבר הוזמן ✓)",
+          window: "שמור",
+          priority: "low",
+        },
+        {
+          id: "h-tokyo1",
+          label: "טוקיו חלק 1 (1–6 בספט׳) — מלון באזור Shinjuku / מערב טוקיו",
+          window: "להזמין בהקדם",
+          priority: "high",
+        },
+        {
+          id: "h-hakone",
+          label: "הקונה (6–7 בספט׳) — ריוקאן / מלון עם אונסן",
+          window: "להזמין בהקדם",
+          priority: "high",
+        },
+        {
+          id: "h-kawaguchiko",
+          label: "קוואגוצ׳יקו / אגם פוג׳י (7–9 בספט׳) — מלון עם נוף אם אפשר",
+          window: "להזמין בהקדם",
+          priority: "high",
+        },
+        {
+          id: "h-kyoto",
+          label: "קיוטו (9–14 בספט׳) — מלון במרכז / Kawaramachi",
+          window: "להזמין בהקדם",
+          priority: "high",
+        },
+        {
+          id: "h-osaka",
+          label: "אוסקה (14–19 בספט׳) — מלון ליד Namba / Dotonbori",
+          window: "להזמין בהקדם",
+          priority: "high",
+        },
+        {
+          id: "h-tokyo2",
+          label: "טוקיו חלק 2 (19–23/24 בספט׳) — מלון לפני הטיסה הביתה",
+          window: "להזמין בהקדם",
+          priority: "high",
+        },
+      ],
+    },
+    {
       id: "korea",
       title: "לוגיסטיקה — קוריאה",
       items: [

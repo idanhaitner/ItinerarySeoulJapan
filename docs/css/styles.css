@@ -1760,6 +1760,11 @@ a { color: inherit; }
   background: rgba(47, 43, 40, 0.05);
 }
 
+.tag-warn {
+  color: var(--seal);
+  background: color-mix(in srgb, var(--seal) 10%, transparent);
+}
+
 /* ——— Places / cards ——— */
 .place-list { gap: 14px; }
 

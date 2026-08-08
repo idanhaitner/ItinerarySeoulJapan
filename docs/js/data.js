@@ -1,7 +1,7 @@
 /* Auto-generated trip data — Seoul + Japan detailed timelines */
 window.TRIP = {
   "title": "Korea + Japan 2026",
-  "subtitle": "Optimized Haitner itinerary",
+  "subtitle": "Idan & Shahar itinerary (dad's Excel was inspiration only)",
   "dates": "August 27 – September 23/24, 2026",
   "route": [
     "Seoul",
@@ -28,11 +28,12 @@ window.PLACES = {
     "city": "Seoul",
     "country": "KR",
     "tags": [
-      "hotel"
+      "hotel",
+      "booked"
     ],
     "lat": 37.5563,
     "lng": 126.9236,
-    "blurb": "Hongdae base for Seoul.",
+    "blurb": "Booked — our Seoul base in Hongdae.",
     "taxiAddress": "서울특별시 마포구 와우산로 94, 나인브릭호텔"
   },
   "icn": {
@@ -359,12 +360,12 @@ window.PLACES = {
     "city": "Tokyo",
     "country": "JP",
     "tags": [
-      "hotel"
+      "hotel",
+      "inspiration"
     ],
     "lat": 35.6906,
     "lng": 139.6921,
-    "blurb": "Shinjuku base.",
-    "taxiAddress": "東京都新宿区西新宿2-2-1 京王プラザホテル"
+    "blurb": "Dad's stay idea near Shinjuku — not booked for our trip."
   },
   "narita": {
     "id": "narita",
@@ -684,12 +685,12 @@ window.PLACES = {
     "country": "JP",
     "tags": [
       "hotel",
-      "onsen"
+      "onsen",
+      "inspiration"
     ],
     "lat": 35.2335,
     "lng": 139.0885,
-    "blurb": "Hakone onsen stay.",
-    "taxiAddress": "神奈川県足柄下郡箱根町湯本692 ホテルかじか荘"
+    "blurb": "Dad's Hakone ryokan idea — not booked for our trip."
   },
   "owakudani": {
     "id": "owakudani",
@@ -810,12 +811,12 @@ window.PLACES = {
     "city": "Kyoto",
     "country": "JP",
     "tags": [
-      "hotel"
+      "hotel",
+      "inspiration"
     ],
     "lat": 35.0037,
     "lng": 135.7685,
-    "blurb": "Kawaramachi base.",
-    "taxiAddress": "京都府京都市下京区四条通河原町東入真町70 ホテルミュッセ京都四条河原町名鉄"
+    "blurb": "Dad's Kyoto stay idea near Kawaramachi — not booked for our trip."
   },
   "kenninji": {
     "id": "kenninji",
@@ -1158,12 +1159,12 @@ window.PLACES = {
     "city": "Hiroshima",
     "country": "JP",
     "tags": [
-      "hotel"
+      "hotel",
+      "inspiration"
     ],
     "lat": 34.3927,
     "lng": 132.4553,
-    "blurb": "Central Hiroshima.",
-    "taxiAddress": "広島県広島市中区三川町1-1 ダイワロイネットホテル広島"
+    "blurb": "Dad's Hiroshima hotel idea — we day-trip from Osaka."
   },
   "shukkeien": {
     "id": "shukkeien",
@@ -1242,12 +1243,12 @@ window.PLACES = {
     "city": "Osaka",
     "country": "JP",
     "tags": [
-      "hotel"
+      "hotel",
+      "inspiration"
     ],
     "lat": 34.6693,
     "lng": 135.5013,
-    "blurb": "Namba / Dotonbori base.",
-    "taxiAddress": "大阪府大阪市中央区宗右衛門町2-5-15 クロスホテル大阪"
+    "blurb": "Dad's Osaka stay idea near Namba — not booked for our trip."
   },
   "kuromon": {
     "id": "kuromon",
@@ -1383,12 +1384,12 @@ window.PLACES = {
     "city": "Tokyo",
     "country": "JP",
     "tags": [
-      "hotel"
+      "hotel",
+      "inspiration"
     ],
     "lat": 35.6695,
     "lng": 139.7668,
-    "blurb": "Ginza return hotel.",
-    "taxiAddress": "東京都中央区銀座1-9-8 ソラリア西鉄ホテル銀座"
+    "blurb": "Dad's Tokyo return stay idea — not booked for our trip."
   },
   "ryogoku": {
     "id": "ryogoku",
@@ -1660,7 +1661,7 @@ window.DAYS = [
     "country": "KR",
     "hotelId": "brick-hotel",
     "title": "Arrival & night walk",
-    "summary": "Airport transfer, hotel check-in, Myeongdong street food; optional Hongdae if energy remains.",
+    "summary": "Land in Seoul, settle into the Hongdae hotel, then an easy Myeongdong night-food walk. Hongdae only if you still have energy.",
     "food": "Myeongdong street food night market.",
     "placeIds": [
       "icn",
@@ -1716,7 +1717,7 @@ window.DAYS = [
     "country": "KR",
     "hotelId": "brick-hotel",
     "title": "Royal heritage & historic alleys",
-    "summary": "Option A classic palace day or Option B via Eunpyeong Hanok Village, then Bukchon, Ikseon, Insadong, Gwangjang feast.",
+    "summary": "Palace morning (classic Gyeongbokgung, or via quieter Eunpyeong), then Bukchon, Ikseon and Insadong, and a Gwangjang Market dinner.",
     "food": "Gwangjang Market — bindaetteok, mayak kimbap, knife-cut noodles.",
     "placeIds": [
       "hongdae",
@@ -1793,7 +1794,7 @@ window.DAYS = [
     "country": "KR",
     "hotelId": "brick-hotel",
     "title": "Thrills, views & nightlife",
-    "summary": "Lotte World full park day, Seokchon Lake, Seoul Sky, jjimjilbang unwind, Hongdae night.",
+    "summary": "Full day of thrills at Lotte World, lake and Seoul Sky views, a jjimjilbang reset, then Hongdae nightlife.",
     "food": "Lotte mall lunch; late Hongdae bites.",
     "placeIds": [
       "lotte-world",
@@ -1865,7 +1866,7 @@ window.DAYS = [
     "country": "KR",
     "hotelId": "brick-hotel",
     "title": "Temples, K-beauty & night shopping",
-    "summary": "Jogyesa → Changdeokgung Secret Garden (pre-book!) → Gangnam treatment → Bongeunsa → COEX/Starfield → Dongdaemun overnight malls.",
+    "summary": "Temples and the pre-booked Changdeokgung Secret Garden, an optional Gangnam beauty stop, then COEX and late Dongdaemun shopping.",
     "food": "Temple-area cafés; Dongdaemun snacks.",
     "placeIds": [
       "jogyesa",
@@ -1948,7 +1949,7 @@ window.DAYS = [
     "country": "KR",
     "hotelId": "brick-hotel",
     "title": "Hipster Seoul, views & Itaewon night",
-    "summary": "Seongsu-dong boutiques + treatment #2, N Seoul Tower sunset, Itaewon / Homo Hill nightlife.",
+    "summary": "Trendier Seongsu for boutiques and an optional second treatment, N Seoul Tower for sunset, then Itaewon nightlife.",
     "food": "Seongsu brunch; Itaewon international dinner.",
     "placeIds": [
       "seongsu",
@@ -2003,14 +2004,13 @@ window.DAYS = [
     "weekday": "Tuesday",
     "city": "Tokyo",
     "country": "JP",
-    "hotelId": "keio-plaza",
+    "hotelId": null,
     "title": "Seoul → Tokyo & Shinjuku lights",
-    "summary": "Fly to Tokyo, Suica/eSIM setup, Shinjuku evening — Omoide Yokocho or Golden Gai.",
+    "summary": "Fly Seoul to Tokyo, set up Suica and eSIM, then a Shinjuku evening in Omoide Yokocho or Golden Gai. Hotel still to book.",
     "food": "Yakitori in Omoide Yokocho or Golden Gai drinks.",
     "placeIds": [
       "icn",
       "narita",
-      "keio-plaza",
       "shinjuku",
       "omoide-yokocho",
       "golden-gai"
@@ -2018,7 +2018,7 @@ window.DAYS = [
     "transport": [
       "Hotel → ICN/GMP with buffer.",
       "Flight to Tokyo.",
-      "Airport → Shinjuku hotel."
+      "Airport → Tokyo hotel (still to book — Shinjuku area is convenient)."
     ],
     "tips": [
       "Confirm flight times.",
@@ -2043,8 +2043,7 @@ window.DAYS = [
         "time": "17:30",
         "title": "Land, Suica/eSIM, hotel check-in",
         "note": "",
-        "placeId": "keio-plaza",
-        "category": "hotel"
+        "category": "attraction"
       },
       {
         "time": "19:30",
@@ -2077,9 +2076,9 @@ window.DAYS = [
     "weekday": "Wednesday",
     "city": "Tokyo",
     "country": "JP",
-    "hotelId": "keio-plaza",
+    "hotelId": null,
     "title": "West Tokyo: culture, pop & Shibuya Sky",
-    "summary": "Meiji Jingu → Takeshita & Omotesando → Shibuya Crossing → pre-booked Shibuya Sky sunset.",
+    "summary": "West Tokyo: Meiji Jingu, Harajuku and Omotesando, Shibuya Crossing, and a pre-booked Shibuya Sky sunset.",
     "food": "Harajuku snacks; Shibuya dinner & drinks.",
     "placeIds": [
       "meiji-jingu",
@@ -2143,9 +2142,9 @@ window.DAYS = [
     "weekday": "Thursday",
     "city": "Tokyo",
     "country": "JP",
-    "hotelId": "keio-plaza",
+    "hotelId": null,
     "title": "Historic Tokyo & Electric Town",
-    "summary": "Early Senso-ji & Nakamise → Skytree or Ueno Park → Akihabara gaming/anime → izakaya in Akihabara/Kanda.",
+    "summary": "Early Asakusa at Senso-ji, then Skytree or Ueno, and an Akihabara afternoon ending with izakaya.",
     "food": "Nakamise snacks; izakaya dinner.",
     "placeIds": [
       "asakusa",
@@ -2201,9 +2200,9 @@ window.DAYS = [
     "weekday": "Friday",
     "city": "Tokyo",
     "country": "JP",
-    "hotelId": "keio-plaza",
+    "hotelId": null,
     "title": "Digital art & bay views",
-    "summary": "Tsukiji seafood breakfast → teamLab Planets or Borderless → Odaiba Gundam → Ginza evening.",
+    "summary": "Tsukiji seafood breakfast, timed teamLab, Odaiba Gundam and bay views, then a Ginza evening.",
     "food": "Tsukiji sushi breakfast; Ginza dinner.",
     "placeIds": [
       "tsukiji",
@@ -2260,9 +2259,9 @@ window.DAYS = [
     "weekday": "Saturday",
     "city": "Tokyo",
     "country": "JP",
-    "hotelId": "keio-plaza",
+    "hotelId": null,
     "title": "Magic & coastal culture",
-    "summary": "Option A: full Tokyo DisneySea. Option B: Ghibli Museum → Inokashira Park → Shimokitazawa vintage.",
+    "summary": "Choose one: a full DisneySea day, or Ghibli Museum with Inokashira Park and Shimokitazawa thrifting.",
     "food": "Park food (A) or Kichijoji/Shimokitazawa cafés (B).",
     "placeIds": [
       "disneysea",
@@ -2318,13 +2317,12 @@ window.DAYS = [
     "weekday": "Sunday",
     "city": "Hakone",
     "country": "JP",
-    "hotelId": "kajikaso",
+    "hotelId": null,
     "title": "Romancecar & volcanic valleys",
-    "summary": "09:00 Romancecar to Hakone-Yumoto, Owakudani black eggs, ryokan onsen + kaiseki.",
+    "summary": "Romancecar into Hakone, Owakudani volcanic valley, then a ryokan night with onsen and kaiseki. Ryokan still to book.",
     "food": "Black eggs; kaiseki dinner at ryokan.",
     "placeIds": [
-      "owakudani",
-      "kajikaso"
+      "owakudani"
     ],
     "transport": [
       "Odakyu Romancecar Shinjuku → Hakone-Yumoto (~80m, ~¥2,470).",
@@ -2339,15 +2337,13 @@ window.DAYS = [
         "time": "09:00",
         "title": "Romancecar from Shinjuku",
         "note": "~80 minutes to Hakone-Yumoto.",
-        "placeId": "keio-plaza",
-        "category": "hotel"
+        "category": "transit"
       },
       {
         "time": "11:00",
         "title": "Arrive Hakone-Yumoto",
         "note": "",
-        "placeId": "kajikaso",
-        "category": "hotel"
+        "category": "attraction"
       },
       {
         "time": "12:30",
@@ -2361,15 +2357,13 @@ window.DAYS = [
         "time": "17:00",
         "title": "Ryokan check-in & onsen",
         "note": "",
-        "placeId": "kajikaso",
-        "category": "hotel"
+        "category": "attraction"
       },
       {
         "time": "19:00",
         "title": "Kaiseki dinner",
         "note": "Early night — sunrise shrine tomorrow.",
-        "placeId": "kajikaso",
-        "category": "hotel"
+        "category": "dining"
       }
     ],
     "transfer": {
@@ -2389,7 +2383,7 @@ window.DAYS = [
     "country": "JP",
     "hotelId": null,
     "title": "Torii sunrise & Fuji shorelines",
-    "summary": "Hakone Shrine dawn, Lake Ashi cruise, bus to Kawaguchiko, Fuji Lawson, Oishi Park sunset.",
+    "summary": "Dawn at Hakone Shrine, Lake Ashi cruise, bus to Kawaguchiko, Fuji Lawson photos and Oishi Park sunset. Hotel still to book.",
     "food": "Lakeside dinner near Kawaguchiko.",
     "placeIds": [
       "hakone-shrine",
@@ -2402,7 +2396,7 @@ window.DAYS = [
     ],
     "tips": [
       "Sleep early for Chureito sunrise.",
-      "Confirm Kawaguchiko hotel."
+      "Book Kawaguchiko lodging before this night."
     ],
     "timeline": [
       {
@@ -2467,7 +2461,7 @@ window.DAYS = [
     "country": "JP",
     "hotelId": null,
     "title": "Sunrise pagoda & Fuji-Q thrills",
-    "summary": "Chureito Pagoda sunrise, full Fuji-Q Highland day, hoto noodles, early sleep (no overnight bus).",
+    "summary": "Sunrise at Chureito Pagoda, a full Fuji-Q Highland day, hoto noodles, and an early night before Kyoto.",
     "food": "Park food; local hoto noodle dinner.",
     "placeIds": [
       "chureito",
@@ -2519,12 +2513,11 @@ window.DAYS = [
     "weekday": "Wednesday",
     "city": "Kyoto",
     "country": "JP",
-    "hotelId": "musse-kyoto",
+    "hotelId": null,
     "title": "Transfer to Kansai & historic Gion",
-    "summary": "Recommended Mishima Shinkansen route (~3.5–4h). Kennin-ji afternoon, Gion & Pontocho evening.",
+    "summary": "Comfortable Mishima Shinkansen transfer to Kyoto (~3.5–4h), then Kennin-ji, Gion and Pontocho. Hotel still to book.",
     "food": "Pontocho riverside dinner.",
     "placeIds": [
-      "musse-kyoto",
       "kenninji",
       "gion",
       "pontocho"
@@ -2554,8 +2547,7 @@ window.DAYS = [
         "time": "13:00",
         "title": "Hotel drop & rest",
         "note": "",
-        "placeId": "musse-kyoto",
-        "category": "hotel"
+        "category": "attraction"
       },
       {
         "time": "15:00",
@@ -2597,9 +2589,9 @@ window.DAYS = [
     "weekday": "Thursday",
     "city": "Kyoto",
     "country": "JP",
-    "hotelId": "musse-kyoto",
+    "hotelId": null,
     "title": "Torii gates & ancient slopes",
-    "summary": "Sunrise Fushimi Inari climb, Kiyomizu-dera, Sannenzaka/Ninenzaka, Nishiki snacks, Shijo shopping. (No Kinkaku-ji today.)",
+    "summary": "Sunrise climb at Fushimi Inari, Kiyomizu-dera and the old streets, then Nishiki snacks and Shijo shopping.",
     "food": "Convenience breakfast; Nishiki street-food snacks.",
     "placeIds": [
       "fushimi-inari",
@@ -2662,9 +2654,9 @@ window.DAYS = [
     "weekday": "Friday",
     "city": "Kyoto",
     "country": "JP",
-    "hotelId": "musse-kyoto",
+    "hotelId": null,
     "title": "Arashiyama bamboo & monkey park",
-    "summary": "Otagi & Adashino statues, Saga Toriimoto, bamboo grove, Tenryu-ji, Kimono Forest, Togetsukyo, Monkey Park.",
+    "summary": "West Kyoto day: stone statues, bamboo grove, Tenryu-ji, the bridge, and Monkey Park views.",
     "food": "Lunch near Togetsukyo Bridge.",
     "placeIds": [
       "otagi",
@@ -2741,8 +2733,7 @@ window.DAYS = [
         "time": "19:00",
         "title": "Central Kyoto dinner",
         "note": "",
-        "placeId": "musse-kyoto",
-        "category": "hotel"
+        "category": "dining"
       }
     ]
   },
@@ -2752,9 +2743,9 @@ window.DAYS = [
     "weekday": "Saturday",
     "city": "Kyoto",
     "country": "JP",
-    "hotelId": "musse-kyoto",
+    "hotelId": null,
     "title": "Kurama & Kibune mountain day",
-    "summary": "Eizan Railway to Kurama-dera, forest trek to Kibune, Kifune Shrine, kawadoko lunch, Kurama Onsen.",
+    "summary": "Mountain day trip to Kurama and Kibune — temple, forest walk, riverside kawadoko lunch, optional onsen.",
     "food": "Kawadoko lunch over the river — book if possible.",
     "placeIds": [
       "kurama-dera",
@@ -2821,8 +2812,7 @@ window.DAYS = [
         "time": "18:30",
         "title": "Return to Kyoto",
         "note": "",
-        "placeId": "musse-kyoto",
-        "category": "hotel"
+        "category": "attraction"
       }
     ]
   },
@@ -2832,9 +2822,9 @@ window.DAYS = [
     "weekday": "Sunday",
     "city": "Kyoto",
     "country": "JP",
-    "hotelId": "musse-kyoto",
+    "hotelId": null,
     "title": "Zen gardens & Golden Pavilion",
-    "summary": "Ginkaku-ji, Philosopher’s Path, Nanzen-ji lunch, taxi to Kinkaku-ji for golden hour, farewell Kyoto dinner.",
+    "summary": "East Kyoto zen path from Ginkaku-ji to Nanzen-ji, then Kinkaku-ji at golden hour and a farewell Kyoto dinner.",
     "food": "Lunch near Nanzen-ji; celebratory Kyoto dinner.",
     "placeIds": [
       "ginkakuji",
@@ -2898,12 +2888,11 @@ window.DAYS = [
     "weekday": "Monday",
     "city": "Osaka",
     "country": "JP",
-    "hotelId": "cross-osaka",
+    "hotelId": null,
     "title": "Transfer to Osaka & street food heaven",
-    "summary": "~30m to Osaka, castle park, Shinsekai/Tsutenkaku, Dotonbori crawl, Hozenji Yokocho.",
+    "summary": "Short hop to Osaka, castle park and Shinsekai, then a Dotonbori food crawl. Hotel still to book.",
     "food": "Takoyaki & okonomiyaki in Dotonbori.",
     "placeIds": [
-      "cross-osaka",
       "osaka-castle",
       "shinsekai",
       "dotonbori",
@@ -2911,7 +2900,7 @@ window.DAYS = [
     ],
     "transport": [
       "Kyoto → Osaka train (~30–45m).",
-      "Hotel in Namba area."
+      "Book an Osaka hotel near Namba/Dotonbori."
     ],
     "tips": [
       "Base Osaka for USJ, Nara, and Hiroshima day trip."
@@ -2927,8 +2916,7 @@ window.DAYS = [
         "time": "11:00",
         "title": "Hotel check-in",
         "note": "",
-        "placeId": "cross-osaka",
-        "category": "hotel"
+        "category": "attraction"
       },
       {
         "time": "12:30",
@@ -2977,9 +2965,9 @@ window.DAYS = [
     "weekday": "Tuesday",
     "city": "Osaka",
     "country": "JP",
-    "hotelId": "cross-osaka",
+    "hotelId": null,
     "title": "Universal Studios Japan",
-    "summary": "Full USJ day — Super Nintendo World & Wizarding World. Express Passes 2 months prior!",
+    "summary": "All day at Universal Studios Japan — Nintendo World and Harry Potter. Express Passes well in advance.",
     "food": "Park snacks; late Namba ramen optional.",
     "placeIds": [
       "usj"
@@ -2996,8 +2984,7 @@ window.DAYS = [
         "time": "07:45",
         "title": "Depart hotel",
         "note": "",
-        "placeId": "cross-osaka",
-        "category": "hotel"
+        "category": "transit"
       },
       {
         "time": "09:00",
@@ -3034,8 +3021,7 @@ window.DAYS = [
         "time": "21:30",
         "title": "Return Namba",
         "note": "",
-        "placeId": "cross-osaka",
-        "category": "hotel"
+        "category": "attraction"
       }
     ]
   },
@@ -3045,9 +3031,9 @@ window.DAYS = [
     "weekday": "Wednesday",
     "city": "Osaka",
     "country": "JP",
-    "hotelId": "cross-osaka",
+    "hotelId": null,
     "title": "Nara deer park day trip",
-    "summary": "45m to Nara: deer park, Todai-ji Great Buddha, Kasuga Taisha. Evening Shinsaibashi & Amerikamura.",
+    "summary": "Day trip to Nara for deer park, Todai-ji and Kasuga Taisha; evening back in Shinsaibashi and Amerikamura.",
     "food": "Nara lunch; Amerikamura casual dinner.",
     "placeIds": [
       "nara-park",
@@ -3115,15 +3101,14 @@ window.DAYS = [
     "weekday": "Thursday",
     "city": "Osaka",
     "country": "JP",
-    "hotelId": "cross-osaka",
+    "hotelId": null,
     "title": "Hiroshima & Miyajima day trip",
-    "summary": "Early Shinkansen (~80m): Miyajima floating torii + Peace Park/Museum. Hiroshima okonomiyaki, return Osaka.",
+    "summary": "Early Shinkansen day trip to Miyajima and Hiroshima Peace Park, okonomiyaki, then back to Osaka.",
     "food": "Hiroshima-style okonomiyaki before return.",
     "placeIds": [
       "miyajima",
       "peace-park",
-      "okonomiyaki",
-      "cross-osaka"
+      "okonomiyaki"
     ],
     "transport": [
       "Early Nozomi/Sakura to Hiroshima (~80m).",
@@ -3169,8 +3154,7 @@ window.DAYS = [
         "time": "18:30",
         "title": "Shinkansen return to Osaka",
         "note": "Evening arrival.",
-        "placeId": "cross-osaka",
-        "category": "hotel"
+        "category": "transit"
       }
     ],
     "transfer": {
@@ -3188,13 +3172,12 @@ window.DAYS = [
     "weekday": "Friday",
     "city": "Osaka",
     "country": "JP",
-    "hotelId": "cross-osaka",
+    "hotelId": null,
     "title": "Umeda & modern Osaka",
-    "summary": "Umeda shopping (Hep Five, Grand Front), sunset Umeda Sky Building, drinks in Namba or Nakazakicho.",
+    "summary": "Modern Osaka: Umeda shopping, sunset at Umeda Sky Building, drinks in Namba or Nakazakicho.",
     "food": "Umeda lunch; Namba evening drinks.",
     "placeIds": [
       "umeda-sky",
-      "cross-osaka",
       "dotonbori"
     ],
     "transport": [
@@ -3236,12 +3219,11 @@ window.DAYS = [
     "weekday": "Saturday",
     "city": "Tokyo",
     "country": "JP",
-    "hotelId": "solaria",
+    "hotelId": null,
     "title": "Return to Tokyo & nightlife",
-    "summary": "Shinkansen ~2.5h. Roppongi or Azabudai Hills, Tokyo Tower night photos, Kabukicho bars.",
+    "summary": "Shinkansen back to Tokyo (~2.5h), Roppongi or Azabudai, Tokyo Tower at night and Kabukicho. Hotel still to book.",
     "food": "Roppongi/Azabudai dinner.",
     "placeIds": [
-      "solaria",
       "roppongi",
       "azabudai",
       "tokyo-tower",
@@ -3249,7 +3231,7 @@ window.DAYS = [
     ],
     "transport": [
       "Nozomi Osaka → Tokyo (~2.5h).",
-      "Local to hotel."
+      "Local transfer to Tokyo hotel (still to book)."
     ],
     "tips": [
       "Neon night finale energy."
@@ -3265,8 +3247,7 @@ window.DAYS = [
         "time": "12:30",
         "title": "Hotel check-in",
         "note": "",
-        "placeId": "solaria",
-        "category": "hotel"
+        "category": "attraction"
       },
       {
         "time": "14:30",
@@ -3306,9 +3287,9 @@ window.DAYS = [
     "weekday": "Sunday",
     "city": "Tokyo",
     "country": "JP",
-    "hotelId": "solaria",
+    "hotelId": null,
     "title": "Subcultures & vintage shopping",
-    "summary": "Shinjuku Gyoen morning, Shimokitazawa or Nakano Broadway afternoon, specialty wagyu BBQ dinner.",
+    "summary": "Calm morning in Shinjuku Gyoen, then Shimokitazawa or Nakano Broadway, and a specialty wagyu dinner.",
     "food": "Wagyu BBQ dinner.",
     "placeIds": [
       "shinjuku-gyoen",
@@ -3353,9 +3334,9 @@ window.DAYS = [
     "weekday": "Monday",
     "city": "Tokyo",
     "country": "JP",
-    "hotelId": "solaria",
+    "hotelId": null,
     "title": "Kamakura coastal day trip (optional)",
-    "summary": "1h to Kamakura: Kotoku-in Great Buddha, Enoden coastal train, beach cafés. Evening Tokyo dinner.",
+    "summary": "Optional Kamakura coast day — Great Buddha, Enoden line and beach cafés — or a rest day in Tokyo.",
     "food": "Kamakura café lunch; Tokyo dinner.",
     "placeIds": [
       "kamakura"
@@ -3396,8 +3377,7 @@ window.DAYS = [
         "time": "17:00",
         "title": "Return to Tokyo",
         "note": "",
-        "placeId": "solaria",
-        "category": "hotel"
+        "category": "attraction"
       },
       {
         "time": "19:30",
@@ -3413,9 +3393,9 @@ window.DAYS = [
     "weekday": "Tuesday",
     "city": "Tokyo",
     "country": "JP",
-    "hotelId": "solaria",
+    "hotelId": null,
     "title": "Last-minute shopping & fine dining",
-    "summary": "Souvenir day in Ginza, Akihabara, or Shibuya. Farewell celebratory dinner.",
+    "summary": "Last shopping day in Ginza, Akihabara or Shibuya, then a celebratory farewell dinner.",
     "food": "Farewell fine dining in Tokyo.",
     "placeIds": [
       "ginza",
@@ -3453,11 +3433,10 @@ window.DAYS = [
     "country": "JP",
     "hotelId": null,
     "title": "Pack & departure",
-    "summary": "Pack, N'EX or Monorail to Narita (NRT) / Haneda (HND), fly home. Buffer day Sep 24 if your flight is later.",
+    "summary": "Pack, travel to Narita or Haneda, and fly home. Keep Sep 24 as a buffer if the flight is later.",
     "food": "Airport meal.",
     "placeIds": [
-      "narita",
-      "solaria"
+      "narita"
     ],
     "transport": [
       "Allow 2.5–3h door-to-gate.",
@@ -3472,8 +3451,7 @@ window.DAYS = [
         "time": "09:00",
         "title": "Final pack & checkout",
         "note": "",
-        "placeId": "solaria",
-        "category": "hotel"
+        "category": "attraction"
       },
       {
         "time": "12:00",
