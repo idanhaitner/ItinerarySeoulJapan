@@ -24,15 +24,15 @@ window.CHECKLIST = {
       id: "seoul",
       title: "סיאול",
       items: [
-        { id: "h-seoul", label: "מלון — 9 Brick Hotel Hongdae (כבר הוזמן ✓)", window: "שמור", priority: "low" },
+        { id: "h-seoul", label: "מלון — 9 Brick Hotel Hongdae", window: "1–3 שבועות לפני", priority: "low" },
         { id: "k-tmoney", label: "Climate Card / T-Money לתחבורה", window: "בהגעה או לפני", priority: "medium" },
         { id: "k-secret", label: "גן הסודי ב־Changdeokgung", window: "להזמין מוקדם ככל האפשר", priority: "high" },
         { id: "k-lotte", label: "כרטיסים ללוטה וורלד", window: "להזמין 2–4 שבועות לפני", priority: "high" },
         { id: "k-ntower", label: "כרטיסים ל־N Seoul Tower (שקיעה)", window: "להזמין 1–2 שבועות לפני", priority: "medium" },
         {
           id: "s-skin",
-          label: "טיפול עור במיונגדונג (PPEUM / Lienjang / ToxnFill) — לא גנגנאם",
-          window: "להזמין 1–3 שבועות לפני · 30 באוג׳",
+          label: "טיפול פנים ב־Seoulistique בסאונגסו (Instagram @seoulistique.skin / WhatsApp)",
+          window: "להזמין 1–3 שבועות לפני · 31 באוג׳ אחה״צ",
           priority: "high",
         },
         {
@@ -49,9 +49,12 @@ window.CHECKLIST = {
       items: [
         { id: "h-tokyo1", label: "מלון — אזור Shinjuku / מערב טוקיו (1–6 בספט׳)", window: "להזמין בהקדם", priority: "high" },
         { id: "j-shibuya-sky", label: "כרטיס שקיעה ל־Shibuya Sky", window: "להזמין ~4 שבועות לפני", priority: "high" },
-        { id: "j-teamlab", label: "כרטיסי teamLab (Planets או Borderless) לפי שעה", window: "להזמין 2–6 שבועות לפני", priority: "high" },
-        { id: "j-disney", label: "Tokyo DisneySea / Premier Access (אם בוחרים אופציה A)", window: "להזמין 2–3 חודשים לפני", priority: "high" },
-        { id: "j-ghibli", label: "מוזיאון ג׳יבלי — הגרלה (אם בוחרים אופציה B)", window: "להגיש ~חודש לפני (ב־13 לחודש)", priority: "medium" },
+        {
+          id: "j-ghibli",
+          label: "מוזיאון ג׳יבלי — כרטיסים (נפתחים ב־10 לחודש ב־10:00 JST לחודש העוקב)",
+          window: "10 באוג׳ 2026 · 10:00 JST (ליום 5 בספט׳)",
+          priority: "high",
+        },
         { id: "t1-suica", label: "Suica / Pasmo בהגעה", window: "ביום הנחיתה", priority: "medium" },
       ],
     },
@@ -90,6 +93,12 @@ window.CHECKLIST = {
       items: [
         { id: "h-kyoto", label: "מלון במרכז / Kawaramachi (9–14 בספט׳)", window: "להזמין בהקדם", priority: "high" },
         {
+          id: "ky-biovortex",
+          label: "כרטיסי teamLab Biovortex Kyoto לפי שעה (ליד תחנת קיוטו)",
+          window: "להזמין 2–6 שבועות לפני · 9 בספט׳ אחה״צ",
+          priority: "high",
+        },
+        {
           id: "ky-kawadoko",
           label: "צהריים kawadoko בקיבונה — Hirobun או Fujiya (חובה מראש)",
           window: "שבועות לפני · 12 בספט׳",
@@ -126,7 +135,7 @@ window.CHECKLIST = {
           priority: "high",
         },
         { id: "t2-return-train", label: "שינקנסן אוסקה → טוקיו", window: "להזמין ~30 יום לפני", priority: "high" },
-        { id: "t2-flex", label: "יום גמיש בטוקיו (במקום קמאקורה) — בלי הזמנות חובה", window: "21 בספט׳", priority: "low" },
+        { id: "t2-flex", label: "יום רגוע בטוקיו — קימה מאוחרת, קפה וקניות קלות", window: "21 בספט׳", priority: "low" },
         { id: "t2-airport", label: "N'EX / רכבת לנריטה או האנדה לפי הטיסה", window: "כשיודעים שדה תעופה", priority: "high" },
         { id: "t2-farewell", label: "הזמנת ארוחת פרידה", window: "1–2 שבועות לפני", priority: "medium" },
       ],

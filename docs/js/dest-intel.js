@@ -1,4 +1,4 @@
-/* Live destination snapshot: weather (amCharts animated SVG) + FX strip */
+/* Live destination snapshot: weather (amCharts animated SVG) + Fuji visibility + FX strip */
 window.DestIntel = (function () {
   const CITIES = [
     { id: "Seoul", he: "סיאול", lat: 37.5665, lng: 126.978, tz: "Asia/Seoul" },
@@ -6,6 +6,11 @@ window.DestIntel = (function () {
     { id: "Kyoto", he: "קיוטו", lat: 35.0116, lng: 135.7681, tz: "Asia/Tokyo" },
     { id: "Osaka", he: "אוסקה", lat: 34.6937, lng: 135.5023, tz: "Asia/Tokyo" },
   ];
+
+  const FUJI_API = "https://fuji-visibility-api.onrender.com/visibility";
+  const FUJI_CACHE_KEY = "trip-fuji-visibility-v1";
+  const FUJI_CACHE_MS = 6 * 60 * 60 * 1000;
+  const FUJI_FETCH_MS = 14000;
 
   const WX = {
     0: "בהיר",
@@ -93,6 +98,60 @@ window.DestIntel = (function () {
       code: cur.weather_code,
       label: wxLabel(cur.weather_code),
     };
+  }
+
+  function fujiTier(score) {
+    const n = Number(score);
+    if (!Number.isFinite(n)) return "unknown";
+    if (n >= 8) return "high";
+    if (n >= 6) return "med";
+    if (n >= 3) return "low";
+    return "poor";
+  }
+
+  function readFujiCache() {
+    try {
+      const raw = sessionStorage.getItem(FUJI_CACHE_KEY);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      if (!parsed || !parsed.fetchedAt || !parsed.data) return null;
+      if (Date.now() - parsed.fetchedAt > FUJI_CACHE_MS) return null;
+      return parsed.data;
+    } catch {
+      return null;
+    }
+  }
+
+  function writeFujiCache(data) {
+    try {
+      sessionStorage.setItem(
+        FUJI_CACHE_KEY,
+        JSON.stringify({ fetchedAt: Date.now(), data })
+      );
+    } catch {
+      /* ignore quota */
+    }
+  }
+
+  async function fetchFujiVisibility() {
+    const cached = readFujiCache();
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), FUJI_FETCH_MS);
+    try {
+      const res = await fetch(FUJI_API, { signal: ctrl.signal });
+      if (!res.ok) throw new Error("fuji");
+      const data = await res.json();
+      if (!data || !Array.isArray(data.forecast) || !data.forecast.length) {
+        throw new Error("fuji-empty");
+      }
+      writeFujiCache(data);
+      return data;
+    } catch (err) {
+      if (cached) return cached;
+      throw err;
+    } finally {
+      clearTimeout(timer);
+    }
   }
 
   async function fetchRates() {
@@ -228,6 +287,82 @@ window.DestIntel = (function () {
       </article>`;
   }
 
+  function fujiBest(side) {
+    if (!side) return null;
+    const am = side.morning && Number(side.morning.score);
+    const pm = side.afternoon && Number(side.afternoon.score);
+    const scores = [am, pm].filter((n) => Number.isFinite(n));
+    if (!scores.length) return null;
+    return Math.max(...scores);
+  }
+
+  function fujiSummary(score) {
+    const tier = fujiTier(score);
+    if (tier === "high") return "נראה";
+    if (tier === "med") return "חלקי";
+    if (tier === "low") return "בקושי";
+    if (score == null) return "—";
+    return "לא נראה";
+  }
+
+  function fujiPlaceHtml(place, score) {
+    const tier = fujiTier(score);
+    const label = score == null ? "—" : String(score);
+    return `
+      <div class="fuji-place fuji-tier-${tier}">
+        <span class="fuji-place-name">${escape(place)}</span>
+        <div class="fuji-place-readout">
+          <strong class="fuji-place-score">${escape(label)}</strong>
+          <span class="fuji-place-status">${escape(fujiSummary(score))}</span>
+        </div>
+      </div>`;
+  }
+
+  function fujiCardHtml(data, err) {
+    if (err || !data || !data.forecast || !data.forecast.length) {
+      return `
+        <section class="fuji-card" aria-label="ראות הר פוג׳י">
+          <div class="fuji-card-bg" aria-hidden="true"></div>
+          <div class="fuji-card-veil" aria-hidden="true"></div>
+          <div class="fuji-card-inner">
+            <div class="fuji-brand">
+              <span class="fuji-jp" lang="ja">富士</span>
+              <span class="fuji-title">ראות פוג׳י</span>
+            </div>
+            <span class="fuji-empty">לא זמין כרגע</span>
+            <a class="fuji-source" href="https://isfujivisible.com/" target="_blank" rel="noopener noreferrer">מקור</a>
+          </div>
+        </section>`;
+    }
+    const today = data.forecast.find((d) => d.isToday) || data.forecast[0];
+    const north = fujiBest(today.north);
+    const south = fujiBest(today.south);
+    const best = Math.max(north || 0, south || 0);
+    const mood = fujiTier(best);
+    return `
+      <section class="fuji-card fuji-mood-${mood}" aria-label="ראות הר פוג׳י">
+        <div class="fuji-card-bg" aria-hidden="true"></div>
+        <div class="fuji-card-veil" aria-hidden="true"></div>
+        <svg class="fuji-silhouette" viewBox="0 0 240 90" aria-hidden="true" focusable="false">
+          <path d="M8 86 L72 28 L88 42 L104 18 L120 34 L148 8 L232 86 Z" />
+        </svg>
+        <div class="fuji-card-inner">
+          <div class="fuji-brand">
+            <span class="fuji-jp" lang="ja">富士</span>
+            <div class="fuji-brand-text">
+              <span class="fuji-title">ראות פוג׳י היום</span>
+              <span class="fuji-sub">Kawaguchiko · Hakone</span>
+            </div>
+          </div>
+          <div class="fuji-places">
+            ${fujiPlaceHtml("Kawaguchiko", north)}
+            ${fujiPlaceHtml("Hakone", south)}
+          </div>
+          <a class="fuji-source" href="https://isfujivisible.com/" target="_blank" rel="noopener noreferrer">מקור</a>
+        </div>
+      </section>`;
+  }
+
   function ratesStripHtml(rates, err) {
     if (err || !rates) {
       return `<div class="fx-strip"><div class="fx-strip-static">שערים לא זמינים</div></div>`;
@@ -262,6 +397,7 @@ window.DestIntel = (function () {
       <div class="dest-weather-grid">
         ${CITIES.map(() => `<div class="dest-weather-card is-loading"><div class="dest-skel"></div></div>`).join("")}
       </div>
+      <div class="fuji-card is-loading"><div class="dest-skel"></div></div>
       <div class="fx-strip is-loading"><div class="dest-skel"></div></div>`;
   }
 
@@ -285,6 +421,10 @@ window.DestIntel = (function () {
       })
     );
 
+    const fujiPromise = fetchFujiVisibility()
+      .then((data) => ({ data, err: false }))
+      .catch(() => ({ data: null, err: true }));
+
     const ratesPromise = fetchRates()
       .then((rates) => {
         syncStorageRates(rates);
@@ -292,12 +432,17 @@ window.DestIntel = (function () {
       })
       .catch(() => ({ rates: null, err: true }));
 
-    const [weatherRows, ratesResult] = await Promise.all([weatherPromise, ratesPromise]);
+    const [weatherRows, fujiResult, ratesResult] = await Promise.all([
+      weatherPromise,
+      fujiPromise,
+      ratesPromise,
+    ]);
 
     weatherEl.innerHTML = `
       <div class="dest-weather-grid" aria-label="מזג אוויר ביעדים" title="Weather icons by amCharts">
         ${weatherRows.map(({ city, wx, err }) => weatherCard(city, wx, err)).join("")}
       </div>
+      ${fujiCardHtml(fujiResult.data, fujiResult.err)}
       ${ratesStripHtml(ratesResult.rates, ratesResult.err)}`;
     await mountWxAnims(weatherEl);
   }

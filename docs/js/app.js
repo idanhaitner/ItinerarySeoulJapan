@@ -6,7 +6,8 @@
   const tools = window.TripTools;
   const checklistData = window.CHECKLIST;
 
-  const FILTER_VIEWS = new Set(["itinerary", "maps", "detail"]);
+  const FILTER_VIEWS = new Set(["itinerary", "maps", "recs", "detail"]);
+  const CITY_CHIP_VIEWS = new Set(["itinerary", "maps", "detail"]);
   const RIBBON_VIEWS = new Set(["itinerary", "detail"]);
   const MASTHEAD_VIEWS = new Set(["itinerary"]);
 
@@ -76,11 +77,13 @@
       itinerary: document.getElementById("panel-itinerary"),
       bookings: document.getElementById("panel-bookings"),
       maps: document.getElementById("panel-maps"),
+      recs: document.getElementById("panel-recs"),
       tools: document.getElementById("panel-tools"),
       detail: document.getElementById("panel-detail"),
     },
     dayList: document.getElementById("day-list"),
     placeList: document.getElementById("place-list"),
+    recsRoot: document.getElementById("recs-root"),
     detail: document.getElementById("detail-root"),
     search: document.getElementById("search-input"),
     chips: document.getElementById("city-chips"),
@@ -231,11 +234,12 @@
 
   function syncChrome() {
     const showFilters = FILTER_VIEWS.has(state.view);
+    const showChips = CITY_CHIP_VIEWS.has(state.view);
     const showRibbon = RIBBON_VIEWS.has(state.view);
     const showMasthead = MASTHEAD_VIEWS.has(state.view) && !state.query && state.city === "all";
 
     els.topbarFilters.hidden = !showFilters;
-    els.chips.hidden = !showFilters;
+    els.chips.hidden = !showChips;
     els.ribbon.hidden = !showRibbon;
     if (els.masthead) els.masthead.classList.toggle("is-compact", !showMasthead);
 
@@ -243,6 +247,13 @@
     if (planIntro) planIntro.classList.toggle("is-hidden", !showMasthead);
     const destIntel = document.getElementById("dest-intel");
     if (destIntel) destIntel.classList.toggle("is-hidden", !showMasthead || state.view !== "itinerary");
+
+    if (els.search) {
+      els.search.placeholder =
+        state.view === "recs"
+          ? "חיפוש המלצות, אזור…"
+          : "חיפוש ימים, מקומות, המלצות…";
+    }
 
     els.navButtons.forEach((btn) => {
       const nav = btn.dataset.nav;
@@ -533,6 +544,15 @@
     }
   }
 
+  function renderRecs() {
+    if (!window.Recommendations || !els.recsRoot) {
+      setResultCount("—");
+      return;
+    }
+    const result = window.Recommendations.render(els.recsRoot, { query: state.query });
+    setResultCount(result.count ? `${result.count} המלצות` : "—");
+  }
+
   function renderDetail(dayId) {
     const day = days.find((d) => d.id === dayId);
     if (!day) return;
@@ -688,6 +708,7 @@
 
     if (state.view === "itinerary") renderDayList();
     else if (state.view === "maps") renderMaps();
+    else if (state.view === "recs") renderRecs();
     else if (state.view === "bookings") renderBookings();
     else if (state.view === "tools") renderTools();
     else if (state.view === "detail" && state.dayId) renderDetail(state.dayId);
@@ -703,7 +724,7 @@
       searchTimer = setTimeout(() => {
         state.query = value;
         if (state.view === "detail") showView("itinerary");
-        else if (state.view === "itinerary" || state.view === "maps") render();
+        else if (state.view === "itinerary" || state.view === "maps" || state.view === "recs") render();
       }, 120);
     });
 

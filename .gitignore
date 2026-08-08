@@ -4,3 +4,4 @@ _preview/
 __pycache__/
 .venv/
 node_modules/
+scripts/cache/

@@ -7,23 +7,31 @@ alwaysApply: true
 
 Whenever the trip schedule / itinerary changes in this project, **always update the interactive website** so days, places, timelines, and the journey map stay accurate.
 
+## Project layout
+
+- Website (GitHub Pages source): `docs/`
+- Build scripts: `scripts/build_data.py`, `scripts/build_cafes.py`
+- Family Excel (inspiration only): `reference/`
+- Hebrew UI overlay: `docs/js/he-data.js` (site is Hebrew-first)
+
 ## Source of truth
 
-- Narrative / planning notes: `ideas/itinerary.txt` (and related files under `ideas/`)
-- Structured site data builder: `docs/js/_build_data.py`
+- Structured builder: `scripts/build_data.py`
 - Generated runtime data: `docs/js/data.js` (do not hand-edit unless necessary)
+- Hebrew copy: `docs/js/he-data.js`
 - Site UI: `docs/index.html`, `docs/js/app.js`, `docs/js/journey-map.js`, `docs/css/`
 
 ## Required workflow after any schedule change
 
-1. Update `docs/js/_build_data.py` so `PLACES`, `DAYS` (dates, cities, titles, summaries, `placeIds`, `timeline`, transfers, hotels) match the new plan.
-2. Regenerate data: `python3 docs/js/_build_data.py`
-3. Confirm each day has distinct highlight places with `lat`/`lng` so the Maps journey markers do not stack on the hotel.
-4. If the user wants the live site updated (or says “update the website” / “deploy”), commit the `docs/` changes and push `main` so GitHub Pages redeploys.
-5. Briefly tell the user what itinerary days/places changed on the site/map.
+1. Update `scripts/build_data.py` so `PLACES`, `DAYS` (dates, cities, titles, summaries, `placeIds`, `timeline`, transfers, hotels) match the new plan.
+2. Regenerate data: `python3 scripts/build_data.py`
+3. Update Hebrew strings in `docs/js/he-data.js` when titles/summaries/timeline notes change.
+4. Confirm each day has distinct highlight places with `lat`/`lng` so the Maps journey markers do not stack on the hotel.
+5. If the user wants the live site updated (or says “update the website” / “deploy”), commit the `docs/` changes and push `main` so GitHub Pages redeploys.
+6. Briefly tell the user what itinerary days/places changed on the site/map.
 
 ## Do not forget
 
-- Changing only `ideas/itinerary.txt` or the PDF is **not enough** — the website reads `docs/js/data.js`.
+- Changing only notes under `reference/` is **not enough** — the website reads `docs/js/data.js` (+ Hebrew overlay).
 - The journey map plots from day timelines/places; hotel-only points cause overlapping markers — prefer unique attractions per day.
 - Keep booking checklist (`docs/js/checklist.js`) aligned if bookings/tickets change with the schedule.
