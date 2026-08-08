@@ -389,9 +389,11 @@
             const fav = storage.isFavorite(day.id, item) ? "fav" : "";
             return `
             <li class="timeline-item city-line-${day.city} ${done} ${fav}" data-tl-idx="${idx}">
-              <div class="timeline-time">${escapeHtml(timeLabel)}</div>
-              <div class="timeline-card">
+              <div class="timeline-meta">
                 <div class="cat-chip">${meta.label}</div>
+                <div class="timeline-time">${escapeHtml(timeLabel)}</div>
+              </div>
+              <div class="timeline-card">
                 <div class="timeline-title">${escapeHtml(item.title)}</div>
                 ${place ? `<div class="timeline-place">${escapeHtml(place.name)}${place.nameJa ? ` · ${escapeHtml(place.nameJa)}` : ""}</div>` : ""}
                 ${item.note ? `<p class="timeline-note">${escapeHtml(item.note)}</p>` : ""}
