@@ -1890,6 +1890,43 @@ a { color: inherit; }
   font-weight: 600;
 }
 
+.detail-hero.city-Seoul .food-banner {
+  background: color-mix(in srgb, var(--seoul) 8%, transparent);
+  border-color: color-mix(in srgb, var(--seoul) 22%, var(--line));
+}
+.detail-hero.city-Tokyo .food-banner {
+  background: color-mix(in srgb, var(--tokyo) 8%, transparent);
+  border-color: color-mix(in srgb, var(--tokyo) 22%, var(--line));
+}
+.detail-hero.city-Hakone .food-banner {
+  background: color-mix(in srgb, var(--hakone) 8%, transparent);
+  border-color: color-mix(in srgb, var(--hakone) 22%, var(--line));
+}
+.detail-hero.city-Kawaguchiko .food-banner {
+  background: color-mix(in srgb, var(--kawaguchiko) 8%, transparent);
+  border-color: color-mix(in srgb, var(--kawaguchiko) 22%, var(--line));
+}
+.detail-hero.city-Kyoto .food-banner {
+  background: color-mix(in srgb, var(--kyoto) 8%, transparent);
+  border-color: color-mix(in srgb, var(--kyoto) 22%, var(--line));
+}
+.detail-hero.city-Hiroshima .food-banner {
+  background: color-mix(in srgb, var(--hiroshima) 8%, transparent);
+  border-color: color-mix(in srgb, var(--hiroshima) 22%, var(--line));
+}
+.detail-hero.city-Osaka .food-banner {
+  background: color-mix(in srgb, var(--osaka) 8%, transparent);
+  border-color: color-mix(in srgb, var(--osaka) 22%, var(--line));
+}
+
+.detail-hero.city-Seoul .food-banner strong { color: var(--seoul); }
+.detail-hero.city-Tokyo .food-banner strong { color: var(--tokyo); }
+.detail-hero.city-Hakone .food-banner strong { color: var(--hakone); }
+.detail-hero.city-Kawaguchiko .food-banner strong { color: var(--kawaguchiko); }
+.detail-hero.city-Kyoto .food-banner strong { color: var(--kyoto); }
+.detail-hero.city-Hiroshima .food-banner strong { color: var(--hiroshima); }
+.detail-hero.city-Osaka .food-banner strong { color: var(--osaka); }
+
 .food-banner span {
   color: var(--text);
   font-size: 14px;

@@ -1,0 +1,27 @@
+---
+description: Always commit and push after making project changes
+alwaysApply: true
+---
+
+# Always commit + push
+
+After finishing a set of changes in this project, **always create a git commit and push to `origin`** without waiting to be asked.
+
+## When
+
+- After website/docs updates, itinerary data changes, scripts, rules, or collab tooling
+- Do this at the end of the task once the work is complete and verified
+
+## How
+
+1. Follow the repo git safety protocol (`status` / `diff` / `log`, HEREDOC commit message)
+2. Stage relevant files only — never secrets (`collab/google_oauth_client.json`, `collab/google_token.json`, credentials)
+3. Commit with a concise why-focused message
+4. `git push origin HEAD` (or the current tracking branch)
+5. Briefly confirm commit + that it was pushed
+
+## Exceptions
+
+- If push fails (auth/network), report the error and leave the local commit in place
+- Do not force-push to `main`/`master`
+- Do not commit `.env` / credential files
