@@ -872,27 +872,53 @@
               <div class="fx-pass-legs">
                 ${j.legs
                   .map((f, li) => {
-                    const arriveLabel =
-                      f.arriveDate && f.arriveDate !== f.date
-                        ? `${f.arrive} (+1)`
-                        : f.arrive || "—";
+                    const nextDay = f.arriveDate && f.arriveDate !== f.date;
+                    const arriveLabel = nextDay ? `${f.arrive || "—"}` : f.arrive || "—";
+                    const statusChip = f.status === "booked" ? "הוזמן" : "לטפל";
+                    const durationMatch = String(f.note || "").match(/~\d+h\d*/i);
+                    const duration = durationMatch ? durationMatch[0] : j.legs.length === 1 ? "direct" : "";
+                    const footBits = [f.terminal, f.note].filter(Boolean);
                     return `
-                  <div class="fx-leg-chip${f.status !== "booked" ? " is-todo" : ""}" dir="ltr">
-                    <div class="fx-leg-chip-code">
-                      <strong>${escapeHtml(f.flight || "—")}</strong>
-                      <span>${escapeHtml(f.airline || "")}</span>
+                  <article class="fx-leg${f.status !== "booked" ? " is-todo" : ""}" dir="ltr">
+                    <header class="fx-leg-top">
+                      <div class="fx-leg-id">
+                        <strong>${escapeHtml(f.flight || "TBD")}</strong>
+                        <span>${escapeHtml(f.airline || "Airline TBD")}</span>
+                      </div>
+                      <div class="fx-leg-badges">
+                        ${j.legs.length > 1 ? `<span class="fx-leg-badge">LEG ${li + 1}</span>` : ""}
+                        <span class="fx-leg-status ${f.status === "booked" ? "is-booked" : "is-todo"}">${escapeHtml(statusChip)}</span>
+                      </div>
+                    </header>
+
+                    <div class="fx-leg-route">
+                      <div class="fx-leg-end">
+                        <em>${escapeHtml(f.from)}</em>
+                        <span class="fx-leg-city">${escapeHtml(f.fromName || "")}</span>
+                        <strong>${escapeHtml(f.depart || "—")}</strong>
+                        <span class="fx-leg-date">${escapeHtml(formatFlightDate(f.date))}</span>
+                      </div>
+                      <div class="fx-leg-mid" aria-hidden="true">
+                        ${duration ? `<span class="fx-leg-dur">${escapeHtml(duration)}</span>` : ""}
+                        <div class="fx-leg-track"><span>✈</span></div>
+                        ${nextDay ? `<span class="fx-leg-plus">+1 day</span>` : `<span class="fx-leg-plus">&nbsp;</span>`}
+                      </div>
+                      <div class="fx-leg-end is-arr">
+                        <em>${escapeHtml(f.to)}</em>
+                        <span class="fx-leg-city">${escapeHtml(f.toName || "")}</span>
+                        <strong>${escapeHtml(arriveLabel)}</strong>
+                        <span class="fx-leg-date">${escapeHtml(formatFlightDate(f.arriveDate || f.date))}</span>
+                      </div>
                     </div>
-                    <div class="fx-leg-chip-path">
-                      <span>${escapeHtml(f.from)} → ${escapeHtml(f.to)}</span>
-                      <span>${escapeHtml(f.depart || "—")} – ${escapeHtml(arriveLabel)}</span>
-                    </div>
+
                     ${
-                      f.terminal || f.note
-                        ? `<div class="fx-leg-chip-meta">${escapeHtml(f.terminal || f.note || "")}</div>`
+                      footBits.length
+                        ? `<footer class="fx-leg-foot">${footBits
+                            .map((bit) => `<span>${escapeHtml(bit)}</span>`)
+                            .join("")}</footer>`
                         : ""
                     }
-                    ${j.legs.length > 1 ? `<span class="fx-leg-index">LEG ${li + 1}</span>` : ""}
-                  </div>`;
+                  </article>`;
                   })
                   .join("")}
               </div>
