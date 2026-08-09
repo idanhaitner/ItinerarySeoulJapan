@@ -1002,14 +1002,7 @@
               to: "—",
               blurb: "",
             };
-            const first = j.legs[0];
-            const last = j.legs[j.legs.length - 1];
-            const arriveDate = last.arriveDate || last.date;
             const codes = flightCodes(j.legs);
-            const midLabel =
-              j.legs.length > 1
-                ? `${j.legs.length} legs · ${codes}`
-                : codes;
             return `
           <article class="fx-pass status-${status}" style="--d:${0.08 + idx * 0.1}s">
             <div class="fx-pass-stub">
@@ -1036,25 +1029,6 @@
                     : ""
                 }
               </header>
-
-              <div class="fx-pass-route" dir="ltr">
-                <div class="fx-end">
-                  <span class="fx-code">${escapeHtml(first.from)}</span>
-                  <span class="fx-city">${escapeHtml(first.fromName || "")}</span>
-                  <span class="fx-clock">${escapeHtml(first.depart || "—")}</span>
-                  <span class="fx-day">${escapeHtml(formatFlightDate(first.date))}</span>
-                </div>
-                <div class="fx-mid" aria-hidden="true">
-                  <div class="fx-mid-line"><span class="fx-mid-plane">✈</span></div>
-                  <span class="fx-mid-label">${escapeHtml(midLabel)}</span>
-                </div>
-                <div class="fx-end is-arrive">
-                  <span class="fx-code">${escapeHtml(last.to)}</span>
-                  <span class="fx-city">${escapeHtml(last.toName || "")}</span>
-                  <span class="fx-clock">${escapeHtml(last.arrive || "—")}</span>
-                  <span class="fx-day">${escapeHtml(formatFlightDate(arriveDate))}</span>
-                </div>
-              </div>
 
               <div class="fx-pass-legs">
                 ${j.legs
