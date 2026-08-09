@@ -1130,7 +1130,7 @@ a { color: inherit; }
 }
 
 .topbar.is-minimized .tab {
-  padding: 8px 0;
+  padding: 8px 12px;
   min-height: 36px;
   font-size: 13px;
 }
@@ -1235,7 +1235,7 @@ a { color: inherit; }
   display: flex;
   flex-wrap: nowrap;
   align-items: stretch;
-  gap: 0;
+  gap: 4px;
   padding: 0;
   border: 0;
   background: transparent;
@@ -1243,7 +1243,7 @@ a { color: inherit; }
   -webkit-backdrop-filter: none;
   overflow-x: auto;
   scrollbar-width: none;
-  max-width: min(100%, 640px);
+  max-width: min(100%, 720px);
 }
 
 .tabs::-webkit-scrollbar { display: none; }
@@ -1255,7 +1255,7 @@ a { color: inherit; }
   padding: 10px 14px;
   min-height: 44px;
   font-size: 14px;
-  font-weight: 550;
+  font-weight: 600;
   letter-spacing: 0.01em;
   text-transform: none;
   cursor: pointer;
@@ -1264,6 +1264,7 @@ a { color: inherit; }
   align-items: center;
   justify-content: center;
   white-space: nowrap;
+  flex: 0 0 auto;
   transition: color 0.2s ease;
 }
 
