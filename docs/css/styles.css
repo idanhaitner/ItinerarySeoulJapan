@@ -1525,7 +1525,7 @@ a { color: inherit; }
 }
 
 .day-list {
-  gap: 0;
+  gap: 12px;
   padding-bottom: 8px;
 }
 
@@ -1535,26 +1535,39 @@ a { color: inherit; }
   text-align: start;
   cursor: pointer;
   color: inherit;
-  border: 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--line) 85%, transparent);
-  background: transparent;
+  border: 1px solid var(--line);
+  border-inline-start: 3px solid var(--navy);
+  background: var(--surface);
   padding: 0;
-  padding-inline-end: 8px;
+  padding-inline-end: 16px;
   display: grid;
-  grid-template-columns: 72px minmax(0, 1fr);
-  gap: 0 22px;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 0 18px;
   align-items: stretch;
-  overflow: visible;
-  transition: background 0.25s ease;
+  overflow: hidden;
+  box-shadow: 0 1px 0 rgba(47, 43, 40, 0.03);
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
   animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.day-row:last-child {
-  border-bottom: 0;
-}
+.day-row.city-Seoul { border-inline-start-color: var(--seoul); }
+.day-row.city-Tokyo { border-inline-start-color: var(--tokyo); }
+.day-row.city-Hakone { border-inline-start-color: var(--hakone); }
+.day-row.city-Kawaguchiko { border-inline-start-color: var(--kawaguchiko); }
+.day-row.city-Kyoto { border-inline-start-color: var(--kyoto); }
+.day-row.city-Hiroshima { border-inline-start-color: var(--hiroshima); }
+.day-row.city-Osaka { border-inline-start-color: var(--osaka); }
+.day-row.city-Tel-Aviv { border-inline-start-color: var(--telaviv); }
 
 .day-row:hover {
-  background: color-mix(in srgb, var(--surface) 72%, transparent);
+  background: #fff;
+  border-color: color-mix(in srgb, var(--navy) 14%, var(--line));
+  box-shadow: 0 10px 28px rgba(47, 43, 40, 0.06);
+  transform: translateY(-1px);
 }
 
 .day-row:hover .day-row-arrow {
@@ -1566,33 +1579,25 @@ a { color: inherit; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
   margin: 0;
-  padding: 28px 0 28px 14px;
-  border-inline-start: 2px solid var(--navy);
+  padding: 18px 8px;
+  border-inline-start: 0;
   background: transparent;
 }
 
-.day-row.city-Seoul .day-row-num { border-inline-start-color: var(--seoul); }
-.day-row.city-Tokyo .day-row-num { border-inline-start-color: var(--tokyo); }
-.day-row.city-Hakone .day-row-num { border-inline-start-color: var(--hakone); }
-.day-row.city-Kawaguchiko .day-row-num { border-inline-start-color: var(--kawaguchiko); }
-.day-row.city-Kyoto .day-row-num { border-inline-start-color: var(--kyoto); }
-.day-row.city-Hiroshima .day-row-num { border-inline-start-color: var(--hiroshima); }
-.day-row.city-Osaka .day-row-num { border-inline-start-color: var(--osaka); }
-.day-row.city-Tel-Aviv .day-row-num { border-inline-start-color: var(--telaviv); }
-
 .day-row-num .n {
   font-family: var(--font-display);
-  font-size: 34px;
-  font-weight: 600;
+  font-size: 32px;
+  font-weight: 650;
   line-height: 1;
   color: var(--navy);
   letter-spacing: -0.03em;
 }
 
 .day-row-num .d {
-  margin-top: 8px;
+  margin-top: 6px;
   font-size: 11px;
   letter-spacing: 0.06em;
   text-transform: none;
@@ -1601,9 +1606,11 @@ a { color: inherit; }
 }
 
 .day-row-body {
-  padding: 26px 0 28px;
+  padding: 18px 0;
   min-width: 0;
-  border-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .day-row-top {
@@ -3838,17 +3845,17 @@ a { color: inherit; }
   }
   .tabs { display: none; }
   .day-row {
-    grid-template-columns: 56px minmax(0, 1fr);
-    gap: 0 14px;
-    padding-inline-end: 4px;
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 0 12px;
+    padding-inline-end: 10px;
   }
   .day-row-meta .day-row-arrow { display: none; }
   .day-row-num {
     margin: 0;
-    padding: 20px 0 20px 10px;
+    padding: 14px 4px;
   }
   .day-row-num .n { font-size: 24px; }
-  .day-row-body { padding: 18px 0 20px; }
+  .day-row-body { padding: 14px 0; }
   .day-row-body h3 { font-size: 18px; max-width: none; line-height: 1.25; }
   .day-row-body p { font-size: 13px; -webkit-line-clamp: 3; }
 
@@ -4036,7 +4043,8 @@ html[dir="rtl"] .journey-popup {
 }
 
 html[dir="rtl"] .day-row-num {
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
 }
 
 html[dir="rtl"] .search svg {
