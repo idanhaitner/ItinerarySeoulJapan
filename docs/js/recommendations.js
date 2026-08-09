@@ -1,12 +1,17 @@
-/* Trip recommendations UI — city collections (Seoul cafes today; more cities later) */
+/* Trip recommendations UI — Seoul cafes + Japan restaurants from MK's map */
 window.Recommendations = (function () {
   const PAGE = 24;
 
   const CITIES = [
     { id: "Seoul", he: "סיאול", local: "서울" },
     { id: "Tokyo", he: "טוקיו", local: "東京" },
-    { id: "Osaka", he: "אוסקה", local: "大阪" },
     { id: "Kyoto", he: "קיוטו", local: "京都" },
+    { id: "Osaka", he: "אוסקה", local: "大阪" },
+    { id: "Hakone", he: "הקונה", local: "箱根" },
+    { id: "Kamakura", he: "קמאקורה", local: "鎌倉" },
+    { id: "Nikko", he: "ניקו", local: "日光" },
+    { id: "Nara", he: "נארה", local: "奈良" },
+    { id: "Hiroshima", he: "הירושימה", local: "広島" },
   ];
 
   const SEOUL_DISTRICT_ORDER = [
@@ -21,6 +26,21 @@ window.Recommendations = (function () {
     "강남구",
   ];
 
+  const TOKYO_DISTRICT_ORDER = [
+    "Shinjuku",
+    "Shibuya",
+    "Asakusa",
+    "Akihabara",
+    "Ginza",
+    "Roppongi",
+    "Nakano",
+    "Shimokitazawa",
+    "Odaiba",
+    "Ueno",
+    "Kichijoji",
+    "Tokyo",
+  ];
+
   function escape(str) {
     return String(str || "")
       .replace(/&/g, "&amp;")
@@ -29,14 +49,33 @@ window.Recommendations = (function () {
       .replace(/"/g, "&quot;");
   }
 
-  /** Build catalog from available data sources. Add Tokyo/Osaka sets here later. */
+  function restaurantCollection(cityId) {
+    const meta = (window.RESTAURANT_LIST && window.RESTAURANT_LIST.meta) || {};
+    const items = ((window.RESTAURANT_LIST && window.RESTAURANT_LIST.restaurants) || []).filter(
+      (r) => r.city === cityId
+    );
+    if (!items.length) return null;
+    return {
+      id: "restaurants",
+      kind: "restaurant",
+      kindHe: "מסעדות",
+      title: "מסעדות",
+      kicker: "אוכל · グルメ",
+      emptyHe: "לא נמצאו מסעדות להתאמה.",
+      moreHe: (n) => `עוד ${n} מסעדות`,
+      items,
+      meta,
+    };
+  }
+
+  /** Build catalog from available data sources. */
   function catalog() {
     const cafeMeta = (window.CAFE_LIST && window.CAFE_LIST.meta) || {};
     const cafeItems = ((window.CAFE_LIST && window.CAFE_LIST.cafes) || []).filter(
       (c) => c.city === "Seoul"
     );
 
-    return {
+    const out = {
       Seoul: [
         {
           id: "cafes",
@@ -50,10 +89,14 @@ window.Recommendations = (function () {
           meta: cafeMeta,
         },
       ],
-      Tokyo: [],
-      Osaka: [],
-      Kyoto: [],
     };
+
+    for (const city of CITIES) {
+      if (city.id === "Seoul") continue;
+      const col = restaurantCollection(city.id);
+      out[city.id] = col ? [col] : [];
+    }
+    return out;
   }
 
   function collectionsFor(cityId) {
@@ -86,7 +129,18 @@ window.Recommendations = (function () {
     }
     if (q) {
       list = list.filter((c) => {
-        const hay = [c.name, c.nameKo, c.nameJa, c.address, c.roadAddress, c.district, c.districtHe, c.category]
+        const hay = [
+          c.name,
+          c.nameKo,
+          c.nameJa,
+          c.address,
+          c.roadAddress,
+          c.district,
+          c.districtHe,
+          c.category,
+          c.categoryHe,
+          c.blurb,
+        ]
           .join(" ")
           .toLowerCase();
         return hay.includes(q);
@@ -97,13 +151,14 @@ window.Recommendations = (function () {
     if (sort === "reviews") {
       sorted.sort((a, b) => (b.reviewCount || 0) - (a.reviewCount || 0) || (b.score || 0) - (a.score || 0));
     } else if (sort === "name") {
-      sorted.sort((a, b) => String(a.name || "").localeCompare(String(b.name || ""), "ko"));
+      sorted.sort((a, b) => String(a.name || "").localeCompare(String(b.name || ""), "en"));
     } else {
       sorted.sort(
         (a, b) =>
           Number(b.score != null) - Number(a.score != null) ||
           (b.score || 0) - (a.score || 0) ||
-          (b.reviewCount || 0) - (a.reviewCount || 0)
+          (b.reviewCount || 0) - (a.reviewCount || 0) ||
+          String(a.name || "").localeCompare(String(b.name || ""), "en")
       );
     }
     return sorted;
@@ -154,6 +209,16 @@ window.Recommendations = (function () {
       item.reviewCount != null
         ? `<span class="rec-meta-item">${escape(item.reviewCount.toLocaleString("he-IL"))} ביקורות</span>`
         : "";
+    const category =
+      item.categoryHe || item.category
+        ? `<span class="rec-meta-item">${escape(item.categoryHe || item.category)}</span>`
+        : "";
+    const blurb = item.blurb ? `<p class="rec-blurb">${escape(item.blurb)}</p>` : "";
+    const addrRaw = item.roadAddress || item.address || "";
+    const addr =
+      addrRaw && addrRaw !== item.blurb
+        ? `<p class="rec-addr">${escape(addrRaw)}</p>`
+        : "";
 
     return `
       <article class="rec-card">
@@ -161,17 +226,19 @@ window.Recommendations = (function () {
           ${
             cover
               ? `<img src="${escape(cover)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />`
-              : `<span>אין תמונה</span>`
+              : `<span>${escape(item.categoryHe || "מסעדה")}</span>`
           }
         </div>
         <div class="rec-body">
           <div class="rec-meta">
             <span class="rec-district">${escape(item.districtHe || item.district || "")}</span>
+            ${category}
             ${scoreBadge(item)}
             ${reviews}
           </div>
           <h3 class="rec-name">${escape(item.name)}</h3>
-          <p class="rec-addr">${escape(item.roadAddress || item.address || "")}</p>
+          ${blurb}
+          ${addr}
           ${thumbsHtml(photos)}
           <div class="rec-actions">
             ${
@@ -179,7 +246,7 @@ window.Recommendations = (function () {
                 ? `<a class="rec-btn ${primary.className}" href="${escape(primary.href)}" target="_blank" rel="noopener noreferrer">${escape(primary.label)}</a>`
                 : ""
             }
-            <a class="rec-btn rec-btn-ghost" href="${escape(mapsUrl(item))}" target="_blank" rel="noopener noreferrer">Google</a>
+            <a class="rec-btn rec-btn-ghost" href="${escape(mapsUrl(item))}" target="_blank" rel="noopener noreferrer">Maps</a>
           </div>
         </div>
       </article>`;
@@ -196,7 +263,8 @@ window.Recommendations = (function () {
   function collectionHtml(city, collection, state) {
     const list = filterItems(collection.items || [], state);
     const shown = list.slice(0, state.limit);
-    const districtOrder = city.id === "Seoul" ? SEOUL_DISTRICT_ORDER : [];
+    const districtOrder =
+      city.id === "Seoul" ? SEOUL_DISTRICT_ORDER : city.id === "Tokyo" ? TOKYO_DISTRICT_ORDER : [];
     const dists = districts(collection.items || [], districtOrder);
     const meta = collection.meta || {};
     const showDistricts = dists.length > 1;
@@ -288,7 +356,7 @@ window.Recommendations = (function () {
           <div>
             <p class="plan-kicker">המלצות · おすすめ</p>
             <h2 class="plan-title">המלצות</h2>
-            <p class="journey-sub">קפה, אוכל ומקומות לפי עיר — מתרחב בהמשך.</p>
+            <p class="journey-sub">קפה בסיאול · מסעדות ביפן לפי ערי המסלול.</p>
           </div>
         </div>
         <div class="rec-cities" role="tablist" aria-label="עיר">
@@ -312,11 +380,7 @@ window.Recommendations = (function () {
               </div>`
             : ""
         }
-        ${
-          activeCollection
-            ? collectionHtml(city, activeCollection, state)
-            : cityEmptyHtml(city)
-        }
+        ${activeCollection ? collectionHtml(city, activeCollection, state) : cityEmptyHtml(city)}
       </section>`;
 
     root.querySelectorAll("[data-rec-city]").forEach((btn) => {
@@ -367,5 +431,4 @@ window.Recommendations = (function () {
   return { render, catalog, CITIES };
 })();
 
-/* Back-compat alias while older bookmarks/scripts settle */
 window.CafeList = window.Recommendations;
