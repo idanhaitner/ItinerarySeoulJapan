@@ -274,6 +274,8 @@
       const nav = btn.dataset.nav;
       const active = state.view === "detail" ? nav === "itinerary" : nav === state.view;
       btn.classList.toggle("active", active);
+      if (active) btn.setAttribute("aria-current", "page");
+      else btn.removeAttribute("aria-current");
     });
 
     requestAnimationFrame(updateTopbarHeight);
