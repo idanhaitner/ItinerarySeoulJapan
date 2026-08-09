@@ -1524,33 +1524,61 @@ a { color: inherit; }
   gap: 0;
 }
 
+.day-list {
+  gap: 14px;
+  padding-bottom: 8px;
+}
+
 /* ——— Homepage day rows ——— */
 .day-row {
   width: 100%;
   text-align: start;
   cursor: pointer;
   color: inherit;
-  border: 0;
-  border-bottom: 1px solid var(--line);
-  background: transparent;
+  border: 1px solid var(--line);
+  background: var(--surface);
   padding: 0;
-  padding-inline-end: 10px;
+  padding-inline-end: 18px;
   display: grid;
-  grid-template-columns: 76px minmax(0, 1fr);
-  gap: 18px;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 4px 20px;
   align-items: stretch;
   overflow: hidden;
-  transition: background 0.3s ease;
+  position: relative;
+  box-shadow: 0 1px 0 rgba(47, 43, 40, 0.03);
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
   animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+.day-row::after {
+  content: "";
+  position: absolute;
+  inset-inline-end: 0;
+  top: 18px;
+  bottom: 18px;
+  width: 1px;
+  background: transparent;
+  transition: background 0.25s ease;
+}
+
 .day-row:hover {
-  background: rgba(250, 248, 244, 0.7);
+  background: #fff;
+  border-color: color-mix(in srgb, var(--navy) 16%, var(--line));
+  box-shadow: 0 10px 28px rgba(47, 43, 40, 0.06);
+  transform: translateY(-1px);
 }
 
 .day-row:hover .day-row-arrow {
   transform: translateX(3px);
-  color: var(--seal);
+  color: var(--navy);
+}
+
+.day-row:hover .day-row-num {
+  background: color-mix(in srgb, var(--paper-2) 70%, white);
 }
 
 .day-row-num {
@@ -1558,9 +1586,12 @@ a { color: inherit; }
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 22px 0;
-  border-inline-start: 4px solid var(--navy);
-  padding-inline-start: 14px;
+  margin: 12px;
+  margin-inline-end: 0;
+  padding: 14px 12px;
+  border-inline-start: 3px solid var(--navy);
+  background: var(--paper-2);
+  transition: background 0.25s ease;
 }
 
 .day-row.city-Seoul .day-row-num { border-inline-start-color: var(--seoul); }
@@ -1574,23 +1605,24 @@ a { color: inherit; }
 
 .day-row-num .n {
   font-family: var(--font-display);
-  font-size: 32px;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: 650;
   line-height: 1;
   color: var(--navy);
+  letter-spacing: -0.02em;
 }
 
 .day-row-num .d {
   margin-top: 6px;
-  font-size: 12px;
-  letter-spacing: 0;
+  font-size: 11px;
+  letter-spacing: 0.04em;
   text-transform: none;
   color: var(--soft);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .day-row-body {
-  padding: 20px 0;
+  padding: 18px 4px 18px 0;
   min-width: 0;
 }
 
@@ -1599,7 +1631,7 @@ a { color: inherit; }
   align-items: baseline;
   justify-content: space-between;
   gap: 12px 20px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   flex-wrap: wrap;
 }
 
@@ -1612,15 +1644,15 @@ a { color: inherit; }
 
 .day-row-city .he {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 650;
   letter-spacing: 0;
   text-transform: none;
 }
 
 .day-row-city .en {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -1635,17 +1667,19 @@ a { color: inherit; }
 .day-row.city-Tel-Aviv .day-row-city .he { color: var(--telaviv); }
 
 .day-row-body h3 {
-  font-size: clamp(22px, 2.8vw, 28px);
+  font-size: clamp(21px, 2.6vw, 26px);
   margin: 0 0 8px;
   color: var(--navy);
-  font-weight: 600;
-  max-width: 28ch;
+  font-weight: 650;
+  max-width: 30ch;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
 }
 
 .day-row-body p {
   margin: 0;
   color: var(--muted);
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.55;
   max-width: 62ch;
@@ -3481,16 +3515,18 @@ a { color: inherit; }
   }
   .tabs { display: none; }
   .day-row {
-    grid-template-columns: 52px minmax(0, 1fr);
-    gap: 10px;
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 0 10px;
+    padding-inline-end: 12px;
   }
   .day-row-meta .day-row-arrow { display: none; }
   .day-row-num {
-    padding: 16px 0;
-    padding-inline-start: 8px;
+    margin: 10px;
+    margin-inline-end: 0;
+    padding: 12px 8px;
   }
   .day-row-num .n { font-size: 22px; }
-  .day-row-body { padding: 14px 0; }
+  .day-row-body { padding: 14px 0 14px 0; }
   .day-row-body h3 { font-size: 18px; max-width: none; line-height: 1.25; }
   .day-row-body p { font-size: 13px; -webkit-line-clamp: 3; }
 
