@@ -1,7 +1,7 @@
 /* Access gate — passcode unlock for the trip site */
 (function () {
-  const CODE = "2602";
-  const STORAGE_KEY = "tripGateUnlocked_v1";
+  const CODE = "2608";
+  const STORAGE_KEY = "tripGateUnlocked_v2";
   const LENGTH = 4;
 
   const root = document.getElementById("access-gate");
