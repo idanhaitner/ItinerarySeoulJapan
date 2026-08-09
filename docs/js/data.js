@@ -114,7 +114,7 @@ window.TRIP = {
     "Seoul→Tokyo booked: Air Premia YP7321 (2 Sep · ICN 08:50 → NRT 11:20).",
     "Sep 5: Tsukiji + teamLab Planets + Odaiba + Ginza.",
     "Sep 6: Street Kart + Inokashira/Kichijoji + Shimokitazawa (IDP required).",
-    "Sep 11: Fushimi Inari + Nintendo Museum + Nishiki.",
+    "Sep 11: Fushimi Inari + Tofuku-ji + Nishiki.",
     "Sep 15: Osaka + teamLab Botanical Garden night.",
     "Sep 21–22: Nikko day trip, then Kamakura & Enoshima.",
     "Sep 23: Full Ginza shopping day + farewell dinner.",
@@ -1165,20 +1165,20 @@ window.PLACES = {
     "lng": 135.7727,
     "blurb": "Thousands of torii."
   },
-  "nintendo-museum": {
-    "id": "nintendo-museum",
-    "name": "Nintendo Museum",
-    "nameJa": "ニンテンドーミュージアム",
+  "tofukuji": {
+    "id": "tofukuji",
+    "name": "Tofuku-ji",
+    "nameJa": "東福寺",
     "city": "Kyoto",
     "country": "JP",
     "tags": [
       "must-see",
-      "culture",
-      "park"
+      "temple",
+      "culture"
     ],
-    "lat": 34.9078,
-    "lng": 135.8035,
-    "blurb": "Uji — lottery/reservation required; direct train from Fushimi Inari."
+    "lat": 34.9606,
+    "lng": 135.78,
+    "blurb": "Zen temple near Fushimi — Tsutenkyo bridge and gardens."
   },
   "kiyomizu": {
     "id": "kiyomizu",
@@ -3191,24 +3191,24 @@ window.DAYS = [
     "city": "Kyoto",
     "country": "JP",
     "hotelId": null,
-    "title": "Fushimi Inari, Nintendo Museum & Nishiki",
-    "summary": "Sunrise Fushimi Inari, Nintendo Museum in Uji, then Kiyomizu / Sannenzaka & Ninenzaka plus Nishiki Market.",
+    "title": "Fushimi Inari, Tofuku-ji & Nishiki",
+    "summary": "Sunrise Fushimi Inari, Tofuku-ji nearby, then Kiyomizu / Sannenzaka & Ninenzaka plus Nishiki Market.",
     "food": "Street snacks on Higashiyama; Nishiki graze.",
     "placeIds": [
       "fushimi-inari",
-      "nintendo-museum",
+      "tofukuji",
       "kiyomizu",
       "sannenzaka",
       "nishiki"
     ],
     "transport": [
       "Early Keihan/JR to Fushimi.",
-      "Direct train Fushimi → Uji for Nintendo Museum.",
-      "Return for Higashiyama + Nishiki."
+      "Short hop to Tofuku-ji.",
+      "Keihan/bus to Higashiyama, then Nishiki."
     ],
     "tips": [
-      "Nintendo Museum requires timed entry.",
-      "Higher Fushimi paths are quieter."
+      "Higher Fushimi paths are quieter.",
+      "Tofuku-ji is a short Keihan ride from Fushimi Inari."
     ],
     "timeline": [
       {
@@ -3216,35 +3216,35 @@ window.DAYS = [
         "title": "Fushimi Inari Taisha",
         "note": "Sunrise torii hike.",
         "placeId": "fushimi-inari",
-        "end": "09:30",
+        "end": "10:00",
         "category": "culture"
       },
       {
         "time": "10:30",
-        "title": "Nintendo Museum (Uji)",
-        "note": "Timed entry — lottery/reservation required.",
-        "placeId": "nintendo-museum",
-        "end": "13:00",
+        "title": "Tofuku-ji",
+        "note": "Zen temple — Tsutenkyo bridge and gardens.",
+        "placeId": "tofukuji",
+        "end": "12:15",
         "category": "culture"
       },
       {
-        "time": "14:00",
+        "time": "13:15",
         "title": "Kiyomizu-dera",
         "note": "Wooden stage temple.",
         "placeId": "kiyomizu",
-        "end": "15:15",
+        "end": "14:45",
         "category": "culture"
       },
       {
-        "time": "15:20",
+        "time": "14:50",
         "title": "Sannenzaka & Ninenzaka",
         "note": "Preserved stone streets.",
         "placeId": "sannenzaka",
-        "end": "16:30",
+        "end": "16:15",
         "category": "dining"
       },
       {
-        "time": "16:45",
+        "time": "16:30",
         "title": "Nishiki Market",
         "note": "Street-food graze — Kyoto’s kitchen.",
         "placeId": "nishiki",

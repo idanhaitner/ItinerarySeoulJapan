@@ -328,7 +328,6 @@ def build_bookings(days):
         ("רישיון נהיגה בינלאומי פיזי (IDP 1949)", "d11", "לטפל", "חובה ל־Street Kart · להנפיק בארץ עכשיו"),
         # 2 · Attractions (urgency order)
         ("USJ Studio Pass + Express Pass", "d21", "לטפל", "Express נגמר מהר · Nintendo World"),
-        ("Nintendo Museum (Uji)", "d16", "לטפל", "הגרלה / first-come אם נשאר"),
         ("Shibuya Sky sunset", "d08", "לטפל", "נפתח 28 ימים מראש"),
         ("Street Kart Tokyo", "d11", "לטפל", "אתר רשמי / Klook + IDP פיזי"),
         ("teamLab Planets Tokyo", "d10", "לטפל", "כרטיס מתוזמן · Toyosu"),
