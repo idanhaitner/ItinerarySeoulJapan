@@ -721,24 +721,63 @@
       });
     });
 
-    const journeyHe = {
-      outbound: "יציאה · תל אביב → סיאול",
-      "seoul-tokyo": "מעבר · סיאול → טוקיו",
-      return: "חזרה · טוקיו → הביתה",
+    const meta = {
+      outbound: {
+        he: "יציאה",
+        en: "DEPARTURE",
+        jp: "出発",
+        from: "TLV",
+        to: "ICN",
+        blurb: "Ethiopian · דרך אדיס אבבה",
+      },
+      "seoul-tokyo": {
+        he: "מעבר",
+        en: "TRANSFER",
+        jp: "乗継",
+        from: "ICN",
+        to: "NRT",
+        blurb: "Air Premia · סיאול לטוקיו",
+      },
+      return: {
+        he: "חזרה",
+        en: "RETURN",
+        jp: "帰国",
+        from: "NRT",
+        to: "TLV",
+        blurb: "עדיין פתוח · לאשר תאריך",
+      },
     };
 
     els.flightsRoot.innerHTML = `
-      <div class="flights-hero">
-        <p class="plan-kicker">טיסות · フライト</p>
-        <h2 class="plan-title">כרטיסי טיסה וסטטוס</h2>
-        <p class="flights-lead">כל הטיסות במקום אחד — שעות, קונקשנים ומה עדיין פתוח.</p>
-        <div class="flights-stats">
-          <div><em>${booked}</em><span>הוזמנו</span></div>
-          <div><em>${todo}</em><span>לטפל</span></div>
-          <div><em>${journeys.length}</em><span>מקטעים</span></div>
+      <section class="fx-stage" aria-label="סיכום טיסות">
+        <div class="fx-stage-bg" aria-hidden="true">
+          <div class="fx-stage-wash"></div>
+          <div class="fx-stage-grid"></div>
+          <svg class="fx-route-svg" viewBox="0 0 640 160" preserveAspectRatio="none">
+            <path class="fx-route-line" d="M40 110 C 140 30, 220 30, 320 80 S 500 140, 600 55" fill="none" />
+            <circle class="fx-route-dot" cx="40" cy="110" r="5" />
+            <circle class="fx-route-dot" cx="320" cy="80" r="5" />
+            <circle class="fx-route-dot" cx="600" cy="55" r="5" />
+          </svg>
+          <div class="fx-plane" aria-hidden="true">✈</div>
         </div>
-      </div>
-      <div class="flights-board">
+        <div class="fx-stage-content">
+          <div class="fx-seal" aria-hidden="true"><span>旅</span></div>
+          <p class="fx-kicker">טיסות · フライト · BOARDING</p>
+          <h2 class="fx-title">מסלול האוויר שלנו</h2>
+          <p class="fx-lead">תל אביב → סיאול → טוקיו · כרטיסים, שעות וסטטוס במבט אחד.</p>
+          <div class="fx-pills">
+            <div class="fx-pill"><em>${booked}</em><span>הוזמנו</span></div>
+            <div class="fx-pill"><em>${todo}</em><span>לטפל</span></div>
+            <div class="fx-pill"><em>${journeys.length}</em><span>מקטעים</span></div>
+          </div>
+          <div class="fx-route-labels" dir="ltr" aria-hidden="true">
+            <span>TLV</span><span>ICN</span><span>NRT</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="fx-passes">
         ${journeys
           .map((j, idx) => {
             const status = j.legs.every((l) => l.status === "booked")
@@ -748,58 +787,87 @@
                 : "todo";
             const statusLabel =
               status === "booked" ? "הוזמן" : status === "partial" ? "חלקי" : "לטפל";
-            const title = journeyHe[j.id] || j.label;
+            const m = meta[j.id] || {
+              he: j.label,
+              en: "FLIGHT",
+              jp: "便",
+              from: "—",
+              to: "—",
+              blurb: "",
+            };
+            const first = j.legs[0];
+            const last = j.legs[j.legs.length - 1];
+            const arriveDate = last.arriveDate || last.date;
             return `
-          <article class="flight-journey status-${status}" style="animation-delay:${idx * 0.06}s">
-            <header class="flight-journey-head">
-              <div>
-                <div class="flight-journey-kicker">מקטע ${idx + 1}</div>
-                <h3>${escapeHtml(title)}</h3>
+          <article class="fx-pass status-${status}" style="--d:${0.08 + idx * 0.1}s">
+            <div class="fx-pass-stub">
+              <div class="fx-pass-stub-top">
+                <span class="fx-pass-jp">${escapeHtml(m.jp)}</span>
+                <span class="fx-pass-en">${escapeHtml(m.en)}</span>
               </div>
-              <span class="flight-status">${escapeHtml(statusLabel)}</span>
-            </header>
-            <div class="flight-legs">
-              ${j.legs
-                .map((f) => {
-                  const arriveLabel =
-                    f.arriveDate && f.arriveDate !== f.date
-                      ? `${f.arrive} · ${formatFlightDate(f.arriveDate)}`
-                      : f.arrive;
-                  const isTodo = f.status !== "booked";
-                  return `
-                <div class="flight-leg${isTodo ? " is-todo" : ""}" dir="ltr">
-                  <div class="flight-leg-code">
-                    <strong>${escapeHtml(f.flight || "—")}</strong>
-                    <span>${escapeHtml(f.airline || "")}</span>
-                  </div>
-                  <div class="flight-leg-route">
-                    <div class="flight-airports">
-                      <div>
-                        <em>${escapeHtml(f.from)}</em>
-                        <span>${escapeHtml(f.fromName || "")}</span>
-                      </div>
-                      <div class="flight-arrow" aria-hidden="true">→</div>
-                      <div>
-                        <em>${escapeHtml(f.to)}</em>
-                        <span>${escapeHtml(f.toName || "")}</span>
-                      </div>
-                    </div>
-                    <div class="flight-times">
-                      <span>${escapeHtml(formatFlightDate(f.date))}</span>
-                      <span dir="ltr">${escapeHtml(f.depart || "—")} → ${escapeHtml(arriveLabel || "—")}</span>
-                    </div>
-                    ${f.terminal ? `<div class="flight-terminal">${escapeHtml(f.terminal)}</div>` : ""}
-                    ${f.note ? `<div class="flight-note">${escapeHtml(f.note)}</div>` : ""}
-                  </div>
-                </div>`;
-                })
-                .join("")}
+              <div class="fx-pass-stub-num">${String(idx + 1).padStart(2, "0")}</div>
+              <div class="fx-stamp ${status}">${escapeHtml(statusLabel)}</div>
             </div>
-            ${
-              j.dayId
-                ? `<button type="button" class="flight-open-day" data-open-day="${j.dayId}">פתחו את היום במסלול ←</button>`
-                : ""
-            }
+            <div class="fx-pass-body">
+              <header class="fx-pass-head">
+                <div>
+                  <p class="fx-pass-kicker">${escapeHtml(m.he)} · ${escapeHtml(m.blurb)}</p>
+                  <h3>${escapeHtml(m.from)} <span aria-hidden="true">→</span> ${escapeHtml(m.to)}</h3>
+                </div>
+                ${
+                  j.dayId
+                    ? `<button type="button" class="fx-pass-link" data-open-day="${j.dayId}">למסלול ←</button>`
+                    : ""
+                }
+              </header>
+
+              <div class="fx-pass-route" dir="ltr">
+                <div class="fx-end">
+                  <span class="fx-code">${escapeHtml(first.from)}</span>
+                  <span class="fx-city">${escapeHtml(first.fromName || "")}</span>
+                  <span class="fx-clock">${escapeHtml(first.depart || "—")}</span>
+                  <span class="fx-day">${escapeHtml(formatFlightDate(first.date))}</span>
+                </div>
+                <div class="fx-mid" aria-hidden="true">
+                  <div class="fx-mid-line"><span class="fx-mid-plane">✈</span></div>
+                  <span class="fx-mid-label">${j.legs.length > 1 ? `${j.legs.length} legs` : "direct"}</span>
+                </div>
+                <div class="fx-end is-arrive">
+                  <span class="fx-code">${escapeHtml(last.to)}</span>
+                  <span class="fx-city">${escapeHtml(last.toName || "")}</span>
+                  <span class="fx-clock">${escapeHtml(last.arrive || "—")}</span>
+                  <span class="fx-day">${escapeHtml(formatFlightDate(arriveDate))}</span>
+                </div>
+              </div>
+
+              <div class="fx-pass-legs">
+                ${j.legs
+                  .map((f, li) => {
+                    const arriveLabel =
+                      f.arriveDate && f.arriveDate !== f.date
+                        ? `${f.arrive} (+1)`
+                        : f.arrive || "—";
+                    return `
+                  <div class="fx-leg-chip${f.status !== "booked" ? " is-todo" : ""}" dir="ltr">
+                    <div class="fx-leg-chip-code">
+                      <strong>${escapeHtml(f.flight || "—")}</strong>
+                      <span>${escapeHtml(f.airline || "")}</span>
+                    </div>
+                    <div class="fx-leg-chip-path">
+                      <span>${escapeHtml(f.from)} → ${escapeHtml(f.to)}</span>
+                      <span>${escapeHtml(f.depart || "—")} – ${escapeHtml(arriveLabel)}</span>
+                    </div>
+                    ${
+                      f.terminal || f.note
+                        ? `<div class="fx-leg-chip-meta">${escapeHtml(f.terminal || f.note || "")}</div>`
+                        : ""
+                    }
+                    ${j.legs.length > 1 ? `<span class="fx-leg-index">LEG ${li + 1}</span>` : ""}
+                  </div>`;
+                  })
+                  .join("")}
+              </div>
+            </div>
           </article>`;
           })
           .join("")}
