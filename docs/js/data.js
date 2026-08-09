@@ -234,9 +234,9 @@ window.PLACES = {
       "culture",
       "onsen"
     ],
-    "lat": 37.54,
-    "lng": 127.07,
-    "blurb": "Korean bathhouse culture — check nearest well-rated spot (e.g. near Jamsil/Gangnam)."
+    "lat": 37.511,
+    "lng": 127.098,
+    "blurb": "Korean bathhouse near Jamsil — perfect reset after Lotte World."
   },
   "jogyesa": {
     "id": "jogyesa",
@@ -280,6 +280,20 @@ window.PLACES = {
     "lng": 127.0276,
     "blurb": "Treatments, shopping, K-pop landmarks."
   },
+  "unni-guide": {
+    "id": "unni-guide",
+    "name": "Unni Guide Center",
+    "nameJa": "언니 가이드 센터",
+    "city": "Seoul",
+    "country": "KR",
+    "tags": [
+      "must-see",
+      "culture"
+    ],
+    "lat": 37.5045,
+    "lng": 127.025,
+    "blurb": "Gangnam Unni Guide — clinic matching, skin analysis & booking help for visitors (book ahead)."
+  },
   "bongeunsa": {
     "id": "bongeunsa",
     "name": "Bongeunsa Temple",
@@ -322,7 +336,7 @@ window.PLACES = {
     ],
     "lat": 37.5665,
     "lng": 127.0092,
-    "blurb": "Night fashion markets + DDP architecture."
+    "blurb": "Night fashion markets + DDP / APM / Hyundai City Outlets."
   },
   "seongsu": {
     "id": "seongsu",
@@ -366,7 +380,7 @@ window.PLACES = {
     ],
     "lat": 37.5448,
     "lng": 127.0565,
-    "blurb": "Facial + skin analysis — book via Instagram @seoulistique.skin / WhatsApp (Monday self-care slot)."
+    "blurb": "Facial + skin analysis in Seongsu — book via Instagram @seoulistique.skin / WhatsApp."
   },
   "yeonnam": {
     "id": "yeonnam",
@@ -1804,75 +1818,8 @@ window.DAYS = [
     "city": "Seoul",
     "country": "KR",
     "hotelId": "brick-hotel",
-    "title": "Gangnam & Jamsil thrills",
-    "summary": "Friday Lotte World to slash weekend waits, Seokchon Lake, Lotte Tower Seoul Sky, dusk at COEX Starfield Library (Line 2, 3 stops), then late dinner / jjimjilbang to recover.",
-    "food": "Lotte mall snacks; late dinner near Jamsil/Gangnam before or after jjimjilbang.",
-    "placeIds": [
-      "lotte-world",
-      "seokchon",
-      "lotte-tower",
-      "coex",
-      "jimjilbang"
-    ],
-    "transport": [
-      "Subway to Jamsil (~40–50m from Hongdae).",
-      "Lotte Tower → COEX on Line 2 (~3 stops)."
-    ],
-    "tips": [
-      "Book Lotte World ahead — arrive at open and hit big rides first.",
-      "Jjimjilbang after park day soaks off the fatigue."
-    ],
-    "timeline": [
-      {
-        "time": "08:30",
-        "title": "Early breakfast & subway to Jamsil",
-        "note": "",
-        "placeId": "brick-hotel",
-        "category": "hotel"
-      },
-      {
-        "time": "10:00",
-        "title": "Lotte World + Seokchon Lake",
-        "note": "Hit the big rides early; lake walk beside the park.",
-        "placeId": "lotte-world",
-        "end": "16:30",
-        "category": "attraction"
-      },
-      {
-        "time": "16:45",
-        "title": "Lotte World Tower — Seoul Sky",
-        "note": "Skyline views before dusk.",
-        "placeId": "lotte-tower",
-        "end": "18:15",
-        "category": "attraction"
-      },
-      {
-        "time": "18:30",
-        "title": "COEX & Starfield Library",
-        "note": "Looks incredible lit up at dusk — Line 2, ~3 stops.",
-        "placeId": "coex",
-        "end": "20:00",
-        "category": "shopping"
-      },
-      {
-        "time": "20:30",
-        "title": "Late dinner / jjimjilbang",
-        "note": "Korean bathhouse reset after amusement-park day.",
-        "placeId": "jimjilbang",
-        "end": "23:00",
-        "category": "dining"
-      }
-    ]
-  },
-  {
-    "id": "d03",
-    "date": "2026-08-29",
-    "weekday": "Saturday",
-    "city": "Seoul",
-    "country": "KR",
-    "hotelId": "brick-hotel",
     "title": "Royal heart of Seoul",
-    "summary": "Weekend energy in the palace/hanok core: Gyeongbokgung (optional Eunpyeong first), Bukchon → Ikseon → Insadong → Jogyesa, then Gwangjang feast, Cheonggyecheon stroll, and Dongdaemun night shopping.",
+    "summary": "Culture day with Option A/B: Gyeongbokgung (+ hanbok) or Eunpyeong first, then Bukchon → Ikseon → Insadong, and Gwangjang Market dinner.",
     "food": "Gwangjang Market street-food feast.",
     "placeIds": [
       "eunpyeong",
@@ -1880,24 +1827,21 @@ window.DAYS = [
       "bukchon",
       "ikseon",
       "insadong",
-      "jogyesa",
-      "gwangjang",
-      "cheonggyecheon",
-      "dongdaemun"
+      "gwangjang"
     ],
     "transport": [
       "Hongdae → Gyeongbokgung (~25m).",
-      "Walk Bukchon → Ikseon → Insadong → Jogyesa → Gwangjang → Cheonggyecheon → Dongdaemun."
+      "Walk Bukchon → Ikseon → Insadong → Gwangjang."
     ],
     "tips": [
       "Rent hanbok for free palace entry vibe.",
-      "Saturdays here have lively weekend energy — group these so you don’t zig-zag."
+      "Option A starts at the palace; Option B does quieter Eunpyeong Hanok Village first."
     ],
     "timeline": [
       {
         "time": "09:00",
         "title": "Option A/B: Gyeongbokgung morning",
-        "note": "Option A: palace (+ hanbok). Option B: Eunpyeong Hanok Village first, then Gyeongbokgung.",
+        "note": "Option A: palace (+ hanbok). Option B: Eunpyeong Hanok Village first, then the palace.",
         "placeId": "gyeongbokgung",
         "end": "12:30",
         "category": "culture"
@@ -1912,8 +1856,8 @@ window.DAYS = [
       },
       {
         "time": "14:30",
-        "title": "Ikseon-dong → Insadong → Jogyesa",
-        "note": "Hip alleys, crafts, then temple stop.",
+        "title": "Ikseon-dong → Insadong",
+        "note": "Hip alleys, crafts, tea houses.",
         "placeId": "ikseon",
         "end": "17:00",
         "category": "dining"
@@ -1921,23 +1865,103 @@ window.DAYS = [
       {
         "time": "17:30",
         "title": "Gwangjang Market feast",
-        "note": "Street-food dinner.",
+        "note": "Street-food dinner (~until late).",
         "placeId": "gwangjang",
-        "end": "19:30",
+        "end": "22:30",
+        "category": "dining"
+      }
+    ]
+  },
+  {
+    "id": "d03",
+    "date": "2026-08-29",
+    "weekday": "Saturday",
+    "city": "Seoul",
+    "country": "KR",
+    "hotelId": "brick-hotel",
+    "title": "Temples, Gangnam Unni Guide & Dongdaemun",
+    "summary": "Jogyesa + Changdeokgung Secret Garden in the morning, then a Gangnam block with Unni Guide + treatment, Bongeunsa, COEX Starfield, and Dongdaemun night malls.",
+    "food": "Lunch near the palace / Insadong; light dinner near Dongdaemun.",
+    "placeIds": [
+      "hongdae",
+      "jogyesa",
+      "changdeokgung",
+      "unni-guide",
+      "gangnam",
+      "bongeunsa",
+      "coex",
+      "dongdaemun"
+    ],
+    "transport": [
+      "Hongdae → Jogyesa / Changdeokgung.",
+      "Subway to Gangnam / Sinnonhyeon for Unni Guide.",
+      "COEX → Dongdaemun evening."
+    ],
+    "tips": [
+      "Book Secret Garden timed slot — closed Mondays.",
+      "Book Unni Guide Center appointment ahead.",
+      "Night malls: APM, DDP Fashion Mall, Hyundai City Outlets."
+    ],
+    "timeline": [
+      {
+        "time": "08:30",
+        "title": "Optional animal café breakfast in Hongdae",
+        "note": "Easy animal-café vibe before temples.",
+        "placeId": "hongdae",
         "category": "dining"
       },
       {
-        "time": "19:45",
-        "title": "Cheonggyecheon night stroll",
-        "note": "Digest with a stream walk toward Dongdaemun.",
-        "placeId": "cheonggyecheon",
-        "end": "20:45",
-        "category": "attraction"
+        "time": "09:30",
+        "title": "Jogyesa Temple",
+        "note": "Calm temple stop near Insadong.",
+        "placeId": "jogyesa",
+        "end": "10:30",
+        "category": "culture"
       },
       {
-        "time": "21:00",
-        "title": "Dongdaemun (DDP) night shopping",
-        "note": "Night fashion markets + DDP architecture.",
+        "time": "10:45",
+        "title": "Changdeokgung & Secret Garden",
+        "note": "Pre-book Secret Garden timed slot.",
+        "placeId": "changdeokgung",
+        "end": "13:00",
+        "category": "culture"
+      },
+      {
+        "time": "14:00",
+        "title": "Unni Guide Center — Gangnam",
+        "note": "Clinic matching / skin analysis / booking help. Book ahead.",
+        "placeId": "unni-guide",
+        "end": "15:30",
+        "category": "culture"
+      },
+      {
+        "time": "15:45",
+        "title": "Gangnam treatment slot",
+        "note": "Treatment booked via Unni Guide / clinic.",
+        "placeId": "gangnam",
+        "end": "17:00",
+        "category": "shopping"
+      },
+      {
+        "time": "17:15",
+        "title": "Bongeunsa Temple",
+        "note": "Quiet contrast next to COEX.",
+        "placeId": "bongeunsa",
+        "end": "18:00",
+        "category": "culture"
+      },
+      {
+        "time": "18:15",
+        "title": "COEX & Starfield Library",
+        "note": "Mall + iconic library glow.",
+        "placeId": "coex",
+        "end": "19:45",
+        "category": "shopping"
+      },
+      {
+        "time": "20:15",
+        "title": "Dongdaemun night market & malls",
+        "note": "DDP + APM / DDP Fashion Mall / Hyundai City Outlets.",
         "placeId": "dongdaemun",
         "end": "23:30",
         "category": "dining"
@@ -1951,49 +1975,48 @@ window.DAYS = [
     "city": "Seoul",
     "country": "KR",
     "hotelId": "brick-hotel",
-    "title": "Secret Garden, Seongsu & sunset",
-    "summary": "Changdeokgung + Secret Garden in the morning (closed Mondays), trendy Seongsu cafés/shops + Seoul Forest, Namsan cable car to N Seoul Tower sunset, then Itaewon / Homo Hill nightlife.",
-    "food": "Seongsu cafés; Itaewon dinner & nightlife.",
+    "title": "Seongsu, N Tower sunset & Itaewon",
+    "summary": "Breakfast and second treatment in Seongsu, hang around the cool neighborhood + Seoul Forest, Namsan cable to N Seoul Tower sunset, then Itaewon nightlife.",
+    "food": "Breakfast/cafés in Seongsu; dinner in Itaewon.",
     "placeIds": [
-      "changdeokgung",
       "seongsu",
+      "seoulistique",
       "seoul-forest",
       "namsan-cable",
       "n-tower",
       "itaewon"
     ],
     "transport": [
-      "Book Secret Garden timed slot online.",
-      "East to Seongsu after the palace; later Seoul Forest → Namsan → Itaewon."
+      "Head to Seongsu late morning.",
+      "Seoul Forest → Namsan → Itaewon."
     ],
     "tips": [
-      "Changdeokgung must be Sat or Sun — closed Mondays.",
-      "Sunday afternoon Seongsu has peak pop-up energy.",
+      "Book Seoulistique via Instagram @seoulistique.skin / WhatsApp.",
       "Book N Tower for sunset; cable-car tickets at the base."
     ],
     "timeline": [
       {
-        "time": "09:30",
-        "title": "Changdeokgung & Secret Garden",
-        "note": "Pre-book Secret Garden timed slot online.",
-        "placeId": "changdeokgung",
-        "end": "12:30",
-        "category": "culture"
-      },
-      {
-        "time": "13:30",
-        "title": "Seongsu cafés, boutiques & pop-ups",
-        "note": "Seoul’s Brooklyn — café hopping and shopping.",
+        "time": "10:00",
+        "title": "Seongsu breakfast & neighborhood stroll",
+        "note": "Cool cafés, boutiques, pop-ups.",
         "placeId": "seongsu",
-        "end": "16:00",
+        "end": "11:30",
         "category": "dining"
       },
       {
-        "time": "16:15",
-        "title": "Seoul Forest",
-        "note": "Urban park next to Seongsu.",
+        "time": "12:00",
+        "title": "Seoulistique facial (2nd treatment)",
+        "note": "Skin analysis + facial in Seongsu.",
+        "placeId": "seoulistique",
+        "end": "13:45",
+        "category": "culture"
+      },
+      {
+        "time": "14:00",
+        "title": "More Seongsu + Seoul Forest",
+        "note": "Keep exploring the area, then park break.",
         "placeId": "seoul-forest",
-        "end": "17:00",
+        "end": "16:30",
         "category": "attraction"
       },
       {
@@ -2029,62 +2052,61 @@ window.DAYS = [
     "city": "Seoul",
     "country": "KR",
     "hotelId": "brick-hotel",
-    "title": "Self-care & Hongdae vibe",
-    "summary": "Palaces/museums closed Mondays — perfect pamper day: Head Spa near Hongdae, Seoulistique facial, relaxed Hongdae / Yeonnam shopping and cafés, street performers, and a chill final Korean BBQ.",
-    "food": "Final Korean BBQ near Hongdae.",
+    "title": "Lotte World Monday + spa night",
+    "summary": "Move Lotte World to quieter Monday: full park day, Lotte Tower / Seokchon views, then only jimjilbang spa + dinner — you'll be wiped, so keep the night short.",
+    "food": "Park / Lotte mall snacks; simple dinner near Jamsil after the spa.",
     "placeIds": [
-      "hongdae",
-      "seoulistique",
-      "yeonnam"
+      "lotte-world",
+      "seokchon",
+      "lotte-tower",
+      "jimjilbang"
     ],
     "transport": [
-      "Stay Hongdae-side all day after Head Spa / facial.",
-      "Pack in the evening before Tuesday flight."
+      "Subway to Jamsil (~40–50m from Hongdae).",
+      "Stay Jamsil-side for spa + dinner."
     ],
     "tips": [
-      "Book Head Spa 10:00–11:30 near the hotel.",
-      "Book Seoulistique via Instagram @seoulistique.skin / WhatsApp.",
-      "Many museums/palaces closed Mondays — lean into spa + neighborhood vibe."
+      "Book Lotte World ahead — Monday is usually less crowded than weekend.",
+      "Evening is spa + dinner only — no extra nightlife."
     ],
     "timeline": [
       {
-        "time": "10:00",
-        "title": "Head Spa near Hongdae",
-        "note": "Parkjun Beauty Lab / Eco Jardin / WT Methode.",
-        "placeId": "hongdae",
-        "end": "11:30",
-        "category": "dining"
+        "time": "08:30",
+        "title": "Convenience-store breakfast & subway to Jamsil",
+        "note": "",
+        "placeId": "brick-hotel",
+        "category": "hotel"
       },
       {
-        "time": "12:30",
-        "title": "Seoulistique facial treatment",
-        "note": "Skin analysis + facial. Book @seoulistique.skin / WhatsApp.",
-        "placeId": "seoulistique",
-        "end": "14:15",
+        "time": "10:00",
+        "title": "Lotte World",
+        "note": "Full park day while it's quieter.",
+        "placeId": "lotte-world",
+        "end": "17:00",
+        "category": "attraction"
+      },
+      {
+        "time": "17:15",
+        "title": "Seokchon Lake + Lotte World Tower Seoul Sky",
+        "note": "Lake stroll and skyline views.",
+        "placeId": "lotte-tower",
+        "end": "19:00",
+        "category": "attraction"
+      },
+      {
+        "time": "19:30",
+        "title": "Jimjilbang spa reset",
+        "note": "Soak off the park day — keep it chill.",
+        "placeId": "jimjilbang",
+        "end": "21:30",
         "category": "culture"
       },
       {
-        "time": "14:30",
-        "title": "Hongdae / Yeonnam shopping & cafés",
-        "note": "Relaxed boutiques and café hopping.",
-        "placeId": "yeonnam",
-        "end": "18:00",
-        "category": "dining"
-      },
-      {
-        "time": "18:30",
-        "title": "Hongdae street performers",
-        "note": "Pack up earlier; enjoy the night vibe.",
-        "placeId": "hongdae",
-        "end": "19:30",
-        "category": "dining"
-      },
-      {
-        "time": "20:00",
-        "title": "Final Korean BBQ",
-        "note": "Chill last Seoul dinner before Tokyo.",
-        "placeId": "hongdae",
-        "end": "22:00",
+        "time": "21:45",
+        "title": "Simple dinner near Jamsil",
+        "note": "Eat and crash — no Hongdae night planned.",
+        "placeId": "jimjilbang",
+        "end": "22:45",
         "category": "dining"
       }
     ]
