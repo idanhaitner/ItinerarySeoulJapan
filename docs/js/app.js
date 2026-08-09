@@ -375,12 +375,55 @@
     </div>`;
   }
 
-  function placeCardHtml(p) {
+  function placePhoto(id) {
+    return (window.PLACE_PHOTOS || {})[id] || null;
+  }
+
+  function dayPhotosHtml(day) {
+    if (day.city !== "Seoul") return "";
+    const seen = new Set();
+    const shots = [];
+    for (const id of day.placeIds || []) {
+      if (seen.has(id)) continue;
+      const photo = placePhoto(id);
+      if (!photo) continue;
+      seen.add(id);
+      const place = places[id];
+      const label = photo.he || (place && place.name) || id;
+      shots.push({ id, src: photo.src, label });
+    }
+    if (!shots.length) return "";
+    return `
+      <section class="day-photos" aria-label="תמונות יעדים">
+        <div class="day-photos-head">
+          <div class="section-title">איך זה נראה · יעדי היום</div>
+        </div>
+        <div class="day-photos-track">
+          ${shots
+            .map(
+              (s) => `
+            <figure class="day-photo-card">
+              <img src="${escapeHtml(s.src)}" alt="${escapeHtml(s.label)}" loading="lazy" decoding="async" />
+              <figcaption>${escapeHtml(s.label)}</figcaption>
+            </figure>`
+            )
+            .join("")}
+        </div>
+      </section>`;
+  }
+
+  function placeCardHtml(p, opts = {}) {
     const links = mapsLinks(p);
     const primary = links.actions.find((a) => a.primary) || links.actions[0];
     const secondary = links.actions.filter((a) => a !== primary);
+    const photo = opts.withPhoto ? placePhoto(p.id) : null;
     return `
       <article class="place-card city-accent-${p.city}" data-place="${p.id}">
+        ${
+          photo
+            ? `<div class="place-card-cover"><img src="${escapeHtml(photo.src)}" alt="${escapeHtml(photo.he || p.name)}" loading="lazy" decoding="async" /></div>`
+            : ""
+        }
         <div class="place-card-top">
           <span class="city-pill ${cityClass(p.city)}">${cityLocal(p.city)}</span>
           <span class="place-city-en">${escapeHtml(p.city)}</span>
@@ -622,6 +665,7 @@
           ${day.food ? `<div class="food-banner"><strong>אוכל היום</strong><span>${escapeHtml(day.food)}</span></div>` : ""}
         </div>
       </div>
+      ${dayPhotosHtml(day)}
       <div class="detail-layout">
         <div>
           ${timelineHtml(day)}
@@ -639,7 +683,7 @@
       </div>
       <section class="places-section">
         <div class="section-title">מקומות · 場所</div>
-        <div class="places-grid">${dayPlaces.map(placeCardHtml).join("")}</div>
+        <div class="places-grid">${dayPlaces.map((p) => placeCardHtml(p, { withPhoto: day.city === "Seoul" })).join("")}</div>
       </section>
     `;
     setResultCount(`${parts.day} ${parts.month}`);
