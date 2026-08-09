@@ -258,8 +258,6 @@
     els.ribbon.hidden = !showRibbon;
     if (els.masthead) els.masthead.classList.toggle("is-compact", !showMasthead);
 
-    const planIntro = document.getElementById("plan-intro");
-    if (planIntro) planIntro.classList.toggle("is-hidden", !showMasthead);
     const destIntel = document.getElementById("dest-intel");
     if (destIntel) destIntel.classList.toggle("is-hidden", !showMasthead || state.view !== "itinerary");
 
@@ -452,6 +450,7 @@
   }
 
   function renderDayList() {
+    renderItineraryStage();
     const list = filteredDays();
     setResultCount(`${list.length} ימים`);
     if (!list.length) {
@@ -548,15 +547,26 @@
       : 0;
     setResultCount(`${stopCount} עצירות`);
 
+    const cityCount = new Set(list.map((p) => p.city)).size;
+    const stage = sectionStage({
+      theme: "maps",
+      seal: "図",
+      kicker: "מפות · 地図 · MAPS",
+      title: "עקבו אחרי המסלול",
+      lead: "מפת מסע כרונולוגית + כל המקומות לפי עיר. לחצו על סימון כדי לפתוח יום.",
+      pills: [
+        { em: stopCount, span: "עצירות" },
+        { em: cityCount, span: "ערים" },
+        { em: list.length, span: "מקומות" },
+      ],
+      labels: ["ICN", "NRT", "HAKONE", "KIX", "BKK"],
+      motif: motifMaps(),
+      aria: "פתיח מפות",
+    });
+
     els.placeList.innerHTML = `
+      ${stage}
       <section class="journey-section">
-        <div class="journey-head">
-          <div>
-            <p class="plan-kicker">מפת המסע · 旅程</p>
-            <h2 class="plan-title">עקבו אחרי המסלול</h2>
-            <p class="journey-sub">הימים מוצגים בסדר כרונולוגי בקוריאה וביפן. לחצו על סימון או עצירה כדי לפתוח את היום.</p>
-          </div>
-        </div>
         <div class="journey-layout">
           <div id="journey-map" class="journey-map" role="img" aria-label="מפת ימי הטיול לפי סדר"></div>
           <ol id="journey-legend" class="journey-legend"></ol>
@@ -594,6 +604,23 @@
       return;
     }
     const result = window.Recommendations.render(els.recsRoot, { query: state.query });
+    const cities = (window.Recommendations.CITIES || []).length;
+    const stage = sectionStage({
+      theme: "recs",
+      seal: "星",
+      kicker: "המלצות · おすすめ · PICKS",
+      title: "מה שווה לא לפספס",
+      lead: "קפה, אוכל ושכונות שאהבנו לאסוף — לפי עיר ולפי מצב רוח.",
+      pills: [
+        { em: result.count || 0, span: "המלצות" },
+        { em: cities || "—", span: "ערים" },
+        { em: result.city ? cityLocal(result.city) || result.city : "הכל", span: "מסונן" },
+      ],
+      labels: ["CAFÉ", "FOOD", "NIGHT", "HIDDEN"],
+      motif: motifRecs(),
+      aria: "פתיח המלצות",
+    });
+    els.recsRoot.insertAdjacentHTML("afterbegin", stage);
     setResultCount(result.count ? `${result.count} המלצות` : "—");
   }
 
@@ -660,7 +687,25 @@
     const total = allItems.length;
     const pct = total ? Math.round((done / total) * 100) : 0;
 
+    const todo = total - done;
+    const stage = sectionStage({
+      theme: "book",
+      seal: "票",
+      kicker: "הזמנות · 予約 · CHECKLIST",
+      title: "מה נשאר לסגור",
+      lead: "כרטיסים, מלונות, רכבות וספא — סמנו מה כבר הוזמן.",
+      pills: [
+        { em: done, span: "הוזמן" },
+        { em: todo, span: "לטפל" },
+        { em: `${pct}%`, span: "הושלם" },
+      ],
+      labels: ["HOTELS", "TRAINS", "TICKETS", "FLIGHTS"],
+      motif: motifBookings(pct),
+      aria: "פתיח הזמנות",
+    });
+
     els.bookingsRoot.innerHTML = `
+      ${stage}
       <div class="progress-wrap">
         <div class="progress-label"><span>${done} מתוך ${total} פריטים הוזמנו</span><span>${pct}%</span></div>
         <div class="progress-bar"><span style="width:${pct}%"></span></div>
@@ -692,6 +737,160 @@
       </div>`;
     setResultCount(`${done}/${total}`);
   }
+
+
+  function sectionStage(opts) {
+    const {
+      theme = "days",
+      seal = "旅",
+      kicker = "",
+      title = "",
+      lead = "",
+      pills = [],
+      labels = [],
+      motif = "",
+      aria = title,
+    } = opts;
+    const pillsHtml = pills.length
+      ? `<div class="sec-pills">${pills
+          .map(
+            (p) =>
+              `<div class="sec-pill"><em>${escapeHtml(String(p.em))}</em><span>${escapeHtml(p.span)}</span></div>`
+          )
+          .join("")}</div>`
+      : "";
+    const labelsHtml = labels.length
+      ? `<div class="sec-route-labels" dir="ltr" aria-hidden="true">${labels
+          .map((l) => `<span>${escapeHtml(l)}</span>`)
+          .join("")}</div>`
+      : "";
+    return `
+      <section class="sec-stage theme-${escapeHtml(theme)}" aria-label="${escapeHtml(aria)}">
+        <div class="sec-stage-bg" aria-hidden="true">
+          <div class="sec-stage-wash"></div>
+          <div class="sec-stage-grid"></div>
+          ${motif}
+        </div>
+        <div class="sec-stage-content">
+          <div class="sec-seal" aria-hidden="true"><span>${escapeHtml(seal)}</span></div>
+          <p class="sec-kicker">${kicker}</p>
+          <h2 class="sec-title">${title}</h2>
+          <p class="sec-lead">${lead}</p>
+          ${pillsHtml}
+          ${labelsHtml}
+        </div>
+      </section>`;
+  }
+
+  function motifTimeline() {
+    return `
+      <svg class="sec-motif-svg motif-timeline" viewBox="0 0 640 140" preserveAspectRatio="none">
+        <path class="sec-motif-line" d="M30 95 H 140 Q 180 95 200 70 T 320 55 T 440 80 T 560 48 H 610" fill="none" />
+        <circle class="sec-motif-dot" cx="30" cy="95" r="5" />
+        <circle class="sec-motif-dot" cx="160" cy="88" r="5" />
+        <circle class="sec-motif-dot" cx="320" cy="55" r="5" />
+        <circle class="sec-motif-dot" cx="460" cy="78" r="5" />
+        <circle class="sec-motif-dot" cx="610" cy="48" r="5" />
+      </svg>
+      <div class="sec-motif-runner" aria-hidden="true"></div>`;
+  }
+
+  function motifFlights() {
+    return `
+      <svg class="sec-motif-svg motif-flights" viewBox="0 0 640 160" preserveAspectRatio="none">
+        <path class="sec-motif-line" d="M28 118 C 110 40, 180 35, 260 78 S 400 130, 500 70 S 580 40, 612 52" fill="none" />
+        <circle class="sec-motif-dot" cx="28" cy="118" r="4.5" />
+        <circle class="sec-motif-dot" cx="180" cy="55" r="4.5" />
+        <circle class="sec-motif-dot" cx="320" cy="95" r="4.5" />
+        <circle class="sec-motif-dot" cx="460" cy="78" r="4.5" />
+        <circle class="sec-motif-dot" cx="612" cy="52" r="4.5" />
+      </svg>
+      <div class="sec-motif-plane" aria-hidden="true">✈</div>`;
+  }
+
+  function motifBookings(pct = 0) {
+    const circ = 2 * Math.PI * 44;
+    const offset = circ - (Math.max(0, Math.min(100, pct)) / 100) * circ;
+    return `
+      <div class="motif-checks" aria-hidden="true">
+        <span class="check-card c1"><i>✓</i><b>Hotels</b></span>
+        <span class="check-card c2"><i>✓</i><b>Trains</b></span>
+        <span class="check-card c3"><i>○</i><b>Tickets</b></span>
+        <span class="check-card c4"><i>○</i><b>Flights</b></span>
+      </div>
+      <svg class="sec-motif-svg motif-progress" viewBox="0 0 120 120">
+        <circle class="prog-track" cx="60" cy="60" r="44" fill="none" />
+        <circle class="prog-fill" cx="60" cy="60" r="44" fill="none"
+          style="stroke-dasharray:${circ.toFixed(1)};stroke-dashoffset:${offset.toFixed(1)}" />
+      </svg>`;
+  }
+
+  function motifMaps() {
+    return `
+      <svg class="sec-motif-svg motif-maps" viewBox="0 0 640 160" preserveAspectRatio="none">
+        <path class="sec-motif-line soft" d="M70 110 L170 70 L290 95 L410 50 L520 85 L590 40" fill="none" />
+        <circle class="map-pulse" cx="70" cy="110" r="10" />
+        <circle class="map-pulse delay-2" cx="290" cy="95" r="10" />
+        <circle class="map-pulse delay-3" cx="520" cy="85" r="10" />
+        <circle class="sec-motif-dot" cx="70" cy="110" r="4" />
+        <circle class="sec-motif-dot" cx="170" cy="70" r="4" />
+        <circle class="sec-motif-dot" cx="290" cy="95" r="4" />
+        <circle class="sec-motif-dot" cx="410" cy="50" r="4" />
+        <circle class="sec-motif-dot" cx="520" cy="85" r="4" />
+        <circle class="sec-motif-dot" cx="590" cy="40" r="4" />
+      </svg>
+      <div class="motif-pins" aria-hidden="true">
+        <span class="pin p1"></span><span class="pin p2"></span><span class="pin p3"></span>
+      </div>`;
+  }
+
+  function motifRecs() {
+    return `
+      <div class="motif-stars" aria-hidden="true">
+        <span class="star s1"></span><span class="star s2"></span><span class="star s3"></span>
+        <span class="star s4"></span><span class="star s5"></span><span class="star s6"></span>
+      </div>
+      <svg class="sec-motif-svg motif-orbit" viewBox="0 0 640 160" preserveAspectRatio="none">
+        <ellipse class="sec-motif-line soft" cx="320" cy="80" rx="240" ry="42" fill="none" />
+        <ellipse class="sec-motif-line soft delay-line" cx="320" cy="80" rx="160" ry="28" fill="none" />
+      </svg>`;
+  }
+
+  function motifTools() {
+    return `
+      <div class="motif-orbit-icons" aria-hidden="true">
+        <span class="orb o1">¥</span>
+        <span class="orb o2">₩</span>
+        <span class="orb o3">$</span>
+        <span class="orb o4">₪</span>
+      </div>
+      <svg class="sec-motif-svg motif-tools" viewBox="0 0 640 160" preserveAspectRatio="none">
+        <circle class="sec-motif-line soft" cx="320" cy="78" r="52" fill="none" />
+        <circle class="sec-motif-line soft delay-line" cx="320" cy="78" r="78" fill="none" />
+      </svg>`;
+  }
+
+  function renderItineraryStage() {
+    const root = document.getElementById("itinerary-stage");
+    if (!root) return;
+    const cityCount = new Set(days.map((d) => d.city)).size;
+    root.innerHTML = sectionStage({
+      theme: "days",
+      seal: "日",
+      kicker: "מסלול · 旅程 · DAYS",
+      title: "יום אחר יום",
+      lead: "הלו״ז המלא — מסיאול דרך יפן, עצירה בבנגקוק, ואז טירנה.",
+      pills: [
+        { em: days.length, span: "ימים" },
+        { em: cityCount, span: "ערים" },
+        { em: Object.keys(places).length, span: "מקומות" },
+      ],
+      labels: ["SEOUL", "TOKYO", "KYOTO", "OSAKA", "BKK"],
+      motif: motifTimeline(),
+      aria: "פתיח מסלול",
+    });
+  }
+
 
   function flightStatusHe(status) {
     if (status === "booked") return "הוזמן";
@@ -766,36 +965,24 @@
         .filter((c) => c && c !== "—" && c !== "TBD")
         .join(" · ") || "TBD";
 
+    const stage = sectionStage({
+      theme: "flights",
+      seal: "旅",
+      kicker: "טיסות · フライト · BOARDING",
+      title: "מסלול האוויר שלנו",
+      lead: "תל אביב → סיאול → טוקיו → בנגקוק → טירנה · כרטיסים, מספרי טיסה וסטטוס במבט אחד.",
+      pills: [
+        { em: booked, span: "הוזמנו" },
+        { em: todo, span: "לטפל" },
+        { em: journeys.length, span: "מקטעים" },
+      ],
+      labels: ["TLV", "ICN", "NRT", "BKK", "TIA"],
+      motif: motifFlights(),
+      aria: "סיכום טיסות",
+    });
+
     els.flightsRoot.innerHTML = `
-      <section class="fx-stage" aria-label="סיכום טיסות">
-        <div class="fx-stage-bg" aria-hidden="true">
-          <div class="fx-stage-wash"></div>
-          <div class="fx-stage-grid"></div>
-          <svg class="fx-route-svg" viewBox="0 0 640 160" preserveAspectRatio="none">
-            <path class="fx-route-line" d="M28 118 C 110 40, 180 35, 260 78 S 400 130, 500 70 S 580 40, 612 52" fill="none" />
-            <circle class="fx-route-dot" cx="28" cy="118" r="4.5" />
-            <circle class="fx-route-dot" cx="180" cy="55" r="4.5" />
-            <circle class="fx-route-dot" cx="320" cy="95" r="4.5" />
-            <circle class="fx-route-dot" cx="460" cy="78" r="4.5" />
-            <circle class="fx-route-dot" cx="612" cy="52" r="4.5" />
-          </svg>
-          <div class="fx-plane" aria-hidden="true">✈</div>
-        </div>
-        <div class="fx-stage-content">
-          <div class="fx-seal" aria-hidden="true"><span>旅</span></div>
-          <p class="fx-kicker">טיסות · フライト · BOARDING</p>
-          <h2 class="fx-title">מסלול האוויר שלנו</h2>
-          <p class="fx-lead">תל אביב → סיאול → טוקיו → בנגקוק → טירנה · כרטיסים, מספרי טיסה וסטטוס במבט אחד.</p>
-          <div class="fx-pills">
-            <div class="fx-pill"><em>${booked}</em><span>הוזמנו</span></div>
-            <div class="fx-pill"><em>${todo}</em><span>לטפל</span></div>
-            <div class="fx-pill"><em>${journeys.length}</em><span>מקטעים</span></div>
-          </div>
-          <div class="fx-route-labels" dir="ltr" aria-hidden="true">
-            <span>TLV</span><span>ICN</span><span>NRT</span><span>BKK</span><span>TIA</span>
-          </div>
-        </div>
-      </section>
+      ${stage}
 
       <div class="fx-passes">
         ${journeys
@@ -933,7 +1120,23 @@
   }
 
   function renderTools() {
+    const stage = sectionStage({
+      theme: "tools",
+      seal: "用",
+      kicker: "כלים · 便利 · TOOLKIT",
+      title: "הערכה לדרך",
+      lead: "המרת מטבע, כתובות מונית לנהג, וטיפים לתחבורה — הכל במקום אחד.",
+      pills: [
+        { em: "FX", span: "מטבע" },
+        { em: "TAXI", span: "מוניות" },
+        { em: "TIPS", span: "טיפים" },
+      ],
+      labels: ["JPY", "KRW", "USD", "ILS"],
+      motif: motifTools(),
+      aria: "פתיח כלים",
+    });
     els.toolsRoot.innerHTML = `
+      ${stage}
       <div class="tools-actions">
         <button type="button" class="btn-primary" id="open-tips">טיפים לתחבורה</button>
         <button type="button" class="btn-ghost" id="open-flights-tab">לטיסות ←</button>

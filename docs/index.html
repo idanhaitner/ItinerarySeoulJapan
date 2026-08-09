@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Shippori+Mincho:wght@500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=78" />
+  <link rel="stylesheet" href="css/styles.css?v=79" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 </head>
 <body>
@@ -167,10 +167,7 @@
 
     <main class="main" id="main-content">
       <section id="panel-itinerary" class="panel active" aria-label="יום אחר יום">
-        <div class="plan-intro" id="plan-intro">
-          <p class="plan-kicker">המסלול · 旅程</p>
-          <h2 class="plan-title">יום אחר יום</h2>
-        </div>
+        <div id="itinerary-stage"></div>
         <div id="dest-intel" class="dest-intel" aria-live="polite"></div>
         <div id="day-list" class="day-list"></div>
       </section>
@@ -250,6 +247,6 @@
   <script src="js/dest-intel.js?v=70"></script>
   <script src="js/journey-map.js?v=71"></script>
   <script src="js/recommendations.js?v=70"></script>
-  <script src="js/app.js?v=74"></script>
+  <script src="js/app.js?v=75"></script>
 </body>
 </html>
