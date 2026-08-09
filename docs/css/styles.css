@@ -1525,7 +1525,7 @@ a { color: inherit; }
 }
 
 .day-list {
-  gap: 14px;
+  gap: 0;
   padding-bottom: 8px;
 }
 
@@ -1535,41 +1535,26 @@ a { color: inherit; }
   text-align: start;
   cursor: pointer;
   color: inherit;
-  border: 1px solid var(--line);
-  background: var(--surface);
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 85%, transparent);
+  background: transparent;
   padding: 0;
-  padding-inline-end: 18px;
+  padding-inline-end: 8px;
   display: grid;
-  grid-template-columns: 88px minmax(0, 1fr);
-  gap: 4px 20px;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 0 22px;
   align-items: stretch;
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0 1px 0 rgba(47, 43, 40, 0.03);
-  transition:
-    background 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
+  overflow: visible;
+  transition: background 0.25s ease;
   animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.day-row::after {
-  content: "";
-  position: absolute;
-  inset-inline-end: 0;
-  top: 18px;
-  bottom: 18px;
-  width: 1px;
-  background: transparent;
-  transition: background 0.25s ease;
+.day-row:last-child {
+  border-bottom: 0;
 }
 
 .day-row:hover {
-  background: #fff;
-  border-color: color-mix(in srgb, var(--navy) 16%, var(--line));
-  box-shadow: 0 10px 28px rgba(47, 43, 40, 0.06);
-  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
 }
 
 .day-row:hover .day-row-arrow {
@@ -1577,21 +1562,15 @@ a { color: inherit; }
   color: var(--navy);
 }
 
-.day-row:hover .day-row-num {
-  background: color-mix(in srgb, var(--paper-2) 70%, white);
-}
-
 .day-row-num {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin: 12px;
-  margin-inline-end: 0;
-  padding: 14px 12px;
-  border-inline-start: 3px solid var(--navy);
-  background: var(--paper-2);
-  transition: background 0.25s ease;
+  margin: 0;
+  padding: 28px 0 28px 14px;
+  border-inline-start: 2px solid var(--navy);
+  background: transparent;
 }
 
 .day-row.city-Seoul .day-row-num { border-inline-start-color: var(--seoul); }
@@ -1605,25 +1584,26 @@ a { color: inherit; }
 
 .day-row-num .n {
   font-family: var(--font-display);
-  font-size: 30px;
-  font-weight: 650;
+  font-size: 34px;
+  font-weight: 600;
   line-height: 1;
   color: var(--navy);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 .day-row-num .d {
-  margin-top: 6px;
+  margin-top: 8px;
   font-size: 11px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: none;
   color: var(--soft);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .day-row-body {
-  padding: 18px 4px 18px 0;
+  padding: 26px 0 28px;
   min-width: 0;
+  border-bottom: 0;
 }
 
 .day-row-top {
@@ -1643,43 +1623,47 @@ a { color: inherit; }
 }
 
 .day-row-city .he {
-  font-size: 13px;
-  font-weight: 650;
-  letter-spacing: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   text-transform: none;
+  color: var(--ink);
 }
 
 .day-row-city .en {
   font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--soft);
 }
 
-.day-row.city-Seoul .day-row-city .he { color: var(--seoul); }
-.day-row.city-Tokyo .day-row-city .he { color: var(--tokyo); }
-.day-row.city-Hakone .day-row-city .he { color: var(--hakone); }
-.day-row.city-Kawaguchiko .day-row-city .he { color: var(--kawaguchiko); }
-.day-row.city-Kyoto .day-row-city .he { color: var(--kyoto); }
-.day-row.city-Hiroshima .day-row-city .he { color: var(--hiroshima); }
-.day-row.city-Osaka .day-row-city .he { color: var(--osaka); }
-.day-row.city-Tel-Aviv .day-row-city .he { color: var(--telaviv); }
+/* City tint only on the date accent — keep labels quiet */
+.day-row.city-Seoul .day-row-city .he,
+.day-row.city-Tokyo .day-row-city .he,
+.day-row.city-Hakone .day-row-city .he,
+.day-row.city-Kawaguchiko .day-row-city .he,
+.day-row.city-Kyoto .day-row-city .he,
+.day-row.city-Hiroshima .day-row-city .he,
+.day-row.city-Osaka .day-row-city .he,
+.day-row.city-Tel-Aviv .day-row-city .he {
+  color: var(--ink);
+}
 
 .day-row-body h3 {
-  font-size: clamp(21px, 2.6vw, 26px);
+  font-size: clamp(22px, 2.7vw, 27px);
   margin: 0 0 8px;
   color: var(--navy);
-  font-weight: 650;
+  font-weight: 600;
   max-width: 30ch;
-  letter-spacing: -0.01em;
-  line-height: 1.25;
+  letter-spacing: -0.015em;
+  line-height: 1.28;
 }
 
 .day-row-body p {
   margin: 0;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 14.5px;
   font-weight: 400;
   line-height: 1.55;
   max-width: 62ch;
@@ -3515,18 +3499,17 @@ a { color: inherit; }
   }
   .tabs { display: none; }
   .day-row {
-    grid-template-columns: 64px minmax(0, 1fr);
-    gap: 0 10px;
-    padding-inline-end: 12px;
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 0 14px;
+    padding-inline-end: 4px;
   }
   .day-row-meta .day-row-arrow { display: none; }
   .day-row-num {
-    margin: 10px;
-    margin-inline-end: 0;
-    padding: 12px 8px;
+    margin: 0;
+    padding: 20px 0 20px 10px;
   }
-  .day-row-num .n { font-size: 22px; }
-  .day-row-body { padding: 14px 0 14px 0; }
+  .day-row-num .n { font-size: 24px; }
+  .day-row-body { padding: 18px 0 20px; }
   .day-row-body h3 { font-size: 18px; max-width: none; line-height: 1.25; }
   .day-row-body p { font-size: 13px; -webkit-line-clamp: 3; }
 
