@@ -125,6 +125,20 @@ def region_for(lat: float, lng: float) -> tuple[str, str, str] | None:
     return None
 
 
+def street_view_photo(lat: float, lng: float, place_id: str) -> str:
+    """Cover image from Google Street View near the pin (storefront context).
+
+    The MK My Map KML has no venue photos; Street View is a practical stand-in
+    so cards aren't blank. Hotlinked thumbnail used by Maps itself.
+    """
+    yaw = int(hashlib.md5(place_id.encode()).hexdigest(), 16) % 360
+    return (
+        "https://streetviewpixels-pa.googleapis.com/v1/thumbnail"
+        f"?cb_client=maps_sv.tactile&w=640&h=400&yaw={yaw}&pitch=0&thumbfov=90"
+        f"&ll={lat},{lng}"
+    )
+
+
 def build(path: Path) -> dict:
     raw = path.read_text(encoding="utf-8", errors="replace")
     raw = re.sub(r'\sxmlns="[^"]+"', "", raw)
@@ -172,12 +186,13 @@ def build(path: Path) -> dict:
 
             cat = RESTAURANT_ICONS[icon]
             rid = hashlib.md5(f"{name}|{lat}|{lng}".encode()).hexdigest()[:12]
+            lat_r, lng_r = round(lat, 6), round(lng, 6)
             restaurants.append(
                 {
                     "id": rid,
                     "name": name,
-                    "lat": round(lat, 6),
-                    "lng": round(lng, 6),
+                    "lat": lat_r,
+                    "lng": lng_r,
                     "city": city,
                     "district": district,
                     "districtHe": district_he,
@@ -187,7 +202,7 @@ def build(path: Path) -> dict:
                     "address": "",
                     "roadAddress": desc[:140],
                     "googleUrl": f"https://www.google.com/maps/search/?api=1&query={lat},{lng}",
-                    "photos": [],
+                    "photos": [street_view_photo(lat_r, lng_r, rid)],
                     "score": None,
                     "reviewCount": None,
                 }
@@ -201,7 +216,7 @@ def build(path: Path) -> dict:
             "author": "MK",
             "count": len(restaurants),
             "fetchedAt": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
-            "note": "Restaurants only for trip cities (restaurant / noodles / izakaya / sushi)",
+            "note": "Restaurants only for trip cities (restaurant / noodles / izakaya / sushi). Covers are Street View near each pin (map has no food photos).",
         },
         "restaurants": restaurants,
     }

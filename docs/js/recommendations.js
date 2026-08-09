@@ -225,7 +225,7 @@ window.Recommendations = (function () {
         <div class="rec-cover ${cover ? "" : "is-empty"}">
           ${
             cover
-              ? `<img src="${escape(cover)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />`
+              ? `<img src="${escape(cover)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-fallback="${escape(item.categoryHe || "מסעדה")}" onerror="const c=this.closest('.rec-cover'); if(c){c.classList.add('is-empty'); this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.dataset.fallback||''}));}" />`
               : `<span>${escape(item.categoryHe || "מסעדה")}</span>`
           }
         </div>
