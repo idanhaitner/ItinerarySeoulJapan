@@ -19,6 +19,7 @@
     Kyoto: "קיוטו",
     Osaka: "אוסקה",
     Hiroshima: "הירושימה",
+    "Tel Aviv": "תל אביב",
   };
 
   const WEEKDAY_HE = {
@@ -730,10 +731,37 @@
   }
 
   function renderTools() {
+    const flights = trip.flights || [];
+    const flightsHtml = flights.length
+      ? `<div class="tool-card flights-card" style="margin-top:12px">
+        <h3>טיסות שהוזמנו</h3>
+        <p class="tool-sub">שעות לפי לוח מפורסם — לאשר מול הכרטיס.</p>
+        <div class="flights-list">
+          ${flights
+            .map((f) => {
+              const arr =
+                f.arriveDate && f.arriveDate !== f.date
+                  ? `${f.arrive} (+1)`
+                  : f.arrive;
+              return `<article class="flight-row" dir="ltr">
+              <div class="flight-code">${escapeHtml(f.flight)}</div>
+              <div class="flight-main">
+                <strong>${escapeHtml(f.airline || "")}</strong>
+                <span>${escapeHtml(f.from)} → ${escapeHtml(f.to)}</span>
+                <span>${escapeHtml(f.date)} · ${escapeHtml(f.depart)} → ${escapeHtml(arr)}</span>
+              </div>
+              <div class="flight-note">${escapeHtml(f.note || "")}</div>
+            </article>`;
+            })
+            .join("")}
+        </div>
+      </div>`
+      : "";
     els.toolsRoot.innerHTML = `
       <div class="tools-actions">
         <button type="button" class="btn-primary" id="open-tips">טיפים לתחבורה</button>
       </div>
+      ${flightsHtml}
       <div id="fx-root"></div>
       <div id="taxi-root" style="margin-top:12px"></div>
       <div class="tool-card" style="margin-top:12px">

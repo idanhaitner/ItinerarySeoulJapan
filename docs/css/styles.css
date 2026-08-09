@@ -3007,6 +3007,53 @@ a { color: inherit; }
 
 .fx-rates { margin-top: 12px; color: var(--muted); }
 
+.flights-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.flight-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  background: rgba(10, 22, 40, 0.02);
+  text-align: left;
+}
+
+.flight-code {
+  grid-row: span 2;
+  align-self: center;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--navy);
+  min-width: 4.5em;
+}
+
+.flight-main {
+  display: grid;
+  gap: 2px;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.flight-main strong {
+  font-size: 14px;
+}
+
+.flight-main span {
+  color: var(--muted);
+}
+
+.flight-note {
+  grid-column: 2;
+  font-size: 12px;
+  color: var(--muted);
+}
+
 .taxi-local {
   font-family: var(--font-display);
   font-size: 22px;

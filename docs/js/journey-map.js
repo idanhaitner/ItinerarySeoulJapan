@@ -8,6 +8,7 @@ window.JourneyMap = (function () {
     Kyoto: "#c46a52",
     Hiroshima: "#7a748c",
     Osaka: "#a8844e",
+    "Tel Aviv": "#6b7a8d",
   };
 
   const CITY_HE = {
@@ -18,6 +19,7 @@ window.JourneyMap = (function () {
     Kyoto: "קיוטו",
     Hiroshima: "הירושימה",
     Osaka: "אוסקה",
+    "Tel Aviv": "תל אביב",
   };
 
   let map = null;

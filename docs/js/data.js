@@ -2,8 +2,9 @@
 window.TRIP = {
   "title": "Korea + Japan 2026",
   "subtitle": "Idan & Shahar itinerary (dad's Excel was inspiration only)",
-  "dates": "August 27 – September 24/25, 2026",
+  "dates": "August 26 – September 24/25, 2026",
   "route": [
+    "Tel Aviv",
     "Seoul",
     "Tokyo",
     "Hakone",
@@ -12,12 +13,53 @@ window.TRIP = {
     "Osaka",
     "Tokyo"
   ],
+  "flights": [
+    {
+      "id": "et0419",
+      "status": "booked",
+      "airline": "Ethiopian Airlines",
+      "flight": "ET0419",
+      "date": "2026-08-26",
+      "from": "TLV",
+      "to": "ADD",
+      "depart": "15:35",
+      "arrive": "19:50",
+      "note": "Tel Aviv → Addis Ababa · ~4h15"
+    },
+    {
+      "id": "et0672",
+      "status": "booked",
+      "airline": "Ethiopian Airlines",
+      "flight": "ET0672",
+      "date": "2026-08-26",
+      "from": "ADD",
+      "to": "ICN",
+      "depart": "22:35",
+      "arrive": "16:00",
+      "arriveDate": "2026-08-27",
+      "note": "Addis → Incheon overnight · ~11h · lands next day"
+    },
+    {
+      "id": "yp7321",
+      "status": "booked",
+      "airline": "Air Premia",
+      "flight": "YP7321",
+      "date": "2026-09-02",
+      "from": "ICN",
+      "to": "NRT",
+      "depart": "08:50",
+      "arrive": "11:20",
+      "note": "Seoul → Tokyo Narita · ~2h30 · some boards list YP731"
+    }
+  ],
   "notes": [
-    "Route: Seoul → Tokyo → Hakone → Kawaguchiko → Kyoto → Osaka → Tokyo.",
+    "Route: Tel Aviv → Seoul → Tokyo → Hakone → Kawaguchiko → Kyoto → Osaka → Tokyo.",
+    "Outbound booked: ET0419 + ET0672 (26–27 Aug).",
+    "Seoul→Tokyo booked: Air Premia YP7321 (2 Sep · ICN 08:50 → NRT 11:20).",
     "Sep 6: Ghibli Museum + Inokashira + Shimokitazawa.",
     "Sep 22: easy Tokyo day — late start, cafés, light shopping.",
     "Seoul hotel: Amanti Hongdae · 27 Aug–2 Sep.",
-    "Departure Sep 24/25 — confirm flight.",
+    "Return home Sep 24/25 — still to confirm.",
     "Tap places for Google / Kakao / Naver / Yahoo! / Apple Maps."
   ]
 };
@@ -66,6 +108,32 @@ window.PLACES = {
     "lat": 37.556,
     "lng": 126.9102,
     "blurb": "Local market next to Yeonnam — street snacks and produce."
+  },
+  "tlv": {
+    "id": "tlv",
+    "name": "Ben Gurion Airport (TLV)",
+    "nameJa": "נתב\"ג",
+    "city": "Tel Aviv",
+    "country": "IL",
+    "tags": [
+      "transport"
+    ],
+    "lat": 32.0114,
+    "lng": 34.8867,
+    "blurb": "Departure — Ethiopian via Addis to Seoul."
+  },
+  "add": {
+    "id": "add",
+    "name": "Addis Ababa Bole (ADD)",
+    "nameJa": "አዲስ አበባ",
+    "city": "Addis Ababa",
+    "country": "ET",
+    "tags": [
+      "transport"
+    ],
+    "lat": 8.9779,
+    "lng": 38.7993,
+    "blurb": "Ethiopian Airlines hub — connection TLV → ICN."
   },
   "icn": {
     "id": "icn",
@@ -1787,6 +1855,72 @@ window.PLACES = {
 };
 window.DAYS = [
   {
+    "id": "d00",
+    "date": "2026-08-26",
+    "weekday": "Wednesday",
+    "city": "Tel Aviv",
+    "country": "IL",
+    "hotelId": null,
+    "title": "TLV → Seoul via Addis",
+    "summary": "Ethiopian Airlines overnight: ET0419 Tel Aviv → Addis Ababa, then ET0672 Addis → Incheon (land Thursday afternoon).",
+    "food": "Airport / plane meals; light snack in ADD if time.",
+    "placeIds": [
+      "tlv",
+      "add",
+      "icn"
+    ],
+    "transport": [
+      "TLV T3 → ADD → ICN.",
+      "Overnight connection in Addis (~2h45)."
+    ],
+    "tips": [
+      "Booked: ET0419 + ET0672.",
+      "Arrive Ben Gurion ~3h before departure.",
+      "Online check-in / seats on Ethiopian app.",
+      "Times are published schedule — confirm on your ticket/boarding pass."
+    ],
+    "timeline": [
+      {
+        "time": "12:30",
+        "title": "Arrive Ben Gurion (TLV T3)",
+        "note": "Ethiopian Airlines check-in / security.",
+        "placeId": "tlv",
+        "category": "transit"
+      },
+      {
+        "time": "15:35",
+        "title": "ET0419 depart Tel Aviv",
+        "note": "Ethiopian · TLV → ADD · ~4h15.",
+        "placeId": "tlv",
+        "end": "19:50",
+        "category": "transit"
+      },
+      {
+        "time": "19:50",
+        "title": "Land Addis Ababa (ADD)",
+        "note": "Connection — stay airside when possible.",
+        "placeId": "add",
+        "category": "transit"
+      },
+      {
+        "time": "22:35",
+        "title": "ET0672 depart Addis → Seoul",
+        "note": "Ethiopian · ADD → ICN · overnight · ~11h.",
+        "placeId": "add",
+        "end": "16:00",
+        "category": "transit"
+      }
+    ],
+    "transfer": {
+      "mode": "flight",
+      "label": "Tel Aviv → Seoul (via Addis)",
+      "detail": "ET0419 TLV→ADD + ET0672 ADD→ICN (Ethiopian Airlines)",
+      "duration": "~24h door-to-door · arrive 27 Aug",
+      "fromCity": "Tel Aviv",
+      "toCity": "Seoul"
+    }
+  },
+  {
     "id": "d01",
     "date": "2026-08-27",
     "weekday": "Thursday",
@@ -1794,7 +1928,7 @@ window.DAYS = [
     "country": "KR",
     "hotelId": "amanti-hotel",
     "title": "Arrival & night bites",
-    "summary": "Land in Seoul, check in at Amanti Hotel Hongdae, easy Myeongdong night-food walk, optional Hongdae stroll.",
+    "summary": "Land ICN on ET0672, check in at Amanti Hotel Hongdae, easy Myeongdong night-food walk, optional Hongdae stroll.",
     "food": "Myeongdong street food night market.",
     "placeIds": [
       "icn",
@@ -1803,30 +1937,31 @@ window.DAYS = [
       "hongdae"
     ],
     "transport": [
-      "ICN → Amanti (~1h).",
+      "ICN → Amanti (~1h AREX/taxi).",
       "Subway/taxi to Myeongdong."
     ],
     "tips": [
+      "Land ~16:00 on ET0672 (departed ADD 26 Aug).",
       "Get T-money / Climate Card.",
       "Light arrival evening."
     ],
     "timeline": [
       {
-        "time": "14:00",
-        "title": "Land & transfer to hotel",
-        "note": "Incheon Airport → Amanti Hongdae.",
+        "time": "16:00",
+        "title": "Land ICN — ET0672",
+        "note": "Ethiopian from Addis · immigration + bags.",
         "placeId": "icn",
         "category": "transit"
       },
       {
-        "time": "17:00",
+        "time": "18:00",
         "title": "Check in — Amanti Hotel Seoul Hongdae",
         "note": "Hongdae base · 27 Aug–2 Sep.",
         "placeId": "amanti-hotel",
         "category": "hotel"
       },
       {
-        "time": "18:30",
+        "time": "19:00",
         "title": "Myeongdong night food street walk",
         "note": "Street food + neon shopping.",
         "placeId": "myeongdong",
@@ -2215,7 +2350,7 @@ window.DAYS = [
     "country": "JP",
     "hotelId": null,
     "title": "Seoul → Tokyo & Shinjuku lights",
-    "summary": "Checkout Amanti, fly Seoul to Tokyo, set up Suica and eSIM, then a Shinjuku evening in Omoide Yokocho or Golden Gai.",
+    "summary": "Early checkout from Amanti, Air Premia YP7321 ICN→NRT, set up Suica and eSIM, then a Shinjuku evening in Omoide Yokocho or Golden Gai.",
     "food": "Yakitori in Omoide Yokocho or Golden Gai drinks.",
     "placeIds": [
       "amanti-hotel",
@@ -2226,34 +2361,52 @@ window.DAYS = [
       "golden-gai"
     ],
     "transport": [
-      "Amanti → ICN/GMP.",
-      "Flight to Tokyo.",
-      "Airport → Tokyo hotel (Shinjuku area)."
+      "Amanti → ICN T1 (~1h).",
+      "Air Premia YP7321.",
+      "N'EX / limousine → Shinjuku hotel."
     ],
     "tips": [
-      "Confirm flight times.",
+      "Booked: Air Premia YP7321 · ICN 08:50 → NRT 11:20 (T2).",
+      "Be at ICN ~06:30–07:00 (international).",
+      "Some boards list this route as YP731 — match your ticket/boarding pass.",
       "Set up Suica/Pasmo on arrival."
     ],
     "timeline": [
       {
-        "time": "08:00",
-        "title": "Checkout Amanti & airport transfer",
-        "note": "ICN or GMP — match your ticket.",
+        "time": "05:30",
+        "title": "Checkout Amanti & leave for ICN",
+        "note": "Taxi / AREX toward Incheon T1.",
         "placeId": "amanti-hotel",
         "category": "hotel"
       },
       {
-        "time": "13:00",
-        "title": "Flight to Tokyo",
-        "note": "Adjust to real schedule.",
+        "time": "06:45",
+        "title": "ICN check-in — Air Premia",
+        "note": "Terminal 1 · YP7321.",
         "placeId": "icn",
         "category": "transit"
       },
       {
-        "time": "17:30",
-        "title": "Land, Suica/eSIM, hotel check-in",
-        "note": "",
-        "category": "attraction"
+        "time": "08:50",
+        "title": "YP7321 depart Seoul → Tokyo",
+        "note": "Air Premia · ICN → NRT · ~2h30.",
+        "placeId": "icn",
+        "end": "11:20",
+        "category": "transit"
+      },
+      {
+        "time": "11:20",
+        "title": "Land Narita (NRT T2)",
+        "note": "Immigration + bags.",
+        "placeId": "narita",
+        "category": "transit"
+      },
+      {
+        "time": "13:00",
+        "title": "Transfer to Shinjuku + hotel check-in",
+        "note": "N'EX / limousine bus · Suica/eSIM.",
+        "placeId": "shinjuku",
+        "category": "transit"
       },
       {
         "time": "19:30",
@@ -2274,8 +2427,8 @@ window.DAYS = [
     "transfer": {
       "mode": "flight",
       "label": "Seoul → Tokyo",
-      "detail": "ICN/GMP → NRT/HND (confirm your flight)",
-      "duration": "~2.5h flight + transfers",
+      "detail": "Air Premia YP7321 · ICN T1 → NRT T2",
+      "duration": "~2.5h flight · dep 08:50 · arr 11:20",
       "fromCity": "Seoul",
       "toCity": "Tokyo"
     }

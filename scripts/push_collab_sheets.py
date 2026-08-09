@@ -38,6 +38,8 @@ CITY = {
     "Osaka": "אוסקה",
     "Hiroshima": "הירושימה",
     "Nara": "נארה",
+    "Tel Aviv": "תל אביב",
+    "Addis Ababa": "אדיס אבבה",
     "Home": "הבית",
 }
 CITY_COLORS = {
@@ -48,6 +50,7 @@ CITY_COLORS = {
     "קוואגוצ׳יקו": {"red": 0.93, "green": 0.95, "blue": 0.98}, # cool blue-gray
     "קיוטו": {"red": 1.00, "green": 0.95, "blue": 0.92},       # soft peach
     "אוסקה": {"red": 0.99, "green": 0.93, "blue": 0.94},       # soft rose
+    "תל אביב": {"red": 0.94, "green": 0.95, "blue": 0.97},     # soft slate
 }
 HEADER_BG = {"red": 0.11, "green": 0.16, "blue": 0.24}  # deep navy
 HEADER_FG = {"red": 1, "green": 1, "blue": 1}
@@ -298,7 +301,7 @@ def build_hotels(days):
     tokyo_i = 0
     for block in _stay_ranges(days):
         city = block["city"]
-        if city == "Home":
+        if city == "Home" or city == "Tel Aviv":
             continue
         key_i = tokyo_i if city == "Tokyo" else 0
         if city == "Tokyo":
@@ -321,12 +324,14 @@ def build_bookings(days):
     """Bookings with real trip dates from matching days when possible."""
     by_id = {d["id"]: d["date"] for d in days}
     items = [
+        ("טיסת יציאה ET0419 TLV→ADD", "d00", "הוזמן", "26 באוג׳ · 15:35→19:50 · Ethiopian"),
+        ("טיסת יציאה ET0672 ADD→ICN", "d00", "הוזמן", "26 באוג׳ 22:35 → 27 באוג׳ 16:00 · Ethiopian"),
         ("Lotte World", "d05", "הוזמן", "יום שני 31 באוג׳"),
         ("Changdeokgung Secret Garden", "d03", "לטפל", "סיור מודרך · ticket.uforus.co.kr · שבת 29 באוג׳"),
         ("Unni Guide Center", "d03", "לטפל", "15:00–16:00"),
         ("טיפול פנים ליד Hongdae (המלצת ענבל)", "d04", "לטפל", "Seoulistique כגיבוי · יום א׳ 30 באוג׳"),
         ("N Seoul Tower sunset", "d06", "לטפל", "שלישי 1 בספט׳"),
-        ("טיסת סיאול → טוקיו", "d07", "לטפל", "צ׳ק־אאוט Amanti · 2 בספט׳"),
+        ("טיסת סיאול → טוקיו YP7321", "d07", "הוזמן", "Air Premia · ICN 08:50 → NRT 11:20"),
         ("Shibuya Sky sunset", "d08", "לטפל", "~4 שבועות מראש"),
         ("Ghibli Museum", "d11", "לטפל", "נפתח ב־10 לחודש ב־10:00 שעון יפן"),
         ("Romancecar (Observation Car)", "d12", "לטפל", "~חודש מראש"),
