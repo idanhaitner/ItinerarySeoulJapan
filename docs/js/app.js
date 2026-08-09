@@ -258,6 +258,8 @@
     els.ribbon.hidden = !showRibbon;
     if (els.masthead) els.masthead.classList.toggle("is-compact", !showMasthead);
 
+    const planIntro = document.getElementById("plan-intro");
+    if (planIntro) planIntro.classList.toggle("is-hidden", !showMasthead);
     const destIntel = document.getElementById("dest-intel");
     if (destIntel) destIntel.classList.toggle("is-hidden", !showMasthead || state.view !== "itinerary");
 
@@ -450,7 +452,6 @@
   }
 
   function renderDayList() {
-    renderItineraryStage();
     const list = filteredDays();
     setResultCount(`${list.length} ימים`);
     if (!list.length) {
@@ -547,26 +548,15 @@
       : 0;
     setResultCount(`${stopCount} עצירות`);
 
-    const cityCount = new Set(list.map((p) => p.city)).size;
-    const stage = sectionStage({
-      theme: "maps",
-      seal: "図",
-      kicker: "מפות · 地図",
-      title: "עקבו אחרי המסלול",
-      lead: "מפת מסע כרונולוגית + כל המקומות לפי עיר. לחצו על סימון כדי לפתוח יום.",
-      pills: [
-        { em: stopCount, span: "עצירות" },
-        { em: cityCount, span: "ערים" },
-        { em: list.length, span: "מקומות" },
-      ],
-      labels: ["סיאול", "טוקיו", "קיוטו", "אוסקה", "בנגקוק"],
-      motif: motifMaps(),
-      aria: "פתיח מפות",
-    });
-
     els.placeList.innerHTML = `
-      ${stage}
       <section class="journey-section">
+        <div class="journey-head">
+          <div>
+            <p class="plan-kicker">מפות · 地図</p>
+            <h2 class="plan-title">עקבו אחרי המסלול</h2>
+            <p class="journey-sub">הימים מוצגים בסדר כרונולוגי. לחצו על סימון או עצירה כדי לפתוח את היום.</p>
+          </div>
+        </div>
         <div class="journey-layout">
           <div id="journey-map" class="journey-map" role="img" aria-label="מפת ימי הטיול לפי סדר"></div>
           <ol id="journey-legend" class="journey-legend"></ol>
@@ -604,26 +594,6 @@
       return;
     }
     const result = window.Recommendations.render(els.recsRoot, { query: state.query });
-    const cities = (window.Recommendations.CITIES || []).length;
-    const stage = sectionStage({
-      theme: "recs",
-      seal: "選",
-      kicker: "המלצות · おすすめ",
-      title: "מה שווה לא לפספס",
-      lead: "קפה, אוכל ושכונות שאספנו — לפי עיר ולפי מצב רוח.",
-      pills: [
-        { em: result.count || 0, span: "המלצות" },
-        { em: cities || "—", span: "ערים" },
-        {
-          em: result.city ? cityLocal(result.city) || result.city : "הכל",
-          span: "עיר נוכחית",
-        },
-      ],
-      labels: ["קפה", "אוכל", "לילה", "טיפים"],
-      motif: motifRecs(),
-      aria: "פתיח המלצות",
-    });
-    els.recsRoot.insertAdjacentHTML("afterbegin", stage);
     setResultCount(result.count ? `${result.count} המלצות` : "—");
   }
 
@@ -688,27 +658,12 @@
     const allItems = checklistData.groups.flatMap((g) => g.items);
     const done = allItems.filter((i) => checked[i.id]).length;
     const total = allItems.length;
-    const pct = total ? Math.round((done / total) * 100) : 0;
-
-    const todo = total - done;
-    const stage = sectionStage({
-      theme: "book",
-      seal: "訂",
-      kicker: "הזמנות · 予約",
-      title: "מה נשאר לסגור",
-      lead: "כרטיסים, מלונות, רכבות וספא — סמנו מה כבר הוזמן.",
-      pills: [
-        { em: done, span: "הוזמן" },
-        { em: todo, span: "לטפל" },
-        { em: `${pct}%`, span: "הושלם" },
-      ],
-      labels: ["מלונות", "רכבות", "כרטיסים", "טיסות"],
-      motif: motifBookings(pct),
-      aria: "פתיח הזמנות",
-    });
 
     els.bookingsRoot.innerHTML = `
-      ${stage}
+      <div class="plan-intro">
+        <p class="plan-kicker">הזמנות · 予約</p>
+        <h2 class="plan-title">מה נשאר לסגור</h2>
+      </div>
       <div class="bookings-list">
         ${checklistData.groups
           .map(
@@ -778,19 +733,6 @@
       </section>`;
   }
 
-  function motifTimeline() {
-    return `
-      <svg class="sec-motif-svg motif-timeline" viewBox="0 0 640 140" preserveAspectRatio="none">
-        <path class="sec-motif-line" d="M30 95 H 140 Q 180 95 200 70 T 320 55 T 440 80 T 560 48 H 610" fill="none" />
-        <circle class="sec-motif-dot" cx="30" cy="95" r="5" />
-        <circle class="sec-motif-dot" cx="160" cy="88" r="5" />
-        <circle class="sec-motif-dot" cx="320" cy="55" r="5" />
-        <circle class="sec-motif-dot" cx="460" cy="78" r="5" />
-        <circle class="sec-motif-dot" cx="610" cy="48" r="5" />
-      </svg>
-      <div class="sec-motif-runner" aria-hidden="true"></div>`;
-  }
-
   function motifFlights() {
     return `
       <svg class="sec-motif-svg motif-flights" viewBox="0 0 640 160" preserveAspectRatio="none">
@@ -803,79 +745,6 @@
       </svg>
       <div class="sec-motif-plane" aria-hidden="true">✈</div>`;
   }
-
-  function motifBookings(pct = 0) {
-    const fill = Math.max(0, Math.min(100, pct));
-    return `
-      <svg class="sec-motif-svg motif-book" viewBox="0 0 640 120" preserveAspectRatio="none">
-        <path class="sec-motif-line" d="M40 70 H 600" fill="none" />
-        <circle class="sec-motif-dot ${fill >= 15 ? "is-on" : ""}" cx="80" cy="70" r="5" />
-        <circle class="sec-motif-dot ${fill >= 40 ? "is-on" : ""}" cx="240" cy="70" r="5" />
-        <circle class="sec-motif-dot ${fill >= 65 ? "is-on" : ""}" cx="400" cy="70" r="5" />
-        <circle class="sec-motif-dot ${fill >= 90 ? "is-on" : ""}" cx="560" cy="70" r="5" />
-        <rect class="sec-motif-bar" x="40" y="66" width="${(560 * fill) / 100}" height="8" rx="4" />
-      </svg>`;
-  }
-
-  function motifMaps() {
-    return `
-      <svg class="sec-motif-svg motif-maps" viewBox="0 0 640 160" preserveAspectRatio="none">
-        <path class="sec-motif-line" d="M70 110 L170 70 L290 95 L410 50 L520 85 L590 40" fill="none" />
-        <circle class="sec-motif-dot" cx="70" cy="110" r="4" />
-        <circle class="sec-motif-dot" cx="170" cy="70" r="4" />
-        <circle class="sec-motif-dot" cx="290" cy="95" r="4" />
-        <circle class="sec-motif-dot" cx="410" cy="50" r="4" />
-        <circle class="sec-motif-dot" cx="520" cy="85" r="4" />
-        <circle class="sec-motif-dot" cx="590" cy="40" r="4" />
-      </svg>`;
-  }
-
-  function motifRecs() {
-    return `
-      <svg class="sec-motif-svg motif-recs" viewBox="0 0 640 140" preserveAspectRatio="none">
-        <path class="sec-motif-line" d="M50 95 C 160 40, 260 40, 320 75 S 480 120, 590 55" fill="none" />
-        <circle class="sec-motif-dot" cx="50" cy="95" r="4.5" />
-        <circle class="sec-motif-dot" cx="200" cy="52" r="4.5" />
-        <circle class="sec-motif-dot" cx="360" cy="82" r="4.5" />
-        <circle class="sec-motif-dot" cx="520" cy="88" r="4.5" />
-        <circle class="sec-motif-dot" cx="590" cy="55" r="4.5" />
-      </svg>`;
-  }
-
-  function motifTools() {
-    return `
-      <svg class="sec-motif-svg motif-tools" viewBox="0 0 640 140" preserveAspectRatio="none">
-        <path class="sec-motif-line" d="M60 80 H 200 M 200 80 L 280 45 M 280 45 H 420 M 420 45 L 500 95 M 500 95 H 590" fill="none" />
-        <circle class="sec-motif-dot" cx="60" cy="80" r="4.5" />
-        <circle class="sec-motif-dot" cx="200" cy="80" r="4.5" />
-        <circle class="sec-motif-dot" cx="280" cy="45" r="4.5" />
-        <circle class="sec-motif-dot" cx="420" cy="45" r="4.5" />
-        <circle class="sec-motif-dot" cx="500" cy="95" r="4.5" />
-        <circle class="sec-motif-dot" cx="590" cy="95" r="4.5" />
-      </svg>`;
-  }
-
-  function renderItineraryStage() {
-    const root = document.getElementById("itinerary-stage");
-    if (!root) return;
-    const cityCount = new Set(days.map((d) => d.city)).size;
-    root.innerHTML = sectionStage({
-      theme: "days",
-      seal: "日",
-      kicker: "מסלול · 旅程 · DAYS",
-      title: "יום אחר יום",
-      lead: "הלו״ז המלא — מסיאול דרך יפן, עצירה בבנגקוק, ואז טירנה.",
-      pills: [
-        { em: days.length, span: "ימים" },
-        { em: cityCount, span: "ערים" },
-        { em: Object.keys(places).length, span: "מקומות" },
-      ],
-      labels: ["SEOUL", "TOKYO", "KYOTO", "OSAKA", "BKK"],
-      motif: motifTimeline(),
-      aria: "פתיח מסלול",
-    });
-  }
-
 
   function flightStatusHe(status) {
     if (status === "booked") return "הוזמן";
@@ -1079,23 +948,11 @@
   }
 
   function renderTools() {
-    const stage = sectionStage({
-      theme: "tools",
-      seal: "用",
-      kicker: "כלים · 便利",
-      title: "הערכה לדרך",
-      lead: "המרת מטבע, כתובות מונית לנהג, וטיפים לתחבורה — הכל במקום אחד.",
-      pills: [
-        { em: "¥₩", span: "מטבע" },
-        { em: "מונית", span: "כתובות" },
-        { em: "טיפים", span: "תחבורה" },
-      ],
-      labels: ["ין", "וון", "דולר", "שקל"],
-      motif: motifTools(),
-      aria: "פתיח כלים",
-    });
     els.toolsRoot.innerHTML = `
-      ${stage}
+      <div class="plan-intro">
+        <p class="plan-kicker">כלים · 便利</p>
+        <h2 class="plan-title">הערכה לדרך</h2>
+      </div>
       <div class="tools-actions">
         <button type="button" class="btn-primary" id="open-tips">טיפים לתחבורה</button>
         <button type="button" class="btn-ghost" id="open-flights-tab">לטיסות ←</button>
