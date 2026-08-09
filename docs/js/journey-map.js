@@ -9,6 +9,8 @@ window.JourneyMap = (function () {
     Hiroshima: "#7a748c",
     Osaka: "#a8844e",
     "Tel Aviv": "#4d6472",
+    Bangkok: "#c47a3a",
+    Tirana: "#3f6f7a",
   };
 
   const CITY_HE = {
@@ -20,6 +22,8 @@ window.JourneyMap = (function () {
     Hiroshima: "הירושימה",
     Osaka: "אוסקה",
     "Tel Aviv": "תל אביב",
+    Bangkok: "בנגקוק",
+    Tirana: "טירנה",
   };
 
   let map = null;

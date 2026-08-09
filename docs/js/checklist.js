@@ -9,7 +9,7 @@ window.CHECKLIST = {
         { id: "k-esim", label: "eSIM / Wi‑Fi לקוריאה", window: "1–2 שבועות לפני", priority: "high" },
         { id: "g-esim-jp", label: "eSIM / Wi‑Fi ליפן (או חבילה משולבת)", window: "1–2 שבועות לפני", priority: "high" },
         { id: "g-insurance", label: "ביטוח נסיעות", window: "לפני היציאה", priority: "high" },
-        { id: "g-flights-check", label: "טיסות ✓ הוזמנו: ET0419+ET0672 (26–27 באוג׳) · YP7321 סיאול→טוקיו (2 בספט׳) · חזרה עדיין לאישור", window: "חזרה בהקדם", priority: "high" },
+        { id: "g-flights-check", label: "טיסות ✓ הוזמנו: ET0419+ET0672 · YP7321 · לטפל: טוקיו→בנגקוק + בנגקוק→טירנה", window: "בהקדם", priority: "high" },
         {
           id: "g-flight-out",
           label: "ET0419 TLV 15:35→ADD 19:50 + ET0672 ADD 22:35→ICN 16:00 (27 באוג׳) — צ׳ק־אין אונליין Ethiopian",
@@ -20,6 +20,18 @@ window.CHECKLIST = {
           id: "g-flight-yp",
           label: "YP7321 Air Premia · ICN 08:50 → NRT 11:20 — להגיע ל־ICN ~06:30–07:00",
           window: "2 בספט׳",
+          priority: "high",
+        },
+        {
+          id: "g-flight-bkk",
+          label: "טיסת טוקיו → בנגקוק (NRT/HND→BKK) — לאשר מספר טיסה · 1–2 לילות בתאילנד",
+          window: "~24 בספט׳",
+          priority: "high",
+        },
+        {
+          id: "g-flight-tia",
+          label: "טיסת בנגקוק → טירנה (BKK→TIA, אלבניה) — צריך להזמין",
+          window: "~26 בספט׳",
           priority: "high",
         },
         { id: "j-shinkansen", label: "מקומות שינקנסן מרכזיים (SmartEX / JR)", window: "להזמין ~30 יום לפני", priority: "high" },

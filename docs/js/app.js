@@ -20,6 +20,8 @@
     Osaka: "אוסקה",
     Hiroshima: "הירושימה",
     "Tel Aviv": "תל אביב",
+    Bangkok: "בנגקוק",
+    Tirana: "טירנה",
   };
 
   const WEEKDAY_HE = {
@@ -738,15 +740,29 @@
         to: "NRT",
         blurb: "Air Premia · סיאול לטוקיו",
       },
-      return: {
-        he: "חזרה",
-        en: "RETURN",
-        jp: "帰国",
+      "tokyo-bangkok": {
+        he: "תאילנד",
+        en: "BANGKOK",
+        jp: "バンコク",
         from: "NRT",
-        to: "TLV",
-        blurb: "עדיין פתוח · לאשר תאריך",
+        to: "BKK",
+        blurb: "טוקיו לבנגקוק · 1–2 ימים",
+      },
+      "bangkok-tirana": {
+        he: "אלבניה",
+        en: "TIRANA",
+        jp: "ティラナ",
+        from: "BKK",
+        to: "TIA",
+        blurb: "בנגקוק לטירנה · צריך להזמין",
       },
     };
+
+    const flightCodes = (legs) =>
+      legs
+        .map((l) => l.flight)
+        .filter((c) => c && c !== "—" && c !== "TBD")
+        .join(" · ") || "TBD";
 
     els.flightsRoot.innerHTML = `
       <section class="fx-stage" aria-label="סיכום טיסות">
@@ -754,10 +770,12 @@
           <div class="fx-stage-wash"></div>
           <div class="fx-stage-grid"></div>
           <svg class="fx-route-svg" viewBox="0 0 640 160" preserveAspectRatio="none">
-            <path class="fx-route-line" d="M40 110 C 140 30, 220 30, 320 80 S 500 140, 600 55" fill="none" />
-            <circle class="fx-route-dot" cx="40" cy="110" r="5" />
-            <circle class="fx-route-dot" cx="320" cy="80" r="5" />
-            <circle class="fx-route-dot" cx="600" cy="55" r="5" />
+            <path class="fx-route-line" d="M28 118 C 110 40, 180 35, 260 78 S 400 130, 500 70 S 580 40, 612 52" fill="none" />
+            <circle class="fx-route-dot" cx="28" cy="118" r="4.5" />
+            <circle class="fx-route-dot" cx="180" cy="55" r="4.5" />
+            <circle class="fx-route-dot" cx="320" cy="95" r="4.5" />
+            <circle class="fx-route-dot" cx="460" cy="78" r="4.5" />
+            <circle class="fx-route-dot" cx="612" cy="52" r="4.5" />
           </svg>
           <div class="fx-plane" aria-hidden="true">✈</div>
         </div>
@@ -765,14 +783,14 @@
           <div class="fx-seal" aria-hidden="true"><span>旅</span></div>
           <p class="fx-kicker">טיסות · フライト · BOARDING</p>
           <h2 class="fx-title">מסלול האוויר שלנו</h2>
-          <p class="fx-lead">תל אביב → סיאול → טוקיו · כרטיסים, שעות וסטטוס במבט אחד.</p>
+          <p class="fx-lead">תל אביב → סיאול → טוקיו → בנגקוק → טירנה · כרטיסים, מספרי טיסה וסטטוס במבט אחד.</p>
           <div class="fx-pills">
             <div class="fx-pill"><em>${booked}</em><span>הוזמנו</span></div>
             <div class="fx-pill"><em>${todo}</em><span>לטפל</span></div>
             <div class="fx-pill"><em>${journeys.length}</em><span>מקטעים</span></div>
           </div>
           <div class="fx-route-labels" dir="ltr" aria-hidden="true">
-            <span>TLV</span><span>ICN</span><span>NRT</span>
+            <span>TLV</span><span>ICN</span><span>NRT</span><span>BKK</span><span>TIA</span>
           </div>
         </div>
       </section>
@@ -798,6 +816,11 @@
             const first = j.legs[0];
             const last = j.legs[j.legs.length - 1];
             const arriveDate = last.arriveDate || last.date;
+            const codes = flightCodes(j.legs);
+            const midLabel =
+              j.legs.length > 1
+                ? `${j.legs.length} legs · ${codes}`
+                : codes;
             return `
           <article class="fx-pass status-${status}" style="--d:${0.08 + idx * 0.1}s">
             <div class="fx-pass-stub">
@@ -813,6 +836,10 @@
                 <div>
                   <p class="fx-pass-kicker">${escapeHtml(m.he)} · ${escapeHtml(m.blurb)}</p>
                   <h3>${escapeHtml(m.from)} <span aria-hidden="true">→</span> ${escapeHtml(m.to)}</h3>
+                  <p class="fx-pass-flightno" dir="ltr">
+                    <span class="fx-pass-flightno-label">Flight</span>
+                    <strong>${escapeHtml(codes)}</strong>
+                  </p>
                 </div>
                 ${
                   j.dayId
@@ -830,7 +857,7 @@
                 </div>
                 <div class="fx-mid" aria-hidden="true">
                   <div class="fx-mid-line"><span class="fx-mid-plane">✈</span></div>
-                  <span class="fx-mid-label">${j.legs.length > 1 ? `${j.legs.length} legs` : "direct"}</span>
+                  <span class="fx-mid-label">${escapeHtml(midLabel)}</span>
                 </div>
                 <div class="fx-end is-arrive">
                   <span class="fx-code">${escapeHtml(last.to)}</span>

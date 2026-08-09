@@ -2,7 +2,7 @@
 window.TRIP = {
   "title": "Korea + Japan 2026",
   "subtitle": "Idan & Shahar itinerary (dad's Excel was inspiration only)",
-  "dates": "August 26 – September 24/25, 2026",
+  "dates": "August 26 – September 26, 2026",
   "route": [
     "Tel Aviv",
     "Seoul",
@@ -11,7 +11,9 @@ window.TRIP = {
     "Kawaguchiko",
     "Kyoto",
     "Osaka",
-    "Tokyo"
+    "Tokyo",
+    "Bangkok",
+    "Tirana"
   ],
   "flights": [
     {
@@ -70,32 +72,50 @@ window.TRIP = {
       "note": "~2h30 · some boards list YP731"
     },
     {
-      "id": "return-home",
-      "journey": "return",
-      "journeyLabel": "Tokyo → Home",
+      "id": "tokyo-bangkok",
+      "journey": "tokyo-bangkok",
+      "journeyLabel": "Tokyo → Bangkok",
       "status": "todo",
       "airline": "TBD",
-      "flight": "—",
+      "flight": "TBD",
       "date": "2026-09-24",
       "from": "NRT/HND",
       "fromName": "Tokyo",
-      "to": "TLV",
-      "toName": "Tel Aviv",
+      "to": "BKK",
+      "toName": "Bangkok",
       "depart": "—",
       "arrive": "—",
       "terminal": "",
       "dayId": "d29",
-      "note": "Confirm return date 24 or 25 Sep"
+      "note": "1–2 nights in Bangkok · confirm flight #"
+    },
+    {
+      "id": "bangkok-tirana",
+      "journey": "bangkok-tirana",
+      "journeyLabel": "Bangkok → Tirana",
+      "status": "todo",
+      "airline": "TBD",
+      "flight": "TBD",
+      "date": "2026-09-26",
+      "from": "BKK",
+      "fromName": "Bangkok",
+      "to": "TIA",
+      "toName": "Tirana",
+      "depart": "—",
+      "arrive": "—",
+      "terminal": "",
+      "dayId": "d31",
+      "note": "Need to book · Albania"
     }
   ],
   "notes": [
-    "Route: Tel Aviv → Seoul → Tokyo → Hakone → Kawaguchiko → Kyoto → Osaka → Tokyo.",
+    "Route: Tel Aviv → Seoul → Tokyo → Hakone → Kawaguchiko → Kyoto → Osaka → Tokyo → Bangkok → Tirana.",
     "Outbound booked: ET0419 + ET0672 (26–27 Aug).",
     "Seoul→Tokyo booked: Air Premia YP7321 (2 Sep · ICN 08:50 → NRT 11:20).",
     "Sep 6: Ghibli Museum + Inokashira + Shimokitazawa.",
     "Sep 22: easy Tokyo day — late start, cafés, light shopping.",
     "Seoul hotel: Amanti Hongdae · 27 Aug–2 Sep.",
-    "Return home Sep 24/25 — still to confirm.",
+    "After Japan: Bangkok 1–2 days, then book Bangkok → Tirana (TIA).",
     "Tap places for Google / Kakao / Naver / Yahoo! / Apple Maps."
   ]
 };
@@ -601,7 +621,7 @@ window.PLACES = {
     ],
     "lat": 35.772,
     "lng": 140.3929,
-    "blurb": "Tokyo arrival/departure."
+    "blurb": "Tokyo arrival / later departure toward Bangkok."
   },
   "shinjuku": {
     "id": "shinjuku",
@@ -1887,6 +1907,77 @@ window.PLACES = {
     "lat": 34.6814,
     "lng": 135.8482,
     "blurb": "Lantern shrine in Nara."
+  },
+  "bkk": {
+    "id": "bkk",
+    "name": "Suvarnabhumi Airport (BKK)",
+    "nameJa": "ท่าอากาศยานสุวรรณภูมิ",
+    "city": "Bangkok",
+    "country": "TH",
+    "tags": [
+      "transport"
+    ],
+    "lat": 13.69,
+    "lng": 100.7501,
+    "blurb": "Bangkok arrival from Japan / departure toward Tirana."
+  },
+  "grand-palace": {
+    "id": "grand-palace",
+    "name": "Grand Palace & Wat Phra Kaew",
+    "nameJa": "พระบรมมหาราชวัง",
+    "city": "Bangkok",
+    "country": "TH",
+    "tags": [
+      "must-see",
+      "culture",
+      "temple"
+    ],
+    "lat": 13.75,
+    "lng": 100.4914,
+    "blurb": "Classic first-stop temples — dress code applies."
+  },
+  "wat-arun": {
+    "id": "wat-arun",
+    "name": "Wat Arun",
+    "nameJa": "วัดอรุณราชวราราม",
+    "city": "Bangkok",
+    "country": "TH",
+    "tags": [
+      "must-see",
+      "temple",
+      "view"
+    ],
+    "lat": 13.7437,
+    "lng": 100.4888,
+    "blurb": "Temple of Dawn on the Chao Phraya — best near sunset."
+  },
+  "yaowarat": {
+    "id": "yaowarat",
+    "name": "Yaowarat (Chinatown)",
+    "nameJa": "เยาวราช",
+    "city": "Bangkok",
+    "country": "TH",
+    "tags": [
+      "food",
+      "nightlife",
+      "neighborhood"
+    ],
+    "lat": 13.7395,
+    "lng": 100.5095,
+    "blurb": "Night street-food lane — noodles, seafood, sweets."
+  },
+  "tia": {
+    "id": "tia",
+    "name": "Tirana International Airport (TIA)",
+    "nameJa": "Aeroporti Nënë Tereza",
+    "city": "Tirana",
+    "country": "AL",
+    "tags": [
+      "transport"
+    ],
+    "lat": 41.4147,
+    "lng": 19.7206,
+    "blurb": "Arrival into Albania — book BKK → TIA."
   }
 };
 window.DAYS = [
@@ -3813,19 +3904,20 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
-    "title": "Pack & departure",
-    "summary": "Pack, travel to Narita or Haneda, and fly home.",
-    "food": "Airport meal.",
+    "title": "Tokyo → Bangkok",
+    "summary": "Pack, head to Narita or Haneda, and fly to Bangkok for a short Thailand stop.",
+    "food": "Airport meal before departure.",
     "placeIds": [
-      "narita"
+      "narita",
+      "bkk"
     ],
     "transport": [
       "Allow 2.5–3h door-to-gate.",
-      "N'EX to NRT or Monorail/train to HND."
+      "Match NRT vs HND to the Bangkok ticket."
     ],
     "tips": [
-      "Confirm actual flight date (Sep 24 or 25).",
-      "Keep passports & Visit Japan Web QR handy."
+      "Book/confirm Tokyo → Bangkok flight number & times.",
+      "Keep passports handy."
     ],
     "timeline": [
       {
@@ -3850,8 +3942,8 @@ window.DAYS = [
       },
       {
         "time": "18:00",
-        "title": "Departure",
-        "note": "Confirm actual flight time.",
+        "title": "Flight to Bangkok",
+        "note": "Confirm actual flight number & time.",
         "placeId": "narita",
         "category": "transit"
       }
@@ -3863,6 +3955,114 @@ window.DAYS = [
       "duration": "Allow 2.5–3h to airport",
       "fromCity": "Tokyo",
       "toCity": "Home"
+    }
+  },
+  {
+    "id": "d30",
+    "date": "2026-09-25",
+    "weekday": "Friday",
+    "city": "Bangkok",
+    "country": "TH",
+    "hotelId": null,
+    "title": "Bangkok classics",
+    "summary": "One full day in Bangkok: Grand Palace, river temples, and Chinatown night food.",
+    "food": "Street food on Yaowarat.",
+    "placeIds": [
+      "grand-palace",
+      "wat-arun",
+      "yaowarat"
+    ],
+    "transport": [
+      "BTS/MRT or Grab between sights.",
+      "Cover shoulders & knees at temples."
+    ],
+    "tips": [
+      "Hotel TBD for 1–2 Bangkok nights.",
+      "Keep flexible — 1 or 2 nights depending on Tirana flight."
+    ],
+    "timeline": [
+      {
+        "time": "09:30",
+        "title": "Grand Palace & Wat Phra Kaew",
+        "note": "Go early — heat & queues.",
+        "placeId": "grand-palace",
+        "end": "12:30",
+        "category": "culture"
+      },
+      {
+        "time": "14:00",
+        "title": "Wat Arun + Chao Phraya",
+        "note": "Ferry crossing + temple climb.",
+        "placeId": "wat-arun",
+        "end": "17:00",
+        "category": "transit"
+      },
+      {
+        "time": "19:00",
+        "title": "Yaowarat night food",
+        "note": "Grazing dinner.",
+        "placeId": "yaowarat",
+        "end": "22:00",
+        "category": "dining"
+      }
+    ]
+  },
+  {
+    "id": "d31",
+    "date": "2026-09-26",
+    "weekday": "Saturday",
+    "city": "Bangkok",
+    "country": "TH",
+    "hotelId": null,
+    "title": "Bangkok → Tirana",
+    "summary": "Easy morning in Bangkok, then fly to Tirana, Albania — ticket still to book.",
+    "food": "Light café breakfast; airport meal later.",
+    "placeIds": [
+      "bkk",
+      "tia"
+    ],
+    "transport": [
+      "Leave 3h+ for BKK international departure.",
+      "Confirm baggage rules for the Tirana ticket."
+    ],
+    "tips": [
+      "Priority: book Bangkok → Tirana (TIA).",
+      "1–2 Bangkok nights total — adjust date if needed."
+    ],
+    "timeline": [
+      {
+        "time": "09:00",
+        "title": "Easy morning / checkout",
+        "note": "Café or short neighborhood walk.",
+        "category": "dining"
+      },
+      {
+        "time": "12:00",
+        "title": "Depart for BKK",
+        "note": "Grab / Airport Rail Link.",
+        "placeId": "bkk",
+        "category": "transit"
+      },
+      {
+        "time": "15:00",
+        "title": "Bangkok Airport",
+        "note": "Check-in for Tirana.",
+        "placeId": "bkk",
+        "category": "transit"
+      },
+      {
+        "time": "18:00",
+        "title": "Flight to Tirana",
+        "note": "Book flight number & times — placeholder.",
+        "placeId": "tia",
+        "category": "transit"
+      }
+    ],
+    "transfer": {
+      "mode": "flight",
+      "label": "Bangkok → Tirana",
+      "detail": "BKK → TIA · still to book",
+      "duration": "long-haul · TBD"
     }
   }
 ];

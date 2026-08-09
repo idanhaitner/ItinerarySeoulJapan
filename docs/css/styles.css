@@ -31,6 +31,8 @@
   --hiroshima: #7a748c;
   --osaka: #a8844e;
   --telaviv: #4d6472;
+  --bangkok: #c47a3a;
+  --tirana: #3f6f7a;
 }
 
 * { box-sizing: border-box; }
@@ -1394,6 +1396,8 @@ a { color: inherit; }
 .day-group.city-Hiroshima { border-top-color: var(--hiroshima); background: color-mix(in srgb, var(--hiroshima) 5%, var(--surface)); }
 .day-group.city-Osaka { border-top-color: var(--osaka); background: color-mix(in srgb, var(--osaka) 5%, var(--surface)); }
 .day-group.city-Tel-Aviv { border-top-color: var(--telaviv); background: color-mix(in srgb, var(--telaviv) 5%, var(--surface)); }
+.day-group.city-Bangkok { border-top-color: var(--bangkok); background: color-mix(in srgb, var(--bangkok) 5%, var(--surface)); }
+.day-group.city-Tirana { border-top-color: var(--tirana); background: color-mix(in srgb, var(--tirana) 5%, var(--surface)); }
 
 .day-group.is-dim { opacity: 0.35; }
 
@@ -1420,6 +1424,8 @@ a { color: inherit; }
 .day-group.city-Hiroshima .day-group-label { color: var(--hiroshima); }
 .day-group.city-Osaka .day-group-label { color: var(--osaka); }
 .day-group.city-Tel-Aviv .day-group-label { color: var(--telaviv); }
+.day-group.city-Bangkok .day-group-label { color: var(--bangkok); }
+.day-group.city-Tirana .day-group-label { color: var(--tirana); }
 
 .day-group-label .local {
   font-family: var(--font-ui);
@@ -1487,6 +1493,8 @@ a { color: inherit; }
 .day-group.city-Hiroshima .day-rail-btn { border-inline-start-color: color-mix(in srgb, var(--hiroshima) 28%, transparent); }
 .day-group.city-Osaka .day-rail-btn { border-inline-start-color: color-mix(in srgb, var(--osaka) 28%, transparent); }
 .day-group.city-Tel-Aviv .day-rail-btn { border-inline-start-color: color-mix(in srgb, var(--telaviv) 28%, transparent); }
+.day-group.city-Bangkok .day-rail-btn { border-inline-start-color: color-mix(in srgb, var(--bangkok) 28%, transparent); }
+.day-group.city-Tirana .day-rail-btn { border-inline-start-color: color-mix(in srgb, var(--tirana) 28%, transparent); }
 
 .day-rail-btn:hover {
   color: var(--ink);
@@ -1506,6 +1514,8 @@ a { color: inherit; }
 .day-group.city-Hiroshima .day-rail-btn.active { background: color-mix(in srgb, var(--hiroshima) 12%, transparent); color: var(--hiroshima); }
 .day-group.city-Osaka .day-rail-btn.active { background: color-mix(in srgb, var(--osaka) 12%, transparent); color: var(--osaka); }
 .day-group.city-Tel-Aviv .day-rail-btn.active { background: color-mix(in srgb, var(--telaviv) 12%, transparent); color: var(--telaviv); }
+.day-group.city-Bangkok .day-rail-btn.active { background: color-mix(in srgb, var(--bangkok) 12%, transparent); color: var(--bangkok); }
+.day-group.city-Tirana .day-rail-btn.active { background: color-mix(in srgb, var(--tirana) 12%, transparent); color: var(--tirana); }
 
 /* ——— Main / panels ——— */
 .main { padding-top: 20px; }
@@ -1562,6 +1572,8 @@ a { color: inherit; }
 .day-row.city-Hiroshima { border-inline-start-color: var(--hiroshima); }
 .day-row.city-Osaka { border-inline-start-color: var(--osaka); }
 .day-row.city-Tel-Aviv { border-inline-start-color: var(--telaviv); }
+.day-row.city-Bangkok { border-inline-start-color: var(--bangkok); }
+.day-row.city-Tirana { border-inline-start-color: var(--tirana); }
 
 .day-row:hover {
   background: #fff;
@@ -1654,6 +1666,11 @@ a { color: inherit; }
 .day-row.city-Hiroshima .day-row-city .he,
 .day-row.city-Osaka .day-row-city .he,
 .day-row.city-Tel-Aviv .day-row-city .he {
+  color: var(--ink);
+}
+
+.day-row.city-Bangkok .day-row-city .he,
+.day-row.city-Tirana .day-row-city .he {
   color: var(--ink);
 }
 
@@ -1814,6 +1831,12 @@ a { color: inherit; }
 }
 .detail-hero.city-Tel-Aviv {
   background: linear-gradient(135deg, rgba(77, 100, 114, 0.08), var(--surface) 45%);
+}
+.detail-hero.city-Bangkok {
+  background: linear-gradient(135deg, rgba(196, 122, 58, 0.09), var(--surface) 45%);
+}
+.detail-hero.city-Tirana {
+  background: linear-gradient(135deg, rgba(63, 111, 122, 0.09), var(--surface) 45%);
 }
 
 .detail-hero.city-Seoul::before { background: var(--seoul); }
@@ -3158,13 +3181,13 @@ a { color: inherit; }
 .fx-route-labels {
   display: flex;
   justify-content: space-between;
-  gap: 12px;
+  gap: 8px;
   margin-top: 28px;
-  max-width: 22rem;
+  max-width: 28rem;
   font-family: var(--font-display);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.14em;
   color: rgba(244, 241, 234, 0.4);
 }
 
@@ -3296,6 +3319,33 @@ a { color: inherit; }
   color: var(--navy);
 }
 
+.fx-pass-flightno {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 8px 0 0;
+  font-family: var(--font-display);
+}
+
+.fx-pass-flightno-label {
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+
+.fx-pass-flightno strong {
+  font-size: 1.15rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  color: var(--jade);
+}
+
+.fx-pass.status-todo .fx-pass-flightno strong {
+  color: var(--gold);
+}
+
 .fx-pass-link {
   flex-shrink: 0;
   border: 0;
@@ -3387,11 +3437,14 @@ a { color: inherit; }
 }
 
 .fx-mid-label {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--soft);
+  text-align: center;
+  max-width: 9rem;
+  line-height: 1.25;
 }
 
 .fx-pass-legs {
@@ -4424,6 +4477,41 @@ html[dir="rtl"] .search svg {
 .place-card.city-accent-Tel-Aviv .maps-link:hover { border-color: color-mix(in srgb, var(--telaviv) 40%, transparent); color: var(--telaviv); }
 .city-pill.city-Tel-Aviv { background: var(--telaviv); color: #fff; }
 .route-stop.city-Tel-Aviv { --route-accent: var(--telaviv); }
+
+/* Bangkok + Tirana accents */
+.detail-hero.city-Bangkok .city-en { color: var(--bangkok); }
+.detail-hero.city-Bangkok .food-banner {
+  background: color-mix(in srgb, var(--bangkok) 8%, var(--surface));
+  border-color: color-mix(in srgb, var(--bangkok) 22%, transparent);
+}
+.detail-hero.city-Bangkok .food-banner strong { color: var(--bangkok); }
+.detail-hero.city-Bangkok::before { background: var(--bangkok); }
+.city-fold.city-Bangkok > .city-fold-summary { border-inline-start-color: var(--bangkok); }
+.city-fold.city-Bangkok .city-fold-label .en { color: var(--bangkok); }
+.city-accent-Bangkok::before { background: var(--bangkok); }
+.place-card.city-accent-Bangkok { background: linear-gradient(165deg, color-mix(in srgb, var(--bangkok) 6%, var(--surface)) 0%, var(--surface) 42%); }
+.place-card.city-accent-Bangkok .tag { background: color-mix(in srgb, var(--bangkok) 12%, transparent); color: color-mix(in srgb, var(--bangkok) 75%, var(--ink)); }
+.place-card.city-accent-Bangkok .maps-btn.primary { background: var(--bangkok); border-color: var(--bangkok); box-shadow: 0 8px 18px color-mix(in srgb, var(--bangkok) 28%, transparent); }
+.place-card.city-accent-Bangkok .maps-link:hover { border-color: color-mix(in srgb, var(--bangkok) 40%, transparent); color: var(--bangkok); }
+.city-pill.city-Bangkok { background: var(--bangkok); color: #fff; }
+.route-stop.city-Bangkok { --route-accent: var(--bangkok); }
+
+.detail-hero.city-Tirana .city-en { color: var(--tirana); }
+.detail-hero.city-Tirana .food-banner {
+  background: color-mix(in srgb, var(--tirana) 8%, var(--surface));
+  border-color: color-mix(in srgb, var(--tirana) 22%, transparent);
+}
+.detail-hero.city-Tirana .food-banner strong { color: var(--tirana); }
+.detail-hero.city-Tirana::before { background: var(--tirana); }
+.city-fold.city-Tirana > .city-fold-summary { border-inline-start-color: var(--tirana); }
+.city-fold.city-Tirana .city-fold-label .en { color: var(--tirana); }
+.city-accent-Tirana::before { background: var(--tirana); }
+.place-card.city-accent-Tirana { background: linear-gradient(165deg, color-mix(in srgb, var(--tirana) 6%, var(--surface)) 0%, var(--surface) 42%); }
+.place-card.city-accent-Tirana .tag { background: color-mix(in srgb, var(--tirana) 12%, transparent); color: color-mix(in srgb, var(--tirana) 75%, var(--ink)); }
+.place-card.city-accent-Tirana .maps-btn.primary { background: var(--tirana); border-color: var(--tirana); box-shadow: 0 8px 18px color-mix(in srgb, var(--tirana) 28%, transparent); }
+.place-card.city-accent-Tirana .maps-link:hover { border-color: color-mix(in srgb, var(--tirana) 40%, transparent); color: var(--tirana); }
+.city-pill.city-Tirana { background: var(--tirana); color: #fff; }
+.route-stop.city-Tirana { --route-accent: var(--tirana); }
 
 /* ——— Access gate ——— */
 html.gate-locked,
