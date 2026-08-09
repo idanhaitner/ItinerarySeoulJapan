@@ -280,6 +280,26 @@
     document.documentElement.style.setProperty("--topbar-h", `${h}px`);
   }
 
+  function setChromeMinimized(minimized) {
+    if (!els.topbar) return;
+    const next = Boolean(minimized);
+    if (els.topbar.classList.contains("is-minimized") === next) {
+      updateTopbarHeight();
+      return;
+    }
+    els.topbar.classList.toggle("is-minimized", next);
+    if (els.ribbon) els.ribbon.classList.toggle("is-minimized", next);
+    requestAnimationFrame(updateTopbarHeight);
+    // After CSS transition finishes, remeasure sticky offset for the day rail.
+    window.setTimeout(updateTopbarHeight, 300);
+  }
+
+  function syncScrollChrome() {
+    const searchFocused = Boolean(els.search && document.activeElement === els.search);
+    const shouldMinimize = !searchFocused && window.scrollY > 48;
+    setChromeMinimized(shouldMinimize);
+  }
+
   function setResultCount(text) {
     els.resultCount.textContent = text;
   }
@@ -836,6 +856,24 @@
     });
 
     window.addEventListener("resize", updateTopbarHeight);
+
+    let scrollRaf = 0;
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (scrollRaf) return;
+        scrollRaf = requestAnimationFrame(() => {
+          scrollRaf = 0;
+          syncScrollChrome();
+        });
+      },
+      { passive: true }
+    );
+    if (els.search) {
+      els.search.addEventListener("focus", () => setChromeMinimized(false));
+      els.search.addEventListener("blur", () => syncScrollChrome());
+    }
+    syncScrollChrome();
   }
 
   function animateCount(el, target, duration) {

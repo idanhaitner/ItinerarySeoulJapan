@@ -1070,6 +1070,84 @@ a { color: inherit; }
   -webkit-backdrop-filter: blur(18px) saturate(1.15);
   display: grid;
   gap: 12px;
+  transition: padding 0.28s ease, gap 0.28s ease, box-shadow 0.28s ease;
+}
+
+.topbar.is-minimized {
+  padding: 6px 18px 4px;
+  gap: 4px;
+  box-shadow: 0 8px 24px rgba(47, 43, 40, 0.06);
+}
+
+.topbar.is-minimized .topbar-filters {
+  display: none !important;
+}
+
+.topbar.is-minimized .brand-meta {
+  display: none;
+}
+
+.topbar.is-minimized .brand-seal {
+  width: 28px;
+  height: 28px;
+  font-size: 13px;
+}
+
+.topbar.is-minimized .brand-name {
+  font-size: 15px;
+}
+
+.topbar.is-minimized .tab {
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.topbar.is-minimized .city-row {
+  border-top-color: transparent;
+}
+
+.topbar.is-minimized .chip {
+  padding: 6px 10px;
+  min-height: 0;
+  font-size: 12px;
+}
+
+.topbar.is-minimized .chip .chip-local {
+  display: none;
+}
+
+.day-rail.is-minimized {
+  padding: 6px 18px 8px;
+  gap: 8px;
+}
+
+.day-rail.is-minimized .day-group {
+  gap: 4px;
+  padding: 5px 10px 6px;
+}
+
+.day-rail.is-minimized .day-group-label {
+  font-size: 10px;
+}
+
+.day-rail.is-minimized .day-rail-btn {
+  min-width: 40px;
+  min-height: 0;
+  padding: 4px 6px;
+}
+
+.day-rail.is-minimized .day-rail-btn .dr-day {
+  font-size: 13px;
+}
+
+.day-rail.is-minimized .day-rail-btn .dr-mon {
+  font-size: 9px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .topbar {
+    transition: none;
+  }
 }
 
 .topbar-row {
