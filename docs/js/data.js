@@ -2191,7 +2191,7 @@ window.DAYS = [
     "country": "KR",
     "hotelId": "amanti-hotel",
     "title": "Arrival & night bites",
-    "summary": "Land ICN on ET0672, check in at Amanti Hotel Hongdae, easy Myeongdong night-food walk, optional Hongdae stroll.",
+    "summary": "Land ICN on ET0672, check in at Amanti Hotel Hongdae, Myeongdong night-food walk, then Hongdae if energy remains.",
     "food": "Myeongdong street food night market.",
     "placeIds": [
       "icn",
@@ -2204,9 +2204,8 @@ window.DAYS = [
       "Subway/taxi to Myeongdong."
     ],
     "tips": [
-      "Land ~16:00 on ET0672 (departed ADD 26 Aug).",
-      "Get T-money / Climate Card.",
-      "Light arrival evening."
+      "Land ~16:00 on ET0672.",
+      "Get T-money / Climate Card."
     ],
     "timeline": [
       {
@@ -2233,7 +2232,7 @@ window.DAYS = [
       },
       {
         "time": "22:00",
-        "title": "Optional Hongdae stroll",
+        "title": "Hongdae stroll",
         "note": "Late snack or drink.",
         "placeId": "hongdae",
         "category": "dining"
@@ -2263,7 +2262,6 @@ window.DAYS = [
     ],
     "tips": [
       "Arrive early for the 10:00 guard ceremony at Gwanghwamun (~20 min).",
-      "Also at 14:00 if you miss morning.",
       "Rent hanbok for free palace entry."
     ],
     "timeline": [
@@ -2316,7 +2314,7 @@ window.DAYS = [
     "country": "KR",
     "hotelId": "amanti-hotel",
     "title": "Secret Garden, Unni Guide & COEX",
-    "summary": "Jogyesa + Changdeokgung Secret Garden in the morning, Unni Guide 15:00–16:00 + treatment, then Bongeunsa and COEX Starfield — keep the evening lighter (Dongdaemun moves to Tuesday).",
+    "summary": "Jogyesa and Changdeokgung Secret Garden in the morning, Unni Guide 15:00–16:00 plus treatment, then Bongeunsa and COEX Starfield.",
     "food": "Lunch near the palace / Insadong; dinner near COEX / Gangnam.",
     "placeIds": [
       "jogyesa",
@@ -2393,7 +2391,7 @@ window.DAYS = [
     "country": "KR",
     "hotelId": "amanti-hotel",
     "title": "Hongdae facial, Yeonnam & Seongsu",
-    "summary": "Morning facial near Hongdae (Inbal’s recommended clinic), Yeonnam + Mangwon Market, then an easy Seongsu afternoon with Seoul Forest — no tower rush today.",
+    "summary": "Morning facial near Hongdae, Yeonnam and Mangwon Market, then Seongsu afternoon with Seoul Forest.",
     "food": "Café lunch in Yeonnam / Mangwon; Seongsu snacks.",
     "placeIds": [
       "hongdae",
@@ -2404,18 +2402,17 @@ window.DAYS = [
       "seoulistique"
     ],
     "transport": [
-      "Stay Hongdae-side for the morning appointment.",
+      "Hongdae-side morning appointment.",
       "Walk/subway Yeonnam → Mangwon → Seongsu."
     ],
     "tips": [
-      "Book the Hongdae-area clinic Inbal recommended (closer than Seongsu).",
-      "Seoulistique remains a backup if you prefer Seongsu."
+      "Book the Hongdae-area facial for the morning."
     ],
     "timeline": [
       {
         "time": "10:00",
         "title": "Facial near Hongdae",
-        "note": "Inbal’s recommended clinic — book ahead.",
+        "note": "Hongdae-area clinic — book ahead.",
         "placeId": "hongdae",
         "end": "11:45",
         "category": "dining"
@@ -2439,7 +2436,7 @@ window.DAYS = [
       {
         "time": "15:30",
         "title": "Seongsu-dong",
-        "note": "Cafés, boutiques, pop-ups — keep it easy.",
+        "note": "Cafés, boutiques, and pop-ups.",
         "placeId": "seongsu",
         "end": "17:30",
         "category": "dining"
@@ -2455,7 +2452,7 @@ window.DAYS = [
       {
         "time": "19:30",
         "title": "Dinner near Seongsu / Hongdae",
-        "note": "Relaxed end of day.",
+        "note": "Dinner nearby.",
         "placeId": "seongsu",
         "category": "dining"
       }
@@ -2827,7 +2824,7 @@ window.DAYS = [
     "country": "JP",
     "hotelId": null,
     "title": "Fish market, teamLab Planets & Ginza",
-    "summary": "Tsukiji seafood breakfast, teamLab Planets in Toyosu (book ahead!), Odaiba Gundam waterfront, then a Ginza evening.",
+    "summary": "Tsukiji seafood breakfast, teamLab Planets in Toyosu, Odaiba Gundam waterfront, then a Ginza evening.",
     "food": "Tsukiji sushi breakfast; Ginza dinner.",
     "placeIds": [
       "tsukiji",
@@ -2841,8 +2838,8 @@ window.DAYS = [
       "Evening to Ginza."
     ],
     "tips": [
-      "Book teamLab Planets timed tickets weeks ahead.",
-      "Wear shorts you can roll up — some rooms have water."
+      "Timed tickets required for teamLab Planets.",
+      "Some rooms have water — wear shorts you can roll up."
     ],
     "timeline": [
       {
@@ -2886,7 +2883,7 @@ window.DAYS = [
     "country": "JP",
     "hotelId": null,
     "title": "Street Kart, park & Shimokitazawa",
-    "summary": "Street Kart through Tokyo streets (bring a physical IDP!), Inokashira Park + Kichijoji, then vintage Shimokitazawa.",
+    "summary": "Street Kart through Tokyo streets, Inokashira Park and Kichijoji, then vintage Shimokitazawa.",
     "food": "Kichijoji / Shimokitazawa cafés.",
     "placeIds": [
       "street-kart",
@@ -2896,11 +2893,10 @@ window.DAYS = [
     ],
     "transport": [
       "Kart meetup (often Shibuya/Shinjuku area).",
-      "Then Mitaka/Kichijoji for the park; train to Shimokita."
+      "Mitaka/Kichijoji for the park; train to Shimokita."
     ],
     "tips": [
-      "Physical International Driving Permit required for Street Kart — photocopy is not enough.",
-      "Book kart slot ahead."
+      "Physical International Driving Permit required for Street Kart — photocopy is not accepted."
     ],
     "timeline": [
       {
@@ -2994,7 +2990,7 @@ window.DAYS = [
       {
         "time": "19:00",
         "title": "Kaiseki dinner",
-        "note": "",
+        "note": "Traditional multi-course dinner at the ryokan.",
         "category": "dining"
       }
     ],
@@ -3028,7 +3024,6 @@ window.DAYS = [
       "Taxi/bus to Chureito for sunset."
     ],
     "tips": [
-      "Book Kawaguchiko lodging before this night.",
       "Chureito stairs before golden hour."
     ],
     "timeline": [
@@ -3088,7 +3083,7 @@ window.DAYS = [
     "country": "JP",
     "hotelId": null,
     "title": "Fuji-Q Highland",
-    "summary": "Full day at Fuji-Q Highland, then hoto noodles and an early night.",
+    "summary": "Full day at Fuji-Q Highland, then local hoto noodles for dinner.",
     "food": "Park food; local hoto noodle dinner.",
     "placeIds": [
       "fuji-q"
@@ -3097,8 +3092,7 @@ window.DAYS = [
       "Arrive for park opening."
     ],
     "tips": [
-      "Do-Dodonpa / Takabisha.",
-      "Mishima Shinkansen to Kyoto tomorrow."
+      "Do-Dodonpa / Takabisha are the headline coasters."
     ],
     "timeline": [
       {
@@ -3198,7 +3192,7 @@ window.DAYS = [
     "country": "JP",
     "hotelId": null,
     "title": "Fushimi Inari, Nintendo Museum & Nishiki",
-    "summary": "Sunrise Fushimi Inari, Nintendo Museum in Uji (lottery tickets!), then Kiyomizu / Sannenzaka & Ninenzaka plus Nishiki Market snacks.",
+    "summary": "Sunrise Fushimi Inari, Nintendo Museum in Uji, then Kiyomizu / Sannenzaka & Ninenzaka plus Nishiki Market.",
     "food": "Street snacks on Higashiyama; Nishiki graze.",
     "placeIds": [
       "fushimi-inari",
@@ -3213,8 +3207,8 @@ window.DAYS = [
       "Return for Higashiyama + Nishiki."
     ],
     "tips": [
-      "Enter Nintendo Museum lottery weeks ahead.",
-      "Hike higher at Fushimi for quieter gates."
+      "Nintendo Museum requires timed entry.",
+      "Higher Fushimi paths are quieter."
     ],
     "timeline": [
       {
@@ -3362,7 +3356,7 @@ window.DAYS = [
     "country": "JP",
     "hotelId": null,
     "title": "Kurama & Kibune mountain day",
-    "summary": "Kurama and Kibune: mountain temple, forest trek, kawadoko riverside lunch, optional onsen if open.",
+    "summary": "Kurama and Kibune: mountain temple, forest trek, kawadoko riverside lunch, and Kurama Onsen.",
     "food": "Kawadoko lunch over the river.",
     "placeIds": [
       "kurama-dera",
@@ -3377,7 +3371,7 @@ window.DAYS = [
     ],
     "tips": [
       "Reserve kawadoko weeks ahead (Hirobun or Fujiya).",
-      "Onsen optional — check seasonal hours."
+      "Confirm Kurama Onsen opening hours."
     ],
     "timeline": [
       {
@@ -3420,8 +3414,8 @@ window.DAYS = [
       },
       {
         "time": "15:30",
-        "title": "Optional Kurama Onsen",
-        "note": "If open — mountain baths.",
+        "title": "Kurama Onsen",
+        "note": "Mountain baths.",
         "placeId": "kurama-onsen",
         "end": "17:30",
         "category": "attraction"
@@ -3455,6 +3449,7 @@ window.DAYS = [
       "Bus to Ginkaku-ji; walk path; taxi ~25–30m to Kinkaku-ji."
     ],
     "tips": [
+      "Taxi to Kinkaku-ji for golden hour.",
       "Forward bags to Osaka tonight."
     ],
     "timeline": [
@@ -3522,7 +3517,7 @@ window.DAYS = [
     ],
     "tips": [
       "Book teamLab Botanical Garden night tickets.",
-      "Base Osaka for USJ, Nara, and Hiroshima day trip."
+      "Hotel check-in after the Kyoto train."
     ],
     "timeline": [
       {
@@ -3593,7 +3588,7 @@ window.DAYS = [
     "country": "JP",
     "hotelId": null,
     "title": "Universal Studios Japan",
-    "summary": "All day at Universal Studios Japan — Nintendo World and Harry Potter. Express Pass must be booked exactly 2 months ahead at midnight JST.",
+    "summary": "Full day at Universal Studios Japan — Nintendo World, Harry Potter, and coasters.",
     "food": "Park snacks; Namba ramen.",
     "placeIds": [
       "usj"
@@ -3602,8 +3597,8 @@ window.DAYS = [
       "Subway to Universal City (~25–35m). Leave by ~07:45."
     ],
     "tips": [
-      "Book Express Pass exactly 2 months prior at 00:00 Japan time — locks Nintendo World entry window and skips the rope-drop sprint.",
-      "Check Nintendo World entry rules."
+      "Express Pass locks Nintendo World entry and skips long queues.",
+      "Confirm Nintendo World entry rules for your pass."
     ],
     "timeline": [
       {
@@ -3672,8 +3667,8 @@ window.DAYS = [
       "Return for evening shopping."
     ],
     "tips": [
-      "Deer crackers are fun — guard bags.",
-      "Bowing deer are bold."
+      "Guard bags around deer.",
+      "Deer crackers available on site."
     ],
     "timeline": [
       {
@@ -3861,7 +3856,6 @@ window.DAYS = [
       "Local to Shinjuku hotel; short train to Nakano."
     ],
     "tips": [
-      "Shinjuku base for final Tokyo days.",
       "Nakano Broadway is ~5–10 min from Shinjuku by train."
     ],
     "timeline": [
@@ -4050,7 +4044,7 @@ window.DAYS = [
     "country": "JP",
     "hotelId": null,
     "title": "Full shopping day & farewell dinner",
-    "summary": "Full Ginza shopping morning (Ginza Six, Uniqlo Ginza, Itoya, depachika), optional afternoon in Shibuya/Omotesando, Akihabara or Shinjuku, then a celebratory farewell dinner.",
+    "summary": "Ginza shopping morning (Ginza Six, Uniqlo Ginza, Itoya, depachika), afternoon in Shibuya/Omotesando, Akihabara or Shinjuku, then farewell dinner.",
     "food": "Depachika graze; farewell wagyu / omakase dinner.",
     "placeIds": [
       "ginza",
@@ -4059,11 +4053,10 @@ window.DAYS = [
       "shinjuku"
     ],
     "transport": [
-      "Focus morning on Ginza; one secondary area in the afternoon."
+      "Morning in Ginza; one secondary area in the afternoon."
     ],
     "tips": [
-      "Pack non-essentials tonight.",
-      "Book farewell dinner 1–2 weeks ahead."
+      "Confirm farewell dinner reservation and arrival time."
     ],
     "timeline": [
       {
@@ -4084,8 +4077,8 @@ window.DAYS = [
       },
       {
         "time": "16:00",
-        "title": "Bonus shopping — Shibuya / Omotesando, Akihabara or Shinjuku",
-        "note": "Pick what you still need.",
+        "title": "Shopping — Shibuya / Omotesando, Akihabara or Shinjuku",
+        "note": "Second shopping district.",
         "placeId": "omotesando",
         "end": "18:30",
         "category": "shopping"
@@ -4093,7 +4086,7 @@ window.DAYS = [
       {
         "time": "19:30",
         "title": "Farewell Japan dinner",
-        "note": "Wagyu / omakase toast.",
+        "note": "Wagyu / omakase.",
         "category": "dining"
       }
     ]
@@ -4106,7 +4099,7 @@ window.DAYS = [
     "country": "JP",
     "hotelId": null,
     "title": "Tokyo → Bangkok",
-    "summary": "Pack, head to Narita or Haneda, and fly to Bangkok for a short Thailand stop.",
+    "summary": "Checkout, transfer to Narita or Haneda, and fly to Bangkok.",
     "food": "Airport meal before departure.",
     "placeIds": [
       "narita",
@@ -4117,8 +4110,8 @@ window.DAYS = [
       "Match NRT vs HND to the Bangkok ticket."
     ],
     "tips": [
-      "Book/confirm Tokyo → Bangkok flight number & times.",
-      "Keep passports handy."
+      "Confirm Tokyo → Bangkok flight number and times.",
+      "Passports ready at security."
     ],
     "timeline": [
       {
@@ -4166,7 +4159,7 @@ window.DAYS = [
     "country": "TH",
     "hotelId": null,
     "title": "Bangkok classics",
-    "summary": "One full day in Bangkok: Grand Palace, river temples, and Chinatown night food.",
+    "summary": "Grand Palace and Wat Phra Kaew, Wat Arun on the Chao Phraya, then Yaowarat night food.",
     "food": "Street food on Yaowarat.",
     "placeIds": [
       "grand-palace",
@@ -4175,17 +4168,17 @@ window.DAYS = [
     ],
     "transport": [
       "BTS/MRT or Grab between sights.",
-      "Cover shoulders & knees at temples."
+      "Cover shoulders and knees at temples."
     ],
     "tips": [
-      "Hotel TBD for 1–2 Bangkok nights.",
-      "Keep flexible — 1 or 2 nights depending on Tirana flight."
+      "Go early to the Grand Palace — heat and queues.",
+      "Ferry crossing for Wat Arun."
     ],
     "timeline": [
       {
         "time": "09:30",
         "title": "Grand Palace & Wat Phra Kaew",
-        "note": "Go early — heat & queues.",
+        "note": "Go early — heat and queues.",
         "placeId": "grand-palace",
         "end": "12:30",
         "category": "culture"
@@ -4216,7 +4209,7 @@ window.DAYS = [
     "country": "TH",
     "hotelId": null,
     "title": "Bangkok → Tirana",
-    "summary": "Easy morning in Bangkok, then fly to Tirana, Albania — ticket still to book.",
+    "summary": "Morning in Bangkok, then fly to Tirana, Albania.",
     "food": "Light café breakfast; airport meal later.",
     "placeIds": [
       "bkk",
@@ -4227,13 +4220,13 @@ window.DAYS = [
       "Confirm baggage rules for the Tirana ticket."
     ],
     "tips": [
-      "Priority: book Bangkok → Tirana (TIA).",
-      "1–2 Bangkok nights total — adjust date if needed."
+      "Confirm Tirana flight number and terminal.",
+      "Allow 3h+ at BKK."
     ],
     "timeline": [
       {
         "time": "09:00",
-        "title": "Easy morning / checkout",
+        "title": "Morning / checkout",
         "note": "Café or short neighborhood walk.",
         "category": "dining"
       },
@@ -4254,7 +4247,7 @@ window.DAYS = [
       {
         "time": "18:00",
         "title": "Flight to Tirana",
-        "note": "Book flight number & times — placeholder.",
+        "note": "Confirm flight number and departure time.",
         "placeId": "tia",
         "category": "transit"
       }
@@ -4262,8 +4255,8 @@ window.DAYS = [
     "transfer": {
       "mode": "flight",
       "label": "Bangkok → Tirana",
-      "detail": "BKK → TIA · still to book",
-      "duration": "long-haul · TBD"
+      "detail": "BKK → TIA",
+      "duration": "long-haul"
     }
   }
 ];

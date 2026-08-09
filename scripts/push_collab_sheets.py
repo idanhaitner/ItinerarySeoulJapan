@@ -336,7 +336,7 @@ def build_bookings(days):
         ("Fuji-Q Freepass", "d14", "לטפל", "דיגיטלי מראש"),
         ("Changdeokgung Secret Garden", "d03", "לטפל", "סיור מודרך · ticket.uforus.co.kr · שבת 29 באוג׳"),
         ("Unni Guide Center", "d03", "לטפל", "15:00–16:00"),
-        ("טיפול פנים ליד Hongdae (המלצת ענבל)", "d04", "לטפל", "Seoulistique כגיבוי · יום א׳ 30 באוג׳"),
+        ("טיפול פנים ליד Hongdae", "d04", "לטפל", "יום א׳ 30 באוג׳"),
         ("N Seoul Tower sunset", "d06", "לטפל", "שלישי 1 בספט׳"),
         ("Lotte World", "d05", "הוזמן", "יום שני 31 באוג׳"),
         # 3 · Transport

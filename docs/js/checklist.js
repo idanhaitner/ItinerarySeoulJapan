@@ -77,7 +77,7 @@ window.CHECKLIST = {
         },
         {
           id: "s-skin",
-          label: "טיפול פנים ליד הונגדה (הקליניקה שענבל המליצה) — Seoulistique כגיבוי",
+          label: "טיפול פנים ליד הונגדה — להזמין מראש",
           window: "יום א׳ 30 באוג׳",
           priority: "high",
         },
