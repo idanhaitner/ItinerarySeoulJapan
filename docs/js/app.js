@@ -551,7 +551,7 @@
     const stage = sectionStage({
       theme: "maps",
       seal: "図",
-      kicker: "מפות · 地図 · MAPS",
+      kicker: "מפות · 地図",
       title: "עקבו אחרי המסלול",
       lead: "מפת מסע כרונולוגית + כל המקומות לפי עיר. לחצו על סימון כדי לפתוח יום.",
       pills: [
@@ -559,7 +559,7 @@
         { em: cityCount, span: "ערים" },
         { em: list.length, span: "מקומות" },
       ],
-      labels: ["ICN", "NRT", "HAKONE", "KIX", "BKK"],
+      labels: ["סיאול", "טוקיו", "קיוטו", "אוסקה", "בנגקוק"],
       motif: motifMaps(),
       aria: "פתיח מפות",
     });
@@ -607,16 +607,19 @@
     const cities = (window.Recommendations.CITIES || []).length;
     const stage = sectionStage({
       theme: "recs",
-      seal: "星",
-      kicker: "המלצות · おすすめ · PICKS",
+      seal: "選",
+      kicker: "המלצות · おすすめ",
       title: "מה שווה לא לפספס",
-      lead: "קפה, אוכל ושכונות שאהבנו לאסוף — לפי עיר ולפי מצב רוח.",
+      lead: "קפה, אוכל ושכונות שאספנו — לפי עיר ולפי מצב רוח.",
       pills: [
         { em: result.count || 0, span: "המלצות" },
         { em: cities || "—", span: "ערים" },
-        { em: result.city ? cityLocal(result.city) || result.city : "הכל", span: "מסונן" },
+        {
+          em: result.city ? cityLocal(result.city) || result.city : "הכל",
+          span: "עיר נוכחית",
+        },
       ],
-      labels: ["CAFÉ", "FOOD", "NIGHT", "HIDDEN"],
+      labels: ["קפה", "אוכל", "לילה", "טיפים"],
       motif: motifRecs(),
       aria: "פתיח המלצות",
     });
@@ -690,8 +693,8 @@
     const todo = total - done;
     const stage = sectionStage({
       theme: "book",
-      seal: "票",
-      kicker: "הזמנות · 予約 · CHECKLIST",
+      seal: "訂",
+      kicker: "הזמנות · 予約",
       title: "מה נשאר לסגור",
       lead: "כרטיסים, מלונות, רכבות וספא — סמנו מה כבר הוזמן.",
       pills: [
@@ -699,7 +702,7 @@
         { em: todo, span: "לטפל" },
         { em: `${pct}%`, span: "הושלם" },
       ],
-      labels: ["HOTELS", "TRAINS", "TICKETS", "FLIGHTS"],
+      labels: ["מלונות", "רכבות", "כרטיסים", "טיסות"],
       motif: motifBookings(pct),
       aria: "פתיח הזמנות",
     });
@@ -809,64 +812,53 @@
   }
 
   function motifBookings(pct = 0) {
-    const circ = 2 * Math.PI * 44;
-    const offset = circ - (Math.max(0, Math.min(100, pct)) / 100) * circ;
+    const fill = Math.max(0, Math.min(100, pct));
     return `
-      <div class="motif-checks" aria-hidden="true">
-        <span class="check-card c1"><i>✓</i><b>Hotels</b></span>
-        <span class="check-card c2"><i>✓</i><b>Trains</b></span>
-        <span class="check-card c3"><i>○</i><b>Tickets</b></span>
-        <span class="check-card c4"><i>○</i><b>Flights</b></span>
-      </div>
-      <svg class="sec-motif-svg motif-progress" viewBox="0 0 120 120">
-        <circle class="prog-track" cx="60" cy="60" r="44" fill="none" />
-        <circle class="prog-fill" cx="60" cy="60" r="44" fill="none"
-          style="stroke-dasharray:${circ.toFixed(1)};stroke-dashoffset:${offset.toFixed(1)}" />
+      <svg class="sec-motif-svg motif-book" viewBox="0 0 640 120" preserveAspectRatio="none">
+        <path class="sec-motif-line" d="M40 70 H 600" fill="none" />
+        <circle class="sec-motif-dot ${fill >= 15 ? "is-on" : ""}" cx="80" cy="70" r="5" />
+        <circle class="sec-motif-dot ${fill >= 40 ? "is-on" : ""}" cx="240" cy="70" r="5" />
+        <circle class="sec-motif-dot ${fill >= 65 ? "is-on" : ""}" cx="400" cy="70" r="5" />
+        <circle class="sec-motif-dot ${fill >= 90 ? "is-on" : ""}" cx="560" cy="70" r="5" />
+        <rect class="sec-motif-bar" x="40" y="66" width="${(560 * fill) / 100}" height="8" rx="4" />
       </svg>`;
   }
 
   function motifMaps() {
     return `
       <svg class="sec-motif-svg motif-maps" viewBox="0 0 640 160" preserveAspectRatio="none">
-        <path class="sec-motif-line soft" d="M70 110 L170 70 L290 95 L410 50 L520 85 L590 40" fill="none" />
-        <circle class="map-pulse" cx="70" cy="110" r="10" />
-        <circle class="map-pulse delay-2" cx="290" cy="95" r="10" />
-        <circle class="map-pulse delay-3" cx="520" cy="85" r="10" />
+        <path class="sec-motif-line" d="M70 110 L170 70 L290 95 L410 50 L520 85 L590 40" fill="none" />
         <circle class="sec-motif-dot" cx="70" cy="110" r="4" />
         <circle class="sec-motif-dot" cx="170" cy="70" r="4" />
         <circle class="sec-motif-dot" cx="290" cy="95" r="4" />
         <circle class="sec-motif-dot" cx="410" cy="50" r="4" />
         <circle class="sec-motif-dot" cx="520" cy="85" r="4" />
         <circle class="sec-motif-dot" cx="590" cy="40" r="4" />
-      </svg>
-      <div class="motif-pins" aria-hidden="true">
-        <span class="pin p1"></span><span class="pin p2"></span><span class="pin p3"></span>
-      </div>`;
+      </svg>`;
   }
 
   function motifRecs() {
     return `
-      <div class="motif-stars" aria-hidden="true">
-        <span class="star s1"></span><span class="star s2"></span><span class="star s3"></span>
-        <span class="star s4"></span><span class="star s5"></span><span class="star s6"></span>
-      </div>
-      <svg class="sec-motif-svg motif-orbit" viewBox="0 0 640 160" preserveAspectRatio="none">
-        <ellipse class="sec-motif-line soft" cx="320" cy="80" rx="240" ry="42" fill="none" />
-        <ellipse class="sec-motif-line soft delay-line" cx="320" cy="80" rx="160" ry="28" fill="none" />
+      <svg class="sec-motif-svg motif-recs" viewBox="0 0 640 140" preserveAspectRatio="none">
+        <path class="sec-motif-line" d="M50 95 C 160 40, 260 40, 320 75 S 480 120, 590 55" fill="none" />
+        <circle class="sec-motif-dot" cx="50" cy="95" r="4.5" />
+        <circle class="sec-motif-dot" cx="200" cy="52" r="4.5" />
+        <circle class="sec-motif-dot" cx="360" cy="82" r="4.5" />
+        <circle class="sec-motif-dot" cx="520" cy="88" r="4.5" />
+        <circle class="sec-motif-dot" cx="590" cy="55" r="4.5" />
       </svg>`;
   }
 
   function motifTools() {
     return `
-      <div class="motif-orbit-icons" aria-hidden="true">
-        <span class="orb o1">¥</span>
-        <span class="orb o2">₩</span>
-        <span class="orb o3">$</span>
-        <span class="orb o4">₪</span>
-      </div>
-      <svg class="sec-motif-svg motif-tools" viewBox="0 0 640 160" preserveAspectRatio="none">
-        <circle class="sec-motif-line soft" cx="320" cy="78" r="52" fill="none" />
-        <circle class="sec-motif-line soft delay-line" cx="320" cy="78" r="78" fill="none" />
+      <svg class="sec-motif-svg motif-tools" viewBox="0 0 640 140" preserveAspectRatio="none">
+        <path class="sec-motif-line" d="M60 80 H 200 M 200 80 L 280 45 M 280 45 H 420 M 420 45 L 500 95 M 500 95 H 590" fill="none" />
+        <circle class="sec-motif-dot" cx="60" cy="80" r="4.5" />
+        <circle class="sec-motif-dot" cx="200" cy="80" r="4.5" />
+        <circle class="sec-motif-dot" cx="280" cy="45" r="4.5" />
+        <circle class="sec-motif-dot" cx="420" cy="45" r="4.5" />
+        <circle class="sec-motif-dot" cx="500" cy="95" r="4.5" />
+        <circle class="sec-motif-dot" cx="590" cy="95" r="4.5" />
       </svg>`;
   }
 
@@ -1097,15 +1089,15 @@
     const stage = sectionStage({
       theme: "tools",
       seal: "用",
-      kicker: "כלים · 便利 · TOOLKIT",
+      kicker: "כלים · 便利",
       title: "הערכה לדרך",
       lead: "המרת מטבע, כתובות מונית לנהג, וטיפים לתחבורה — הכל במקום אחד.",
       pills: [
-        { em: "FX", span: "מטבע" },
-        { em: "TAXI", span: "מוניות" },
-        { em: "TIPS", span: "טיפים" },
+        { em: "¥₩", span: "מטבע" },
+        { em: "מונית", span: "כתובות" },
+        { em: "טיפים", span: "תחבורה" },
       ],
-      labels: ["JPY", "KRW", "USD", "ILS"],
+      labels: ["ין", "וון", "דולר", "שקל"],
       motif: motifTools(),
       aria: "פתיח כלים",
     });
