@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Shippori+Mincho:wght@500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=79" />
+  <link rel="stylesheet" href="css/styles.css?v=80" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 </head>
 <body>
@@ -109,42 +109,12 @@
           </div>
         </div>
         <nav class="tabs" aria-label="ניווט ראשי">
-          <button type="button" class="tab active" data-nav="itinerary" aria-current="page">
-            <span class="tab-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M5 6.5h14M5 12h14M5 17.5h9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="18.5" cy="17.5" r="2.2" stroke="currentColor" stroke-width="1.5"/></svg>
-            </span>
-            <span class="tab-label">מסלול</span>
-          </button>
-          <button type="button" class="tab" data-nav="flights">
-            <span class="tab-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M3.5 14.5 10 12l7.8-7.2a1.6 1.6 0 0 1 2.2 2.2L12.8 15l-2.5 6.5-1.6-5.2L3.5 14.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-            </span>
-            <span class="tab-label">טיסות</span>
-          </button>
-          <button type="button" class="tab" data-nav="bookings">
-            <span class="tab-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="4" width="14" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="m8.5 12 2.2 2.2L15.5 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <span class="tab-label">הזמנות</span>
-          </button>
-          <button type="button" class="tab" data-nav="maps">
-            <span class="tab-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s6-5.2 6-10.2A6 6 0 1 0 6 10.8C6 15.8 12 21 12 21Z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10.5" r="2.2" stroke="currentColor" stroke-width="1.5"/></svg>
-            </span>
-            <span class="tab-label">מפות</span>
-          </button>
-          <button type="button" class="tab" data-nav="recs">
-            <span class="tab-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="m12 4.5 2.1 4.4 4.8.6-3.5 3.3.9 4.7L12 15.8 7.7 17.5l.9-4.7-3.5-3.3 4.8-.6L12 4.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-            </span>
-            <span class="tab-label">המלצות</span>
-          </button>
-          <button type="button" class="tab" data-nav="tools">
-            <span class="tab-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M5 8h14M5 16h14M9 5v6M15 13v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-            </span>
-            <span class="tab-label">כלים</span>
-          </button>
+          <button type="button" class="tab active" data-nav="itinerary" aria-current="page">מסלול</button>
+          <button type="button" class="tab" data-nav="flights">טיסות</button>
+          <button type="button" class="tab" data-nav="bookings">הזמנות</button>
+          <button type="button" class="tab" data-nav="maps">מפות</button>
+          <button type="button" class="tab" data-nav="recs">המלצות</button>
+          <button type="button" class="tab" data-nav="tools">כלים</button>
         </nav>
       </div>
 
@@ -199,42 +169,12 @@
   </div>
 
   <nav class="mobile-nav" aria-label="ניווט מובייל">
-    <button type="button" data-nav="itinerary" class="active" aria-current="page">
-      <span class="mnav-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M5 6.5h14M5 12h14M5 17.5h9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="18.5" cy="17.5" r="2.2" stroke="currentColor" stroke-width="1.5"/></svg>
-      </span>
-      <span>מסלול</span>
-    </button>
-    <button type="button" data-nav="flights">
-      <span class="mnav-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M3.5 14.5 10 12l7.8-7.2a1.6 1.6 0 0 1 2.2 2.2L12.8 15l-2.5 6.5-1.6-5.2L3.5 14.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-      </span>
-      <span>טיסות</span>
-    </button>
-    <button type="button" data-nav="bookings">
-      <span class="mnav-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="4" width="14" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="m8.5 12 2.2 2.2L15.5 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </span>
-      <span>הזמנות</span>
-    </button>
-    <button type="button" data-nav="maps">
-      <span class="mnav-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s6-5.2 6-10.2A6 6 0 1 0 6 10.8C6 15.8 12 21 12 21Z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10.5" r="2.2" stroke="currentColor" stroke-width="1.5"/></svg>
-      </span>
-      <span>מפות</span>
-    </button>
-    <button type="button" data-nav="recs">
-      <span class="mnav-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none"><path d="m12 4.5 2.1 4.4 4.8.6-3.5 3.3.9 4.7L12 15.8 7.7 17.5l.9-4.7-3.5-3.3 4.8-.6L12 4.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-      </span>
-      <span>המלצות</span>
-    </button>
-    <button type="button" data-nav="tools">
-      <span class="mnav-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M5 8h14M5 16h14M9 5v6M15 13v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      </span>
-      <span>כלים</span>
-    </button>
+    <button type="button" data-nav="itinerary" class="active" aria-current="page"><span>מסלול</span></button>
+    <button type="button" data-nav="flights"><span>טיסות</span></button>
+    <button type="button" data-nav="bookings"><span>הזמנות</span></button>
+    <button type="button" data-nav="maps"><span>מפות</span></button>
+    <button type="button" data-nav="recs"><span>המלצות</span></button>
+    <button type="button" data-nav="tools"><span>כלים</span></button>
   </nav>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
