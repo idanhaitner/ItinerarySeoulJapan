@@ -516,6 +516,14 @@ a { color: inherit; }
   letter-spacing: 0;
 }
 
+.plan-lead {
+  margin: 10px 0 0;
+  max-width: 42rem;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--soft);
+}
+
 .plan-intro.is-hidden {
   display: none;
 }
@@ -3001,6 +3009,10 @@ a { color: inherit; }
 .booking-item.done .booking-label {
   text-decoration: line-through;
   color: var(--soft);
+}
+
+.booking-item.booking-critical .window-badge {
+  color: #8a4b12;
 }
 
 .booking-label { font-weight: 500; font-size: 15px; }

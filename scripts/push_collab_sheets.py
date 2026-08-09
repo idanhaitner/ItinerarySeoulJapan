@@ -324,26 +324,39 @@ def build_bookings(days):
     """Bookings with real trip dates from matching days when possible."""
     by_id = {d["id"]: d["date"] for d in days}
     items = [
-        ("טיסת יציאה ET0419 TLV→ADD", "d00", "הוזמן", "26 באוג׳ · 15:35→19:50 · Ethiopian"),
-        ("טיסת יציאה ET0672 ADD→ICN", "d00", "הוזמן", "26 באוג׳ 22:35 → 27 באוג׳ 16:00 · Ethiopian"),
-        ("Lotte World", "d05", "הוזמן", "יום שני 31 באוג׳"),
+        # 1 · Documents
+        ("רישיון נהיגה בינלאומי פיזי (IDP 1949)", "d11", "לטפל", "חובה ל־Street Kart · להנפיק בארץ עכשיו"),
+        # 2 · Attractions (urgency order)
+        ("USJ Studio Pass + Express Pass", "d21", "לטפל", "Express נגמר מהר · Nintendo World"),
+        ("Nintendo Museum (Uji)", "d16", "לטפל", "הגרלה / first-come אם נשאר"),
+        ("Shibuya Sky sunset", "d08", "לטפל", "נפתח 28 ימים מראש"),
+        ("Street Kart Tokyo", "d11", "לטפל", "אתר רשמי / Klook + IDP פיזי"),
+        ("teamLab Planets Tokyo", "d10", "לטפל", "כרטיס מתוזמן · Toyosu"),
+        ("teamLab Botanical Garden Osaka", "d20", "לטפל", "כרטיס ערב/לילה"),
+        ("Fuji-Q Freepass", "d14", "לטפל", "דיגיטלי מראש"),
         ("Changdeokgung Secret Garden", "d03", "לטפל", "סיור מודרך · ticket.uforus.co.kr · שבת 29 באוג׳"),
         ("Unni Guide Center", "d03", "לטפל", "15:00–16:00"),
         ("טיפול פנים ליד Hongdae (המלצת ענבל)", "d04", "לטפל", "Seoulistique כגיבוי · יום א׳ 30 באוג׳"),
         ("N Seoul Tower sunset", "d06", "לטפל", "שלישי 1 בספט׳"),
-        ("טיסת סיאול → טוקיו YP7321", "d07", "הוזמן", "Air Premia · ICN 08:50 → NRT 11:20"),
-        ("Shibuya Sky sunset", "d08", "לטפל", "~4 שבועות מראש"),
-        ("teamLab Planets Tokyo", "d10", "לטפל", "כרטיס מתוזמן · Toyosu"),
-        ("Street Kart Tokyo", "d11", "לטפל", "חובה רישיון נהיגה בינלאומי פיזי (IDP)"),
-        ("Romancecar (Observation Car)", "d12", "לטפל", "~חודש מראש"),
+        ("Lotte World", "d05", "הוזמן", "יום שני 31 באוג׳"),
+        # 3 · Transport
+        ("Romancecar + Observation Car", "d12", "לטפל", "מושבים שמורים"),
+        ("אוטובוס Fujikyu → Mishima", "d15", "לטפל", "~90 דק׳ · מקומות שמורים"),
+        ("שינקנסן SmartEX (+ oversized baggage)", "d15", "לטפל", "10/9 · 18/9 · 20/9"),
+        ("Tobu Spacia X / Revaty לניקו", "d26", "לטפל", "Asakusa ← Nikko"),
         ("Takkyubin מזוודות טוקיו→קיוטו", "d12", "לטפל", ""),
-        ("Nintendo Museum (Uji)", "d16", "לטפל", "הגרלת כרטיסים מראש"),
+        # 4 · Stays / experiences
+        ("ריוקאן הקונה + Kaiseki", "d12", "לטפל", "לוודא ארוחת ערב + בוקר"),
         ("Kawadoko lunch", "d18", "לטפל", "Hirobun / Fujiya — שבועות מראש"),
-        ("teamLab Botanical Garden Osaka", "d20", "לטפל", "כרטיס לילה · אחרי חשיכה"),
-        ("USJ Express Pass", "d21", "לטפל", "בדיוק חודשיים מראש בחצות יפן"),
+        ("ארוחת פרידה מיפן", "d28", "לטפל", "וואגיו / אומקאסה · 1–2 שבועות מראש"),
+        # 5 · Flights still open + booked refs
         ("טיסת טוקיו → בנגקוק", "d29", "לטפל", "NRT/HND → BKK · לאשר מספר טיסה ושעות · 1–2 לילות בתאילנד"),
         ("טיסת בנגקוק → טירנה", "d31", "לטפל", "BKK → TIA (אלבניה) · צריך להזמין"),
-        ("ארוחת פרידה מיפן", "d28", "לטפל", "וואגיו / אומקאסה · 1–2 שבועות מראש"),
+        ("טיסת יציאה ET0419 TLV→ADD", "d00", "הוזמן", "26 באוג׳ · 15:35→19:50 · Ethiopian"),
+        ("טיסת יציאה ET0672 ADD→ICN", "d00", "הוזמן", "26 באוג׳ 22:35 → 27 באוג׳ 16:00 · Ethiopian"),
+        ("טיסת סיאול → טוקיו YP7321", "d07", "הוזמן", "Air Premia · ICN 08:50 → NRT 11:20"),
+        # 6 · Forms near departure
+        ("Visit Japan Web (VJW)", "d07", "לטפל", "כמה ימים לפני נחיתה בנריטה"),
     ]
     rows = [["מה להזמין", "תאריך", "סטטוס", "הערות"]]
     for name, day_id, status, notes in items:

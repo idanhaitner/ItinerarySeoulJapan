@@ -663,6 +663,7 @@
       <div class="plan-intro">
         <p class="plan-kicker">הזמנות · 予約</p>
         <h2 class="plan-title">מה נשאר לסגור</h2>
+        <p class="plan-lead">ממוין לפי דחיפות — חלון ההזמנות לרוב האטרקציות פתוח עכשיו. מתחילים ממסמכים בארץ, אחר כך כרטיסים שנחטפים.</p>
       </div>
       <div class="bookings-list">
         ${checklistData.groups
@@ -673,7 +674,7 @@
             ${g.items
               .map(
                 (item) => `
-              <label class="booking-item ${checked[item.id] ? "done" : ""}">
+              <label class="booking-item ${checked[item.id] ? "done" : ""}${item.priority === "critical" ? " booking-critical" : ""}">
                 <input type="checkbox" data-check="${item.id}" ${checked[item.id] ? "checked" : ""} />
                 <span>
                   <div class="booking-label">${escapeHtml(item.label)}</div>
