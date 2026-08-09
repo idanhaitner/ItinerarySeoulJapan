@@ -76,6 +76,7 @@
   const els = {
     panels: {
       itinerary: document.getElementById("panel-itinerary"),
+      flights: document.getElementById("panel-flights"),
       bookings: document.getElementById("panel-bookings"),
       maps: document.getElementById("panel-maps"),
       recs: document.getElementById("panel-recs"),
@@ -93,6 +94,7 @@
     topbar: document.getElementById("topbar"),
     masthead: document.getElementById("masthead"),
     bookingsRoot: document.getElementById("bookings-root"),
+    flightsRoot: document.getElementById("flights-root"),
     toolsRoot: document.getElementById("tools-root"),
     navButtons: document.querySelectorAll("[data-nav]"),
     resultCount: document.getElementById("result-count"),
@@ -108,7 +110,7 @@
   }
 
   function cityClass(city) {
-    return `city-${city}`;
+    return `city-${String(city || "").replace(/\s+/g, "-")}`;
   }
 
   function cityLocal(city) {
@@ -369,7 +371,8 @@
 
   function transferHtml(transfer) {
     if (!transfer) return "";
-    return `<div class="transfer-banner">
+    const flight = (transfer.mode || "") === "flight" ? " is-flight" : "";
+    return `<div class="transfer-banner${flight}">
       <div class="tb-mode">${escapeHtml(transferModeHe(transfer.mode))}</div>
       <div class="tb-label">${escapeHtml(transfer.label)}</div>
       <div class="tb-meta">${escapeHtml(transfer.detail)} · ${escapeHtml(transfer.duration)}</div>
@@ -686,38 +689,132 @@
     setResultCount(`${done}/${total}`);
   }
 
-  function renderTools() {
+  function flightStatusHe(status) {
+    if (status === "booked") return "הוזמן";
+    if (status === "todo") return "לטפל";
+    return status || "";
+  }
+
+  function formatFlightDate(iso) {
+    if (!iso) return "";
+    const d = new Date(iso + "T12:00:00");
+    return d.toLocaleDateString("he-IL", { weekday: "short", day: "numeric", month: "short" });
+  }
+
+  function renderFlights() {
     const flights = trip.flights || [];
-    const flightsHtml = flights.length
-      ? `<div class="tool-card flights-card" style="margin-top:12px">
-        <h3>טיסות שהוזמנו</h3>
-        <p class="tool-sub">שעות לפי לוח מפורסם — לאשר מול הכרטיס.</p>
-        <div class="flights-list">
-          ${flights
-            .map((f) => {
-              const arr =
-                f.arriveDate && f.arriveDate !== f.date
-                  ? `${f.arrive} (+1)`
-                  : f.arrive;
-              return `<article class="flight-row" dir="ltr">
-              <div class="flight-code">${escapeHtml(f.flight)}</div>
-              <div class="flight-main">
-                <strong>${escapeHtml(f.airline || "")}</strong>
-                <span>${escapeHtml(f.from)} → ${escapeHtml(f.to)}</span>
-                <span>${escapeHtml(f.date)} · ${escapeHtml(f.depart)} → ${escapeHtml(arr)}</span>
-              </div>
-              <div class="flight-note">${escapeHtml(f.note || "")}</div>
-            </article>`;
-            })
-            .join("")}
+    const booked = flights.filter((f) => f.status === "booked").length;
+    const todo = flights.filter((f) => f.status !== "booked").length;
+
+    const journeys = [];
+    const seen = new Set();
+    flights.forEach((f) => {
+      const key = f.journey || f.id;
+      if (seen.has(key)) return;
+      seen.add(key);
+      journeys.push({
+        id: key,
+        label: f.journeyLabel || f.note || key,
+        status: f.status,
+        dayId: f.dayId,
+        legs: flights.filter((x) => (x.journey || x.id) === key),
+      });
+    });
+
+    const journeyHe = {
+      outbound: "יציאה · תל אביב → סיאול",
+      "seoul-tokyo": "מעבר · סיאול → טוקיו",
+      return: "חזרה · טוקיו → הביתה",
+    };
+
+    els.flightsRoot.innerHTML = `
+      <div class="flights-hero">
+        <p class="plan-kicker">טיסות · フライト</p>
+        <h2 class="plan-title">כרטיסי טיסה וסטטוס</h2>
+        <p class="flights-lead">כל הטיסות במקום אחד — שעות, קונקשנים ומה עדיין פתוח.</p>
+        <div class="flights-stats">
+          <div><em>${booked}</em><span>הוזמנו</span></div>
+          <div><em>${todo}</em><span>לטפל</span></div>
+          <div><em>${journeys.length}</em><span>מקטעים</span></div>
         </div>
-      </div>`
-      : "";
+      </div>
+      <div class="flights-board">
+        ${journeys
+          .map((j, idx) => {
+            const status = j.legs.every((l) => l.status === "booked")
+              ? "booked"
+              : j.legs.some((l) => l.status === "booked")
+                ? "partial"
+                : "todo";
+            const statusLabel =
+              status === "booked" ? "הוזמן" : status === "partial" ? "חלקי" : "לטפל";
+            const title = journeyHe[j.id] || j.label;
+            return `
+          <article class="flight-journey status-${status}" style="animation-delay:${idx * 0.06}s">
+            <header class="flight-journey-head">
+              <div>
+                <div class="flight-journey-kicker">מקטע ${idx + 1}</div>
+                <h3>${escapeHtml(title)}</h3>
+              </div>
+              <span class="flight-status">${escapeHtml(statusLabel)}</span>
+            </header>
+            <div class="flight-legs">
+              ${j.legs
+                .map((f) => {
+                  const arriveLabel =
+                    f.arriveDate && f.arriveDate !== f.date
+                      ? `${f.arrive} · ${formatFlightDate(f.arriveDate)}`
+                      : f.arrive;
+                  const isTodo = f.status !== "booked";
+                  return `
+                <div class="flight-leg${isTodo ? " is-todo" : ""}" dir="ltr">
+                  <div class="flight-leg-code">
+                    <strong>${escapeHtml(f.flight || "—")}</strong>
+                    <span>${escapeHtml(f.airline || "")}</span>
+                  </div>
+                  <div class="flight-leg-route">
+                    <div class="flight-airports">
+                      <div>
+                        <em>${escapeHtml(f.from)}</em>
+                        <span>${escapeHtml(f.fromName || "")}</span>
+                      </div>
+                      <div class="flight-arrow" aria-hidden="true">→</div>
+                      <div>
+                        <em>${escapeHtml(f.to)}</em>
+                        <span>${escapeHtml(f.toName || "")}</span>
+                      </div>
+                    </div>
+                    <div class="flight-times">
+                      <span>${escapeHtml(formatFlightDate(f.date))}</span>
+                      <span dir="ltr">${escapeHtml(f.depart || "—")} → ${escapeHtml(arriveLabel || "—")}</span>
+                    </div>
+                    ${f.terminal ? `<div class="flight-terminal">${escapeHtml(f.terminal)}</div>` : ""}
+                    ${f.note ? `<div class="flight-note">${escapeHtml(f.note)}</div>` : ""}
+                  </div>
+                </div>`;
+                })
+                .join("")}
+            </div>
+            ${
+              j.dayId
+                ? `<button type="button" class="flight-open-day" data-open-day="${j.dayId}">פתחו את היום במסלול ←</button>`
+                : ""
+            }
+          </article>`;
+          })
+          .join("")}
+      </div>
+      <p class="flights-footnote">השעות לפי לוח מפורסם — תמיד לאשר מול הכרטיס / כרטיס עלייה למטוס.</p>`;
+
+    setResultCount(`${booked} הוזמנו · ${todo} לטפל`);
+  }
+
+  function renderTools() {
     els.toolsRoot.innerHTML = `
       <div class="tools-actions">
         <button type="button" class="btn-primary" id="open-tips">טיפים לתחבורה</button>
+        <button type="button" class="btn-ghost" id="open-flights-tab">לטיסות ←</button>
       </div>
-      ${flightsHtml}
       <div id="fx-root"></div>
       <div id="taxi-root" style="margin-top:12px"></div>
       <div class="tool-card" style="margin-top:12px">
@@ -730,6 +827,8 @@
       </div>`;
     tools.renderConverter(document.getElementById("fx-root"));
     tools.renderTaxiCards(document.getElementById("taxi-root"), places);
+    const goFlights = document.getElementById("open-flights-tab");
+    if (goFlights) goFlights.addEventListener("click", () => showView("flights"));
     setResultCount("כלים");
   }
 
@@ -771,6 +870,7 @@
     if (RIBBON_VIEWS.has(state.view)) renderRibbon();
 
     if (state.view === "itinerary") renderDayList();
+    else if (state.view === "flights") renderFlights();
     else if (state.view === "maps") renderMaps();
     else if (state.view === "recs") renderRecs();
     else if (state.view === "bookings") renderBookings();
@@ -840,6 +940,11 @@
       if (e.target.id === "reset-checklist") {
         storage.resetChecklist();
         renderBookings();
+        return;
+      }
+      const openFlightDay = e.target.closest("[data-open-day]");
+      if (openFlightDay) {
+        openDay(openFlightDay.getAttribute("data-open-day"));
         return;
       }
       const copyTaxi = e.target.closest("[data-copy-taxi]");

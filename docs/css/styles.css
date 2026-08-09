@@ -30,6 +30,7 @@
   --kyoto: #c46a52;
   --hiroshima: #7a748c;
   --osaka: #a8844e;
+  --telaviv: #4d6472;
 }
 
 * { box-sizing: border-box; }
@@ -1392,6 +1393,7 @@ a { color: inherit; }
 .day-group.city-Kyoto { border-top-color: var(--kyoto); background: color-mix(in srgb, var(--kyoto) 5%, var(--surface)); }
 .day-group.city-Hiroshima { border-top-color: var(--hiroshima); background: color-mix(in srgb, var(--hiroshima) 5%, var(--surface)); }
 .day-group.city-Osaka { border-top-color: var(--osaka); background: color-mix(in srgb, var(--osaka) 5%, var(--surface)); }
+.day-group.city-Tel-Aviv { border-top-color: var(--telaviv); background: color-mix(in srgb, var(--telaviv) 5%, var(--surface)); }
 
 .day-group.is-dim { opacity: 0.35; }
 
@@ -1417,6 +1419,7 @@ a { color: inherit; }
 .day-group.city-Kyoto .day-group-label { color: var(--kyoto); }
 .day-group.city-Hiroshima .day-group-label { color: var(--hiroshima); }
 .day-group.city-Osaka .day-group-label { color: var(--osaka); }
+.day-group.city-Tel-Aviv .day-group-label { color: var(--telaviv); }
 
 .day-group-label .local {
   font-family: var(--font-ui);
@@ -1483,6 +1486,7 @@ a { color: inherit; }
 .day-group.city-Kyoto .day-rail-btn { border-inline-start-color: color-mix(in srgb, var(--kyoto) 28%, transparent); }
 .day-group.city-Hiroshima .day-rail-btn { border-inline-start-color: color-mix(in srgb, var(--hiroshima) 28%, transparent); }
 .day-group.city-Osaka .day-rail-btn { border-inline-start-color: color-mix(in srgb, var(--osaka) 28%, transparent); }
+.day-group.city-Tel-Aviv .day-rail-btn { border-inline-start-color: color-mix(in srgb, var(--telaviv) 28%, transparent); }
 
 .day-rail-btn:hover {
   color: var(--ink);
@@ -1501,6 +1505,7 @@ a { color: inherit; }
 .day-group.city-Kyoto .day-rail-btn.active { background: color-mix(in srgb, var(--kyoto) 12%, transparent); color: var(--kyoto); }
 .day-group.city-Hiroshima .day-rail-btn.active { background: color-mix(in srgb, var(--hiroshima) 12%, transparent); color: var(--hiroshima); }
 .day-group.city-Osaka .day-rail-btn.active { background: color-mix(in srgb, var(--osaka) 12%, transparent); color: var(--osaka); }
+.day-group.city-Tel-Aviv .day-rail-btn.active { background: color-mix(in srgb, var(--telaviv) 12%, transparent); color: var(--telaviv); }
 
 /* ——— Main / panels ——— */
 .main { padding-top: 20px; }
@@ -1565,6 +1570,7 @@ a { color: inherit; }
 .day-row.city-Kyoto .day-row-num { border-inline-start-color: var(--kyoto); }
 .day-row.city-Hiroshima .day-row-num { border-inline-start-color: var(--hiroshima); }
 .day-row.city-Osaka .day-row-num { border-inline-start-color: var(--osaka); }
+.day-row.city-Tel-Aviv .day-row-num { border-inline-start-color: var(--telaviv); }
 
 .day-row-num .n {
   font-family: var(--font-display);
@@ -1626,6 +1632,7 @@ a { color: inherit; }
 .day-row.city-Kyoto .day-row-city .he { color: var(--kyoto); }
 .day-row.city-Hiroshima .day-row-city .he { color: var(--hiroshima); }
 .day-row.city-Osaka .day-row-city .he { color: var(--osaka); }
+.day-row.city-Tel-Aviv .day-row-city .he { color: var(--telaviv); }
 
 .day-row-body h3 {
   font-size: clamp(22px, 2.8vw, 28px);
@@ -1694,9 +1701,13 @@ a { color: inherit; }
   gap: 4px;
   padding: 18px 20px;
   margin-bottom: 18px;
-  background: linear-gradient(135deg, rgba(196, 60, 44, 0.06), rgba(42, 107, 90, 0.07));
-  border: 1px solid rgba(47, 43, 40, 0.1);
-  border-inline-start: 3px solid var(--seal);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-inline-start: 3px solid var(--navy);
+}
+
+.transfer-banner.is-flight {
+  border-inline-start-color: var(--indigo);
 }
 
 .transfer-banner .tb-mode {
@@ -1704,7 +1715,7 @@ a { color: inherit; }
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--seal);
+  color: var(--indigo);
 }
 
 .transfer-banner .tb-label {
@@ -1776,6 +1787,9 @@ a { color: inherit; }
 .detail-hero.city-Osaka {
   background: linear-gradient(135deg, rgba(156, 107, 47, 0.08), var(--surface) 45%);
 }
+.detail-hero.city-Tel-Aviv {
+  background: linear-gradient(135deg, rgba(77, 100, 114, 0.08), var(--surface) 45%);
+}
 
 .detail-hero.city-Seoul::before { background: var(--seoul); }
 .detail-hero.city-Tokyo::before { background: var(--tokyo); }
@@ -1784,6 +1798,7 @@ a { color: inherit; }
 .detail-hero.city-Kyoto::before { background: var(--kyoto); }
 .detail-hero.city-Hiroshima::before { background: var(--hiroshima); }
 .detail-hero.city-Osaka::before { background: var(--osaka); }
+.detail-hero.city-Tel-Aviv::before { background: var(--telaviv); }
 
 .detail-hero-top {
   display: flex;
@@ -2949,6 +2964,237 @@ a { color: inherit; }
 
 .fx-rates { margin-top: 12px; color: var(--muted); }
 
+/* ——— Flights board ——— */
+.flights-hero {
+  margin-bottom: 28px;
+  animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.flights-lead {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+  max-width: 36em;
+}
+
+.flights-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.flights-stats > div {
+  padding: 14px 12px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  text-align: center;
+}
+
+.flights-stats em {
+  display: block;
+  font-family: var(--font-display);
+  font-style: normal;
+  font-size: 1.6rem;
+  font-weight: 650;
+  color: var(--navy);
+  line-height: 1.1;
+}
+
+.flights-stats span {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.flights-board {
+  display: grid;
+  gap: 16px;
+}
+
+.flight-journey {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-inline-start: 3px solid var(--indigo);
+  padding: 18px 18px 14px;
+  animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.flight-journey.status-booked {
+  border-inline-start-color: var(--jade);
+}
+
+.flight-journey.status-todo {
+  border-inline-start-color: var(--gold);
+}
+
+.flight-journey.status-partial {
+  border-inline-start-color: var(--indigo);
+}
+
+.flight-journey-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.flight-journey-kicker {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.flight-journey-head h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 650;
+  color: var(--navy);
+}
+
+.flight-status {
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+  color: var(--muted);
+}
+
+.flight-journey.status-booked .flight-status {
+  background: color-mix(in srgb, var(--jade) 12%, white);
+  border-color: color-mix(in srgb, var(--jade) 28%, transparent);
+  color: var(--jade);
+}
+
+.flight-journey.status-todo .flight-status {
+  background: color-mix(in srgb, var(--gold) 12%, white);
+  border-color: color-mix(in srgb, var(--gold) 30%, transparent);
+  color: color-mix(in srgb, var(--gold) 85%, var(--ink));
+}
+
+.flight-legs {
+  display: grid;
+  gap: 10px;
+}
+
+.flight-leg {
+  display: grid;
+  grid-template-columns: minmax(88px, 110px) 1fr;
+  gap: 12px 14px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  background: rgba(47, 43, 40, 0.015);
+  text-align: left;
+}
+
+.flight-leg.is-todo {
+  opacity: 0.85;
+  border-style: dashed;
+}
+
+.flight-leg-code strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--navy);
+}
+
+.flight-leg-code span {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+.flight-airports {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 8px;
+  align-items: center;
+}
+
+.flight-airports em {
+  display: block;
+  font-style: normal;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 650;
+  color: var(--navy);
+}
+
+.flight-airports span {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.flight-arrow {
+  color: var(--soft);
+  font-size: 1.1rem;
+}
+
+.flight-times {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin-top: 10px;
+  font-size: 0.88rem;
+  color: var(--ink);
+}
+
+.flight-terminal,
+.flight-note {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.flight-open-day {
+  margin-top: 12px;
+  border: 0;
+  background: transparent;
+  color: var(--indigo);
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 6px 0;
+  cursor: pointer;
+}
+
+.flight-open-day:hover {
+  color: var(--navy);
+}
+
+.flights-footnote {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.tools-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 640px) {
+  .flight-leg {
+    grid-template-columns: 1fr;
+  }
+
+  .flights-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 .flights-list {
   display: grid;
   gap: 10px;
@@ -3794,6 +4040,24 @@ html[dir="rtl"] .search svg {
     padding-inline: 2px;
   }
 }
+
+
+/* Tel Aviv city accent */
+.detail-hero.city-Tel-Aviv .city-en { color: var(--telaviv); }
+.detail-hero.city-Tel-Aviv .food-banner {
+  background: color-mix(in srgb, var(--telaviv) 8%, var(--surface));
+  border-color: color-mix(in srgb, var(--telaviv) 22%, transparent);
+}
+.detail-hero.city-Tel-Aviv .food-banner strong { color: var(--telaviv); }
+.city-fold.city-Tel-Aviv > .city-fold-summary { border-inline-start-color: var(--telaviv); }
+.city-fold.city-Tel-Aviv .city-fold-label .en { color: var(--telaviv); }
+.city-accent-Tel-Aviv::before { background: var(--telaviv); }
+.place-card.city-accent-Tel-Aviv { background: linear-gradient(165deg, color-mix(in srgb, var(--telaviv) 6%, var(--surface)) 0%, var(--surface) 42%); }
+.place-card.city-accent-Tel-Aviv .tag { background: color-mix(in srgb, var(--telaviv) 12%, transparent); color: color-mix(in srgb, var(--telaviv) 75%, var(--ink)); }
+.place-card.city-accent-Tel-Aviv .maps-btn.primary { background: var(--telaviv); border-color: var(--telaviv); box-shadow: 0 8px 18px color-mix(in srgb, var(--telaviv) 28%, transparent); }
+.place-card.city-accent-Tel-Aviv .maps-link:hover { border-color: color-mix(in srgb, var(--telaviv) 40%, transparent); color: var(--telaviv); }
+.city-pill.city-Tel-Aviv { background: var(--telaviv); color: #fff; }
+.route-stop.city-Tel-Aviv { --route-accent: var(--telaviv); }
 
 /* ——— Access gate ——— */
 html.gate-locked,

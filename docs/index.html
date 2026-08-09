@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Shippori+Mincho:wght@500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=69" />
+  <link rel="stylesheet" href="css/styles.css?v=70" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 </head>
 <body>
@@ -47,7 +47,7 @@
       </div>
     </div>
   </div>
-  <script src="js/gate.js?v=69"></script>
+  <script src="js/gate.js?v=70"></script>
 
   <div class="bg-layer" aria-hidden="true">
     <div class="bg-wash"></div>
@@ -108,6 +108,7 @@
         </div>
         <nav class="tabs" aria-label="ניווט ראשי">
           <button type="button" class="tab active" data-nav="itinerary">מסלול</button>
+          <button type="button" class="tab" data-nav="flights">טיסות</button>
           <button type="button" class="tab" data-nav="bookings">הזמנות</button>
           <button type="button" class="tab" data-nav="maps">מפות</button>
           <button type="button" class="tab" data-nav="recs">המלצות</button>
@@ -142,6 +143,10 @@
         <div id="day-list" class="day-list"></div>
       </section>
 
+      <section id="panel-flights" class="panel" aria-label="טיסות" hidden>
+        <div id="flights-root"></div>
+      </section>
+
       <section id="panel-bookings" class="panel" aria-label="רשימת הזמנות" hidden>
         <div id="bookings-root"></div>
       </section>
@@ -166,6 +171,7 @@
 
   <nav class="mobile-nav" aria-label="ניווט מובייל">
     <button type="button" data-nav="itinerary" class="active"><span>מסלול</span></button>
+    <button type="button" data-nav="flights"><span>טיסות</span></button>
     <button type="button" data-nav="bookings"><span>הזמנות</span></button>
     <button type="button" data-nav="maps"><span>מפות</span></button>
     <button type="button" data-nav="recs"><span>המלצות</span></button>
@@ -173,15 +179,15 @@
   </nav>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="js/data.js?v=69"></script>
-  <script src="js/he-data.js?v=69"></script>
-  <script src="js/cafes.js?v=69"></script>
+  <script src="js/data.js?v=70"></script>
+  <script src="js/he-data.js?v=70"></script>
+  <script src="js/cafes.js?v=70"></script>
   <script src="js/storage.js"></script>
-  <script src="js/checklist.js?v=69"></script>
-  <script src="js/tools.js?v=69"></script>
-  <script src="js/dest-intel.js?v=69"></script>
-  <script src="js/journey-map.js?v=69"></script>
-  <script src="js/recommendations.js?v=69"></script>
-  <script src="js/app.js?v=69"></script>
+  <script src="js/checklist.js?v=70"></script>
+  <script src="js/tools.js?v=70"></script>
+  <script src="js/dest-intel.js?v=70"></script>
+  <script src="js/journey-map.js?v=70"></script>
+  <script src="js/recommendations.js?v=70"></script>
+  <script src="js/app.js?v=70"></script>
 </body>
 </html>

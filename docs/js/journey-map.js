@@ -8,7 +8,7 @@ window.JourneyMap = (function () {
     Kyoto: "#c46a52",
     Hiroshima: "#7a748c",
     Osaka: "#a8844e",
-    "Tel Aviv": "#6b7a8d",
+    "Tel Aviv": "#4d6472",
   };
 
   const CITY_HE = {
