@@ -64,27 +64,27 @@ window.TripTools = (function () {
         <h3>מחשבון מטבע</h3>
         <p class="tool-sub">אפשר לערוך שערים בכל רגע — נשמר במכשיר.</p>
         <div class="fx-grid">
-          <label>סכום<input type="number" id="fx-amount" value="10000" inputmode="decimal" /></label>
-          <label>מ־
-            <select id="fx-from">
-              <option value="JPY">JPY ¥</option>
-              <option value="KRW">KRW ₩</option>
-              <option value="USD">USD $</option>
-              <option value="EUR">EUR €</option>
-              <option value="ILS">ILS ₪</option>
+          <label class="fx-field">סכום<input type="number" id="fx-amount" value="10000" inputmode="decimal" dir="ltr" /></label>
+          <label class="fx-field">מ־
+            <select id="fx-from" dir="ltr">
+              <option value="JPY">¥ JPY</option>
+              <option value="KRW" selected>₩ KRW</option>
+              <option value="USD">$ USD</option>
+              <option value="EUR">€ EUR</option>
+              <option value="ILS">₪ ILS</option>
             </select>
           </label>
-          <label>ל־
-            <select id="fx-to">
-              <option value="ILS" selected>ILS ₪</option>
-              <option value="USD">USD $</option>
-              <option value="EUR">EUR €</option>
-              <option value="JPY">JPY ¥</option>
-              <option value="KRW">KRW ₩</option>
+          <label class="fx-field">ל־
+            <select id="fx-to" dir="ltr">
+              <option value="ILS" selected>₪ ILS</option>
+              <option value="USD">$ USD</option>
+              <option value="EUR">€ EUR</option>
+              <option value="JPY">¥ JPY</option>
+              <option value="KRW">₩ KRW</option>
             </select>
           </label>
         </div>
-        <div class="fx-result" id="fx-result">—</div>
+        <div class="fx-result" id="fx-result" dir="ltr">—</div>
         <details class="fx-rates">
           <summary>שערי חליפין לעריכה</summary>
           <div class="fx-rate-grid">
@@ -102,8 +102,18 @@ window.TripTools = (function () {
       const to = document.getElementById("fx-to").value;
       const r = TripStorage.getRates();
       const out = convert(amount, from, to, r);
-      document.getElementById("fx-result").textContent =
-        `${Number(amount).toLocaleString("he-IL")} ${from} ≈ ${out.toLocaleString("he-IL", { maximumFractionDigits: 2 })} ${to}`;
+      const n = Number(amount);
+      if (!Number.isFinite(n)) {
+        document.getElementById("fx-result").textContent = "—";
+        return;
+      }
+      const amt = n.toLocaleString("en-US", { maximumFractionDigits: 2 });
+      const converted = out.toLocaleString("en-US", { maximumFractionDigits: 2 });
+      // LTR isolate so RTL page bidi doesn't scramble "219,000 KRW ≈ 465.76 ILS"
+      document.getElementById("fx-result").innerHTML =
+        `<span class="fx-result-from">${amt}&nbsp;${from}</span>` +
+        `<span class="fx-result-approx" aria-hidden="true">≈</span>` +
+        `<span class="fx-result-to">${converted}&nbsp;${to}</span>`;
     }
 
     root.querySelectorAll("[data-rate]").forEach((input) => {
