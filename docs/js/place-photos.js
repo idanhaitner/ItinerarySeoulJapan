@@ -2,6 +2,10 @@
 window.PLACE_PHOTOS = {
   myeongdong: { src: "assets/places/myeongdong.jpg", he: "מיונגדונג" },
   hongdae: { src: "assets/places/hongdae.jpg", he: "הונגדה" },
+  yeonnam: { src: "assets/places/hongdae.jpg", he: "Yeonnam" },
+  cheonggyecheon: { src: "assets/places/insadong.jpg", he: "צ׳ונגגייצ׳ון" },
+  namdaemun: { src: "assets/places/gwangjang.jpg", he: "נאמדאמון" },
+  mangwon: { src: "assets/places/gwangjang.jpg", he: "מאנגוון" },
   gyeongbokgung: { src: "assets/places/gyeongbokgung.jpg", he: "ארמון גיונגבוקגונג" },
   bukchon: { src: "assets/places/bukchon.jpg", he: "כפר הנוק בוקצ׳ון" },
   ikseon: { src: "assets/places/ikseon.jpg?v=2", he: "איקסאון" },

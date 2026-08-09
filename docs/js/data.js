@@ -2,7 +2,7 @@
 window.TRIP = {
   "title": "Korea + Japan 2026",
   "subtitle": "Idan & Shahar itinerary (dad's Excel was inspiration only)",
-  "dates": "August 27 – September 23/24, 2026",
+  "dates": "August 27 – September 24/25, 2026",
   "route": [
     "Seoul",
     "Tokyo",
@@ -14,27 +14,58 @@ window.TRIP = {
   ],
   "notes": [
     "Route: Seoul → Tokyo → Hakone → Kawaguchiko → Kyoto → Osaka → Tokyo.",
-    "Sep 5: Ghibli Museum + Inokashira + Shimokitazawa.",
-    "Sep 21: easy Tokyo day — late start, cafés, light shopping.",
-    "Departure Sep 23/24 — confirm flight.",
+    "Sep 6: Ghibli Museum + Inokashira + Shimokitazawa.",
+    "Sep 22: easy Tokyo day — late start, cafés, light shopping.",
+    "Seoul hotel: Amanti Hongdae · 27 Aug–2 Sep.",
+    "Departure Sep 24/25 — confirm flight.",
     "Tap places for Google / Kakao / Naver / Yahoo! / Apple Maps."
   ]
 };
 window.PLACES = {
-  "brick-hotel": {
-    "id": "brick-hotel",
-    "name": "9 Brick Hotel Hongdae",
-    "nameJa": "나인브릭호텔",
+  "amanti-hotel": {
+    "id": "amanti-hotel",
+    "name": "Amanti Hotel Seoul Hongdae",
+    "nameJa": "아만티호텔 서울",
     "city": "Seoul",
     "country": "KR",
     "tags": [
       "hotel",
       "booked"
     ],
-    "lat": 37.5563,
-    "lng": 126.9236,
-    "blurb": "Booked — our Seoul base in Hongdae.",
-    "taxiAddress": "서울특별시 마포구 와우산로 94, 나인브릭호텔"
+    "lat": 37.5577,
+    "lng": 126.9248,
+    "blurb": "Booked — Seoul base in Hongdae (27 Aug–2 Sep).",
+    "taxiAddress": "서울특별시 마포구 월드컵북로 31"
+  },
+  "namdaemun": {
+    "id": "namdaemun",
+    "name": "Namdaemun Market",
+    "nameJa": "남대문시장",
+    "city": "Seoul",
+    "country": "KR",
+    "tags": [
+      "must-see",
+      "food",
+      "market"
+    ],
+    "lat": 37.5595,
+    "lng": 126.977,
+    "blurb": "Classic downtown market — snacks, clothes, souvenirs."
+  },
+  "mangwon": {
+    "id": "mangwon",
+    "name": "Mangwon Market",
+    "nameJa": "망원시장",
+    "city": "Seoul",
+    "country": "KR",
+    "tags": [
+      "food",
+      "market",
+      "neighborhood"
+    ],
+    "lat": 37.556,
+    "lng": 126.9102,
+    "blurb": "Local market next to Yeonnam — street snacks and produce."
   },
   "icn": {
     "id": "icn",
@@ -1761,37 +1792,37 @@ window.DAYS = [
     "weekday": "Thursday",
     "city": "Seoul",
     "country": "KR",
-    "hotelId": "brick-hotel",
+    "hotelId": "amanti-hotel",
     "title": "Arrival & night bites",
-    "summary": "Land in Seoul, check in at 9 Brick Hotel Hongdae, Myeongdong night-food walk, optional Hongdae stroll.",
+    "summary": "Land in Seoul, check in at Amanti Hotel Hongdae, easy Myeongdong night-food walk, optional Hongdae stroll.",
     "food": "Myeongdong street food night market.",
     "placeIds": [
       "icn",
-      "brick-hotel",
+      "amanti-hotel",
       "myeongdong",
       "hongdae"
     ],
     "transport": [
-      "ICN → hotel (~1h).",
+      "ICN → Amanti (~1h).",
       "Subway/taxi to Myeongdong."
     ],
     "tips": [
       "Get T-money / Climate Card.",
-      "Light arrival evening — bigger days start Friday."
+      "Light arrival evening."
     ],
     "timeline": [
       {
         "time": "14:00",
         "title": "Land & transfer to hotel",
-        "note": "Incheon Airport → Hongdae hotel.",
+        "note": "Incheon Airport → Amanti Hongdae.",
         "placeId": "icn",
         "category": "transit"
       },
       {
         "time": "17:00",
-        "title": "Check in — 9 Brick Hotel Hongdae",
-        "note": "Hongdae base.",
-        "placeId": "brick-hotel",
+        "title": "Check in — Amanti Hotel Seoul Hongdae",
+        "note": "Hongdae base · 27 Aug–2 Sep.",
+        "placeId": "amanti-hotel",
         "category": "hotel"
       },
       {
@@ -1817,10 +1848,10 @@ window.DAYS = [
     "weekday": "Friday",
     "city": "Seoul",
     "country": "KR",
-    "hotelId": "brick-hotel",
+    "hotelId": "amanti-hotel",
     "title": "Royal heart of Seoul",
-    "summary": "Gyeongbokgung with hanbok, Bukchon Hanok Village, Ikseon → Insadong, Gwangjang Market dinner.",
-    "food": "Gwangjang Market street-food feast.",
+    "summary": "Gyeongbokgung with the 10:00 changing of the guard + hanbok, Bukchon, Ikseon → Insadong, Gwangjang Market dinner.",
+    "food": "Gwangjang Market street-food feast (open ~09:00–22:30).",
     "placeIds": [
       "gyeongbokgung",
       "bukchon",
@@ -1833,13 +1864,22 @@ window.DAYS = [
       "Walk Bukchon → Ikseon → Insadong → Gwangjang."
     ],
     "tips": [
+      "Arrive early for the 10:00 guard ceremony at Gwanghwamun (~20 min).",
+      "Also at 14:00 if you miss morning.",
       "Rent hanbok for free palace entry."
     ],
     "timeline": [
       {
-        "time": "09:00",
-        "title": "Gyeongbokgung Palace + hanbok",
-        "note": "Main royal palace; traditional dress rental.",
+        "time": "09:15",
+        "title": "Arrive Gyeongbokgung / hanbok",
+        "note": "Get set before the ceremony.",
+        "placeId": "gyeongbokgung",
+        "category": "culture"
+      },
+      {
+        "time": "10:00",
+        "title": "Changing of the guard + palace",
+        "note": "Ceremony at Gwanghwamun (~20 min), then palace grounds.",
         "placeId": "gyeongbokgung",
         "end": "12:30",
         "category": "culture"
@@ -1863,9 +1903,9 @@ window.DAYS = [
       {
         "time": "17:30",
         "title": "Gwangjang Market feast",
-        "note": "Classic street-food market.",
+        "note": "Classic street-food market · open until ~22:30.",
         "placeId": "gwangjang",
-        "end": "22:30",
+        "end": "22:00",
         "category": "dining"
       }
     ]
@@ -1876,50 +1916,39 @@ window.DAYS = [
     "weekday": "Saturday",
     "city": "Seoul",
     "country": "KR",
-    "hotelId": "brick-hotel",
-    "title": "Temples, Gangnam Unni Guide & Dongdaemun",
-    "summary": "Jogyesa + Changdeokgung Secret Garden, Unni Guide + treatment in Gangnam, Bongeunsa, COEX Starfield, Dongdaemun night malls.",
-    "food": "Lunch near the palace / Insadong; light dinner near Dongdaemun.",
+    "hotelId": "amanti-hotel",
+    "title": "Secret Garden, Unni Guide & COEX",
+    "summary": "Jogyesa + Changdeokgung Secret Garden in the morning, Unni Guide 15:00–16:00 + treatment, then Bongeunsa and COEX Starfield — keep the evening lighter (Dongdaemun moves to Tuesday).",
+    "food": "Lunch near the palace / Insadong; dinner near COEX / Gangnam.",
     "placeIds": [
-      "hongdae",
       "jogyesa",
       "changdeokgung",
       "unni-guide",
       "gangnam",
       "bongeunsa",
-      "coex",
-      "dongdaemun"
+      "coex"
     ],
     "transport": [
       "Hongdae → Jogyesa / Changdeokgung.",
-      "Subway to Gangnam / Sinnonhyeon for Unni Guide.",
-      "COEX → Dongdaemun evening."
+      "Subway to Gangnam / Sinnonhyeon for Unni Guide."
     ],
     "tips": [
-      "Book Secret Garden timed slot — closed Mondays.",
-      "Unni Guide 15:00–16:00 — book ahead.",
-      "Night malls: APM, DDP Fashion Mall, Hyundai City Outlets."
+      "Secret Garden: timed guided tour only — book at ticket.uforus.co.kr (opens 10:00 KST, max 6 days ahead).",
+      "Unni Guide 15:00–16:00."
     ],
     "timeline": [
       {
-        "time": "08:30",
-        "title": "Optional animal café breakfast in Hongdae",
-        "note": "Animal café near the hotel.",
-        "placeId": "hongdae",
-        "category": "dining"
-      },
-      {
-        "time": "09:30",
+        "time": "09:00",
         "title": "Jogyesa Temple",
         "note": "Buddhist temple near Insadong.",
         "placeId": "jogyesa",
-        "end": "10:30",
+        "end": "10:00",
         "category": "culture"
       },
       {
-        "time": "10:45",
+        "time": "10:15",
         "title": "Changdeokgung & Secret Garden",
-        "note": "UNESCO palace — timed Secret Garden slot.",
+        "note": "UNESCO palace — pre-book timed tour.",
         "placeId": "changdeokgung",
         "end": "13:00",
         "category": "culture"
@@ -1953,16 +1982,8 @@ window.DAYS = [
         "title": "COEX & Starfield Library",
         "note": "Mall + Starfield Library.",
         "placeId": "coex",
-        "end": "20:00",
+        "end": "21:00",
         "category": "shopping"
-      },
-      {
-        "time": "20:30",
-        "title": "Dongdaemun night market & malls",
-        "note": "DDP + APM / Fashion Mall / Hyundai City Outlets.",
-        "placeId": "dongdaemun",
-        "end": "23:30",
-        "category": "dining"
       }
     ]
   },
@@ -1972,73 +1993,72 @@ window.DAYS = [
     "weekday": "Sunday",
     "city": "Seoul",
     "country": "KR",
-    "hotelId": "brick-hotel",
-    "title": "Seongsu, N Tower sunset & Itaewon",
-    "summary": "Seongsu breakfast and Seoulistique facial, Seoul Forest, Namsan cable to N Tower sunset, Itaewon nightlife.",
-    "food": "Breakfast/cafés in Seongsu; dinner in Itaewon.",
+    "hotelId": "amanti-hotel",
+    "title": "Hongdae facial, Yeonnam & Seongsu",
+    "summary": "Morning facial near Hongdae (Inbal’s recommended clinic), Yeonnam + Mangwon Market, then an easy Seongsu afternoon with Seoul Forest — no tower rush today.",
+    "food": "Café lunch in Yeonnam / Mangwon; Seongsu snacks.",
     "placeIds": [
+      "hongdae",
+      "yeonnam",
+      "mangwon",
       "seongsu",
-      "seoulistique",
       "seoul-forest",
-      "namsan-cable",
-      "n-tower",
-      "itaewon"
+      "seoulistique"
     ],
     "transport": [
-      "Head to Seongsu late morning.",
-      "Seoul Forest → Namsan → Itaewon."
+      "Stay Hongdae-side for the morning appointment.",
+      "Walk/subway Yeonnam → Mangwon → Seongsu."
     ],
     "tips": [
-      "Book Seoulistique via Instagram @seoulistique.skin / WhatsApp.",
-      "Book N Tower for sunset; cable tickets at the base."
+      "Book the Hongdae-area clinic Inbal recommended (closer than Seongsu).",
+      "Seoulistique remains a backup if you prefer Seongsu."
     ],
     "timeline": [
       {
         "time": "10:00",
-        "title": "Seongsu breakfast & neighborhood stroll",
-        "note": "Cafés, boutiques, pop-ups.",
-        "placeId": "seongsu",
-        "end": "11:30",
+        "title": "Facial near Hongdae",
+        "note": "Inbal’s recommended clinic — book ahead.",
+        "placeId": "hongdae",
+        "end": "11:45",
         "category": "dining"
       },
       {
-        "time": "12:00",
-        "title": "Seoulistique facial",
-        "note": "Skin analysis + facial.",
-        "placeId": "seoulistique",
-        "end": "13:45",
-        "category": "culture"
+        "time": "12:15",
+        "title": "Yeonnam-dong stroll",
+        "note": "Cafés and boutiques by the Gyeongui Line Forest.",
+        "placeId": "yeonnam",
+        "end": "13:30",
+        "category": "dining"
       },
       {
-        "time": "14:00",
-        "title": "More Seongsu + Seoul Forest",
-        "note": "Neighborhood + urban park.",
+        "time": "13:45",
+        "title": "Mangwon Market",
+        "note": "Local market snacks next to Yeonnam.",
+        "placeId": "mangwon",
+        "end": "15:00",
+        "category": "dining"
+      },
+      {
+        "time": "15:30",
+        "title": "Seongsu-dong",
+        "note": "Cafés, boutiques, pop-ups — keep it easy.",
+        "placeId": "seongsu",
+        "end": "17:30",
+        "category": "dining"
+      },
+      {
+        "time": "17:45",
+        "title": "Seoul Forest",
+        "note": "Urban park break.",
         "placeId": "seoul-forest",
-        "end": "16:30",
+        "end": "19:00",
         "category": "attraction"
       },
       {
-        "time": "17:30",
-        "title": "Namsan cable car",
-        "note": "Up Namsan toward N Tower.",
-        "placeId": "namsan-cable",
-        "end": "18:00",
-        "category": "transit"
-      },
-      {
-        "time": "18:05",
-        "title": "N Seoul Tower sunset",
-        "note": "City viewpoint + love locks.",
-        "placeId": "n-tower",
-        "end": "19:30",
-        "category": "attraction"
-      },
-      {
-        "time": "20:00",
-        "title": "Itaewon / Homo Hill nightlife",
-        "note": "Dinner, bars, LGBTQ+ area.",
-        "placeId": "itaewon",
-        "end": "23:30",
+        "time": "19:30",
+        "title": "Dinner near Seongsu / Hongdae",
+        "note": "Relaxed end of day.",
+        "placeId": "seongsu",
         "category": "dining"
       }
     ]
@@ -2049,7 +2069,7 @@ window.DAYS = [
     "weekday": "Monday",
     "city": "Seoul",
     "country": "KR",
-    "hotelId": "brick-hotel",
+    "hotelId": "amanti-hotel",
     "title": "Lotte World + spa night",
     "summary": "Full Lotte World day, Seokchon Lake / Lotte Tower Seoul Sky, then jimjilbang and dinner near Jamsil.",
     "food": "Park / Lotte mall snacks; simple dinner near Jamsil after the spa.",
@@ -2072,7 +2092,7 @@ window.DAYS = [
         "time": "08:30",
         "title": "Breakfast & subway to Jamsil",
         "note": "To Lotte World area.",
-        "placeId": "brick-hotel",
+        "placeId": "amanti-hotel",
         "category": "hotel"
       },
       {
@@ -2113,13 +2133,92 @@ window.DAYS = [
     "id": "d06",
     "date": "2026-09-01",
     "weekday": "Tuesday",
+    "city": "Seoul",
+    "country": "KR",
+    "hotelId": "amanti-hotel",
+    "title": "Markets, N Tower sunset & Itaewon",
+    "summary": "Namdaemun Market morning, Cheonggyecheon walk, Dongdaemun / DDP afternoon, Namsan cable to N Tower sunset, then Itaewon nightlife.",
+    "food": "Namdaemun snacks; dinner in Itaewon.",
+    "placeIds": [
+      "namdaemun",
+      "cheonggyecheon",
+      "dongdaemun",
+      "namsan-cable",
+      "n-tower",
+      "itaewon"
+    ],
+    "transport": [
+      "Hongdae → Namdaemun.",
+      "Walk Cheonggyecheon toward Dongdaemun.",
+      "Evening to Namsan → Itaewon."
+    ],
+    "tips": [
+      "Book N Tower for sunset; cable tickets at the base.",
+      "Night malls at Dongdaemun: APM, DDP Fashion Mall, Hyundai City Outlets."
+    ],
+    "timeline": [
+      {
+        "time": "09:30",
+        "title": "Namdaemun Market",
+        "note": "Classic downtown market — food and shopping.",
+        "placeId": "namdaemun",
+        "end": "11:30",
+        "category": "dining"
+      },
+      {
+        "time": "11:45",
+        "title": "Cheonggyecheon Stream walk",
+        "note": "Easy downtown stream toward Dongdaemun.",
+        "placeId": "cheonggyecheon",
+        "end": "13:00",
+        "category": "attraction"
+      },
+      {
+        "time": "13:15",
+        "title": "Dongdaemun / DDP & night malls",
+        "note": "DDP + APM / Fashion Mall / outlets.",
+        "placeId": "dongdaemun",
+        "end": "16:30",
+        "category": "dining"
+      },
+      {
+        "time": "17:30",
+        "title": "Namsan cable car",
+        "note": "Up Namsan toward N Tower.",
+        "placeId": "namsan-cable",
+        "end": "18:00",
+        "category": "transit"
+      },
+      {
+        "time": "18:05",
+        "title": "N Seoul Tower sunset",
+        "note": "City viewpoint + love locks.",
+        "placeId": "n-tower",
+        "end": "19:30",
+        "category": "attraction"
+      },
+      {
+        "time": "20:00",
+        "title": "Itaewon / Homo Hill nightlife",
+        "note": "Dinner, bars, LGBTQ+ area.",
+        "placeId": "itaewon",
+        "end": "23:30",
+        "category": "dining"
+      }
+    ]
+  },
+  {
+    "id": "d07",
+    "date": "2026-09-02",
+    "weekday": "Wednesday",
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
     "title": "Seoul → Tokyo & Shinjuku lights",
-    "summary": "Fly Seoul to Tokyo, set up Suica and eSIM, then a Shinjuku evening in Omoide Yokocho or Golden Gai.",
+    "summary": "Checkout Amanti, fly Seoul to Tokyo, set up Suica and eSIM, then a Shinjuku evening in Omoide Yokocho or Golden Gai.",
     "food": "Yakitori in Omoide Yokocho or Golden Gai drinks.",
     "placeIds": [
+      "amanti-hotel",
       "icn",
       "narita",
       "shinjuku",
@@ -2127,7 +2226,7 @@ window.DAYS = [
       "golden-gai"
     ],
     "transport": [
-      "Hotel → ICN/GMP.",
+      "Amanti → ICN/GMP.",
       "Flight to Tokyo.",
       "Airport → Tokyo hotel (Shinjuku area)."
     ],
@@ -2138,10 +2237,10 @@ window.DAYS = [
     "timeline": [
       {
         "time": "08:00",
-        "title": "Checkout & airport transfer",
+        "title": "Checkout Amanti & airport transfer",
         "note": "ICN or GMP — match your ticket.",
-        "placeId": "icn",
-        "category": "transit"
+        "placeId": "amanti-hotel",
+        "category": "hotel"
       },
       {
         "time": "13:00",
@@ -2182,9 +2281,9 @@ window.DAYS = [
     }
   },
   {
-    "id": "d07",
-    "date": "2026-09-02",
-    "weekday": "Wednesday",
+    "id": "d08",
+    "date": "2026-09-03",
+    "weekday": "Thursday",
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
@@ -2248,9 +2347,9 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d08",
-    "date": "2026-09-03",
-    "weekday": "Thursday",
+    "id": "d09",
+    "date": "2026-09-04",
+    "weekday": "Friday",
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
@@ -2305,9 +2404,9 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d09",
-    "date": "2026-09-04",
-    "weekday": "Friday",
+    "id": "d10",
+    "date": "2026-09-05",
+    "weekday": "Saturday",
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
@@ -2353,9 +2452,9 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d10",
-    "date": "2026-09-05",
-    "weekday": "Saturday",
+    "id": "d11",
+    "date": "2026-09-06",
+    "weekday": "Sunday",
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
@@ -2406,9 +2505,9 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d11",
-    "date": "2026-09-06",
-    "weekday": "Sunday",
+    "id": "d12",
+    "date": "2026-09-07",
+    "weekday": "Monday",
     "city": "Hakone",
     "country": "JP",
     "hotelId": null,
@@ -2477,9 +2576,9 @@ window.DAYS = [
     }
   },
   {
-    "id": "d12",
-    "date": "2026-09-07",
-    "weekday": "Monday",
+    "id": "d13",
+    "date": "2026-09-08",
+    "weekday": "Tuesday",
     "city": "Kawaguchiko",
     "country": "JP",
     "hotelId": null,
@@ -2564,9 +2663,9 @@ window.DAYS = [
     }
   },
   {
-    "id": "d13",
-    "date": "2026-09-08",
-    "weekday": "Tuesday",
+    "id": "d14",
+    "date": "2026-09-09",
+    "weekday": "Wednesday",
     "city": "Kawaguchiko",
     "country": "JP",
     "hotelId": null,
@@ -2608,9 +2707,9 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d14",
-    "date": "2026-09-09",
-    "weekday": "Wednesday",
+    "id": "d15",
+    "date": "2026-09-10",
+    "weekday": "Thursday",
     "city": "Kyoto",
     "country": "JP",
     "hotelId": null,
@@ -2694,9 +2793,9 @@ window.DAYS = [
     }
   },
   {
-    "id": "d15",
-    "date": "2026-09-10",
-    "weekday": "Thursday",
+    "id": "d16",
+    "date": "2026-09-11",
+    "weekday": "Friday",
     "city": "Kyoto",
     "country": "JP",
     "hotelId": null,
@@ -2756,9 +2855,9 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d16",
-    "date": "2026-09-11",
-    "weekday": "Friday",
+    "id": "d17",
+    "date": "2026-09-12",
+    "weekday": "Saturday",
     "city": "Kyoto",
     "country": "JP",
     "hotelId": null,
@@ -2845,9 +2944,9 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d17",
-    "date": "2026-09-12",
-    "weekday": "Saturday",
+    "id": "d18",
+    "date": "2026-09-13",
+    "weekday": "Sunday",
     "city": "Kyoto",
     "country": "JP",
     "hotelId": null,
@@ -2924,9 +3023,9 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d18",
-    "date": "2026-09-13",
-    "weekday": "Sunday",
+    "id": "d19",
+    "date": "2026-09-14",
+    "weekday": "Monday",
     "city": "Kyoto",
     "country": "JP",
     "hotelId": null,
@@ -2989,9 +3088,9 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d19",
-    "date": "2026-09-14",
-    "weekday": "Monday",
+    "id": "d20",
+    "date": "2026-09-15",
+    "weekday": "Tuesday",
     "city": "Osaka",
     "country": "JP",
     "hotelId": null,
@@ -3066,9 +3165,9 @@ window.DAYS = [
     }
   },
   {
-    "id": "d20",
-    "date": "2026-09-15",
-    "weekday": "Tuesday",
+    "id": "d21",
+    "date": "2026-09-16",
+    "weekday": "Wednesday",
     "city": "Osaka",
     "country": "JP",
     "hotelId": null,
@@ -3132,9 +3231,9 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d21",
-    "date": "2026-09-16",
-    "weekday": "Wednesday",
+    "id": "d22",
+    "date": "2026-09-17",
+    "weekday": "Thursday",
     "city": "Osaka",
     "country": "JP",
     "hotelId": null,
@@ -3202,9 +3301,9 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d22",
-    "date": "2026-09-17",
-    "weekday": "Thursday",
+    "id": "d23",
+    "date": "2026-09-18",
+    "weekday": "Friday",
     "city": "Osaka",
     "country": "JP",
     "hotelId": null,
@@ -3272,9 +3371,9 @@ window.DAYS = [
     }
   },
   {
-    "id": "d23",
-    "date": "2026-09-18",
-    "weekday": "Friday",
+    "id": "d24",
+    "date": "2026-09-19",
+    "weekday": "Saturday",
     "city": "Osaka",
     "country": "JP",
     "hotelId": null,
@@ -3319,9 +3418,9 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d24",
-    "date": "2026-09-19",
-    "weekday": "Saturday",
+    "id": "d25",
+    "date": "2026-09-20",
+    "weekday": "Sunday",
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
@@ -3389,9 +3488,9 @@ window.DAYS = [
     }
   },
   {
-    "id": "d25",
-    "date": "2026-09-20",
-    "weekday": "Sunday",
+    "id": "d26",
+    "date": "2026-09-21",
+    "weekday": "Monday",
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
@@ -3436,9 +3535,9 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d26",
-    "date": "2026-09-21",
-    "weekday": "Monday",
+    "id": "d27",
+    "date": "2026-09-22",
+    "weekday": "Tuesday",
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
@@ -3481,9 +3580,9 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d27",
-    "date": "2026-09-22",
-    "weekday": "Tuesday",
+    "id": "d28",
+    "date": "2026-09-23",
+    "weekday": "Wednesday",
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
@@ -3519,9 +3618,9 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d28",
-    "date": "2026-09-23",
-    "weekday": "Wednesday",
+    "id": "d29",
+    "date": "2026-09-24",
+    "weekday": "Thursday",
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
@@ -3536,7 +3635,7 @@ window.DAYS = [
       "N'EX to NRT or Monorail/train to HND."
     ],
     "tips": [
-      "Confirm actual flight date (Sep 23 or 24).",
+      "Confirm actual flight date (Sep 24 or 25).",
       "Keep passports & Visit Japan Web QR handy."
     ],
     "timeline": [

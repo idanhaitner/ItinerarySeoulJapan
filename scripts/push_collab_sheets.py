@@ -199,13 +199,53 @@ def build_timeline(days, places, he_places=None):
     return rows
 
 
+def _notes_by_date_from_fetch():
+    """Preserve «הערות שלנו» from CURRENT_FROM_SHEETS.txt (ימים tab), keyed by ISO date."""
+    path = ROOT / "collab" / "CURRENT_FROM_SHEETS.txt"
+    if not path.exists():
+        return {}
+    text = path.read_text(encoding="utf-8")
+    if "===== ימים =====" not in text:
+        return {}
+    section = text.split("===== ימים =====", 1)[1]
+    if "=====" in section:
+        section = section.split("=====", 1)[0]
+    lines = [ln for ln in section.strip().splitlines() if ln.strip()]
+    if len(lines) < 2:
+        return {}
+    header = lines[0].split("\t")
+    try:
+        date_i = header.index("תאריך")
+        notes_i = header.index("הערות שלנו")
+    except ValueError:
+        return {}
+    notes = {}
+    for ln in lines[1:]:
+        cols = ln.split("\t")
+        if len(cols) <= max(date_i, notes_i):
+            continue
+        raw_date = (cols[date_i] or "").strip()
+        note = (cols[notes_i] or "").strip()
+        if not raw_date or not note:
+            continue
+        iso = raw_date
+        if "/" in raw_date:
+            parts = raw_date.split("/")
+            if len(parts) == 3:
+                d, m, y = parts
+                iso = f"{y.zfill(4)}-{m.zfill(2)}-{d.zfill(2)}"
+        notes[iso] = note
+    return notes
+
+
 def build_days(days, places, he_places=None):
     header = ["תאריך", "יום", "עיר", "כותרת", "מה בתוכנית", "מלון", "אוכל", "טיפים", "העברה", "הערות שלנו"]
     rows = [header]
+    preserved = _notes_by_date_from_fetch()
     for d in days:
         hotel = places.get(d.get("hotelId") or "", {})
         hotel_name = hotel.get("name") or "טרם נבחר"
-        if d.get("hotelId") == "brick-hotel":
+        if d.get("hotelId") == "amanti-hotel":
             hotel_name += " ✓"
         tips = " • ".join(d.get("tips") or [])
         tr = d.get("transfer") or {}
@@ -223,7 +263,7 @@ def build_days(days, places, he_places=None):
                 d.get("food") or "",
                 tips,
                 transfer,
-                "",
+                preserved.get(d["date"], ""),
             ]
         )
     return rows
@@ -246,7 +286,7 @@ def build_hotels(days):
     """Hotels tracker with real trip date ranges."""
     # Preferred labels / areas for known stays
     meta = {
-        ("Seoul", 0): ("סיאול", "Hongdae", "9 Brick Hotel Hongdae", "הוזמן", "בסיס סיאול"),
+        ("Seoul", 0): ("סיאול", "Hongdae", "Amanti Hotel Seoul Hongdae", "הוזמן", "בסיס סיאול · צ׳ק־אאוט 2 בספט׳"),
         ("Tokyo", 0): ("טוקיו (התחלה)", "Shinjuku", "", "לטפל", ""),
         ("Hakone", 0): ("הקונה", "ריוקאן / אונסן", "", "לטפל", "קייסקי"),
         ("Kawaguchiko", 0): ("קוואגוצ׳יקו", "נוף לפוג׳י", "", "לטפל", ""),
@@ -267,11 +307,13 @@ def build_hotels(days):
             (city, key_i),
             (CITY.get(city, city), "", "", "לטפל", ""),
         )
-        # Seoul hotel already booked in data
+        end = block["end"]
+        # Seoul hotel already booked — nights through 1 Sep, checkout morning of 2 Sep
         if city == "Seoul":
-            hotel = "9 Brick Hotel Hongdae"
+            hotel = "Amanti Hotel Seoul Hongdae"
             status = "הוזמן"
-        rows.append([label, block["start"], block["end"], hotel, area, status, notes])
+            end = "2026-09-02"
+        rows.append([label, block["start"], end, hotel, area, status, notes])
     return rows
 
 
@@ -280,18 +322,19 @@ def build_bookings(days):
     by_id = {d["id"]: d["date"] for d in days}
     items = [
         ("Lotte World", "d05", "הוזמן", "יום שני 31 באוג׳"),
-        ("Changdeokgung Secret Garden", "d03", "לטפל", "סלוט מתוזמן — שבת 29 באוג׳"),
+        ("Changdeokgung Secret Garden", "d03", "לטפל", "סיור מודרך · ticket.uforus.co.kr · שבת 29 באוג׳"),
         ("Unni Guide Center", "d03", "לטפל", "15:00–16:00"),
-        ("Seoulistique facial", "d04", "לטפל", "@seoulistique.skin — יום א׳ 30 באוג׳"),
-        ("טיסת סיאול → טוקיו", "d06", "לטפל", ""),
-        ("Shibuya Sky sunset", "d07", "לטפל", "~4 שבועות מראש"),
-        ("Ghibli Museum", "d10", "לטפל", "נפתח ב־10 לחודש ב־10:00 שעון יפן"),
-        ("Romancecar (Observation Car)", "d11", "לטפל", "~חודש מראש"),
-        ("Takkyubin מזוודות טוקיו→קיוטו", "d11", "לטפל", ""),
-        ("teamLab Biovortex Kyoto", "d14", "לטפל", "כרטיס מתוזמן"),
-        ("Kawadoko lunch", "d17", "לטפל", "Hirobun / Fujiya — שבועות מראש"),
-        ("USJ Express Pass", "d20", "לטפל", "בדיוק חודשיים מראש בחצות יפן"),
-        ("טיסת חזרה הביתה", "d28", "לטפל", "לאשר תאריך 23 או 24 בספט׳"),
+        ("טיפול פנים ליד Hongdae (המלצת ענבל)", "d04", "לטפל", "Seoulistique כגיבוי · יום א׳ 30 באוג׳"),
+        ("N Seoul Tower sunset", "d06", "לטפל", "שלישי 1 בספט׳"),
+        ("טיסת סיאול → טוקיו", "d07", "לטפל", "צ׳ק־אאוט Amanti · 2 בספט׳"),
+        ("Shibuya Sky sunset", "d08", "לטפל", "~4 שבועות מראש"),
+        ("Ghibli Museum", "d11", "לטפל", "נפתח ב־10 לחודש ב־10:00 שעון יפן"),
+        ("Romancecar (Observation Car)", "d12", "לטפל", "~חודש מראש"),
+        ("Takkyubin מזוודות טוקיו→קיוטו", "d12", "לטפל", ""),
+        ("teamLab Biovortex Kyoto", "d15", "לטפל", "כרטיס מתוזמן"),
+        ("Kawadoko lunch", "d18", "לטפל", "Hirobun / Fujiya — שבועות מראש"),
+        ("USJ Express Pass", "d21", "לטפל", "בדיוק חודשיים מראש בחצות יפן"),
+        ("טיסת חזרה הביתה", "d29", "לטפל", "לאשר תאריך 24 או 25 בספט׳"),
     ]
     rows = [["מה להזמין", "תאריך", "סטטוס", "הערות"]]
     for name, day_id, status, notes in items:
