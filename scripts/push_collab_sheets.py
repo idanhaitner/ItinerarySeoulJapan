@@ -119,7 +119,7 @@ def load_trip():
                     d["timeline"][i]["title"] = item["title"]
                 if item.get("note") is not None:
                     d["timeline"][i]["note"] = item["note"]
-    return trip, days, places
+    return trip, days, places, he.get("places") or {}
 
 
 def fmt_date(iso: str) -> str:
@@ -143,7 +143,40 @@ def place_name(places, pid):
     return (places.get(pid) or {}).get("name") or pid
 
 
-def build_timeline(days, places):
+def place_label(places, he_places, pid):
+    """English/roman place name + Hebrew what-it-is blurb."""
+    if not pid:
+        return ""
+    name = place_name(places, pid)
+    blurb = ((he_places or {}).get(pid) or {}).get("blurb") or ""
+    blurb = blurb.strip()
+    if name and blurb:
+        return f"{name} — {blurb}"
+    return name or blurb
+
+
+def plan_bullets(d, places, he_places):
+    """One bullet per timeline attraction, with Hebrew explanation."""
+    lines = []
+    for item in d.get("timeline") or []:
+        title = (item.get("title") or "").strip()
+        if not title:
+            continue
+        note = (item.get("note") or "").strip()
+        pid = item.get("placeId")
+        blurb = ((he_places or {}).get(pid) or {}).get("blurb") or ""
+        blurb = blurb.strip()
+        explain = note or blurb
+        if explain and explain not in title:
+            lines.append(f"• {title} — {explain}")
+        else:
+            lines.append(f"• {title}")
+    if lines:
+        return "\n".join(lines)
+    return (d.get("summary") or "").strip()
+
+
+def build_timeline(days, places, he_places=None):
     header = ["תאריך", "יום", "עיר", "שעה", "עד", "מה עושים", "פרטים", "מקום", "הערות שלנו"]
     rows = [header]
     for d in days:
@@ -159,14 +192,14 @@ def build_timeline(days, places):
                     item.get("end") or "",
                     item.get("title") or "",
                     item.get("note") or "",
-                    place_name(places, item.get("placeId")),
+                    place_label(places, he_places, item.get("placeId")),
                     "",
                 ]
             )
     return rows
 
 
-def build_days(days, places):
+def build_days(days, places, he_places=None):
     header = ["תאריך", "יום", "עיר", "כותרת", "מה בתוכנית", "מלון", "אוכל", "טיפים", "העברה", "הערות שלנו"]
     rows = [header]
     for d in days:
@@ -185,7 +218,7 @@ def build_days(days, places):
                 WD.get(d["weekday"], d["weekday"]),
                 CITY.get(d["city"], d["city"]),
                 d.get("title") or "",
-                d.get("summary") or "",
+                plan_bullets(d, places, he_places),
                 hotel_name,
                 d.get("food") or "",
                 tips,
@@ -721,9 +754,52 @@ def create_or_open(cfg: dict):
     return wb
 
 
+def format_days_plan_column(wb, ws, nrows: int):
+    """Make «מה בתוכנית» readable: top/right-aligned bullets, wide column."""
+    if nrows < 2:
+        return
+    wb.batch_update(
+        {
+            "requests": [
+                {
+                    "repeatCell": {
+                        "range": {
+                            "sheetId": ws.id,
+                            "startRowIndex": 1,
+                            "endRowIndex": nrows,
+                            "startColumnIndex": 4,
+                            "endColumnIndex": 5,
+                        },
+                        "cell": {
+                            "userEnteredFormat": {
+                                "horizontalAlignment": "RIGHT",
+                                "verticalAlignment": "TOP",
+                                "wrapStrategy": "WRAP",
+                            }
+                        },
+                        "fields": "userEnteredFormat(horizontalAlignment,verticalAlignment,wrapStrategy)",
+                    }
+                },
+                {
+                    "updateDimensionProperties": {
+                        "range": {
+                            "sheetId": ws.id,
+                            "dimension": "COLUMNS",
+                            "startIndex": 4,
+                            "endIndex": 5,
+                        },
+                        "properties": {"pixelSize": 460},
+                        "fields": "pixelSize",
+                    }
+                },
+            ]
+        }
+    )
+
+
 def main() -> int:
     get_credentials(interactive=True)
-    trip, days, places = load_trip()
+    trip, days, places, he_places = load_trip()
     cfg = load_config()
     wb = create_or_open(cfg)
     cfg = load_config()
@@ -736,8 +812,8 @@ def main() -> int:
         pass
 
     tabs = {
-        "לוח זמנים": (build_timeline(days, places), {"city_col": 2, "date_cols": [0]}),
-        "ימים": (build_days(days, places), {"city_col": 2, "date_cols": [0]}),
+        "לוח זמנים": (build_timeline(days, places, he_places), {"city_col": 2, "date_cols": [0]}),
+        "ימים": (build_days(days, places, he_places), {"city_col": 2, "date_cols": [0]}),
         "מלונות": (build_hotels(days), {"status_col": 5, "date_cols": [1, 2]}),
         "להזמין": (build_bookings(days), {"status_col": 2, "date_cols": [1]}),
         "רעיונות": (build_ideas(), {"status_col": 3}),
@@ -755,6 +831,8 @@ def main() -> int:
             status_col=opts.get("status_col"),
             date_cols=opts.get("date_cols"),
         )
+        if title == "ימים":
+            format_days_plan_column(wb, wb.worksheet(title), len(values))
         created.append(title)
 
     # Delete old/messy tabs
