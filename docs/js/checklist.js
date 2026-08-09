@@ -151,7 +151,7 @@ window.CHECKLIST = {
         { id: "os-umeda", label: "כרטיס תצפית Umeda Sky Building (שקיעה · 19/9)", window: "ימים לפני", priority: "low" },
         { id: "hk-onsen-etiquette", label: "בדיקת כללי אונסן במלון הקונה", window: "לפני הצ׳ק־אין", priority: "low" },
         { id: "s-jimjilbang", label: "ג׳ימג׳ילבאנג ליד Jamsil אחרי לוטה", window: "31 באוג׳ בערב", priority: "low" },
-        { id: "ky-fushimi", label: "יציאה מוקדמת ל־Fushimi Inari + Tofuku-ji", window: "11 בספט׳", priority: "low" },
+        { id: "ky-fushimi", label: "יציאה מוקדמת ל־Fushimi Inari + יום מאצ'ה באוג'י (Byodo-in)", window: "11 בספט׳", priority: "low" },
         { id: "ky-bags", label: "איסוף מזוודות Takkyubin + העברה הלאה לאוסקה", window: "בהגעה לקיוטו / לפני אוסקה", priority: "medium" },
         { id: "kw-chureito", label: "צ׳ורייטו בשקיעה ביום ההגעה לקוואגוצ׳יקו", window: "8 בספט׳ אחר הצהריים", priority: "low" },
       ],

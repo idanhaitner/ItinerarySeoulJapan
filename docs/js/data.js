@@ -114,7 +114,7 @@ window.TRIP = {
     "Seoul→Tokyo booked: Air Premia YP7321 (2 Sep · ICN 08:50 → NRT 11:20).",
     "Sep 5: Tsukiji + teamLab Planets + Odaiba + Ginza.",
     "Sep 6: Street Kart + Inokashira/Kichijoji + Shimokitazawa (IDP required).",
-    "Sep 11: Fushimi Inari + Tofuku-ji + Nishiki.",
+    "Sep 11: Fushimi Inari + Uji (Byodo-in / matcha) + Nishiki.",
     "Sep 15: Osaka + teamLab Botanical Garden night.",
     "Sep 21–22: Nikko day trip, then Kamakura & Enoshima.",
     "Sep 23: Full Ginza shopping day + farewell dinner.",
@@ -1172,13 +1172,56 @@ window.PLACES = {
     "city": "Kyoto",
     "country": "JP",
     "tags": [
-      "must-see",
       "temple",
       "culture"
     ],
     "lat": 34.9606,
     "lng": 135.78,
     "blurb": "Zen temple near Fushimi — Tsutenkyo bridge and gardens."
+  },
+  "byodoin": {
+    "id": "byodoin",
+    "name": "Byodo-in",
+    "nameJa": "平等院",
+    "city": "Kyoto",
+    "country": "JP",
+    "tags": [
+      "must-see",
+      "temple",
+      "culture"
+    ],
+    "lat": 34.8894,
+    "lng": 135.8077,
+    "blurb": "Phoenix Hall — the temple on the ¥10 coin."
+  },
+  "uji-omotesando": {
+    "id": "uji-omotesando",
+    "name": "Uji Omotesando",
+    "nameJa": "宇治表参道",
+    "city": "Kyoto",
+    "country": "JP",
+    "tags": [
+      "must-see",
+      "food",
+      "shopping"
+    ],
+    "lat": 34.8905,
+    "lng": 135.8088,
+    "blurb": "Historic tea-shop street — matcha sweets and street snacks."
+  },
+  "uji-river": {
+    "id": "uji-river",
+    "name": "Uji River",
+    "nameJa": "宇治川",
+    "city": "Kyoto",
+    "country": "JP",
+    "tags": [
+      "nature",
+      "neighborhood"
+    ],
+    "lat": 34.8912,
+    "lng": 135.8095,
+    "blurb": "Scenic bridges and riverside walk in Uji."
   },
   "kiyomizu": {
     "id": "kiyomizu",
@@ -3191,24 +3234,26 @@ window.DAYS = [
     "city": "Kyoto",
     "country": "JP",
     "hotelId": null,
-    "title": "Fushimi Inari, Tofuku-ji & Nishiki",
-    "summary": "Sunrise Fushimi Inari, Tofuku-ji nearby, then Kiyomizu / Sannenzaka & Ninenzaka plus Nishiki Market.",
-    "food": "Street snacks on Higashiyama; Nishiki graze.",
+    "title": "Fushimi Inari, Uji matcha & Nishiki",
+    "summary": "Sunrise Fushimi Inari, then Uji for Byodo-in, matcha Omotesando and the river, then Kiyomizu / Sannenzaka and Nishiki Market.",
+    "food": "Matcha snacks in Uji; Nishiki graze later.",
     "placeIds": [
       "fushimi-inari",
-      "tofukuji",
+      "byodoin",
+      "uji-omotesando",
+      "uji-river",
       "kiyomizu",
       "sannenzaka",
       "nishiki"
     ],
     "transport": [
       "Early Keihan/JR to Fushimi.",
-      "Short hop to Tofuku-ji.",
-      "Keihan/bus to Higashiyama, then Nishiki."
+      "Keihan/JR Fushimi → Uji (~20–30m).",
+      "Return to Higashiyama, then Nishiki."
     ],
     "tips": [
       "Higher Fushimi paths are quieter.",
-      "Tofuku-ji is a short Keihan ride from Fushimi Inari."
+      "Byodo-in Phoenix Hall is the temple on the ¥10 coin."
     ],
     "timeline": [
       {
@@ -3216,44 +3261,60 @@ window.DAYS = [
         "title": "Fushimi Inari Taisha",
         "note": "Sunrise torii hike.",
         "placeId": "fushimi-inari",
-        "end": "10:00",
+        "end": "09:45",
         "category": "culture"
       },
       {
         "time": "10:30",
-        "title": "Tofuku-ji",
-        "note": "Zen temple — Tsutenkyo bridge and gardens.",
-        "placeId": "tofukuji",
-        "end": "12:15",
+        "title": "Byodo-in",
+        "note": "Phoenix Hall — iconic Uji temple.",
+        "placeId": "byodoin",
+        "end": "12:00",
         "category": "culture"
       },
       {
-        "time": "13:15",
-        "title": "Kiyomizu-dera",
-        "note": "Wooden stage temple.",
-        "placeId": "kiyomizu",
-        "end": "14:45",
-        "category": "culture"
-      },
-      {
-        "time": "14:50",
-        "title": "Sannenzaka & Ninenzaka",
-        "note": "Preserved stone streets.",
-        "placeId": "sannenzaka",
-        "end": "16:15",
+        "time": "12:15",
+        "title": "Uji Omotesando matcha street",
+        "note": "Tea shops, matcha soft-serve and sweets.",
+        "placeId": "uji-omotesando",
+        "end": "14:00",
         "category": "dining"
       },
       {
-        "time": "16:30",
-        "title": "Nishiki Market",
-        "note": "Street-food graze — Kyoto’s kitchen.",
-        "placeId": "nishiki",
+        "time": "14:00",
+        "title": "Uji River walk",
+        "note": "Bridges and riverside stroll.",
+        "placeId": "uji-river",
+        "end": "15:00",
+        "category": "attraction"
+      },
+      {
+        "time": "16:15",
+        "title": "Kiyomizu-dera",
+        "note": "Wooden stage temple.",
+        "placeId": "kiyomizu",
+        "end": "17:30",
+        "category": "culture"
+      },
+      {
+        "time": "17:35",
+        "title": "Sannenzaka & Ninenzaka",
+        "note": "Preserved stone streets.",
+        "placeId": "sannenzaka",
         "end": "18:15",
         "category": "dining"
       },
       {
-        "time": "19:00",
-        "title": "Relaxed dinner",
+        "time": "18:30",
+        "title": "Nishiki Market",
+        "note": "Street-food graze — Kyoto’s kitchen.",
+        "placeId": "nishiki",
+        "end": "19:30",
+        "category": "dining"
+      },
+      {
+        "time": "19:45",
+        "title": "Dinner",
         "note": "",
         "category": "dining"
       }
