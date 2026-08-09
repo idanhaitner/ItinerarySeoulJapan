@@ -709,13 +709,6 @@
 
     els.bookingsRoot.innerHTML = `
       ${stage}
-      <div class="progress-wrap">
-        <div class="progress-label"><span>${done} מתוך ${total} פריטים הוזמנו</span><span>${pct}%</span></div>
-        <div class="progress-bar"><span style="width:${pct}%"></span></div>
-        <div style="margin-top:14px">
-          <button type="button" class="btn-ghost" id="reset-checklist">איפוס רשימה</button>
-        </div>
-      </div>
       <div class="bookings-list">
         ${checklistData.groups
           .map(
@@ -1206,18 +1199,7 @@
       const input = e.target.closest("input[data-check]");
       if (!input) return;
       storage.setChecklistItem(input.dataset.check, input.checked);
-      const label = input.closest(".booking-item");
-      if (label) label.classList.toggle("done", input.checked);
-      const checked = storage.getChecklist();
-      const allItems = checklistData.groups.flatMap((g) => g.items);
-      const done = allItems.filter((i) => checked[i.id]).length;
-      const total = allItems.length;
-      const pct = total ? Math.round((done / total) * 100) : 0;
-      const bar = els.bookingsRoot.querySelector(".progress-bar > span");
-      const lab = els.bookingsRoot.querySelector(".progress-label");
-      if (bar) bar.style.width = `${pct}%`;
-      if (lab) lab.innerHTML = `<span>${done} מתוך ${total} פריטים הוזמנו</span><span>${pct}%</span>`;
-      setResultCount(`${done}/${total}`);
+      renderBookings();
     });
 
     document.body.addEventListener("click", (e) => {
@@ -1227,11 +1209,6 @@
       }
       if (e.target.id === "open-tips") {
         tools.openTipsModal();
-        return;
-      }
-      if (e.target.id === "reset-checklist") {
-        storage.resetChecklist();
-        renderBookings();
         return;
       }
       const openFlightDay = e.target.closest("[data-open-day]");
