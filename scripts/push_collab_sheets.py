@@ -279,9 +279,10 @@ def build_bookings(days):
     """Bookings with real trip dates from matching days when possible."""
     by_id = {d["id"]: d["date"] for d in days}
     items = [
-        ("Lotte World", "d02", "לטפל", "להזמין מראש"),
-        ("Changdeokgung Secret Garden", "d04", "לטפל", "סלוט מתוזמן"),
-        ("Seoulistique facial", "d05", "לטפל", "@seoulistique.skin"),
+        ("Lotte World", "d05", "הוזמן", "יום שני 31 באוג׳"),
+        ("Changdeokgung Secret Garden", "d03", "לטפל", "סלוט מתוזמן — שבת 29 באוג׳"),
+        ("Unni Guide Center", "d03", "לטפל", "15:00–16:00"),
+        ("Seoulistique facial", "d04", "לטפל", "@seoulistique.skin — יום א׳ 30 באוג׳"),
         ("טיסת סיאול → טוקיו", "d06", "לטפל", ""),
         ("Shibuya Sky sunset", "d07", "לטפל", "~4 שבועות מראש"),
         ("Ghibli Museum", "d10", "לטפל", "נפתח ב־10 לחודש ב־10:00 שעון יפן"),

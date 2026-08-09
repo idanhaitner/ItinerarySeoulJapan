@@ -1763,7 +1763,7 @@ window.DAYS = [
     "country": "KR",
     "hotelId": "brick-hotel",
     "title": "Arrival & night bites",
-    "summary": "Land in Seoul, check in at 9 Brick Hotel Hongdae, easy Myeongdong night-food walk, then a chill optional snack/drink around Hongdae if you still have energy.",
+    "summary": "Land in Seoul, check in at 9 Brick Hotel Hongdae, Myeongdong night-food walk, optional Hongdae stroll.",
     "food": "Myeongdong street food night market.",
     "placeIds": [
       "icn",
@@ -1777,35 +1777,35 @@ window.DAYS = [
     ],
     "tips": [
       "Get T-money / Climate Card.",
-      "Keep arrival evening light — big days start Friday."
+      "Light arrival evening — bigger days start Friday."
     ],
     "timeline": [
       {
         "time": "14:00",
         "title": "Land & transfer to hotel",
-        "note": "",
+        "note": "Incheon Airport → Hongdae hotel.",
         "placeId": "icn",
         "category": "transit"
       },
       {
         "time": "17:00",
         "title": "Check in — 9 Brick Hotel Hongdae",
-        "note": "",
+        "note": "Hongdae base.",
         "placeId": "brick-hotel",
         "category": "hotel"
       },
       {
         "time": "18:30",
         "title": "Myeongdong night food street walk",
-        "note": "Easy street food + neon shopping streets.",
+        "note": "Street food + neon shopping.",
         "placeId": "myeongdong",
         "end": "21:30",
         "category": "dining"
       },
       {
         "time": "22:00",
-        "title": "Optional Hongdae chill walk",
-        "note": "Late snack/drink or street vibe if energy remains.",
+        "title": "Optional Hongdae stroll",
+        "note": "Late snack or drink.",
         "placeId": "hongdae",
         "category": "dining"
       }
@@ -1819,10 +1819,9 @@ window.DAYS = [
     "country": "KR",
     "hotelId": "brick-hotel",
     "title": "Royal heart of Seoul",
-    "summary": "Culture day with Option A/B: Gyeongbokgung (+ hanbok) or Eunpyeong first, then Bukchon → Ikseon → Insadong, and Gwangjang Market dinner.",
+    "summary": "Gyeongbokgung with hanbok, Bukchon Hanok Village, Ikseon → Insadong, Gwangjang Market dinner.",
     "food": "Gwangjang Market street-food feast.",
     "placeIds": [
-      "eunpyeong",
       "gyeongbokgung",
       "bukchon",
       "ikseon",
@@ -1834,14 +1833,13 @@ window.DAYS = [
       "Walk Bukchon → Ikseon → Insadong → Gwangjang."
     ],
     "tips": [
-      "Rent hanbok for free palace entry vibe.",
-      "Option A starts at the palace; Option B does quieter Eunpyeong Hanok Village first."
+      "Rent hanbok for free palace entry."
     ],
     "timeline": [
       {
         "time": "09:00",
-        "title": "Option A/B: Gyeongbokgung morning",
-        "note": "Option A: palace (+ hanbok). Option B: Eunpyeong Hanok Village first, then the palace.",
+        "title": "Gyeongbokgung Palace + hanbok",
+        "note": "Main royal palace; traditional dress rental.",
         "placeId": "gyeongbokgung",
         "end": "12:30",
         "category": "culture"
@@ -1849,7 +1847,7 @@ window.DAYS = [
       {
         "time": "13:00",
         "title": "Bukchon Hanok Village",
-        "note": "Respect residents while photographing.",
+        "note": "Traditional wooden houses on the hill.",
         "placeId": "bukchon",
         "end": "14:15",
         "category": "culture"
@@ -1857,7 +1855,7 @@ window.DAYS = [
       {
         "time": "14:30",
         "title": "Ikseon-dong → Insadong",
-        "note": "Hip alleys, crafts, tea houses.",
+        "note": "Alleys, tea houses, crafts.",
         "placeId": "ikseon",
         "end": "17:00",
         "category": "dining"
@@ -1865,7 +1863,7 @@ window.DAYS = [
       {
         "time": "17:30",
         "title": "Gwangjang Market feast",
-        "note": "Street-food dinner (~until late).",
+        "note": "Classic street-food market.",
         "placeId": "gwangjang",
         "end": "22:30",
         "category": "dining"
@@ -1880,7 +1878,7 @@ window.DAYS = [
     "country": "KR",
     "hotelId": "brick-hotel",
     "title": "Temples, Gangnam Unni Guide & Dongdaemun",
-    "summary": "Jogyesa + Changdeokgung Secret Garden in the morning, then a Gangnam block with Unni Guide + treatment, Bongeunsa, COEX Starfield, and Dongdaemun night malls.",
+    "summary": "Jogyesa + Changdeokgung Secret Garden, Unni Guide + treatment in Gangnam, Bongeunsa, COEX Starfield, Dongdaemun night malls.",
     "food": "Lunch near the palace / Insadong; light dinner near Dongdaemun.",
     "placeIds": [
       "hongdae",
@@ -1899,21 +1897,21 @@ window.DAYS = [
     ],
     "tips": [
       "Book Secret Garden timed slot — closed Mondays.",
-      "Book Unni Guide Center appointment ahead.",
+      "Unni Guide 15:00–16:00 — book ahead.",
       "Night malls: APM, DDP Fashion Mall, Hyundai City Outlets."
     ],
     "timeline": [
       {
         "time": "08:30",
         "title": "Optional animal café breakfast in Hongdae",
-        "note": "Easy animal-café vibe before temples.",
+        "note": "Animal café near the hotel.",
         "placeId": "hongdae",
         "category": "dining"
       },
       {
         "time": "09:30",
         "title": "Jogyesa Temple",
-        "note": "Calm temple stop near Insadong.",
+        "note": "Buddhist temple near Insadong.",
         "placeId": "jogyesa",
         "end": "10:30",
         "category": "culture"
@@ -1921,47 +1919,47 @@ window.DAYS = [
       {
         "time": "10:45",
         "title": "Changdeokgung & Secret Garden",
-        "note": "Pre-book Secret Garden timed slot.",
+        "note": "UNESCO palace — timed Secret Garden slot.",
         "placeId": "changdeokgung",
         "end": "13:00",
         "category": "culture"
       },
       {
-        "time": "14:00",
+        "time": "15:00",
         "title": "Unni Guide Center — Gangnam",
-        "note": "Clinic matching / skin analysis / booking help. Book ahead.",
+        "note": "Clinic matching / skin analysis / booking help.",
         "placeId": "unni-guide",
-        "end": "15:30",
+        "end": "16:00",
         "category": "culture"
       },
       {
-        "time": "15:45",
-        "title": "Gangnam treatment slot",
-        "note": "Treatment booked via Unni Guide / clinic.",
+        "time": "16:15",
+        "title": "Gangnam treatment",
+        "note": "Treatment via Unni Guide / clinic.",
         "placeId": "gangnam",
-        "end": "17:00",
+        "end": "17:30",
         "category": "shopping"
       },
       {
-        "time": "17:15",
+        "time": "17:45",
         "title": "Bongeunsa Temple",
-        "note": "Quiet contrast next to COEX.",
+        "note": "Temple next to COEX.",
         "placeId": "bongeunsa",
-        "end": "18:00",
+        "end": "18:30",
         "category": "culture"
       },
       {
-        "time": "18:15",
+        "time": "18:45",
         "title": "COEX & Starfield Library",
-        "note": "Mall + iconic library glow.",
+        "note": "Mall + Starfield Library.",
         "placeId": "coex",
-        "end": "19:45",
+        "end": "20:00",
         "category": "shopping"
       },
       {
-        "time": "20:15",
+        "time": "20:30",
         "title": "Dongdaemun night market & malls",
-        "note": "DDP + APM / DDP Fashion Mall / Hyundai City Outlets.",
+        "note": "DDP + APM / Fashion Mall / Hyundai City Outlets.",
         "placeId": "dongdaemun",
         "end": "23:30",
         "category": "dining"
@@ -1976,7 +1974,7 @@ window.DAYS = [
     "country": "KR",
     "hotelId": "brick-hotel",
     "title": "Seongsu, N Tower sunset & Itaewon",
-    "summary": "Breakfast and second treatment in Seongsu, hang around the cool neighborhood + Seoul Forest, Namsan cable to N Seoul Tower sunset, then Itaewon nightlife.",
+    "summary": "Seongsu breakfast and Seoulistique facial, Seoul Forest, Namsan cable to N Tower sunset, Itaewon nightlife.",
     "food": "Breakfast/cafés in Seongsu; dinner in Itaewon.",
     "placeIds": [
       "seongsu",
@@ -1992,21 +1990,21 @@ window.DAYS = [
     ],
     "tips": [
       "Book Seoulistique via Instagram @seoulistique.skin / WhatsApp.",
-      "Book N Tower for sunset; cable-car tickets at the base."
+      "Book N Tower for sunset; cable tickets at the base."
     ],
     "timeline": [
       {
         "time": "10:00",
         "title": "Seongsu breakfast & neighborhood stroll",
-        "note": "Cool cafés, boutiques, pop-ups.",
+        "note": "Cafés, boutiques, pop-ups.",
         "placeId": "seongsu",
         "end": "11:30",
         "category": "dining"
       },
       {
         "time": "12:00",
-        "title": "Seoulistique facial (2nd treatment)",
-        "note": "Skin analysis + facial in Seongsu.",
+        "title": "Seoulistique facial",
+        "note": "Skin analysis + facial.",
         "placeId": "seoulistique",
         "end": "13:45",
         "category": "culture"
@@ -2014,7 +2012,7 @@ window.DAYS = [
       {
         "time": "14:00",
         "title": "More Seongsu + Seoul Forest",
-        "note": "Keep exploring the area, then park break.",
+        "note": "Neighborhood + urban park.",
         "placeId": "seoul-forest",
         "end": "16:30",
         "category": "attraction"
@@ -2022,7 +2020,7 @@ window.DAYS = [
       {
         "time": "17:30",
         "title": "Namsan cable car",
-        "note": "Up toward N Seoul Tower.",
+        "note": "Up Namsan toward N Tower.",
         "placeId": "namsan-cable",
         "end": "18:00",
         "category": "transit"
@@ -2030,7 +2028,7 @@ window.DAYS = [
       {
         "time": "18:05",
         "title": "N Seoul Tower sunset",
-        "note": "City views + love locks.",
+        "note": "City viewpoint + love locks.",
         "placeId": "n-tower",
         "end": "19:30",
         "category": "attraction"
@@ -2038,9 +2036,9 @@ window.DAYS = [
       {
         "time": "20:00",
         "title": "Itaewon / Homo Hill nightlife",
-        "note": "Dinner, bars, LGBTQ+ friendly night.",
+        "note": "Dinner, bars, LGBTQ+ area.",
         "placeId": "itaewon",
-        "end": "24:00",
+        "end": "23:30",
         "category": "dining"
       }
     ]
@@ -2052,8 +2050,8 @@ window.DAYS = [
     "city": "Seoul",
     "country": "KR",
     "hotelId": "brick-hotel",
-    "title": "Lotte World Monday + spa night",
-    "summary": "Move Lotte World to quieter Monday: full park day, Lotte Tower / Seokchon views, then only jimjilbang spa + dinner — you'll be wiped, so keep the night short.",
+    "title": "Lotte World + spa night",
+    "summary": "Full Lotte World day, Seokchon Lake / Lotte Tower Seoul Sky, then jimjilbang and dinner near Jamsil.",
     "food": "Park / Lotte mall snacks; simple dinner near Jamsil after the spa.",
     "placeIds": [
       "lotte-world",
@@ -2066,21 +2064,21 @@ window.DAYS = [
       "Stay Jamsil-side for spa + dinner."
     ],
     "tips": [
-      "Book Lotte World ahead — Monday is usually less crowded than weekend.",
-      "Evening is spa + dinner only — no extra nightlife."
+      "Lotte World tickets booked.",
+      "Evening: spa + dinner near Jamsil."
     ],
     "timeline": [
       {
         "time": "08:30",
-        "title": "Convenience-store breakfast & subway to Jamsil",
-        "note": "",
+        "title": "Breakfast & subway to Jamsil",
+        "note": "To Lotte World area.",
         "placeId": "brick-hotel",
         "category": "hotel"
       },
       {
         "time": "10:00",
         "title": "Lotte World",
-        "note": "Full park day while it's quieter.",
+        "note": "Indoor/outdoor theme park.",
         "placeId": "lotte-world",
         "end": "17:00",
         "category": "attraction"
@@ -2088,23 +2086,23 @@ window.DAYS = [
       {
         "time": "17:15",
         "title": "Seokchon Lake + Lotte World Tower Seoul Sky",
-        "note": "Lake stroll and skyline views.",
+        "note": "Lake walk + observatory.",
         "placeId": "lotte-tower",
         "end": "19:00",
         "category": "attraction"
       },
       {
         "time": "19:30",
-        "title": "Jimjilbang spa reset",
-        "note": "Soak off the park day — keep it chill.",
+        "title": "Jimjilbang",
+        "note": "Korean bathhouse complex.",
         "placeId": "jimjilbang",
         "end": "21:30",
         "category": "culture"
       },
       {
         "time": "21:45",
-        "title": "Simple dinner near Jamsil",
-        "note": "Eat and crash — no Hongdae night planned.",
+        "title": "Dinner near Jamsil",
+        "note": "Simple dinner by the park.",
         "placeId": "jimjilbang",
         "end": "22:45",
         "category": "dining"
