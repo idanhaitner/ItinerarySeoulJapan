@@ -59,7 +59,7 @@ window.CHECKLIST = {
         },
         {
           id: "j-fujiq",
-          label: "Fuji-Q Highland (09/9) — Freepass דיגיטלי מראש (מדלג על קופות)",
+          label: "Fuji-Q Highland (10/9) — Freepass דיגיטלי מראש · פתיחה ~09:00",
           window: "להזמין 2–4 שבועות לפני",
           priority: "high",
         },
@@ -96,10 +96,10 @@ window.CHECKLIST = {
           priority: "high",
         },
         {
-          id: "j-mishima",
-          label: "אוטובוס Fujikyu קוואגוצ׳יקו → Mishima (10/9) — מקומות שמורים (~90 דק׳ לשינקנסן)",
-          window: "להזמין מראש",
-          priority: "high",
+          id: "j-overnight-kyoto",
+          label: "אוטובוס לילה קוואגוצ׳יקו → קיוטו (10/9 בערב) — מושבים שמורים · בלי מלון באותו לילה",
+          window: "להזמין מראש · הגעה 11/9 בבוקר",
+          priority: "critical",
         },
         {
           id: "j-shinkansen",
@@ -117,8 +117,14 @@ window.CHECKLIST = {
         { id: "t2-kamakura", label: "יום קמאקורה + Enoden לאנושימה (כרטיסים בדרך כלל ביום)", window: "22 בספט׳", priority: "low" },
         {
           id: "g-luggage",
-          label: "Takkyubin: מזוודות גדולות טוקיו→קיוטו בבוקר היציאה להקונה (רק תרמילים ל־2 לילות)",
+          label: "Takkyubin: מזוודות גדולות טוקיו→קוואגוצ׳יקו בבוקר היציאה להקונה (רק תרמילים)",
           window: "בוקר 7 בספט׳",
+          priority: "high",
+        },
+        {
+          id: "g-luggage-kyoto",
+          label: "Takkyubin: מזוודות קוואגוצ׳יקו→קיוטו ביום Fuji-Q (10/9) — שיגיעו למלון בקיוטו",
+          window: "10 בספט׳ אחרי/בזמן הפארק",
           priority: "high",
         },
         { id: "t2-airport", label: "N'EX / רכבת לנריטה או האנדה לפי הטיסה", window: "כשיודעים שדה תעופה", priority: "medium" },
@@ -143,9 +149,9 @@ window.CHECKLIST = {
           priority: "high",
         },
         { id: "h-tokyo1", label: "מלון טוקיו התחלה — Shinjuku / מערב (2–7 בספט׳)", window: "להזמין בהקדם", priority: "high" },
-        { id: "h-kawaguchiko", label: "מלון קוואגוצ׳יקו / נוף לפוג׳י (8–10 בספט׳)", window: "להזמין בהקדם", priority: "high" },
-        { id: "h-kyoto", label: "מלון קיוטו — מרכז / Kawaramachi (10–15 בספט׳)", window: "להזמין בהקדם", priority: "high" },
-        { id: "h-osaka", label: "מלון אוסקה — Namba / Dotonbori (15–20 בספט׳)", window: "להזמין בהקדם", priority: "high" },
+        { id: "h-kawaguchiko", label: "מלון קוואגוצ׳יקו / נוף לפוג׳י (לילות 8–9/9 · צ׳ק־אאוט 10/9)", window: "להזמין בהקדם", priority: "high" },
+        { id: "h-kyoto", label: "מלון קיוטו — מרכז / Kawaramachi (11/9 ערב → 15/9 ערב)", window: "להזמין בהקדם", priority: "high" },
+        { id: "h-osaka", label: "מלון אוסקה — Namba / Dotonbori (15/9 ערב → 20/9)", window: "להזמין בהקדם", priority: "high" },
         {
           id: "h-tokyo2",
           label: "מלון טוקיו סיום — שינג׳וקו (20–24 בספט׳)",
@@ -158,8 +164,8 @@ window.CHECKLIST = {
         { id: "hk-onsen-etiquette", label: "בדיקת כללי אונסן במלון הקונה", window: "לפני הצ׳ק־אין", priority: "low" },
         { id: "s-jimjilbang", label: "ג׳ימג׳ילבאנג ליד Jamsil אחרי לוטה", window: "31 באוג׳ בערב", priority: "low" },
         { id: "ky-fushimi", label: "יציאה מוקדמת ל־Fushimi Inari + יום מאצ'ה באוג'י (Byodo-in)", window: "11 בספט׳", priority: "low" },
-        { id: "ky-bags", label: "איסוף מזוודות Takkyubin + העברה הלאה לאוסקה", window: "בהגעה לקיוטו / לפני אוסקה", priority: "medium" },
-        { id: "kw-chureito", label: "צ׳ורייטו בשקיעה ביום ההגעה לקוואגוצ׳יקו", window: "8 בספט׳ אחר הצהריים", priority: "low" },
+        { id: "ky-bags", label: "איסוף מזוודות Takkyubin בקיוטו (הגיעו מקוואגוצ׳יקו)", window: "בהגעה 11/9", priority: "medium" },
+        { id: "kw-chureito", label: "זריחה בצ׳ורייטו + לוסון פוג׳י", window: "9 בספט׳ מוקדם", priority: "low" },
       ],
     },
     {
