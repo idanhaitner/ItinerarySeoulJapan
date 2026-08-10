@@ -1039,6 +1039,20 @@ window.PLACES = {
     "lng": 138.7689,
     "blurb": "Famous Fuji convenience-store shot."
   },
+  "gotemba-outlets": {
+    "id": "gotemba-outlets",
+    "name": "Gotemba Premium Outlets",
+    "nameJa": "御殿場プレミアム・アウトレット",
+    "city": "Kawaguchiko",
+    "country": "JP",
+    "tags": [
+      "shopping",
+      "must-see"
+    ],
+    "lat": 35.3086,
+    "lng": 138.9365,
+    "blurb": "Huge outlet mall with Fuji views — brands at discount; open 10:00–20:00 Mar–Nov."
+  },
   "oishi-park": {
     "id": "oishi-park",
     "name": "Oishi Park",
@@ -3266,21 +3280,26 @@ window.DAYS = [
     "city": "Kawaguchiko",
     "country": "JP",
     "hotelId": null,
-    "title": "Fuji shores & Chureito sunset",
-    "summary": "Early Hakone Shrine floating torii, bus to Kawaguchiko, hotel + Lawson Fuji photo, Oishi Park flowers, then Chureito Pagoda at sunset.",
-    "food": "Lakeside dinner near Kawaguchiko.",
+    "title": "Gotemba outlets, Fuji shores & Chureito sunset",
+    "summary": "Early Hakone Shrine floating torii, dedicated shopping at Gotemba Premium Outlets on the way in, then Kawaguchiko hotel + Lawson Fuji photo, a shorter Oishi Park stop, and Chureito Pagoda at sunset.",
+    "food": "Outlet lunch at Gotemba; lakeside dinner near Kawaguchiko.",
     "placeIds": [
       "hakone-shrine",
+      "gotemba-outlets",
       "fuji-lawson",
-      "chureito",
-      "oishi-park"
+      "oishi-park",
+      "chureito"
     ],
     "transport": [
-      "Hakone → Gotemba → Fujikyu to Kawaguchiko (~1.5–2h, ¥1,600–2,100).",
+      "Hakone → Gotemba Premium Outlets (~40–60m bus from Yumoto / Togendai area).",
+      "Gotemba Outlets → Kawaguchiko by Fujikyu / highway bus (~60–110m).",
       "Taxi/bus to Chureito for sunset."
     ],
     "tips": [
-      "Chureito stairs before golden hour."
+      "Gotemba Premium Outlets open 10:00–20:00 (Mar–Nov) — plan to arrive at opening.",
+      "Bring passport for the Welcome Center coupon booklet.",
+      "Lockers available for bags while shopping.",
+      "Chureito stairs before golden hour — don’t overstay at Oishi."
     ],
     "timeline": [
       {
@@ -3288,29 +3307,44 @@ window.DAYS = [
         "title": "Hakone Shrine floating torii",
         "note": "Before the crowds.",
         "placeId": "hakone-shrine",
-        "end": "07:15",
+        "end": "07:00",
         "category": "culture"
       },
       {
-        "time": "08:00",
-        "title": "Bus transfer to Kawaguchiko",
-        "note": "Gotemba change → Fujikyu bus.",
-        "end": "12:00",
+        "time": "07:15",
+        "title": "Bus toward Gotemba",
+        "note": "From Motohakone/Togendai or Hakone-Yumoto toward Gotemba Premium Outlets.",
         "category": "transit"
       },
       {
-        "time": "12:30",
+        "time": "10:00",
+        "title": "Gotemba Premium Outlets shopping",
+        "note": "Dedicated outlet time — brands + Fuji views from the bridge between zones.",
+        "placeId": "gotemba-outlets",
+        "end": "13:00",
+        "category": "shopping"
+      },
+      {
+        "time": "13:15",
+        "title": "Bus Gotemba → Kawaguchiko",
+        "note": "Prefer limited-express GL if available (~60–70m); local C1/C2 ~110m.",
+        "placeId": "gotemba-outlets",
+        "end": "15:00",
+        "category": "transit"
+      },
+      {
+        "time": "15:15",
         "title": "Hotel check-in + Lawson Fuji photo",
         "note": "Famous convenience-store Fuji shot.",
         "placeId": "fuji-lawson",
         "category": "attraction"
       },
       {
-        "time": "15:00",
-        "title": "Oishi Park",
-        "note": "Flower path + lake & Fuji views.",
+        "time": "16:00",
+        "title": "Oishi Park (short stop)",
+        "note": "Flower path + lake & Fuji — keep it brief before sunset.",
         "placeId": "oishi-park",
-        "end": "16:30",
+        "end": "16:45",
         "category": "attraction"
       },
       {
@@ -3324,9 +3358,9 @@ window.DAYS = [
     ],
     "transfer": {
       "mode": "bus",
-      "label": "Hakone → Kawaguchiko",
-      "detail": "Bus via Gotemba + Fujikyu bus (~¥1,600–2,100)",
-      "duration": "~1.5–2h",
+      "label": "Hakone → Gotemba Outlets → Kawaguchiko",
+      "detail": "Hakone → Gotemba Premium Outlets (shop) → Fujikyu bus to Kawaguchiko",
+      "duration": "shop ~3h + buses",
       "fromCity": "Hakone",
       "toCity": "Kawaguchiko"
     }
