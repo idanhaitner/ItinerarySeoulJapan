@@ -2,7 +2,7 @@
 window.TRIP = {
   "title": "Korea + Japan 2026",
   "subtitle": "Idan & Shahar itinerary (dad's Excel was inspiration only)",
-  "dates": "August 26 – September 26, 2026",
+  "dates": "August 26 – September 25, 2026",
   "route": [
     "Seoul",
     "Tokyo",
@@ -11,8 +11,7 @@ window.TRIP = {
     "Kyoto",
     "Osaka",
     "Kobe",
-    "Tokyo",
-    "Bangkok"
+    "Tokyo"
   ],
   "flights": [
     {
@@ -71,44 +70,44 @@ window.TRIP = {
       "note": "~2h30 · some boards list YP731"
     },
     {
-      "id": "tokyo-bangkok",
-      "journey": "tokyo-bangkok",
-      "journeyLabel": "Tokyo → Bangkok",
+      "id": "emirates-nrt-dxb",
+      "journey": "tokyo-tirana",
+      "journeyLabel": "Tokyo → Tirana",
       "status": "todo",
-      "airline": "TBD",
+      "airline": "Emirates",
       "flight": "TBD",
       "date": "2026-09-25",
-      "from": "NRT/HND",
-      "fromName": "Tokyo",
-      "to": "BKK",
-      "toName": "Bangkok",
+      "from": "NRT",
+      "fromName": "Tokyo Narita",
+      "to": "DXB",
+      "toName": "Dubai",
       "depart": "—",
       "arrive": "—",
-      "terminal": "",
+      "terminal": "NRT → DXB",
       "dayId": "d30",
-      "note": "1–2 nights in Bangkok · confirm flight #"
+      "note": "Leg 1 · Emirates · confirm flight #"
     },
     {
-      "id": "bangkok-tirana",
-      "journey": "bangkok-tirana",
-      "journeyLabel": "Bangkok → Tirana",
+      "id": "emirates-dxb-tia",
+      "journey": "tokyo-tirana",
+      "journeyLabel": "Tokyo → Tirana",
       "status": "todo",
-      "airline": "TBD",
+      "airline": "Emirates",
       "flight": "TBD",
-      "date": "2026-09-27",
-      "from": "BKK",
-      "fromName": "Bangkok",
+      "date": "2026-09-25",
+      "from": "DXB",
+      "fromName": "Dubai",
       "to": "TIA",
       "toName": "Tirana",
       "depart": "—",
       "arrive": "—",
-      "terminal": "",
-      "dayId": null,
-      "note": "Separate trip (not on this itinerary) · need to book · Albania"
+      "terminal": "DXB → TIA",
+      "dayId": "d30",
+      "note": "Leg 2 · Emirates · arrival may be next calendar day · confirm times"
     }
   ],
   "notes": [
-    "Route: Tel Aviv → Seoul → Tokyo → Hakone → Kawaguchiko → Kyoto → Osaka (+ Kobe day) → Tokyo → Bangkok.",
+    "Route: Tel Aviv → Seoul → Tokyo → Hakone → Kawaguchiko → Kyoto → Osaka (+ Kobe day) → Tokyo → Tirana (via Dubai).",
     "Outbound booked: ET0419 + ET0672 (26–27 Aug).",
     "Seoul→Tokyo booked: Air Premia YP7321 (2 Sep · ICN 08:50 → NRT 11:20).",
     "Sep 5: Tsukiji + teamLab Planets + Odaiba + Ginza.",
@@ -124,7 +123,7 @@ window.TRIP = {
     "Kyoto hotel: KABIN Koji · 11–15 Sep (Kawaramachi).",
     "Osaka hotel: Apartment Hotel 11 Shinsaibashi 2 · 15–21 Sep.",
     "Tokyo return base: Shinjuku (21–25 Sep).",
-    "After Japan: Bangkok 1–2 days stopover. Bangkok → Tirana (TIA) is a separate trip — track under Flights only.",
+    "Leave Japan ~25 Sep: Emirates Narita → Dubai (DXB) → Tirana (TIA) — book / confirm flight numbers.",
     "Tap places for Google / Kakao / Naver / Yahoo! / Apple Maps."
   ]
 };
@@ -645,7 +644,7 @@ window.PLACES = {
     ],
     "lat": 35.772,
     "lng": 140.3929,
-    "blurb": "Tokyo arrival / later departure toward Bangkok."
+    "blurb": "Tokyo arrival / later departure to Tirana via Dubai (Emirates)."
   },
   "shinjuku": {
     "id": "shinjuku",
@@ -2297,64 +2296,6 @@ window.PLACES = {
     "lat": 34.6814,
     "lng": 135.8482,
     "blurb": "Lantern shrine in Nara."
-  },
-  "bkk": {
-    "id": "bkk",
-    "name": "Suvarnabhumi Airport (BKK)",
-    "nameJa": "ท่าอากาศยานสุวรรณภูมิ",
-    "city": "Bangkok",
-    "country": "TH",
-    "tags": [
-      "transport"
-    ],
-    "lat": 13.69,
-    "lng": 100.7501,
-    "blurb": "Bangkok arrival from Japan — short stopover after Tokyo."
-  },
-  "grand-palace": {
-    "id": "grand-palace",
-    "name": "Grand Palace & Wat Phra Kaew",
-    "nameJa": "พระบรมมหาราชวัง",
-    "city": "Bangkok",
-    "country": "TH",
-    "tags": [
-      "must-see",
-      "culture",
-      "temple"
-    ],
-    "lat": 13.75,
-    "lng": 100.4914,
-    "blurb": "Classic first-stop temples — dress code applies."
-  },
-  "wat-arun": {
-    "id": "wat-arun",
-    "name": "Wat Arun",
-    "nameJa": "วัดอรุณราชวราราม",
-    "city": "Bangkok",
-    "country": "TH",
-    "tags": [
-      "must-see",
-      "temple",
-      "view"
-    ],
-    "lat": 13.7437,
-    "lng": 100.4888,
-    "blurb": "Temple of Dawn on the Chao Phraya — best near sunset."
-  },
-  "yaowarat": {
-    "id": "yaowarat",
-    "name": "Yaowarat (Chinatown)",
-    "nameJa": "เยาวราช",
-    "city": "Bangkok",
-    "country": "TH",
-    "tags": [
-      "food",
-      "nightlife",
-      "neighborhood"
-    ],
-    "lat": 13.7395,
-    "lng": 100.5095,
-    "blurb": "Night street-food lane — noodles, seafood, sweets."
   }
 };
 window.DAYS = [
@@ -4797,19 +4738,18 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
-    "title": "Tokyo → Bangkok",
-    "summary": "Checkout, transfer to Narita or Haneda, and fly to Bangkok.",
+    "title": "Tokyo → Tirana via Dubai",
+    "summary": "Checkout, transfer to Narita, and fly Emirates to Tirana via Dubai (DXB).",
     "food": "Airport meal before departure.",
     "placeIds": [
-      "narita",
-      "bkk"
+      "narita"
     ],
     "transport": [
-      "Allow 2.5–3h door-to-gate.",
-      "Match NRT vs HND to the Bangkok ticket."
+      "Allow 2.5–3h door-to-gate for NRT.",
+      "Emirates connection in Dubai (DXB)."
     ],
     "tips": [
-      "Confirm Tokyo → Bangkok flight number and times.",
+      "Book / confirm Emirates NRT → DXB → TIA.",
       "Passports ready at security."
     ],
     "timeline": [
@@ -4821,81 +4761,31 @@ window.DAYS = [
       },
       {
         "time": "12:00",
-        "title": "Depart for airport",
-        "note": "Match NRT vs HND to your ticket.",
+        "title": "Depart for Narita",
+        "note": "Door-to-gate buffer for NRT.",
         "placeId": "narita",
         "category": "transit"
       },
       {
         "time": "15:00",
-        "title": "Airport",
+        "title": "Narita Airport",
         "note": "Security, food, duty-free.",
         "placeId": "narita",
         "category": "transit"
       },
       {
         "time": "18:00",
-        "title": "Flight to Bangkok",
-        "note": "Confirm actual flight number & time.",
+        "title": "Emirates to Tirana via DXB",
+        "note": "Confirm flight numbers & times.",
         "placeId": "narita",
         "category": "transit"
       }
     ],
     "transfer": {
       "mode": "flight",
-      "label": "Tokyo → Bangkok",
-      "detail": "NRT/HND → BKK · flight TBD",
+      "label": "Tokyo → Tirana (via Dubai)",
+      "detail": "Emirates · NRT → DXB → TIA · flight TBD",
       "duration": "to book / confirm"
     }
-  },
-  {
-    "id": "d31",
-    "date": "2026-09-26",
-    "weekday": "Saturday",
-    "city": "Bangkok",
-    "country": "TH",
-    "hotelId": null,
-    "title": "Bangkok classics",
-    "summary": "Grand Palace and Wat Phra Kaew, Wat Arun on the Chao Phraya, then Yaowarat night food.",
-    "food": "Street food on Yaowarat.",
-    "placeIds": [
-      "grand-palace",
-      "wat-arun",
-      "yaowarat"
-    ],
-    "transport": [
-      "BTS/MRT or Grab between sights.",
-      "Cover shoulders and knees at temples."
-    ],
-    "tips": [
-      "Go early to the Grand Palace — heat and queues.",
-      "Ferry crossing for Wat Arun."
-    ],
-    "timeline": [
-      {
-        "time": "09:30",
-        "title": "Grand Palace & Wat Phra Kaew",
-        "note": "Go early — heat and queues.",
-        "placeId": "grand-palace",
-        "end": "12:30",
-        "category": "culture"
-      },
-      {
-        "time": "14:00",
-        "title": "Wat Arun + Chao Phraya",
-        "note": "Ferry crossing + temple climb.",
-        "placeId": "wat-arun",
-        "end": "17:00",
-        "category": "transit"
-      },
-      {
-        "time": "19:00",
-        "title": "Yaowarat night food",
-        "note": "Grazing dinner.",
-        "placeId": "yaowarat",
-        "end": "22:00",
-        "category": "dining"
-      }
-    ]
   }
 ];

@@ -181,21 +181,15 @@ window.CHECKLIST = {
       items: [
         {
           id: "g-flights-check",
-          label: "טיסות ✓ הוזמנו: ET0419+ET0672 · YP7321 · לטפל: טוקיו→בנגקוק (+ טירנה לטיול אחר)",
+          label: "טיסות ✓ הוזמנו: ET0419+ET0672 · YP7321 · לטפל: נריטה→דובאי→טירנה (אמירייטס)",
           window: "בהקדם",
           priority: "high",
         },
         {
-          id: "g-flight-bkk",
-          label: "טיסת טוקיו → בנגקוק (NRT/HND→BKK) — לאשר מספר טיסה · 1–2 לילות בתאילנד",
+          id: "g-flight-tia",
+          label: "טיסת אמירייטס נריטה → דובאי → טירנה (NRT→DXB→TIA) — לאשר מספרי טיסה ושעות",
           window: "~25 בספט׳",
           priority: "high",
-        },
-        {
-          id: "g-flight-tia",
-          label: "טיסת בנגקוק → טירנה (BKK→TIA) — טיול אחר · לא במסלול הזה · צריך להזמין",
-          window: "~27 בספט׳ · רק במסך טיסות",
-          priority: "medium",
         },
         {
           id: "g-flight-out",

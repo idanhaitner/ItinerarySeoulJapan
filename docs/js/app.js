@@ -815,21 +815,13 @@
         to: "NRT",
         blurb: "Air Premia · סיאול לטוקיו",
       },
-      "tokyo-bangkok": {
-        he: "תאילנד",
-        en: "BANGKOK",
-        jp: "バンコク",
+      "tokyo-tirana": {
+        he: "חזרה",
+        en: "RETURN",
+        jp: "帰国",
         from: "NRT",
-        to: "BKK",
-        blurb: "טוקיו לבנגקוק · 1–2 ימים",
-      },
-      "bangkok-tirana": {
-        he: "אלבניה",
-        en: "TIRANA",
-        jp: "ティラナ",
-        from: "BKK",
         to: "TIA",
-        blurb: "טיול אחר · לא במסלול · צריך להזמין",
+        blurb: "אמירייטס · נריטה → דובאי → טירנה",
       },
     };
 
@@ -844,13 +836,13 @@
       seal: "旅",
       kicker: "טיסות · フライト · BOARDING",
       title: "מסלול האוויר שלנו",
-      lead: "תל אביב → סיאול → טוקיו → בנגקוק · כרטיסים וסטטוס במבט אחד. טיסת טירנה לטיול אחר.",
+      lead: "תל אביב → סיאול → טוקיו → טירנה (דרך דובאי) · כרטיסים וסטטוס במבט אחד.",
       pills: [
         { em: booked, span: "הוזמנו" },
         { em: todo, span: "לטפל" },
         { em: journeys.length, span: "מקטעים" },
       ],
-      labels: ["TLV", "ICN", "NRT", "BKK", "TIA"],
+      labels: ["TLV", "ICN", "NRT", "DXB", "TIA"],
       motif: motifFlights(),
       aria: "סיכום טיסות",
     });
