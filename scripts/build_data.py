@@ -182,13 +182,12 @@ for p in [
 ]:
     add(p)
 
-# --- Bangkok + Tirana (post-Japan) ---
+# --- Bangkok (post-Japan stopover) ---
 for p in [
-    place("bkk", "Suvarnabhumi Airport (BKK)", "ท่าอากาศยานสุวรรณภูมิ", "Bangkok", "TH", ["transport"], 13.6900, 100.7501, "Bangkok arrival from Japan / departure toward Tirana."),
+    place("bkk", "Suvarnabhumi Airport (BKK)", "ท่าอากาศยานสุวรรณภูมิ", "Bangkok", "TH", ["transport"], 13.6900, 100.7501, "Bangkok arrival from Japan — short stopover after Tokyo."),
     place("grand-palace", "Grand Palace & Wat Phra Kaew", "พระบรมมหาราชวัง", "Bangkok", "TH", ["must-see", "culture", "temple"], 13.7500, 100.4914, "Classic first-stop temples — dress code applies."),
     place("wat-arun", "Wat Arun", "วัดอรุณราชวราราม", "Bangkok", "TH", ["must-see", "temple", "view"], 13.7437, 100.4888, "Temple of Dawn on the Chao Phraya — best near sunset."),
     place("yaowarat", "Yaowarat (Chinatown)", "เยาวราช", "Bangkok", "TH", ["food", "nightlife", "neighborhood"], 13.7395, 100.5095, "Night street-food lane — noodles, seafood, sweets."),
-    place("tia", "Tirana International Airport (TIA)", "Aeroporti Nënë Tereza", "Tirana", "AL", ["transport"], 41.4147, 19.7206, "Arrival into Albania — book BKK → TIA."),
 ]:
     add(p)
 
@@ -893,27 +892,13 @@ DAYS = [
         t("14:00", "Wat Arun + Chao Phraya", "wat-arun", "Ferry crossing + temple climb.", "17:00"),
         t("19:00", "Yaowarat night food", "yaowarat", "Grazing dinner.", "22:00"),
       ]),
-  day("d32", "2026-09-27", "Sunday", "Bangkok", "TH", None,
-      "Bangkok → Tirana",
-      "Morning in Bangkok, then fly to Tirana, Albania.",
-      "Light café breakfast; airport meal later.",
-      ["bkk", "tia"],
-      ["Leave 3h+ for BKK international departure.", "Confirm baggage rules for the Tirana ticket."],
-      ["Confirm Tirana flight number and terminal.", "Allow 3h+ at BKK."],
-      [
-        t("09:00", "Morning / checkout", None, "Café or short neighborhood walk."),
-        t("12:00", "Depart for BKK", "bkk", "Grab / Airport Rail Link."),
-        t("15:00", "Bangkok Airport", "bkk", "Check-in for Tirana."),
-        t("18:00", "Flight to Tirana", "tia", "Confirm flight number and departure time."),
-      ],
-      {"mode": "flight", "label": "Bangkok → Tirana", "detail": "BKK → TIA", "duration": "long-haul"}),
 ]
 
 TRIP = {
     "title": "Korea + Japan 2026",
     "subtitle": "Idan & Shahar itinerary (dad's Excel was inspiration only)",
-    "dates": "August 26 – September 27, 2026",
-    "route": ["Tel Aviv", "Seoul", "Tokyo", "Hakone", "Kawaguchiko", "Kyoto", "Osaka", "Kobe", "Tokyo", "Bangkok", "Tirana"],
+    "dates": "August 26 – September 26, 2026",
+    "route": ["Tel Aviv", "Seoul", "Tokyo", "Hakone", "Kawaguchiko", "Kyoto", "Osaka", "Kobe", "Tokyo", "Bangkok"],
     "flights": [
         {
             "id": "et0419",
@@ -1003,12 +988,12 @@ TRIP = {
             "depart": "—",
             "arrive": "—",
             "terminal": "",
-            "dayId": "d32",
-            "note": "Need to book · Albania",
+            "dayId": None,
+            "note": "Separate trip (not on this itinerary) · need to book · Albania",
         },
     ],
     "notes": [
-        "Route: Tel Aviv → Seoul → Tokyo → Hakone → Kawaguchiko → Kyoto → Osaka (+ Kobe day) → Tokyo → Bangkok → Tirana.",
+        "Route: Tel Aviv → Seoul → Tokyo → Hakone → Kawaguchiko → Kyoto → Osaka (+ Kobe day) → Tokyo → Bangkok.",
         "Outbound booked: ET0419 + ET0672 (26–27 Aug).",
         "Seoul→Tokyo booked: Air Premia YP7321 (2 Sep · ICN 08:50 → NRT 11:20).",
         "Sep 5: Tsukiji + teamLab Planets + Odaiba + Ginza.",
@@ -1023,7 +1008,7 @@ TRIP = {
         "Kyoto hotel: KABIN Koji · 11–15 Sep (Kawaramachi).",
         "Osaka hotel: Apartment Hotel 11 Shinsaibashi 2 · 15–21 Sep.",
         "Tokyo return base: Shinjuku (21–25 Sep).",
-        "After Japan: Bangkok 1–2 days, then book Bangkok → Tirana (TIA).",
+        "After Japan: Bangkok 1–2 days stopover. Bangkok → Tirana (TIA) is a separate trip — track under Flights only.",
         "Tap places for Google / Kakao / Naver / Yahoo! / Apple Maps.",
     ],
 }

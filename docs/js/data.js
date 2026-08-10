@@ -2,7 +2,7 @@
 window.TRIP = {
   "title": "Korea + Japan 2026",
   "subtitle": "Idan & Shahar itinerary (dad's Excel was inspiration only)",
-  "dates": "August 26 – September 27, 2026",
+  "dates": "August 26 – September 26, 2026",
   "route": [
     "Tel Aviv",
     "Seoul",
@@ -13,8 +13,7 @@ window.TRIP = {
     "Osaka",
     "Kobe",
     "Tokyo",
-    "Bangkok",
-    "Tirana"
+    "Bangkok"
   ],
   "flights": [
     {
@@ -105,12 +104,12 @@ window.TRIP = {
       "depart": "—",
       "arrive": "—",
       "terminal": "",
-      "dayId": "d32",
-      "note": "Need to book · Albania"
+      "dayId": null,
+      "note": "Separate trip (not on this itinerary) · need to book · Albania"
     }
   ],
   "notes": [
-    "Route: Tel Aviv → Seoul → Tokyo → Hakone → Kawaguchiko → Kyoto → Osaka (+ Kobe day) → Tokyo → Bangkok → Tirana.",
+    "Route: Tel Aviv → Seoul → Tokyo → Hakone → Kawaguchiko → Kyoto → Osaka (+ Kobe day) → Tokyo → Bangkok.",
     "Outbound booked: ET0419 + ET0672 (26–27 Aug).",
     "Seoul→Tokyo booked: Air Premia YP7321 (2 Sep · ICN 08:50 → NRT 11:20).",
     "Sep 5: Tsukiji + teamLab Planets + Odaiba + Ginza.",
@@ -125,7 +124,7 @@ window.TRIP = {
     "Kyoto hotel: KABIN Koji · 11–15 Sep (Kawaramachi).",
     "Osaka hotel: Apartment Hotel 11 Shinsaibashi 2 · 15–21 Sep.",
     "Tokyo return base: Shinjuku (21–25 Sep).",
-    "After Japan: Bangkok 1–2 days, then book Bangkok → Tirana (TIA).",
+    "After Japan: Bangkok 1–2 days stopover. Bangkok → Tirana (TIA) is a separate trip — track under Flights only.",
     "Tap places for Google / Kakao / Naver / Yahoo! / Apple Maps."
   ]
 };
@@ -2295,7 +2294,7 @@ window.PLACES = {
     ],
     "lat": 13.69,
     "lng": 100.7501,
-    "blurb": "Bangkok arrival from Japan / departure toward Tirana."
+    "blurb": "Bangkok arrival from Japan — short stopover after Tokyo."
   },
   "grand-palace": {
     "id": "grand-palace",
@@ -2341,19 +2340,6 @@ window.PLACES = {
     "lat": 13.7395,
     "lng": 100.5095,
     "blurb": "Night street-food lane — noodles, seafood, sweets."
-  },
-  "tia": {
-    "id": "tia",
-    "name": "Tirana International Airport (TIA)",
-    "nameJa": "Aeroporti Nënë Tereza",
-    "city": "Tirana",
-    "country": "AL",
-    "tags": [
-      "transport"
-    ],
-    "lat": 41.4147,
-    "lng": 19.7206,
-    "blurb": "Arrival into Albania — book BKK → TIA."
   }
 };
 window.DAYS = [
@@ -4894,63 +4880,5 @@ window.DAYS = [
         "category": "dining"
       }
     ]
-  },
-  {
-    "id": "d32",
-    "date": "2026-09-27",
-    "weekday": "Sunday",
-    "city": "Bangkok",
-    "country": "TH",
-    "hotelId": null,
-    "title": "Bangkok → Tirana",
-    "summary": "Morning in Bangkok, then fly to Tirana, Albania.",
-    "food": "Light café breakfast; airport meal later.",
-    "placeIds": [
-      "bkk",
-      "tia"
-    ],
-    "transport": [
-      "Leave 3h+ for BKK international departure.",
-      "Confirm baggage rules for the Tirana ticket."
-    ],
-    "tips": [
-      "Confirm Tirana flight number and terminal.",
-      "Allow 3h+ at BKK."
-    ],
-    "timeline": [
-      {
-        "time": "09:00",
-        "title": "Morning / checkout",
-        "note": "Café or short neighborhood walk.",
-        "category": "dining"
-      },
-      {
-        "time": "12:00",
-        "title": "Depart for BKK",
-        "note": "Grab / Airport Rail Link.",
-        "placeId": "bkk",
-        "category": "transit"
-      },
-      {
-        "time": "15:00",
-        "title": "Bangkok Airport",
-        "note": "Check-in for Tirana.",
-        "placeId": "bkk",
-        "category": "transit"
-      },
-      {
-        "time": "18:00",
-        "title": "Flight to Tirana",
-        "note": "Confirm flight number and departure time.",
-        "placeId": "tia",
-        "category": "transit"
-      }
-    ],
-    "transfer": {
-      "mode": "flight",
-      "label": "Bangkok → Tirana",
-      "detail": "BKK → TIA",
-      "duration": "long-haul"
-    }
   }
 ];

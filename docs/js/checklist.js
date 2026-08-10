@@ -181,7 +181,7 @@ window.CHECKLIST = {
       items: [
         {
           id: "g-flights-check",
-          label: "טיסות ✓ הוזמנו: ET0419+ET0672 · YP7321 · לטפל: טוקיו→בנגקוק + בנגקוק→טירנה",
+          label: "טיסות ✓ הוזמנו: ET0419+ET0672 · YP7321 · לטפל: טוקיו→בנגקוק (+ טירנה לטיול אחר)",
           window: "בהקדם",
           priority: "high",
         },
@@ -193,9 +193,9 @@ window.CHECKLIST = {
         },
         {
           id: "g-flight-tia",
-          label: "טיסת בנגקוק → טירנה (BKK→TIA, אלבניה) — צריך להזמין",
-          window: "~26 בספט׳",
-          priority: "high",
+          label: "טיסת בנגקוק → טירנה (BKK→TIA) — טיול אחר · לא במסלול הזה · צריך להזמין",
+          window: "~27 בספט׳ · רק במסך טיסות",
+          priority: "medium",
         },
         {
           id: "g-flight-out",

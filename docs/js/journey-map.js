@@ -11,7 +11,6 @@ window.JourneyMap = (function () {
     Kobe: "#8a6a5a",
     "Tel Aviv": "#4d6472",
     Bangkok: "#c47a3a",
-    Tirana: "#3f6f7a",
   };
 
   const CITY_HE = {
@@ -25,7 +24,6 @@ window.JourneyMap = (function () {
     Kobe: "קובה",
     "Tel Aviv": "תל אביב",
     Bangkok: "בנגקוק",
-    Tirana: "טירנה",
   };
 
   let map = null;
