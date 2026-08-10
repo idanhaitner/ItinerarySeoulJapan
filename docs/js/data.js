@@ -121,6 +121,7 @@ window.TRIP = {
     "Sep 22–23: Nikko day trip, then Kamakura & Enoshima.",
     "Sep 24: Full Ginza shopping day + farewell dinner.",
     "Seoul hotel: Amanti Hongdae · 27 Aug–2 Sep.",
+    "Tokyo first base: Hotel Gracery Shinjuku · 2–7 Sep (Kabukicho).",
     "Kyoto hotel: KABIN Koji · 11–15 Sep (Kawaramachi).",
     "Osaka hotel: Apartment Hotel 11 Shinsaibashi 2 · 15–21 Sep.",
     "Tokyo return base: Shinjuku (21–25 Sep).",
@@ -604,6 +605,21 @@ window.PLACES = {
     "lat": 37.5345,
     "lng": 126.9944,
     "blurb": "International bars, LGBTQ+ friendly nightlife."
+  },
+  "gracery-shinjuku": {
+    "id": "gracery-shinjuku",
+    "name": "Hotel Gracery Shinjuku",
+    "nameJa": "ホテルグレイスリー新宿",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "hotel",
+      "booked"
+    ],
+    "lat": 35.6956,
+    "lng": 139.7023,
+    "blurb": "Booked — first Tokyo base in Kabukicho (Godzilla head) · nights 2–6/9, checkout 7/9 for Hakone.",
+    "taxiAddress": "東京都新宿区歌舞伎町1-19-1"
   },
   "keio-plaza": {
     "id": "keio-plaza",
@@ -2834,15 +2850,15 @@ window.DAYS = [
     "weekday": "Wednesday",
     "city": "Tokyo",
     "country": "JP",
-    "hotelId": null,
+    "hotelId": "gracery-shinjuku",
     "title": "Seoul → Tokyo & Shinjuku lights",
-    "summary": "Early checkout from Amanti, Air Premia YP7321 ICN→NRT, Suica/eSIM, hotel drop in Shinjuku, then a full Shinjuku afternoon–night: Gyoen, Godzilla head, free Tocho views, Kabukicho neon, Omoide yakitori and Golden Gai.",
+    "summary": "Early checkout from Amanti, Air Premia YP7321 ICN→NRT, Suica/eSIM, check in at Hotel Gracery Shinjuku, then a full Shinjuku afternoon–night: Gyoen, Godzilla head, free Tocho views, Kabukicho neon, Omoide yakitori and Golden Gai.",
     "food": "Late lunch near the hotel; yakitori in Omoide Yokocho; drinks in Golden Gai.",
     "placeIds": [
       "amanti-hotel",
       "icn",
       "narita",
-      "shinjuku",
+      "gracery-shinjuku",
       "shinjuku-gyoen",
       "tocho",
       "kabukicho",
@@ -2852,14 +2868,15 @@ window.DAYS = [
     "transport": [
       "Amanti → ICN T1 (~1h).",
       "Air Premia YP7321.",
-      "N'EX / limousine → Shinjuku hotel.",
-      "All evening stops walkable in west Shinjuku."
+      "N'EX / limousine → Hotel Gracery Shinjuku (Kabukicho).",
+      "All evening stops walkable from the hotel."
     ],
     "tips": [
       "Booked: Air Premia YP7321 · ICN 08:50 → NRT 11:20 (T2).",
       "Be at ICN ~06:30–07:00 (international).",
       "Some boards list this route as YP731 — match your ticket/boarding pass.",
       "Set up Suica/Pasmo on arrival.",
+      "Hotel Gracery Shinjuku · Kabukicho 1-19-1 · nights 2–6/9 · checkout morning 7/9.",
       "Shinjuku Gyoen last entry ~17:00 in Sep — go soon after check-in.",
       "Tocho South Observatory is free (closed every other Monday)."
     ],
@@ -2895,10 +2912,10 @@ window.DAYS = [
       },
       {
         "time": "13:00",
-        "title": "Transfer to Shinjuku + hotel check-in",
-        "note": "N'EX / limousine · Suica/eSIM · leave bags, quick shower.",
-        "placeId": "shinjuku",
-        "category": "transit"
+        "title": "Transfer to Shinjuku + check in — Hotel Gracery",
+        "note": "N'EX / limousine · Suica/eSIM · leave bags, quick shower · Godzilla building.",
+        "placeId": "gracery-shinjuku",
+        "category": "hotel"
       },
       {
         "time": "14:30",
@@ -2969,7 +2986,7 @@ window.DAYS = [
     "weekday": "Thursday",
     "city": "Tokyo",
     "country": "JP",
-    "hotelId": null,
+    "hotelId": "gracery-shinjuku",
     "title": "West Tokyo: Meiji, Harajuku, Omotesando & Shibuya Sky",
     "summary": "Full west-Tokyo loop: Meiji Jingu and Yoyogi, Takeshita + Cat Street, Omotesando lunch, Shibuya Crossing / Hachiko / Center-gai, timed Shibuya Sky sunset, then dinner in Shibuya.",
     "food": "Crepes or cafe lunch on Omotesando; dinner in Shibuya (Nonbei Yokocho or Center-gai).",
@@ -3076,7 +3093,7 @@ window.DAYS = [
     "weekday": "Friday",
     "city": "Tokyo",
     "country": "JP",
-    "hotelId": null,
+    "hotelId": "gracery-shinjuku",
     "title": "Asakusa, Kappabashi, Skytree & Akihabara",
     "summary": "Old-east Tokyo day: early Senso-ji & Nakamise, Kappabashi kitchen street, Sumida riverside to Skytree/Solamachi, then Akihabara arcades and anime floors ending with izakaya.",
     "food": "Nakamise snacks mid-morning; Solamachi or Ameyoko-style grazing; izakaya in Akihabara / Kanda.",
@@ -3170,7 +3187,7 @@ window.DAYS = [
     "weekday": "Saturday",
     "city": "Tokyo",
     "country": "JP",
-    "hotelId": null,
+    "hotelId": "gracery-shinjuku",
     "title": "Tsukiji, teamLab Planets, Odaiba & Ginza",
     "summary": "Seafood graze at Tsukiji Outer Market, timed teamLab Planets in Toyosu, Odaiba Gundam + waterfront, then a long Ginza evening of depachika, flagship stores and dinner.",
     "food": "Tsukiji sushi/seafood breakfast; Ginza depachika snacks + dinner.",
@@ -3248,7 +3265,7 @@ window.DAYS = [
     "weekday": "Sunday",
     "city": "Tokyo",
     "country": "JP",
-    "hotelId": null,
+    "hotelId": "gracery-shinjuku",
     "title": "Street Kart, Kichijoji, Shimokita & Daikanyama",
     "summary": "Street Kart morning, Inokashira Park + Harmonica Yokocho lunch in Kichijoji, vintage Shimokitazawa afternoon, then Daikanyama T-Site and Nakameguro riverside dinner (family soft-day vibe).",
     "food": "Lunch in Harmonica Yokocho / Kichijoji; dinner in Nakameguro or Daikanyama.",
@@ -3357,9 +3374,10 @@ window.DAYS = [
     "timeline": [
       {
         "time": "08:00",
-        "title": "Takkyubin drop at Tokyo hotel",
+        "title": "Takkyubin drop at Hotel Gracery",
         "note": "Forward large bags to HOTEL MYSTAYS Fuji Onsen Resort.",
-        "category": "attraction"
+        "placeId": "gracery-shinjuku",
+        "category": "hotel"
       },
       {
         "time": "09:00",

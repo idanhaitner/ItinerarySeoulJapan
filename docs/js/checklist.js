@@ -124,7 +124,7 @@ window.CHECKLIST = {
         },
         {
           id: "g-luggage",
-          label: "Takkyubin: מזוודות גדולות טוקיו→HOTEL MYSTAYS Fuji Onsen Resort בבוקר היציאה להקונה (רק תרמילים)",
+          label: "Takkyubin: מזוודות גדולות מ־Hotel Gracery Shinjuku→HOTEL MYSTAYS Fuji Onsen Resort בבוקר היציאה להקונה (רק תרמילים)",
           window: "בוקר 7 בספט׳",
           priority: "high",
         },
@@ -155,7 +155,7 @@ window.CHECKLIST = {
           window: "שבועות לפני",
           priority: "high",
         },
-        { id: "h-tokyo1", label: "מלון טוקיו התחלה — Shinjuku / מערב (2–7 בספט׳)", window: "להזמין בהקדם", priority: "high" },
+        { id: "h-tokyo1", label: "Hotel Gracery Shinjuku — טוקיו התחלה (2–7 בספט׳) ✓ הוזמן", window: "הוזמן · Kabukicho 1-19-1 · בניין Godzilla", priority: "low" },
         { id: "h-kawaguchiko", label: "HOTEL MYSTAYS Fuji Onsen Resort — קוואגוצ׳יקו (לילות 8–9/9 · צ׳ק־אאוט 10/9) ✓ הוזמן", window: "הוזמן · ליד Fuji-Q / Fujikyu Highland", priority: "low" },
         { id: "h-kyoto", label: "KABIN Koji — קיוטו (11/9 ערב → 15/9 ערב) ✓ הוזמן", window: "הוזמן · Kawaramachi / 筋屋町152", priority: "low" },
         { id: "h-osaka", label: "Apartment Hotel 11 Shinsaibashi 2 — אוסקה (15/9 ערב → 21/9 בוקר) ✓ הוזמן", window: "הוזמן · היגאשי־שינסאיבשי 2-2-12", priority: "low" },

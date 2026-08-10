@@ -8,7 +8,7 @@
     "notes": [
       "המסלול של עידן ושחר — תל אביב → סיאול → טוקיו → הקונה → קוואגוצ׳יקו → קיוטו → אוסקה (+ קובה) → טוקיו → בנגקוק.",
       "טיסות הוזמנו: ET0419 + ET0672 (26–27 באוג׳) · Air Premia YP7321 סיאול→טוקיו (2 בספט׳ · 08:50–11:20).",
-      "מלון הוזמן בסיאול (Amanti Hotel Seoul Hongdae · 27 באוג׳–2 בספט׳). קיוטו: KABIN Koji (11–15/9). אוסקה: Apartment Hotel 11 Shinsaibashi 2 (15–21/9). טוקיו חלק 2: Shinjuku (21–25/9).",
+      "מלון הוזמן בסיאול (Amanti Hotel Seoul Hongdae · 27 באוג׳–2 בספט׳). טוקיו התחלה: Hotel Gracery Shinjuku (2–7/9). קיוטו: KABIN Koji (11–15/9). אוסקה: Apartment Hotel 11 Shinsaibashi 2 (15–21/9). טוקיו חלק 2: Shinjuku (21–25/9).",
       "20/9 טיול יום לקובה · יציאה מאוסקה ב־21/9 · יציאה מיפן לבנגקוק ~25/9 — לאשר טיסה. טיסת בנגקוק→טירנה לטיול אחר (רק במסך טיסות)."
     ]
   },
@@ -278,21 +278,22 @@
     },
     "d07": {
       "title": "סיאול → טוקיו ואורות שינג׳וקו",
-      "summary": "צ׳ק־אאוט מוקדם מ־Amanti, Air Premia YP7321 מ־ICN ל־NRT, Suica/eSIM וצ׳ק־אין בשינג׳וקו, ואז אחר־צהריים וערב מלא בשינג׳וקו: Gyoen, ראש גודזילה, מצפה Tocho החינמי, ניאון ב־Kabukicho, yakitori ב־Omoide ו־Golden Gai.",
+      "summary": "צ׳ק־אאוט מוקדם מ־Amanti, Air Premia YP7321 מ־ICN ל־NRT, Suica/eSIM וצ׳ק־אין ב־Hotel Gracery Shinjuku, ואז אחר־צהריים וערב מלא בשינג׳וקו: Gyoen, ראש גודזילה, מצפה Tocho החינמי, ניאון ב־Kabukicho, yakitori ב־Omoide ו־Golden Gai.",
       "food": "צהריים מאוחרים ליד המלון; yakitori ב־Omoide Yokocho; שתייה ב־Golden Gai.",
       "tips": [
         "הוזמן: Air Premia YP7321 · ICN 08:50 → NRT 11:20 (טרמינל 2).",
         "להגיע ל־ICN ~06:30–07:00 (טיסה בינלאומית).",
         "בחלק מהלוחות מופיע כ־YP731 — להתאים לכרטיס / כרטיס עלייה.",
         "להגדיר Suica/Pasmo בהגעה.",
+        "Hotel Gracery Shinjuku · Kabukicho 1-19-1 · לילות 2–6/9 · צ׳ק־אאוט בוקר 7/9.",
         "Shinjuku Gyoen — כניסה אחרונה ~17:00 בספט׳; ללכת יחסית מהר אחרי צ׳ק־אין.",
         "מצפה Tocho (דרום) חינמי — סגור כל יום שני שני לסירוגין."
       ],
       "transport": [
         "Amanti → ICN T1 (~שעה).",
         "Air Premia YP7321.",
-        "N'EX / לימוזינה → מלון ב־Shinjuku.",
-        "כל עצירות הערב ברגל במערב שינג׳וקו."
+        "N'EX / לימוזינה → Hotel Gracery Shinjuku (Kabukicho).",
+        "כל עצירות הערב ברגל מהמלון."
       ],
       "transfer": {
         "mode": "flight",
@@ -318,8 +319,8 @@
           "note": "הגירה + מזוודות"
         },
         {
-          "title": "העברה לשינג׳וקו + צ׳ק־אין במלון",
-          "note": "N'EX / לימוזינה · Suica/eSIM · להשאיר מזוודות ומקלחת קצרה"
+          "title": "העברה לשינג׳וקו + צ׳ק־אין — Hotel Gracery",
+          "note": "N'EX / לימוזינה · Suica/eSIM · להשאיר מזוודות ומקלחת קצרה · בניין Godzilla"
         },
         {
           "title": "צהריים מאוחרים ליד תחנת שינג׳וקו",
@@ -548,10 +549,10 @@
     },
     "d12": {
       "title": "Romancecar ו־Tsukino Yado Sara",
-      "summary": "בוקר Takkyubin של מזוודות גדולות טוקיו→HOTEL MYSTAYS Fuji Onsen Resort, Romancecar (עדיף Observation Car) להקונה־יומוטו, אוואקודני, ואז צ׳ק־אין ב־Tsukino Yado Sara לאונסן וקאיסקי.",
+      "summary": "בוקר Takkyubin של מזוודות גדולות מ־Hotel Gracery→HOTEL MYSTAYS Fuji Onsen Resort, Romancecar (עדיף Observation Car) להקונה־יומוטו, אוואקודני, ואז צ׳ק־אין ב־Tsukino Yado Sara לאונסן וקאיסקי.",
       "food": "ביצים שחורות; ארוחת ערב kaiseki ב־Tsukino Yado Sara.",
       "tips": [
-        "שולחים מזוודות גדולות טוקיו→HOTEL MYSTAYS Fuji Onsen Resort ב־Takkyubin; להקונה/פוג׳י רק עם תרמילים.",
+        "שולחים מזוודות גדולות מ־Hotel Gracery→HOTEL MYSTAYS Fuji Onsen Resort ב־Takkyubin; להקונה/פוג׳י רק עם תרמילים.",
         "להזמין Romancecar ~חודש מראש — לבקש Observation Car קדמי.",
         "Tsukino Yado Sara הוזמן · צ׳ק־אין מ־15:00 · בכל החדרים מרחץ חיצוני.",
         "כללי אונסן בריוקאן."
@@ -569,7 +570,7 @@
       },
       "timeline": [
         {
-          "title": "שליחת Takkyubin במלון בטוקיו",
+          "title": "שליחת Takkyubin ב־Hotel Gracery",
           "note": "מזוודות גדולות ל־HOTEL MYSTAYS Fuji Onsen Resort."
         },
         {
@@ -1343,6 +1344,9 @@
     },
     "itaewon": {
       "blurb": "ברים בינלאומיים וחיי לילה ידידותיים ל־LGBTQ+."
+    },
+    "gracery-shinjuku": {
+      "blurb": "הוזמן — בסיס טוקיו הראשון בקבּוקיצ׳ו (בניין Godzilla) · לילות 2–6/9 · צ׳ק־אאוט 7/9."
     },
     "keio-plaza": {
       "blurb": "רעיון לינה של אבא ליד Shinjuku — לא הוזמן אצלנו."

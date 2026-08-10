@@ -292,7 +292,7 @@ def build_hotels(days):
     # Preferred labels / areas for known stays
     meta = {
         ("Seoul", 0): ("סיאול", "Hongdae", "Amanti Hotel Seoul Hongdae", "הוזמן", "בסיס סיאול · צ׳ק־אאוט 2 בספט׳"),
-        ("Tokyo", 0): ("טוקיו (התחלה)", "Shinjuku", "", "לטפל", ""),
+        ("Tokyo", 0): ("טוקיו (התחלה)", "Kabukicho / Shinjuku", "Hotel Gracery Shinjuku", "הוזמן", "לילות 2–6/9 · צ׳ק־אאוט בוקר 7/9 להקונה"),
         ("Hakone", 0): ("הקונה", "Hakone-Yumoto", "Tsukino Yado Sara (月の宿 紗ら)", "הוזמן", "07/9 לילה · צ׳ק־אאוט 08/9 · קייסקי + אונסן"),
         ("Kawaguchiko", 0): ("קוואגוצ׳יקו", "Fujiyoshida / ליד Fuji-Q", "HOTEL MYSTAYS Fuji Onsen Resort", "הוזמן", "לילות 8–9/9 · צ׳ק־אאוט בוקר 10/9 לפני Fuji-Q / אוטובוס לילה"),
         ("Kyoto", 0): ("קיוטו", "Kawaramachi / Shijo", "KABIN Koji", "הוזמן", "11/9 ערב → 15/9 ערב"),
@@ -318,6 +318,12 @@ def build_hotels(days):
             hotel = "Amanti Hotel Seoul Hongdae"
             status = "הוזמן"
             end = "2026-09-02"
+        if city == "Tokyo" and key_i == 0:
+            hotel = "Hotel Gracery Shinjuku"
+            status = "הוזמן"
+            area = "Kabukicho / Shinjuku"
+            end = "2026-09-07"
+            notes = "הוזמן · לילות 2–6/9 · צ׳ק־אאוט בוקר 7/9 (Romancecar להקונה) · 歌舞伎町1-19-1 · בניין Godzilla"
         if city == "Hakone":
             hotel = "Tsukino Yado Sara (月の宿 紗ら)"
             status = "הוזמן"
@@ -371,10 +377,11 @@ def build_bookings(days):
         ("אוטובוס לילה קוואגוצ׳יקו → קיוטו", "d15", "לטפל", "10/9 בערב · הגעה 11/9 בבוקר · בלי מלון ב־10/9"),
         ("שינקנסן SmartEX (+ oversized baggage)", "d26", "לטפל", "18/9 הירושימה · 21/9 אוסקה→טוקיו"),
         ("Tobu Spacia X / Revaty לניקו", "d27", "לטפל", "Asakusa ← Nikko"),
-        ("Takkyubin מזוודות טוקיו→MYSTAYS Fuji Onsen", "d12", "לטפל", "בוקר 7/9 לפני Romancecar · כתובת המלון בפוג׳יושידה"),
+        ("Takkyubin מזוודות Gracery→MYSTAYS Fuji Onsen", "d12", "לטפל", "בוקר 7/9 לפני Romancecar · מ־Hotel Gracery לכתובת MYSTAYS בפוג׳יושידה"),
         ("Takkyubin מזוודות MYSTAYS→KABIN Koji", "d15", "לטפל", "10/9 באותו יום · שיגיעו ל־KABIN Koji בקיוטו"),
         # 4 · Stays / experiences
         ("Tsukino Yado Sara — ריוקאן הקונה", "d12", "הוזמן", "07/9 · Hakone-Yumoto · קייסקי + אונסן"),
+        ("Hotel Gracery Shinjuku — טוקיו התחלה", "d07", "הוזמן", "2–7/9 · Kabukicho 1-19-1 · בניין Godzilla"),
         ("מלון קוואגוצ׳יקו — MYSTAYS Fuji Onsen", "d13", "הוזמן", "לילות 8–9/9 · צ׳ק־אאוט 10/9 · ליד Fuji-Q"),
         ("KABIN Koji — מלון קיוטו", "d16", "הוזמן", "11/9 ערב → 15/9 ערב · 筋屋町152 · Kawaramachi"),
         ("Apartment Hotel 11 Shinsaibashi 2 — אוסקה", "d20", "הוזמן", "15/9 ערב → 21/9 בוקר · 東心斎橋2-2-12"),
