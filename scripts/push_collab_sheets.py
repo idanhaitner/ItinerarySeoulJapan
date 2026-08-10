@@ -348,8 +348,8 @@ def build_bookings(days):
         # 1 · Documents
         ("רישיון נהיגה בינלאומי פיזי (IDP 1949)", "d11", "לטפל", "חובה ל־Street Kart · להנפיק בארץ עכשיו"),
         # 2 · Attractions (urgency order)
-        ("USJ Studio Pass (כרטיס כניסה)", "d21", "לטפל", "16/9 · נשאר להזמין אחרי שה־Express הוזמן"),
-        ("USJ Express Pass", "d21", "הוזמן", "16/9 · Nintendo World / תורים"),
+        ("USJ Studio Pass (כרטיס כניסה)", "d21", "לטפל", "16/9 · חובה בנפרד מה־Express"),
+        ("USJ Express Pass 7 Minecart & Selection", "d21", "הוזמן", "16/9 · SNW 09:20–10:20 · Mario 09:20–09:50 · Yoshi 09:50–10:20 · Mine Cart 10:20–10:50 · Hippogriff 18:30–19:00 · HP Anytime · Choice A/B"),
         ("Shibuya Sky sunset", "d08", "לטפל", "נפתח 28 ימים מראש"),
         ("Street Kart Tokyo", "d11", "לטפל", "אתר רשמי / Klook + IDP פיזי"),
         ("teamLab Planets Tokyo", "d10", "לטפל", "כרטיס מתוזמן · Toyosu"),

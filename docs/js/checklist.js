@@ -23,14 +23,14 @@ window.CHECKLIST = {
       items: [
         {
           id: "j-usj-studio",
-          label: "USJ (16/9) — Studio Pass (כרטיס כניסה רגיל) · עדיין להזמין",
+          label: "USJ (16/9) — Studio Pass (כרטיס כניסה רגיל) · עדיין להזמין · חובה בנפרד מה־Express",
           window: "עכשיו · נשאר רק זה אחרי שה־Express הוזמן",
           priority: "critical",
         },
         {
           id: "j-usj-express",
-          label: "USJ (16/9) — Express Pass ✓ הוזמן",
-          window: "הוזמן",
+          label: "USJ (16/9) — Express Pass 7 Minecart & Selection ✓ הוזמן · SNW/Mario/Yoshi/Mine Cart בבוקר · Hippogriff 18:30",
+          window: "הוזמן · לשמור QR אופליין",
           priority: "low",
         },
         {

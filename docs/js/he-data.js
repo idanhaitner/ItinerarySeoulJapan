@@ -919,42 +919,35 @@
       ]
     },
     "d21": {
-      "title": "יוניברסל סטודיוס יפן",
-      "summary": "יום מלא ב־USJ — Nintendo World, Harry Potter ורכבות הרים.",
-      "food": "נשנושים בפארק; ראמן ב־Namba.",
+      "title": "יוניברסל סטודיוס יפן — יום Express Pass",
+      "summary": "USJ לפי Express Pass 7 (Minecart & Selection): חלונות Super Nintendo World בבוקר, Harry Potter ב־express, Choice A/B, ו־Flight of the Hippogriff ב־18:30.",
+      "food": "נשנושים בפארק / Toadette אם מסתדר; ארוחה קלה בפארק או ב־Namba אחרי.",
       "tips": [
-        "Express Pass ✓ הוזמן ל־16/9 — נשאר להזמין Studio Pass (כניסה רגילה).",
-        "לאשר כללי כניסה ל־Nintendo World לפי חבילת ה־Express."
+        "שובר: Universal Express Pass 7～Minecart & Selection～ · 16/9 · עדיין צריך Studio Pass (כניסה לפארק).",
+        "מתוזמן: SNW 09:20–10:20 · Mario Kart 09:20–09:50 · Yoshi 09:50–10:20 · Mine Cart 10:20–10:50 · Hippogriff 18:30–19:00.",
+        "Express בכל שעה היום: Harry Potter and the Forbidden Journey.",
+        "Choice A (לבחור אחת): Jurassic Park — The Ride או JAWS.",
+        "Choice B (לבחור אחת): Despicable Me: Minion Mayhem או The Flying Dinosaur.",
+        "לשמור את מסכי ה־QR אופליין — ה־Wi‑Fi בפארק יכול ליפול."
       ],
       "transport": [
-        "רכבת תחתית ל־Universal City (~25–35 דק׳). לצאת עד ~07:45."
+        "רכבת תחתית ל־Universal City (~25–35 דק׳). לצאת עד ~07:30 כדי לעבור בידוק לפני חלון SNW ב־09:20."
       ],
       "transfer": null,
       "timeline": [
-        {
-          "title": "יציאה מהמלון",
-          "note": ""
-        },
-        {
-          "title": "USJ עם Express Pass",
-          "note": "עדיפות מתוזמנת ל־Nintendo World ו־Harry Potter."
-        },
-        {
-          "title": "צהריים בפארק",
-          "note": ""
-        },
-        {
-          "title": "אטרקציות והופעות אחר הצהריים",
-          "note": "ממשיכים עם ההייטים."
-        },
-        {
-          "title": "אווירת ערב ב־USJ",
-          "note": ""
-        },
-        {
-          "title": "חזרה ל־Namba",
-          "note": ""
-        }
+        { "title": "יציאה מהמלון ל־USJ", "note": "להיות מעבר לשערים לפני חלון הכניסה ל־SNW ב־09:20." },
+        { "title": "כניסה לפארק וכיוון Super Nintendo World", "note": "Studio Pass + הצגת QR של Express ב־SNW." },
+        { "title": "Mario Kart: Koopa's Challenge", "note": "חלון Express 09:20–09:50." },
+        { "title": "Yoshi's Adventure", "note": "חלון Express 09:50–10:20." },
+        { "title": "Mine Cart Madness", "note": "חלון Express 10:20–10:50." },
+        { "title": "Harry Potter and the Forbidden Journey", "note": "Express בכל שעה היום — Hogsmeade אחרי SNW." },
+        { "title": "צהריים בפארק", "note": "התאוששות לפני Choice A/B." },
+        { "title": "Choice B — Minion Mayhem או The Flying Dinosaur", "note": "לבחור אחת ☆ מהשובר." },
+        { "title": "Choice A — Jurassic Park The Ride או JAWS", "note": "לבחור אחת ☆ מהשובר." },
+        { "title": "זמן חופשי — צילומים, חנויות, מופעים", "note": "באפר לפני חלון Hippogriff בערב." },
+        { "title": "Flight of the Hippogriff", "note": "חלון Express 18:30–19:00." },
+        { "title": "ערב בפארק / יציאה", "note": "עוד נשנוש או מזכרת אם נשאר כוח." },
+        { "title": "חזרה ל־Namba", "note": "" }
       ]
     },
     "d22": {
@@ -1643,7 +1636,7 @@
       "blurb": "סבב אוכל ניאון."
     },
     "usj": {
-      "blurb": "Nintendo World + רכבות הרים."
+      "blurb": "Express Pass 7 Minecart & Selection ב־16/9 — SNW בבוקר + Harry Potter + Choice A/B + Hippogriff בערב."
     },
     "nara-park": {
       "blurb": "איילים + הבודהה הגדול."

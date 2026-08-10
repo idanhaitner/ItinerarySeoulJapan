@@ -1792,7 +1792,7 @@ window.PLACES = {
     ],
     "lat": 34.6654,
     "lng": 135.4323,
-    "blurb": "Nintendo World + coasters."
+    "blurb": "Express Pass 7 Minecart & Selection on 16/9 — timed SNW morning + Harry Potter + Choice A/B + Hippogriff evening."
   },
   "nara-park": {
     "id": "nara-park",
@@ -4078,59 +4078,118 @@ window.DAYS = [
     "city": "Osaka",
     "country": "JP",
     "hotelId": null,
-    "title": "Universal Studios Japan",
-    "summary": "Full day at Universal Studios Japan — Nintendo World, Harry Potter, and coasters.",
-    "food": "Park snacks; Namba ramen.",
+    "title": "Universal Studios Japan — Express Pass day",
+    "summary": "USJ timed to our Express Pass 7 (Minecart & Selection): Super Nintendo World morning windows, Harry Potter express, Choice A/B rides, then Flight of the Hippogriff at 18:30.",
+    "food": "Park snacks / Toadette Café if timing works; light dinner in park or Namba after.",
     "placeIds": [
       "usj"
     ],
     "transport": [
-      "Subway to Universal City (~25–35m). Leave by ~07:45."
+      "Subway to Universal City (~25–35m). Leave by ~07:30 to clear security before the 09:20 SNW window."
     ],
     "tips": [
-      "Express Pass ✓ booked for 16/9 — still need Studio Pass (regular entry).",
-      "Confirm Nintendo World entry rules for your Express package."
+      "Voucher: Universal Express Pass 7～Minecart & Selection～ · 16/9 · still need Studio Pass (park entry).",
+      "Timed: SNW 09:20–10:20 · Mario Kart 09:20–09:50 · Yoshi 09:50–10:20 · Mine Cart 10:20–10:50 · Hippogriff 18:30–19:00.",
+      "Anytime express: Harry Potter and the Forbidden Journey.",
+      "Choice A (pick one): Jurassic Park — The Ride OR JAWS.",
+      "Choice B (pick one): Despicable Me: Minion Mayhem OR The Flying Dinosaur.",
+      "Save QR screens offline — park Wi‑Fi can drop."
     ],
     "timeline": [
       {
-        "time": "07:45",
-        "title": "Depart hotel",
-        "note": "",
+        "time": "07:30",
+        "title": "Depart hotel for USJ",
+        "note": "Aim to be through gates before the 09:20 SNW entry window.",
         "category": "transit"
       },
       {
-        "time": "09:00",
-        "title": "USJ with Express Pass",
-        "note": "Timed Nintendo World + Harry Potter priority.",
+        "time": "08:45",
+        "title": "Park entry & head to Super Nintendo World",
+        "note": "Studio Pass + show Express QR at SNW.",
         "placeId": "usj",
-        "end": "12:30",
+        "category": "attraction"
+      },
+      {
+        "time": "09:20",
+        "title": "Mario Kart: Koopa's Challenge",
+        "note": "Express window 09:20–09:50.",
+        "placeId": "usj",
+        "end": "09:50",
+        "category": "attraction"
+      },
+      {
+        "time": "09:50",
+        "title": "Yoshi's Adventure",
+        "note": "Express window 09:50–10:20.",
+        "placeId": "usj",
+        "end": "10:20",
+        "category": "attraction"
+      },
+      {
+        "time": "10:20",
+        "title": "Mine Cart Madness",
+        "note": "Express window 10:20–10:50.",
+        "placeId": "usj",
+        "end": "10:50",
+        "category": "attraction"
+      },
+      {
+        "time": "11:15",
+        "title": "Harry Potter and the Forbidden Journey",
+        "note": "Express anytime today — Hogsmeade after SNW.",
+        "placeId": "usj",
+        "end": "12:15",
         "category": "attraction"
       },
       {
         "time": "12:30",
         "title": "Lunch in park",
-        "note": "",
+        "note": "Recover before Choice A/B.",
         "placeId": "usj",
         "category": "dining"
       },
       {
         "time": "13:30",
-        "title": "Afternoon rides & shows",
-        "note": "Continue headliners.",
+        "title": "Choice B — Minion Mayhem or The Flying Dinosaur",
+        "note": "Pick one ☆ on the voucher.",
         "placeId": "usj",
-        "end": "18:30",
+        "end": "14:45",
         "category": "attraction"
+      },
+      {
+        "time": "15:00",
+        "title": "Choice A — Jurassic Park The Ride or JAWS",
+        "note": "Pick one ☆ on the voucher.",
+        "placeId": "usj",
+        "end": "16:15",
+        "category": "attraction"
+      },
+      {
+        "time": "16:30",
+        "title": "Free time — photos, shops, shows",
+        "note": "Buffer before the evening Hippogriff slot.",
+        "placeId": "usj",
+        "end": "18:15",
+        "category": "shopping"
       },
       {
         "time": "18:30",
-        "title": "Evening at USJ",
-        "note": "",
+        "title": "Flight of the Hippogriff",
+        "note": "Express window 18:30–19:00.",
         "placeId": "usj",
-        "end": "21:00",
-        "category": "attraction"
+        "end": "19:00",
+        "category": "transit"
       },
       {
-        "time": "21:30",
+        "time": "19:15",
+        "title": "Evening park / exit",
+        "note": "One more snack or souvenir if energy remains.",
+        "placeId": "usj",
+        "end": "21:00",
+        "category": "dining"
+      },
+      {
+        "time": "21:20",
         "title": "Return Namba",
         "note": "",
         "category": "attraction"
