@@ -241,7 +241,8 @@
   function filteredPlaces() {
     return Object.values(places)
       .filter((p) => {
-        const cityOk = state.city === "all" || p.city === state.city;
+        const placeCity = p.city === "Tel Aviv" ? "Seoul" : p.city;
+        const cityOk = state.city === "all" || placeCity === state.city;
         const qOk = matchesQuery(placeSearchBlob(p), state.query);
         return cityOk && qOk;
       })
@@ -542,14 +543,13 @@
       </div>`;
   }
 
-  function renderMaps() {
-    if (window.JourneyMap) window.JourneyMap.destroy();
-
-    const list = filteredPlaces();
-    const stopCount = window.JourneyMap
-      ? window.JourneyMap.buildStops(days, places, state.city).length
-      : 0;
-    setResultCount(`${stopCount} עצירות`);
+  function ensureMapsShell() {
+    let mapEl = document.getElementById("journey-map");
+    let legend = document.getElementById("journey-legend");
+    let placesHost = document.getElementById("places-host");
+    if (mapEl && legend && placesHost) {
+      return { mapEl, legend, placesHost };
+    }
 
     els.placeList.innerHTML = `
       <section class="journey-section">
@@ -569,18 +569,13 @@
         <div class="section-title">כל המקומות · 場所</div>
         <p class="journey-sub">מקובצים לפי עיר — פתחו עיר כדי לדפדף במקומות שלה.</p>
       </div>
-      ${placesGroupedHtml(list)}
+      <div id="places-host"></div>
     `;
 
-    const mapEl = document.getElementById("journey-map");
-    if (mapEl && window.JourneyMap && window.L) {
-      window.JourneyMap.render(mapEl, days, places, {
-        city: state.city,
-        onOpenDay: (id) => openDay(id),
-      });
-    }
+    mapEl = document.getElementById("journey-map");
+    legend = document.getElementById("journey-legend");
+    placesHost = document.getElementById("places-host");
 
-    const legend = document.getElementById("journey-legend");
     if (legend) {
       legend.onclick = (e) => {
         const btn = e.target.closest("[data-jump-day]");
@@ -588,6 +583,26 @@
         const id = btn.dataset.jumpDay;
         if (window.JourneyMap) window.JourneyMap.focusDay(id, days, places);
       };
+    }
+
+    return { mapEl, legend, placesHost };
+  }
+
+  function renderMaps() {
+    const list = filteredPlaces();
+    const { mapEl, placesHost } = ensureMapsShell();
+    const stopCount = window.JourneyMap
+      ? window.JourneyMap.buildStops(days, places, state.city).length
+      : 0;
+    setResultCount(`${stopCount} עצירות`);
+
+    if (placesHost) placesHost.innerHTML = placesGroupedHtml(list);
+
+    if (mapEl && window.JourneyMap && window.L) {
+      window.JourneyMap.render(mapEl, days, places, {
+        city: state.city,
+        onOpenDay: (id) => openDay(id),
+      });
     }
   }
 
@@ -986,6 +1001,9 @@
     applyPanelVisibility();
     syncChrome();
     render();
+    if (view === "maps" && window.JourneyMap && typeof window.JourneyMap.invalidate === "function") {
+      requestAnimationFrame(() => window.JourneyMap.invalidate());
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 

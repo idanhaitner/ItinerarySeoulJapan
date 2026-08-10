@@ -29,6 +29,8 @@ window.JourneyMap = (function () {
   let map = null;
   let layerGroup = null;
   let resizeObserver = null;
+  let resizeTimer = null;
+  let lastFitKey = "";
 
   function cityColor(city) {
     return CITY_COLORS[city] || "#2f2b28";
@@ -146,11 +148,16 @@ window.JourneyMap = (function () {
       tapTolerance: 15,
       touchZoom: true,
       dragging: true,
+      fadeAnimation: false,
+      zoomAnimation: true,
+      markerZoomAnimation: false,
     });
     L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
       subdomains: "abcd",
       maxZoom: 18,
+      updateWhenIdle: true,
+      keepBuffer: 2,
     }).addTo(map);
     layerGroup = L.layerGroup().addTo(map);
 
@@ -161,7 +168,12 @@ window.JourneyMap = (function () {
 
     if (typeof ResizeObserver !== "undefined") {
       resizeObserver = new ResizeObserver(() => {
-        if (map) map.invalidateSize();
+        if (!map) return;
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          if (!map) return;
+          map.invalidateSize({ animate: false, pan: false });
+        }, 160);
       });
       resizeObserver.observe(container);
     }
@@ -169,6 +181,9 @@ window.JourneyMap = (function () {
   }
 
   function destroy() {
+    clearTimeout(resizeTimer);
+    resizeTimer = null;
+    lastFitKey = "";
     if (resizeObserver) resizeObserver.disconnect();
     resizeObserver = null;
     if (map) {
@@ -188,9 +203,8 @@ window.JourneyMap = (function () {
 
     if (!stops.length) {
       if (legend) legend.innerHTML = `<li class="journey-empty">אין עצירות במפה לסינון הזה.</li>`;
-      if (map) {
-        layerGroup.clearLayers();
-      }
+      if (map && layerGroup) layerGroup.clearLayers();
+      lastFitKey = "";
       return stops;
     }
 
@@ -221,7 +235,7 @@ window.JourneyMap = (function () {
         map.flyTo([s.lat, s.lng], 14, { animate: true, duration: 0.85 });
       });
       marker.on("popupopen", () => {
-        const btn = document.querySelector(`[data-open-day="${s.day.id}"]`);
+        const btn = document.querySelector(`.journey-popup [data-open-day="${s.day.id}"]`);
         if (btn) {
           btn.onclick = (e) => {
             e.preventDefault();
@@ -231,12 +245,16 @@ window.JourneyMap = (function () {
       });
     });
 
+    const fitKey = `${filterCity}|${latLngs.map((ll) => ll.join(",")).join(";")}`;
     requestAnimationFrame(() => {
-      map.invalidateSize();
+      if (!map) return;
+      map.invalidateSize({ animate: false, pan: false });
+      if (fitKey === lastFitKey) return;
+      lastFitKey = fitKey;
       if (latLngs.length === 1) {
-        map.setView(latLngs[0], 11);
+        map.setView(latLngs[0], 11, { animate: false });
       } else {
-        map.fitBounds(line.getBounds(), { padding: [36, 36], maxZoom: 8 });
+        map.fitBounds(line.getBounds(), { padding: [36, 36], maxZoom: 8, animate: false });
       }
     });
 
@@ -284,5 +302,13 @@ window.JourneyMap = (function () {
     });
   }
 
-  return { render, destroy, focusDay, buildStops };
+  function invalidate() {
+    if (!map) return;
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (map) map.invalidateSize({ animate: false, pan: false });
+    }, 50);
+  }
+
+  return { render, destroy, focusDay, buildStops, invalidate };
 })();
