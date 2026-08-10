@@ -278,18 +278,21 @@
     },
     "d07": {
       "title": "סיאול → טוקיו ואורות שינג׳וקו",
-      "summary": "צ׳ק־אאוט מוקדם מ־Amanti, Air Premia YP7321 מ־ICN ל־NRT, הגדרת Suica ו־eSIM, וערב בשינג׳וקו ב־Omoide Yokocho או Golden Gai.",
-      "food": "Yakitori ב־Omoide Yokocho או שתייה ב־Golden Gai.",
+      "summary": "צ׳ק־אאוט מוקדם מ־Amanti, Air Premia YP7321 מ־ICN ל־NRT, Suica/eSIM וצ׳ק־אין בשינג׳וקו, ואז אחר־צהריים וערב מלא בשינג׳וקו: Gyoen, ראש גודזילה, מצפה Tocho החינמי, ניאון ב־Kabukicho, yakitori ב־Omoide ו־Golden Gai.",
+      "food": "צהריים מאוחרים ליד המלון; yakitori ב־Omoide Yokocho; שתייה ב־Golden Gai.",
       "tips": [
         "הוזמן: Air Premia YP7321 · ICN 08:50 → NRT 11:20 (טרמינל 2).",
         "להגיע ל־ICN ~06:30–07:00 (טיסה בינלאומית).",
         "בחלק מהלוחות מופיע כ־YP731 — להתאים לכרטיס / כרטיס עלייה.",
-        "להגדיר Suica/Pasmo בהגעה."
+        "להגדיר Suica/Pasmo בהגעה.",
+        "Shinjuku Gyoen — כניסה אחרונה ~17:00 בספט׳; ללכת יחסית מהר אחרי צ׳ק־אין.",
+        "מצפה Tocho (דרום) חינמי — סגור כל יום שני שני לסירוגין."
       ],
       "transport": [
         "Amanti → ICN T1 (~שעה).",
         "Air Premia YP7321.",
-        "N'EX / לימוזינה → מלון ב־Shinjuku."
+        "N'EX / לימוזינה → מלון ב־Shinjuku.",
+        "כל עצירות הערב ברגל במערב שינג׳וקו."
       ],
       "transfer": {
         "mode": "flight",
@@ -316,146 +319,230 @@
         },
         {
           "title": "העברה לשינג׳וקו + צ׳ק־אין במלון",
-          "note": "N'EX / לימוזינה · Suica/eSIM"
+          "note": "N'EX / לימוזינה · Suica/eSIM · להשאיר מזוודות ומקלחת קצרה"
         },
         {
-          "title": "סיור ב־Shinjuku",
-          "note": ""
+          "title": "צהריים מאוחרים ליד תחנת שינג׳וקו",
+          "note": "ראמן / דונבורי לפני ההליכות"
         },
         {
-          "title": "Omoide Yokocho או Golden Gai",
-          "note": "Yakitori ב־Memory Lane או ברים קטנים בסמטאות."
+          "title": "Shinjuku Gyoen",
+          "note": "גנים יפניים/אנגליים/צרפתיים — כניסה אחרונה ~17:00"
+        },
+        {
+          "title": "הליכה במטרופולין שינג׳וקו",
+          "note": "ראש גודזילה ב־Toho, Bic Camera / Uniqlo, שער Kabukicho"
+        },
+        {
+          "title": "מצפה בניין הממשל המטרופוליני (Tocho)",
+          "note": "מצפה חינמי בשני מגדלים — פוג׳י בימים בהירים"
+        },
+        {
+          "title": "טיול ניאון ב־Kabukicho",
+          "note": "אווירה ואורות — לשמור על חפצים"
+        },
+        {
+          "title": "Yakitori ב־Omoide Yokocho",
+          "note": "שיפודים ובירה מתחת למסילות"
+        },
+        {
+          "title": "שתייה ב־Golden Gai",
+          "note": "ברים זעירים בסמטאות — כוס אחת בכל בר מספיקה"
         }
       ]
     },
     "d08": {
-      "title": "מערב טוקיו: תרבות, פופ ו־Shibuya Sky",
-      "summary": "מערב טוקיו: מקדש Meiji, הראגו׳קו ואומוטסנדו, מעבר שיבויה, ושקיעה ב־Shibuya Sky (להזמין מראש).",
-      "food": "נשנושים ב־Harajuku; ארוחת ערב ושתייה ב־Shibuya.",
+      "title": "מערב טוקיו: Meiji, Harajuku, Omotesando ו־Shibuya Sky",
+      "summary": "לולאה מלאה במערב טוקיו: Meiji Jingu ו־Yoyogi, Takeshita + Cat Street, צהריים ב־Omotesando, Shibuya Crossing / Hachiko / Center-gai, שקיעה מתוזמנת ב־Shibuya Sky, וארוחת ערב בשיבויה.",
+      "food": "קרפ או קפה ב־Omotesando; ערב בשיבויה (Nonbei Yokocho או Center-gai).",
       "tips": [
         "להזמין סלוט שקיעה ב־Shibuya Sky כ־4 שבועות מראש.",
-        "דרכון לקניות פטורות ממס."
+        "דרכון לקניות פטורות ממס.",
+        "Meiji Jingu נפתח מוקדם — כדאי לפני האוטובוסים אם אפשר."
       ],
       "transport": [
-        "הליכה/Yamanote בין Harajuku ל־Shibuya."
+        "הליכה Meiji → Harajuku → Omotesando → Shibuya (או קפיצת Yamanote אחת)."
       ],
       "transfer": null,
       "timeline": [
         {
           "title": "Meiji Jingu",
-          "note": "מקדש ביער — בוקר רגוע."
+          "note": "מקדש ביער — שביל שקט מתחנת Harajuku"
         },
         {
-          "title": "Takeshita Street ו־Omotesando",
-          "note": "אופנת פופ → בוטיקים בשדרה מוצלת."
+          "title": "שולי Yoyogi Park",
+          "note": "הליכה ירוקה קצרה לכיוון Takeshita"
         },
         {
-          "title": "Shibuya Crossing ו־Center-gai",
-          "note": "ההצלבה, מגה־חנויות וצפייה באנשים."
+          "title": "Takeshita Street",
+          "note": "קרפים, אופנת נוער ודוכני מזכרות"
+        },
+        {
+          "title": "Cat Street",
+          "note": "רחוב צדדי אלגנטי בין Harajuku ל־Omotesando"
+        },
+        {
+          "title": "צהריים ובוטיקים ב־Omotesando",
+          "note": "שדרה מוצלת — קפה / ארוחה קלה וחלון־קניות"
+        },
+        {
+          "title": "הליכה לשיבויה",
+          "note": "המשך דרומה ב־Omotesando / Meiji-dori"
+        },
+        {
+          "title": "Hachiko ו־Shibuya Crossing",
+          "note": "פסל, ההצלבה, ונוף מ־Starbucks אם רוצים"
+        },
+        {
+          "title": "Center-gai וקניות בשיבויה",
+          "note": "109, Tower Records, Loft, Mag’s Park בגג אם יש כוח"
         },
         {
           "title": "שקיעה ב־Shibuya Sky",
-          "note": "כרטיס עם שעה — להגיע מוקדם."
+          "note": "כרטיס עם שעה — להגיע 15–20 דק׳ מוקדם"
         },
         {
-          "title": "ארוחת ערב ושתייה ב־Shibuya",
-          "note": ""
+          "title": "ארוחת ערב ושתייה בשיבויה",
+          "note": "סמטת Nonbei Yokocho או ערב ב־Center-gai"
         }
       ]
     },
     "d09": {
-      "title": "אסקוסה ל־Skytree ועיר החשמל",
-      "summary": "Senso-ji ו־Nakamise מוקדם, הליכה דרך Tokyo Mizumachi ל־Tokyo Skytree / Solamachi, ואז אקיהברה עם izakaya.",
-      "food": "נשנושים ב־Nakamise; ארוחת ערב ב־izakaya.",
+      "title": "אסקוסה, Kappabashi, Skytree ואקיהברה",
+      "summary": "יום מזרח טוקיו הקלאסי: Senso-ji ו־Nakamise מוקדם, רחוב כלי המטבח Kappabashi, טיילת Sumida ל־Skytree/Solamachi, ואז אולמות אנימה וארקייד באקיהברה עם izakaya.",
+      "food": "נשנושים ב־Nakamise; Solamachi או Ameyoko; ערב ב־izakaya באקיהברה / קנדה.",
       "tips": [
-        "Senso-ji בבוקר מוקדם.",
-        "הליכה Asakusa → Mizumachi → Skytree / Solamachi."
+        "Senso-ji לפני 8:30 אם רוצים פחות קהל.",
+        "ב־Kappabashi: אוכל פלסטיק וסכיני מטבח (לבדוק כללי מזוודה).",
+        "כרטיס למגדל Skytree אופציונלי — הקניון Solamachi והחוץ חינמיים.",
+        "אופציה: Ueno Park + Ameyoko לפני אקיהברה אם רוצים שוק רחוב."
       ],
       "transport": [
         "רכבת תחתית ל־Asakusa.",
-        "הליכה Asakusa → Mizumachi → Skytree; אחר כך תחבורה ל־Akihabara."
+        "הליכה Asakusa → Kappabashi → Mizumachi → Skytree.",
+        "JR/תחתית לאקיהברה (או דרך Ueno/Ameyoko)."
       ],
       "transfer": null,
       "timeline": [
         {
-          "title": "Senso-ji ו־Nakamise",
-          "note": "מקדש מוקדם + רחוב קניות."
+          "title": "Senso-ji ו־Kaminarimon",
+          "note": "מקדש + שער הרעם לפני שיא התיירים"
         },
         {
-          "title": "הליכה ל־Tokyo Skytree דרך Mizumachi",
-          "note": "גישה נוחה לנהר / Solamachi."
+          "title": "רחוב Nakamise",
+          "note": "נינגיו־יאקי, סנבאי ומזכרות קטנות"
+        },
+        {
+          "title": "Kappabashi — עיר המטבח",
+          "note": "כלי בישול, סכינים ותצוגות אוכל פלסטיק — ~10–15 דק׳ הליכה"
+        },
+        {
+          "title": "טיילת Sumida / Tokyo Mizumachi",
+          "note": "הליכה נוחה לכיוון Skytree — אפשרויות צהריים בדרך"
+        },
+        {
+          "title": "Tokyo Skytree ו־Solamachi",
+          "note": "חוץ המגדל + קומות הקניון; כרטיס לדק רק אם רוצים"
+        },
+        {
+          "title": "עצירת נשנושים אופציונלית ב־Ameyoko",
+          "note": "אם יש רעב/כוח: שוק רחוב מתחת למסילות ליד Ueno"
         },
         {
           "title": "Akihabara Electric Town",
-          "note": "גיימינג, אנימה ואלקטרוניקה."
+          "note": "ארקיידים GiGO/TAITO, Animate, Radio Kaikan וחנויות אנימה"
         },
         {
           "title": "ארוחת ערב ב־izakaya — Akihabara או Kanda",
-          "note": ""
+          "note": "ערב קז׳ואלי במזרח טוקיו"
         }
       ]
     },
     "d10": {
-      "title": "שוק הדגים, teamLab Planets וג׳ינזה",
-      "summary": "ארוחת בוקר בצוקיג׳י, teamLab Planets בטויוסו, טיילת אודאיבה וגאנדאם, וערב בג׳ינזה.",
-      "food": "ארוחת בוקר סושי ב־Tsukiji; ארוחת ערב ב־Ginza.",
+      "title": "צוקיג׳י, teamLab Planets, אודאיבה וג׳ינזה",
+      "summary": "ארוחת בוקר פירות ים ב־Tsukiji, teamLab Planets מתוזמן בטויוסו, גאנדאם וטיילת אודאיבה, ואז ערב ארוך בג׳ינזה: depachika, חנויות דגל וארוחת ערב.",
+      "food": "סושי / פירות ים ב־Tsukiji; נשנושי depachika וארוחת ערב בג׳ינזה.",
       "tips": [
         "כרטיסים מתוזמנים ל־teamLab Planets.",
-        "מכנסיים שאפשר להפשיל — יש חדרים עם מים."
+        "מכנסיים שאפשר להפשיל / מגבת קטנה — יש חדרים עם מים.",
+        "אם הסלוט של teamLab מאוחר: גני הארמון המזרחיים אחרי צוקיג׳י (סגורים שני/שישי).",
+        "בג׳ינזה: Mitsukoshi/Ginza Six depachika, Uniqlo Tokyo, Itoya."
       ],
       "transport": [
         "Tsukiji מוקדם.",
-        "Yurikamome/Rinkai לטויוסו ואודאיבה.",
-        "ערב לג׳ינזה."
+        "Yurikamome/Rinkai טויוסו → אודאיבה.",
+        "Yurikamome או תחתית חזרה לג׳ינזה."
       ],
       "transfer": null,
       "timeline": [
         {
           "title": "ארוחת בוקר בשוק החיצוני Tsukiji",
-          "note": "פירות ים טריים / סושי בנגיעות."
+          "note": "סושי, טמאגו ודוכני פירות ים — להגיע רעבים"
+        },
+        {
+          "title": "גני הארמון המזרחיים (אופציונלי)",
+          "note": "רק אם הסלוט של teamLab אחר־צהריים והגנים פתוחים"
         },
         {
           "title": "teamLab Planets Tokyo",
-          "note": "אמנות דיגיטלית במים בטויוסו — כרטיס עם שעה."
+          "note": "אמנות דיגיטלית במים בטויוסו — כרטיס עם שעה"
         },
         {
           "title": "טיילת Odaiba ו־Gundam",
-          "note": "נופי מפרץ + DiverCity."
+          "note": "גאנדאם ב־DiverCity, טיילת מפרץ ונופי Rainbow Bridge"
         },
         {
-          "title": "טיול וארוחת ערב ב־Ginza",
-          "note": "חנויות כלבו ו־depachika."
+          "title": "הגעה לג׳ינזה — depachika וחנויות דגל",
+          "note": "אולמות אוכל במרתף + Uniqlo / Itoya / Ginza Six"
+        },
+        {
+          "title": "ארוחת ערב בג׳ינזה",
+          "note": "סושי, טמפורה או מסעדות בכלבו"
         }
       ]
     },
     "d11": {
-      "title": "Street Kart, פארק ושימוקיטאזאווה",
-      "summary": "Street Kart ברחובות טוקיו, פארק אינוקאשירה וקיצ׳וג׳י, ואז וינטג׳ בשימוקיטאזאווה.",
-      "food": "קפה ב־Kichijoji / Shimokitazawa.",
+      "title": "Street Kart, קיצ׳וג׳י, שימוקיטה ודאיקניאמה",
+      "summary": "בוקר Street Kart, פארק אינוקאשירה + צהריים ב־Harmonica Yokocho בקיצ׳וג׳י, אחר־צהריים וינטג׳ בשימוקיטאזאווה, ואז Daikanyama T-Site וערב על נהר מגורו בנאקאמגורו (סגנון היום הרגוע מהאקסל המשפחתי).",
+      "food": "צהריים ב־Harmonica Yokocho / קיצ׳וג׳י; ערב בנאקאמגורו או דאיקניאמה.",
       "tips": [
-        "רישיון נהיגה בינלאומי פיזי חובה ל־Street Kart — צילום לא מתקבל."
+        "רישיון נהיגה בינלאומי פיזי חובה ל־Street Kart — צילום לא מתקבל.",
+        "לאשר נקודת מפגש לקארט בערב שלפני.",
+        "אופציה בסוף: New York Bar ב־Park Hyatt (להזמין) אם רוצים כוסית עם נוף בשינג׳וקו."
       ],
       "transport": [
         "נקודת מפגש קארט (לרוב שיבויה/שינג׳וקו).",
-        "Mitaka/Kichijoji לפארק; רכבת לשימוקיטה."
+        "Chuo/Sobu לקיצ׳וג׳י; קו Inokashira או Odakyu לשימוקיטה; Tokyu Toyoko לדאיקניאמה/נאקאמגורו."
       ],
       "transfer": null,
       "timeline": [
         {
           "title": "Street Kart Tokyo",
-          "note": "נהיגה בקארטינג ברחובות — חובה IDP."
+          "note": "נהיגה בקארטינג ברחובות — חובה IDP"
         },
         {
-          "title": "Inokashira Park ו־Kichijoji",
-          "note": "טיול בפארק האגם + צהריים בשכונה."
+          "title": "Inokashira Park",
+          "note": "לולאת האגם, סירות אם רוצים, הליכה לקיצ׳וג׳י"
+        },
+        {
+          "title": "צהריים בקיצ׳וג׳י ו־Harmonica Yokocho",
+          "note": "סמטאות מקורות עם אוכל + רחובות קניות"
         },
         {
           "title": "וינטג׳ וקפה ב־Shimokitazawa",
-          "note": "סחר־יד שנייה, קפה ואווירה אינדי."
+          "note": "יד שנייה, תקליטים וקפה אינדי"
         },
         {
-          "title": "ארוחת ערב ב־Shimokitazawa או Shinjuku",
-          "note": ""
+          "title": "Daikanyama T-Site",
+          "note": "מתחם Tsutaya — דפדוף וקפה"
+        },
+        {
+          "title": "ארוחת ערב על הנהר בנאקאמגורו",
+          "note": "טיילת Meguro River + רחוב מסעדות/קפה"
+        },
+        {
+          "title": "כוסית אופציונלית ב־New York Bar",
+          "note": "Park Hyatt שינג׳וקו — להזמין אם רוצים את הנוף מ־Lost in Translation"
         }
       ]
     },
@@ -1652,7 +1739,16 @@
       "blurb": "רובע חיי לילה ניאון ב־Shinjuku."
     },
     "shinjuku-gyoen": {
-      "blurb": "גן לאומי מרווח — הליכת בוקר רגועה."
+      "blurb": "גן לאומי מרווח — הליכה רגועה קרוב לשינג׳וקו."
+    },
+    "tocho": {
+      "blurb": "מצפה חינמי במערב שינג׳וקו — נוף קו הרקיע (ולפעמים פוג׳י)."
+    },
+    "yoyogi": {
+      "blurb": "רצועה ירוקה בין Meiji Jingu להראגו׳קו."
+    },
+    "harmonica": {
+      "blurb": "סמטאות מקורות של אוכל וברים ליד תחנת קיצ׳וג׳י."
     },
     "nakano-broadway": {
       "blurb": "מבוך קניות otaku — דמויות, וינטג׳, Mandarake."

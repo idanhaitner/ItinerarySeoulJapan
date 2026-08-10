@@ -1972,6 +1972,48 @@ window.PLACES = {
     "lng": 139.7101,
     "blurb": "Spacious national garden — calm morning walk."
   },
+  "tocho": {
+    "id": "tocho",
+    "name": "Tokyo Metropolitan Government Building",
+    "nameJa": "東京都庁",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "view",
+      "must-see"
+    ],
+    "lat": 35.6896,
+    "lng": 139.6917,
+    "blurb": "Free twin-tower observatory in west Shinjuku — great first-night skyline."
+  },
+  "yoyogi": {
+    "id": "yoyogi",
+    "name": "Yoyogi Park",
+    "nameJa": "代々木公園",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "park",
+      "nature"
+    ],
+    "lat": 35.6711,
+    "lng": 139.6949,
+    "blurb": "Green stretch between Meiji Jingu and Harajuku."
+  },
+  "harmonica": {
+    "id": "harmonica",
+    "name": "Harmonica Yokocho",
+    "nameJa": "ハモニカ横丁",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "food",
+      "neighborhood"
+    ],
+    "lat": 35.7033,
+    "lng": 139.5792,
+    "blurb": "Tiny covered alleys of bars and eateries by Kichijoji station."
+  },
   "nakano-broadway": {
     "id": "nakano-broadway",
     "name": "Nakano Broadway",
@@ -2653,26 +2695,32 @@ window.DAYS = [
     "country": "JP",
     "hotelId": null,
     "title": "Seoul → Tokyo & Shinjuku lights",
-    "summary": "Early checkout from Amanti, Air Premia YP7321 ICN→NRT, set up Suica and eSIM, then a Shinjuku evening in Omoide Yokocho or Golden Gai.",
-    "food": "Yakitori in Omoide Yokocho or Golden Gai drinks.",
+    "summary": "Early checkout from Amanti, Air Premia YP7321 ICN→NRT, Suica/eSIM, hotel drop in Shinjuku, then a full Shinjuku afternoon–night: Gyoen, Godzilla head, free Tocho views, Kabukicho neon, Omoide yakitori and Golden Gai.",
+    "food": "Late lunch near the hotel; yakitori in Omoide Yokocho; drinks in Golden Gai.",
     "placeIds": [
       "amanti-hotel",
       "icn",
       "narita",
       "shinjuku",
+      "shinjuku-gyoen",
+      "tocho",
+      "kabukicho",
       "omoide-yokocho",
       "golden-gai"
     ],
     "transport": [
       "Amanti → ICN T1 (~1h).",
       "Air Premia YP7321.",
-      "N'EX / limousine → Shinjuku hotel."
+      "N'EX / limousine → Shinjuku hotel.",
+      "All evening stops walkable in west Shinjuku."
     ],
     "tips": [
       "Booked: Air Premia YP7321 · ICN 08:50 → NRT 11:20 (T2).",
       "Be at ICN ~06:30–07:00 (international).",
       "Some boards list this route as YP731 — match your ticket/boarding pass.",
-      "Set up Suica/Pasmo on arrival."
+      "Set up Suica/Pasmo on arrival.",
+      "Shinjuku Gyoen last entry ~17:00 in Sep — go soon after check-in.",
+      "Tocho South Observatory is free (closed every other Monday)."
     ],
     "timeline": [
       {
@@ -2707,23 +2755,61 @@ window.DAYS = [
       {
         "time": "13:00",
         "title": "Transfer to Shinjuku + hotel check-in",
-        "note": "N'EX / limousine bus · Suica/eSIM.",
+        "note": "N'EX / limousine · Suica/eSIM · leave bags, quick shower.",
         "placeId": "shinjuku",
         "category": "transit"
       },
       {
-        "time": "19:30",
-        "title": "Shinjuku explore",
-        "note": "",
+        "time": "14:30",
+        "title": "Late lunch near Shinjuku station",
+        "note": "Ramen / donburi — fuel before walking.",
         "placeId": "shinjuku",
         "category": "dining"
       },
       {
-        "time": "20:00",
-        "title": "Omoide Yokocho or Golden Gai",
-        "note": "Memory Lane yakitori or tiny alley bars.",
+        "time": "15:30",
+        "title": "Shinjuku Gyoen",
+        "note": "Wide lawns + Japanese/English/French gardens — last entry ~17:00.",
+        "placeId": "shinjuku-gyoen",
+        "end": "17:00",
+        "category": "culture"
+      },
+      {
+        "time": "17:15",
+        "title": "Shinjuku metro walk",
+        "note": "Godzilla head at Toho, Bic Camera / Uniqlo, Kabukicho gate neon.",
+        "placeId": "shinjuku",
+        "category": "dining"
+      },
+      {
+        "time": "18:30",
+        "title": "Tokyo Metropolitan Gov. Building observatory",
+        "note": "Free twin-tower skyline — Fuji on clear days.",
+        "placeId": "tocho",
+        "end": "19:30",
+        "category": "attraction"
+      },
+      {
+        "time": "19:45",
+        "title": "Kabukicho neon stroll",
+        "note": "Lights and atmosphere — keep valuables close.",
+        "placeId": "kabukicho",
+        "category": "dining"
+      },
+      {
+        "time": "20:30",
+        "title": "Omoide Yokocho yakitori",
+        "note": "Memory Lane skewers + beer under the tracks.",
         "placeId": "omoide-yokocho",
-        "end": "23:00",
+        "end": "22:00",
+        "category": "dining"
+      },
+      {
+        "time": "22:15",
+        "title": "Golden Gai nightcap",
+        "note": "Tiny alley bars — one drink each is enough.",
+        "placeId": "golden-gai",
+        "end": "23:30",
         "category": "dining"
       }
     ],
@@ -2743,52 +2829,93 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
-    "title": "West Tokyo: culture, pop & Shibuya Sky",
-    "summary": "West Tokyo: Meiji Jingu, Harajuku and Omotesando, Shibuya Crossing, and a pre-booked Shibuya Sky sunset.",
-    "food": "Harajuku snacks; Shibuya dinner & drinks.",
+    "title": "West Tokyo: Meiji, Harajuku, Omotesando & Shibuya Sky",
+    "summary": "Full west-Tokyo loop: Meiji Jingu and Yoyogi, Takeshita + Cat Street, Omotesando lunch, Shibuya Crossing / Hachiko / Center-gai, timed Shibuya Sky sunset, then dinner in Shibuya.",
+    "food": "Crepes or cafe lunch on Omotesando; dinner in Shibuya (Nonbei Yokocho or Center-gai).",
     "placeIds": [
       "meiji-jingu",
+      "yoyogi",
       "takeshita",
+      "cat-street",
       "omotesando",
       "shibuya-crossing",
       "shibuya-sky"
     ],
     "transport": [
-      "Walk/Yamanote between Harajuku and Shibuya."
+      "Walk Meiji → Harajuku → Omotesando → Shibuya (or one Yamanote hop)."
     ],
     "tips": [
       "Book Shibuya Sky sunset slot ~4 weeks ahead.",
-      "Passport for tax-free shopping."
+      "Passport for tax-free shopping.",
+      "Meiji Jingu opens early — arrive before tour buses if you can."
     ],
     "timeline": [
       {
-        "time": "09:00",
+        "time": "08:30",
         "title": "Meiji Jingu",
-        "note": "Forest shrine morning calm.",
+        "note": "Forest shrine — quiet path from Harajuku station.",
         "placeId": "meiji-jingu",
-        "end": "10:30",
+        "end": "09:45",
         "category": "culture"
       },
       {
-        "time": "10:45",
-        "title": "Takeshita Street & Omotesando",
-        "note": "Pop fashion → tree-lined boutiques.",
+        "time": "09:50",
+        "title": "Yoyogi Park edge",
+        "note": "Short green stroll toward Takeshita.",
+        "placeId": "yoyogi",
+        "end": "10:15",
+        "category": "attraction"
+      },
+      {
+        "time": "10:20",
+        "title": "Takeshita Street",
+        "note": "Crepes, youth fashion, souvenir stalls.",
         "placeId": "takeshita",
-        "end": "13:00",
+        "end": "11:20",
         "category": "dining"
       },
       {
-        "time": "13:30",
-        "title": "Shibuya Crossing & Center-gai",
-        "note": "Scramble, megastores, people-watching.",
+        "time": "11:25",
+        "title": "Cat Street",
+        "note": "Stylish side street linking Harajuku to Omotesando.",
+        "placeId": "cat-street",
+        "end": "12:15",
+        "category": "shopping"
+      },
+      {
+        "time": "12:20",
+        "title": "Omotesando lunch & boutiques",
+        "note": "Tree-lined avenue — cafe or light lunch + window shopping.",
+        "placeId": "omotesando",
+        "end": "14:00",
+        "category": "dining"
+      },
+      {
+        "time": "14:15",
+        "title": "Walk to Shibuya",
+        "note": "Continue south along Omotesando / Meiji-dori.",
         "placeId": "shibuya-crossing",
-        "end": "16:30",
         "category": "attraction"
+      },
+      {
+        "time": "14:30",
+        "title": "Hachiko & Shibuya Crossing",
+        "note": "Statue photos, scramble crossing, Starbucks scramble view.",
+        "placeId": "shibuya-crossing",
+        "category": "attraction"
+      },
+      {
+        "time": "15:00",
+        "title": "Center-gai & Shibuya shopping",
+        "note": "109, Tower Records, Loft, Mag’s Park rooftop if energy.",
+        "placeId": "shibuya-crossing",
+        "end": "16:45",
+        "category": "shopping"
       },
       {
         "time": "17:00",
         "title": "Shibuya Sky sunset",
-        "note": "Timed ticket — arrive early.",
+        "note": "Timed ticket — arrive 15–20 min early.",
         "placeId": "shibuya-sky",
         "end": "19:00",
         "category": "attraction"
@@ -2796,7 +2923,7 @@ window.DAYS = [
       {
         "time": "19:30",
         "title": "Dinner & drinks in Shibuya",
-        "note": "",
+        "note": "Nonbei Yokocho izakaya alley or Center-gai dinner.",
         "placeId": "shibuya-crossing",
         "category": "dining"
       }
@@ -2809,51 +2936,88 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
-    "title": "Asakusa to Skytree & Electric Town",
-    "summary": "Early Senso-ji & Nakamise, walk via Tokyo Mizumachi to Tokyo Skytree / Solamachi, then Akihabara ending with izakaya.",
-    "food": "Nakamise snacks; izakaya dinner.",
+    "title": "Asakusa, Kappabashi, Skytree & Akihabara",
+    "summary": "Old-east Tokyo day: early Senso-ji & Nakamise, Kappabashi kitchen street, Sumida riverside to Skytree/Solamachi, then Akihabara arcades and anime floors ending with izakaya.",
+    "food": "Nakamise snacks mid-morning; Solamachi or Ameyoko-style grazing; izakaya in Akihabara / Kanda.",
     "placeIds": [
       "asakusa",
+      "kappabashi",
       "skytree",
+      "ameyoko",
       "akihabara"
     ],
     "transport": [
       "Subway to Asakusa.",
-      "Walk Asakusa → Mizumachi → Skytree; then transit to Akihabara."
+      "Walk Asakusa → Kappabashi → Mizumachi → Skytree.",
+      "JR/subway to Akihabara (or hop via Ueno/Ameyoko)."
     ],
     "tips": [
-      "Senso-ji early morning.",
-      "Walk Asakusa → Mizumachi → Skytree / Solamachi."
+      "Senso-ji before 8:30 if you want fewer crowds.",
+      "Kappabashi: plastic food samples + kitchen knives (check luggage rules).",
+      "Skytree ticket optional — Solamachi mall + exterior views are free.",
+      "Optional detour: Ueno Park + Ameyoko before Akihabara if you want street-food market energy."
     ],
     "timeline": [
       {
-        "time": "08:00",
-        "title": "Senso-ji & Nakamise",
-        "note": "Early temple + shopping street.",
+        "time": "07:45",
+        "title": "Senso-ji & Kaminarimon",
+        "note": "Temple grounds + Thunder Gate photos before tour groups peak.",
         "placeId": "asakusa",
-        "end": "11:00",
+        "end": "09:15",
         "category": "dining"
       },
       {
-        "time": "11:15",
-        "title": "Walk to Tokyo Skytree via Mizumachi",
-        "note": "Easy riverside / Solamachi approach.",
+        "time": "09:15",
+        "title": "Nakamise shopping street",
+        "note": "Ningyo-yaki, senbei, small souvenirs.",
+        "placeId": "asakusa",
+        "end": "10:15",
+        "category": "dining"
+      },
+      {
+        "time": "10:30",
+        "title": "Kappabashi kitchen town",
+        "note": "Cookware, knives, plastic food displays — ~10–15 min walk.",
+        "placeId": "kappabashi",
+        "end": "11:45",
+        "category": "dining"
+      },
+      {
+        "time": "12:00",
+        "title": "Sumida riverside / Tokyo Mizumachi",
+        "note": "Easy walk toward Skytree — lunch options along the way.",
         "placeId": "skytree",
-        "end": "14:00",
+        "end": "13:00",
+        "category": "dining"
+      },
+      {
+        "time": "13:00",
+        "title": "Tokyo Skytree & Solamachi",
+        "note": "Tower exterior + mall floors; book deck only if you want the view ticket.",
+        "placeId": "skytree",
+        "end": "15:00",
         "category": "attraction"
       },
       {
-        "time": "15:00",
+        "time": "15:20",
+        "title": "Optional Ameyoko snack stop",
+        "note": "If energy/hunger: street-food market under the tracks near Ueno.",
+        "placeId": "ameyoko",
+        "end": "16:00",
+        "category": "dining"
+      },
+      {
+        "time": "16:15",
         "title": "Akihabara Electric Town",
-        "note": "Gaming, anime, electronics.",
+        "note": "GiGO/TAITO arcades, Animate, Radio Kaikan, multi-floor anime shops.",
         "placeId": "akihabara",
-        "end": "18:30",
+        "end": "19:00",
         "category": "shopping"
       },
       {
-        "time": "19:00",
+        "time": "19:15",
         "title": "Izakaya dinner — Akihabara or Kanda",
-        "note": "",
+        "note": "Casual dinner + one more night in east Tokyo.",
         "placeId": "akihabara",
         "category": "dining"
       }
@@ -2866,32 +3030,43 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
-    "title": "Fish market, teamLab Planets & Ginza",
-    "summary": "Tsukiji seafood breakfast, teamLab Planets in Toyosu, Odaiba Gundam waterfront, then a Ginza evening.",
-    "food": "Tsukiji sushi breakfast; Ginza dinner.",
+    "title": "Tsukiji, teamLab Planets, Odaiba & Ginza",
+    "summary": "Seafood graze at Tsukiji Outer Market, timed teamLab Planets in Toyosu, Odaiba Gundam + waterfront, then a long Ginza evening of depachika, flagship stores and dinner.",
+    "food": "Tsukiji sushi/seafood breakfast; Ginza depachika snacks + dinner.",
     "placeIds": [
       "tsukiji",
       "teamlab-planets",
       "odaiba",
-      "ginza"
+      "ginza",
+      "imperial-east"
     ],
     "transport": [
       "Tsukiji early.",
-      "Yurikamome/Rinkai for Toyosu & Odaiba.",
-      "Evening to Ginza."
+      "Yurikamome/Rinkai Toyosu → Odaiba.",
+      "Yurikamome or subway back toward Ginza."
     ],
     "tips": [
       "Timed tickets required for teamLab Planets.",
-      "Some rooms have water — wear shorts you can roll up."
+      "Some rooms have water — wear shorts you can roll up / bring a small towel.",
+      "If teamLab is later: optional Imperial Palace East Gardens after Tsukiji (closed Mon/Fri).",
+      "Ginza: Mitsukoshi/Ginza Six depachika, Uniqlo Tokyo flagship, Itoya stationery."
     ],
     "timeline": [
       {
-        "time": "08:00",
+        "time": "07:30",
         "title": "Tsukiji Outer Market breakfast",
-        "note": "Fresh seafood / sushi graze.",
+        "note": "Sushi, tamago, fresh seafood stalls — arrive hungry.",
         "placeId": "tsukiji",
-        "end": "10:30",
+        "end": "10:00",
         "category": "dining"
+      },
+      {
+        "time": "10:15",
+        "title": "Optional Imperial Palace East Gardens",
+        "note": "Only if teamLab slot is afternoon and gardens are open — quiet lawns.",
+        "placeId": "imperial-east",
+        "end": "11:15",
+        "category": "culture"
       },
       {
         "time": "11:30",
@@ -2904,17 +3079,25 @@ window.DAYS = [
       {
         "time": "15:00",
         "title": "Odaiba waterfront & Gundam",
-        "note": "Bay promenade + DiverCity.",
+        "note": "DiverCity Gundam, bay promenade, Rainbow Bridge views.",
         "placeId": "odaiba",
         "end": "17:00",
         "category": "shopping"
       },
       {
         "time": "17:30",
-        "title": "Ginza walk & dinner",
-        "note": "Dept stores & depachika.",
+        "title": "Ginza arrival — depachika & flagships",
+        "note": "Basement food halls + Uniqlo / Itoya / Ginza Six.",
         "placeId": "ginza",
+        "end": "19:30",
         "category": "dining"
+      },
+      {
+        "time": "19:45",
+        "title": "Ginza dinner",
+        "note": "Sushi, tempura, or department-store restaurants upstairs.",
+        "placeId": "ginza",
+        "category": "transit"
       }
     ]
   },
@@ -2925,21 +3108,27 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
-    "title": "Street Kart, park & Shimokitazawa",
-    "summary": "Street Kart through Tokyo streets, Inokashira Park and Kichijoji, then vintage Shimokitazawa.",
-    "food": "Kichijoji / Shimokitazawa cafés.",
+    "title": "Street Kart, Kichijoji, Shimokita & Daikanyama",
+    "summary": "Street Kart morning, Inokashira Park + Harmonica Yokocho lunch in Kichijoji, vintage Shimokitazawa afternoon, then Daikanyama T-Site and Nakameguro riverside dinner (family soft-day vibe).",
+    "food": "Lunch in Harmonica Yokocho / Kichijoji; dinner in Nakameguro or Daikanyama.",
     "placeIds": [
       "street-kart",
       "inokashira",
       "kichijoji",
-      "shimokitazawa"
+      "harmonica",
+      "shimokitazawa",
+      "daikanyama",
+      "nakameguro",
+      "ny-bar"
     ],
     "transport": [
-      "Kart meetup (often Shibuya/Shinjuku area).",
-      "Mitaka/Kichijoji for the park; train to Shimokita."
+      "Kart meetup (often Shibuya/Shinjuku).",
+      "Chuo/Sobu to Kichijoji; Inokashira Line or Odakyu to Shimokita; Tokyu Toyoko to Daikanyama/Nakameguro."
     ],
     "tips": [
-      "Physical International Driving Permit required for Street Kart — photocopy is not accepted."
+      "Physical International Driving Permit required for Street Kart — photocopy is not accepted.",
+      "Confirm kart meetup point the night before.",
+      "Optional finale: New York Bar at Park Hyatt (book ahead) if you want a skyline nightcap back in Shinjuku."
     ],
     "timeline": [
       {
@@ -2952,26 +3141,50 @@ window.DAYS = [
       },
       {
         "time": "12:30",
-        "title": "Inokashira Park & Kichijoji",
-        "note": "Lake park stroll + neighborhood lunch.",
+        "title": "Inokashira Park",
+        "note": "Lake loop, boats if you want, stroll toward Kichijoji.",
         "placeId": "inokashira",
-        "end": "14:15",
+        "end": "13:30",
+        "category": "attraction"
+      },
+      {
+        "time": "13:30",
+        "title": "Kichijoji & Harmonica Yokocho lunch",
+        "note": "Covered alley eats + neighborhood shopping streets.",
+        "placeId": "harmonica",
+        "end": "15:00",
         "category": "dining"
       },
       {
-        "time": "14:30",
+        "time": "15:20",
         "title": "Shimokitazawa vintage & cafés",
-        "note": "Thrift, coffee, indie vibe.",
+        "note": "Thrift floors, record shops, indie cafés.",
         "placeId": "shimokitazawa",
-        "end": "18:30",
+        "end": "17:45",
+        "category": "dining"
+      },
+      {
+        "time": "18:15",
+        "title": "Daikanyama T-Site",
+        "note": "Tsutaya bookstore complex — browse + coffee.",
+        "placeId": "daikanyama",
+        "end": "19:15",
         "category": "dining"
       },
       {
         "time": "19:30",
-        "title": "Dinner in Shimokitazawa or Shinjuku",
-        "note": "",
-        "placeId": "shimokitazawa",
+        "title": "Nakameguro riverside dinner",
+        "note": "Meguro River walk + dinner/café street.",
+        "placeId": "nakameguro",
+        "end": "21:30",
         "category": "dining"
+      },
+      {
+        "time": "22:00",
+        "title": "Optional New York Bar nightcap",
+        "note": "Park Hyatt Shinjuku — reserve if you want the Lost in Translation view.",
+        "placeId": "ny-bar",
+        "category": "attraction"
       }
     ]
   },
