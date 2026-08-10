@@ -18,6 +18,7 @@
     Kawaguchiko: "קוואגוצ׳יקו",
     Kyoto: "קיוטו",
     Osaka: "אוסקה",
+    Kobe: "קובה",
     Hiroshima: "הירושימה",
     "Tel Aviv": "תל אביב",
     Bangkok: "בנגקוק",

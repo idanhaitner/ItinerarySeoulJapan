@@ -2,7 +2,7 @@
 window.TRIP = {
   "title": "Korea + Japan 2026",
   "subtitle": "Idan & Shahar itinerary (dad's Excel was inspiration only)",
-  "dates": "August 26 – September 26, 2026",
+  "dates": "August 26 – September 27, 2026",
   "route": [
     "Tel Aviv",
     "Seoul",
@@ -11,6 +11,7 @@ window.TRIP = {
     "Kawaguchiko",
     "Kyoto",
     "Osaka",
+    "Kobe",
     "Tokyo",
     "Bangkok",
     "Tirana"
@@ -78,7 +79,7 @@ window.TRIP = {
       "status": "todo",
       "airline": "TBD",
       "flight": "TBD",
-      "date": "2026-09-24",
+      "date": "2026-09-25",
       "from": "NRT/HND",
       "fromName": "Tokyo",
       "to": "BKK",
@@ -86,7 +87,7 @@ window.TRIP = {
       "depart": "—",
       "arrive": "—",
       "terminal": "",
-      "dayId": "d29",
+      "dayId": "d30",
       "note": "1–2 nights in Bangkok · confirm flight #"
     },
     {
@@ -96,7 +97,7 @@ window.TRIP = {
       "status": "todo",
       "airline": "TBD",
       "flight": "TBD",
-      "date": "2026-09-26",
+      "date": "2026-09-27",
       "from": "BKK",
       "fromName": "Bangkok",
       "to": "TIA",
@@ -104,22 +105,24 @@ window.TRIP = {
       "depart": "—",
       "arrive": "—",
       "terminal": "",
-      "dayId": "d31",
+      "dayId": "d32",
       "note": "Need to book · Albania"
     }
   ],
   "notes": [
-    "Route: Tel Aviv → Seoul → Tokyo → Hakone → Kawaguchiko → Kyoto → Osaka → Tokyo → Bangkok → Tirana.",
+    "Route: Tel Aviv → Seoul → Tokyo → Hakone → Kawaguchiko → Kyoto → Osaka (+ Kobe day) → Tokyo → Bangkok → Tirana.",
     "Outbound booked: ET0419 + ET0672 (26–27 Aug).",
     "Seoul→Tokyo booked: Air Premia YP7321 (2 Sep · ICN 08:50 → NRT 11:20).",
     "Sep 5: Tsukiji + teamLab Planets + Odaiba + Ginza.",
     "Sep 6: Street Kart + Inokashira/Kichijoji + Shimokitazawa (IDP required).",
     "Sep 11: Fushimi Inari + Uji (Byodo-in / matcha) + Nishiki.",
     "Sep 15: Osaka + teamLab Botanical Garden night.",
-    "Sep 21–22: Nikko day trip, then Kamakura & Enoshima.",
-    "Sep 23: Full Ginza shopping day + farewell dinner.",
+    "Sep 20: Kobe day trip from Osaka.",
+    "Sep 21: Leave Osaka for Tokyo.",
+    "Sep 22–23: Nikko day trip, then Kamakura & Enoshima.",
+    "Sep 24: Full Ginza shopping day + farewell dinner.",
     "Seoul hotel: Amanti Hongdae · 27 Aug–2 Sep.",
-    "Tokyo return base: Shinjuku (20–24 Sep).",
+    "Tokyo return base: Shinjuku (21–25 Sep).",
     "After Japan: Bangkok 1–2 days, then book Bangkok → Tirana (TIA).",
     "Tap places for Google / Kakao / Naver / Yahoo! / Apple Maps."
   ]
@@ -1628,6 +1631,66 @@ window.PLACES = {
     "lat": 34.2905,
     "lng": 132.3185,
     "blurb": "Island summit."
+  },
+  "nunobiki": {
+    "id": "nunobiki",
+    "name": "Nunobiki Herb Garden / Ropeway",
+    "nameJa": "布引ハーブ園",
+    "city": "Kobe",
+    "country": "JP",
+    "tags": [
+      "must-see",
+      "nature",
+      "view"
+    ],
+    "lat": 34.7194,
+    "lng": 135.1906,
+    "blurb": "Ropeway above Kobe — herb gardens + city/bay views."
+  },
+  "kitano-ijinkan": {
+    "id": "kitano-ijinkan",
+    "name": "Kitano Ijinkan",
+    "nameJa": "北野異人館",
+    "city": "Kobe",
+    "country": "JP",
+    "tags": [
+      "must-see",
+      "culture",
+      "neighborhood"
+    ],
+    "lat": 34.6985,
+    "lng": 135.19,
+    "blurb": "Former foreign residences on the Kitano hillside."
+  },
+  "nankinmachi": {
+    "id": "nankinmachi",
+    "name": "Nankinmachi (Kobe Chinatown)",
+    "nameJa": "南京町",
+    "city": "Kobe",
+    "country": "JP",
+    "tags": [
+      "food",
+      "neighborhood",
+      "must-see"
+    ],
+    "lat": 34.6885,
+    "lng": 135.189,
+    "blurb": "Compact Chinatown lanes — street snacks between Motomachi and Sannomiya."
+  },
+  "meriken-park": {
+    "id": "meriken-park",
+    "name": "Meriken Park & Harborland",
+    "nameJa": "メリケンパーク・ハーバーランド",
+    "city": "Kobe",
+    "country": "JP",
+    "tags": [
+      "must-see",
+      "view",
+      "neighborhood"
+    ],
+    "lat": 34.6825,
+    "lng": 135.1865,
+    "blurb": "Waterfront park, Kobe Port Tower views, and Harborland shopping."
   },
   "cross-osaka": {
     "id": "cross-osaka",
@@ -3904,7 +3967,7 @@ window.DAYS = [
       "Subway/taxi to Nagai for teamLab after dark."
     ],
     "tips": [
-      "Checkout Kyoto hotel for evening move to Osaka (nights 15–20/9).",
+      "Checkout Kyoto hotel for evening move to Osaka (nights 15–21/9).",
       "Book teamLab Botanical Garden night tickets.",
       "USJ is tomorrow (16/9) — don’t stay out too late."
     ],
@@ -3950,7 +4013,7 @@ window.DAYS = [
       {
         "time": "17:30",
         "title": "Osaka hotel check-in",
-        "note": "Namba / Dotonbori base through 20/9.",
+        "note": "Namba / Dotonbori base through 21/9.",
         "category": "attraction"
       },
       {
@@ -4259,11 +4322,99 @@ window.DAYS = [
     "id": "d25",
     "date": "2026-09-20",
     "weekday": "Sunday",
+    "city": "Osaka",
+    "country": "JP",
+    "hotelId": null,
+    "title": "Kobe day trip — ropeway, Kitano & harbor",
+    "summary": "Day trip to Kobe: Nunobiki ropeway & herb garden, Kitano Ijinkan hillside, Nankinmachi snacks, Meriken Park / Harborland, then Kobe beef dinner and return to Osaka.",
+    "food": "Nankinmachi snacks; Kobe beef dinner before heading back.",
+    "placeIds": [
+      "nunobiki",
+      "kitano-ijinkan",
+      "nankinmachi",
+      "meriken-park"
+    ],
+    "transport": [
+      "JR Special Rapid Osaka / Umeda → Sannomiya (~30m).",
+      "Local walk / City Loop bus between Kitano, Motomachi and the harbor.",
+      "Evening JR back to Osaka."
+    ],
+    "tips": [
+      "Family Excel has no Kobe day — classic Kobe highlights from Osaka.",
+      "Ropeway last cars mid-evening in season — check Nunobiki hours.",
+      "Still sleeping in Osaka tonight — checkout tomorrow for Tokyo."
+    ],
+    "timeline": [
+      {
+        "time": "08:30",
+        "title": "JR to Kobe-Sannomiya",
+        "note": "Special Rapid ~30 minutes.",
+        "category": "attraction"
+      },
+      {
+        "time": "09:30",
+        "title": "Nunobiki Herb Garden / Ropeway",
+        "note": "Gardens + city & bay views.",
+        "placeId": "nunobiki",
+        "end": "12:00",
+        "category": "transit"
+      },
+      {
+        "time": "12:30",
+        "title": "Kitano Ijinkan stroll",
+        "note": "Former foreign residences on the hill.",
+        "placeId": "kitano-ijinkan",
+        "end": "14:00",
+        "category": "culture"
+      },
+      {
+        "time": "14:15",
+        "title": "Nankinmachi Chinatown snacks",
+        "note": "Street food between Motomachi & Sannomiya.",
+        "placeId": "nankinmachi",
+        "end": "15:30",
+        "category": "dining"
+      },
+      {
+        "time": "16:00",
+        "title": "Meriken Park & Harborland",
+        "note": "Waterfront walk + Port Tower views.",
+        "placeId": "meriken-park",
+        "end": "18:00",
+        "category": "attraction"
+      },
+      {
+        "time": "18:30",
+        "title": "Kobe beef dinner",
+        "note": "Book a steakhouse near Sannomiya / Motomachi.",
+        "end": "20:15",
+        "category": "dining"
+      },
+      {
+        "time": "20:45",
+        "title": "JR return to Osaka",
+        "note": "Back to Namba / hotel.",
+        "category": "attraction"
+      }
+    ],
+    "transfer": {
+      "mode": "train",
+      "label": "Osaka ↔ Kobe day trip",
+      "detail": "JR Special Rapid Osaka/Umeda → Sannomiya (~30m), return evening",
+      "duration": "~30m each way",
+      "fromCity": "Osaka",
+      "toCity": "Kobe"
+    }
+  },
+  {
+    "id": "d26",
+    "date": "2026-09-21",
+    "weekday": "Monday",
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
-    "title": "Return Tokyo, Nakano Broadway & Shinjuku night",
-    "summary": "Shinkansen back to Tokyo (~2.5h), Shinjuku hotel check-in, Nakano Broadway otaku maze, then Azabudai/Roppongi, Tokyo Tower night and Kabukicho.",
+    "title": "Leave Osaka → Tokyo, Nakano Broadway & Shinjuku night",
+    "summary": "Checkout Osaka, Nozomi to Tokyo (~2.5h), Shinjuku hotel check-in, Nakano Broadway otaku maze, then Azabudai/Roppongi, Tokyo Tower night and Kabukicho.",
     "food": "Dinner near Azabudai / Roppongi or Shinjuku.",
     "placeIds": [
       "shinjuku",
@@ -4278,12 +4429,13 @@ window.DAYS = [
       "Local to Shinjuku hotel; short train to Nakano."
     ],
     "tips": [
-      "Nakano Broadway is ~5–10 min from Shinjuku by train."
+      "Nakano Broadway is ~5–10 min from Shinjuku by train.",
+      "Osaka hotel nights end with morning checkout 21/9."
     ],
     "timeline": [
       {
         "time": "09:00",
-        "title": "Shinkansen to Tokyo",
+        "title": "Checkout Osaka & Shinkansen to Tokyo",
         "note": "~2.5 hours.",
         "category": "transit"
       },
@@ -4334,9 +4486,9 @@ window.DAYS = [
     }
   },
   {
-    "id": "d26",
-    "date": "2026-09-21",
-    "weekday": "Monday",
+    "id": "d27",
+    "date": "2026-09-22",
+    "weekday": "Tuesday",
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
@@ -4397,9 +4549,9 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d27",
-    "date": "2026-09-22",
-    "weekday": "Tuesday",
+    "id": "d28",
+    "date": "2026-09-23",
+    "weekday": "Wednesday",
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
@@ -4459,9 +4611,9 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d28",
-    "date": "2026-09-23",
-    "weekday": "Wednesday",
+    "id": "d29",
+    "date": "2026-09-24",
+    "weekday": "Thursday",
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
@@ -4514,9 +4666,9 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d29",
-    "date": "2026-09-24",
-    "weekday": "Thursday",
+    "id": "d30",
+    "date": "2026-09-25",
+    "weekday": "Friday",
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
@@ -4566,17 +4718,15 @@ window.DAYS = [
     ],
     "transfer": {
       "mode": "flight",
-      "label": "Tokyo → Home",
-      "detail": "N'EX / Monorail to NRT or HND",
-      "duration": "Allow 2.5–3h to airport",
-      "fromCity": "Tokyo",
-      "toCity": "Home"
+      "label": "Tokyo → Bangkok",
+      "detail": "NRT/HND → BKK · flight TBD",
+      "duration": "to book / confirm"
     }
   },
   {
-    "id": "d30",
-    "date": "2026-09-25",
-    "weekday": "Friday",
+    "id": "d31",
+    "date": "2026-09-26",
+    "weekday": "Saturday",
     "city": "Bangkok",
     "country": "TH",
     "hotelId": null,
@@ -4624,9 +4774,9 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d31",
-    "date": "2026-09-26",
-    "weekday": "Saturday",
+    "id": "d32",
+    "date": "2026-09-27",
+    "weekday": "Sunday",
     "city": "Bangkok",
     "country": "TH",
     "hotelId": null,

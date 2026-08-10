@@ -42,6 +42,7 @@ window.TripTools = (function () {
       Kawaguchiko: "קוואגוצ׳יקו",
       Kyoto: "קיוטו",
       Osaka: "אוסקה",
+      Kobe: "קובה",
       Hiroshima: "הירושימה",
     };
     return Object.values(places)
