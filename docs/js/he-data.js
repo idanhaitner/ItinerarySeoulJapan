@@ -547,17 +547,19 @@
       ]
     },
     "d12": {
-      "title": "Romancecar ועמקים געשיים",
-      "summary": "בוקר Takkyubin של מזוודות גדולות טוקיו→קיוטו, Romancecar (עדיף Observation Car) להקונה, אוואקודני, ואז ריוקאן עם אונסן וקאיסקי.",
-      "food": "ביצים שחורות; ארוחת ערב kaiseki ב־ryokan.",
+      "title": "Romancecar ו־Tsukino Yado Sara",
+      "summary": "בוקר Takkyubin של מזוודות גדולות טוקיו→קיוטו, Romancecar (עדיף Observation Car) להקונה־יומוטו, אוואקודני, ואז צ׳ק־אין ב־Tsukino Yado Sara לאונסן וקאיסקי.",
+      "food": "ביצים שחורות; ארוחת ערב kaiseki ב־Tsukino Yado Sara.",
       "tips": [
         "שולחים מזוודות גדולות טוקיו→קיוטו ב־Takkyubin; להקונה/פוג׳י רק עם תרמילים.",
         "להזמין Romancecar ~חודש מראש — לבקש Observation Car קדמי.",
-        "כללי אונסן."
-],
+        "Tsukino Yado Sara הוזמן · צ׳ק־אין מ־15:00 · בכל החדרים מרחץ חיצוני.",
+        "כללי אונסן בריוקאן."
+      ],
       "transport": [
         "Odakyu Romancecar Shinjuku → Hakone-Yumoto (~80 דק׳, ~¥2,470).",
-        "רכבל ל־Owakudani."
+        "רכבל ל־Owakudani.",
+        "Sara כ־7–10 דק׳ מונית/הליכה מתחנת Hakone-Yumoto."
       ],
       "transfer": {
         "mode": "train",
@@ -567,30 +569,30 @@
       },
       "timeline": [
         {
-                "title": "שליחת Takkyubin במלון בטוקיו",
-                "note": "מזוודות גדולות למלון בקיוטו."
+          "title": "שליחת Takkyubin במלון בטוקיו",
+          "note": "מזוודות גדולות למלון בקיוטו."
         },
         {
-                "title": "Romancecar משינג׳וקו",
-                "note": "~80 דק׳ להקונה־יומוטו. Observation Car."
+          "title": "Romancecar משינג׳וקו",
+          "note": "~80 דק׳ להקונה־יומוטו. Observation Car."
         },
         {
-                "title": "הגעה להקונה־יומוטו",
-                "note": ""
+          "title": "הגעה להקונה־יומוטו",
+          "note": "אפשר להשאיר מזוודות / לתכנן Owakudani לפני צ׳ק־אין ב־15:00."
         },
         {
-                "title": "עמק געשי אוואקודני",
-                "note": "ביצים שחורות + נופי פוג׳י."
+          "title": "עמק געשי אוואקודני",
+          "note": "ביצים שחורות + נופי פוג׳י."
         },
         {
-                "title": "צ׳ק־אין לריוקאן ואונסן",
-                "note": ""
+          "title": "צ׳ק־אין — Tsukino Yado Sara",
+          "note": "Hakone-Yumoto · חדרים עם מרחץ חיצוני · אונסן."
         },
         {
-                "title": "ארוחת kaiseki",
-                "note": "ארוחת kaiseki בריוקאן."
+          "title": "ארוחת kaiseki ב־Sara",
+          "note": "ארוחת ערב רב־מנות בריוקאן."
         }
-]
+      ]
     },
     "d13": {
       "title": "Gotemba Outlets, נופי פוג׳י וצ׳ורייטו",
@@ -1558,6 +1560,9 @@
     },
     "kajikaso": {
       "blurb": "רעיון ריוקאן של אבא בהקונה — לא הוזמן אצלנו."
+    },
+    "tsukino-yado-sara": {
+      "blurb": "הוזמן — ריוקאן ב־Hakone-Yumoto · חדרים עם מרחץ חיצוני · קייסקי."
     },
     "owakudani": {
       "blurb": "עמק געשי + ביצים שחורות."

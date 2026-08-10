@@ -291,7 +291,7 @@ def build_hotels(days):
     meta = {
         ("Seoul", 0): ("סיאול", "Hongdae", "Amanti Hotel Seoul Hongdae", "הוזמן", "בסיס סיאול · צ׳ק־אאוט 2 בספט׳"),
         ("Tokyo", 0): ("טוקיו (התחלה)", "Shinjuku", "", "לטפל", ""),
-        ("Hakone", 0): ("הקונה", "ריוקאן / אונסן", "", "לטפל", "קייסקי"),
+        ("Hakone", 0): ("הקונה", "Hakone-Yumoto", "Tsukino Yado Sara (月の宿 紗ら)", "הוזמן", "07/9 לילה · צ׳ק־אאוט 08/9 · קייסקי + אונסן"),
         ("Kawaguchiko", 0): ("קוואגוצ׳יקו", "נוף לפוג׳י", "", "לטפל", ""),
         ("Kyoto", 0): ("קיוטו", "תחנה / Kawaramachi", "", "לטפל", ""),
         ("Osaka", 0): ("אוסקה", "Namba / Dotonbori", "", "לטפל", ""),
@@ -316,6 +316,12 @@ def build_hotels(days):
             hotel = "Amanti Hotel Seoul Hongdae"
             status = "הוזמן"
             end = "2026-09-02"
+        if city == "Hakone":
+            hotel = "Tsukino Yado Sara (月の宿 紗ら)"
+            status = "הוזמן"
+            area = "Hakone-Yumoto"
+            end = "2026-09-08"
+            notes = "לילה 07/9 · צ׳ק־אין מ־15:00 · קייסקי + חדר עם מרחץ חיצוני"
         rows.append([label, block["start"], end, hotel, area, status, notes])
     return rows
 
@@ -346,7 +352,7 @@ def build_bookings(days):
         ("Tobu Spacia X / Revaty לניקו", "d26", "לטפל", "Asakusa ← Nikko"),
         ("Takkyubin מזוודות טוקיו→קיוטו", "d12", "לטפל", ""),
         # 4 · Stays / experiences
-        ("ריוקאן הקונה + Kaiseki", "d12", "לטפל", "לוודא ארוחת ערב + בוקר"),
+        ("Tsukino Yado Sara — ריוקאן הקונה", "d12", "הוזמן", "07/9 · Hakone-Yumoto · קייסקי + אונסן"),
         ("Kawadoko lunch", "d18", "לטפל", "Hirobun / Fujiya — שבועות מראש"),
         ("ארוחת פרידה מיפן", "d28", "לטפל", "וואגיו / אומקאסה · 1–2 שבועות מראש"),
         # 5 · Flights still open + booked refs

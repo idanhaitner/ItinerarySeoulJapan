@@ -969,6 +969,22 @@ window.PLACES = {
     "lng": 139.0885,
     "blurb": "Dad's Hakone ryokan idea — not booked for our trip."
   },
+  "tsukino-yado-sara": {
+    "id": "tsukino-yado-sara",
+    "name": "Tsukino Yado Sara",
+    "nameJa": "月の宿 紗ら",
+    "city": "Hakone",
+    "country": "JP",
+    "tags": [
+      "hotel",
+      "onsen",
+      "booked"
+    ],
+    "lat": 35.2291,
+    "lng": 139.0983,
+    "blurb": "Booked — Hakone-Yumoto ryokan · rooms with open-air baths · kaiseki · ~10 min from Hakone-Yumoto Station.",
+    "taxiAddress": "神奈川県足柄下郡箱根町湯本588-1"
+  },
   "owakudani": {
     "id": "owakudani",
     "name": "Owakudani",
@@ -3208,21 +3224,24 @@ window.DAYS = [
     "weekday": "Monday",
     "city": "Hakone",
     "country": "JP",
-    "hotelId": null,
-    "title": "Romancecar & volcanic valleys",
-    "summary": "Morning Takkyubin of big bags Tokyo→Kyoto, Romancecar (try Observation Car) into Hakone, Owakudani, then ryokan onsen + kaiseki.",
-    "food": "Black eggs; kaiseki dinner at ryokan.",
+    "hotelId": "tsukino-yado-sara",
+    "title": "Romancecar & Tsukino Yado Sara",
+    "summary": "Morning Takkyubin of big bags Tokyo→Kyoto, Romancecar (try Observation Car) into Hakone-Yumoto, Owakudani, then check-in at Tsukino Yado Sara for onsen + kaiseki.",
+    "food": "Black eggs; kaiseki dinner at Tsukino Yado Sara.",
     "placeIds": [
-      "owakudani"
+      "owakudani",
+      "tsukino-yado-sara"
     ],
     "transport": [
       "Odakyu Romancecar Shinjuku → Hakone-Yumoto (~80m, ~¥2,470).",
-      "Ropeway to Owakudani."
+      "Ropeway to Owakudani.",
+      "Sara is ~7–10 min taxi/walk from Hakone-Yumoto Station."
     ],
     "tips": [
       "Send large suitcases Tokyo→Kyoto via hotel Takkyubin; travel Hakone/Fuji with backpacks only.",
       "Book Romancecar ~1 month ahead — request front Observation Car seats.",
-      "Enjoy onsen etiquette."
+      "Tsukino Yado Sara booked · check-in from 15:00 · all rooms have open-air baths.",
+      "Onsen etiquette at the ryokan."
     ],
     "timeline": [
       {
@@ -3240,7 +3259,7 @@ window.DAYS = [
       {
         "time": "11:00",
         "title": "Arrive Hakone-Yumoto",
-        "note": "",
+        "note": "Leave bags / plan Owakudani before check-in opens at 15:00.",
         "category": "attraction"
       },
       {
@@ -3253,15 +3272,17 @@ window.DAYS = [
       },
       {
         "time": "17:00",
-        "title": "Ryokan check-in & onsen",
-        "note": "",
-        "category": "attraction"
+        "title": "Check-in — Tsukino Yado Sara",
+        "note": "Hakone-Yumoto · private open-air bath rooms · onsen.",
+        "placeId": "tsukino-yado-sara",
+        "category": "hotel"
       },
       {
         "time": "19:00",
-        "title": "Kaiseki dinner",
-        "note": "Traditional multi-course dinner at the ryokan.",
-        "category": "dining"
+        "title": "Kaiseki dinner at Sara",
+        "note": "Multi-course dinner at the ryokan.",
+        "placeId": "tsukino-yado-sara",
+        "category": "hotel"
       }
     ],
     "transfer": {

@@ -132,9 +132,9 @@ window.CHECKLIST = {
       items: [
         {
           id: "h-hakone",
-          label: "ריוקאן בהקונה (07/9) — לוודא Kaiseki + ארוחת בוקר מאושרים בהזמנה",
-          window: "להזמין / לאשר בהקדם",
-          priority: "high",
+          label: "Tsukino Yado Sara — הקונה (07/9) ✓ הוזמן",
+          window: "הוזמן · Hakone-Yumoto · צ׳ק־אין מ־15:00",
+          priority: "low",
         },
         {
           id: "ky-kawadoko",
