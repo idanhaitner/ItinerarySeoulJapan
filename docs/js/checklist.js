@@ -130,7 +130,7 @@ window.CHECKLIST = {
         },
         {
           id: "g-luggage-kyoto",
-          label: "Takkyubin: מזוודות מ־MYSTAYS Fuji Onsen→קיוטו ביום Fuji-Q (10/9) — שיגיעו למלון בקיוטו",
+          label: "Takkyubin: מזוודות מ־MYSTAYS Fuji Onsen→KABIN Koji (קיוטו) ביום Fuji-Q (10/9)",
           window: "10 בספט׳ אחרי/בזמן הפארק",
           priority: "high",
         },
@@ -157,8 +157,8 @@ window.CHECKLIST = {
         },
         { id: "h-tokyo1", label: "מלון טוקיו התחלה — Shinjuku / מערב (2–7 בספט׳)", window: "להזמין בהקדם", priority: "high" },
         { id: "h-kawaguchiko", label: "HOTEL MYSTAYS Fuji Onsen Resort — קוואגוצ׳יקו (לילות 8–9/9 · צ׳ק־אאוט 10/9) ✓ הוזמן", window: "הוזמן · ליד Fuji-Q / Fujikyu Highland", priority: "low" },
-        { id: "h-kyoto", label: "מלון קיוטו — מרכז / Kawaramachi (11/9 ערב → 15/9 ערב)", window: "להזמין בהקדם", priority: "high" },
-        { id: "h-osaka", label: "מלון אוסקה — Namba / Dotonbori (15/9 ערב → 21/9 בוקר)", window: "להזמין בהקדם", priority: "high" },
+        { id: "h-kyoto", label: "KABIN Koji — קיוטו (11/9 ערב → 15/9 ערב) ✓ הוזמן", window: "הוזמן · Kawaramachi / 筋屋町152", priority: "low" },
+        { id: "h-osaka", label: "Apartment Hotel 11 Shinsaibashi 2 — אוסקה (15/9 ערב → 21/9 בוקר) ✓ הוזמן", window: "הוזמן · היגאשי־שינסאיבשי 2-2-12", priority: "low" },
         {
           id: "h-tokyo2",
           label: "מלון טוקיו סיום — שינג׳וקו (21–25 בספט׳)",

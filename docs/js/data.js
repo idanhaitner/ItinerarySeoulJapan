@@ -122,6 +122,8 @@ window.TRIP = {
     "Sep 22–23: Nikko day trip, then Kamakura & Enoshima.",
     "Sep 24: Full Ginza shopping day + farewell dinner.",
     "Seoul hotel: Amanti Hongdae · 27 Aug–2 Sep.",
+    "Kyoto hotel: KABIN Koji · 11–15 Sep (Kawaramachi).",
+    "Osaka hotel: Apartment Hotel 11 Shinsaibashi 2 · 15–21 Sep.",
     "Tokyo return base: Shinjuku (21–25 Sep).",
     "After Japan: Bangkok 1–2 days, then book Bangkok → Tirana (TIA).",
     "Tap places for Google / Kakao / Naver / Yahoo! / Apple Maps."
@@ -1144,6 +1146,21 @@ window.PLACES = {
     "blurb": "Booked — Fujiyoshida / Kawaguchiko base · onsen resort · ~5 min walk from Fujikyu Highland Station · nights 8–9/9, checkout 10/9.",
     "taxiAddress": "山梨県富士吉田市新倉2654"
   },
+  "kabin-koji": {
+    "id": "kabin-koji",
+    "name": "KABIN Koji",
+    "nameJa": "カビン小路",
+    "city": "Kyoto",
+    "country": "JP",
+    "tags": [
+      "hotel",
+      "booked"
+    ],
+    "lat": 35.0003,
+    "lng": 135.7647,
+    "blurb": "Booked — Kyoto base near Kawaramachi / Shijo · ~6 min walk from Kawaramachi Station · nights 11–14/9, checkout 15/9.",
+    "taxiAddress": "京都府京都市下京区筋屋町152"
+  },
   "musse-kyoto": {
     "id": "musse-kyoto",
     "name": "Hotel Musse Kyoto",
@@ -1707,6 +1724,21 @@ window.PLACES = {
     "lat": 34.6825,
     "lng": 135.1865,
     "blurb": "Waterfront park, Kobe Port Tower views, and Harborland shopping."
+  },
+  "apt-hotel-11-shinsaibashi": {
+    "id": "apt-hotel-11-shinsaibashi",
+    "name": "Apartment Hotel 11 Shinsaibashi 2",
+    "nameJa": "アパートメントホテル11心斎橋2",
+    "city": "Osaka",
+    "country": "JP",
+    "tags": [
+      "hotel",
+      "booked"
+    ],
+    "lat": 34.6703,
+    "lng": 135.5057,
+    "blurb": "Booked — Osaka apartment-hotel in Higashi-Shinsaibashi · near Dotonbori / Namba · nights 15–20/9, checkout 21/9.",
+    "taxiAddress": "大阪府大阪市中央区東心斎橋2-2-12"
   },
   "cross-osaka": {
     "id": "cross-osaka",
@@ -3574,7 +3606,7 @@ window.DAYS = [
     "country": "JP",
     "hotelId": null,
     "title": "Fuji-Q Highland & overnight bus to Kyoto",
-    "summary": "Checkout MYSTAYS, Fuji-Q from opening (hotel is next door), send bags ahead to the Kyoto hotel, then overnight highway bus to Kyoto (no hotel night tonight).",
+    "summary": "Checkout MYSTAYS, Fuji-Q from opening (hotel is next door), send bags ahead to KABIN Koji, then overnight highway bus to Kyoto (no hotel night tonight).",
     "food": "Park food; light snack before the overnight bus.",
     "placeIds": [
       "fuji-q",
@@ -3587,15 +3619,15 @@ window.DAYS = [
     "tips": [
       "Wake ~08:00 for park opening.",
       "Do-Dodonpa / Takabisha are the headline coasters.",
-      "Same-day Takkyubin / luggage service: send bags from MYSTAYS so they arrive at the Kyoto hotel.",
+      "Same-day Takkyubin / luggage service: send bags from MYSTAYS so they arrive at KABIN Koji.",
       "Book the overnight bus in advance — reserved seats.",
-      "No hotel night on 10/9 — sleep on the bus; Kyoto hotel from 11/9."
+      "No hotel night on 10/9 — sleep on the bus; KABIN Koji from 11/9."
     ],
     "timeline": [
       {
         "time": "08:00",
         "title": "Checkout MYSTAYS & bag prep",
-        "note": "Bags ready for Takkyubin to Kyoto.",
+        "note": "Bags ready for Takkyubin to KABIN Koji.",
         "placeId": "mystays-fuji-onsen",
         "category": "hotel"
       },
@@ -3616,7 +3648,7 @@ window.DAYS = [
       },
       {
         "time": "17:45",
-        "title": "Send bags to Kyoto hotel",
+        "title": "Send bags to KABIN Koji",
         "note": "Takkyubin / hotel luggage service — arrive Kyoto ahead of you.",
         "placeId": "mystays-fuji-onsen",
         "category": "hotel"
@@ -3649,20 +3681,21 @@ window.DAYS = [
     "weekday": "Friday",
     "city": "Kyoto",
     "country": "JP",
-    "hotelId": null,
+    "hotelId": "kabin-koji",
     "title": "Arrive Kyoto, Gion & riverside alleys",
-    "summary": "Morning arrival on the overnight bus, Kyoto hotel check-in and bag pickup, then an easy Gion dusk stroll and Pontocho riverside dinner.",
+    "summary": "Morning arrival on the overnight bus, check in at KABIN Koji and bag pickup, then an easy Gion dusk stroll and Pontocho riverside dinner.",
     "food": "Pontocho riverside dinner along the Kamogawa.",
     "placeIds": [
+      "kabin-koji",
       "gion",
       "pontocho"
     ],
     "transport": [
       "Overnight bus arrives Kyoto morning.",
-      "Walk/taxi to hotel · easy evening in Higashiyama / Pontocho."
+      "Walk/taxi to KABIN Koji (Kawaramachi) · easy evening in Higashiyama / Pontocho."
     ],
     "tips": [
-      "Kyoto hotel nights: 11/9 evening → 15/9 evening.",
+      "KABIN Koji nights: 11/9 evening → 15/9 evening · 152 Sujiyacho, Shimogyo.",
       "Collect Takkyubin bags at the hotel if they beat you there.",
       "Respectful photos in Gion — keep the day light after the bus."
     ],
@@ -3675,9 +3708,10 @@ window.DAYS = [
       },
       {
         "time": "09:00",
-        "title": "Hotel check-in / luggage drop",
-        "note": "Collect forwarded bags when ready.",
-        "category": "attraction"
+        "title": "Check in — KABIN Koji",
+        "note": "Kawaramachi base · collect forwarded bags when ready.",
+        "placeId": "kabin-koji",
+        "category": "hotel"
       },
       {
         "time": "12:00",
@@ -3709,7 +3743,7 @@ window.DAYS = [
     "weekday": "Saturday",
     "city": "Kyoto",
     "country": "JP",
-    "hotelId": null,
+    "hotelId": "kabin-koji",
     "title": "Fushimi Inari, Uji matcha & Nishiki",
     "summary": "Sunrise Fushimi Inari, then Uji for Byodo-in, matcha Omotesando and the river, then Kiyomizu / Sannenzaka and Nishiki Market.",
     "food": "Matcha snacks in Uji; Nishiki graze later.",
@@ -3802,7 +3836,7 @@ window.DAYS = [
     "weekday": "Sunday",
     "city": "Kyoto",
     "country": "JP",
-    "hotelId": null,
+    "hotelId": "kabin-koji",
     "title": "Arashiyama bamboo & monkey park",
     "summary": "West Kyoto day: stone statues, bamboo grove, Tenryu-ji, the bridge, and Monkey Park views.",
     "food": "Lunch near Togetsukyo Bridge.",
@@ -3891,7 +3925,7 @@ window.DAYS = [
     "weekday": "Monday",
     "city": "Kyoto",
     "country": "JP",
-    "hotelId": null,
+    "hotelId": "kabin-koji",
     "title": "Kurama & Kibune mountain day",
     "summary": "Kurama and Kibune: mountain temple, forest trek, kawadoko riverside lunch, and Kurama Onsen.",
     "food": "Kawadoko lunch over the river.",
@@ -3971,15 +4005,17 @@ window.DAYS = [
     "weekday": "Tuesday",
     "city": "Osaka",
     "country": "JP",
-    "hotelId": null,
+    "hotelId": "apt-hotel-11-shinsaibashi",
     "title": "Kyoto zen morning → Osaka night",
-    "summary": "Morning Ginkaku-ji / Philosopher’s Path / Nanzen-ji and Kinkaku-ji, then evening train to Osaka for hotel check-in, teamLab Botanical Garden and Dotonbori.",
+    "summary": "Morning Ginkaku-ji / Philosopher’s Path / Nanzen-ji and Kinkaku-ji, then evening train to Osaka for Apartment Hotel 11 Shinsaibashi 2 check-in, teamLab Botanical Garden and Dotonbori.",
     "food": "Lunch near Nanzen-ji; takoyaki & okonomiyaki in Dotonbori after teamLab.",
     "placeIds": [
+      "kabin-koji",
       "ginkakuji",
       "philosophers-path",
       "nanzenji",
       "kinkakuji",
+      "apt-hotel-11-shinsaibashi",
       "teamlab-botanical",
       "dotonbori",
       "hozenji"
@@ -3990,7 +4026,7 @@ window.DAYS = [
       "Subway/taxi to Nagai for teamLab after dark."
     ],
     "tips": [
-      "Checkout Kyoto hotel for evening move to Osaka (nights 15–21/9).",
+      "Checkout KABIN Koji for evening move to Osaka (Apartment Hotel 11 · nights 15–21/9).",
       "Book teamLab Botanical Garden night tickets.",
       "USJ is tomorrow (16/9) — don’t stay out too late."
     ],
@@ -4035,9 +4071,10 @@ window.DAYS = [
       },
       {
         "time": "17:30",
-        "title": "Osaka hotel check-in",
-        "note": "Namba / Dotonbori base through 21/9.",
-        "category": "attraction"
+        "title": "Check in — Apartment Hotel 11 Shinsaibashi 2",
+        "note": "Higashi-Shinsaibashi · near Dotonbori through 21/9.",
+        "placeId": "apt-hotel-11-shinsaibashi",
+        "category": "hotel"
       },
       {
         "time": "19:00",
@@ -4077,7 +4114,7 @@ window.DAYS = [
     "weekday": "Wednesday",
     "city": "Osaka",
     "country": "JP",
-    "hotelId": null,
+    "hotelId": "apt-hotel-11-shinsaibashi",
     "title": "Universal Studios Japan — Express Pass day",
     "summary": "USJ timed to our Express Pass 7 (Minecart & Selection): Super Nintendo World morning windows, Harry Potter express, Choice A/B rides, then Flight of the Hippogriff at 18:30.",
     "food": "Park snacks / Toadette Café if timing works; light dinner in park or Namba after.",
@@ -4100,7 +4137,8 @@ window.DAYS = [
         "time": "07:30",
         "title": "Depart hotel for USJ",
         "note": "Aim to be through gates before the 09:20 SNW entry window.",
-        "category": "transit"
+        "placeId": "apt-hotel-11-shinsaibashi",
+        "category": "hotel"
       },
       {
         "time": "08:45",
@@ -4190,9 +4228,10 @@ window.DAYS = [
       },
       {
         "time": "21:20",
-        "title": "Return Namba",
+        "title": "Return to Shinsaibashi hotel",
         "note": "",
-        "category": "attraction"
+        "placeId": "apt-hotel-11-shinsaibashi",
+        "category": "hotel"
       }
     ]
   },
@@ -4202,7 +4241,7 @@ window.DAYS = [
     "weekday": "Thursday",
     "city": "Osaka",
     "country": "JP",
-    "hotelId": null,
+    "hotelId": "apt-hotel-11-shinsaibashi",
     "title": "Nara deer park day trip",
     "summary": "Day trip to Nara for deer park, Todai-ji and Kasuga Taisha; evening back in Shinsaibashi and Amerikamura.",
     "food": "Nara lunch; Amerikamura casual dinner.",
@@ -4272,7 +4311,7 @@ window.DAYS = [
     "weekday": "Friday",
     "city": "Osaka",
     "country": "JP",
-    "hotelId": null,
+    "hotelId": "apt-hotel-11-shinsaibashi",
     "title": "Hiroshima & Miyajima day trip",
     "summary": "Early Shinkansen day trip to Miyajima and Hiroshima Peace Park, okonomiyaki, then back to Osaka.",
     "food": "Hiroshima-style okonomiyaki before return.",
@@ -4342,7 +4381,7 @@ window.DAYS = [
     "weekday": "Saturday",
     "city": "Osaka",
     "country": "JP",
-    "hotelId": null,
+    "hotelId": "apt-hotel-11-shinsaibashi",
     "title": "Castle, Shinsekai, Umeda & sky sunset",
     "summary": "Osaka Castle and Shinsekai by day, then Umeda shopping and sunset at Umeda Sky Building.",
     "food": "Shinsekai snacks; dinner near Umeda / Namba.",
@@ -4406,7 +4445,7 @@ window.DAYS = [
     "weekday": "Sunday",
     "city": "Osaka",
     "country": "JP",
-    "hotelId": null,
+    "hotelId": "apt-hotel-11-shinsaibashi",
     "title": "Kobe day trip — ropeway, Kitano & harbor",
     "summary": "Day trip to Kobe: Nunobiki ropeway & herb garden, Kitano Ijinkan hillside, Nankinmachi snacks, Meriken Park / Harborland, then Kobe beef dinner and return to Osaka.",
     "food": "Nankinmachi snacks; Kobe beef dinner before heading back.",
@@ -4475,8 +4514,9 @@ window.DAYS = [
       {
         "time": "20:45",
         "title": "JR return to Osaka",
-        "note": "Back to Namba / hotel.",
-        "category": "attraction"
+        "note": "Back to Shinsaibashi hotel.",
+        "placeId": "apt-hotel-11-shinsaibashi",
+        "category": "hotel"
       }
     ],
     "transfer": {
@@ -4512,7 +4552,7 @@ window.DAYS = [
     ],
     "tips": [
       "Nakano Broadway is ~5–10 min from Shinjuku by train.",
-      "Osaka hotel nights end with morning checkout 21/9."
+      "Apartment Hotel 11 nights end with morning checkout 21/9."
     ],
     "timeline": [
       {
