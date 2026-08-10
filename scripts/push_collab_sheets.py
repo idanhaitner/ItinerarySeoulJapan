@@ -292,9 +292,9 @@ def build_hotels(days):
         ("Seoul", 0): ("סיאול", "Hongdae", "Amanti Hotel Seoul Hongdae", "הוזמן", "בסיס סיאול · צ׳ק־אאוט 2 בספט׳"),
         ("Tokyo", 0): ("טוקיו (התחלה)", "Shinjuku", "", "לטפל", ""),
         ("Hakone", 0): ("הקונה", "Hakone-Yumoto", "Tsukino Yado Sara (月の宿 紗ら)", "הוזמן", "07/9 לילה · צ׳ק־אאוט 08/9 · קייסקי + אונסן"),
-        ("Kawaguchiko", 0): ("קוואגוצ׳יקו", "נוף לפוג׳י", "", "לטפל", ""),
-        ("Kyoto", 0): ("קיוטו", "תחנה / Kawaramachi", "", "לטפל", ""),
-        ("Osaka", 0): ("אוסקה", "Namba / Dotonbori", "", "לטפל", ""),
+        ("Kawaguchiko", 0): ("קוואגוצ׳יקו", "נוף לפוג׳י", "", "לטפל", "לילות 8–9/9 · צ׳ק־אאוט בוקר 10/9 לפני Fuji-Q / אוטובוס לילה"),
+        ("Kyoto", 0): ("קיוטו", "תחנה / Kawaramachi", "", "לטפל", "11/9 ערב → 15/9 ערב"),
+        ("Osaka", 0): ("אוסקה", "Namba / Dotonbori", "", "לטפל", "15/9 ערב → 20/9"),
         ("Tokyo", 1): ("טוקיו (סיום)", "Shinjuku", "", "לטפל", "בסיס אחרון · קרוב לנאקאנו / N'EX"),
     }
     rows = [["עיר", "מתאריך", "עד תאריך", "מלון", "אזור מועדף", "סטטוס", "הערות"]]
@@ -322,6 +322,15 @@ def build_hotels(days):
             area = "Hakone-Yumoto"
             end = "2026-09-08"
             notes = "לילה 07/9 · צ׳ק־אין מ־15:00 · קייסקי + חדר עם מרחץ חיצוני"
+        if city == "Kawaguchiko":
+            end = "2026-09-10"
+            notes = "לילות 8–9/9 · צ׳ק־אאוט בוקר 10/9 (Fuji-Q + אוטובוס לילה לקיוטו)"
+        if city == "Kyoto":
+            end = "2026-09-15"
+            notes = "11/9 ערב → 15/9 ערב · אחרי אוטובוס לילה מקוואגוצ׳יקו"
+        if city == "Osaka":
+            # block start may be 15 from city change
+            notes = "15/9 ערב → 20/9 · כולל ליל USJ ב־16/9"
         rows.append([label, block["start"], end, hotel, area, status, notes])
     return rows
 
@@ -339,7 +348,7 @@ def build_bookings(days):
         ("Street Kart Tokyo", "d11", "לטפל", "אתר רשמי / Klook + IDP פיזי"),
         ("teamLab Planets Tokyo", "d10", "לטפל", "כרטיס מתוזמן · Toyosu"),
         ("teamLab Botanical Garden Osaka", "d20", "לטפל", "כרטיס ערב/לילה"),
-        ("Fuji-Q Freepass", "d14", "לטפל", "דיגיטלי מראש"),
+        ("Fuji-Q Freepass", "d15", "לטפל", "10/9 · פתיחה ~09:00"),
         ("Changdeokgung Secret Garden", "d03", "לטפל", "סיור מודרך · ticket.uforus.co.kr · שבת 29 באוג׳"),
         ("Unni Guide Center", "d03", "לטפל", "15:00–16:00"),
         ("טיפול פנים ליד Hongdae", "d04", "לטפל", "יום א׳ 30 באוג׳"),
@@ -347,13 +356,17 @@ def build_bookings(days):
         ("Lotte World", "d05", "הוזמן", "יום שני 31 באוג׳"),
         # 3 · Transport
         ("Romancecar + Observation Car", "d12", "לטפל", "מושבים שמורים"),
-        ("אוטובוס Fujikyu → Mishima", "d15", "לטפל", "~90 דק׳ · מקומות שמורים"),
-        ("שינקנסן SmartEX (+ oversized baggage)", "d15", "לטפל", "10/9 · 18/9 · 20/9"),
+        ("אוטובוס לילה קוואגוצ׳יקו → קיוטו", "d15", "לטפל", "10/9 בערב · הגעה 11/9 בבוקר · בלי מלון ב־10/9"),
+        ("שינקנסן SmartEX (+ oversized baggage)", "d23", "לטפל", "18/9 הירושימה · 20/9 אוסקה→טוקיו"),
         ("Tobu Spacia X / Revaty לניקו", "d26", "לטפל", "Asakusa ← Nikko"),
-        ("Takkyubin מזוודות טוקיו→קיוטו", "d12", "לטפל", ""),
+        ("Takkyubin מזוודות טוקיו→קוואגוצ׳יקו", "d12", "לטפל", "בוקר 7/9 לפני Romancecar"),
+        ("Takkyubin מזוודות קוואגוצ׳יקו→קיוטו", "d15", "לטפל", "10/9 באותו יום · שיגיעו למלון בקיוטו"),
         # 4 · Stays / experiences
         ("Tsukino Yado Sara — ריוקאן הקונה", "d12", "הוזמן", "07/9 · Hakone-Yumoto · קייסקי + אונסן"),
-        ("Kawadoko lunch", "d18", "לטפל", "Hirobun / Fujiya — שבועות מראש"),
+        ("מלון קוואגוצ׳יקו", "d13", "לטפל", "לילות 8–9/9 · צ׳ק־אאוט 10/9"),
+        ("מלון קיוטו", "d16", "לטפל", "11/9 ערב → 15/9 ערב"),
+        ("מלון אוסקה", "d20", "לטפל", "15/9 ערב → 20/9"),
+        ("Kawadoko lunch", "d19", "לטפל", "Hirobun / Fujiya — שבועות מראש"),
         ("ארוחת פרידה מיפן", "d28", "לטפל", "וואגיו / אומקאסה · 1–2 שבועות מראש"),
         # 5 · Flights still open + booked refs
         ("טיסת טוקיו → בנגקוק", "d29", "לטפל", "NRT/HND → BKK · לאשר מספר טיסה ושעות · 1–2 לילות בתאילנד"),

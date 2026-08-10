@@ -1026,7 +1026,21 @@ window.PLACES = {
     ],
     "lat": 35.2065,
     "lng": 139.025,
-    "blurb": "Sightseeing cruise."
+    "blurb": "Sightseeing cruise on Lake Ashi."
+  },
+  "fuji-view-bus": {
+    "id": "fuji-view-bus",
+    "name": "Kawaguchiko Sightseeing Bus",
+    "nameJa": "河口湖周遊バス",
+    "city": "Kawaguchiko",
+    "country": "JP",
+    "tags": [
+      "transport",
+      "must-see"
+    ],
+    "lat": 35.4985,
+    "lng": 138.7685,
+    "blurb": "Tourist loop buses (red/green/blue) linking Lawson, Chureito, Oishi and Fuji viewpoints."
   },
   "open-air": {
     "id": "open-air",
@@ -3226,7 +3240,7 @@ window.DAYS = [
     "country": "JP",
     "hotelId": "tsukino-yado-sara",
     "title": "Romancecar & Tsukino Yado Sara",
-    "summary": "Morning Takkyubin of big bags Tokyo→Kyoto, Romancecar (try Observation Car) into Hakone-Yumoto, Owakudani, then check-in at Tsukino Yado Sara for onsen + kaiseki.",
+    "summary": "Morning Takkyubin of big bags Tokyo→Kawaguchiko hotel, Romancecar (try Observation Car) into Hakone-Yumoto, Owakudani, then check-in at Tsukino Yado Sara for onsen + kaiseki.",
     "food": "Black eggs; kaiseki dinner at Tsukino Yado Sara.",
     "placeIds": [
       "owakudani",
@@ -3238,7 +3252,7 @@ window.DAYS = [
       "Sara is ~7–10 min taxi/walk from Hakone-Yumoto Station."
     ],
     "tips": [
-      "Send large suitcases Tokyo→Kyoto via hotel Takkyubin; travel Hakone/Fuji with backpacks only.",
+      "Send large suitcases Tokyo→Kawaguchiko hotel via Takkyubin; travel Hakone/Fuji with backpacks only.",
       "Book Romancecar ~1 month ahead — request front Observation Car seats.",
       "Tsukino Yado Sara booked · check-in from 15:00 · all rooms have open-air baths.",
       "Onsen etiquette at the ryokan."
@@ -3247,7 +3261,7 @@ window.DAYS = [
       {
         "time": "08:00",
         "title": "Takkyubin drop at Tokyo hotel",
-        "note": "Forward large bags to the Kyoto hotel.",
+        "note": "Forward large bags to the Kawaguchiko hotel.",
         "category": "attraction"
       },
       {
@@ -3301,80 +3315,83 @@ window.DAYS = [
     "city": "Kawaguchiko",
     "country": "JP",
     "hotelId": null,
-    "title": "Gotemba outlets, Fuji shores & Chureito sunset",
-    "summary": "Early Hakone Shrine floating torii, dedicated shopping at Gotemba Premium Outlets on the way in, then Kawaguchiko hotel + Lawson Fuji photo, a shorter Oishi Park stop, and Chureito Pagoda at sunset.",
-    "food": "Outlet lunch at Gotemba; lakeside dinner near Kawaguchiko.",
+    "title": "Sunrise torii, pirate ship, Gotemba & calm Kawaguchiko",
+    "summary": "Sunrise at Hakone Shrine floating torii (Fuji if clear), Lake Ashi pirate ship, afternoon Gotemba Premium Outlets shopping, then Kawaguchiko hotel check-in for a calm evening.",
+    "food": "Outlet lunch at Gotemba; calm lakeside dinner near Kawaguchiko.",
     "placeIds": [
       "hakone-shrine",
+      "lake-ashi",
       "gotemba-outlets",
-      "fuji-lawson",
-      "oishi-park",
-      "chureito"
+      "tsukino-yado-sara"
     ],
     "transport": [
-      "Hakone → Gotemba Premium Outlets (~40–60m bus from Yumoto / Togendai area).",
-      "Gotemba Outlets → Kawaguchiko by Fujikyu / highway bus (~60–110m).",
-      "Taxi/bus to Chureito for sunset."
+      "Early bus/walk to Hakone Shrine / Motohakone for sunrise.",
+      "Pirate ship on Lake Ashi after the shrine.",
+      "Afternoon bus to Gotemba Premium Outlets, then Fujikyu / highway bus to Kawaguchiko."
     ],
     "tips": [
-      "Gotemba Premium Outlets open 10:00–20:00 (Mar–Nov) — plan to arrive at opening.",
-      "Bring passport for the Welcome Center coupon booklet.",
-      "Lockers available for bags while shopping.",
-      "Chureito stairs before golden hour — don’t overstay at Oishi."
+      "Sunrise ~05:30 in early Sep — leave the ryokan with warm layers.",
+      "Gotemba open 10:00–20:00 — aim for a midday/afternoon shop window (~3h).",
+      "Collect Tokyo→Kawaguchiko Takkyubin bags at the hotel if they arrived.",
+      "Keep the evening light — big Fuji day tomorrow."
     ],
     "timeline": [
       {
+        "time": "05:00",
+        "title": "Leave Sara for sunrise",
+        "note": "Early transfer toward Motohakone / Hakone Shrine.",
+        "placeId": "tsukino-yado-sara",
+        "category": "hotel"
+      },
+      {
         "time": "05:30",
-        "title": "Hakone Shrine floating torii",
-        "note": "Before the crowds.",
+        "title": "Hakone Shrine floating torii at sunrise",
+        "note": "Torii + lake · Fuji if the sky is clear.",
         "placeId": "hakone-shrine",
-        "end": "07:00",
+        "end": "07:15",
         "category": "culture"
       },
       {
-        "time": "07:15",
+        "time": "07:45",
+        "title": "Lake Ashi pirate ship",
+        "note": "Short sightseeing cruise while the morning is clear.",
+        "placeId": "lake-ashi",
+        "end": "09:00",
+        "category": "attraction"
+      },
+      {
+        "time": "09:30",
         "title": "Bus toward Gotemba",
-        "note": "From Motohakone/Togendai or Hakone-Yumoto toward Gotemba Premium Outlets.",
+        "note": "From Togendai / Hakone-Yumoto toward Gotemba Premium Outlets.",
         "category": "transit"
       },
       {
-        "time": "10:00",
+        "time": "12:00",
         "title": "Gotemba Premium Outlets shopping",
-        "note": "Dedicated outlet time — brands + Fuji views from the bridge between zones.",
+        "note": "Dedicated outlet time — brands + Fuji views.",
         "placeId": "gotemba-outlets",
-        "end": "13:00",
+        "end": "15:00",
         "category": "shopping"
       },
       {
-        "time": "13:15",
+        "time": "15:15",
         "title": "Bus Gotemba → Kawaguchiko",
-        "note": "Prefer limited-express GL if available (~60–70m); local C1/C2 ~110m.",
+        "note": "Prefer limited-express GL if available (~60–70m).",
         "placeId": "gotemba-outlets",
-        "end": "15:00",
+        "end": "17:00",
         "category": "transit"
       },
       {
-        "time": "15:15",
-        "title": "Hotel check-in + Lawson Fuji photo",
-        "note": "Famous convenience-store Fuji shot.",
-        "placeId": "fuji-lawson",
-        "category": "attraction"
-      },
-      {
-        "time": "16:00",
-        "title": "Oishi Park (short stop)",
-        "note": "Flower path + lake & Fuji — keep it brief before sunset.",
-        "placeId": "oishi-park",
-        "end": "16:45",
-        "category": "attraction"
-      },
-      {
         "time": "17:15",
-        "title": "Chureito Pagoda sunset",
-        "note": "Iconic Fuji + pagoda viewpoint.",
-        "placeId": "chureito",
-        "end": "18:45",
+        "title": "Kawaguchiko hotel check-in",
+        "note": "Collect forwarded bags · settle in.",
         "category": "attraction"
+      },
+      {
+        "time": "19:00",
+        "title": "Calm lakeside dinner",
+        "note": "Early-ish night near the lake.",
+        "category": "dining"
       }
     ],
     "transfer": {
@@ -3393,19 +3410,110 @@ window.DAYS = [
     "city": "Kawaguchiko",
     "country": "JP",
     "hotelId": null,
-    "title": "Fuji-Q Highland",
-    "summary": "Full day at Fuji-Q Highland, then local hoto noodles for dinner.",
-    "food": "Park food; local hoto noodle dinner.",
+    "title": "Fuji sunrise, Lawson & sightseeing loop",
+    "summary": "Sunrise at Chureito Pagoda, the famous Lawson Fuji shot, then Kawaguchiko tourist sightseeing buses / Fuji viewpoint loop for photos — a pure Fuji day. Sleep early.",
+    "food": "Café / lakeside lunch; early dinner.",
+    "placeIds": [
+      "chureito",
+      "fuji-lawson",
+      "fuji-view-bus",
+      "oishi-park"
+    ],
+    "transport": [
+      "Dawn taxi/bus to Chureito (Arakurayama).",
+      "Kawaguchiko Sightseeing Bus loops (red/green/blue) between viewpoints.",
+      "Optional mountain bus toward Fuji if seats/weather allow."
+    ],
+    "tips": [
+      "Chureito stairs in the dark — headlamp helps.",
+      "Buy a 1- or 2-day sightseeing bus pass at Kawaguchiko Station.",
+      "Sleep early tonight — Fuji-Q opens tomorrow morning."
+    ],
+    "timeline": [
+      {
+        "time": "05:00",
+        "title": "Chureito Pagoda sunrise",
+        "note": "Iconic Fuji + pagoda at first light.",
+        "placeId": "chureito",
+        "end": "07:00",
+        "category": "attraction"
+      },
+      {
+        "time": "07:30",
+        "title": "Lawson Kawaguchiko Fuji photo",
+        "note": "The famous convenience-store Fuji shot.",
+        "placeId": "fuji-lawson",
+        "category": "attraction"
+      },
+      {
+        "time": "08:30",
+        "title": "Breakfast near the station",
+        "note": "Fuel before the loop.",
+        "category": "dining"
+      },
+      {
+        "time": "09:30",
+        "title": "Kawaguchiko sightseeing bus loop",
+        "note": "Tourist buses to classic Fuji photo stops.",
+        "placeId": "fuji-view-bus",
+        "end": "12:30",
+        "category": "transit"
+      },
+      {
+        "time": "13:00",
+        "title": "Oishi Park & north-shore views",
+        "note": "Flower path + lake & Fuji.",
+        "placeId": "oishi-park",
+        "end": "15:00",
+        "category": "attraction"
+      },
+      {
+        "time": "15:30",
+        "title": "More viewpoint hopping / optional Fuji mountain bus",
+        "note": "Extra photo stops if energy remains.",
+        "placeId": "fuji-view-bus",
+        "end": "17:30",
+        "category": "transit"
+      },
+      {
+        "time": "18:30",
+        "title": "Early dinner & early night",
+        "note": "Rest for Fuji-Q rope-drop tomorrow.",
+        "category": "dining"
+      }
+    ]
+  },
+  {
+    "id": "d15",
+    "date": "2026-09-10",
+    "weekday": "Thursday",
+    "city": "Kawaguchiko",
+    "country": "JP",
+    "hotelId": null,
+    "title": "Fuji-Q Highland & overnight bus to Kyoto",
+    "summary": "Up for Fuji-Q opening, full theme-park day, send bags ahead to the Kyoto hotel, then overnight highway bus to Kyoto (no hotel night tonight).",
+    "food": "Park food; light snack before the overnight bus.",
     "placeIds": [
       "fuji-q"
     ],
     "transport": [
-      "Arrive for park opening."
+      "Arrive Fuji-Q for opening (~09:00).",
+      "Evening overnight bus Kawaguchiko / Fujikyu area → Kyoto."
     ],
     "tips": [
-      "Do-Dodonpa / Takabisha are the headline coasters."
+      "Wake ~08:00 for park opening.",
+      "Do-Dodonpa / Takabisha are the headline coasters.",
+      "Same-day Takkyubin / luggage service: send bags from Kawaguchiko hotel so they arrive at the Kyoto hotel.",
+      "Book the overnight bus in advance — reserved seats.",
+      "No hotel night on 10/9 — sleep on the bus; Kyoto hotel from 11/9."
     ],
     "timeline": [
+      {
+        "time": "08:00",
+        "title": "Wake & hotel checkout prep",
+        "note": "Bags ready for Takkyubin to Kyoto.",
+        "category": "attraction"
+      },
       {
         "time": "08:30",
         "title": "Depart for Fuji-Q Highland",
@@ -3416,58 +3524,80 @@ window.DAYS = [
       {
         "time": "09:00",
         "title": "Fuji-Q Highland",
-        "note": "Full theme-park day.",
+        "note": "Full theme-park day from opening.",
         "placeId": "fuji-q",
-        "end": "18:30",
+        "end": "17:30",
         "category": "attraction"
       },
       {
-        "time": "19:30",
-        "title": "Hoto noodle dinner",
+        "time": "17:45",
+        "title": "Send bags to Kyoto hotel",
+        "note": "Takkyubin / hotel luggage service — arrive Kyoto ahead of you.",
+        "category": "attraction"
+      },
+      {
+        "time": "19:00",
+        "title": "Light dinner near the bus stop",
         "note": "",
-        "category": "dining"
+        "category": "transit"
+      },
+      {
+        "time": "21:30",
+        "title": "Overnight bus to Kyoto",
+        "note": "Highway bus · arrive Kyoto morning 11/9 · no hotel tonight.",
+        "category": "transit"
       }
-    ]
+    ],
+    "transfer": {
+      "mode": "bus",
+      "label": "Kawaguchiko → Kyoto (overnight bus)",
+      "detail": "Overnight highway bus after Fuji-Q — arrive Kyoto morning 11/9 · no hotel night on 10/9",
+      "duration": "~8–10h overnight",
+      "fromCity": "Kawaguchiko",
+      "toCity": "Kyoto"
+    }
   },
   {
-    "id": "d15",
-    "date": "2026-09-10",
-    "weekday": "Thursday",
+    "id": "d16",
+    "date": "2026-09-11",
+    "weekday": "Friday",
     "city": "Kyoto",
     "country": "JP",
     "hotelId": null,
     "title": "Arrive Kyoto, Gion & riverside alleys",
-    "summary": "Mishima Shinkansen to Kyoto, hotel drop + bag pickup, then a Gion dusk stroll and Pontocho riverside dinner.",
+    "summary": "Morning arrival on the overnight bus, Kyoto hotel check-in and bag pickup, then an easy Gion dusk stroll and Pontocho riverside dinner.",
     "food": "Pontocho riverside dinner along the Kamogawa.",
     "placeIds": [
       "gion",
       "pontocho"
     ],
     "transport": [
-      "Bus Kawaguchiko → Mishima (~90m) + Shinkansen to Kyoto (~110m)."
+      "Overnight bus arrives Kyoto morning.",
+      "Walk/taxi to hotel · easy evening in Higashiyama / Pontocho."
     ],
     "tips": [
-      "Collect Takkyubin bags at hotel.",
-      "Respectful photos in Gion."
+      "Kyoto hotel nights: 11/9 evening → 15/9 evening.",
+      "Collect Takkyubin bags at the hotel if they beat you there.",
+      "Respectful photos in Gion — keep the day light after the bus."
     ],
     "timeline": [
       {
-        "time": "08:30",
-        "title": "Bus to Mishima Station",
-        "note": "Express bus ~90 minutes.",
+        "time": "06:30",
+        "title": "Arrive Kyoto (overnight bus)",
+        "note": "Stretch, coffee, shower priority.",
         "category": "transit"
       },
       {
-        "time": "10:30",
-        "title": "Shinkansen Mishima → Kyoto",
-        "note": "~110 minutes on Tokaido line.",
-        "category": "transit"
-      },
-      {
-        "time": "13:00",
-        "title": "Hotel check-in & collect forwarded bags",
-        "note": "",
+        "time": "09:00",
+        "title": "Hotel check-in / luggage drop",
+        "note": "Collect forwarded bags when ready.",
         "category": "attraction"
+      },
+      {
+        "time": "12:00",
+        "title": "Easy lunch & rest",
+        "note": "Nap if needed after the bus.",
+        "category": "transit"
       },
       {
         "time": "17:30",
@@ -3485,20 +3615,12 @@ window.DAYS = [
         "end": "21:30",
         "category": "dining"
       }
-    ],
-    "transfer": {
-      "mode": "train",
-      "label": "Kawaguchiko → Kyoto (Mishima route)",
-      "detail": "Express bus to Mishima (~90m) + Tokaido Shinkansen (~110m). Prefer this over overnight bus.",
-      "duration": "~3.5–4h · ~¥12,500–13,500",
-      "fromCity": "Kawaguchiko",
-      "toCity": "Kyoto"
-    }
+    ]
   },
   {
-    "id": "d16",
-    "date": "2026-09-11",
-    "weekday": "Friday",
+    "id": "d17",
+    "date": "2026-09-12",
+    "weekday": "Saturday",
     "city": "Kyoto",
     "country": "JP",
     "hotelId": null,
@@ -3589,9 +3711,9 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d17",
-    "date": "2026-09-12",
-    "weekday": "Saturday",
+    "id": "d18",
+    "date": "2026-09-13",
+    "weekday": "Sunday",
     "city": "Kyoto",
     "country": "JP",
     "hotelId": null,
@@ -3678,9 +3800,9 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d18",
-    "date": "2026-09-13",
-    "weekday": "Sunday",
+    "id": "d19",
+    "date": "2026-09-14",
+    "weekday": "Monday",
     "city": "Kyoto",
     "country": "JP",
     "hotelId": null,
@@ -3758,124 +3880,78 @@ window.DAYS = [
     ]
   },
   {
-    "id": "d19",
-    "date": "2026-09-14",
-    "weekday": "Monday",
-    "city": "Kyoto",
-    "country": "JP",
-    "hotelId": null,
-    "title": "Zen gardens & Golden Pavilion",
-    "summary": "East Kyoto zen path from Ginkaku-ji to Nanzen-ji, then Kinkaku-ji at golden hour and a farewell Kyoto dinner.",
-    "food": "Lunch near Nanzen-ji; celebratory Kyoto dinner.",
-    "placeIds": [
-      "ginkakuji",
-      "philosophers-path",
-      "nanzenji",
-      "kinkakuji",
-      "pontocho"
-    ],
-    "transport": [
-      "Bus to Ginkaku-ji; walk path; taxi ~25–30m to Kinkaku-ji."
-    ],
-    "tips": [
-      "Taxi to Kinkaku-ji for golden hour.",
-      "Forward bags to Osaka tonight."
-    ],
-    "timeline": [
-      {
-        "time": "08:30",
-        "title": "Ginkaku-ji (Silver Pavilion)",
-        "note": "Morning gardens.",
-        "placeId": "ginkakuji",
-        "end": "10:15",
-        "category": "culture"
-      },
-      {
-        "time": "10:30",
-        "title": "Philosopher’s Path",
-        "note": "Peaceful canal walk.",
-        "placeId": "philosophers-path",
-        "end": "12:15",
-        "category": "attraction"
-      },
-      {
-        "time": "12:30",
-        "title": "Nanzen-ji & lunch",
-        "note": "Temple + aqueduct.",
-        "placeId": "nanzenji",
-        "end": "14:30",
-        "category": "dining"
-      },
-      {
-        "time": "15:30",
-        "title": "Kinkaku-ji golden hour",
-        "note": "Taxi across town for sunlight on gold.",
-        "placeId": "kinkakuji",
-        "end": "17:30",
-        "category": "culture"
-      },
-      {
-        "time": "19:00",
-        "title": "Farewell Kyoto dinner",
-        "note": "",
-        "placeId": "pontocho",
-        "category": "dining"
-      }
-    ]
-  },
-  {
     "id": "d20",
     "date": "2026-09-15",
     "weekday": "Tuesday",
     "city": "Osaka",
     "country": "JP",
     "hotelId": null,
-    "title": "Osaka street food & teamLab Botanical Garden",
-    "summary": "Train to Osaka, castle park and Shinsekai, then night teamLab Botanical Garden and a Dotonbori food crawl.",
-    "food": "Takoyaki & okonomiyaki in Dotonbori after teamLab.",
+    "title": "Kyoto zen morning → Osaka night",
+    "summary": "Morning Ginkaku-ji / Philosopher’s Path / Nanzen-ji and Kinkaku-ji, then evening train to Osaka for hotel check-in, teamLab Botanical Garden and Dotonbori.",
+    "food": "Lunch near Nanzen-ji; takoyaki & okonomiyaki in Dotonbori after teamLab.",
     "placeIds": [
-      "osaka-castle",
-      "shinsekai",
+      "ginkakuji",
+      "philosophers-path",
+      "nanzenji",
+      "kinkakuji",
       "teamlab-botanical",
       "dotonbori",
       "hozenji"
     ],
     "transport": [
-      "Kyoto → Osaka train (~30–45m).",
+      "Morning east/west Kyoto zen loop.",
+      "Afternoon/evening JR Kyoto → Osaka (~30–45m).",
       "Subway/taxi to Nagai for teamLab after dark."
     ],
     "tips": [
+      "Checkout Kyoto hotel for evening move to Osaka (nights 15–20/9).",
       "Book teamLab Botanical Garden night tickets.",
-      "Hotel check-in after the Kyoto train."
+      "USJ is tomorrow (16/9) — don’t stay out too late."
     ],
     "timeline": [
       {
-        "time": "09:30",
-        "title": "Train Kyoto → Osaka",
-        "note": "~30 minutes.",
-        "category": "transit"
-      },
-      {
-        "time": "11:00",
-        "title": "Hotel check-in",
-        "note": "",
-        "category": "attraction"
-      },
-      {
-        "time": "12:30",
-        "title": "Osaka Castle Park",
-        "note": "Castle grounds stroll.",
-        "placeId": "osaka-castle",
-        "end": "15:00",
+        "time": "08:00",
+        "title": "Ginkaku-ji (Silver Pavilion)",
+        "note": "Morning gardens.",
+        "placeId": "ginkakuji",
+        "end": "09:30",
         "category": "culture"
       },
       {
-        "time": "15:30",
-        "title": "Shinsekai & Tsutenkaku",
-        "note": "Retro Osaka vibes.",
-        "placeId": "shinsekai",
-        "end": "17:30",
+        "time": "09:45",
+        "title": "Philosopher’s Path",
+        "note": "Peaceful canal walk.",
+        "placeId": "philosophers-path",
+        "end": "11:00",
+        "category": "attraction"
+      },
+      {
+        "time": "11:15",
+        "title": "Nanzen-ji & lunch",
+        "note": "Temple + aqueduct.",
+        "placeId": "nanzenji",
+        "end": "13:00",
         "category": "dining"
+      },
+      {
+        "time": "13:45",
+        "title": "Kinkaku-ji",
+        "note": "Golden Pavilion before leaving Kyoto.",
+        "placeId": "kinkakuji",
+        "end": "15:15",
+        "category": "culture"
+      },
+      {
+        "time": "16:00",
+        "title": "Train Kyoto → Osaka",
+        "note": "~30–45 minutes · hotel check-in.",
+        "category": "transit"
+      },
+      {
+        "time": "17:30",
+        "title": "Osaka hotel check-in",
+        "note": "Namba / Dotonbori base through 20/9.",
+        "category": "attraction"
       },
       {
         "time": "19:00",
@@ -3903,7 +3979,7 @@ window.DAYS = [
     "transfer": {
       "mode": "train",
       "label": "Kyoto → Osaka",
-      "detail": "JR/private line into central Osaka (~30m)",
+      "detail": "Afternoon/evening JR into central Osaka after Kyoto zen morning",
       "duration": "~30–45 minutes",
       "fromCity": "Kyoto",
       "toCity": "Osaka"
@@ -4122,39 +4198,56 @@ window.DAYS = [
     "city": "Osaka",
     "country": "JP",
     "hotelId": null,
-    "title": "Umeda & modern Osaka",
-    "summary": "Modern Osaka: Umeda shopping, sunset at Umeda Sky Building, drinks in Namba or Nakazakicho.",
-    "food": "Umeda lunch; Namba evening drinks.",
+    "title": "Castle, Shinsekai, Umeda & sky sunset",
+    "summary": "Osaka Castle and Shinsekai by day, then Umeda shopping and sunset at Umeda Sky Building.",
+    "food": "Shinsekai snacks; dinner near Umeda / Namba.",
     "placeIds": [
+      "osaka-castle",
+      "shinsekai",
       "umeda-sky",
       "dotonbori"
     ],
     "transport": [
-      "Subway to Umeda.",
-      "Return south for nightlife."
+      "Subway to Osaka Castle · Shinsekai · Umeda."
     ],
     "tips": [
-      "Floating Garden Observatory at golden hour."
+      "Umeda Sky sunset slot if you want the deck timed."
     ],
     "timeline": [
       {
         "time": "10:00",
-        "title": "Umeda shopping",
-        "note": "Hep Five, Grand Front Osaka.",
-        "placeId": "umeda-sky",
-        "end": "14:00",
-        "category": "shopping"
+        "title": "Osaka Castle Park",
+        "note": "Castle grounds stroll.",
+        "placeId": "osaka-castle",
+        "end": "12:30",
+        "category": "culture"
+      },
+      {
+        "time": "13:00",
+        "title": "Shinsekai & Tsutenkaku",
+        "note": "Retro Osaka vibes + lunch.",
+        "placeId": "shinsekai",
+        "end": "15:30",
+        "category": "dining"
       },
       {
         "time": "16:00",
-        "title": "Umeda Sky Building sunset",
-        "note": "Kuchu Teien Observatory.",
+        "title": "Umeda shopping",
+        "note": "Hep Five, Grand Front Osaka.",
         "placeId": "umeda-sky",
-        "end": "18:30",
-        "category": "attraction"
+        "end": "18:00",
+        "category": "shopping"
       },
       {
-        "time": "20:00",
+        "time": "18:15",
+        "title": "Umeda Sky Building sunset",
+        "note": "Floating Garden observatory.",
+        "placeId": "umeda-sky",
+        "end": "19:45",
+        "category": "culture"
+      },
+      {
+        "time": "20:30",
         "title": "Drinks in Namba / Nakazakicho",
         "note": "",
         "placeId": "dotonbori",
