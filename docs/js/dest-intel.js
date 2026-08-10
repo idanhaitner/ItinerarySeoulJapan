@@ -7,6 +7,14 @@ window.DestIntel = (function () {
     { id: "Osaka", he: "אוסקה", lat: 34.6937, lng: 135.5023, tz: "Asia/Tokyo" },
   ];
 
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
   const FUJI_API = "https://fuji-visibility-api.onrender.com/visibility";
   const FUJI_CACHE_KEY = "trip-fuji-visibility-v1";
   const FUJI_CACHE_MS = 6 * 60 * 60 * 1000;
@@ -369,21 +377,30 @@ window.DestIntel = (function () {
     }
     const fmt = (n, digits) =>
       n == null ? "—" : Number(n).toLocaleString("he-IL", { maximumFractionDigits: digits });
+    const updated = rates.updated
+      ? `<div class="fx-strip-meta">1 ₪ · ${escapeHtml(String(rates.updated))}</div>`
+      : `<div class="fx-strip-meta">1 ₪ · live</div>`;
     const items = [
       { sym: "₩", val: fmt(rates.ILS_KRW, 0), label: "וון" },
       { sym: "¥", val: fmt(rates.ILS_JPY, 1), label: "ין" },
       { sym: "$", val: fmt(rates.ILS_USD, 3), label: "דולר" },
       { sym: "€", val: fmt(rates.ILS_EUR, 3), label: "אירו" },
     ];
-    const itemsHtml = items
-      .map(
-        (it) =>
-          `<div class="fx-strip-item"><em>${it.sym}</em><strong>${it.val}</strong><span>${it.label}</span></div>`
-      )
-      .join("");
+    const chunk =
+      items
+        .map(
+          (it) =>
+            `<div class="fx-strip-item"><em>${it.sym}</em><strong>${it.val}</strong><span>${it.label}</span></div>`
+        )
+        .join("") + updated;
     return `
       <div class="fx-strip" aria-label="שערי חליפין לשקל">
-        <div class="fx-strip-row">${itemsHtml}</div>
+        <div class="fx-strip-viewport">
+          <div class="fx-strip-track">
+            <div class="fx-strip-group">${chunk}</div>
+            <div class="fx-strip-group" aria-hidden="true">${chunk}</div>
+          </div>
+        </div>
       </div>`;
   }
 

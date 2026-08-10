@@ -562,27 +562,38 @@ a { color: inherit; }
   color: var(--soft);
 }
 
-.fx-strip-row {
+.fx-strip-viewport {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  direction: ltr;
+}
+
+.fx-strip-track {
   display: flex;
-  flex-wrap: wrap;
+  width: max-content;
+  animation: fxStripScroll 28s linear infinite;
+}
+
+.fx-strip:hover .fx-strip-track {
+  animation-play-state: paused;
+}
+
+.fx-strip-group {
+  display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0;
-  min-height: 40px;
-  padding: 0 4px;
+  padding: 0 8px;
+  height: 40px;
 }
 
 .fx-strip-item {
   display: inline-flex;
   align-items: baseline;
   gap: 5px;
-  padding: 8px 14px;
+  padding: 0 14px;
   white-space: nowrap;
   border-inline-end: 1px solid var(--line);
-}
-
-.fx-strip-item:last-child {
-  border-inline-end: 0;
 }
 
 .fx-strip-item em {
@@ -603,6 +614,20 @@ a { color: inherit; }
   font-size: 11px;
   color: var(--muted);
   font-weight: 500;
+}
+
+.fx-strip-meta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 14px;
+  white-space: nowrap;
+  font-size: 10px;
+  color: var(--soft);
+}
+
+@keyframes fxStripScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 .dest-weather-grid {
@@ -1030,6 +1055,12 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .fuji-card-bg {
     animation: none;
+  }
+  .fx-strip-track {
+    animation: none !important;
+  }
+  .fx-strip-group[aria-hidden="true"] {
+    display: none;
   }
   .wx-anim .wx-svg *,
   .wx-anim .wx-svg {
