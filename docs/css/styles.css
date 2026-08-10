@@ -3115,6 +3115,18 @@ a { color: inherit; }
   pointer-events: none;
 }
 
+/* Keep flight path round + spaced under the labels, not stretched under the pills */
+.sec-motif-svg.motif-flights {
+  left: 28px;
+  right: auto;
+  width: min(32rem, calc(100% - 11rem));
+  height: auto;
+  aspect-ratio: 640 / 160;
+  max-height: 46%;
+  bottom: 16%;
+  overflow: visible;
+}
+
 .sec-motif-line {
   stroke: rgba(244, 241, 234, 0.32);
   stroke-width: 1.5;
@@ -3122,10 +3134,14 @@ a { color: inherit; }
   stroke-linecap: round;
   fill: none;
   animation: fx-dash 22s linear infinite;
+  vector-effect: non-scaling-stroke;
 }
 
 .sec-motif-dot {
-  fill: rgba(244, 241, 234, 0.55);
+  fill: rgba(244, 241, 234, 0.72);
+  stroke: rgba(20, 24, 32, 0.35);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
 }
 
 .sec-motif-dot.is-on {
@@ -3223,7 +3239,8 @@ a { color: inherit; }
   justify-content: space-between;
   gap: 8px;
   margin-top: 24px;
-  max-width: 28rem;
+  width: min(32rem, 100%);
+  max-width: 100%;
   font-family: var(--font-display);
   font-size: 0.78rem;
   font-weight: 600;
@@ -3276,6 +3293,11 @@ a { color: inherit; }
     font-size: 1.2rem;
     top: 16px;
     inset-inline-end: 14px;
+  }
+
+  .sec-motif-svg.motif-flights {
+    left: 18px;
+    width: calc(100% - 36px);
   }
 }
 

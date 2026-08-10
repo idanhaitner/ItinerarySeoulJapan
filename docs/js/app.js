@@ -753,14 +753,15 @@
   }
 
   function motifFlights() {
+    // Even stop spacing (5 airports). preserveAspectRatio=meet keeps dots circular.
     return `
-      <svg class="sec-motif-svg motif-flights" viewBox="0 0 640 160" preserveAspectRatio="none">
-        <path class="sec-motif-line" d="M28 118 C 110 40, 180 35, 260 78 S 400 130, 500 70 S 580 40, 612 52" fill="none" />
-        <circle class="sec-motif-dot" cx="28" cy="118" r="4.5" />
-        <circle class="sec-motif-dot" cx="180" cy="55" r="4.5" />
-        <circle class="sec-motif-dot" cx="320" cy="95" r="4.5" />
-        <circle class="sec-motif-dot" cx="460" cy="78" r="4.5" />
-        <circle class="sec-motif-dot" cx="612" cy="52" r="4.5" />
+      <svg class="sec-motif-svg motif-flights" viewBox="0 0 640 160" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <path class="sec-motif-line" d="M48 118 C 100 42, 130 36, 160 62 S 230 138, 320 96 S 400 34, 480 72 S 540 128, 592 56" fill="none" />
+        <circle class="sec-motif-dot" cx="48" cy="118" r="5" />
+        <circle class="sec-motif-dot" cx="160" cy="62" r="5" />
+        <circle class="sec-motif-dot" cx="320" cy="96" r="5" />
+        <circle class="sec-motif-dot" cx="480" cy="72" r="5" />
+        <circle class="sec-motif-dot" cx="592" cy="56" r="5" />
       </svg>
       <div class="sec-motif-plane" aria-hidden="true">✈</div>`;
   }
