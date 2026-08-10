@@ -960,15 +960,7 @@
         <button type="button" class="btn-ghost" id="open-flights-tab">לטיסות ←</button>
       </div>
       <div id="fx-root"></div>
-      <div id="taxi-root" style="margin-top:12px"></div>
-      <div class="tool-card" style="margin-top:12px">
-        <h3>על הטיול</h3>
-        <p class="tool-sub">${escapeHtml(trip.dates)}</p>
-        <div class="tag-row" style="margin-top:10px">${trip.route.map((c) => `<span class="tag">${cityLocal(c)}</span>`).join("")}</div>
-        <ul style="color:var(--muted);font-size:14px;font-weight:300;margin:12px 0 0;padding-inline-start:18px">
-          ${(trip.notes || []).map((n) => `<li>${escapeHtml(n)}</li>`).join("")}
-        </ul>
-      </div>`;
+      <div id="taxi-root" style="margin-top:12px"></div>`;
     tools.renderConverter(document.getElementById("fx-root"));
     tools.renderTaxiCards(document.getElementById("taxi-root"), places);
     const goFlights = document.getElementById("open-flights-tab");
