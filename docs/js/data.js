@@ -1128,6 +1128,22 @@ window.PLACES = {
     "lng": 138.7806,
     "blurb": "World-class coasters."
   },
+  "mystays-fuji-onsen": {
+    "id": "mystays-fuji-onsen",
+    "name": "HOTEL MYSTAYS Fuji Onsen Resort",
+    "nameJa": "ホテルマイステイズ富士温泉リゾート",
+    "city": "Kawaguchiko",
+    "country": "JP",
+    "tags": [
+      "hotel",
+      "onsen",
+      "booked"
+    ],
+    "lat": 35.4921,
+    "lng": 138.7801,
+    "blurb": "Booked — Fujiyoshida / Kawaguchiko base · onsen resort · ~5 min walk from Fujikyu Highland Station · nights 8–9/9, checkout 10/9.",
+    "taxiAddress": "山梨県富士吉田市新倉2654"
+  },
   "musse-kyoto": {
     "id": "musse-kyoto",
     "name": "Hotel Musse Kyoto",
@@ -3315,7 +3331,7 @@ window.DAYS = [
       "Sara is ~7–10 min taxi/walk from Hakone-Yumoto Station."
     ],
     "tips": [
-      "Send large suitcases Tokyo→Kawaguchiko hotel via Takkyubin; travel Hakone/Fuji with backpacks only.",
+      "Send large suitcases Tokyo→HOTEL MYSTAYS Fuji Onsen Resort via Takkyubin; travel Hakone/Fuji with backpacks only.",
       "Book Romancecar ~1 month ahead — request front Observation Car seats.",
       "Tsukino Yado Sara booked · check-in from 15:00 · all rooms have open-air baths.",
       "Onsen etiquette at the ryokan."
@@ -3324,7 +3340,7 @@ window.DAYS = [
       {
         "time": "08:00",
         "title": "Takkyubin drop at Tokyo hotel",
-        "note": "Forward large bags to the Kawaguchiko hotel.",
+        "note": "Forward large bags to HOTEL MYSTAYS Fuji Onsen Resort.",
         "category": "attraction"
       },
       {
@@ -3377,15 +3393,15 @@ window.DAYS = [
     "weekday": "Tuesday",
     "city": "Kawaguchiko",
     "country": "JP",
-    "hotelId": null,
+    "hotelId": "mystays-fuji-onsen",
     "title": "Sunrise torii, pirate ship, Gotemba & calm Kawaguchiko",
-    "summary": "Sunrise at Hakone Shrine floating torii (Fuji if clear), Lake Ashi pirate ship, afternoon Gotemba Premium Outlets shopping, then Kawaguchiko hotel check-in for a calm evening.",
-    "food": "Outlet lunch at Gotemba; calm lakeside dinner near Kawaguchiko.",
+    "summary": "Sunrise at Hakone Shrine floating torii (Fuji if clear), Lake Ashi pirate ship, afternoon Gotemba Premium Outlets shopping, then check-in at HOTEL MYSTAYS Fuji Onsen Resort for a calm evening.",
+    "food": "Outlet lunch at Gotemba; calm dinner near the hotel / lake.",
     "placeIds": [
       "hakone-shrine",
       "lake-ashi",
       "gotemba-outlets",
-      "tsukino-yado-sara"
+      "mystays-fuji-onsen"
     ],
     "transport": [
       "Early bus/walk to Hakone Shrine / Motohakone for sunrise.",
@@ -3395,7 +3411,7 @@ window.DAYS = [
     "tips": [
       "Sunrise ~05:30 in early Sep — leave the ryokan with warm layers.",
       "Gotemba open 10:00–20:00 — aim for a midday/afternoon shop window (~3h).",
-      "Collect Tokyo→Kawaguchiko Takkyubin bags at the hotel if they arrived.",
+      "Collect Tokyo→MYSTAYS Takkyubin bags at the hotel if they arrived.",
       "Keep the evening light — big Fuji day tomorrow."
     ],
     "timeline": [
@@ -3446,15 +3462,17 @@ window.DAYS = [
       },
       {
         "time": "17:15",
-        "title": "Kawaguchiko hotel check-in",
-        "note": "Collect forwarded bags · settle in.",
-        "category": "attraction"
+        "title": "Check-in — HOTEL MYSTAYS Fuji Onsen Resort",
+        "note": "Fujiyoshida · onsen · collect forwarded bags.",
+        "placeId": "mystays-fuji-onsen",
+        "category": "hotel"
       },
       {
         "time": "19:00",
-        "title": "Calm lakeside dinner",
-        "note": "Early-ish night near the lake.",
-        "category": "dining"
+        "title": "Calm dinner near the hotel",
+        "note": "Early-ish night · rest for Chureito sunrise.",
+        "placeId": "mystays-fuji-onsen",
+        "category": "hotel"
       }
     ],
     "transfer": {
@@ -3472,25 +3490,26 @@ window.DAYS = [
     "weekday": "Wednesday",
     "city": "Kawaguchiko",
     "country": "JP",
-    "hotelId": null,
+    "hotelId": "mystays-fuji-onsen",
     "title": "Fuji sunrise, Lawson & sightseeing loop",
-    "summary": "Sunrise at Chureito Pagoda, the famous Lawson Fuji shot, then Kawaguchiko tourist sightseeing buses / Fuji viewpoint loop for photos — a pure Fuji day. Sleep early.",
+    "summary": "Sunrise at Chureito Pagoda, the famous Lawson Fuji shot, then Kawaguchiko tourist sightseeing buses / Fuji viewpoint loop for photos — a pure Fuji day. Sleep early at MYSTAYS.",
     "food": "Café / lakeside lunch; early dinner.",
     "placeIds": [
       "chureito",
       "fuji-lawson",
       "fuji-view-bus",
-      "oishi-park"
+      "oishi-park",
+      "mystays-fuji-onsen"
     ],
     "transport": [
-      "Dawn taxi/bus to Chureito (Arakurayama).",
+      "Dawn taxi/bus to Chureito (Arakurayama) — close to the hotel.",
       "Kawaguchiko Sightseeing Bus loops (red/green/blue) between viewpoints.",
       "Optional mountain bus toward Fuji if seats/weather allow."
     ],
     "tips": [
       "Chureito stairs in the dark — headlamp helps.",
       "Buy a 1- or 2-day sightseeing bus pass at Kawaguchiko Station.",
-      "Sleep early tonight — Fuji-Q opens tomorrow morning."
+      "Sleep early tonight — Fuji-Q opens tomorrow morning (hotel is near Fujikyu Highland Station)."
     ],
     "timeline": [
       {
@@ -3540,9 +3559,10 @@ window.DAYS = [
       },
       {
         "time": "18:30",
-        "title": "Early dinner & early night",
+        "title": "Early dinner & early night at MYSTAYS",
         "note": "Rest for Fuji-Q rope-drop tomorrow.",
-        "category": "dining"
+        "placeId": "mystays-fuji-onsen",
+        "category": "hotel"
       }
     ]
   },
@@ -3554,33 +3574,35 @@ window.DAYS = [
     "country": "JP",
     "hotelId": null,
     "title": "Fuji-Q Highland & overnight bus to Kyoto",
-    "summary": "Up for Fuji-Q opening, full theme-park day, send bags ahead to the Kyoto hotel, then overnight highway bus to Kyoto (no hotel night tonight).",
+    "summary": "Checkout MYSTAYS, Fuji-Q from opening (hotel is next door), send bags ahead to the Kyoto hotel, then overnight highway bus to Kyoto (no hotel night tonight).",
     "food": "Park food; light snack before the overnight bus.",
     "placeIds": [
-      "fuji-q"
+      "fuji-q",
+      "mystays-fuji-onsen"
     ],
     "transport": [
-      "Arrive Fuji-Q for opening (~09:00).",
+      "Arrive Fuji-Q for opening (~09:00) — short hop from MYSTAYS.",
       "Evening overnight bus Kawaguchiko / Fujikyu area → Kyoto."
     ],
     "tips": [
       "Wake ~08:00 for park opening.",
       "Do-Dodonpa / Takabisha are the headline coasters.",
-      "Same-day Takkyubin / luggage service: send bags from Kawaguchiko hotel so they arrive at the Kyoto hotel.",
+      "Same-day Takkyubin / luggage service: send bags from MYSTAYS so they arrive at the Kyoto hotel.",
       "Book the overnight bus in advance — reserved seats.",
       "No hotel night on 10/9 — sleep on the bus; Kyoto hotel from 11/9."
     ],
     "timeline": [
       {
         "time": "08:00",
-        "title": "Wake & hotel checkout prep",
+        "title": "Checkout MYSTAYS & bag prep",
         "note": "Bags ready for Takkyubin to Kyoto.",
-        "category": "attraction"
+        "placeId": "mystays-fuji-onsen",
+        "category": "hotel"
       },
       {
         "time": "08:30",
         "title": "Depart for Fuji-Q Highland",
-        "note": "",
+        "note": "Short walk / hop from the hotel.",
         "placeId": "fuji-q",
         "category": "transit"
       },
@@ -3596,7 +3618,8 @@ window.DAYS = [
         "time": "17:45",
         "title": "Send bags to Kyoto hotel",
         "note": "Takkyubin / hotel luggage service — arrive Kyoto ahead of you.",
-        "category": "attraction"
+        "placeId": "mystays-fuji-onsen",
+        "category": "hotel"
       },
       {
         "time": "19:00",
