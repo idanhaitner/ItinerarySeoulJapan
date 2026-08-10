@@ -375,20 +375,15 @@ window.DestIntel = (function () {
       { sym: "$", val: fmt(rates.ILS_USD, 3), label: "דולר" },
       { sym: "€", val: fmt(rates.ILS_EUR, 3), label: "אירו" },
     ];
-    const chunk = items
+    const itemsHtml = items
       .map(
         (it) =>
           `<div class="fx-strip-item"><em>${it.sym}</em><strong>${it.val}</strong><span>${it.label}</span></div>`
       )
       .join("");
     return `
-      <div class="fx-strip" aria-label="שערי חליפין">
-        <div class="fx-strip-viewport">
-          <div class="fx-strip-track">
-            <div class="fx-strip-group">${chunk}</div>
-            <div class="fx-strip-group" aria-hidden="true">${chunk}</div>
-          </div>
-        </div>
+      <div class="fx-strip" aria-label="שערי חליפין לשקל">
+        <div class="fx-strip-row">${itemsHtml}</div>
       </div>`;
   }
 
