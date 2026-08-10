@@ -222,10 +222,10 @@ window.JourneyMap = (function () {
 
     stops.forEach((s) => {
       const parts = dateParts(s.day.date);
-      const marker = L.marker([s.lat, s.lng], { icon: markerIcon(parts.day, s.day.city) }).addTo(layerGroup);
+      const marker = L.marker([s.lat, s.lng], { icon: markerIcon(String(s.n), s.day.city) }).addTo(layerGroup);
       marker.bindPopup(
         `<div class="journey-popup">
-          <div class="jp-day">${escape(parts.day)} ${escape(parts.month)} · ${cityLabel(s.day.city)}</div>
+          <div class="jp-day">יום ${escape(String(s.n))} · ${escape(parts.day)} ${escape(parts.month)} · ${cityLabel(s.day.city)}</div>
           <div class="jp-title">${escape(s.day.title)}</div>
           <div class="jp-meta">${escape(s.label)}</div>
           <button type="button" class="jp-open" data-open-day="${s.day.id}">פתח יום</button>
@@ -264,10 +264,10 @@ window.JourneyMap = (function () {
           const parts = dateParts(s.day.date);
           return `<li>
             <button type="button" class="journey-legend-item" data-jump-day="${s.day.id}">
-              <span class="jl-num" style="background:${cityColor(s.day.city)}">${escape(parts.day)}</span>
+              <span class="jl-num" style="background:${cityColor(s.day.city)}">${escape(String(s.n))}</span>
               <span class="jl-copy">
                 <strong>${escape(cityLabel(s.day.city))}<span class="jl-en">${escape(s.day.city)}</span></strong>
-                <em>${escape(parts.month)} · ${escape(s.day.title)}</em>
+                <em>${escape(parts.day)} ${escape(parts.month)} · ${escape(s.day.title)}</em>
               </span>
             </button>
           </li>`;
