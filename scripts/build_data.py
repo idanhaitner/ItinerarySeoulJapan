@@ -310,8 +310,8 @@ TRANSFERS = {
 }
 
 DAYS = [
-  day("d00", "2026-08-26", "Wednesday", "Tel Aviv", "IL", None,
-      "TLV → Seoul via Addis",
+  day("d00", "2026-08-26", "Wednesday", "Seoul", "KR", None,
+      "Tel Aviv → Seoul via Addis",
       "Ethiopian Airlines overnight: ET0419 Tel Aviv → Addis Ababa, then ET0672 Addis → Incheon (land Thursday afternoon).",
       "Airport / plane meals; light snack in ADD if time.",
       ["tlv", "add", "icn"],
@@ -900,7 +900,7 @@ TRIP = {
     "title": "Korea + Japan 2026",
     "subtitle": "Idan & Shahar itinerary (dad's Excel was inspiration only)",
     "dates": "August 26 – September 26, 2026",
-    "route": ["Tel Aviv", "Seoul", "Tokyo", "Hakone", "Kawaguchiko", "Kyoto", "Osaka", "Kobe", "Tokyo", "Bangkok"],
+    "route": ["Seoul", "Tokyo", "Hakone", "Kawaguchiko", "Kyoto", "Osaka", "Kobe", "Tokyo", "Bangkok"],
     "flights": [
         {
             "id": "et0419",

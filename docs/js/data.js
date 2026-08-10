@@ -4,7 +4,6 @@ window.TRIP = {
   "subtitle": "Idan & Shahar itinerary (dad's Excel was inspiration only)",
   "dates": "August 26 – September 26, 2026",
   "route": [
-    "Tel Aviv",
     "Seoul",
     "Tokyo",
     "Hakone",
@@ -2363,10 +2362,10 @@ window.DAYS = [
     "id": "d00",
     "date": "2026-08-26",
     "weekday": "Wednesday",
-    "city": "Tel Aviv",
-    "country": "IL",
+    "city": "Seoul",
+    "country": "KR",
     "hotelId": null,
-    "title": "TLV → Seoul via Addis",
+    "title": "Tel Aviv → Seoul via Addis",
     "summary": "Ethiopian Airlines overnight: ET0419 Tel Aviv → Addis Ababa, then ET0672 Addis → Incheon (land Thursday afternoon).",
     "food": "Airport / plane meals; light snack in ADD if time.",
     "placeIds": [

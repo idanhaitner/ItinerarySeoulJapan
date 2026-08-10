@@ -494,8 +494,10 @@
     const order = trip.route.filter((c, i, arr) => arr.indexOf(c) === i);
     const groups = new Map();
     list.forEach((p) => {
-      if (!groups.has(p.city)) groups.set(p.city, []);
-      groups.get(p.city).push(p);
+      // Departure airport only — don't surface Tel Aviv as a trip city.
+      const city = p.city === "Tel Aviv" ? "Seoul" : p.city;
+      if (!groups.has(city)) groups.set(city, []);
+      groups.get(city).push(p);
     });
     const ordered = [];
     order.forEach((city) => {
