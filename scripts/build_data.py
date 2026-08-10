@@ -779,7 +779,7 @@ DAYS = [
         t("18:15", "Umeda Sky Building sunset", "umeda-sky", "Floating Garden observatory.", "19:45"),
         t("20:30", "Drinks in Namba / Nakazakicho", "dotonbori"),
       ]),
-  day("d25", "2026-09-20", "Sunday", "Osaka", "JP", "apt-hotel-11-shinsaibashi",
+  day("d25", "2026-09-20", "Sunday", "Kobe", "JP", "apt-hotel-11-shinsaibashi",
       "Kobe day trip — ropeway, Kitano & harbor",
       "Day trip to Kobe: Nunobiki ropeway & herb garden, Kitano Ijinkan hillside, Nankinmachi snacks, Meriken Park / Harborland, then Kobe beef dinner and return to Osaka.",
       "Nankinmachi snacks; Kobe beef dinner before heading back.",

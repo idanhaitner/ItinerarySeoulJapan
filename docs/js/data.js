@@ -4387,7 +4387,7 @@ window.DAYS = [
     "id": "d25",
     "date": "2026-09-20",
     "weekday": "Sunday",
-    "city": "Osaka",
+    "city": "Kobe",
     "country": "JP",
     "hotelId": "apt-hotel-11-shinsaibashi",
     "title": "Kobe day trip — ropeway, Kitano & harbor",
