@@ -22,10 +22,16 @@ window.CHECKLIST = {
       title: "2 · אטרקציות ופארקים (להזמין באינטרנט בהקדם)",
       items: [
         {
-          id: "j-usj",
-          label: "USJ (16/9) — Studio Pass + Express Pass · Express נגמר מהר ונועל כניסה ל־Nintendo World",
-          window: "עכשיו · Express נפתח בדיוק חודשיים מראש בחצות JST",
+          id: "j-usj-studio",
+          label: "USJ (16/9) — Studio Pass (כרטיס כניסה רגיל) · עדיין להזמין",
+          window: "עכשיו · נשאר רק זה אחרי שה־Express הוזמן",
           priority: "critical",
+        },
+        {
+          id: "j-usj-express",
+          label: "USJ (16/9) — Express Pass ✓ הוזמן",
+          window: "הוזמן",
+          priority: "low",
         },
         {
           id: "j-shibuya-sky",

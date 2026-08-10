@@ -3905,8 +3905,8 @@ window.DAYS = [
       "Subway to Universal City (~25–35m). Leave by ~07:45."
     ],
     "tips": [
-      "Express Pass locks Nintendo World entry and skips long queues.",
-      "Confirm Nintendo World entry rules for your pass."
+      "Express Pass ✓ booked for 16/9 — still need Studio Pass (regular entry).",
+      "Confirm Nintendo World entry rules for your Express package."
     ],
     "timeline": [
       {

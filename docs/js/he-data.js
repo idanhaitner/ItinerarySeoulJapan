@@ -940,9 +940,9 @@
       "summary": "יום מלא ב־USJ — Nintendo World, Harry Potter ורכבות הרים.",
       "food": "נשנושים בפארק; ראמן ב־Namba.",
       "tips": [
-        "Express Pass נועל כניסה ל־Nintendo World ומדלג על תורים ארוכים.",
-        "לאשר כללי כניסה ל־Nintendo World לפי הכרטיס."
-],
+        "Express Pass ✓ הוזמן ל־16/9 — נשאר להזמין Studio Pass (כניסה רגילה).",
+        "לאשר כללי כניסה ל־Nintendo World לפי חבילת ה־Express."
+      ],
       "transport": [
         "רכבת תחתית ל־Universal City (~25–35 דק׳). לצאת עד ~07:45."
       ],
