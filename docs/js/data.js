@@ -10,7 +10,6 @@ window.TRIP = {
     "Kawaguchiko",
     "Kyoto",
     "Osaka",
-    "Kobe",
     "Tokyo"
   ],
   "flights": [
@@ -1682,7 +1681,7 @@ window.PLACES = {
     "id": "nunobiki",
     "name": "Nunobiki Herb Garden / Ropeway",
     "nameJa": "布引ハーブ園",
-    "city": "Kobe",
+    "city": "Osaka",
     "country": "JP",
     "tags": [
       "must-see",
@@ -1697,7 +1696,7 @@ window.PLACES = {
     "id": "kitano-ijinkan",
     "name": "Kitano Ijinkan",
     "nameJa": "北野異人館",
-    "city": "Kobe",
+    "city": "Osaka",
     "country": "JP",
     "tags": [
       "must-see",
@@ -1712,7 +1711,7 @@ window.PLACES = {
     "id": "nankinmachi",
     "name": "Nankinmachi (Kobe Chinatown)",
     "nameJa": "南京町",
-    "city": "Kobe",
+    "city": "Osaka",
     "country": "JP",
     "tags": [
       "food",
@@ -1727,7 +1726,7 @@ window.PLACES = {
     "id": "meriken-park",
     "name": "Meriken Park & Harborland",
     "nameJa": "メリケンパーク・ハーバーランド",
-    "city": "Kobe",
+    "city": "Osaka",
     "country": "JP",
     "tags": [
       "must-see",
@@ -4387,7 +4386,7 @@ window.DAYS = [
     "id": "d25",
     "date": "2026-09-20",
     "weekday": "Sunday",
-    "city": "Kobe",
+    "city": "Osaka",
     "country": "JP",
     "hotelId": "apt-hotel-11-shinsaibashi",
     "title": "Kobe day trip — ropeway, Kitano & harbor",
