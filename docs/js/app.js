@@ -671,8 +671,19 @@
     setResultCount(`${parts.day} ${parts.month}`);
   }
 
+  function checklistCheckedMap() {
+    const stored = storage.getChecklist();
+    const map = { ...stored };
+    checklistData.groups.forEach((g) => {
+      g.items.forEach((item) => {
+        if (!(item.id in map) && item.done) map[item.id] = true;
+      });
+    });
+    return map;
+  }
+
   function renderBookings() {
-    const checked = storage.getChecklist();
+    const checked = checklistCheckedMap();
     const allItems = checklistData.groups.flatMap((g) => g.items);
     const done = allItems.filter((i) => checked[i.id]).length;
     const total = allItems.length;
@@ -681,7 +692,7 @@
       <div class="plan-intro">
         <p class="plan-kicker">הזמנות · 予約</p>
         <h2 class="plan-title">מה נשאר לסגור</h2>
-        <p class="plan-lead">ממוין לפי דחיפות — חלון ההזמנות לרוב האטרקציות פתוח עכשיו. מתחילים ממסמכים בארץ, אחר כך כרטיסים שנחטפים.</p>
+        <p class="plan-lead">ממוין לפי דחיפות — חלון ההזמנות לרוב האטרקציות פתוח עכשיו. מתחילים ממסמכים בארץ, אחר כך כרטיסים שנחטפים. מה שכבר סגור מסומן בצד.</p>
       </div>
       <div class="bookings-list">
         ${checklistData.groups
