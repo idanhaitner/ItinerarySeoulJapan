@@ -730,6 +730,7 @@
       pills = [],
       labels = [],
       motif = "",
+      route = "",
       aria = title,
     } = opts;
     const pillsHtml = pills.length
@@ -740,11 +741,12 @@
           )
           .join("")}</div>`
       : "";
-    const labelsHtml = labels.length
-      ? `<div class="sec-route-labels" dir="ltr" aria-hidden="true">${labels
-          .map((l) => `<span>${escapeHtml(l)}</span>`)
-          .join("")}</div>`
-      : "";
+    const labelsHtml =
+      !route && labels.length
+        ? `<div class="sec-route-labels" dir="ltr" aria-hidden="true">${labels
+            .map((l) => `<span>${escapeHtml(l)}</span>`)
+            .join("")}</div>`
+        : "";
     return `
       <section class="sec-stage theme-${escapeHtml(theme)}" aria-label="${escapeHtml(aria)}">
         <div class="sec-stage-bg" aria-hidden="true">
@@ -758,23 +760,53 @@
           <h2 class="sec-title">${title}</h2>
           <p class="sec-lead">${lead}</p>
           ${pillsHtml}
-          ${labelsHtml}
+          ${route || labelsHtml}
         </div>
       </section>`;
   }
 
-  function motifFlights() {
-    // Even stop spacing (5 airports). preserveAspectRatio=meet keeps dots circular.
+  function flightRouteHtml(labels) {
+    const codes = labels.length ? labels : ["TLV", "ICN", "NRT", "DXB", "TIA"];
+    const n = codes.length;
+    const W = 640;
+    const H = 72;
+    const pts = codes.map((_, i) => {
+      const t = n === 1 ? 0.5 : i / (n - 1);
+      const x = ((i + 0.5) / n) * W;
+      const y = 36 + Math.sin(t * Math.PI) * -16 + (i % 2 === 0 ? 5 : -5);
+      return { x: Number(x.toFixed(1)), y: Number(y.toFixed(1)) };
+    });
+    let d = `M${pts[0].x} ${pts[0].y}`;
+    for (let i = 1; i < pts.length; i++) {
+      const a = pts[i - 1];
+      const b = pts[i];
+      const dx = b.x - a.x;
+      d += ` C ${a.x + dx * 0.35} ${a.y}, ${b.x - dx * 0.35} ${b.y}, ${b.x} ${b.y}`;
+    }
+    const dots = pts
+      .map((p) => {
+        const top = `${((p.y / H) * 100).toFixed(1)}%`;
+        return `<span class="sec-flight-dot-slot"><span class="sec-flight-dot" style="top:${top}"></span></span>`;
+      })
+      .join("");
+    const stops = codes
+      .map((code) => `<span class="sec-flight-code">${escapeHtml(code)}</span>`)
+      .join("");
     return `
-      <svg class="sec-motif-svg motif-flights" viewBox="0 0 640 160" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-        <path class="sec-motif-line" d="M48 118 C 100 42, 130 36, 160 62 S 230 138, 320 96 S 400 34, 480 72 S 540 128, 592 56" fill="none" />
-        <circle class="sec-motif-dot" cx="48" cy="118" r="5" />
-        <circle class="sec-motif-dot" cx="160" cy="62" r="5" />
-        <circle class="sec-motif-dot" cx="320" cy="96" r="5" />
-        <circle class="sec-motif-dot" cx="480" cy="72" r="5" />
-        <circle class="sec-motif-dot" cx="592" cy="56" r="5" />
-      </svg>
-      <div class="sec-motif-plane" aria-hidden="true">✈</div>`;
+      <div class="sec-flight-route" dir="ltr" aria-hidden="true">
+        <div class="sec-flight-route-track" style="--stops:${n}">
+          <svg class="sec-flight-route-svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+            <path class="sec-motif-line" d="${d}" fill="none" />
+          </svg>
+          <div class="sec-flight-dots">${dots}</div>
+          <div class="sec-flight-plane" aria-hidden="true">✈</div>
+        </div>
+        <div class="sec-flight-stops" style="--stops:${n}">${stops}</div>
+      </div>`;
+  }
+
+  function motifFlights() {
+    return "";
   }
 
   function flightStatusHe(status) {
@@ -854,7 +886,8 @@
         { em: journeys.length, span: "מקטעים" },
       ],
       labels: ["TLV", "ICN", "NRT", "DXB", "TIA"],
-      motif: motifFlights(),
+      route: flightRouteHtml(["TLV", "ICN", "NRT", "DXB", "TIA"]),
+      motif: "",
       aria: "סיכום טיסות",
     });
 

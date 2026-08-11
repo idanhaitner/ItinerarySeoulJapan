@@ -3166,6 +3166,91 @@ a { color: inherit; }
   overflow: visible;
 }
 
+.sec-flight-route {
+  margin-top: 22px;
+  width: min(36rem, 100%);
+  max-width: 100%;
+}
+
+.sec-flight-route-track {
+  position: relative;
+  height: 4.4rem;
+  margin-bottom: 8px;
+}
+
+.sec-flight-route-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.sec-flight-dots {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(var(--stops, 5), minmax(0, 1fr));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sec-flight-dot-slot {
+  position: relative;
+}
+
+.sec-flight-dot {
+  position: absolute;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(244, 241, 234, 0.92);
+  box-shadow: 0 0 0 3px rgba(244, 241, 234, 0.14);
+  transform: translate(-50%, -50%);
+}
+
+.sec-flight-stops {
+  display: grid;
+  grid-template-columns: repeat(var(--stops, 5), minmax(0, 1fr));
+  align-items: center;
+  pointer-events: none;
+}
+
+.sec-flight-code {
+  display: block;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  color: rgba(244, 241, 234, 0.55);
+  line-height: 1;
+}
+
+.sec-flight-plane {
+  position: absolute;
+  top: 18%;
+  left: 0;
+  font-size: 1.15rem;
+  color: #f4f1ea;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.45));
+  animation: sec-flight-plane 11s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes sec-flight-plane {
+  0% { left: 4%; top: 42%; opacity: 0; transform: rotate(-8deg); }
+  8% { opacity: 1; }
+  25% { left: 22%; top: 22%; transform: rotate(-12deg); }
+  50% { left: 48%; top: 38%; transform: rotate(4deg); }
+  75% { left: 72%; top: 26%; transform: rotate(-6deg); }
+  92% { opacity: 1; }
+  100% { left: 92%; top: 34%; opacity: 0; transform: rotate(8deg); }
+}
+
 .sec-motif-line {
   stroke: rgba(244, 241, 234, 0.32);
   stroke-width: 1.5;
@@ -3338,17 +3423,27 @@ a { color: inherit; }
     left: 18px;
     width: calc(100% - 36px);
   }
+
+  .sec-flight-route-track {
+    height: 3.8rem;
+  }
+
+  .sec-flight-code {
+    font-size: 0.7rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .sec-motif-line,
   .sec-motif-plane,
-  .sec-motif-runner {
+  .sec-motif-runner,
+  .sec-flight-plane {
     animation: none;
   }
 
   .sec-motif-plane,
-  .sec-motif-runner {
+  .sec-motif-runner,
+  .sec-flight-plane {
     display: none;
   }
 
