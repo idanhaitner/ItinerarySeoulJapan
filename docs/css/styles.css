@@ -3167,15 +3167,17 @@ a { color: inherit; }
 }
 
 .sec-flight-route {
-  margin-top: 22px;
-  width: min(36rem, 100%);
-  max-width: 100%;
+  position: relative;
+  z-index: 2;
+  margin: 4px 20px 26px;
+  width: auto;
+  max-width: none;
 }
 
 .sec-flight-route-track {
   position: relative;
-  height: 4.4rem;
-  margin-bottom: 8px;
+  height: 5.25rem;
+  margin-bottom: 10px;
 }
 
 .sec-flight-route-svg {
@@ -3190,43 +3192,38 @@ a { color: inherit; }
 .sec-flight-dots {
   position: absolute;
   inset: 0;
-  display: grid;
-  grid-template-columns: repeat(var(--stops, 5), minmax(0, 1fr));
   pointer-events: none;
   z-index: 1;
 }
 
-.sec-flight-dot-slot {
-  position: relative;
-}
-
 .sec-flight-dot {
   position: absolute;
-  left: 50%;
-  width: 10px;
-  height: 10px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
-  background: rgba(244, 241, 234, 0.92);
-  box-shadow: 0 0 0 3px rgba(244, 241, 234, 0.14);
+  background: rgba(244, 241, 234, 0.95);
+  box-shadow: 0 0 0 4px rgba(244, 241, 234, 0.14);
   transform: translate(-50%, -50%);
 }
 
 .sec-flight-stops {
-  display: grid;
-  grid-template-columns: repeat(var(--stops, 5), minmax(0, 1fr));
-  align-items: center;
+  position: relative;
+  height: 1.1rem;
   pointer-events: none;
 }
 
 .sec-flight-code {
-  display: block;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
   text-align: center;
   font-family: var(--font-display);
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   font-weight: 650;
-  letter-spacing: 0.06em;
-  color: rgba(244, 241, 234, 0.55);
+  letter-spacing: 0.08em;
+  color: rgba(244, 241, 234, 0.58);
   line-height: 1;
+  white-space: nowrap;
 }
 
 .sec-flight-plane {
@@ -3424,12 +3421,16 @@ a { color: inherit; }
     width: calc(100% - 36px);
   }
 
+  .sec-flight-route {
+    margin: 0 14px 22px;
+  }
+
   .sec-flight-route-track {
-    height: 3.8rem;
+    height: 4.4rem;
   }
 
   .sec-flight-code {
-    font-size: 0.7rem;
+    font-size: 0.72rem;
   }
 }
 

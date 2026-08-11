@@ -760,20 +760,22 @@
           <h2 class="sec-title">${title}</h2>
           <p class="sec-lead">${lead}</p>
           ${pillsHtml}
-          ${route || labelsHtml}
+          ${labelsHtml}
         </div>
+        ${route}
       </section>`;
   }
 
   function flightRouteHtml(labels) {
     const codes = labels.length ? labels : ["TLV", "ICN", "NRT", "DXB", "TIA"];
     const n = codes.length;
-    const W = 640;
-    const H = 72;
+    const W = 1000;
+    const H = 88;
+    const padX = 28;
     const pts = codes.map((_, i) => {
       const t = n === 1 ? 0.5 : i / (n - 1);
-      const x = ((i + 0.5) / n) * W;
-      const y = 36 + Math.sin(t * Math.PI) * -16 + (i % 2 === 0 ? 5 : -5);
+      const x = padX + t * (W - padX * 2);
+      const y = 44 + Math.sin(t * Math.PI) * -22 + (i % 2 === 0 ? 6 : -6);
       return { x: Number(x.toFixed(1)), y: Number(y.toFixed(1)) };
     });
     let d = `M${pts[0].x} ${pts[0].y}`;
@@ -785,23 +787,27 @@
     }
     const dots = pts
       .map((p) => {
+        const left = `${((p.x / W) * 100).toFixed(2)}%`;
         const top = `${((p.y / H) * 100).toFixed(1)}%`;
-        return `<span class="sec-flight-dot-slot"><span class="sec-flight-dot" style="top:${top}"></span></span>`;
+        return `<span class="sec-flight-dot" style="left:${left};top:${top}"></span>`;
       })
       .join("");
     const stops = codes
-      .map((code) => `<span class="sec-flight-code">${escapeHtml(code)}</span>`)
+      .map((code, i) => {
+        const left = `${((pts[i].x / W) * 100).toFixed(2)}%`;
+        return `<span class="sec-flight-code" style="left:${left}">${escapeHtml(code)}</span>`;
+      })
       .join("");
     return `
       <div class="sec-flight-route" dir="ltr" aria-hidden="true">
-        <div class="sec-flight-route-track" style="--stops:${n}">
+        <div class="sec-flight-route-track">
           <svg class="sec-flight-route-svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
             <path class="sec-motif-line" d="${d}" fill="none" />
           </svg>
           <div class="sec-flight-dots">${dots}</div>
           <div class="sec-flight-plane" aria-hidden="true">✈</div>
         </div>
-        <div class="sec-flight-stops" style="--stops:${n}">${stops}</div>
+        <div class="sec-flight-stops">${stops}</div>
       </div>`;
   }
 
