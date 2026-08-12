@@ -179,7 +179,8 @@ window.CHECKLIST = {
           window: "Hakone-Yumoto · צ׳ק־אין מ־15:00 · קייסקי + אונסן",
           priority: "low",
           done: true,
-          linkTitles: ["Check-in — Tsukino Yado Sara", "צ׳ק־אין — Tsukino Yado Sara"],
+          linkCheckin: true,
+          linkTitles: ["Tsukino Yado Sara", "Tsukino Yado Sara"],
         },
         {
           id: "ky-hirobun-somen",
@@ -193,7 +194,8 @@ window.CHECKLIST = {
           window: "Kabukicho 1-19-1 · בניין Godzilla",
           priority: "low",
           done: true,
-          linkTitles: ["Drop bags — Hotel Gracery", "השארת מזוודות — Hotel Gracery", "Check in — Hotel Gracery", "צ׳ק־אין — Hotel Gracery"],
+          linkCheckin: true,
+          linkTitles: ["Hotel Gracery", "Gracery Shinjuku"],
         },
         {
           id: "h-kawaguchiko",
@@ -201,7 +203,8 @@ window.CHECKLIST = {
           window: "ליד Fuji-Q / Fujikyu Highland",
           priority: "low",
           done: true,
-          linkTitles: ["Check-in — HOTEL MYSTAYS", "צ׳ק־אין — HOTEL MYSTAYS"],
+          linkCheckin: true,
+          linkTitles: ["HOTEL MYSTAYS", "MYSTAYS Fuji"],
         },
         {
           id: "h-kyoto",
@@ -209,7 +212,8 @@ window.CHECKLIST = {
           window: "Kawaramachi / 筋屋町152",
           priority: "low",
           done: true,
-          linkTitles: ["Check-in — KABIN Koji", "צ׳ק־אין — KABIN Koji"],
+          linkCheckin: true,
+          linkTitles: ["KABIN Koji"],
         },
         {
           id: "h-osaka",
@@ -217,13 +221,16 @@ window.CHECKLIST = {
           window: "היגאשי־שינסאיבשי 2-2-12",
           priority: "low",
           done: true,
-          linkTitles: ["Check-in — Apartment Hotel 11", "צ׳ק־אין — Apartment Hotel 11"],
+          linkCheckin: true,
+          linkTitles: ["Apartment Hotel 11"],
         },
         {
           id: "h-tokyo2",
           label: "מלון טוקיו סיום — שינג׳וקו (21–25 בספט׳)",
           window: "להזמין בהקדם",
           priority: "high",
+          linkCheckin: true,
+          linkTitles: ["Hotel check-in — Shinjuku", "במלון בשינג׳וקו"],
         },
         {
           id: "h-seoul",
@@ -231,7 +238,8 @@ window.CHECKLIST = {
           window: "Hongdae · צ׳ק־אאוט 2 בספט׳",
           priority: "low",
           done: true,
-          linkTitles: ["Check-in — Amanti", "צ׳ק־אין — Amanti"],
+          linkCheckin: true,
+          linkTitles: ["Amanti"],
         },
         {
           id: "t2-farewell",

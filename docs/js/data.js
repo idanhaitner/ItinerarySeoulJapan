@@ -2857,7 +2857,7 @@ window.DAYS = [
       },
       {
         "time": "13:00",
-        "title": "Drop bags — Hotel Gracery Shinjuku",
+        "title": "Check-in — Hotel Gracery Shinjuku",
         "note": "N'EX / limousine · Suica/eSIM · leave luggage (shower later) · Godzilla building.",
         "placeId": "gracery-shinjuku",
         "category": "hotel"

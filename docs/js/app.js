@@ -423,16 +423,29 @@
     return checklistData.groups.flatMap((g) => g.items);
   }
 
+  function isCheckinTitle(title) {
+    const t = String(title || "").trim();
+    return /^(hotel\s+)?check[\s-]?in\b|^צ['׳]ק[\s-]?אין/i.test(t);
+  }
+
   function bookingsForTimelineItem(item) {
-    const hay = `${item.title || ""} ${item.note || ""}`.toLowerCase();
+    const title = String(item.title || "");
+    const hay = `${title} ${item.note || ""}`.toLowerCase();
     const matches = [];
     allChecklistItems().forEach((ci) => {
       const placeLinks = ci.linkPlaceIds || [];
       const titleLinks = ci.linkTitles || [];
-      if (!placeLinks.length && !titleLinks.length) return;
+      if (!placeLinks.length && !titleLinks.length && !ci.linkCheckin) return;
       let hit = false;
-      if (item.placeId && placeLinks.includes(item.placeId)) hit = true;
-      if (!hit && titleLinks.some((t) => hay.includes(String(t).toLowerCase()))) hit = true;
+      if (ci.linkCheckin) {
+        // Hotels: badge only on actual check-in stops — never bag drops / return-to-hotel.
+        if (isCheckinTitle(title) && titleLinks.some((t) => hay.includes(String(t).toLowerCase()))) {
+          hit = true;
+        }
+      } else {
+        if (item.placeId && placeLinks.includes(item.placeId)) hit = true;
+        if (!hit && titleLinks.some((t) => hay.includes(String(t).toLowerCase()))) hit = true;
+      }
       if (hit) matches.push(ci);
     });
     return matches;

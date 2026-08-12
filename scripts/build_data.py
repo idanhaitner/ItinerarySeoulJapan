@@ -425,7 +425,7 @@ DAYS = [
         t("06:45", "ICN check-in — Air Premia", "icn", "Terminal 1 · YP7321."),
         t("08:50", "YP7321 depart Seoul → Tokyo", "icn", "Air Premia · ICN → NRT · ~2h30.", "11:20"),
         t("11:20", "Land Narita (NRT T2)", "narita", "Immigration + bags."),
-        t("13:00", "Drop bags — Hotel Gracery Shinjuku", "gracery-shinjuku", "N'EX / limousine · Suica/eSIM · leave luggage (shower later) · Godzilla building."),
+        t("13:00", "Check-in — Hotel Gracery Shinjuku", "gracery-shinjuku", "N'EX / limousine · Suica/eSIM · leave luggage (shower later) · Godzilla building."),
         t("13:30", "Shinjuku Gyoen — go now", "shinjuku-gyoen", "Straight from the hotel · last entry ~16:30 / closes 17:00 in Sep · snack inside or right after.", "16:30"),
         t("16:45", "Late lunch / snack near the park", "shinjuku", "Ramen / donburi if you only snacked in Gyoen."),
         t("17:30", "Shinjuku metro walk", "shinjuku", "Godzilla head at Toho, Bic Camera / Uniqlo, Kabukicho gate neon."),

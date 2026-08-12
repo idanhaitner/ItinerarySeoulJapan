@@ -278,7 +278,7 @@
     },
     "d07": {
       "title": "סיאול → טוקיו ואורות שינג׳וקו",
-      "summary": "צ׳ק־אאוט מוקדם מ־Amanti, Air Premia YP7321 מ־ICN ל־NRT, Suica/eSIM, השארת מזוודות ב־Hotel Gracery, ישר ל־Shinjuku Gyoen (כניסה אחרונה ~16:30), ואז ערב שינג׳וקו: גודזילה, Tocho, Kabukicho, Omoide ו־Golden Gai.",
+      "summary": "צ׳ק־אאוט מוקדם מ־Amanti, Air Premia YP7321 מ־ICN ל־NRT, Suica/eSIM, צ׳ק־אין ב־Hotel Gracery, ישר ל־Shinjuku Gyoen (כניסה אחרונה ~16:30), ואז ערב שינג׳וקו: גודזילה, Tocho, Kabukicho, Omoide ו־Golden Gai.",
       "food": "נשנוש/צהריים מאוחרים בתוך או מיד אחרי Gyoen; yakitori ב־Omoide; שתייה ב־Golden Gai.",
       "tips": [
         "הוזמן: Air Premia YP7321 · ICN 08:50 → NRT 11:20 (טרמינל 2).",
@@ -319,7 +319,7 @@
           "note": "הגירה + מזוודות"
         },
         {
-          "title": "השארת מזוודות — Hotel Gracery",
+          "title": "צ׳ק־אין — Hotel Gracery Shinjuku",
           "note": "N'EX / לימוזינה · Suica/eSIM · מזוודות במלון (מקלחת אחר כך) · בניין Godzilla"
         },
         {
