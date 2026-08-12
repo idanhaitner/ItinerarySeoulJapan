@@ -493,9 +493,8 @@
             const done = storage.isCompleted(day.id, item) ? "done" : "";
             const fav = storage.isFavorite(day.id, item) ? "fav" : "";
             const booking = timelineBookingHtml(item, seenBookingIds);
-            const bookClass = booking.needs ? (booking.open ? "needs-booking" : "booking-done") : "";
             return `
-            <li class="timeline-item city-line-${day.city} ${done} ${fav} ${bookClass}" data-tl-idx="${idx}">
+            <li class="timeline-item city-line-${day.city} ${done} ${fav}" data-tl-idx="${idx}">
               <div class="timeline-meta">
                 <div class="cat-chip">${meta.label}</div>
                 <div class="timeline-time">${escapeHtml(timeLabel)}</div>

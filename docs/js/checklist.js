@@ -179,7 +179,7 @@ window.CHECKLIST = {
           window: "Hakone-Yumoto · צ׳ק־אין מ־15:00 · קייסקי + אונסן",
           priority: "low",
           done: true,
-          linkPlaceIds: ["tsukino-yado-sara"],
+          linkTitles: ["Check-in — Tsukino Yado Sara", "צ׳ק־אין — Tsukino Yado Sara"],
         },
         {
           id: "ky-hirobun-somen",
@@ -193,7 +193,7 @@ window.CHECKLIST = {
           window: "Kabukicho 1-19-1 · בניין Godzilla",
           priority: "low",
           done: true,
-          linkPlaceIds: ["gracery-shinjuku"],
+          linkTitles: ["Drop bags — Hotel Gracery", "השארת מזוודות — Hotel Gracery", "Check in — Hotel Gracery", "צ׳ק־אין — Hotel Gracery"],
         },
         {
           id: "h-kawaguchiko",
@@ -201,7 +201,7 @@ window.CHECKLIST = {
           window: "ליד Fuji-Q / Fujikyu Highland",
           priority: "low",
           done: true,
-          linkPlaceIds: ["mystays-fuji-onsen"],
+          linkTitles: ["Check-in — HOTEL MYSTAYS", "צ׳ק־אין — HOTEL MYSTAYS"],
         },
         {
           id: "h-kyoto",
@@ -209,7 +209,7 @@ window.CHECKLIST = {
           window: "Kawaramachi / 筋屋町152",
           priority: "low",
           done: true,
-          linkPlaceIds: ["kabin-koji"],
+          linkTitles: ["Check-in — KABIN Koji", "צ׳ק־אין — KABIN Koji"],
         },
         {
           id: "h-osaka",
@@ -217,7 +217,7 @@ window.CHECKLIST = {
           window: "היגאשי־שינסאיבשי 2-2-12",
           priority: "low",
           done: true,
-          linkPlaceIds: ["apt-hotel-11-shinsaibashi"],
+          linkTitles: ["Check-in — Apartment Hotel 11", "צ׳ק־אין — Apartment Hotel 11"],
         },
         {
           id: "h-tokyo2",
@@ -231,7 +231,7 @@ window.CHECKLIST = {
           window: "Hongdae · צ׳ק־אאוט 2 בספט׳",
           priority: "low",
           done: true,
-          linkPlaceIds: ["amanti-hotel"],
+          linkTitles: ["Check-in — Amanti", "צ׳ק־אין — Amanti"],
         },
         {
           id: "t2-farewell",
