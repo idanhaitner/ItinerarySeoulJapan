@@ -109,9 +109,10 @@ window.TRIP = {
     "Route: Tel Aviv → Seoul → Tokyo → Hakone → Kawaguchiko → Kyoto → Osaka (+ Kobe day) → Tokyo → Tirana (via Dubai).",
     "Outbound booked: ET0419 + ET0672 (26–27 Aug).",
     "Seoul→Tokyo booked: Air Premia YP7321 (2 Sep · ICN 08:50 → NRT 11:20).",
-    "Sep 4: Tsukiji + teamLab Planets (weekday) + Odaiba + Ginza.",
+    "Food: light on seafood — prefer meat, eggs, noodles, veg (Tsukiji = non-sushi graze).",
+    "Sep 4: Tsukiji (non-seafood lean) + teamLab Planets (weekday) + Odaiba + Ginza.",
     "Sep 5: Asakusa + Skytree + Akihabara.",
-    "Sep 6: Street Kart + Inokashira/Kichijoji + Shimokitazawa only (IDP required) — no Daikanyama/Nakameguro hop.",
+    "Sep 6: Kichijoji + Shimokitazawa day, night Street Kart ~19:00 (IDP) — no Daikanyama/Nakameguro hop.",
     "Sep 11: Arrive Kyoto (overnight bus) — rest + Gion/Pontocho.",
     "Sep 12: Fushimi Inari + Uji (Byodo-in / matcha) + Nishiki.",
     "Sep 14: Kibune nagashi somen (Hirobun walk-in) + Kurama trek + teamLab Biovortex booked 18:00–18:30. Sep 15: Kyoto zen → Osaka evening.",
@@ -802,7 +803,7 @@ window.PLACES = {
     ],
     "lat": 35.6654,
     "lng": 139.7707,
-    "blurb": "Breakfast graze."
+    "blurb": "Outer-market graze — tamago, meat skewers, fruit, coffee (skip heavy seafood if you prefer)."
   },
   "imperial-east": {
     "id": "imperial-east",
@@ -868,11 +869,12 @@ window.PLACES = {
     "country": "JP",
     "tags": [
       "must-see",
-      "park"
+      "park",
+      "nightlife"
     ],
     "lat": 35.6585,
     "lng": 139.7015,
-    "blurb": "Go-kart through city streets — bring a physical international driving permit."
+    "blurb": "Night go-kart through neon streets — physical IDP required · book an evening slot (~19:00)."
   },
   "kichijoji": {
     "id": "kichijoji",
@@ -3039,8 +3041,8 @@ window.DAYS = [
     "country": "JP",
     "hotelId": "gracery-shinjuku",
     "title": "Tsukiji, teamLab Planets, Odaiba & Ginza",
-    "summary": "Weekday plan for fewer crowds: seafood graze at Tsukiji Outer Market, timed teamLab Planets in Toyosu, Odaiba Gundam + waterfront, then a long Ginza evening of depachika, flagship stores and dinner.",
-    "food": "Tsukiji sushi/seafood breakfast; Ginza depachika snacks + dinner.",
+    "summary": "Weekday plan for fewer crowds: light Tsukiji Outer Market graze (non-seafood lean), timed teamLab Planets in Toyosu, Odaiba Gundam + waterfront, then a long Ginza evening of depachika, flagships and dinner.",
+    "food": "Tsukiji: tamago, meat skewers, fruit, coffee (skip sushi stalls); Ginza depachika + tonkatsu / yakiniku / ramen dinner — not seafood-first.",
     "placeIds": [
       "tsukiji",
       "teamlab-planets",
@@ -3055,13 +3057,14 @@ window.DAYS = [
     "tips": [
       "Timed tickets for teamLab Planets — book a weekday slot (avoid Sat/Sun sell-outs).",
       "Some rooms have water — wear shorts you can roll up / bring a small towel.",
+      "Food preference: light on seafood — favor meat, eggs, noodles, veg across the trip.",
       "Ginza: Mitsukoshi/Ginza Six depachika, Uniqlo Tokyo flagship, Itoya stationery."
     ],
     "timeline": [
       {
         "time": "07:30",
         "title": "Tsukiji Outer Market breakfast",
-        "note": "Sushi, tamago, fresh seafood stalls — arrive hungry.",
+        "note": "Tamago sandwich, grilled skewers, fruit, coffee — skip the sushi counters if you prefer.",
         "placeId": "tsukiji",
         "end": "10:00",
         "category": "dining"
@@ -3093,9 +3096,9 @@ window.DAYS = [
       {
         "time": "19:45",
         "title": "Ginza dinner",
-        "note": "Sushi, tempura, or department-store restaurants upstairs.",
+        "note": "Tonkatsu, yakiniku, ramen, or dept-store restaurants — skip default sushi.",
         "placeId": "ginza",
-        "category": "transit"
+        "category": "dining"
       }
     ]
   },
@@ -3200,65 +3203,80 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": "gracery-shinjuku",
-    "title": "Street Kart, Kichijoji & Shimokitazawa",
-    "summary": "Slimmed west-Tokyo Sunday: Street Kart morning, Inokashira + Harmonica Yokocho in Kichijoji, then vintage Shimokitazawa afternoon/evening dinner — no Daikanyama/Nakameguro hop (too many neighborhoods in one day).",
-    "food": "Lunch in Harmonica Yokocho / Kichijoji; dinner in Shimokitazawa.",
+    "title": "Kichijoji, Shimokitazawa & night Street Kart",
+    "summary": "Easy west-Tokyo Sunday: Inokashira + Harmonica lunch in Kichijoji, vintage Shimokitazawa afternoon, early dinner near Shibuya, then night Street Kart through neon (~19:00) — cooler and cooler than daytime.",
+    "food": "Lunch in Harmonica Yokocho / Kichijoji; early dinner near Shibuya (ramen / tonkatsu / yakiniku — not seafood); light snack after kart if needed.",
     "placeIds": [
-      "street-kart",
       "inokashira",
       "kichijoji",
       "harmonica",
-      "shimokitazawa"
+      "shimokitazawa",
+      "street-kart"
     ],
     "transport": [
-      "Kart meetup (often Shibuya/Shinjuku).",
-      "Chuo/Sobu to Kichijoji; Inokashira Line or Odakyu to Shimokita."
+      "Chuo/Sobu to Kichijoji; Inokashira Line or Odakyu to Shimokita.",
+      "Evening: head to Street Kart shop (often Shibuya) — arrive 30 min before the slot."
     ],
     "tips": [
-      "Physical International Driving Permit required for Street Kart — photocopy is not accepted.",
-      "Confirm kart meetup point the night before.",
-      "Cut on purpose: Daikanyama + Nakameguro (+ NY Bar) — keep one soft west-Tokyo arc after karting.",
-      "New York Bar (Park Hyatt) reopened Dec 2025 — save for a quieter Shinjuku night and reserve ahead if you want it."
+      "Book a NIGHT Street Kart slot ~19:00 (city lights) — evening tours run until ~22:00.",
+      "Physical International Driving Permit required — photocopy is not accepted.",
+      "Confirm meetup shop the night before; Shibuya shop is great for neon.",
+      "Cut on purpose: Daikanyama + Nakameguro — soft day, then kart as the finale.",
+      "New York Bar (Park Hyatt) reopened Dec 2025 — save for another Shinjuku night if you want it."
     ],
     "timeline": [
       {
-        "time": "09:30",
-        "title": "Street Kart Tokyo",
-        "note": "Drive go-karts on city streets — IDP required.",
-        "placeId": "street-kart",
+        "time": "10:30",
+        "title": "Inokashira Park",
+        "note": "Lake loop, boats if you want, stroll toward Kichijoji.",
+        "placeId": "inokashira",
         "end": "12:00",
         "category": "attraction"
       },
       {
-        "time": "12:30",
-        "title": "Inokashira Park",
-        "note": "Lake loop, boats if you want, stroll toward Kichijoji.",
-        "placeId": "inokashira",
-        "end": "13:30",
-        "category": "attraction"
-      },
-      {
-        "time": "13:30",
+        "time": "12:15",
         "title": "Kichijoji & Harmonica Yokocho lunch",
-        "note": "Covered alley eats + neighborhood shopping streets.",
+        "note": "Covered alley eats + neighborhood shopping — meat/egg/noodle options easy.",
         "placeId": "harmonica",
-        "end": "15:30",
+        "end": "14:00",
         "category": "dining"
       },
       {
-        "time": "16:00",
+        "time": "14:30",
         "title": "Shimokitazawa vintage & cafés",
         "note": "Thrift floors, record shops, indie cafés — unhurried afternoon.",
         "placeId": "shimokitazawa",
-        "end": "19:00",
+        "end": "17:30",
         "category": "dining"
       },
       {
-        "time": "19:15",
-        "title": "Dinner in Shimokitazawa",
-        "note": "Stay in the neighborhood — no more train-hopping tonight.",
-        "placeId": "shimokitazawa",
-        "category": "transit"
+        "time": "17:45",
+        "title": "Early dinner near Shibuya",
+        "note": "Ramen / tonkatsu / yakiniku before kart — fuel up, skip seafood.",
+        "end": "18:45",
+        "category": "dining"
+      },
+      {
+        "time": "18:30",
+        "title": "Arrive Street Kart shop",
+        "note": "Be there 30 min early · IDP + passport.",
+        "placeId": "street-kart",
+        "category": "shopping"
+      },
+      {
+        "time": "19:00",
+        "title": "Night Street Kart Tokyo",
+        "note": "Neon streets at night — the fun version.",
+        "placeId": "street-kart",
+        "end": "21:00",
+        "category": "attraction"
+      },
+      {
+        "time": "21:15",
+        "title": "Back toward Shinjuku / hotel",
+        "note": "Optional one drink nearby — call it a night.",
+        "placeId": "gracery-shinjuku",
+        "category": "hotel"
       }
     ]
   },
@@ -4705,7 +4723,7 @@ window.DAYS = [
     "hotelId": null,
     "title": "Full shopping day & farewell dinner",
     "summary": "Ginza shopping morning (Ginza Six, Uniqlo Ginza, Itoya, depachika), afternoon in Shibuya/Omotesando, Akihabara or Shinjuku, then farewell dinner.",
-    "food": "Depachika graze; farewell wagyu / omakase dinner.",
+    "food": "Depachika graze; farewell wagyu / yakiniku dinner (not seafood omakase).",
     "placeIds": [
       "ginza",
       "omotesando",
@@ -4746,7 +4764,7 @@ window.DAYS = [
       {
         "time": "19:30",
         "title": "Farewell Japan dinner",
-        "note": "Wagyu / omakase.",
+        "note": "Wagyu / yakiniku — skip seafood omakase.",
         "category": "dining"
       }
     ]

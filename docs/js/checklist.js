@@ -42,8 +42,8 @@ window.CHECKLIST = {
         },
         {
           id: "j-street-kart",
-          label: "Street Kart Tokyo (06/9) — שריון סיור באתר הרשמי / Klook (+ IDP פיזי ביד)",
-          window: "להזמין בהקדם",
+          label: "Street Kart Tokyo (06/9 · ערב ~19:00) — סלוט לילה באתר / Klook (+ IDP פיזי ביד)",
+          window: "להזמין בהקדם · ערב עם אורות",
           priority: "high",
         },
         {
