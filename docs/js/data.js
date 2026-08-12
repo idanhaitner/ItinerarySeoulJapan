@@ -3313,8 +3313,9 @@ window.DAYS = [
       },
       {
         "time": "09:00",
-        "title": "Romancecar from Shinjuku",
-        "note": "~80 minutes to Hakone-Yumoto. Observation Car.",
+        "title": "Odakyu Romancecar Shinjuku → Hakone-Yumoto",
+        "note": "Reserved seats · ~80 minutes · request Observation Car.",
+        "end": "10:40",
         "category": "transit"
       },
       {
@@ -3597,8 +3598,8 @@ window.DAYS = [
       },
       {
         "time": "21:30",
-        "title": "Overnight bus to Kyoto",
-        "note": "Highway bus · arrive Kyoto morning 11/9 · no hotel tonight.",
+        "title": "Overnight highway bus Kawaguchiko → Kyoto",
+        "note": "Reserved seats · arrive Kyoto morning 11/9 · no hotel tonight.",
         "category": "transit"
       }
     ],
@@ -4037,9 +4038,9 @@ window.DAYS = [
       },
       {
         "time": "16:00",
-        "title": "Train Kyoto → Osaka",
-        "note": "~30–45 minutes · hotel check-in.",
-        "category": "transit"
+        "title": "JR Special Rapid Kyoto → Osaka",
+        "note": "~30–45 minutes · toward Shinsaibashi / Namba.",
+        "category": "attraction"
       },
       {
         "time": "17:30",
@@ -4296,8 +4297,9 @@ window.DAYS = [
     "timeline": [
       {
         "time": "07:00",
-        "title": "Shinkansen to Hiroshima",
-        "note": "~80 minutes.",
+        "title": "Shinkansen Osaka → Hiroshima",
+        "note": "Nozomi/Sakura · reserved seats · ~80 minutes.",
+        "end": "08:30",
         "category": "transit"
       },
       {
@@ -4325,8 +4327,9 @@ window.DAYS = [
       },
       {
         "time": "18:30",
-        "title": "Shinkansen return to Osaka",
-        "note": "Evening arrival.",
+        "title": "Shinkansen Hiroshima → Osaka",
+        "note": "Evening Nozomi/Sakura · reserved seats · ~80 minutes.",
+        "end": "20:00",
         "category": "transit"
       }
     ],
@@ -4521,8 +4524,16 @@ window.DAYS = [
     "timeline": [
       {
         "time": "09:00",
-        "title": "Checkout Osaka & Shinkansen to Tokyo",
-        "note": "~2.5 hours.",
+        "title": "Checkout — Apartment Hotel 11",
+        "note": "Morning checkout · bags to Shin-Osaka.",
+        "placeId": "apt-hotel-11-shinsaibashi",
+        "category": "hotel"
+      },
+      {
+        "time": "09:45",
+        "title": "Nozomi Shinkansen Osaka → Tokyo",
+        "note": "Reserved seats · SmartEX · ~2.5 hours.",
+        "end": "12:15",
         "category": "transit"
       },
       {
@@ -4599,8 +4610,8 @@ window.DAYS = [
     "timeline": [
       {
         "time": "06:30",
-        "title": "Tobu Spacia X to Nikko",
-        "note": "From Asakusa · reserved seats · ~2h.",
+        "title": "Tobu Spacia X Asakusa → Nikko",
+        "note": "Reserved seats · ~2 hours.",
         "placeId": "nikko-toshogu",
         "end": "08:30",
         "category": "culture"
@@ -4637,9 +4648,10 @@ window.DAYS = [
       },
       {
         "time": "16:45",
-        "title": "Return train to Tokyo",
-        "note": "From Nikko / Tobu-Nikko — evening arrival.",
-        "category": "transit"
+        "title": "Tobu limited express Nikko → Tokyo",
+        "note": "Reserved seats preferred · evening arrival.",
+        "end": "18:45",
+        "category": "attraction"
       },
       {
         "time": "19:30",

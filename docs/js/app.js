@@ -452,26 +452,27 @@
   }
 
   function timelineBookingHtml(item, seenBookingIds) {
-    const bookings = bookingsForTimelineItem(item).filter((b) => {
-      if (seenBookingIds.has(b.id)) return false;
-      seenBookingIds.add(b.id);
-      return true;
-    });
+    const bookings = bookingsForTimelineItem(item);
     if (!bookings.length) return { html: "", needs: false, open: false };
+
+    const fresh = bookings.filter((b) => !seenBookingIds.has(b.id));
+    bookings.forEach((b) => seenBookingIds.add(b.id));
+    if (!fresh.length) return { html: "", needs: false, open: false };
+
     const checked = checklistCheckedMap();
-    const html = `<div class="tl-book-row">${bookings
-      .map((b) => {
-        const isDone = !!checked[b.id];
-        const label = isDone ? "הוזמן" : "להזמין מראש";
-        const hint = isDone ? "לצפייה בהזמנות" : "לסימון ברשימת ההזמנות";
-        return `<a class="tl-book-link ${isDone ? "is-done" : "is-todo"}" href="#bookings" data-open-booking="${escapeHtml(b.id)}" title="${escapeHtml(hint)}">
-          <span class="tl-book-mark" aria-hidden="true">${isDone ? "✓" : "!"}</span>
-          <span class="tl-book-label">${label}</span>
-        </a>`;
-      })
-      .join("")}</div>`;
-    const open = bookings.some((b) => !checked[b.id]);
-    return { html, needs: true, open };
+    const openOnes = fresh.filter((b) => !checked[b.id]);
+    // One badge only: still-to-book wins over already-booked when both exist (e.g. USJ).
+    const primary = openOnes[0] || fresh[0];
+    const isDone = openOnes.length === 0;
+    const label = isDone ? "הוזמן" : "להזמין מראש";
+    const hint = isDone ? "לצפייה בהזמנות" : "לסימון ברשימת ההזמנות";
+    const html = `<div class="tl-book-row">
+      <a class="tl-book-link ${isDone ? "is-done" : "is-todo"}" href="#bookings" data-open-booking="${escapeHtml(primary.id)}" title="${escapeHtml(hint)}">
+        <span class="tl-book-mark" aria-hidden="true">${isDone ? "✓" : "!"}</span>
+        <span class="tl-book-label">${label}</span>
+      </a>
+    </div>`;
+    return { html, needs: true, open: !isDone };
   }
 
   function openBookingsFocus(bookingId) {
