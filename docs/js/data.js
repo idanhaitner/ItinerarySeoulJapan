@@ -114,7 +114,7 @@ window.TRIP = {
     "Sep 6: Street Kart + Inokashira/Kichijoji + Shimokitazawa (IDP required).",
     "Sep 11: Arrive Kyoto (overnight bus) — rest + Gion/Pontocho.",
     "Sep 12: Fushimi Inari + Uji (Byodo-in / matcha) + Nishiki.",
-    "Sep 14: Kurama/Kibune + teamLab Biovortex booked 18:00–18:30. Sep 15: Kyoto zen → Osaka evening.",
+    "Sep 14: Kurama/Kibune + Hirobun kawadoko + teamLab Biovortex booked 18:00–18:30. Sep 15: Kyoto zen → Osaka evening.",
     "Sep 20: Kobe day trip from Osaka.",
     "Sep 21: Leave Osaka for Tokyo.",
     "Sep 22–23: Nikko day trip, then Kamakura & Enoshima.",
@@ -1514,19 +1514,20 @@ window.PLACES = {
     "lng": 135.7631,
     "blurb": "Lantern stone stairs."
   },
-  "kawadoko": {
-    "id": "kawadoko",
-    "name": "Kibune Kawadoko Dining",
-    "nameJa": "貴船川床",
+  "hirobun": {
+    "id": "hirobun",
+    "name": "Hirobun (Kibune kawadoko)",
+    "nameJa": "料理旅館 ひろ文",
     "city": "Kyoto",
     "country": "JP",
     "tags": [
       "must-see",
       "food"
     ],
-    "lat": 35.1205,
-    "lng": 135.7638,
-    "blurb": "Lunch over the stream."
+    "lat": 35.122,
+    "lng": 135.7632,
+    "blurb": "Famous Kibune riverside kawadoko next to Kifune Yui shrine — kaiseki on the stream (and nagashi somen in season).",
+    "taxiAddress": "京都府京都市左京区鞍馬貴船町87"
   },
   "kurama-onsen": {
     "id": "kurama-onsen",
@@ -3865,12 +3866,12 @@ window.DAYS = [
     "country": "JP",
     "hotelId": "kabin-koji",
     "title": "Kurama & Kibune, then teamLab Biovortex",
-    "summary": "Weekday mountain morning in Kurama/Kibune with kawadoko lunch, return to Kyoto, then booked teamLab Biovortex entry 18:00–18:30 near Kyoto Station.",
-    "food": "Kawadoko lunch over the river; dinner after Biovortex.",
+    "summary": "Weekday mountain morning in Kurama/Kibune with lunch at Hirobun kawadoko, return to Kyoto, then booked teamLab Biovortex entry 18:00–18:30 near Kyoto Station.",
+    "food": "Hirobun kawadoko lunch over the river; dinner after Biovortex.",
     "placeIds": [
       "kurama-dera",
       "kifune",
-      "kawadoko",
+      "hirobun",
       "teamlab-biovortex"
     ],
     "transport": [
@@ -3879,7 +3880,7 @@ window.DAYS = [
       "teamLab Biovortex ~7 min from Kyoto Station Hachijo East — be there before 18:00."
     ],
     "tips": [
-      "Reserve kawadoko weeks ahead (Hirobun or Fujiya).",
+      "Reserve Hirobun kawadoko weeks ahead (TEL 075-741-2147 / hirobun.co.jp) — lunch sittings ~11:00 or 13:00.",
       "Skip Kurama Onsen today — Biovortex entry is booked 18:00–18:30.",
       "Booked: teamLab Biovortex · 14/9 · entry window 18:00–18:30 · allow ~2–3h inside.",
       "Save QR offline; arrive ~15–20 min early."
@@ -3910,16 +3911,16 @@ window.DAYS = [
       {
         "time": "11:30",
         "title": "Kifune Shrine",
-        "note": "Red lantern stairs.",
+        "note": "Red lantern stairs · Hirobun is next to the Yui shrine.",
         "placeId": "kifune",
         "end": "12:30",
         "category": "culture"
       },
       {
         "time": "12:45",
-        "title": "Kawadoko riverside lunch",
-        "note": "Decks over the stream — Hirobun / Fujiya reserved.",
-        "placeId": "kawadoko",
+        "title": "Hirobun kawadoko lunch",
+        "note": "Riverside kaiseki at ひろ文 — reserved seating over the stream.",
+        "placeId": "hirobun",
         "end": "14:30",
         "category": "dining"
       },

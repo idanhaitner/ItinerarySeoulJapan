@@ -154,8 +154,8 @@ window.CHECKLIST = {
         },
         {
           id: "ky-kawadoko",
-          label: "ארוחת Kawadoko בקיבונה (13/9) — הזמנה מראש לדקים מעל הנחל (Hirobun / Fujiya)",
-          window: "שבועות לפני",
+          label: "ארוחת Hirobun בקיבונה (14/9) — הזמנת kawadoko מראש (ひろ文 · TEL 075-741-2147)",
+          window: "14/9 · שבועות מראש · ישיבות ~11:00 או 13:00",
           priority: "high",
         },
         {
