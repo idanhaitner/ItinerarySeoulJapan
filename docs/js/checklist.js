@@ -53,9 +53,9 @@ window.CHECKLIST = {
           priority: "high",
         },
         {
-          id: "os-teamlab-botanical",
-          label: "teamLab Botanical Garden Osaka (15/9) — כרטיסי ערב/לילה",
-          window: "להזמין בהקדם · אחרי חשיכה",
+          id: "ky-teamlab-biovortex",
+          label: "teamLab Biovortex Kyoto (11/9) — כרטיסים מתוזמנים באתר / Klook · ~7 דק׳ מתחנת קיוטו",
+          window: "להזמין בהקדם · אחה״צ אחרי ההגעה",
           priority: "high",
         },
         {

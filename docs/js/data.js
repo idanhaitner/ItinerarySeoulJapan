@@ -112,7 +112,7 @@ window.TRIP = {
     "Sep 5: Tsukiji + teamLab Planets + Odaiba + Ginza.",
     "Sep 6: Street Kart + Inokashira/Kichijoji + Shimokitazawa (IDP required).",
     "Sep 11: Fushimi Inari + Uji (Byodo-in / matcha) + Nishiki.",
-    "Sep 15: Osaka + teamLab Botanical Garden night.",
+    "Sep 15: Kyoto zen morning → Osaka evening (Dotonbori). teamLab Biovortex is on 11/9 in Kyoto.",
     "Sep 20: Kobe day trip from Osaka.",
     "Sep 21: Leave Osaka for Tokyo.",
     "Sep 22–23: Nikko day trip, then Kamakura & Enoshima.",
@@ -1213,7 +1213,8 @@ window.PLACES = {
     ],
     "lat": 34.9828,
     "lng": 135.7568,
-    "blurb": "Japan’s largest teamLab — ~7 min walk from Kyoto Station Hachijo East."
+    "blurb": "Japan’s largest teamLab — timed tickets · ~7 min walk from Kyoto Station Hachijo East.",
+    "taxiAddress": "京都府京都市南区東九条東岩本町21-5"
   },
   "gion": {
     "id": "gion",
@@ -3625,22 +3626,25 @@ window.DAYS = [
     "city": "Kyoto",
     "country": "JP",
     "hotelId": "kabin-koji",
-    "title": "Arrive Kyoto, Gion & riverside alleys",
-    "summary": "Morning arrival on the overnight bus, check in at KABIN Koji and bag pickup, then an easy Gion dusk stroll and Pontocho riverside dinner.",
+    "title": "Arrive Kyoto, teamLab Biovortex & Gion",
+    "summary": "Morning arrival on the overnight bus, check in at KABIN Koji and bag pickup, afternoon teamLab Biovortex (near Kyoto Station), then an easy Gion dusk stroll and Pontocho riverside dinner.",
     "food": "Pontocho riverside dinner along the Kamogawa.",
     "placeIds": [
       "kabin-koji",
+      "teamlab-biovortex",
       "gion",
       "pontocho"
     ],
     "transport": [
       "Overnight bus arrives Kyoto morning.",
-      "Walk/taxi to KABIN Koji (Kawaramachi) · easy evening in Higashiyama / Pontocho."
+      "Walk/taxi to KABIN Koji (Kawaramachi).",
+      "teamLab Biovortex ~7 min from Kyoto Station Hachijo East — subway/taxi from the hotel."
     ],
     "tips": [
       "KABIN Koji nights: 11/9 evening → 15/9 evening · 152 Sujiyacho, Shimogyo.",
       "Collect Takkyubin bags at the hotel if they beat you there.",
-      "Respectful photos in Gion — keep the day light after the bus."
+      "Book timed teamLab Biovortex tickets (closed some Tuesdays — 15/9 is closed).",
+      "Respectful photos in Gion — keep the evening light after the museum."
     ],
     "timeline": [
       {
@@ -3661,6 +3665,14 @@ window.DAYS = [
         "title": "Easy lunch & rest",
         "note": "Nap if needed after the bus.",
         "category": "transit"
+      },
+      {
+        "time": "14:00",
+        "title": "teamLab Biovortex Kyoto",
+        "note": "Largest teamLab in Japan · timed entry · allow 2–3h.",
+        "placeId": "teamlab-biovortex",
+        "end": "17:00",
+        "category": "culture"
       },
       {
         "time": "17:30",
@@ -3950,8 +3962,8 @@ window.DAYS = [
     "country": "JP",
     "hotelId": "apt-hotel-11-shinsaibashi",
     "title": "Kyoto zen morning → Osaka night",
-    "summary": "Morning Ginkaku-ji / Philosopher’s Path / Nanzen-ji and Kinkaku-ji, then evening train to Osaka for Apartment Hotel 11 Shinsaibashi 2 check-in, teamLab Botanical Garden and Dotonbori.",
-    "food": "Lunch near Nanzen-ji; takoyaki & okonomiyaki in Dotonbori after teamLab.",
+    "summary": "Morning Ginkaku-ji / Philosopher’s Path / Nanzen-ji and Kinkaku-ji, then evening train to Osaka for Apartment Hotel 11 Shinsaibashi 2 check-in and Dotonbori.",
+    "food": "Lunch near Nanzen-ji; takoyaki & okonomiyaki in Dotonbori.",
     "placeIds": [
       "kabin-koji",
       "ginkakuji",
@@ -3959,18 +3971,16 @@ window.DAYS = [
       "nanzenji",
       "kinkakuji",
       "apt-hotel-11-shinsaibashi",
-      "teamlab-botanical",
       "dotonbori",
       "hozenji"
     ],
     "transport": [
       "Morning east/west Kyoto zen loop.",
-      "Afternoon/evening JR Kyoto → Osaka (~30–45m).",
-      "Subway/taxi to Nagai for teamLab after dark."
+      "Afternoon/evening JR Kyoto → Osaka (~30–45m)."
     ],
     "tips": [
       "Checkout KABIN Koji for evening move to Osaka (Apartment Hotel 11 · nights 15–21/9).",
-      "Book teamLab Botanical Garden night tickets.",
+      "teamLab is already done in Kyoto (Biovortex on 11/9) — skip Osaka Botanical Garden.",
       "USJ is tomorrow (16/9) — don’t stay out too late."
     ],
     "timeline": [
@@ -4020,22 +4030,14 @@ window.DAYS = [
         "category": "hotel"
       },
       {
-        "time": "19:00",
-        "title": "teamLab Botanical Garden Osaka",
-        "note": "Night digital garden — go after dark.",
-        "placeId": "teamlab-botanical",
-        "end": "21:00",
-        "category": "culture"
-      },
-      {
-        "time": "21:15",
+        "time": "19:30",
         "title": "Dotonbori food crawl",
         "note": "Glico sign + street food.",
         "placeId": "dotonbori",
         "category": "dining"
       },
       {
-        "time": "22:15",
+        "time": "21:00",
         "title": "Hozenji Yokocho alley",
         "note": "Mossy lantern lane near Dotonbori.",
         "placeId": "hozenji",
