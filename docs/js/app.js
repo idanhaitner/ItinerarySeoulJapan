@@ -560,7 +560,7 @@
                   <span>${weekdayHe(d)}</span>
                   <span class="dot" aria-hidden="true">·</span>
                   <span>${steps ? `${steps} עצירות` : "—"}</span>
-                  <span class="day-row-arrow" aria-hidden="true">←</span>
+                  
                 </div>
               </div>
               <h3>${escapeHtml(d.title)}</h3>
@@ -704,7 +704,7 @@
     const local = cityLocal(day.city);
 
     els.detail.innerHTML = `
-      <button type="button" class="detail-back" id="back-btn">חזרה למסלול →</button>
+      <button type="button" class="detail-back" id="back-btn">חזרה למסלול</button>
       ${transferHtml(day.transfer)}
       <div class="detail-hero ${cityClass(day.city)}">
         <div class="detail-hero-top">
@@ -950,7 +950,7 @@
         jp: "帰国",
         from: "NRT",
         to: "TIA",
-        blurb: "אמירייטס · נריטה → דובאי → טירנה",
+        blurb: "אמירייטס · מנריטה לדובאי לטירנה",
       },
     };
 
@@ -965,7 +965,7 @@
       seal: "旅",
       kicker: "טיסות · フライト · BOARDING",
       title: "מסלול האוויר שלנו",
-      lead: "תל אביב → סיאול → טוקיו → טירנה (דרך דובאי) · כרטיסים וסטטוס במבט אחד.",
+      lead: "מתל אביב לסיאול, לטוקיו, לטירנה (דרך דובאי) · כרטיסים וסטטוס במבט אחד.",
       pills: [
         { em: booked, span: "הוזמנו" },
         { em: todo, span: "לטפל" },
@@ -1013,7 +1013,7 @@
               <header class="fx-pass-head">
                 <div>
                   <p class="fx-pass-kicker">${escapeHtml(m.he)} · ${escapeHtml(m.blurb)}</p>
-                  <h3>${escapeHtml(m.from)} <span aria-hidden="true">→</span> ${escapeHtml(m.to)}</h3>
+                  <h3>מ־${escapeHtml(m.from)} ל־${escapeHtml(m.to)}</h3>
                   <p class="fx-pass-flightno" dir="ltr">
                     <span class="fx-pass-flightno-label">Flight</span>
                     <strong>${escapeHtml(codes)}</strong>
@@ -1021,7 +1021,7 @@
                 </div>
                 ${
                   j.dayId
-                    ? `<button type="button" class="fx-pass-link" data-open-day="${j.dayId}">למסלול ←</button>`
+                    ? `<button type="button" class="fx-pass-link" data-open-day="${j.dayId}">למסלול</button>`
                     : ""
                 }
               </header>
@@ -1097,7 +1097,7 @@
       </div>
       <div class="tools-actions">
         <button type="button" class="btn-primary" id="open-tips">טיפים לתחבורה</button>
-        <button type="button" class="btn-ghost" id="open-flights-tab">לטיסות ←</button>
+        <button type="button" class="btn-ghost" id="open-flights-tab">לטיסות</button>
       </div>
       <div id="fx-root"></div>
       <div id="taxi-root" style="margin-top:12px"></div>`;

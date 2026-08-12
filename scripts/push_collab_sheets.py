@@ -295,8 +295,8 @@ def build_hotels(days):
         ("Tokyo", 0): ("טוקיו (התחלה)", "Kabukicho / Shinjuku", "Hotel Gracery Shinjuku", "הוזמן", "לילות 2–6/9 · צ׳ק־אאוט בוקר 7/9 להקונה"),
         ("Hakone", 0): ("הקונה", "Hakone-Yumoto", "Tsukino Yado Sara (月の宿 紗ら)", "הוזמן", "07/9 לילה · צ׳ק־אאוט 08/9 · קייסקי + אונסן"),
         ("Kawaguchiko", 0): ("קוואגוצ׳יקו", "Fujiyoshida / ליד Fuji-Q", "HOTEL MYSTAYS Fuji Onsen Resort", "הוזמן", "לילות 8–9/9 · צ׳ק־אאוט בוקר 10/9 לפני Fuji-Q / אוטובוס לילה"),
-        ("Kyoto", 0): ("קיוטו", "Kawaramachi / Shijo", "KABIN Koji", "הוזמן", "11/9 ערב → 15/9 ערב"),
-        ("Osaka", 0): ("אוסקה", "Higashi-Shinsaibashi / Dotonbori", "Apartment Hotel 11 Shinsaibashi 2", "הוזמן", "15/9 ערב → 21/9 בוקר"),
+        ("Kyoto", 0): ("קיוטו", "Kawaramachi / Shijo", "KABIN Koji", "הוזמן", "מ־11/9 ערב ל־15/9 ערב"),
+        ("Osaka", 0): ("אוסקה", "Higashi-Shinsaibashi / Dotonbori", "Apartment Hotel 11 Shinsaibashi 2", "הוזמן", "מ־15/9 ערב ל־21/9 בוקר"),
         ("Tokyo", 1): ("טוקיו (סיום)", "Shinjuku", "", "לטפל", "בסיס אחרון · קרוב לנאקאנו / N'EX"),
     }
     rows = [["עיר", "מתאריך", "עד תאריך", "מלון", "אזור מועדף", "סטטוס", "הערות"]]
@@ -341,14 +341,14 @@ def build_hotels(days):
             status = "הוזמן"
             area = "Kawaramachi / Shijo"
             end = "2026-09-15"
-            notes = "הוזמן · 11/9 ערב → 15/9 ערב · 下京区筋屋町152 · ~6 דק׳ מ־Kawaramachi"
+            notes = "הוזמן · מ־11/9 ערב ל־15/9 ערב · 下京区筋屋町152 · ~6 דק׳ מ־Kawaramachi"
         if city == "Osaka":
             hotel = "Apartment Hotel 11 Shinsaibashi 2"
             status = "הוזמן"
             area = "Higashi-Shinsaibashi / Dotonbori"
             end = "2026-09-21"
             # block start may be 15 from city change; checkout morning 21/9 after Kobe day
-            notes = "הוזמן · 15/9 ערב → 21/9 בוקר · 東心斎橋2-2-12 · כולל ליל USJ ב־16/9 · טיול יום לקובה ב־20/9"
+            notes = "הוזמן · מ־15/9 ערב ל־21/9 בוקר · 東心斎橋2-2-12 · כולל ליל USJ ב־16/9 · טיול יום לקובה ב־20/9"
         rows.append([label, block["start"], end, hotel, area, status, notes])
     return rows
 
@@ -374,25 +374,25 @@ def build_bookings(days):
         ("Lotte World", "d05", "הוזמן", "יום שני 31 באוג׳"),
         # 3 · Transport
         ("Romancecar + Observation Car", "d12", "לטפל", "מושבים שמורים"),
-        ("אוטובוס לילה קוואגוצ׳יקו → קיוטו", "d15", "לטפל", "10/9 בערב · הגעה 11/9 בבוקר · בלי מלון ב־10/9"),
-        ("שינקנסן SmartEX (+ oversized baggage)", "d26", "לטפל", "21/9 אוסקה→טוקיו בלבד"),
-        ("Tobu Spacia X לניקו", "d27", "לטפל", "22/9 · יציאה ~06:30 מאסאקוסה · כרטיסים שמורים · אגם/קגון קודם → Toshogu אחה״צ"),
-        ("Takkyubin מזוודות Gracery→MYSTAYS Fuji Onsen", "d12", "לטפל", "בוקר 7/9 לפני Romancecar · מ־Hotel Gracery לכתובת MYSTAYS בפוג׳יושידה"),
-        ("Takkyubin מזוודות MYSTAYS→KABIN Koji", "d15", "לטפל", "10/9 באותו יום · שיגיעו ל־KABIN Koji בקיוטו"),
+        ("אוטובוס לילה מקוואגוצ׳יקו לקיוטו", "d15", "לטפל", "10/9 בערב · הגעה 11/9 בבוקר · בלי מלון ב־10/9"),
+        ("שינקנסן SmartEX (+ oversized baggage)", "d26", "לטפל", "21/9 מאוסקה לטוקיו בלבד"),
+        ("Tobu Spacia X לניקו", "d27", "לטפל", "22/9 · יציאה ~06:30 מאסאקוסה · כרטיסים שמורים · אגם/קגון קודם, ואז Toshogu אחה״צ"),
+        ("Takkyubin מזוודות מ־Gracery ל־MYSTAYS Fuji Onsen", "d12", "לטפל", "בוקר 7/9 לפני Romancecar · מ־Hotel Gracery לכתובת MYSTAYS בפוג׳יושידה"),
+        ("Takkyubin מזוודות מ־MYSTAYS ל־KABIN Koji", "d15", "לטפל", "10/9 באותו יום · שיגיעו ל־KABIN Koji בקיוטו"),
         # 4 · Stays / experiences
         ("Tsukino Yado Sara — ריוקאן הקונה", "d12", "הוזמן", "07/9 · Hakone-Yumoto · קייסקי + אונסן"),
         ("Hotel Gracery Shinjuku — טוקיו התחלה", "d07", "הוזמן", "2–7/9 · Kabukicho 1-19-1 · בניין Godzilla"),
         ("מלון קוואגוצ׳יקו — MYSTAYS Fuji Onsen", "d13", "הוזמן", "לילות 8–9/9 · צ׳ק־אאוט 10/9 · ליד Fuji-Q"),
-        ("KABIN Koji — מלון קיוטו", "d16", "הוזמן", "11/9 ערב → 15/9 ערב · 筋屋町152 · Kawaramachi"),
-        ("Apartment Hotel 11 Shinsaibashi 2 — אוסקה", "d20", "הוזמן", "15/9 ערב → 21/9 בוקר · 東心斎橋2-2-12"),
+        ("KABIN Koji — מלון קיוטו", "d16", "הוזמן", "מ־11/9 ערב ל־15/9 ערב · 筋屋町152 · Kawaramachi"),
+        ("Apartment Hotel 11 Shinsaibashi 2 — אוסקה", "d20", "הוזמן", "מ־15/9 ערב ל־21/9 בוקר · 東心斎橋2-2-12"),
         ("Nagashi somen ב־Hirobun", "d19", "סגור", "14/9 · בלי הזמנה · מזומן ~¥2,000 · להגיע ~09:45–10:00 · גשם ב־10:00 מבטל"),
         ("ארוחת פרידה מיפן", "d29", "לטפל", "וואגיו / אומקאסה · 1–2 שבועות מראש"),
         ("ארוחת בשר קובה", "d25", "לטפל", "20/9 · ליד Sannomiya / Motomachi"),
         # 5 · Flights still open + booked refs
-        ("טיסת אמירייטס נריטה → דובאי → טירנה", "d30", "לטפל", "Emirates · NRT → DXB → TIA · לאשר מספרי טיסה ושעות"),
-        ("טיסת יציאה ET0419 TLV→ADD", "d00", "הוזמן", "26 באוג׳ · 15:35→19:50 · Ethiopian"),
-        ("טיסת יציאה ET0672 ADD→ICN", "d00", "הוזמן", "26 באוג׳ 22:35 → 27 באוג׳ 16:00 · Ethiopian"),
-        ("טיסת סיאול → טוקיו YP7321", "d07", "הוזמן", "Air Premia · ICN 08:50 → NRT 11:20"),
+        ("טיסת אמירייטס מנריטה לדובאי לטירנה", "d30", "לטפל", "Emirates · מ־NRT ל־DXB ל־TIA · לאשר מספרי טיסה ושעות"),
+        ("טיסת יציאה ET0419 מ־TLV ל־ADD", "d00", "הוזמן", "26 באוג׳ · מ־15:35 ל־19:50 · Ethiopian"),
+        ("טיסת יציאה ET0672 מ־ADD ל־ICN", "d00", "הוזמן", "מ־26 באוג׳ 22:35 ל־27 באוג׳ 16:00 · Ethiopian"),
+        ("טיסת סיאול לטוקיו YP7321", "d07", "הוזמן", "Air Premia · מ־ICN 08:50 ל־NRT 11:20"),
         # 6 · Forms near departure
         ("Visit Japan Web (VJW)", "d07", "לטפל", "כמה ימים לפני נחיתה בנריטה"),
     ]

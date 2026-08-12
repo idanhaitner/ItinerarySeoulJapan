@@ -116,21 +116,21 @@ window.CHECKLIST = {
       items: [
         {
           id: "hk-romancecar",
-          label: "Romancecar שינג׳וקו ← הקונה (07/9) — כרטיס + Reserved Seat · לנסות Observation Car קדמי",
+          label: "Romancecar משינג׳וקו להקונה (07/9) — כרטיס + Reserved Seat · לנסות Observation Car קדמי",
           window: "להזמין בהקדם",
           priority: "high",
           linkTitles: ["Romancecar", "Odakyu Romancecar"],
         },
         {
           id: "j-overnight-kyoto",
-          label: "אוטובוס לילה קוואגוצ׳יקו → קיוטו (10/9 בערב) — מושבים שמורים · בלי מלון באותו לילה",
+          label: "אוטובוס לילה מקוואגוצ׳יקו לקיוטו (10/9 בערב) — מושבים שמורים · בלי מלון באותו לילה",
           window: "להזמין מראש · הגעה 11/9 בבוקר",
           priority: "critical",
           linkTitles: ["Overnight", "אוטובוס לילה", "highway bus"],
         },
         {
           id: "j-shinkansen",
-          label: "שינקנסן אוסקה→טוקיו (21/9) — SmartEX · Oversized Baggage אם מזוודות >160 ס״מ",
+          label: "שינקנסן מאוסקה לטוקיו (21/9) — SmartEX · Oversized Baggage אם מזוודות >160 ס״מ",
           window: "להזמין ~30 יום לפני / כשנפתח",
           priority: "high",
           linkTitles: ["Shinkansen", "שינקנסן", "Nozomi"],
@@ -162,13 +162,13 @@ window.CHECKLIST = {
         },
         {
           id: "g-luggage",
-          label: "Takkyubin: מזוודות גדולות מ־Hotel Gracery Shinjuku→HOTEL MYSTAYS Fuji Onsen Resort בבוקר היציאה להקונה (רק תרמילים)",
+          label: "Takkyubin: מזוודות גדולות מ־Hotel Gracery Shinjuku ל־HOTEL MYSTAYS Fuji Onsen Resort בבוקר היציאה להקונה (רק תרמילים)",
           window: "בוקר 7 בספט׳",
           priority: "high",
         },
         {
           id: "g-luggage-kyoto",
-          label: "Takkyubin: מזוודות מ־MYSTAYS Fuji Onsen→KABIN Koji (קיוטו) ביום Fuji-Q (10/9)",
+          label: "Takkyubin: מזוודות מ־MYSTAYS Fuji Onsen ל־KABIN Koji (קיוטו) ביום Fuji-Q (10/9)",
           window: "10 בספט׳ אחרי/בזמן הפארק",
           priority: "high",
         },
@@ -216,7 +216,7 @@ window.CHECKLIST = {
         },
         {
           id: "h-kyoto",
-          label: "KABIN Koji — קיוטו (11/9 ערב → 15/9 ערב)",
+          label: "KABIN Koji — קיוטו (מ־11/9 ערב ל־15/9 ערב)",
           window: "Kawaramachi / 筋屋町152",
           priority: "low",
           done: true,
@@ -225,7 +225,7 @@ window.CHECKLIST = {
         },
         {
           id: "h-osaka",
-          label: "Apartment Hotel 11 Shinsaibashi 2 — אוסקה (15/9 ערב → 21/9 בוקר)",
+          label: "Apartment Hotel 11 Shinsaibashi 2 — אוסקה (מ־15/9 ערב ל־21/9 בוקר)",
           window: "היגאשי־שינסאיבשי 2-2-12",
           priority: "low",
           done: true,
@@ -276,21 +276,21 @@ window.CHECKLIST = {
       items: [
         {
           id: "g-flight-tia",
-          label: "טיסת אמירייטס נריטה → דובאי → טירנה (NRT→DXB→TIA) — לאשר מספרי טיסה ושעות",
+          label: "טיסת אמירייטס מנריטה לדובאי לטירנה (מ־NRT ל־DXB ל־TIA) — לאשר מספרי טיסה ושעות",
           window: "~25 בספט׳",
           priority: "high",
         },
         {
           id: "g-flight-out",
-          label: "ET0419 TLV→ADD + ET0672 ADD→ICN (Ethiopian Airlines)",
-          window: "26 באוג׳ · TLV 15:35 → ADD → ICN",
+          label: "ET0419 מ־TLV ל־ADD + ET0672 מ־ADD ל־ICN (Ethiopian Airlines)",
+          window: "26 באוג׳ · מ־TLV 15:35 ל־ADD ל־ICN",
           priority: "low",
           done: true,
         },
         {
           id: "g-flight-yp",
-          label: "YP7321 Air Premia · ICN 08:50 → NRT 11:20",
-          window: "2 בספט׳ · טרמינל 1 → NRT T2",
+          label: "YP7321 Air Premia · מ־ICN 08:50 ל־NRT 11:20",
+          window: "2 בספט׳ · מטרמינל 1 ל־NRT T2",
           priority: "low",
           done: true,
         },
@@ -314,7 +314,7 @@ window.CHECKLIST = {
       items: [
         {
           id: "j-vjweb",
-          label: "Visit Japan Web (VJW) — הצהרת הגירה + מכס → קודי QR (חוסך תור בנריטה)",
+          label: "Visit Japan Web (VJW) — הצהרת הגירה + מכס, ואז קודי QR (חוסך תור בנריטה)",
           window: "כמה ימים לפני הנחיתה ביפן",
           priority: "high",
         },

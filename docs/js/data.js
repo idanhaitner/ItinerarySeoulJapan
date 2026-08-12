@@ -1499,7 +1499,7 @@ window.PLACES = {
     ],
     "lat": 35.1181,
     "lng": 135.7709,
-    "blurb": "Mountain temple at the end of the Kibune→Kurama forest trek."
+    "blurb": "Mountain temple at the end of the Kibune to Kurama forest trek."
   },
   "kifune": {
     "id": "kifune",
@@ -2339,7 +2339,7 @@ window.DAYS = [
       },
       {
         "time": "15:35",
-        "title": "Travel by Ethiopian Airlines ET0419 · Tel Aviv → Addis",
+        "title": "Travel by Ethiopian Airlines ET0419 · from Tel Aviv to Addis",
         "note": "Flight · ~4h15 · booked.",
         "placeId": "tlv",
         "end": "19:50",
@@ -2354,7 +2354,7 @@ window.DAYS = [
       },
       {
         "time": "22:35",
-        "title": "Travel by Ethiopian Airlines ET0672 · Addis → Seoul",
+        "title": "Travel by Ethiopian Airlines ET0672 · from Addis to Seoul",
         "note": "Overnight flight · ~11h · booked.",
         "placeId": "add",
         "end": "16:00",
@@ -2404,7 +2404,7 @@ window.DAYS = [
       },
       {
         "time": "16:45",
-        "title": "Travel by AREX / taxi · Incheon → Hongdae",
+        "title": "Travel by AREX / taxi · from Incheon to Hongdae",
         "note": "AREX Express or taxi · ~50–70 min · no advance booking needed.",
         "placeId": "icn",
         "category": "transit"
@@ -2679,7 +2679,7 @@ window.DAYS = [
     "timeline": [
       {
         "time": "08:30",
-        "title": "Travel by subway · Hongdae → Jamsil (Lotte World)",
+        "title": "Travel by subway · from Hongdae to Jamsil (Lotte World)",
         "note": "Seoul Metro · ~40–50 min · no booking.",
         "placeId": "amanti-hotel",
         "category": "hotel"
@@ -2833,7 +2833,7 @@ window.DAYS = [
     "timeline": [
       {
         "time": "05:30",
-        "title": "Travel by taxi / AREX · Hongdae → Incheon T1",
+        "title": "Travel by taxi / AREX · from Hongdae to Incheon T1",
         "note": "Leave hotel · ~1 hour to ICN · no advance booking.",
         "placeId": "amanti-hotel",
         "category": "hotel"
@@ -2847,7 +2847,7 @@ window.DAYS = [
       },
       {
         "time": "08:50",
-        "title": "Travel by Air Premia YP7321 · Seoul → Tokyo",
+        "title": "Travel by Air Premia YP7321 · from Seoul to Tokyo",
         "note": "Flight · ICN → NRT · ~2h30 · booked.",
         "placeId": "icn",
         "end": "11:20",
@@ -2862,7 +2862,7 @@ window.DAYS = [
       },
       {
         "time": "12:00",
-        "title": "Travel by N'EX / limousine · Narita → Shinjuku",
+        "title": "Travel by N'EX / limousine · from Narita to Shinjuku",
         "note": "N'EX ~60–80 min (reserved seats optional) or airport limousine bus · Suica/eSIM on arrival.",
         "placeId": "narita",
         "category": "transit"
@@ -3088,7 +3088,7 @@ window.DAYS = [
       },
       {
         "time": "10:30",
-        "title": "Travel by subway · Tsukiji → Toyosu (teamLab)",
+        "title": "Travel by subway · from Tsukiji to Toyosu (teamLab)",
         "note": "Short metro hop · ~10–15 min · timed tickets already needed for teamLab.",
         "placeId": "teamlab-planets",
         "category": "transit"
@@ -3103,7 +3103,7 @@ window.DAYS = [
       },
       {
         "time": "14:15",
-        "title": "Travel by Yurikamome / Rinkai · Toyosu → Odaiba",
+        "title": "Travel by Yurikamome / Rinkai · from Toyosu to Odaiba",
         "note": "Local train · ~10–15 min · no booking.",
         "placeId": "odaiba",
         "category": "transit"
@@ -3118,7 +3118,7 @@ window.DAYS = [
       },
       {
         "time": "17:15",
-        "title": "Travel by Yurikamome / subway · Odaiba → Ginza",
+        "title": "Travel by Yurikamome / subway · from Odaiba to Ginza",
         "note": "Local train · ~20–30 min · no booking.",
         "placeId": "ginza",
         "category": "transit"
@@ -3171,7 +3171,7 @@ window.DAYS = [
     "timeline": [
       {
         "time": "07:30",
-        "title": "Travel by subway · Shinjuku → Asakusa",
+        "title": "Travel by subway · from Shinjuku to Asakusa",
         "note": "Tokyo Metro / Toei · ~25–35 min · no booking.",
         "placeId": "asakusa",
         "category": "transit"
@@ -3278,7 +3278,7 @@ window.DAYS = [
     "timeline": [
       {
         "time": "10:00",
-        "title": "Travel by JR Chuo Line · Shinjuku → Kichijoji",
+        "title": "Travel by JR Chuo Line · from Shinjuku to Kichijoji",
         "note": "Chuo Rapid · ~20–25 min · no booking.",
         "placeId": "kichijoji",
         "category": "transit"
@@ -3301,7 +3301,7 @@ window.DAYS = [
       },
       {
         "time": "14:15",
-        "title": "Travel by Keio Inokashira / Odakyu · Kichijoji → Shimokitazawa",
+        "title": "Travel by Keio Inokashira / Odakyu · from Kichijoji to Shimokitazawa",
         "note": "~15–25 min · no booking.",
         "placeId": "shimokitazawa",
         "category": "transit"
@@ -3380,7 +3380,7 @@ window.DAYS = [
       },
       {
         "time": "09:00",
-        "title": "Travel by Odakyu Romancecar · Shinjuku → Hakone-Yumoto",
+        "title": "Travel by Odakyu Romancecar · from Shinjuku to Hakone-Yumoto",
         "note": "Limited express · reserved seats · ~80 min · book ~1 month ahead · request Observation Car.",
         "end": "10:40",
         "category": "transit"
@@ -3452,7 +3452,7 @@ window.DAYS = [
     "timeline": [
       {
         "time": "05:00",
-        "title": "Travel by taxi / bus · Sara → Hakone Shrine (Motohakone)",
+        "title": "Travel by taxi / bus · from Sara to Hakone Shrine (Motohakone)",
         "note": "Early transfer · ~20–30 min · no booking.",
         "placeId": "tsukino-yado-sara",
         "category": "hotel"
@@ -3475,7 +3475,7 @@ window.DAYS = [
       },
       {
         "time": "09:30",
-        "title": "Travel by bus · Hakone → Gotemba Premium Outlets",
+        "title": "Travel by bus · from Hakone to Gotemba Premium Outlets",
         "note": "From Togendai / Hakone-Yumoto · ~30–50 min · no booking.",
         "category": "transit"
       },
@@ -3489,7 +3489,7 @@ window.DAYS = [
       },
       {
         "time": "15:15",
-        "title": "Travel by Fujikyu bus / limited-express GL · Gotemba → Kawaguchiko",
+        "title": "Travel by Fujikyu bus / limited-express GL · from Gotemba to Kawaguchiko",
         "note": "~60–70 min · GL limited express optional if available.",
         "placeId": "gotemba-outlets",
         "end": "17:00",
@@ -3663,7 +3663,7 @@ window.DAYS = [
       },
       {
         "time": "21:30",
-        "title": "Travel by overnight highway bus · Kawaguchiko → Kyoto",
+        "title": "Travel by overnight highway bus · from Kawaguchiko to Kyoto",
         "note": "Reserved seats · book ahead · ~8–10h · arrive Kyoto morning 11/9 · no hotel tonight.",
         "category": "transit"
       }
@@ -3771,7 +3771,7 @@ window.DAYS = [
     "timeline": [
       {
         "time": "06:00",
-        "title": "Travel by Keihan / JR · central Kyoto → Fushimi-Inari",
+        "title": "Travel by Keihan / JR · from central Kyoto to Fushimi-Inari",
         "note": "~10–15 min · no booking · early train for sunrise.",
         "placeId": "fushimi-inari",
         "category": "transit"
@@ -3786,7 +3786,7 @@ window.DAYS = [
       },
       {
         "time": "10:00",
-        "title": "Travel by JR / Keihan · Fushimi → Uji",
+        "title": "Travel by JR / Keihan · from Fushimi to Uji",
         "note": "~20–30 min · no booking.",
         "placeId": "byodoin",
         "category": "transit"
@@ -3817,7 +3817,7 @@ window.DAYS = [
       },
       {
         "time": "15:30",
-        "title": "Travel by JR / Keihan · Uji → Higashiyama (Kiyomizu)",
+        "title": "Travel by JR / Keihan · from Uji to Higashiyama (Kiyomizu)",
         "note": "~30–40 min · no booking.",
         "placeId": "kiyomizu",
         "category": "transit"
@@ -3884,7 +3884,7 @@ window.DAYS = [
     "timeline": [
       {
         "time": "07:30",
-        "title": "Travel by JR / Randen · central Kyoto → Saga-Arashiyama",
+        "title": "Travel by JR / Randen · from central Kyoto to Saga-Arashiyama",
         "note": "~20–30 min · no booking.",
         "placeId": "bamboo",
         "category": "transit"
@@ -3944,7 +3944,7 @@ window.DAYS = [
       },
       {
         "time": "18:15",
-        "title": "Travel by train · Arashiyama → central Kyoto (Kawaramachi)",
+        "title": "Travel by train · from Arashiyama to central Kyoto (Kawaramachi)",
         "note": "JR / Randen · ~20–30 min · no booking.",
         "category": "transit"
       },
@@ -3985,14 +3985,14 @@ window.DAYS = [
     "timeline": [
       {
         "time": "07:45",
-        "title": "Travel by Eizan · Demachiyanagi → Kibuneguchi",
+        "title": "Travel by Eizan · from Demachiyanagi to Kibuneguchi",
         "note": "Eizan Electric Railway · ~30 min · no booking · Kibune first for the somen queue.",
         "placeId": "kifune",
         "category": "transit"
       },
       {
         "time": "08:30",
-        "title": "Travel by Kyoto Bus / walk · Kibuneguchi → Kibune village",
+        "title": "Travel by Kyoto Bus / walk · from Kibuneguchi to Kibune village",
         "note": "Bus ~10 min or walk uphill ~30–40 min · no booking.",
         "placeId": "kifune",
         "category": "transit"
@@ -4044,7 +4044,7 @@ window.DAYS = [
       },
       {
         "time": "15:15",
-        "title": "Travel by Eizan · Kurama → Kyoto",
+        "title": "Travel by Eizan · from Kurama to Kyoto",
         "note": "Eizan down from Kurama · ~30 min · no booking · then hotel buffer before Biovortex.",
         "placeId": "kabin-koji",
         "category": "hotel"
@@ -4135,7 +4135,7 @@ window.DAYS = [
       },
       {
         "time": "16:00",
-        "title": "Travel by JR Special Rapid · Kyoto → Osaka",
+        "title": "Travel by JR Special Rapid · from Kyoto to Osaka",
         "note": "JR Special Rapid · ~30–45 min · toward Shinsaibashi / Namba · no reserved seat needed.",
         "category": "transit"
       },
@@ -4197,7 +4197,7 @@ window.DAYS = [
     "timeline": [
       {
         "time": "07:30",
-        "title": "Travel by subway / JR · Shinsaibashi → Universal City",
+        "title": "Travel by subway / JR · from Shinsaibashi to Universal City",
         "note": "~25–35 min · no booking · leave early for security before the 09:20 SNW window.",
         "placeId": "apt-hotel-11-shinsaibashi",
         "category": "hotel"
@@ -4290,7 +4290,7 @@ window.DAYS = [
       },
       {
         "time": "21:20",
-        "title": "Travel by subway / JR · Universal City → Shinsaibashi hotel",
+        "title": "Travel by subway / JR · from Universal City to Shinsaibashi hotel",
         "note": "~25–35 min · no booking.",
         "placeId": "apt-hotel-11-shinsaibashi",
         "category": "hotel"
@@ -4324,7 +4324,7 @@ window.DAYS = [
     "timeline": [
       {
         "time": "08:30",
-        "title": "Travel by Kintetsu (or JR) · Osaka → Nara",
+        "title": "Travel by Kintetsu (or JR) · from Osaka to Nara",
         "note": "Kintetsu Ltd. Exp. preferred · ~35–45 min · reserved seat optional.",
         "placeId": "nara-park",
         "category": "transit"
@@ -4347,7 +4347,7 @@ window.DAYS = [
       },
       {
         "time": "15:00",
-        "title": "Travel by Kintetsu / JR · Nara → Osaka (Shinsaibashi)",
+        "title": "Travel by Kintetsu / JR · from Nara to Osaka (Shinsaibashi)",
         "note": "~35–45 min · reserved seat optional.",
         "category": "transit"
       },
@@ -4394,7 +4394,7 @@ window.DAYS = [
     "timeline": [
       {
         "time": "09:00",
-        "title": "Travel by Hankyu · Osaka → Ikeda (Cup Noodle Museum)",
+        "title": "Travel by Hankyu · from Osaka to Ikeda (Cup Noodle Museum)",
         "note": "Hankyu · ~30–40 min · no booking.",
         "placeId": "ramen-museum",
         "category": "transit"
@@ -4409,7 +4409,7 @@ window.DAYS = [
       },
       {
         "time": "12:30",
-        "title": "Travel by Hankyu · Ikeda → Osaka / Namba",
+        "title": "Travel by Hankyu · from Ikeda to Osaka / Namba",
         "note": "~30–40 min · no booking · then walk/metro to Kuromon.",
         "placeId": "kuromon",
         "category": "transit"
@@ -4532,7 +4532,7 @@ window.DAYS = [
     "timeline": [
       {
         "time": "08:30",
-        "title": "Travel by JR Special Rapid · Osaka/Umeda → Kobe-Sannomiya",
+        "title": "Travel by JR Special Rapid · from Osaka/Umeda to Kobe-Sannomiya",
         "note": "JR Special Rapid · ~30 min · no booking.",
         "category": "transit"
       },
@@ -4577,7 +4577,7 @@ window.DAYS = [
       },
       {
         "time": "20:45",
-        "title": "Travel by JR Special Rapid · Sannomiya → Osaka (Shinsaibashi)",
+        "title": "Travel by JR Special Rapid · from Sannomiya to Osaka (Shinsaibashi)",
         "note": "~30 min · no booking.",
         "placeId": "apt-hotel-11-shinsaibashi",
         "category": "hotel"
@@ -4628,7 +4628,7 @@ window.DAYS = [
       },
       {
         "time": "09:45",
-        "title": "Travel by Nozomi Shinkansen · Shin-Osaka → Tokyo",
+        "title": "Travel by Nozomi Shinkansen · from Shin-Osaka to Tokyo",
         "note": "Nozomi · reserved seats via SmartEX · ~2.5h · book ahead · Oversized Baggage if bags >160 cm.",
         "end": "12:15",
         "category": "transit"
@@ -4642,7 +4642,7 @@ window.DAYS = [
       },
       {
         "time": "13:45",
-        "title": "Travel by JR / metro · Shinjuku → Nakano",
+        "title": "Travel by JR / metro · from Shinjuku to Nakano",
         "note": "~5–10 min · no booking.",
         "placeId": "nakano-broadway",
         "category": "transit"
@@ -4714,7 +4714,7 @@ window.DAYS = [
     "timeline": [
       {
         "time": "06:30",
-        "title": "Travel by Tobu Spacia X · Asakusa → Nikko",
+        "title": "Travel by Tobu Spacia X · from Asakusa to Nikko",
         "note": "Limited express · reserved seats · book ahead · ~2h.",
         "placeId": "nikko-toshogu",
         "end": "08:30",
@@ -4722,7 +4722,7 @@ window.DAYS = [
       },
       {
         "time": "09:00",
-        "title": "Travel by bus · Nikko Station → Lake Chuzenji / Kegon",
+        "title": "Travel by bus · from Nikko Station to Lake Chuzenji / Kegon",
         "note": "Mountain bus UP · ~45–60 min · no booking · go up first.",
         "placeId": "chuzenji",
         "category": "transit"
@@ -4737,7 +4737,7 @@ window.DAYS = [
       },
       {
         "time": "13:30",
-        "title": "Travel by bus · Chuzenji → Toshogu",
+        "title": "Travel by bus · from Chuzenji to Toshogu",
         "note": "Bus DOWN · closer to Nikko Station for the return.",
         "placeId": "nikko-toshogu",
         "category": "transit"
@@ -4752,7 +4752,7 @@ window.DAYS = [
       },
       {
         "time": "16:45",
-        "title": "Travel by Tobu limited express · Nikko → Tokyo",
+        "title": "Travel by Tobu limited express · from Nikko to Tokyo",
         "note": "Reserved seats preferred · ~2h · evening arrival.",
         "end": "18:45",
         "category": "transit"
@@ -4792,7 +4792,7 @@ window.DAYS = [
     "timeline": [
       {
         "time": "09:00",
-        "title": "Travel by JR Yokosuka / Shonan-Shinjuku · Tokyo → Kamakura",
+        "title": "Travel by JR Yokosuka / Shonan-Shinjuku · from Tokyo to Kamakura",
         "note": "JR · ~50 min · no booking.",
         "placeId": "kamakura",
         "category": "transit"
@@ -4807,7 +4807,7 @@ window.DAYS = [
       },
       {
         "time": "13:30",
-        "title": "Travel by Enoden · Kamakura → Enoshima",
+        "title": "Travel by Enoden · from Kamakura to Enoshima",
         "note": "Scenic coastal train · ~25 min · no booking.",
         "placeId": "enoshima",
         "category": "transit"
@@ -4829,7 +4829,7 @@ window.DAYS = [
       },
       {
         "time": "18:30",
-        "title": "Travel by JR · Enoshima / Kamakura → Tokyo",
+        "title": "Travel by JR · from Enoshima / Kamakura to Tokyo",
         "note": "JR · ~60–75 min · no booking.",
         "category": "transit"
       }
@@ -4920,7 +4920,7 @@ window.DAYS = [
       },
       {
         "time": "12:00",
-        "title": "Travel by N'EX / limousine · Shinjuku → Narita",
+        "title": "Travel by N'EX / limousine · from Shinjuku to Narita",
         "note": "N'EX reserved optional · ~60–90 min + airport buffer · allow 2.5–3h door-to-gate.",
         "placeId": "narita",
         "category": "transit"
@@ -4934,7 +4934,7 @@ window.DAYS = [
       },
       {
         "time": "18:00",
-        "title": "Travel by Emirates · Narita → Dubai → Tirana",
+        "title": "Travel by Emirates · from Narita to Dubai to Tirana",
         "note": "Book / confirm flight numbers & times.",
         "placeId": "narita",
         "category": "transit"
