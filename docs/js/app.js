@@ -507,8 +507,11 @@
             const done = storage.isCompleted(day.id, item) ? "done" : "";
             const fav = storage.isFavorite(day.id, item) ? "fav" : "";
             const booking = timelineBookingHtml(item, seenBookingIds);
+            const isTravel =
+              item.category === "transit" ||
+              /^(Travel by |נסיעה)/.test(item.title || "");
             return `
-            <li class="timeline-item city-line-${day.city} ${done} ${fav}" data-tl-idx="${idx}">
+            <li class="timeline-item city-line-${day.city} ${done} ${fav}${isTravel ? " is-travel" : ""}" data-tl-idx="${idx}">
               <div class="timeline-meta">
                 <div class="cat-chip">${meta.label}</div>
                 <div class="timeline-time">${escapeHtml(timeLabel)}</div>

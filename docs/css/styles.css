@@ -2178,6 +2178,16 @@ a { color: inherit; }
 .timeline-item.city-line-Osaka .timeline-card::before { background: var(--osaka); opacity: 0.85; }
 .timeline-item.city-line-Hiroshima .timeline-card::before { background: var(--hiroshima); opacity: 0.85; }
 
+.timeline-item.is-travel .timeline-card {
+  background: color-mix(in srgb, var(--navy) 4%, transparent);
+}
+.timeline-item.is-travel .timeline-title {
+  font-weight: 700;
+}
+.timeline-item.is-travel .cat-chip {
+  color: var(--navy);
+}
+
 .cat-chip {
   display: inline-block;
   font-size: 10px;
