@@ -241,7 +241,7 @@ window.PLACES = {
     ],
     "lat": 37.5563,
     "lng": 126.9236,
-    "blurb": "Student arts district — cafés, bars, street performers."
+    "blurb": "Student arts district — street food, busking, cafés, and bars."
   },
   "gyeongbokgung": {
     "id": "gyeongbokgung",
@@ -330,7 +330,7 @@ window.PLACES = {
     ],
     "lat": 37.57,
     "lng": 126.9996,
-    "blurb": "Bindaetteok, mayak gimbap, night market energy (open late)."
+    "blurb": "Bindaetteok, mayak gimbap, night market energy. Famous food stalls start closing ~20:30–21:00 — arrive by 19:30."
   },
   "eunpyeong": {
     "id": "eunpyeong",
@@ -2392,22 +2392,21 @@ window.DAYS = [
     "city": "Seoul",
     "country": "KR",
     "hotelId": "amanti-hotel",
-    "title": "Arrival & night bites",
-    "summary": "Land ICN on ET0672, check in at Amanti Hotel Hongdae, Myeongdong night-food walk, then Hongdae if energy remains.",
-    "food": "Myeongdong street food night market.",
+    "title": "Arrival & Hongdae night",
+    "summary": "Land ICN on ET0672, check in at Amanti Hotel Hongdae, then stay in the neighborhood — street food, busking, and bars. Rest after the long flight; Myeongdong moves to Tuesday.",
+    "food": "Hongdae street food and a late snack or drink nearby.",
     "placeIds": [
       "icn",
       "amanti-hotel",
-      "myeongdong",
       "hongdae"
     ],
     "transport": [
-      "ICN → Amanti (~1h AREX/taxi).",
-      "Subway/taxi to Myeongdong."
+      "ICN → Amanti (~1h AREX Express or taxi). Climate Card is not valid on AREX Express."
     ],
     "tips": [
       "Land ~16:00 on ET0672.",
-      "Get T-money / Climate Card."
+      "Climate Card covers Seoul metro/bus (3/5/7 days) but not AREX Express — only All-Stop. Keep T-Money or cash as backup for the airport run.",
+      "Stay in Hongdae tonight — Amanti is in the middle of the neighborhood."
     ],
     "timeline": [
       {
@@ -2420,7 +2419,7 @@ window.DAYS = [
       {
         "time": "16:45",
         "title": "Travel by AREX / taxi · from Incheon to Hongdae",
-        "note": "AREX Express or taxi · ~50–70 min · no advance booking needed.",
+        "note": "AREX Express or taxi · ~50–70 min. Climate Card is not valid on Express — buy an Express ticket, use All-Stop, T-Money, or a taxi.",
         "placeId": "icn",
         "category": "transit"
       },
@@ -2433,18 +2432,11 @@ window.DAYS = [
       },
       {
         "time": "19:00",
-        "title": "Myeongdong night food street walk",
-        "note": "Street food + neon shopping.",
-        "placeId": "myeongdong",
-        "end": "21:30",
-        "category": "dining"
-      },
-      {
-        "time": "22:00",
-        "title": "Hongdae stroll",
-        "note": "Late snack or drink.",
+        "title": "Hongdae evening — street food, busking, bars",
+        "note": "Stay in the neighborhood after the long flight.",
         "placeId": "hongdae",
-        "category": "dining"
+        "end": "22:30",
+        "category": "transit"
       }
     ]
   },
@@ -2457,7 +2449,7 @@ window.DAYS = [
     "hotelId": "amanti-hotel",
     "title": "Royal heart of Seoul",
     "summary": "Gyeongbokgung with the 10:00 changing of the guard + hanbok, Bukchon, Ikseon → Insadong, Gwangjang Market dinner.",
-    "food": "Gwangjang Market street-food feast (open ~09:00–22:30).",
+    "food": "Gwangjang Market street-food feast — famous stalls start closing ~20:30–21:00.",
     "placeIds": [
       "gyeongbokgung",
       "bukchon",
@@ -2471,7 +2463,8 @@ window.DAYS = [
     ],
     "tips": [
       "Arrive early for the 10:00 guard ceremony at Gwanghwamun (~20 min).",
-      "Rent hanbok for free palace entry."
+      "Rent hanbok for free palace entry.",
+      "Gwangjang: be there by 19:30 at the latest — popular food stalls wind down ~20:30–21:00 even if the market stays open later."
     ],
     "timeline": [
       {
@@ -2508,9 +2501,9 @@ window.DAYS = [
       {
         "time": "17:30",
         "title": "Gwangjang Market feast",
-        "note": "Classic street-food market · open until ~22:30.",
+        "note": "Arrive by 19:30 at the latest · famous stalls close ~20:30–21:00.",
         "placeId": "gwangjang",
-        "end": "22:00",
+        "end": "21:00",
         "category": "dining"
       }
     ]
@@ -2522,24 +2515,26 @@ window.DAYS = [
     "city": "Seoul",
     "country": "KR",
     "hotelId": "amanti-hotel",
-    "title": "Secret Garden, Unni Guide & COEX",
-    "summary": "Jogyesa and Changdeokgung Secret Garden in the morning, Unni Guide 15:00–16:00 plus treatment, then Bongeunsa and COEX Starfield.",
-    "food": "Lunch near the palace / Insadong; dinner near COEX / Gangnam.",
+    "title": "Secret Garden, Unni Guide & Seongsu",
+    "summary": "Jogyesa and Changdeokgung Secret Garden in the morning, Unni Guide 15:00–16:00 plus treatment in Gangnam, then Seongsu and Seoul Forest — much closer to Gangnam than to Hongdae.",
+    "food": "Lunch near the palace or on the way to Gangnam; dinner in Seongsu.",
     "placeIds": [
       "jogyesa",
       "changdeokgung",
       "unni-guide",
       "gangnam",
-      "bongeunsa",
-      "coex"
+      "seongsu",
+      "seoul-forest"
     ],
     "transport": [
       "Hongdae → Jogyesa / Changdeokgung.",
-      "Subway to Gangnam / Sinnonhyeon for Unni Guide."
+      "Subway to Gangnam / Sinnonhyeon for Unni Guide.",
+      "Line 2 Gangnam → Seongsu (~20–25 min)."
     ],
     "tips": [
       "Secret Garden: timed guided tour only — book at ticket.uforus.co.kr (opens 10:00 KST, max 6 days ahead).",
-      "Unni Guide 15:00–16:00."
+      "Unni Guide 15:00–16:00.",
+      "After treatment: indoor Seongsu cafés first; keep Seoul Forest short and shaded if skin is sensitive. Optional 20-min Starfield stop at COEX only if you are already passing Samseong."
     ],
     "timeline": [
       {
@@ -2559,6 +2554,13 @@ window.DAYS = [
         "category": "culture"
       },
       {
+        "time": "13:30",
+        "title": "Travel by subway · from palaces to Gangnam (Unni Guide)",
+        "note": "Seoul Metro · ~30–40 min · lunch on the way · no booking.",
+        "placeId": "changdeokgung",
+        "category": "transit"
+      },
+      {
         "time": "15:00",
         "title": "Unni Guide Center — Gangnam",
         "note": "Clinic matching / skin analysis / booking help.",
@@ -2576,19 +2578,33 @@ window.DAYS = [
       },
       {
         "time": "17:45",
-        "title": "Bongeunsa Temple",
-        "note": "Temple next to COEX.",
-        "placeId": "bongeunsa",
-        "end": "18:30",
-        "category": "culture"
+        "title": "Travel by subway · from Gangnam to Seongsu",
+        "note": "Line 2 · ~20–25 min · no booking.",
+        "placeId": "gangnam",
+        "category": "transit"
       },
       {
-        "time": "18:45",
-        "title": "COEX & Starfield Library",
-        "note": "Mall + Starfield Library.",
-        "placeId": "coex",
-        "end": "21:00",
-        "category": "shopping"
+        "time": "18:15",
+        "title": "Seongsu-dong",
+        "note": "Cafés, boutiques, and pop-ups — indoor-friendly after treatment.",
+        "placeId": "seongsu",
+        "end": "19:15",
+        "category": "dining"
+      },
+      {
+        "time": "19:15",
+        "title": "Seoul Forest",
+        "note": "Short dusk stroll next to Seongsu · skip or stay in shade if skin is sensitive.",
+        "placeId": "seoul-forest",
+        "end": "20:15",
+        "category": "attraction"
+      },
+      {
+        "time": "20:30",
+        "title": "Dinner in Seongsu",
+        "note": "Dinner nearby.",
+        "placeId": "seongsu",
+        "category": "dining"
       }
     ]
   },
@@ -2599,23 +2615,22 @@ window.DAYS = [
     "city": "Seoul",
     "country": "KR",
     "hotelId": "amanti-hotel",
-    "title": "Forena Clinic, Yeonnam & Seongsu",
-    "summary": "Booked Forena Clinic consultation + treatment in Hongdae at 10:30, then Yeonnam and Mangwon Market, Seongsu afternoon with Seoul Forest.",
-    "food": "Café lunch in Yeonnam / Mangwon; Seongsu snacks.",
+    "title": "Forena Clinic & west Seoul",
+    "summary": "Booked Forena Clinic consultation + treatment in Hongdae at 10:30, then a calm café in Yeonnam, Mangwon Market, and a Hongdae evening — stay on the west side after the facial.",
+    "food": "Café lunch in Yeonnam / Mangwon; Hongdae street food at night.",
     "placeIds": [
       "forena-clinic",
       "yeonnam",
       "mangwon",
-      "seongsu",
-      "seoul-forest"
+      "hongdae"
     ],
     "transport": [
       "Walk from Amanti Hongdae to Forena (H-CUBE, Yanghwa-ro · Hongik Univ. exit 9).",
-      "Walk/subway Yeonnam → Mangwon → Seongsu."
+      "Walk Yeonnam → Mangwon → back to Hongdae."
     ],
     "tips": [
       "Forena booked: consultation + treatment · 30/8 10:30.",
-      "Allow buffer after treatment before Yeonnam."
+      "Stay in west Seoul today — no Seongsu. After the facial, skip long sun and sweat (no park walk)."
     ],
     "timeline": [
       {
@@ -2628,42 +2643,35 @@ window.DAYS = [
       },
       {
         "time": "12:15",
-        "title": "Yeonnam-dong stroll",
-        "note": "Cafés and boutiques by the Gyeongui Line Forest.",
+        "title": "Yeonnam-dong café stroll",
+        "note": "Calm cafés and boutiques by the Gyeongui Line Forest.",
         "placeId": "yeonnam",
-        "end": "13:30",
+        "end": "14:00",
         "category": "dining"
       },
       {
-        "time": "13:45",
+        "time": "14:15",
         "title": "Mangwon Market",
         "note": "Local market snacks next to Yeonnam.",
         "placeId": "mangwon",
-        "end": "15:00",
+        "end": "15:45",
         "category": "dining"
       },
       {
-        "time": "15:30",
-        "title": "Seongsu-dong",
-        "note": "Cafés, boutiques, and pop-ups.",
-        "placeId": "seongsu",
-        "end": "17:30",
+        "time": "16:00",
+        "title": "Hongdae shopping & rest",
+        "note": "Easy west-side afternoon near the hotel.",
+        "placeId": "hongdae",
+        "end": "18:30",
         "category": "dining"
       },
       {
-        "time": "17:45",
-        "title": "Seoul Forest",
-        "note": "Urban park break.",
-        "placeId": "seoul-forest",
-        "end": "19:00",
-        "category": "attraction"
-      },
-      {
-        "time": "19:30",
-        "title": "Dinner near Seongsu / Hongdae",
-        "note": "Dinner nearby.",
-        "placeId": "seongsu",
-        "category": "dining"
+        "time": "19:00",
+        "title": "Hongdae evening — food, busking, bars",
+        "note": "Stay in the neighborhood.",
+        "placeId": "hongdae",
+        "end": "22:30",
+        "category": "transit"
       }
     ]
   },
@@ -2740,11 +2748,12 @@ window.DAYS = [
     "city": "Seoul",
     "country": "KR",
     "hotelId": "amanti-hotel",
-    "title": "Markets, N Tower sunset & Itaewon",
-    "summary": "Namdaemun Market morning, Cheonggyecheon walk, Dongdaemun / DDP afternoon, Namsan cable to N Tower sunset, then Itaewon nightlife.",
-    "food": "Namdaemun snacks; dinner in Itaewon.",
+    "title": "Downtown, Myeongdong, N Tower & Itaewon",
+    "summary": "Namdaemun and Myeongdong in the morning, Cheonggyecheon and DDP / Dongdaemun midday, Namsan cable and N Tower at sunset, then south to Itaewon for dinner and nightlife.",
+    "food": "Myeongdong street food; dinner in Itaewon.",
     "placeIds": [
       "namdaemun",
+      "myeongdong",
       "cheonggyecheon",
       "dongdaemun",
       "namsan-cable",
@@ -2752,43 +2761,66 @@ window.DAYS = [
       "itaewon"
     ],
     "transport": [
-      "Hongdae → Namdaemun.",
+      "Hongdae → Namdaemun / Myeongdong.",
       "Walk Cheonggyecheon toward Dongdaemun.",
-      "Evening to Namsan → Itaewon."
+      "Back to the Namsan cable (above Myeongdong), then south to Itaewon."
     ],
     "tips": [
-      "Book N Tower for sunset; cable tickets at the base.",
-      "Night malls at Dongdaemun: APM, DDP Fashion Mall, Hyundai City Outlets."
+      "Namdaemun and Myeongdong are a short walk apart — do them together in the morning.",
+      "Book N Tower for sunset; cable tickets at the base (station sits just above Myeongdong).",
+      "From Namsan go south to Itaewon — don’t backtrack across town."
     ],
     "timeline": [
+      {
+        "time": "08:45",
+        "title": "Travel by subway · from Hongdae to Namdaemun",
+        "note": "Seoul Metro · ~25–30 min · no booking.",
+        "placeId": "amanti-hotel",
+        "category": "hotel"
+      },
       {
         "time": "09:30",
         "title": "Namdaemun Market",
         "note": "Classic downtown market — food and shopping.",
         "placeId": "namdaemun",
-        "end": "11:30",
+        "end": "11:00",
         "category": "dining"
       },
       {
-        "time": "11:45",
+        "time": "11:15",
+        "title": "Myeongdong",
+        "note": "K-beauty, street food, neon shopping — next to Namdaemun.",
+        "placeId": "myeongdong",
+        "end": "12:30",
+        "category": "dining"
+      },
+      {
+        "time": "12:45",
         "title": "Cheonggyecheon Stream walk",
         "note": "Easy downtown stream toward Dongdaemun.",
         "placeId": "cheonggyecheon",
-        "end": "13:00",
+        "end": "13:45",
         "category": "attraction"
       },
       {
-        "time": "13:15",
-        "title": "Dongdaemun / DDP & night malls",
+        "time": "14:00",
+        "title": "Dongdaemun / DDP",
         "note": "DDP + APM / Fashion Mall / outlets.",
         "placeId": "dongdaemun",
-        "end": "16:30",
+        "end": "16:15",
         "category": "dining"
+      },
+      {
+        "time": "16:30",
+        "title": "Travel by subway / taxi · from Dongdaemun to Namsan cable",
+        "note": "Back toward Myeongdong · ~15–20 min · no booking.",
+        "placeId": "dongdaemun",
+        "category": "transit"
       },
       {
         "time": "17:30",
         "title": "Namsan cable car",
-        "note": "Up Namsan toward N Tower.",
+        "note": "Up Namsan toward N Tower · station just above Myeongdong.",
         "placeId": "namsan-cable",
         "end": "18:00",
         "category": "transit"
@@ -2802,7 +2834,14 @@ window.DAYS = [
         "category": "attraction"
       },
       {
-        "time": "20:00",
+        "time": "19:45",
+        "title": "Travel by taxi / bus · from Namsan to Itaewon",
+        "note": "South down the hill · ~15–25 min · no booking.",
+        "placeId": "n-tower",
+        "category": "transit"
+      },
+      {
+        "time": "20:15",
         "title": "Itaewon / Homo Hill nightlife",
         "note": "Dinner, bars, LGBTQ+ area.",
         "placeId": "itaewon",
@@ -2841,6 +2880,7 @@ window.DAYS = [
     "tips": [
       "Air Premia YP7321 · ICN 08:50 → NRT 11:20 (T2). Be at ICN ~06:30–07:00.",
       "Some boards list this route as YP731 — match your ticket.",
+      "Climate Card is not valid on AREX Express — Express ticket, All-Stop, T-Money, or taxi to ICN.",
       "Set up Suica/Pasmo on arrival.",
       "After bags: go straight to Shinjuku Gyoen (last entry ~16:30, closes 17:00). Lunch after.",
       "Tocho South Observatory is free (closed every other Monday)."
@@ -2849,7 +2889,7 @@ window.DAYS = [
       {
         "time": "05:30",
         "title": "Travel by taxi / AREX · from Hongdae to Incheon T1",
-        "note": "Leave hotel · ~1 hour to ICN · no advance booking.",
+        "note": "Leave hotel · ~1 hour to ICN. Climate Card is not valid on AREX Express — Express ticket, All-Stop, T-Money, or taxi.",
         "placeId": "amanti-hotel",
         "category": "hotel"
       },

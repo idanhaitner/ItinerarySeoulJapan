@@ -204,7 +204,7 @@ window.TripTools = (function () {
               <h3>קוריאה</h3>
               <ul>
                 <li>השתמשו ב־<strong>Naver Map</strong> או <strong>Kakao Map</strong> לתחבורה — טוב יותר מגוגל בסיאול.</li>
-                <li>קחו כרטיס <strong>T-money</strong> (או Climate Card) למטרו/אוטובוס.</li>
+                <li>קחו <strong>Climate Card</strong> (3/5/7 ימים למטרו/אוטובוס בסיאול) וגם <strong>T-Money</strong> לגיבוי. Climate Card לא תקף ב־AREX Express — רק ב־All-Stop.</li>
                 <li>בסיאול עומדים בדרך כלל מימין בדרגנוע.</li>
               </ul>
             </section>

@@ -176,7 +176,7 @@ window.CHECKLIST = {
         },
         { id: "t2-airport", label: "N'EX / רכבת לנריטה (NRT) — יציאה באמירייטס דרך DXB", window: "25 בספט׳ · לפי שעת הטיסה", priority: "medium" },
         { id: "t1-suica", label: "Suica / Pasmo בהגעה לטוקיו", window: "ביום הנחיתה", priority: "medium" },
-        { id: "k-tmoney", label: "Climate Card / T-Money לתחבורה בסיאול", window: "בהגעה או לפני", priority: "medium" },
+        { id: "k-tmoney", label: "Climate Card (3/5/7 ימים בסיאול) + T-Money לגיבוי — Climate Card לא תקף ב־AREX Express", window: "בהגעה או לפני", priority: "medium" },
       ],
     },
     {
