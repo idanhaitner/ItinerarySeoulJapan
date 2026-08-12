@@ -88,10 +88,12 @@ window.CHECKLIST = {
         },
         {
           id: "s-skin",
-          label: "טיפול פנים ליד הונגדה — להזמין מראש",
-          window: "יום א׳ 30 באוג׳",
-          priority: "high",
-          linkTitles: ["Facial", "טיפול פנים"],
+          label: "Forena Clinic הונגדה — ייעוץ + טיפול (30/8 10:30)",
+          window: "יום א׳ 30 באוג׳ · 10:30",
+          priority: "low",
+          done: true,
+          linkPlaceIds: ["forena-clinic"],
+          linkTitles: ["Forena", "Facial", "טיפול פנים"],
         },
         {
           id: "k-ntower",

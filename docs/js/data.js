@@ -539,12 +539,27 @@ window.PLACES = {
     "city": "Seoul",
     "country": "KR",
     "tags": [
-      "must-see",
       "culture"
     ],
     "lat": 37.5448,
     "lng": 127.0565,
-    "blurb": "Facial + skin analysis in Seongsu — book via Instagram @seoulistique.skin / WhatsApp."
+    "blurb": "Facial + skin analysis in Seongsu — not on this itinerary."
+  },
+  "forena-clinic": {
+    "id": "forena-clinic",
+    "name": "Forena Clinic",
+    "nameJa": "포레나의원",
+    "city": "Seoul",
+    "country": "KR",
+    "tags": [
+      "must-see",
+      "culture",
+      "booked"
+    ],
+    "lat": 37.5568,
+    "lng": 126.9236,
+    "blurb": "Booked — consultation + treatment 30 Aug 10:30 · Hongdae · H-CUBE 7F, 140 Yanghwa-ro · Hongik Univ. Station exit 9.",
+    "taxiAddress": "서울특별시 마포구 양화로 140 H-CUBE 7층"
   },
   "yeonnam": {
     "id": "yeonnam",
@@ -2584,32 +2599,32 @@ window.DAYS = [
     "city": "Seoul",
     "country": "KR",
     "hotelId": "amanti-hotel",
-    "title": "Hongdae facial, Yeonnam & Seongsu",
-    "summary": "Morning facial near Hongdae, Yeonnam and Mangwon Market, then Seongsu afternoon with Seoul Forest.",
+    "title": "Forena Clinic, Yeonnam & Seongsu",
+    "summary": "Booked Forena Clinic consultation + treatment in Hongdae at 10:30, then Yeonnam and Mangwon Market, Seongsu afternoon with Seoul Forest.",
     "food": "Café lunch in Yeonnam / Mangwon; Seongsu snacks.",
     "placeIds": [
-      "hongdae",
+      "forena-clinic",
       "yeonnam",
       "mangwon",
       "seongsu",
-      "seoul-forest",
-      "seoulistique"
+      "seoul-forest"
     ],
     "transport": [
-      "Hongdae-side morning appointment.",
+      "Walk from Amanti Hongdae to Forena (H-CUBE, Yanghwa-ro · Hongik Univ. exit 9).",
       "Walk/subway Yeonnam → Mangwon → Seongsu."
     ],
     "tips": [
-      "Book the Hongdae-area facial for the morning."
+      "Forena booked: consultation + treatment · 30/8 10:30.",
+      "Allow buffer after treatment before Yeonnam."
     ],
     "timeline": [
       {
-        "time": "10:00",
-        "title": "Facial near Hongdae",
-        "note": "Hongdae-area clinic — book ahead.",
-        "placeId": "hongdae",
-        "end": "11:45",
-        "category": "dining"
+        "time": "10:30",
+        "title": "Forena Clinic — consultation + treatment",
+        "note": "Booked · Hongdae · H-CUBE 7F, 140 Yanghwa-ro.",
+        "placeId": "forena-clinic",
+        "end": "12:15",
+        "category": "culture"
       },
       {
         "time": "12:15",
