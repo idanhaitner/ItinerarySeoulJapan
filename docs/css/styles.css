@@ -2213,6 +2213,88 @@ a { color: inherit; }
   max-width: 52ch;
 }
 
+.tl-book-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tl-book-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px 5px 7px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.tl-book-link.is-todo {
+  color: #7a3d12;
+  background: rgba(196, 106, 82, 0.12);
+  border-color: rgba(196, 106, 82, 0.35);
+}
+
+.tl-book-link.is-done {
+  color: var(--jade);
+  background: rgba(42, 107, 90, 0.1);
+  border-color: rgba(42, 107, 90, 0.28);
+}
+
+.tl-book-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.tl-book-link.is-todo .tl-book-mark {
+  background: rgba(196, 106, 82, 0.22);
+}
+
+.tl-book-link.is-done .tl-book-mark {
+  background: rgba(42, 107, 90, 0.18);
+}
+
+@media (hover: hover) {
+  .tl-book-link.is-todo:hover {
+    background: rgba(196, 106, 82, 0.2);
+  }
+  .tl-book-link.is-done:hover {
+    background: rgba(42, 107, 90, 0.16);
+  }
+}
+
+.timeline-item.needs-booking .timeline-card {
+  box-shadow: inset 3px 0 0 rgba(196, 106, 82, 0.75);
+}
+
+.timeline-item.booking-done .timeline-card {
+  box-shadow: inset 3px 0 0 rgba(42, 107, 90, 0.65);
+}
+
+.booking-item.booking-flash {
+  animation: bookingFlash 1.8s ease;
+  border-radius: 10px;
+  outline: 2px solid rgba(196, 106, 82, 0.55);
+  outline-offset: 4px;
+  background: rgba(196, 106, 82, 0.06);
+}
+
+@keyframes bookingFlash {
+  0%, 100% { background: transparent; }
+  20%, 55% { background: rgba(196, 106, 82, 0.1); }
+}
+
 .timeline-actions {
   display: flex;
   flex-wrap: wrap;

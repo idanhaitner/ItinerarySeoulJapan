@@ -74,6 +74,7 @@
     city: "all",
     query: "",
     dayId: null,
+    focusBookingId: null,
   };
 
   const els = {
@@ -418,8 +419,68 @@
       </article>`;
   }
 
+  function allChecklistItems() {
+    return checklistData.groups.flatMap((g) => g.items);
+  }
+
+  function bookingsForTimelineItem(item) {
+    const hay = `${item.title || ""} ${item.note || ""}`.toLowerCase();
+    const matches = [];
+    allChecklistItems().forEach((ci) => {
+      const placeLinks = ci.linkPlaceIds || [];
+      const titleLinks = ci.linkTitles || [];
+      if (!placeLinks.length && !titleLinks.length) return;
+      let hit = false;
+      if (item.placeId && placeLinks.includes(item.placeId)) hit = true;
+      if (!hit && titleLinks.some((t) => hay.includes(String(t).toLowerCase()))) hit = true;
+      if (hit) matches.push(ci);
+    });
+    return matches;
+  }
+
+  function timelineBookingHtml(item, seenBookingIds) {
+    const bookings = bookingsForTimelineItem(item).filter((b) => {
+      if (seenBookingIds.has(b.id)) return false;
+      seenBookingIds.add(b.id);
+      return true;
+    });
+    if (!bookings.length) return { html: "", needs: false, open: false };
+    const checked = checklistCheckedMap();
+    const html = `<div class="tl-book-row">${bookings
+      .map((b) => {
+        const isDone = !!checked[b.id];
+        const label = isDone ? "הוזמן" : "להזמין מראש";
+        const hint = isDone ? "לצפייה בהזמנות" : "לסימון ברשימת ההזמנות";
+        return `<a class="tl-book-link ${isDone ? "is-done" : "is-todo"}" href="#bookings" data-open-booking="${escapeHtml(b.id)}" title="${escapeHtml(hint)}">
+          <span class="tl-book-mark" aria-hidden="true">${isDone ? "✓" : "!"}</span>
+          <span class="tl-book-label">${label}</span>
+        </a>`;
+      })
+      .join("")}</div>`;
+    const open = bookings.some((b) => !checked[b.id]);
+    return { html, needs: true, open };
+  }
+
+  function openBookingsFocus(bookingId) {
+    state.focusBookingId = bookingId || null;
+    showView("bookings");
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const id = state.focusBookingId;
+        state.focusBookingId = null;
+        if (!id) return;
+        const el = document.getElementById(`booking-${id}`);
+        if (!el) return;
+        el.classList.add("booking-flash");
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+        window.setTimeout(() => el.classList.remove("booking-flash"), 2200);
+      });
+    });
+  }
+
   function timelineHtml(day) {
     const items = day.timeline || [];
+    const seenBookingIds = new Set();
     return `
       <div class="section-title">לוח זמנים · 日程</div>
       <ol class="timeline">
@@ -431,8 +492,10 @@
             const timeLabel = item.end ? `${item.time}–${item.end}` : item.time;
             const done = storage.isCompleted(day.id, item) ? "done" : "";
             const fav = storage.isFavorite(day.id, item) ? "fav" : "";
+            const booking = timelineBookingHtml(item, seenBookingIds);
+            const bookClass = booking.needs ? (booking.open ? "needs-booking" : "booking-done") : "";
             return `
-            <li class="timeline-item city-line-${day.city} ${done} ${fav}" data-tl-idx="${idx}">
+            <li class="timeline-item city-line-${day.city} ${done} ${fav} ${bookClass}" data-tl-idx="${idx}">
               <div class="timeline-meta">
                 <div class="cat-chip">${meta.label}</div>
                 <div class="timeline-time">${escapeHtml(timeLabel)}</div>
@@ -441,6 +504,7 @@
                 <div class="timeline-title">${escapeHtml(item.title)}</div>
                 ${place ? `<div class="timeline-place">${escapeHtml(place.name)}${place.nameJa ? ` · ${escapeHtml(place.nameJa)}` : ""}</div>` : ""}
                 ${item.note ? `<p class="timeline-note">${escapeHtml(item.note)}</p>` : ""}
+                ${booking.html}
                 <div class="timeline-actions">
                   ${links ? `<a href="${links.primary.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.primary.label)}</a>` : ""}
                   <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "בוצע" : "סיימתי"}</button>
@@ -684,7 +748,7 @@
 
   function renderBookings() {
     const checked = checklistCheckedMap();
-    const allItems = checklistData.groups.flatMap((g) => g.items);
+    const allItems = allChecklistItems();
     const done = allItems.filter((i) => checked[i.id]).length;
     const total = allItems.length;
 
@@ -692,7 +756,7 @@
       <div class="plan-intro">
         <p class="plan-kicker">הזמנות · 予約</p>
         <h2 class="plan-title">מה נשאר לסגור</h2>
-        <p class="plan-lead">ממוין לפי דחיפות — חלון ההזמנות לרוב האטרקציות פתוח עכשיו. מתחילים ממסמכים בארץ, אחר כך כרטיסים שנחטפים. מה שכבר סגור מסומן בצד.</p>
+        <p class="plan-lead">ממוין לפי דחיפות — חלון ההזמנות לרוב האטרקציות פתוח עכשיו. מתחילים ממסמכים בארץ, אחר כך כרטיסים שנחטפים. מה שכבר סגור מסומן בצד. מהלו״ז אפשר לקפוץ ישר לפריט הרלוונטי.</p>
       </div>
       <div class="bookings-list">
         ${checklistData.groups
@@ -703,7 +767,7 @@
             ${g.items
               .map(
                 (item) => `
-              <label class="booking-item ${checked[item.id] ? "done" : ""}${item.priority === "critical" ? " booking-critical" : ""}">
+              <label id="booking-${escapeHtml(item.id)}" class="booking-item ${checked[item.id] ? "done" : ""}${item.priority === "critical" ? " booking-critical" : ""}">
                 <input type="checkbox" data-check="${item.id}" ${checked[item.id] ? "checked" : ""} />
                 <span>
                   <div class="booking-label">${escapeHtml(item.label)}</div>
@@ -1117,6 +1181,12 @@
     });
 
     document.body.addEventListener("click", (e) => {
+      const bookingJump = e.target.closest("[data-open-booking]");
+      if (bookingJump) {
+        e.preventDefault();
+        openBookingsFocus(bookingJump.getAttribute("data-open-booking"));
+        return;
+      }
       if (e.target.id === "back-btn" || e.target.closest("#back-btn")) {
         showView("itinerary");
         return;
