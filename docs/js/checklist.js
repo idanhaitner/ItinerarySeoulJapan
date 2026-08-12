@@ -130,7 +130,7 @@ window.CHECKLIST = {
         },
         {
           id: "j-shinkansen",
-          label: "שינקנסן: אוסקה↔הירושימה (18/9) · אוסקה→טוקיו (21/9) — SmartEX · Oversized Baggage אם מזוודות >160 ס״מ",
+          label: "שינקנסן אוסקה→טוקיו (21/9) — SmartEX · Oversized Baggage אם מזוודות >160 ס״מ",
           window: "להזמין ~30 יום לפני / כשנפתח",
           priority: "high",
           linkTitles: ["Shinkansen", "שינקנסן", "Nozomi"],
@@ -143,6 +143,14 @@ window.CHECKLIST = {
           linkTitles: ["Spacia X", "Tobu limited express", "Tobu Spacia"],
         },
         { id: "os-nara", label: "רכבת ליום בנארה (Kintetsu/JR)", window: "ביום עצמו או מראש", priority: "low" },
+        {
+          id: "os-ramen-museum",
+          label: "מוזיאון הראמן איקדה (18/9) — סלוט הכנת Cup Noodle (אופציונלי)",
+          window: "ימים לפני אם רוצים סלוט",
+          priority: "low",
+          linkPlaceIds: ["ramen-museum"],
+          linkTitles: ["Instant Ramen", "Cup Noodle", "מוזיאון הראמן"],
+        },
         { id: "t2-kamakura", label: "יום קמאקורה + Enoden לאנושימה (כרטיסים בדרך כלל ביום)", window: "23 בספט׳", priority: "low" },
         { id: "os-kobe", label: "טיול יום לקובה (20/9) — JR Special Rapid לסנומיה · רכבל נונוביקי", window: "20 בספט׳", priority: "medium" },
         {

@@ -1611,7 +1611,7 @@ window.PLACES = {
     ],
     "lat": 34.3927,
     "lng": 132.4553,
-    "blurb": "Dad's Hiroshima hotel idea — we day-trip from Osaka."
+    "blurb": "Dad's Hiroshima hotel idea — inspiration only; not on our itinerary."
   },
   "shukkeien": {
     "id": "shukkeien",
@@ -4277,70 +4277,57 @@ window.DAYS = [
     "city": "Osaka",
     "country": "JP",
     "hotelId": "apt-hotel-11-shinsaibashi",
-    "title": "Hiroshima & Miyajima day trip",
-    "summary": "Early Shinkansen day trip to Miyajima and Hiroshima Peace Park, okonomiyaki, then back to Osaka.",
-    "food": "Hiroshima-style okonomiyaki before return.",
+    "title": "Osaka markets & Cup Noodle day",
+    "summary": "Local Osaka day — Instant Ramen Museum in Ikeda, Kuromon Market, Tenjinbashi arcade, evening around Hozenji / Dotonbori. No Hiroshima.",
+    "food": "Kuromon snacks; casual dinner near Dotonbori.",
     "placeIds": [
-      "miyajima",
-      "peace-park",
-      "okonomiyaki"
+      "ramen-museum",
+      "kuromon",
+      "tenjinbashi",
+      "hozenji"
     ],
     "transport": [
-      "Early Nozomi/Sakura to Hiroshima (~80m).",
-      "Ferry to Miyajima.",
-      "Evening Shinkansen back."
+      "Hankyu to Ikeda for the museum (~30–40m).",
+      "Metro / walk for markets and arcade."
     ],
     "tips": [
-      "Check tide times for torii.",
-      "Early Shinkansen outbound."
+      "Ramen Museum: book a make-your-own Cup Noodle slot if you want one.",
+      "Easy recovery day between Nara and castle/Umeda."
     ],
     "timeline": [
       {
-        "time": "07:00",
-        "title": "Shinkansen Osaka → Hiroshima",
-        "note": "Nozomi/Sakura · reserved seats · ~80 minutes.",
-        "end": "08:30",
-        "category": "transit"
+        "time": "09:30",
+        "title": "Instant Ramen Museum (Ikeda)",
+        "note": "Make-your-own Cup Noodle if booked; museum walk.",
+        "placeId": "ramen-museum",
+        "end": "12:00",
+        "category": "dining"
       },
       {
-        "time": "09:00",
-        "title": "Miyajima Island & Itsukushima",
-        "note": "Floating torii + island stroll.",
-        "placeId": "miyajima",
-        "end": "13:00",
-        "category": "culture"
+        "time": "13:00",
+        "title": "Kuromon Market lunch",
+        "note": "Osaka’s kitchen — fresh stalls and quick bites.",
+        "placeId": "kuromon",
+        "end": "15:00",
+        "category": "dining"
       },
       {
-        "time": "14:00",
-        "title": "Peace Memorial Park & Museum",
-        "note": "Allow real time.",
-        "placeId": "peace-park",
-        "end": "16:30",
-        "category": "culture"
-      },
-      {
-        "time": "17:00",
-        "title": "Hiroshima okonomiyaki",
-        "note": "",
-        "placeId": "okonomiyaki",
+        "time": "15:30",
+        "title": "Tenjinbashi-suji arcade",
+        "note": "Long covered shopping street.",
+        "placeId": "tenjinbashi",
+        "end": "17:30",
         "category": "dining"
       },
       {
         "time": "18:30",
-        "title": "Shinkansen Hiroshima → Osaka",
-        "note": "Evening Nozomi/Sakura · reserved seats · ~80 minutes.",
-        "end": "20:00",
-        "category": "transit"
+        "title": "Hozenji Yokocho & Dotonbori evening",
+        "note": "Mossy alley + neon stroll / dinner.",
+        "placeId": "hozenji",
+        "end": "21:00",
+        "category": "dining"
       }
-    ],
-    "transfer": {
-      "mode": "train",
-      "label": "Osaka ↔ Hiroshima day trip",
-      "detail": "Early Shinkansen to Hiroshima (~80m), return evening",
-      "duration": "~80m each way",
-      "fromCity": "Osaka",
-      "toCity": "Hiroshima"
-    }
+    ]
   },
   {
     "id": "d24",

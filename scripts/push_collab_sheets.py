@@ -375,7 +375,7 @@ def build_bookings(days):
         # 3 · Transport
         ("Romancecar + Observation Car", "d12", "לטפל", "מושבים שמורים"),
         ("אוטובוס לילה קוואגוצ׳יקו → קיוטו", "d15", "לטפל", "10/9 בערב · הגעה 11/9 בבוקר · בלי מלון ב־10/9"),
-        ("שינקנסן SmartEX (+ oversized baggage)", "d26", "לטפל", "18/9 הירושימה · 21/9 אוסקה→טוקיו"),
+        ("שינקנסן SmartEX (+ oversized baggage)", "d26", "לטפל", "21/9 אוסקה→טוקיו בלבד"),
         ("Tobu Spacia X לניקו", "d27", "לטפל", "22/9 · יציאה ~06:30 מאסאקוסה · כרטיסים שמורים · אגם/קגון קודם → Toshogu אחה״צ"),
         ("Takkyubin מזוודות Gracery→MYSTAYS Fuji Onsen", "d12", "לטפל", "בוקר 7/9 לפני Romancecar · מ־Hotel Gracery לכתובת MYSTAYS בפוג׳יושידה"),
         ("Takkyubin מזוודות MYSTAYS→KABIN Koji", "d15", "לטפל", "10/9 באותו יום · שיגיעו ל־KABIN Koji בקיוטו"),
