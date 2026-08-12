@@ -109,8 +109,8 @@ window.TRIP = {
     "Route: Tel Aviv → Seoul → Tokyo → Hakone → Kawaguchiko → Kyoto → Osaka (+ Kobe day) → Tokyo → Tirana (via Dubai).",
     "Outbound booked: ET0419 + ET0672 (26–27 Aug).",
     "Seoul→Tokyo booked: Air Premia YP7321 (2 Sep · ICN 08:50 → NRT 11:20).",
-    "Food: light on seafood — prefer meat, eggs, noodles, veg (Tsukiji = non-sushi graze).",
-    "Sep 4: Tsukiji (non-seafood lean) + teamLab Planets (weekday) + Odaiba + Ginza.",
+    "Food: love sushi & fish; skip shellfish (shrimp/crab/oyster etc.).",
+    "Sep 4: Tsukiji sushi/fish + teamLab Planets (weekday) + Odaiba + Ginza.",
     "Sep 5: Asakusa + Skytree + Akihabara.",
     "Sep 6: Kichijoji + Shimokitazawa day, night Street Kart ~19:00 (IDP) — no Daikanyama/Nakameguro hop.",
     "Sep 11: Arrive Kyoto (overnight bus) — rest + Gion/Pontocho.",
@@ -803,7 +803,7 @@ window.PLACES = {
     ],
     "lat": 35.6654,
     "lng": 139.7707,
-    "blurb": "Outer-market graze — tamago, meat skewers, fruit, coffee (skip heavy seafood if you prefer)."
+    "blurb": "Sushi & fish breakfast graze — skip shellfish (shrimp/crab/oyster) if you prefer."
   },
   "imperial-east": {
     "id": "imperial-east",
@@ -3041,8 +3041,8 @@ window.DAYS = [
     "country": "JP",
     "hotelId": "gracery-shinjuku",
     "title": "Tsukiji, teamLab Planets, Odaiba & Ginza",
-    "summary": "Weekday plan for fewer crowds: light Tsukiji Outer Market graze (non-seafood lean), timed teamLab Planets in Toyosu, Odaiba Gundam + waterfront, then a long Ginza evening of depachika, flagships and dinner.",
-    "food": "Tsukiji: tamago, meat skewers, fruit, coffee (skip sushi stalls); Ginza depachika + tonkatsu / yakiniku / ramen dinner — not seafood-first.",
+    "summary": "Weekday plan for fewer crowds: Tsukiji Outer Market sushi/fish breakfast, timed teamLab Planets in Toyosu, Odaiba Gundam + waterfront, then a long Ginza evening of depachika, flagships and dinner.",
+    "food": "Tsukiji sushi & nice fish (skip shellfish); Ginza depachika + sushi / tonkatsu / yakiniku dinner.",
     "placeIds": [
       "tsukiji",
       "teamlab-planets",
@@ -3057,14 +3057,14 @@ window.DAYS = [
     "tips": [
       "Timed tickets for teamLab Planets — book a weekday slot (avoid Sat/Sun sell-outs).",
       "Some rooms have water — wear shorts you can roll up / bring a small towel.",
-      "Food preference: light on seafood — favor meat, eggs, noodles, veg across the trip.",
+      "Food preference: love sushi & fish — skip shellfish (shrimp, crab, oyster, etc.).",
       "Ginza: Mitsukoshi/Ginza Six depachika, Uniqlo Tokyo flagship, Itoya stationery."
     ],
     "timeline": [
       {
         "time": "07:30",
         "title": "Tsukiji Outer Market breakfast",
-        "note": "Tamago sandwich, grilled skewers, fruit, coffee — skip the sushi counters if you prefer.",
+        "note": "Sushi / nigiri / nice fish + tamago — skip shellfish stalls.",
         "placeId": "tsukiji",
         "end": "10:00",
         "category": "dining"
@@ -3096,7 +3096,7 @@ window.DAYS = [
       {
         "time": "19:45",
         "title": "Ginza dinner",
-        "note": "Tonkatsu, yakiniku, ramen, or dept-store restaurants — skip default sushi.",
+        "note": "Sushi, tonkatsu, or yakiniku — ask to skip shellfish if ordering set menus.",
         "placeId": "ginza",
         "category": "dining"
       }
@@ -3205,7 +3205,7 @@ window.DAYS = [
     "hotelId": "gracery-shinjuku",
     "title": "Kichijoji, Shimokitazawa & night Street Kart",
     "summary": "Easy west-Tokyo Sunday: Inokashira + Harmonica lunch in Kichijoji, vintage Shimokitazawa afternoon, early dinner near Shibuya, then night Street Kart through neon (~19:00) — cooler and cooler than daytime.",
-    "food": "Lunch in Harmonica Yokocho / Kichijoji; early dinner near Shibuya (ramen / tonkatsu / yakiniku — not seafood); light snack after kart if needed.",
+    "food": "Lunch in Harmonica Yokocho / Kichijoji; early dinner near Shibuya (ramen / tonkatsu / sushi / yakiniku — skip shellfish); light snack after kart if needed.",
     "placeIds": [
       "inokashira",
       "kichijoji",
@@ -3252,7 +3252,7 @@ window.DAYS = [
       {
         "time": "17:45",
         "title": "Early dinner near Shibuya",
-        "note": "Ramen / tonkatsu / yakiniku before kart — fuel up, skip seafood.",
+        "note": "Ramen / tonkatsu / sushi / yakiniku before kart — skip shellfish.",
         "end": "18:45",
         "category": "dining"
       },
@@ -4723,7 +4723,7 @@ window.DAYS = [
     "hotelId": null,
     "title": "Full shopping day & farewell dinner",
     "summary": "Ginza shopping morning (Ginza Six, Uniqlo Ginza, Itoya, depachika), afternoon in Shibuya/Omotesando, Akihabara or Shinjuku, then farewell dinner.",
-    "food": "Depachika graze; farewell wagyu / yakiniku dinner (not seafood omakase).",
+    "food": "Depachika graze; farewell wagyu or sushi dinner (fish yes — skip shellfish in omakase).",
     "placeIds": [
       "ginza",
       "omotesando",
@@ -4764,7 +4764,7 @@ window.DAYS = [
       {
         "time": "19:30",
         "title": "Farewell Japan dinner",
-        "note": "Wagyu / yakiniku — skip seafood omakase.",
+        "note": "Wagyu or sushi/omakase — love fish; ask to skip shellfish.",
         "category": "dining"
       }
     ]
