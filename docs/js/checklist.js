@@ -54,8 +54,8 @@ window.CHECKLIST = {
         },
         {
           id: "ky-teamlab-biovortex",
-          label: "teamLab Biovortex Kyoto (11/9) — כרטיסים מתוזמנים באתר / Klook · ~7 דק׳ מתחנת קיוטו",
-          window: "להזמין בהקדם · אחה״צ אחרי ההגעה",
+          label: "teamLab Biovortex Kyoto (14/9 · שני) — כרטיסים מתוזמנים · לא יום הגעה / לא סופ״ש",
+          window: "להזמין בהקדם · אחה״צ אחרי קורמה · ~7 דק׳ מתחנת קיוטו",
           priority: "high",
         },
         {

@@ -112,8 +112,9 @@ window.TRIP = {
     "Sep 4: Tsukiji + teamLab Planets (weekday) + Odaiba + Ginza.",
     "Sep 5: Asakusa + Skytree + Akihabara.",
     "Sep 6: Street Kart + Inokashira/Kichijoji + Shimokitazawa (IDP required).",
-    "Sep 11: Fushimi Inari + Uji (Byodo-in / matcha) + Nishiki.",
-    "Sep 15: Kyoto zen morning → Osaka evening (Dotonbori). teamLab Biovortex is on 11/9 in Kyoto.",
+    "Sep 11: Arrive Kyoto (overnight bus) — rest + Gion/Pontocho.",
+    "Sep 12: Fushimi Inari + Uji (Byodo-in / matcha) + Nishiki.",
+    "Sep 14: Kurama/Kibune morning + teamLab Biovortex (weekday). Sep 15: Kyoto zen → Osaka evening.",
     "Sep 20: Kobe day trip from Osaka.",
     "Sep 21: Leave Osaka for Tokyo.",
     "Sep 22–23: Nikko day trip, then Kamakura & Enoshima.",
@@ -3617,25 +3618,23 @@ window.DAYS = [
     "city": "Kyoto",
     "country": "JP",
     "hotelId": "kabin-koji",
-    "title": "Arrive Kyoto, teamLab Biovortex & Gion",
-    "summary": "Morning arrival on the overnight bus, check in at KABIN Koji and bag pickup, afternoon teamLab Biovortex (near Kyoto Station), then an easy Gion dusk stroll and Pontocho riverside dinner.",
+    "title": "Arrive Kyoto, Gion & riverside alleys",
+    "summary": "Morning arrival on the overnight bus, check in at KABIN Koji and bag pickup, then rest and an easy Gion dusk stroll with Pontocho riverside dinner.",
     "food": "Pontocho riverside dinner along the Kamogawa.",
     "placeIds": [
       "kabin-koji",
-      "teamlab-biovortex",
       "gion",
       "pontocho"
     ],
     "transport": [
       "Overnight bus arrives Kyoto morning.",
-      "Walk/taxi to KABIN Koji (Kawaramachi).",
-      "teamLab Biovortex ~7 min from Kyoto Station Hachijo East — subway/taxi from the hotel."
+      "Walk/taxi to KABIN Koji (Kawaramachi) · easy evening in Higashiyama / Pontocho."
     ],
     "tips": [
       "KABIN Koji nights: 11/9 evening → 15/9 evening · 152 Sujiyacho, Shimogyo.",
       "Collect Takkyubin bags at the hotel if they beat you there.",
-      "Book timed teamLab Biovortex tickets (closed some Tuesdays — 15/9 is closed).",
-      "Respectful photos in Gion — keep the evening light after the museum."
+      "Keep the day light after the overnight bus — teamLab Biovortex is Monday 14/9.",
+      "Respectful photos in Gion."
     ],
     "timeline": [
       {
@@ -3656,14 +3655,6 @@ window.DAYS = [
         "title": "Easy lunch & rest",
         "note": "Nap if needed after the bus.",
         "category": "transit"
-      },
-      {
-        "time": "14:00",
-        "title": "teamLab Biovortex Kyoto",
-        "note": "Largest teamLab in Japan · timed entry · allow 2–3h.",
-        "placeId": "teamlab-biovortex",
-        "end": "17:00",
-        "category": "culture"
       },
       {
         "time": "17:30",
@@ -3872,76 +3863,84 @@ window.DAYS = [
     "city": "Kyoto",
     "country": "JP",
     "hotelId": "kabin-koji",
-    "title": "Kurama & Kibune mountain day",
-    "summary": "Kurama and Kibune: mountain temple, forest trek, kawadoko riverside lunch, and Kurama Onsen.",
-    "food": "Kawadoko lunch over the river.",
+    "title": "Kurama & Kibune, then teamLab Biovortex",
+    "summary": "Weekday mountain morning in Kurama/Kibune with kawadoko lunch, early return to Kyoto, then timed teamLab Biovortex near Kyoto Station (not arrival day, not weekend).",
+    "food": "Kawadoko lunch over the river; light dinner after Biovortex.",
     "placeIds": [
       "kurama-dera",
       "kifune",
       "kawadoko",
-      "kurama-onsen"
+      "teamlab-biovortex"
     ],
     "transport": [
       "Demachiyanagi → Eizan to Kurama (~30m, ~¥430).",
-      "Trek ~45m to Kibune.",
-      "Return Kibuneguchi."
+      "Trek ~45m to Kibune; return via Kibuneguchi.",
+      "teamLab Biovortex ~7 min from Kyoto Station Hachijo East."
     ],
     "tips": [
       "Reserve kawadoko weeks ahead (Hirobun or Fujiya).",
-      "Confirm Kurama Onsen opening hours."
+      "Skip Kurama Onsen today so you can hit a weekday Biovortex slot.",
+      "Book timed Biovortex tickets — closed some Tuesdays (15/9 is closed).",
+      "Allow 2–3 hours inside Biovortex; last entry often ~19:30."
     ],
     "timeline": [
       {
-        "time": "08:30",
+        "time": "08:00",
         "title": "Train to Kurama",
         "note": "Via Demachiyanagi + Eizan.",
         "placeId": "kurama-dera",
         "category": "transit"
       },
       {
-        "time": "09:30",
+        "time": "09:00",
         "title": "Kurama-dera Temple",
         "note": "Mountain temple visit.",
         "placeId": "kurama-dera",
-        "end": "10:45",
+        "end": "10:15",
         "category": "culture"
       },
       {
-        "time": "11:00",
+        "time": "10:30",
         "title": "Forest trek to Kibune",
         "note": "~45 minutes through cedar forest.",
-        "end": "11:45",
+        "end": "11:15",
         "category": "attraction"
       },
       {
-        "time": "12:00",
+        "time": "11:30",
         "title": "Kifune Shrine",
         "note": "Red lantern stairs.",
         "placeId": "kifune",
-        "end": "13:00",
+        "end": "12:30",
         "category": "culture"
       },
       {
-        "time": "13:15",
+        "time": "12:45",
         "title": "Kawadoko riverside lunch",
         "note": "Decks over the stream — Hirobun / Fujiya reserved.",
         "placeId": "kawadoko",
-        "end": "15:00",
+        "end": "14:15",
         "category": "dining"
       },
       {
-        "time": "15:30",
-        "title": "Kurama Onsen",
-        "note": "Mountain baths.",
-        "placeId": "kurama-onsen",
-        "end": "17:30",
+        "time": "14:30",
+        "title": "Return to Kyoto Station area",
+        "note": "Skip onsen — head back for Biovortex.",
         "category": "attraction"
       },
       {
-        "time": "18:30",
-        "title": "Return to Kyoto",
-        "note": "",
-        "category": "attraction"
+        "time": "16:00",
+        "title": "teamLab Biovortex Kyoto",
+        "note": "Largest teamLab in Japan · weekday timed entry · allow 2–3h.",
+        "placeId": "teamlab-biovortex",
+        "end": "19:00",
+        "category": "culture"
+      },
+      {
+        "time": "19:30",
+        "title": "Dinner near Kyoto Station / Kawaramachi",
+        "note": "Easy night after the museum.",
+        "category": "dining"
       }
     ]
   },
@@ -3971,7 +3970,7 @@ window.DAYS = [
     ],
     "tips": [
       "Checkout KABIN Koji for evening move to Osaka (Apartment Hotel 11 · nights 15–21/9).",
-      "teamLab is already done in Kyoto (Biovortex on 11/9) — skip Osaka Botanical Garden.",
+      "teamLab Biovortex was Monday 14/9 in Kyoto — skip Osaka Botanical Garden.",
       "USJ is tomorrow (16/9) — don’t stay out too late."
     ],
     "timeline": [

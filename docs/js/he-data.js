@@ -678,19 +678,18 @@
       ]
     },
     "d16": {
-      "title": "הגעה לקיוטו, teamLab Biovortex וגיון",
-      "summary": "הגעה בבוקר באוטובוס הלילה, צ׳ק־אין ב־KABIN Koji ואיסוף מזוודות, אחה״צ teamLab Biovortex (ליד תחנת קיוטו), ואז טיול שקיעה בגיון וארוחת ערב בפונטוצ׳ו.",
+      "title": "הגעה לקיוטו, גיון וסמטאות הנהר",
+      "summary": "הגעה בבוקר באוטובוס הלילה, צ׳ק־אין ב־KABIN Koji ואיסוף מזוודות, מנוחה, ואז טיול שקיעה בגיון וארוחת ערב בפונטוצ׳ו.",
       "food": "ארוחת ערב על הנהר ב־Pontocho לאורך הקמוגאווה.",
       "tips": [
         "KABIN Koji · לילות ערב 11/9 → ערב 15/9 · 筋屋町152 ליד Kawaramachi.",
         "לאסוף מזוודות Takkyubin במלון אם הקדימו אתכם.",
-        "להזמין כרטיסים מתוזמנים ל־teamLab Biovortex (סגור בחלק מימי שלישי — 15/9 סגור).",
-        "צילום מכבד בגיון — ערב קל אחרי המוזיאון."
+        "לשמור על יום קל אחרי האוטובוס — teamLab Biovortex ב־שני 14/9.",
+        "צילום מכבד בגיון."
       ],
       "transport": [
         "אוטובוס הלילה מגיע לקיוטו בבוקר.",
-        "הליכה/מונית ל־KABIN Koji (Kawaramachi).",
-        "teamLab Biovortex ~7 דק׳ מתחנת קיוטו Hachijo East — רכבת תחתית/מונית מהמלון."
+        "הליכה/מונית ל־KABIN Koji (Kawaramachi) · ערב קל בהיגאשיאמה / פונטוצ׳ו."
       ],
       "transfer": null,
       "timeline": [
@@ -705,10 +704,6 @@
         {
           "title": "צהריים קל ומנוחה",
           "note": "תנומה אם צריך אחרי האוטובוס."
-        },
-        {
-          "title": "teamLab Biovortex Kyoto",
-          "note": "ה־teamLab הגדול ביפן · כניסה מתוזמנת · להשאיר 2–3 ש׳."
         },
         {
           "title": "טיול שקיעה בגיון",
@@ -817,17 +812,19 @@
       ]
     },
     "d19": {
-      "title": "יום הרים בקורמה וקיבונה",
-      "summary": "קורמה וקיבונה: מקדש הררי, טרק יער, צהריים kawadoko על הנהר, ו־Kurama Onsen.",
-      "food": "צהריים kawadoko מעל הנהר.",
+      "title": "קורמה וקיבונה, ואז teamLab Biovortex",
+      "summary": "בוקר הרים בקורמה/קיבונה עם צהריים kawadoko, חזרה מוקדמת לקיוטו, ואז teamLab Biovortex מתוזמן ליד התחנה (יום חול — לא הגעה ולא סופ״ש).",
+      "food": "צהריים kawadoko מעל הנהר; ארוחת ערב קלה אחרי Biovortex.",
       "tips": [
         "להזמין kawadoko שבועות מראש (Hirobun או Fujiya).",
-        "לאשר שעות פתיחה של Kurama Onsen."
+        "מדלגים על Kurama Onsen היום כדי להספיק Biovortex בימי חול.",
+        "להזמין כרטיסים מתוזמנים ל־Biovortex — סגור בחלק מימי שלישי (15/9 סגור).",
+        "להשאיר 2–3 ש׳ בפנים; כניסה אחרונה לרוב ~19:30."
       ],
       "transport": [
         "Demachiyanagi → Eizan ל־Kurama (~30 דק׳, ~¥430).",
-        "טרק ~45 דק׳ ל־Kibune.",
-        "חזרה מ־Kibuneguchi."
+        "טרק ~45 דק׳ ל־Kibune; חזרה מ־Kibuneguchi.",
+        "teamLab Biovortex ~7 דק׳ מתחנת קיוטו Hachijo East."
       ],
       "transfer": null,
       "timeline": [
@@ -852,12 +849,16 @@
           "note": "דקים מעל הנחל — Hirobun / Fujiya בהזמנה."
         },
         {
-          "title": "Kurama Onsen",
-          "note": "מרחצאות בהר."
+          "title": "חזרה לאזור תחנת קיוטו",
+          "note": "בלי אונסן — חוזרים ל־Biovortex."
         },
         {
-          "title": "חזרה לקיוטו",
-          "note": ""
+          "title": "teamLab Biovortex Kyoto",
+          "note": "ה־teamLab הגדול ביפן · כניסה מתוזמנת בימי חול · 2–3 ש׳."
+        },
+        {
+          "title": "ארוחת ערב ליד התחנה / Kawaramachi",
+          "note": "ערב קל אחרי המוזיאון."
         }
       ]
     },
@@ -867,7 +868,7 @@
       "food": "צהריים ליד Nanzen-ji; takoyaki ו־okonomiyaki ב־Dotonbori.",
       "tips": [
         "צ׳ק־אאוט מ־KABIN Koji למעבר ערב לאוסקה (Apartment Hotel 11 · לילות 15–21/9).",
-        "teamLab כבר בקיוטו (Biovortex ב־11/9) — בלי Botanical Garden באוסקה.",
+        "teamLab כבר בקיוטו (Biovortex ב־שני 14/9) — בלי Botanical Garden באוסקה.",
         "USJ מחר (16/9) — לא להישאר עד מאוחר מדי."
       ],
       "transport": [

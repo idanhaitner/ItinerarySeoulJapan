@@ -365,7 +365,7 @@ def build_bookings(days):
         ("Shibuya Sky sunset", "d08", "לטפל", "נפתח 28 ימים מראש"),
         ("Street Kart Tokyo", "d11", "לטפל", "אתר רשמי / Klook + IDP פיזי"),
         ("teamLab Planets Tokyo", "d09", "לטפל", "4/9 שישי · כרטיס מתוזמן · Toyosu · לא שבת/ראשון"),
-        ("teamLab Biovortex Kyoto", "d16", "לטפל", "11/9 אחה״צ · כרטיס מתוזמן · ~7 דק׳ מתחנת קיוטו · סגור ב־15/9"),
+        ("teamLab Biovortex Kyoto", "d19", "לטפל", "14/9 שני · כרטיס מתוזמן · אחה״צ אחרי קורמה · לא הגעה/לא סופ״ש · סגור ב־15/9"),
         ("Fuji-Q Freepass", "d15", "לטפל", "10/9 · פתיחה ~09:00"),
         ("Changdeokgung Secret Garden", "d03", "לטפל", "סיור מודרך · ticket.uforus.co.kr · שבת 29 באוג׳"),
         ("Unni Guide Center", "d03", "לטפל", "15:00–16:00"),
