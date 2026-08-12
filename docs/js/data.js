@@ -2461,7 +2461,7 @@ window.DAYS = [
     "timeline": [
       {
         "time": "09:15",
-        "title": "Arrive Gyeongbokgung / hanbok",
+        "title": "Arrive Gyeongbokgung palace / hanbok",
         "note": "Get set before the ceremony.",
         "placeId": "gyeongbokgung",
         "category": "culture"
@@ -2537,7 +2537,7 @@ window.DAYS = [
       },
       {
         "time": "10:15",
-        "title": "Changdeokgung & Secret Garden",
+        "title": "Visit Changdeokgung palace & Secret Garden",
         "note": "UNESCO palace — pre-book timed tour.",
         "placeId": "changdeokgung",
         "end": "13:00",
@@ -2702,7 +2702,7 @@ window.DAYS = [
       },
       {
         "time": "19:30",
-        "title": "Jimjilbang",
+        "title": "Visit jimjilbang (Korean spa)",
         "note": "Korean bathhouse complex.",
         "placeId": "jimjilbang",
         "end": "21:30",
@@ -2869,7 +2869,7 @@ window.DAYS = [
       },
       {
         "time": "13:00",
-        "title": "Check-in — Hotel Gracery Shinjuku",
+        "title": "Check-in at Hotel Gracery Shinjuku",
         "note": "Leave luggage (shower later) · Godzilla building.",
         "placeId": "gracery-shinjuku",
         "category": "hotel"
@@ -2967,7 +2967,7 @@ window.DAYS = [
     "timeline": [
       {
         "time": "08:30",
-        "title": "Meiji Jingu",
+        "title": "Visit Meiji Jingu shrine",
         "note": "Forest shrine — quiet path from Harajuku station.",
         "placeId": "meiji-jingu",
         "end": "09:45",
@@ -3095,7 +3095,7 @@ window.DAYS = [
       },
       {
         "time": "11:00",
-        "title": "teamLab Planets Tokyo",
+        "title": "Visit teamLab Planets museum",
         "note": "Water-based digital art in Toyosu — weekday timed tickets.",
         "placeId": "teamlab-planets",
         "end": "14:00",
@@ -3178,7 +3178,7 @@ window.DAYS = [
       },
       {
         "time": "07:45",
-        "title": "Senso-ji & Kaminarimon",
+        "title": "Visit Senso-ji temple & Kaminarimon gate",
         "note": "Temple grounds + Thunder Gate photos before tour groups peak.",
         "placeId": "asakusa",
         "end": "09:15",
@@ -3401,14 +3401,14 @@ window.DAYS = [
       },
       {
         "time": "17:00",
-        "title": "Check-in — Tsukino Yado Sara",
+        "title": "Check-in at ryokan Tsukino Yado Sara",
         "note": "Hakone-Yumoto · private open-air bath rooms · onsen.",
         "placeId": "tsukino-yado-sara",
         "category": "hotel"
       },
       {
         "time": "19:00",
-        "title": "Kaiseki dinner at Sara",
+        "title": "Kaiseki dinner at ryokan Sara",
         "note": "Multi-course dinner at the ryokan.",
         "placeId": "tsukino-yado-sara",
         "category": "hotel"
@@ -3459,7 +3459,7 @@ window.DAYS = [
       },
       {
         "time": "05:30",
-        "title": "Hakone Shrine floating torii at sunrise",
+        "title": "Visit Hakone Shrine floating torii at sunrise",
         "note": "Torii + lake · Fuji if the sky is clear.",
         "placeId": "hakone-shrine",
         "end": "07:15",
@@ -3497,7 +3497,7 @@ window.DAYS = [
       },
       {
         "time": "17:15",
-        "title": "Check-in — HOTEL MYSTAYS Fuji Onsen Resort",
+        "title": "Check-in at hotel MYSTAYS Fuji Onsen Resort",
         "note": "Fujiyoshida · onsen · collect forwarded bags.",
         "placeId": "mystays-fuji-onsen",
         "category": "hotel"
@@ -3628,7 +3628,7 @@ window.DAYS = [
     "timeline": [
       {
         "time": "08:00",
-        "title": "Checkout MYSTAYS & bag prep",
+        "title": "Checkout hotel MYSTAYS & bag prep",
         "note": "Bags ready for Takkyubin to KABIN Koji.",
         "placeId": "mystays-fuji-onsen",
         "category": "hotel"
@@ -3642,7 +3642,7 @@ window.DAYS = [
       },
       {
         "time": "09:00",
-        "title": "Fuji-Q Highland",
+        "title": "Visit Fuji-Q Highland theme park",
         "note": "Full theme-park day from opening.",
         "placeId": "fuji-q",
         "end": "17:30",
@@ -3650,7 +3650,7 @@ window.DAYS = [
       },
       {
         "time": "17:45",
-        "title": "Send bags to KABIN Koji",
+        "title": "Send bags ahead to hotel KABIN Koji",
         "note": "Takkyubin / hotel luggage service — arrive Kyoto ahead of you.",
         "placeId": "mystays-fuji-onsen",
         "category": "hotel"
@@ -3711,7 +3711,7 @@ window.DAYS = [
       },
       {
         "time": "09:00",
-        "title": "Check in — KABIN Koji",
+        "title": "Check-in at hotel KABIN Koji",
         "note": "Kawaramachi base · collect forwarded bags when ready.",
         "placeId": "kabin-koji",
         "category": "hotel"
@@ -3778,7 +3778,7 @@ window.DAYS = [
       },
       {
         "time": "06:30",
-        "title": "Fushimi Inari Taisha",
+        "title": "Visit Fushimi Inari Taisha shrine",
         "note": "Sunrise torii hike.",
         "placeId": "fushimi-inari",
         "end": "09:45",
@@ -3793,7 +3793,7 @@ window.DAYS = [
       },
       {
         "time": "10:30",
-        "title": "Byodo-in",
+        "title": "Visit Byodo-in temple (Phoenix Hall)",
         "note": "Phoenix Hall — iconic Uji temple.",
         "placeId": "byodoin",
         "end": "12:00",
@@ -3824,7 +3824,7 @@ window.DAYS = [
       },
       {
         "time": "16:15",
-        "title": "Kiyomizu-dera",
+        "title": "Visit Kiyomizu-dera temple",
         "note": "Wooden stage temple.",
         "placeId": "kiyomizu",
         "end": "17:30",
@@ -3891,7 +3891,7 @@ window.DAYS = [
       },
       {
         "time": "08:00",
-        "title": "Otagi Nenbutsu-ji",
+        "title": "Visit Otagi Nenbutsu-ji temple",
         "note": "1,200 stone rakan statues.",
         "placeId": "otagi",
         "end": "09:15",
@@ -3899,7 +3899,7 @@ window.DAYS = [
       },
       {
         "time": "09:30",
-        "title": "Adashino Nenbutsu-ji",
+        "title": "Visit Adashino Nenbutsu-ji temple",
         "note": "Quiet stone cemetery with bamboo.",
         "placeId": "adashino",
         "category": "culture"
@@ -3913,7 +3913,7 @@ window.DAYS = [
       },
       {
         "time": "11:15",
-        "title": "Bamboo Grove & Tenryu-ji",
+        "title": "Walk Arashiyama bamboo grove & visit Tenryu-ji temple",
         "note": "Iconic path + Zen garden.",
         "placeId": "bamboo",
         "end": "13:00",
@@ -3999,7 +3999,7 @@ window.DAYS = [
       },
       {
         "time": "09:45",
-        "title": "Hirobun — get in line",
+        "title": "Line up at restaurant Hirobun (nagashi somen)",
         "note": "Walk-in · pay cash ~¥2,000 · numbered fan when reception opens (~10:00).",
         "placeId": "hirobun",
         "end": "10:15",
@@ -4007,7 +4007,7 @@ window.DAYS = [
       },
       {
         "time": "10:15",
-        "title": "Kifune Shrine while waiting",
+        "title": "Visit Kifune Shrine while waiting",
         "note": "Lantern stairs · Yui shrine is next door · come back when called.",
         "placeId": "kifune",
         "end": "11:00",
@@ -4015,7 +4015,7 @@ window.DAYS = [
       },
       {
         "time": "11:00",
-        "title": "Nagashi somen at Hirobun",
+        "title": "Nagashi somen lunch at restaurant Hirobun",
         "note": "Catch noodles in the bamboo flume on the river deck.",
         "placeId": "hirobun",
         "end": "12:00",
@@ -4036,7 +4036,7 @@ window.DAYS = [
       },
       {
         "time": "13:45",
-        "title": "Kurama-dera Temple",
+        "title": "Visit Kurama-dera mountain temple",
         "note": "Mountain temple at the end of the trek.",
         "placeId": "kurama-dera",
         "end": "15:00",
@@ -4051,14 +4051,14 @@ window.DAYS = [
       },
       {
         "time": "17:30",
-        "title": "Leave for Biovortex",
+        "title": "Leave for teamLab Biovortex museum",
         "note": "Hachijo East · ~7 min walk from Kyoto Station.",
         "placeId": "teamlab-biovortex",
         "category": "culture"
       },
       {
         "time": "18:00",
-        "title": "teamLab Biovortex Kyoto",
+        "title": "Visit teamLab Biovortex museum",
         "note": "Booked entry window 18:00–18:30 · allow 2–3h inside.",
         "placeId": "teamlab-biovortex",
         "end": "21:00",
@@ -4103,7 +4103,7 @@ window.DAYS = [
     "timeline": [
       {
         "time": "08:00",
-        "title": "Ginkaku-ji (Silver Pavilion)",
+        "title": "Visit Ginkaku-ji temple (Silver Pavilion)",
         "note": "Morning gardens.",
         "placeId": "ginkakuji",
         "end": "09:30",
@@ -4119,7 +4119,7 @@ window.DAYS = [
       },
       {
         "time": "11:15",
-        "title": "Nanzen-ji & lunch",
+        "title": "Visit Nanzen-ji temple & lunch",
         "note": "Temple + aqueduct.",
         "placeId": "nanzenji",
         "end": "13:00",
@@ -4127,7 +4127,7 @@ window.DAYS = [
       },
       {
         "time": "13:45",
-        "title": "Kinkaku-ji",
+        "title": "Visit Kinkaku-ji temple (Golden Pavilion)",
         "note": "Golden Pavilion before leaving Kyoto.",
         "placeId": "kinkakuji",
         "end": "15:15",
@@ -4141,7 +4141,7 @@ window.DAYS = [
       },
       {
         "time": "17:30",
-        "title": "Check in — Apartment Hotel 11 Shinsaibashi 2",
+        "title": "Check-in at Apartment Hotel 11 Shinsaibashi 2",
         "note": "Higashi-Shinsaibashi · near Dotonbori through 21/9.",
         "placeId": "apt-hotel-11-shinsaibashi",
         "category": "hotel"
@@ -4331,7 +4331,7 @@ window.DAYS = [
       },
       {
         "time": "09:30",
-        "title": "Nara Park & deer",
+        "title": "Visit Nara Park & deer (Todai-ji temple)",
         "note": "Todai-ji Great Buddha.",
         "placeId": "nara-park",
         "end": "13:00",
@@ -4339,7 +4339,7 @@ window.DAYS = [
       },
       {
         "time": "13:15",
-        "title": "Kasuga Taisha",
+        "title": "Visit Kasuga Taisha shrine",
         "note": "Lantern shrine.",
         "placeId": "kasuga",
         "end": "14:30",
@@ -4401,7 +4401,7 @@ window.DAYS = [
       },
       {
         "time": "09:30",
-        "title": "Instant Ramen Museum (Ikeda)",
+        "title": "Visit Instant Ramen Museum (Ikeda)",
         "note": "Make-your-own Cup Noodle if booked; museum walk.",
         "placeId": "ramen-museum",
         "end": "12:00",
@@ -4416,7 +4416,7 @@ window.DAYS = [
       },
       {
         "time": "13:00",
-        "title": "Kuromon Market lunch",
+        "title": "Lunch at Kuromon Market",
         "note": "Osaka’s kitchen — fresh stalls and quick bites.",
         "placeId": "kuromon",
         "end": "15:00",
@@ -4465,7 +4465,7 @@ window.DAYS = [
     "timeline": [
       {
         "time": "10:00",
-        "title": "Osaka Castle Park",
+        "title": "Visit Osaka Castle park",
         "note": "Castle grounds stroll.",
         "placeId": "osaka-castle",
         "end": "12:30",
@@ -4473,7 +4473,7 @@ window.DAYS = [
       },
       {
         "time": "13:00",
-        "title": "Shinsekai & Tsutenkaku",
+        "title": "Walk Shinsekai & visit Tsutenkaku tower",
         "note": "Retro Osaka vibes + lunch.",
         "placeId": "shinsekai",
         "end": "15:30",
@@ -4635,7 +4635,7 @@ window.DAYS = [
       },
       {
         "time": "12:30",
-        "title": "Hotel check-in — Shinjuku",
+        "title": "Check-in at Shinjuku hotel",
         "note": "Final Tokyo hotel · still to book.",
         "placeId": "shinjuku",
         "category": "dining"
@@ -4649,7 +4649,7 @@ window.DAYS = [
       },
       {
         "time": "14:00",
-        "title": "Nakano Broadway",
+        "title": "Browse Nakano Broadway shopping mall",
         "note": "Vintage, collectibles & otaku maze.",
         "placeId": "nakano-broadway",
         "end": "17:30",
@@ -4657,7 +4657,7 @@ window.DAYS = [
       },
       {
         "time": "18:30",
-        "title": "Azabudai Hills / Roppongi",
+        "title": "Visit Azabudai Hills complex / Roppongi",
         "note": "Modern complex wander.",
         "placeId": "azabudai",
         "category": "shopping"
@@ -4744,7 +4744,7 @@ window.DAYS = [
       },
       {
         "time": "14:00",
-        "title": "Toshogu Shrine",
+        "title": "Visit Toshogu Shrine",
         "note": "Ornate UNESCO shrine in the forest.",
         "placeId": "nikko-toshogu",
         "end": "16:15",
@@ -4799,7 +4799,7 @@ window.DAYS = [
       },
       {
         "time": "10:00",
-        "title": "Great Buddha & Hasedera",
+        "title": "Visit Great Buddha & Hasedera temple",
         "note": "Daibutsu + hillside temple.",
         "placeId": "kamakura",
         "end": "13:00",

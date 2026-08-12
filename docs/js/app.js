@@ -518,7 +518,12 @@
               </div>
               <div class="timeline-card">
                 <div class="timeline-title">${escapeHtml(item.title)}</div>
-                ${place ? `<div class="timeline-place">${escapeHtml(place.name)}${place.nameJa ? ` · ${escapeHtml(place.nameJa)}` : ""}</div>` : ""}
+                ${place ? `<div class="timeline-place">${(() => {
+                  const kind = tools.placeKindHe(place);
+                  const kindBit = kind ? `<span class="place-kind">${escapeHtml(kind)}</span><span class="place-kind-sep"> · </span>` : "";
+                  const ja = place.nameJa ? ` · ${escapeHtml(place.nameJa)}` : "";
+                  return `${kindBit}<span class="place-name">${escapeHtml(place.name)}</span>${ja}`;
+                })()}</div>` : ""}
                 ${item.note ? `<p class="timeline-note">${escapeHtml(item.note)}</p>` : ""}
                 ${booking.html}
                 <div class="timeline-actions">

@@ -12,6 +12,36 @@ window.TripTools = (function () {
     return CAT_META[cat] || CAT_META.attraction;
   }
 
+  /** Short Hebrew “what is this place?” label from tags/name. */
+  function placeKindHe(place) {
+    if (!place) return "";
+    const tags = place.tags || [];
+    const name = `${place.name || ""} ${place.nameJa || ""} ${place.blurb || ""}`.toLowerCase();
+    if (tags.includes("hotel") && (tags.includes("onsen") || /ryokan|ריוקאן|宿/.test(name))) {
+      return "ריוקאן";
+    }
+    if (tags.includes("hotel")) return "מלון";
+    if (tags.includes("shrine")) return "מקדש שינטו";
+    if (tags.includes("temple")) return "מקדש";
+    if (tags.includes("market")) return "שוק";
+    if (tags.includes("onsen") && !tags.includes("hotel")) return "אונסן / ספא";
+    if (/teamlab|museum|ミュージアム/.test(name) || (tags.includes("culture") && /museum|teamlab/.test(name))) {
+      if (/teamlab/.test(name)) return "מוזיאון / teamLab";
+    }
+    if (tags.includes("park") && (tags.includes("must-see") || /highland|world|universal|disney|fuji-q/.test(name))) {
+      return "פארק שעשועים";
+    }
+    if (tags.includes("park") || tags.includes("nature")) return "פארק / טבע";
+    if (tags.includes("view") || tags.includes("icon")) return "תצפית / אייקון";
+    if (tags.includes("food") && !tags.includes("neighborhood")) return "אוכל / מסעדה";
+    if (tags.includes("shopping")) return "קניות";
+    if (tags.includes("nightlife")) return "בילוי / לילה";
+    if (tags.includes("neighborhood")) return "שכונה / אזור";
+    if (tags.includes("transport") || tags.includes("airport")) return "תחבורה";
+    if (tags.includes("culture")) return "תרבות / אתר";
+    return "";
+  }
+
   function convert(amount, from, to, rates) {
     const n = Number(amount);
     if (!Number.isFinite(n)) return 0;
@@ -196,5 +226,5 @@ window.TripTools = (function () {
     modal.classList.add("open");
   }
 
-  return { categoryMeta, convert, renderConverter, renderTaxiCards, openTipsModal, hotelTaxiCards };
+  return { categoryMeta, placeKindHe, convert, renderConverter, renderTaxiCards, openTipsModal, hotelTaxiCards };
 })();

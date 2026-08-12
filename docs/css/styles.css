@@ -2215,6 +2215,16 @@ a { color: inherit; }
   font-weight: 500;
 }
 
+.timeline-place .place-kind {
+  font-weight: 700;
+  color: color-mix(in srgb, var(--navy) 70%, var(--seal));
+}
+
+.timeline-place .place-kind-sep {
+  opacity: 0.55;
+  font-weight: 400;
+}
+
 .timeline-note {
   margin: 0;
   color: var(--muted);
