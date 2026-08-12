@@ -109,7 +109,8 @@ window.TRIP = {
     "Route: Tel Aviv → Seoul → Tokyo → Hakone → Kawaguchiko → Kyoto → Osaka (+ Kobe day) → Tokyo → Tirana (via Dubai).",
     "Outbound booked: ET0419 + ET0672 (26–27 Aug).",
     "Seoul→Tokyo booked: Air Premia YP7321 (2 Sep · ICN 08:50 → NRT 11:20).",
-    "Sep 5: Tsukiji + teamLab Planets + Odaiba + Ginza.",
+    "Sep 4: Tsukiji + teamLab Planets (weekday) + Odaiba + Ginza.",
+    "Sep 5: Asakusa + Skytree + Akihabara.",
     "Sep 6: Street Kart + Inokashira/Kichijoji + Shimokitazawa (IDP required).",
     "Sep 11: Fushimi Inari + Uji (Byodo-in / matcha) + Nishiki.",
     "Sep 15: Kyoto zen morning → Osaka evening (Dotonbori). teamLab Biovortex is on 11/9 in Kyoto.",
@@ -3034,6 +3035,74 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": "gracery-shinjuku",
+    "title": "Tsukiji, teamLab Planets, Odaiba & Ginza",
+    "summary": "Weekday plan for fewer crowds: seafood graze at Tsukiji Outer Market, timed teamLab Planets in Toyosu, Odaiba Gundam + waterfront, then a long Ginza evening of depachika, flagship stores and dinner.",
+    "food": "Tsukiji sushi/seafood breakfast; Ginza depachika snacks + dinner.",
+    "placeIds": [
+      "tsukiji",
+      "teamlab-planets",
+      "odaiba",
+      "ginza"
+    ],
+    "transport": [
+      "Tsukiji early.",
+      "Yurikamome/Rinkai Toyosu → Odaiba.",
+      "Yurikamome or subway back toward Ginza."
+    ],
+    "tips": [
+      "Timed tickets for teamLab Planets — book a weekday slot (avoid Sat/Sun sell-outs).",
+      "Some rooms have water — wear shorts you can roll up / bring a small towel.",
+      "Ginza: Mitsukoshi/Ginza Six depachika, Uniqlo Tokyo flagship, Itoya stationery."
+    ],
+    "timeline": [
+      {
+        "time": "07:30",
+        "title": "Tsukiji Outer Market breakfast",
+        "note": "Sushi, tamago, fresh seafood stalls — arrive hungry.",
+        "placeId": "tsukiji",
+        "end": "10:00",
+        "category": "dining"
+      },
+      {
+        "time": "11:00",
+        "title": "teamLab Planets Tokyo",
+        "note": "Water-based digital art in Toyosu — weekday timed tickets.",
+        "placeId": "teamlab-planets",
+        "end": "14:00",
+        "category": "culture"
+      },
+      {
+        "time": "14:30",
+        "title": "Odaiba waterfront & Gundam",
+        "note": "DiverCity Gundam, bay promenade, Rainbow Bridge views.",
+        "placeId": "odaiba",
+        "end": "17:00",
+        "category": "shopping"
+      },
+      {
+        "time": "17:30",
+        "title": "Ginza arrival — depachika & flagships",
+        "note": "Basement food halls + Uniqlo / Itoya / Ginza Six.",
+        "placeId": "ginza",
+        "end": "19:30",
+        "category": "dining"
+      },
+      {
+        "time": "19:45",
+        "title": "Ginza dinner",
+        "note": "Sushi, tempura, or department-store restaurants upstairs.",
+        "placeId": "ginza",
+        "category": "transit"
+      }
+    ]
+  },
+  {
+    "id": "d10",
+    "date": "2026-09-05",
+    "weekday": "Saturday",
+    "city": "Tokyo",
+    "country": "JP",
+    "hotelId": "gracery-shinjuku",
     "title": "Asakusa, Kappabashi, Skytree & Akihabara",
     "summary": "Old-east Tokyo day: early Senso-ji & Nakamise, Kappabashi kitchen street, Sumida riverside to Skytree/Solamachi, then Akihabara arcades and anime floors ending with izakaya.",
     "food": "Nakamise snacks mid-morning; Solamachi or Ameyoko-style grazing; izakaya in Akihabara / Kanda.",
@@ -3050,7 +3119,7 @@ window.DAYS = [
       "JR/subway to Akihabara (or hop via Ueno/Ameyoko)."
     ],
     "tips": [
-      "Senso-ji before 8:30 if you want fewer crowds.",
+      "Senso-ji before 8:30 if you want fewer crowds (Saturday gets busy fast).",
       "Kappabashi: plastic food samples + kitchen knives (check luggage rules).",
       "Skytree ticket optional — Solamachi mall + exterior views are free.",
       "Optional detour: Ueno Park + Ameyoko before Akihabara if you want street-food market energy."
@@ -3118,84 +3187,6 @@ window.DAYS = [
         "note": "Casual dinner + one more night in east Tokyo.",
         "placeId": "akihabara",
         "category": "dining"
-      }
-    ]
-  },
-  {
-    "id": "d10",
-    "date": "2026-09-05",
-    "weekday": "Saturday",
-    "city": "Tokyo",
-    "country": "JP",
-    "hotelId": "gracery-shinjuku",
-    "title": "Tsukiji, teamLab Planets, Odaiba & Ginza",
-    "summary": "Seafood graze at Tsukiji Outer Market, timed teamLab Planets in Toyosu, Odaiba Gundam + waterfront, then a long Ginza evening of depachika, flagship stores and dinner.",
-    "food": "Tsukiji sushi/seafood breakfast; Ginza depachika snacks + dinner.",
-    "placeIds": [
-      "tsukiji",
-      "teamlab-planets",
-      "odaiba",
-      "ginza",
-      "imperial-east"
-    ],
-    "transport": [
-      "Tsukiji early.",
-      "Yurikamome/Rinkai Toyosu → Odaiba.",
-      "Yurikamome or subway back toward Ginza."
-    ],
-    "tips": [
-      "Timed tickets required for teamLab Planets.",
-      "Some rooms have water — wear shorts you can roll up / bring a small towel.",
-      "If teamLab is later: optional Imperial Palace East Gardens after Tsukiji (closed Mon/Fri).",
-      "Ginza: Mitsukoshi/Ginza Six depachika, Uniqlo Tokyo flagship, Itoya stationery."
-    ],
-    "timeline": [
-      {
-        "time": "07:30",
-        "title": "Tsukiji Outer Market breakfast",
-        "note": "Sushi, tamago, fresh seafood stalls — arrive hungry.",
-        "placeId": "tsukiji",
-        "end": "10:00",
-        "category": "dining"
-      },
-      {
-        "time": "10:15",
-        "title": "Optional Imperial Palace East Gardens",
-        "note": "Only if teamLab slot is afternoon and gardens are open — quiet lawns.",
-        "placeId": "imperial-east",
-        "end": "11:15",
-        "category": "culture"
-      },
-      {
-        "time": "11:30",
-        "title": "teamLab Planets Tokyo",
-        "note": "Water-based digital art in Toyosu — timed tickets.",
-        "placeId": "teamlab-planets",
-        "end": "14:30",
-        "category": "culture"
-      },
-      {
-        "time": "15:00",
-        "title": "Odaiba waterfront & Gundam",
-        "note": "DiverCity Gundam, bay promenade, Rainbow Bridge views.",
-        "placeId": "odaiba",
-        "end": "17:00",
-        "category": "shopping"
-      },
-      {
-        "time": "17:30",
-        "title": "Ginza arrival — depachika & flagships",
-        "note": "Basement food halls + Uniqlo / Itoya / Ginza Six.",
-        "placeId": "ginza",
-        "end": "19:30",
-        "category": "dining"
-      },
-      {
-        "time": "19:45",
-        "title": "Ginza dinner",
-        "note": "Sushi, tempura, or department-store restaurants upstairs.",
-        "placeId": "ginza",
-        "category": "transit"
       }
     ]
   },

@@ -48,8 +48,8 @@ window.CHECKLIST = {
         },
         {
           id: "j-teamlab-planets",
-          label: "teamLab Planets Tokyo (05/9) — כרטיסים מתוזמנים באתר / Klook",
-          window: "להזמין בהקדם · Toyosu",
+          label: "teamLab Planets Tokyo (04/9 · שישי) — כרטיסים מתוזמנים באתר / Klook · לא שבת/ראשון",
+          window: "להזמין בהקדם · Toyosu · יום חול",
           priority: "high",
         },
         {

@@ -364,7 +364,7 @@ def build_bookings(days):
         ("USJ Express Pass 7 Minecart & Selection", "d21", "הוזמן", "16/9 · SNW 09:20–10:20 · Mario 09:20–09:50 · Yoshi 09:50–10:20 · Mine Cart 10:20–10:50 · Hippogriff 18:30–19:00 · HP Anytime · Choice A/B"),
         ("Shibuya Sky sunset", "d08", "לטפל", "נפתח 28 ימים מראש"),
         ("Street Kart Tokyo", "d11", "לטפל", "אתר רשמי / Klook + IDP פיזי"),
-        ("teamLab Planets Tokyo", "d10", "לטפל", "כרטיס מתוזמן · Toyosu"),
+        ("teamLab Planets Tokyo", "d09", "לטפל", "4/9 שישי · כרטיס מתוזמן · Toyosu · לא שבת/ראשון"),
         ("teamLab Biovortex Kyoto", "d16", "לטפל", "11/9 אחה״צ · כרטיס מתוזמן · ~7 דק׳ מתחנת קיוטו · סגור ב־15/9"),
         ("Fuji-Q Freepass", "d15", "לטפל", "10/9 · פתיחה ~09:00"),
         ("Changdeokgung Secret Garden", "d03", "לטפל", "סיור מודרך · ticket.uforus.co.kr · שבת 29 באוג׳"),

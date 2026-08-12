@@ -409,11 +409,49 @@
       ]
     },
     "d09": {
+      "title": "צוקיג׳י, teamLab Planets, אודאיבה וג׳ינזה",
+      "summary": "יום חול לפחות עומס: ארוחת בוקר פירות ים ב־Tsukiji, teamLab Planets מתוזמן בטויוסו, גאנדאם וטיילת אודאיבה, ואז ערב ארוך בג׳ינזה.",
+      "food": "סושי / פירות ים ב־Tsukiji; נשנושי depachika וארוחת ערב בג׳ינזה.",
+      "tips": [
+        "כרטיסים מתוזמנים ל־teamLab Planets — לבחור סלוט בימי חול (לא שבת/ראשון).",
+        "מכנסיים שאפשר להפשיל / מגבת קטנה — יש חדרים עם מים.",
+        "בג׳ינזה: Mitsukoshi/Ginza Six depachika, Uniqlo Tokyo, Itoya."
+      ],
+      "transport": [
+        "Tsukiji מוקדם.",
+        "Yurikamome/Rinkai טויוסו → אודאיבה.",
+        "Yurikamome או תחתית חזרה לג׳ינזה."
+      ],
+      "transfer": null,
+      "timeline": [
+        {
+          "title": "ארוחת בוקר בשוק החיצוני Tsukiji",
+          "note": "סושי, טמאגו ודוכני פירות ים — להגיע רעבים"
+        },
+        {
+          "title": "teamLab Planets Tokyo",
+          "note": "אמנות דיגיטלית במים בטויוסו — כרטיס עם שעה בימי חול"
+        },
+        {
+          "title": "טיילת Odaiba ו־Gundam",
+          "note": "גאנדאם ב־DiverCity, טיילת מפרץ ונופי Rainbow Bridge"
+        },
+        {
+          "title": "הגעה לג׳ינזה — depachika וחנויות דגל",
+          "note": "אולמות אוכל במרתף + Uniqlo / Itoya / Ginza Six"
+        },
+        {
+          "title": "ארוחת ערב בג׳ינזה",
+          "note": "סושי, טמפורה או מסעדות בכלבו"
+        }
+      ]
+    },
+    "d10": {
       "title": "אסקוסה, Kappabashi, Skytree ואקיהברה",
       "summary": "יום מזרח טוקיו הקלאסי: Senso-ji ו־Nakamise מוקדם, רחוב כלי המטבח Kappabashi, טיילת Sumida ל־Skytree/Solamachi, ואז אולמות אנימה וארקייד באקיהברה עם izakaya.",
       "food": "נשנושים ב־Nakamise; Solamachi או Ameyoko; ערב ב־izakaya באקיהברה / קנדה.",
       "tips": [
-        "Senso-ji לפני 8:30 אם רוצים פחות קהל.",
+        "Senso-ji לפני 8:30 אם רוצים פחות קהל (שבת מתמלאת מהר).",
         "ב־Kappabashi: אוכל פלסטיק וסכיני מטבח (לבדוק כללי מזוודה).",
         "כרטיס למגדל Skytree אופציונלי — הקניון Solamachi והחוץ חינמיים.",
         "אופציה: Ueno Park + Ameyoko לפני אקיהברה אם רוצים שוק רחוב."
@@ -456,49 +494,6 @@
         {
           "title": "ארוחת ערב ב־izakaya — Akihabara או Kanda",
           "note": "ערב קז׳ואלי במזרח טוקיו"
-        }
-      ]
-    },
-    "d10": {
-      "title": "צוקיג׳י, teamLab Planets, אודאיבה וג׳ינזה",
-      "summary": "ארוחת בוקר פירות ים ב־Tsukiji, teamLab Planets מתוזמן בטויוסו, גאנדאם וטיילת אודאיבה, ואז ערב ארוך בג׳ינזה: depachika, חנויות דגל וארוחת ערב.",
-      "food": "סושי / פירות ים ב־Tsukiji; נשנושי depachika וארוחת ערב בג׳ינזה.",
-      "tips": [
-        "כרטיסים מתוזמנים ל־teamLab Planets.",
-        "מכנסיים שאפשר להפשיל / מגבת קטנה — יש חדרים עם מים.",
-        "אם הסלוט של teamLab מאוחר: גני הארמון המזרחיים אחרי צוקיג׳י (סגורים שני/שישי).",
-        "בג׳ינזה: Mitsukoshi/Ginza Six depachika, Uniqlo Tokyo, Itoya."
-      ],
-      "transport": [
-        "Tsukiji מוקדם.",
-        "Yurikamome/Rinkai טויוסו → אודאיבה.",
-        "Yurikamome או תחתית חזרה לג׳ינזה."
-      ],
-      "transfer": null,
-      "timeline": [
-        {
-          "title": "ארוחת בוקר בשוק החיצוני Tsukiji",
-          "note": "סושי, טמאגו ודוכני פירות ים — להגיע רעבים"
-        },
-        {
-          "title": "גני הארמון המזרחיים (אופציונלי)",
-          "note": "רק אם הסלוט של teamLab אחר־צהריים והגנים פתוחים"
-        },
-        {
-          "title": "teamLab Planets Tokyo",
-          "note": "אמנות דיגיטלית במים בטויוסו — כרטיס עם שעה"
-        },
-        {
-          "title": "טיילת Odaiba ו־Gundam",
-          "note": "גאנדאם ב־DiverCity, טיילת מפרץ ונופי Rainbow Bridge"
-        },
-        {
-          "title": "הגעה לג׳ינזה — depachika וחנויות דגל",
-          "note": "אולמות אוכל במרתף + Uniqlo / Itoya / Ginza Six"
-        },
-        {
-          "title": "ארוחת ערב בג׳ינזה",
-          "note": "סושי, טמפורה או מסעדות בכלבו"
         }
       ]
     },
