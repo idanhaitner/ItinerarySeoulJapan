@@ -24,7 +24,7 @@ window.CHECKLIST = {
         {
           id: "j-usj-studio",
           label: "USJ (16/9) — Studio Pass (כרטיס כניסה רגיל) · חובה בנפרד מה־Express",
-          window: "עכשיו · נשאר רק זה אחרי שה־Express כבר סגור",
+          window: "עכשיו · חובה בנפרד מה־Express",
           priority: "critical",
           linkPlaceIds: ["usj"],
         },
@@ -116,7 +116,7 @@ window.CHECKLIST = {
       items: [
         {
           id: "hk-romancecar",
-          label: "Romancecar שינג׳וקו ← הקונה (07/9) — כרטיס + Reserved Seat · לנסות Observation Deck קדמי",
+          label: "Romancecar שינג׳וקו ← הקונה (07/9) — כרטיס + Reserved Seat · לנסות Observation Car קדמי",
           window: "להזמין בהקדם",
           priority: "high",
           linkTitles: ["Romancecar", "Odakyu Romancecar"],
@@ -265,7 +265,7 @@ window.CHECKLIST = {
         },
         { id: "hk-onsen-etiquette", label: "בדיקת כללי אונסן במלון הקונה", window: "לפני הצ׳ק־אין", priority: "low" },
         { id: "s-jimjilbang", label: "ג׳ימג׳ילבאנג ליד Jamsil אחרי לוטה", window: "31 באוג׳ בערב", priority: "low" },
-        { id: "ky-fushimi", label: "יציאה מוקדמת ל־Fushimi Inari + יום מאצ'ה באוג'י (Byodo-in)", window: "11 בספט׳", priority: "low" },
+        { id: "ky-fushimi", label: "יציאה מוקדמת ל־Fushimi Inari + יום מאצ'ה באוג'י (Byodo-in)", window: "12 בספט׳", priority: "low" },
         { id: "ky-bags", label: "איסוף מזוודות Takkyubin בקיוטו (הגיעו מקוואגוצ׳יקו)", window: "בהגעה 11/9", priority: "medium" },
         { id: "kw-chureito", label: "זריחה בצ׳ורייטו + לוסון פוג׳י", window: "9 בספט׳ מוקדם", priority: "low" },
       ],

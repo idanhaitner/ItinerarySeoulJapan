@@ -1,7 +1,7 @@
 /* Auto-generated trip data — Seoul + Japan detailed timelines */
 window.TRIP = {
   "title": "Korea + Japan 2026",
-  "subtitle": "Idan & Shahar itinerary (dad's Excel was inspiration only)",
+  "subtitle": "Idan & Shahar itinerary",
   "dates": "August 26 – September 25, 2026",
   "route": [
     "Seoul",
@@ -632,7 +632,7 @@ window.PLACES = {
     ],
     "lat": 35.6906,
     "lng": 139.6921,
-    "blurb": "Dad's stay idea near Shinjuku — not booked for our trip."
+    "blurb": "Near Shinjuku — not on this itinerary."
   },
   "narita": {
     "id": "narita",
@@ -674,7 +674,7 @@ window.PLACES = {
     ],
     "lat": 35.6595,
     "lng": 139.7005,
-    "blurb": "Scramble + Hachiko."
+    "blurb": "Scramble crossing + Hachiko — classic Tokyo icon."
   },
   "meiji-jingu": {
     "id": "meiji-jingu",
@@ -689,7 +689,7 @@ window.PLACES = {
     ],
     "lat": 35.6764,
     "lng": 139.6993,
-    "blurb": "Forest shrine."
+    "blurb": "Quiet Shinto shrine in a forest near Harajuku — best early."
   },
   "takeshita": {
     "id": "takeshita",
@@ -740,12 +740,12 @@ window.PLACES = {
     "city": "Tokyo",
     "country": "JP",
     "tags": [
-      "must-see",
-      "park"
+      "park",
+      "inspiration"
     ],
     "lat": 35.6267,
     "lng": 139.8851,
-    "blurb": "Unique Disney park."
+    "blurb": "Unique Disney park — not on this itinerary."
   },
   "asakusa": {
     "id": "asakusa",
@@ -788,7 +788,7 @@ window.PLACES = {
     ],
     "lat": 35.7101,
     "lng": 139.8107,
-    "blurb": "634m tower."
+    "blurb": "634m tower + Solamachi mall; deck ticket optional."
   },
   "tsukiji": {
     "id": "tsukiji",
@@ -916,7 +916,7 @@ window.PLACES = {
     ],
     "lat": 35.7023,
     "lng": 139.7745,
-    "blurb": "Arcades & anime."
+    "blurb": "Arcades, Animate, and anime floors — good izakaya evening."
   },
   "golden-gai": {
     "id": "golden-gai",
@@ -987,7 +987,7 @@ window.PLACES = {
     ],
     "lat": 35.2335,
     "lng": 139.0885,
-    "blurb": "Dad's Hakone ryokan idea — not booked for our trip."
+    "blurb": "Hakone ryokan — not on this itinerary."
   },
   "tsukino-yado-sara": {
     "id": "tsukino-yado-sara",
@@ -1188,7 +1188,7 @@ window.PLACES = {
     ],
     "lat": 35.0037,
     "lng": 135.7685,
-    "blurb": "Dad's Kyoto stay idea near Kawaramachi — not booked for our trip."
+    "blurb": "Near Kawaramachi — not on this itinerary."
   },
   "kenninji": {
     "id": "kenninji",
@@ -1232,7 +1232,7 @@ window.PLACES = {
     ],
     "lat": 35.0037,
     "lng": 135.7788,
-    "blurb": "Geisha district."
+    "blurb": "Geisha district lanes — respectful photos at dusk."
   },
   "pontocho": {
     "id": "pontocho",
@@ -1499,7 +1499,7 @@ window.PLACES = {
     ],
     "lat": 35.1181,
     "lng": 135.7709,
-    "blurb": "Start of forest trek."
+    "blurb": "Mountain temple at the end of the Kibune→Kurama forest trek."
   },
   "kifune": {
     "id": "kifune",
@@ -1611,7 +1611,7 @@ window.PLACES = {
     ],
     "lat": 34.3927,
     "lng": 132.4553,
-    "blurb": "Dad's Hiroshima hotel idea — inspiration only; not on our itinerary."
+    "blurb": "Hiroshima hotel — not on this itinerary."
   },
   "shukkeien": {
     "id": "shukkeien",
@@ -1770,7 +1770,7 @@ window.PLACES = {
     ],
     "lat": 34.6693,
     "lng": 135.5013,
-    "blurb": "Dad's Osaka stay idea near Namba — not booked for our trip."
+    "blurb": "Near Namba — not on this itinerary."
   },
   "kuromon": {
     "id": "kuromon",
@@ -1798,7 +1798,7 @@ window.PLACES = {
     ],
     "lat": 34.6873,
     "lng": 135.5262,
-    "blurb": "Castle + park."
+    "blurb": "Castle in a large park — good morning stop before Shinsekai."
   },
   "teamlab-botanical": {
     "id": "teamlab-botanical",
@@ -1807,13 +1807,13 @@ window.PLACES = {
     "city": "Osaka",
     "country": "JP",
     "tags": [
-      "must-see",
       "culture",
-      "park"
+      "park",
+      "inspiration"
     ],
     "lat": 34.6119,
     "lng": 135.5236,
-    "blurb": "Night digital art in Nagai Botanical Garden — book timed tickets."
+    "blurb": "Night digital art in Nagai — not on this itinerary (Biovortex in Kyoto instead)."
   },
   "dotonbori": {
     "id": "dotonbori",
@@ -1842,7 +1842,7 @@ window.PLACES = {
     ],
     "lat": 34.6654,
     "lng": 135.4323,
-    "blurb": "Express Pass 7 Minecart & Selection on 16/9 — timed SNW morning + Harry Potter + Choice A/B + Hippogriff evening."
+    "blurb": "Full park day 16/9 with Express Pass 7 — SNW morning windows, Harry Potter, Choice A/B, evening Hippogriff."
   },
   "nara-park": {
     "id": "nara-park",
@@ -1926,7 +1926,7 @@ window.PLACES = {
     ],
     "lat": 35.6695,
     "lng": 139.7668,
-    "blurb": "Dad's Tokyo return stay idea — not booked for our trip."
+    "blurb": "Ginza hotel — not on this itinerary."
   },
   "ryogoku": {
     "id": "ryogoku",
@@ -2070,7 +2070,7 @@ window.PLACES = {
     ],
     "lat": 34.6728,
     "lng": 135.4985,
-    "blurb": "Youth fashion & casual dinner area."
+    "blurb": "Youth fashion and easy dinner near Shinsaibashi."
   },
   "roppongi": {
     "id": "roppongi",
@@ -2817,12 +2817,10 @@ window.DAYS = [
       "All evening stops walkable from the hotel."
     ],
     "tips": [
-      "Booked: Air Premia YP7321 · ICN 08:50 → NRT 11:20 (T2).",
-      "Be at ICN ~06:30–07:00 (international).",
-      "Some boards list this route as YP731 — match your ticket/boarding pass.",
+      "Air Premia YP7321 · ICN 08:50 → NRT 11:20 (T2). Be at ICN ~06:30–07:00.",
+      "Some boards list this route as YP731 — match your ticket.",
       "Set up Suica/Pasmo on arrival.",
-      "Hotel Gracery Shinjuku · Kabukicho 1-19-1 · nights 2–6/9 · checkout morning 7/9.",
-      "Priority after bags: Shinjuku Gyoen — Sep last entry ~16:30, closes 17:00. Do NOT lunch first.",
+      "After bags: go straight to Shinjuku Gyoen (last entry ~16:30, closes 17:00). Lunch after.",
       "Tocho South Observatory is free (closed every other Monday)."
     ],
     "timeline": [
@@ -3202,7 +3200,7 @@ window.DAYS = [
     "country": "JP",
     "hotelId": "gracery-shinjuku",
     "title": "Kichijoji, Shimokitazawa & night Street Kart",
-    "summary": "Easy west-Tokyo Sunday: Inokashira + Harmonica lunch in Kichijoji, vintage Shimokitazawa afternoon, early dinner near Shibuya, then night Street Kart through neon (~19:00) — cooler and cooler than daytime.",
+    "summary": "Easy west-Tokyo Sunday: Inokashira and Harmonica lunch in Kichijoji, vintage Shimokitazawa afternoon, early dinner near Shibuya, then night Street Kart through neon (~19:00).",
     "food": "Lunch in Harmonica Yokocho / Kichijoji; early dinner near Shibuya (ramen, tonkatsu, sushi, or yakiniku); light snack after kart if needed.",
     "placeIds": [
       "inokashira",
@@ -3216,11 +3214,10 @@ window.DAYS = [
       "Evening: head to Street Kart shop (often Shibuya) — arrive 30 min before the slot."
     ],
     "tips": [
-      "Book a NIGHT Street Kart slot ~19:00 (city lights) — evening tours run until ~22:00.",
-      "Physical International Driving Permit required — photocopy is not accepted.",
-      "Confirm meetup shop the night before; Shibuya shop is great for neon.",
-      "Cut on purpose: Daikanyama + Nakameguro — soft day, then kart as the finale.",
-      "New York Bar (Park Hyatt) reopened Dec 2025 — save for another Shinjuku night if you want it."
+      "Book a night Street Kart slot ~19:00 — evening tours run until ~22:00.",
+      "Physical International Driving Permit required — photocopies not accepted.",
+      "Confirm the meetup shop the night before; Shibuya works well for neon.",
+      "Keep the day light so the kart is the evening highlight."
     ],
     "timeline": [
       {
@@ -3264,7 +3261,7 @@ window.DAYS = [
       {
         "time": "19:00",
         "title": "Night Street Kart Tokyo",
-        "note": "Neon streets at night — the fun version.",
+        "note": "Neon streets at night.",
         "placeId": "street-kart",
         "end": "21:00",
         "category": "attraction"
@@ -3373,9 +3370,8 @@ window.DAYS = [
       "mystays-fuji-onsen"
     ],
     "transport": [
-      "Early bus/walk to Hakone Shrine / Motohakone for sunrise.",
-      "Pirate ship on Lake Ashi after the shrine.",
-      "Afternoon bus to Gotemba Premium Outlets, then Fujikyu / highway bus to Kawaguchiko."
+      "Early transfer to Motohakone for Hakone Shrine sunrise.",
+      "Lake Ashi pirate ship, then afternoon bus to Gotemba Premium Outlets and on to Kawaguchiko."
     ],
     "tips": [
       "Sunrise ~05:30 in early Sep — leave the ryokan with warm layers.",
@@ -3461,7 +3457,7 @@ window.DAYS = [
     "country": "JP",
     "hotelId": "mystays-fuji-onsen",
     "title": "Fuji sunrise, Lawson & sightseeing loop",
-    "summary": "Sunrise at Chureito Pagoda, the famous Lawson Fuji shot, then Kawaguchiko tourist sightseeing buses / Fuji viewpoint loop for photos — a pure Fuji day. Sleep early at MYSTAYS.",
+    "summary": "Sunrise at Chureito Pagoda, the Lawson Fuji photo stop, then Kawaguchiko sightseeing buses and north-shore viewpoints. Sleep early at MYSTAYS.",
     "food": "Café / lakeside lunch; early dinner.",
     "placeIds": [
       "chureito",
@@ -3529,7 +3525,7 @@ window.DAYS = [
       {
         "time": "18:30",
         "title": "Early dinner & early night at MYSTAYS",
-        "note": "Rest for Fuji-Q rope-drop tomorrow.",
+        "note": "Rest for an early Fuji-Q start tomorrow.",
         "placeId": "mystays-fuji-onsen",
         "category": "hotel"
       }
@@ -3556,9 +3552,8 @@ window.DAYS = [
     "tips": [
       "Wake ~08:00 for park opening.",
       "Do-Dodonpa / Takabisha are the headline coasters.",
-      "Same-day Takkyubin / luggage service: send bags from MYSTAYS so they arrive at KABIN Koji.",
-      "Book the overnight bus in advance — reserved seats.",
-      "No hotel night on 10/9 — sleep on the bus; KABIN Koji from 11/9."
+      "Same-day Takkyubin: send bags from MYSTAYS to KABIN Koji.",
+      "Overnight bus is reserved seats — sleep on the bus; KABIN Koji from 11/9."
     ],
     "timeline": [
       {
@@ -3633,8 +3628,8 @@ window.DAYS = [
     ],
     "tips": [
       "KABIN Koji nights: 11/9 evening → 15/9 evening · 152 Sujiyacho, Shimogyo.",
-      "Collect Takkyubin bags at the hotel if they beat you there.",
-      "Keep the day light after the overnight bus — teamLab Biovortex is Monday 14/9.",
+      "Collect Takkyubin bags at the hotel if they arrive first.",
+      "Keep the day light after the overnight bus.",
       "Respectful photos in Gion."
     ],
     "timeline": [
@@ -3763,7 +3758,7 @@ window.DAYS = [
       {
         "time": "19:45",
         "title": "Dinner",
-        "note": "",
+        "note": "Near Nishiki / Kawaramachi.",
         "category": "dining"
       }
     ]
@@ -3807,14 +3802,14 @@ window.DAYS = [
       {
         "time": "09:30",
         "title": "Adashino Nenbutsu-ji",
-        "note": "",
+        "note": "Quiet stone cemetery with bamboo.",
         "placeId": "adashino",
         "category": "culture"
       },
       {
         "time": "10:30",
         "title": "Saga Toriimoto Street",
-        "note": "",
+        "note": "Preserved thatched-roof lane.",
         "placeId": "saga-toriimoto",
         "category": "attraction"
       },
@@ -3837,7 +3832,7 @@ window.DAYS = [
       {
         "time": "15:00",
         "title": "Togetsukyo Bridge",
-        "note": "",
+        "note": "Classic Arashiyama river bridge.",
         "placeId": "togetsukyo",
         "category": "attraction"
       },
@@ -3852,7 +3847,7 @@ window.DAYS = [
       {
         "time": "19:00",
         "title": "Central Kyoto dinner",
-        "note": "",
+        "note": "Kawaramachi / Pontocho area.",
         "category": "dining"
       }
     ]
@@ -3879,10 +3874,9 @@ window.DAYS = [
       "teamLab Biovortex ~7 min from Kyoto Station Hachijo East — be there before 18:00."
     ],
     "tips": [
-      "Nagashi somen = walk-in only (no booking) · cash ~¥2,000 · aim to be at Hirobun ~09:45–10:00 for the numbered fan.",
-      "Monday helps — weekend waits can be 3h+. If raining at 10:00, somen is cancelled → casual Kibune lunch or return to Kyoto.",
-      "Nagashi somen at Hirobun; Biovortex entry is booked 18:00–18:30.",
-      "Booked: teamLab Biovortex · 14/9 · entry window 18:00–18:30 · allow ~2–3h inside · save QR offline."
+      "Nagashi somen is walk-in only · cash ~¥2,000 · aim for Hirobun ~09:45–10:00 for the numbered fan.",
+      "Monday helps — weekend waits can exceed 3h. Rain at 10:00 cancels somen → lunch in Kibune or return to Kyoto.",
+      "Biovortex booked 18:00–18:30 · allow 2–3h inside · save QR offline."
     ],
     "timeline": [
       {
@@ -3999,9 +3993,8 @@ window.DAYS = [
       "Afternoon/evening JR Kyoto → Osaka (~30–45m)."
     ],
     "tips": [
-      "Checkout KABIN Koji for evening move to Osaka (Apartment Hotel 11 · nights 15–21/9).",
-      "teamLab Biovortex booked 14/9 18:00–18:30 in Kyoto.",
-      "USJ is tomorrow (16/9) — don’t stay out too late."
+      "Checkout KABIN Koji for the evening move to Osaka (Apartment Hotel 11 · nights 15–21/9).",
+      "USJ is tomorrow (16/9) — keep the evening moderate."
     ],
     "timeline": [
       {
@@ -4209,7 +4202,7 @@ window.DAYS = [
     "hotelId": "apt-hotel-11-shinsaibashi",
     "title": "Nara deer park day trip",
     "summary": "Day trip to Nara for deer park, Todai-ji and Kasuga Taisha; evening back in Shinsaibashi and Amerikamura.",
-    "food": "Nara lunch; Amerikamura casual dinner.",
+    "food": "Nara lunch; Amerikamura dinner.",
     "placeIds": [
       "nara-park",
       "kasuga",
@@ -4228,7 +4221,7 @@ window.DAYS = [
       {
         "time": "08:30",
         "title": "Train to Nara",
-        "note": "",
+        "note": "Kintetsu or JR · ~45 minutes from Osaka.",
         "placeId": "nara-park",
         "category": "transit"
       },
@@ -4251,20 +4244,20 @@ window.DAYS = [
       {
         "time": "15:00",
         "title": "Return to Osaka",
-        "note": "",
-        "category": "attraction"
+        "note": "Train back toward Shinsaibashi.",
+        "category": "transit"
       },
       {
         "time": "17:30",
         "title": "Shinsaibashi shopping",
-        "note": "",
+        "note": "Main arcade near the hotel.",
         "placeId": "shinsaibashi",
         "category": "shopping"
       },
       {
         "time": "19:30",
         "title": "Dinner in Amerikamura",
-        "note": "",
+        "note": "Youth fashion streets + easy dinner.",
         "placeId": "amerikamura",
         "category": "dining"
       }
@@ -4278,8 +4271,8 @@ window.DAYS = [
     "country": "JP",
     "hotelId": "apt-hotel-11-shinsaibashi",
     "title": "Osaka markets & Cup Noodle day",
-    "summary": "Local Osaka day — Instant Ramen Museum in Ikeda, Kuromon Market, Tenjinbashi arcade, evening around Hozenji / Dotonbori. No Hiroshima.",
-    "food": "Kuromon snacks; casual dinner near Dotonbori.",
+    "summary": "Local Osaka day: Instant Ramen Museum in Ikeda, Kuromon Market, Tenjinbashi arcade, evening around Hozenji and Dotonbori.",
+    "food": "Kuromon snacks; dinner near Dotonbori.",
     "placeIds": [
       "ramen-museum",
       "kuromon",
@@ -4387,7 +4380,7 @@ window.DAYS = [
       {
         "time": "20:30",
         "title": "Drinks in Namba / Nakazakicho",
-        "note": "",
+        "note": "Nightcap near the hotel area.",
         "placeId": "dotonbori",
         "category": "dining"
       }
@@ -4415,9 +4408,8 @@ window.DAYS = [
       "Evening JR back to Osaka."
     ],
     "tips": [
-      "Family Excel has no Kobe day — classic Kobe highlights from Osaka.",
-      "Ropeway last cars mid-evening in season — check Nunobiki hours.",
-      "Still sleeping in Osaka tonight — checkout tomorrow for Tokyo."
+      "Check Nunobiki ropeway last cars for the season.",
+      "Sleep in Osaka tonight — checkout tomorrow for Tokyo."
     ],
     "timeline": [
       {
@@ -4526,7 +4518,7 @@ window.DAYS = [
       {
         "time": "12:30",
         "title": "Hotel check-in — Shinjuku",
-        "note": "",
+        "note": "Final Tokyo hotel · still to book.",
         "placeId": "shinjuku",
         "category": "dining"
       },
@@ -4548,14 +4540,14 @@ window.DAYS = [
       {
         "time": "19:30",
         "title": "Tokyo Tower night photos",
-        "note": "",
+        "note": "Classic night landmark views.",
         "placeId": "tokyo-tower",
         "category": "attraction"
       },
       {
         "time": "20:30",
         "title": "Kabukicho nightlife",
-        "note": "",
+        "note": "Neon streets near the hotel.",
         "placeId": "kabukicho",
         "category": "dining"
       }
