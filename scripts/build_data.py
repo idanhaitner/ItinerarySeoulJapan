@@ -51,7 +51,7 @@ for p in [
     place("dongdaemun", "Dongdaemun Night Market / DDP", "동대문", "Seoul", "KR", ["shopping", "nightlife", "food"], 37.5665, 127.0092, "Night fashion markets + DDP / APM / Hyundai City Outlets."),
     place("seongsu", "Seongsu-dong", "성수동", "Seoul", "KR", ["neighborhood", "food", "shopping"], 37.5445, 127.0557, "Brooklyn-feel cafés, pop-ups, and design shops."),
     place("seoul-forest", "Seoul Forest", "서울숲", "Seoul", "KR", ["must-see", "park", "nature"], 37.5443, 127.0375, "Large urban park next to Seongsu."),
-    place("seoulistique", "Seoulistique Skin", "서울리스틱 스킨", "Seoul", "KR", ["culture"], 37.5448, 127.0565, "Facial + skin analysis in Seongsu — not on this itinerary."),
+    place("seoulistique", "Seoulistique Skin", "서울리스틱 스킨", "Seoul", "KR", ["inspiration"], 37.5448, 127.0565, "Seongsu facial — skipped for now."),
     place("forena-clinic", "Forena Clinic", "포레나의원", "Seoul", "KR", ["must-see", "culture", "booked"], 37.5568, 126.9236, "Booked — consultation + treatment 30 Aug 10:30 · Hongdae · H-CUBE 7F, 140 Yanghwa-ro · Hongik Univ. Station exit 9.", "서울특별시 마포구 양화로 140 H-CUBE 7층"),
     place("yeonnam", "Yeonnam-dong", "연남동", "Seoul", "KR", ["neighborhood", "food", "shopping"], 37.5662, 126.9254, "Chill cafés and boutiques next to Hongdae."),
     place("namsan-cable", "Namsan Cable Car", "남산케이블카", "Seoul", "KR", ["must-see", "transport", "view"], 37.5486, 126.9905, "Cable car up Namsan toward N Seoul Tower."),

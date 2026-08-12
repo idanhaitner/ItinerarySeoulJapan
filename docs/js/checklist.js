@@ -93,7 +93,7 @@ window.CHECKLIST = {
           priority: "low",
           done: true,
           linkPlaceIds: ["forena-clinic"],
-          linkTitles: ["Forena", "Facial", "טיפול פנים"],
+          linkTitles: ["Forena"],
         },
         {
           id: "k-ntower",

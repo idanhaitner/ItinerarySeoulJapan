@@ -539,11 +539,11 @@ window.PLACES = {
     "city": "Seoul",
     "country": "KR",
     "tags": [
-      "culture"
+      "inspiration"
     ],
     "lat": 37.5448,
     "lng": 127.0565,
-    "blurb": "Facial + skin analysis in Seongsu — not on this itinerary."
+    "blurb": "Seongsu facial — skipped for now."
   },
   "forena-clinic": {
     "id": "forena-clinic",
