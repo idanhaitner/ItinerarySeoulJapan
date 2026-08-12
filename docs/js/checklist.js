@@ -153,10 +153,10 @@ window.CHECKLIST = {
           done: true,
         },
         {
-          id: "ky-kawadoko",
-          label: "ארוחת Hirobun בקיבונה (14/9) — הזמנת kawadoko מראש (ひろ文 · TEL 075-741-2147)",
-          window: "14/9 · שבועות מראש · ישיבות ~11:00 או 13:00",
-          priority: "high",
+          id: "ky-hirobun-somen",
+          label: "Nagashi somen ב־Hirobun (14/9) — בלי הזמנה · להגיע ~09:45–10:00 · מזומן ~¥2,000 (גשם מבטל)",
+          window: "14/9 · walk-in בלבד",
+          priority: "medium",
         },
         {
           id: "h-tokyo1",

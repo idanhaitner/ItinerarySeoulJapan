@@ -114,7 +114,7 @@ window.TRIP = {
     "Sep 6: Street Kart + Inokashira/Kichijoji + Shimokitazawa (IDP required).",
     "Sep 11: Arrive Kyoto (overnight bus) — rest + Gion/Pontocho.",
     "Sep 12: Fushimi Inari + Uji (Byodo-in / matcha) + Nishiki.",
-    "Sep 14: Kurama/Kibune + Hirobun kawadoko + teamLab Biovortex booked 18:00–18:30. Sep 15: Kyoto zen → Osaka evening.",
+    "Sep 14: Kibune nagashi somen (Hirobun walk-in) + Kurama trek + teamLab Biovortex booked 18:00–18:30. Sep 15: Kyoto zen → Osaka evening.",
     "Sep 20: Kobe day trip from Osaka.",
     "Sep 21: Leave Osaka for Tokyo.",
     "Sep 22–23: Nikko day trip, then Kamakura & Enoshima.",
@@ -1516,8 +1516,8 @@ window.PLACES = {
   },
   "hirobun": {
     "id": "hirobun",
-    "name": "Hirobun (Kibune kawadoko)",
-    "nameJa": "料理旅館 ひろ文",
+    "name": "Hirobun Nagashi Somen",
+    "nameJa": "料理旅館 ひろ文（流しそうめん）",
     "city": "Kyoto",
     "country": "JP",
     "tags": [
@@ -1526,7 +1526,7 @@ window.PLACES = {
     ],
     "lat": 35.122,
     "lng": 135.7632,
-    "blurb": "Famous Kibune riverside kawadoko next to Kifune Yui shrine — kaiseki on the stream (and nagashi somen in season).",
+    "blurb": "Walk-in nagashi somen on the Kibune river deck next to Kifune Yui shrine — cash ~¥2,000, no reservation (skip the fancy kaiseki).",
     "taxiAddress": "京都府京都市左京区鞍馬貴船町87"
   },
   "kurama-onsen": {
@@ -3865,67 +3865,88 @@ window.DAYS = [
     "city": "Kyoto",
     "country": "JP",
     "hotelId": "kabin-koji",
-    "title": "Kurama & Kibune, then teamLab Biovortex",
-    "summary": "Weekday mountain morning in Kurama/Kibune with lunch at Hirobun kawadoko, return to Kyoto, then booked teamLab Biovortex entry 18:00–18:30 near Kyoto Station.",
-    "food": "Hirobun kawadoko lunch over the river; dinner after Biovortex.",
+    "title": "Kibune nagashi somen + Kurama, then Biovortex",
+    "summary": "Kibune-first weekday for walk-in nagashi somen at Hirobun, then forest trek to Kurama-dera, return to Kyoto for booked teamLab Biovortex 18:00–18:30.",
+    "food": "Light nagashi somen lunch at Hirobun (~¥2,000); proper dinner after Biovortex.",
     "placeIds": [
-      "kurama-dera",
       "kifune",
       "hirobun",
+      "kurama-dera",
       "teamlab-biovortex"
     ],
     "transport": [
-      "Demachiyanagi → Eizan to Kurama (~30m, ~¥430).",
-      "Trek ~45m to Kibune; return via Kibuneguchi.",
+      "Demachiyanagi → Eizan to Kibuneguchi first (~30m), then Kyoto Bus / walk up to Kibune.",
+      "After somen: trek Kibune → Kurama (~45m); train down from Kurama.",
       "teamLab Biovortex ~7 min from Kyoto Station Hachijo East — be there before 18:00."
     ],
     "tips": [
-      "Reserve Hirobun kawadoko weeks ahead (TEL 075-741-2147 / hirobun.co.jp) — lunch sittings ~11:00 or 13:00.",
-      "Skip Kurama Onsen today — Biovortex entry is booked 18:00–18:30.",
-      "Booked: teamLab Biovortex · 14/9 · entry window 18:00–18:30 · allow ~2–3h inside.",
-      "Save QR offline; arrive ~15–20 min early."
+      "Nagashi somen = walk-in only (no booking) · cash ~¥2,000 · aim to be at Hirobun ~09:45–10:00 for the numbered fan.",
+      "Monday helps — weekend waits can be 3h+. If raining at 10:00, somen is cancelled → casual Kibune lunch or return to Kyoto.",
+      "Skip fancy kawadoko kaiseki and Kurama Onsen — Biovortex is booked 18:00–18:30.",
+      "Booked: teamLab Biovortex · 14/9 · entry window 18:00–18:30 · allow ~2–3h inside · save QR offline."
     ],
     "timeline": [
       {
-        "time": "08:00",
-        "title": "Train to Kurama",
-        "note": "Via Demachiyanagi + Eizan.",
-        "placeId": "kurama-dera",
+        "time": "07:45",
+        "title": "Train to Kibuneguchi",
+        "note": "Demachiyanagi + Eizan — Kibune first for the somen queue.",
+        "placeId": "kifune",
         "category": "transit"
       },
       {
-        "time": "09:00",
-        "title": "Kurama-dera Temple",
-        "note": "Mountain temple visit.",
-        "placeId": "kurama-dera",
-        "end": "10:15",
-        "category": "culture"
-      },
-      {
-        "time": "10:30",
-        "title": "Forest trek to Kibune",
-        "note": "~45 minutes through cedar forest.",
-        "end": "11:15",
-        "category": "attraction"
-      },
-      {
-        "time": "11:30",
-        "title": "Kifune Shrine",
-        "note": "Red lantern stairs · Hirobun is next to the Yui shrine.",
+        "time": "08:30",
+        "title": "Up to Kibune village",
+        "note": "Kyoto Bus from Kibuneguchi, or walk uphill (~30–40m).",
         "placeId": "kifune",
-        "end": "12:30",
-        "category": "culture"
+        "category": "transit"
       },
       {
-        "time": "12:45",
-        "title": "Hirobun kawadoko lunch",
-        "note": "Riverside kaiseki at ひろ文 — reserved seating over the stream.",
+        "time": "09:45",
+        "title": "Hirobun — get in line",
+        "note": "Walk-in · pay cash ~¥2,000 · numbered fan when reception opens (~10:00).",
         "placeId": "hirobun",
-        "end": "14:30",
+        "end": "10:15",
         "category": "dining"
       },
       {
-        "time": "14:45",
+        "time": "10:15",
+        "title": "Kifune Shrine while waiting",
+        "note": "Lantern stairs · Yui shrine is next door · come back when called.",
+        "placeId": "kifune",
+        "end": "11:00",
+        "category": "culture"
+      },
+      {
+        "time": "11:00",
+        "title": "Nagashi somen at Hirobun",
+        "note": "Catch noodles in the bamboo flume on the river deck — short, fun, not fancy.",
+        "placeId": "hirobun",
+        "end": "12:00",
+        "category": "dining"
+      },
+      {
+        "time": "12:15",
+        "title": "Snack if still hungry",
+        "note": "Somen is light — drink/snack by the river before the trek.",
+        "category": "dining"
+      },
+      {
+        "time": "12:45",
+        "title": "Forest trek to Kurama",
+        "note": "~45 minutes through cedar — reverse of the usual route.",
+        "end": "13:30",
+        "category": "attraction"
+      },
+      {
+        "time": "13:45",
+        "title": "Kurama-dera Temple",
+        "note": "Mountain temple · then Eizan down from Kurama.",
+        "placeId": "kurama-dera",
+        "end": "15:00",
+        "category": "culture"
+      },
+      {
+        "time": "15:30",
         "title": "Return to Kyoto / hotel buffer",
         "note": "Skip onsen — shower/rest before Biovortex.",
         "placeId": "kabin-koji",
@@ -3949,7 +3970,7 @@ window.DAYS = [
       {
         "time": "21:15",
         "title": "Dinner near Kyoto Station / Kawaramachi",
-        "note": "Easy night after the museum.",
+        "note": "Real dinner — lunch was light somen.",
         "category": "dining"
       }
     ]
