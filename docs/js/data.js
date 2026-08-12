@@ -109,10 +109,9 @@ window.TRIP = {
     "Route: Tel Aviv → Seoul → Tokyo → Hakone → Kawaguchiko → Kyoto → Osaka (+ Kobe day) → Tokyo → Tirana (via Dubai).",
     "Outbound booked: ET0419 + ET0672 (26–27 Aug).",
     "Seoul→Tokyo booked: Air Premia YP7321 (2 Sep · ICN 08:50 → NRT 11:20).",
-    "Food: love sushi & fish; skip shellfish (shrimp/crab/oyster etc.).",
     "Sep 4: Tsukiji sushi/fish + teamLab Planets (weekday) + Odaiba + Ginza.",
     "Sep 5: Asakusa + Skytree + Akihabara.",
-    "Sep 6: Kichijoji + Shimokitazawa day, night Street Kart ~19:00 (IDP) — no Daikanyama/Nakameguro hop.",
+    "Sep 6: Kichijoji + Shimokitazawa day, night Street Kart ~19:00 (IDP).",
     "Sep 11: Arrive Kyoto (overnight bus) — rest + Gion/Pontocho.",
     "Sep 12: Fushimi Inari + Uji (Byodo-in / matcha) + Nishiki.",
     "Sep 14: Kibune nagashi somen (Hirobun walk-in) + Kurama trek + teamLab Biovortex booked 18:00–18:30. Sep 15: Kyoto zen → Osaka evening.",
@@ -803,7 +802,7 @@ window.PLACES = {
     ],
     "lat": 35.6654,
     "lng": 139.7707,
-    "blurb": "Sushi & fish breakfast graze — skip shellfish (shrimp/crab/oyster) if you prefer."
+    "blurb": "Outer-market breakfast — sushi, nigiri, and fresh fish with tamago."
   },
   "imperial-east": {
     "id": "imperial-east",
@@ -1528,7 +1527,7 @@ window.PLACES = {
     ],
     "lat": 35.122,
     "lng": 135.7632,
-    "blurb": "Walk-in nagashi somen on the Kibune river deck next to Kifune Yui shrine — cash ~¥2,000, no reservation (skip the fancy kaiseki).",
+    "blurb": "Walk-in nagashi somen on the Kibune river deck next to Kifune Yui shrine — cash ~¥2,000, no reservation.",
     "taxiAddress": "京都府京都市左京区鞍馬貴船町87"
   },
   "kurama-onsen": {
@@ -3042,7 +3041,7 @@ window.DAYS = [
     "hotelId": "gracery-shinjuku",
     "title": "Tsukiji, teamLab Planets, Odaiba & Ginza",
     "summary": "Weekday plan for fewer crowds: Tsukiji Outer Market sushi/fish breakfast, timed teamLab Planets in Toyosu, Odaiba Gundam + waterfront, then a long Ginza evening of depachika, flagships and dinner.",
-    "food": "Tsukiji sushi & nice fish (skip shellfish); Ginza depachika + sushi / tonkatsu / yakiniku dinner.",
+    "food": "Tsukiji sushi and fish; Ginza depachika snacks + sushi, tonkatsu, or yakiniku dinner.",
     "placeIds": [
       "tsukiji",
       "teamlab-planets",
@@ -3057,14 +3056,13 @@ window.DAYS = [
     "tips": [
       "Timed tickets for teamLab Planets — book a weekday slot (avoid Sat/Sun sell-outs).",
       "Some rooms have water — wear shorts you can roll up / bring a small towel.",
-      "Food preference: love sushi & fish — skip shellfish (shrimp, crab, oyster, etc.).",
       "Ginza: Mitsukoshi/Ginza Six depachika, Uniqlo Tokyo flagship, Itoya stationery."
     ],
     "timeline": [
       {
         "time": "07:30",
         "title": "Tsukiji Outer Market breakfast",
-        "note": "Sushi / nigiri / nice fish + tamago — skip shellfish stalls.",
+        "note": "Sushi, nigiri, fresh fish, and tamago.",
         "placeId": "tsukiji",
         "end": "10:00",
         "category": "dining"
@@ -3096,7 +3094,7 @@ window.DAYS = [
       {
         "time": "19:45",
         "title": "Ginza dinner",
-        "note": "Sushi, tonkatsu, or yakiniku — ask to skip shellfish if ordering set menus.",
+        "note": "Sushi, tonkatsu, or yakiniku.",
         "placeId": "ginza",
         "category": "dining"
       }
@@ -3205,7 +3203,7 @@ window.DAYS = [
     "hotelId": "gracery-shinjuku",
     "title": "Kichijoji, Shimokitazawa & night Street Kart",
     "summary": "Easy west-Tokyo Sunday: Inokashira + Harmonica lunch in Kichijoji, vintage Shimokitazawa afternoon, early dinner near Shibuya, then night Street Kart through neon (~19:00) — cooler and cooler than daytime.",
-    "food": "Lunch in Harmonica Yokocho / Kichijoji; early dinner near Shibuya (ramen / tonkatsu / sushi / yakiniku — skip shellfish); light snack after kart if needed.",
+    "food": "Lunch in Harmonica Yokocho / Kichijoji; early dinner near Shibuya (ramen, tonkatsu, sushi, or yakiniku); light snack after kart if needed.",
     "placeIds": [
       "inokashira",
       "kichijoji",
@@ -3252,7 +3250,7 @@ window.DAYS = [
       {
         "time": "17:45",
         "title": "Early dinner near Shibuya",
-        "note": "Ramen / tonkatsu / sushi / yakiniku before kart — skip shellfish.",
+        "note": "Ramen, tonkatsu, sushi, or yakiniku before kart.",
         "end": "18:45",
         "category": "dining"
       },
@@ -3882,7 +3880,7 @@ window.DAYS = [
     "tips": [
       "Nagashi somen = walk-in only (no booking) · cash ~¥2,000 · aim to be at Hirobun ~09:45–10:00 for the numbered fan.",
       "Monday helps — weekend waits can be 3h+. If raining at 10:00, somen is cancelled → casual Kibune lunch or return to Kyoto.",
-      "Skip fancy kawadoko kaiseki and Kurama Onsen — Biovortex is booked 18:00–18:30.",
+      "Nagashi somen at Hirobun; Biovortex entry is booked 18:00–18:30.",
       "Booked: teamLab Biovortex · 14/9 · entry window 18:00–18:30 · allow ~2–3h inside · save QR offline."
     ],
     "timeline": [
@@ -3919,7 +3917,7 @@ window.DAYS = [
       {
         "time": "11:00",
         "title": "Nagashi somen at Hirobun",
-        "note": "Catch noodles in the bamboo flume on the river deck — short, fun, not fancy.",
+        "note": "Catch noodles in the bamboo flume on the river deck.",
         "placeId": "hirobun",
         "end": "12:00",
         "category": "dining"
@@ -3948,7 +3946,7 @@ window.DAYS = [
       {
         "time": "15:30",
         "title": "Return to Kyoto / hotel buffer",
-        "note": "Skip onsen — shower/rest before Biovortex.",
+        "note": "Shower and rest at the hotel before Biovortex.",
         "placeId": "kabin-koji",
         "category": "hotel"
       },
@@ -3970,7 +3968,7 @@ window.DAYS = [
       {
         "time": "21:15",
         "title": "Dinner near Kyoto Station / Kawaramachi",
-        "note": "Real dinner — lunch was light somen.",
+        "note": "Full dinner after a light somen lunch.",
         "category": "dining"
       }
     ]
@@ -4001,7 +3999,7 @@ window.DAYS = [
     ],
     "tips": [
       "Checkout KABIN Koji for evening move to Osaka (Apartment Hotel 11 · nights 15–21/9).",
-      "teamLab Biovortex booked 14/9 18:00–18:30 in Kyoto — skip Osaka Botanical Garden.",
+      "teamLab Biovortex booked 14/9 18:00–18:30 in Kyoto.",
       "USJ is tomorrow (16/9) — don’t stay out too late."
     ],
     "timeline": [
@@ -4723,7 +4721,7 @@ window.DAYS = [
     "hotelId": null,
     "title": "Full shopping day & farewell dinner",
     "summary": "Ginza shopping morning (Ginza Six, Uniqlo Ginza, Itoya, depachika), afternoon in Shibuya/Omotesando, Akihabara or Shinjuku, then farewell dinner.",
-    "food": "Depachika graze; farewell wagyu or sushi dinner (fish yes — skip shellfish in omakase).",
+    "food": "Depachika graze; farewell wagyu or sushi dinner.",
     "placeIds": [
       "ginza",
       "omotesando",
@@ -4764,7 +4762,7 @@ window.DAYS = [
       {
         "time": "19:30",
         "title": "Farewell Japan dinner",
-        "note": "Wagyu or sushi/omakase — love fish; ask to skip shellfish.",
+        "note": "Wagyu or sushi/omakase.",
         "category": "dining"
       }
     ]
