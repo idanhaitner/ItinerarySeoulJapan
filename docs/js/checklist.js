@@ -111,8 +111,8 @@ window.CHECKLIST = {
         },
         {
           id: "t2-nikko",
-          label: "Tobu Spacia X / Revaty לניקו (22/9) — כרטיס שמור Asakusa ← Nikko",
-          window: "להזמין מראש",
+          label: "Tobu Spacia X לניקו (22/9) — יציאה ~06:30 מאסאקוסה · כרטיסים שמורים",
+          window: "להזמין מראש · בוקר מוקדם",
           priority: "high",
         },
         { id: "os-nara", label: "רכבת ליום בנארה (Kintetsu/JR)", window: "ביום עצמו או מראש", priority: "low" },

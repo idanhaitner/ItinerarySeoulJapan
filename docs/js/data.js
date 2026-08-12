@@ -111,13 +111,13 @@ window.TRIP = {
     "Seoul→Tokyo booked: Air Premia YP7321 (2 Sep · ICN 08:50 → NRT 11:20).",
     "Sep 4: Tsukiji + teamLab Planets (weekday) + Odaiba + Ginza.",
     "Sep 5: Asakusa + Skytree + Akihabara.",
-    "Sep 6: Street Kart + Inokashira/Kichijoji + Shimokitazawa (IDP required).",
+    "Sep 6: Street Kart + Inokashira/Kichijoji + Shimokitazawa only (IDP required) — no Daikanyama/Nakameguro hop.",
     "Sep 11: Arrive Kyoto (overnight bus) — rest + Gion/Pontocho.",
     "Sep 12: Fushimi Inari + Uji (Byodo-in / matcha) + Nishiki.",
     "Sep 14: Kibune nagashi somen (Hirobun walk-in) + Kurama trek + teamLab Biovortex booked 18:00–18:30. Sep 15: Kyoto zen → Osaka evening.",
     "Sep 20: Kobe day trip from Osaka.",
     "Sep 21: Leave Osaka for Tokyo.",
-    "Sep 22–23: Nikko day trip, then Kamakura & Enoshima.",
+    "Sep 22: Nikko — Spacia X ~06:30, lake/Kegon first, Toshogu afternoon. Sep 23: Kamakura & Enoshima.",
     "Sep 24: Full Ginza shopping day + farewell dinner.",
     "Seoul hotel: Amanti Hongdae · 27 Aug–2 Sep.",
     "Tokyo first base: Hotel Gracery Shinjuku · 2–7 Sep (Kabukicho).",
@@ -971,7 +971,7 @@ window.PLACES = {
     ],
     "lat": 35.6855,
     "lng": 139.6905,
-    "blurb": "Lost in Translation bar."
+    "blurb": "Lost in Translation bar — Park Hyatt reopened Dec 2025 after renovation; reserve ahead."
   },
   "kajikaso": {
     "id": "kajikaso",
@@ -2142,7 +2142,7 @@ window.PLACES = {
     ],
     "lat": 35.6852,
     "lng": 139.7101,
-    "blurb": "Spacious national garden — calm morning walk."
+    "blurb": "Spacious national garden — in September last entry is ~16:30 (closes 17:00)."
   },
   "tocho": {
     "id": "tocho",
@@ -2796,8 +2796,8 @@ window.DAYS = [
     "country": "JP",
     "hotelId": "gracery-shinjuku",
     "title": "Seoul → Tokyo & Shinjuku lights",
-    "summary": "Early checkout from Amanti, Air Premia YP7321 ICN→NRT, Suica/eSIM, check in at Hotel Gracery Shinjuku, then a full Shinjuku afternoon–night: Gyoen, Godzilla head, free Tocho views, Kabukicho neon, Omoide yakitori and Golden Gai.",
-    "food": "Late lunch near the hotel; yakitori in Omoide Yokocho; drinks in Golden Gai.",
+    "summary": "Early checkout from Amanti, Air Premia YP7321 ICN→NRT, Suica/eSIM, drop bags at Hotel Gracery Shinjuku, go straight to Shinjuku Gyoen (last entry ~16:30), then Shinjuku evening: Godzilla head, free Tocho views, Kabukicho neon, Omoide yakitori and Golden Gai.",
+    "food": "Snack/late lunch in or right after Gyoen; yakitori in Omoide Yokocho; drinks in Golden Gai.",
     "placeIds": [
       "amanti-hotel",
       "icn",
@@ -2821,7 +2821,7 @@ window.DAYS = [
       "Some boards list this route as YP731 — match your ticket/boarding pass.",
       "Set up Suica/Pasmo on arrival.",
       "Hotel Gracery Shinjuku · Kabukicho 1-19-1 · nights 2–6/9 · checkout morning 7/9.",
-      "Shinjuku Gyoen last entry ~17:00 in Sep — go soon after check-in.",
+      "Priority after bags: Shinjuku Gyoen — Sep last entry ~16:30, closes 17:00. Do NOT lunch first.",
       "Tocho South Observatory is free (closed every other Monday)."
     ],
     "timeline": [
@@ -2856,28 +2856,28 @@ window.DAYS = [
       },
       {
         "time": "13:00",
-        "title": "Transfer to Shinjuku + check in — Hotel Gracery",
-        "note": "N'EX / limousine · Suica/eSIM · leave bags, quick shower · Godzilla building.",
+        "title": "Drop bags — Hotel Gracery Shinjuku",
+        "note": "N'EX / limousine · Suica/eSIM · leave luggage (shower later) · Godzilla building.",
         "placeId": "gracery-shinjuku",
         "category": "hotel"
       },
       {
-        "time": "14:30",
-        "title": "Late lunch near Shinjuku station",
-        "note": "Ramen / donburi — fuel before walking.",
+        "time": "13:30",
+        "title": "Shinjuku Gyoen — go now",
+        "note": "Straight from the hotel · last entry ~16:30 / closes 17:00 in Sep · snack inside or right after.",
+        "placeId": "shinjuku-gyoen",
+        "end": "16:30",
+        "category": "dining"
+      },
+      {
+        "time": "16:45",
+        "title": "Late lunch / snack near the park",
+        "note": "Ramen / donburi if you only snacked in Gyoen.",
         "placeId": "shinjuku",
         "category": "dining"
       },
       {
-        "time": "15:30",
-        "title": "Shinjuku Gyoen",
-        "note": "Wide lawns + Japanese/English/French gardens — last entry ~17:00.",
-        "placeId": "shinjuku-gyoen",
-        "end": "17:00",
-        "category": "culture"
-      },
-      {
-        "time": "17:15",
+        "time": "17:30",
         "title": "Shinjuku metro walk",
         "note": "Godzilla head at Toho, Bic Camera / Uniqlo, Kabukicho gate neon.",
         "placeId": "shinjuku",
@@ -3200,27 +3200,25 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": "gracery-shinjuku",
-    "title": "Street Kart, Kichijoji, Shimokita & Daikanyama",
-    "summary": "Street Kart morning, Inokashira Park + Harmonica Yokocho lunch in Kichijoji, vintage Shimokitazawa afternoon, then Daikanyama T-Site and Nakameguro riverside dinner (family soft-day vibe).",
-    "food": "Lunch in Harmonica Yokocho / Kichijoji; dinner in Nakameguro or Daikanyama.",
+    "title": "Street Kart, Kichijoji & Shimokitazawa",
+    "summary": "Slimmed west-Tokyo Sunday: Street Kart morning, Inokashira + Harmonica Yokocho in Kichijoji, then vintage Shimokitazawa afternoon/evening dinner — no Daikanyama/Nakameguro hop (too many neighborhoods in one day).",
+    "food": "Lunch in Harmonica Yokocho / Kichijoji; dinner in Shimokitazawa.",
     "placeIds": [
       "street-kart",
       "inokashira",
       "kichijoji",
       "harmonica",
-      "shimokitazawa",
-      "daikanyama",
-      "nakameguro",
-      "ny-bar"
+      "shimokitazawa"
     ],
     "transport": [
       "Kart meetup (often Shibuya/Shinjuku).",
-      "Chuo/Sobu to Kichijoji; Inokashira Line or Odakyu to Shimokita; Tokyu Toyoko to Daikanyama/Nakameguro."
+      "Chuo/Sobu to Kichijoji; Inokashira Line or Odakyu to Shimokita."
     ],
     "tips": [
       "Physical International Driving Permit required for Street Kart — photocopy is not accepted.",
       "Confirm kart meetup point the night before.",
-      "Optional finale: New York Bar at Park Hyatt (book ahead) if you want a skyline nightcap back in Shinjuku."
+      "Cut on purpose: Daikanyama + Nakameguro (+ NY Bar) — keep one soft west-Tokyo arc after karting.",
+      "New York Bar (Park Hyatt) reopened Dec 2025 — save for a quieter Shinjuku night and reserve ahead if you want it."
     ],
     "timeline": [
       {
@@ -3244,39 +3242,23 @@ window.DAYS = [
         "title": "Kichijoji & Harmonica Yokocho lunch",
         "note": "Covered alley eats + neighborhood shopping streets.",
         "placeId": "harmonica",
-        "end": "15:00",
+        "end": "15:30",
         "category": "dining"
       },
       {
-        "time": "15:20",
+        "time": "16:00",
         "title": "Shimokitazawa vintage & cafés",
-        "note": "Thrift floors, record shops, indie cafés.",
+        "note": "Thrift floors, record shops, indie cafés — unhurried afternoon.",
         "placeId": "shimokitazawa",
-        "end": "17:45",
+        "end": "19:00",
         "category": "dining"
       },
       {
-        "time": "18:15",
-        "title": "Daikanyama T-Site",
-        "note": "Tsutaya bookstore complex — browse + coffee.",
-        "placeId": "daikanyama",
-        "end": "19:15",
-        "category": "dining"
-      },
-      {
-        "time": "19:30",
-        "title": "Nakameguro riverside dinner",
-        "note": "Meguro River walk + dinner/café street.",
-        "placeId": "nakameguro",
-        "end": "21:30",
-        "category": "dining"
-      },
-      {
-        "time": "22:00",
-        "title": "Optional New York Bar nightcap",
-        "note": "Park Hyatt Shinjuku — reserve if you want the Lost in Translation view.",
-        "placeId": "ny-bar",
-        "category": "attraction"
+        "time": "19:15",
+        "title": "Dinner in Shimokitazawa",
+        "note": "Stay in the neighborhood — no more train-hopping tonight.",
+        "placeId": "shimokitazawa",
+        "category": "transit"
       }
     ]
   },
@@ -4580,51 +4562,67 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": null,
-    "title": "Nikko day trip",
-    "summary": "Full day trip to Nikko: Toshogu Shrine in the forest, Lake Chuzenji and Kegon Falls, then back to Tokyo for dinner.",
-    "food": "Nikko lunch; dinner back in Tokyo.",
+    "title": "Nikko day trip (lake first)",
+    "summary": "Early Tobu Spacia X to Nikko, bus UP first to Lake Chuzenji & Kegon Falls, then down to Toshogu in the afternoon (closer to the station if buses run late), evening return to Tokyo.",
+    "food": "Lunch by the lake / Chuzenji; dinner back in Tokyo.",
     "placeIds": [
-      "nikko-toshogu",
       "chuzenji",
-      "kegon-falls"
+      "kegon-falls",
+      "nikko-toshogu"
     ],
     "transport": [
-      "Early JR/Tobu to Nikko (~1.5–2h).",
-      "Local bus to Chuzenji / Kegon.",
-      "Return evening."
+      "Tobu Spacia X from Asakusa ~06:30 (book reserved seats).",
+      "Nikko Station → bus UP to Chuzenji / Kegon (~45–60m winding road).",
+      "Afternoon bus DOWN to Toshogu, then train home."
     ],
     "tips": [
-      "Start early — Nikko is a full day.",
-      "Comfortable shoes for shrine grounds + lake area."
+      "Book Spacia X early — aim ~06:30 departure so the mountain bus isn’t a race.",
+      "Do the lake/falls FIRST; Toshogu is nearer the station if traffic eats the afternoon.",
+      "Comfortable shoes; mountain weather can be cooler than Tokyo."
     ],
     "timeline": [
       {
-        "time": "07:30",
-        "title": "Early train to Nikko",
-        "note": "~1.5–2 hours.",
+        "time": "06:30",
+        "title": "Tobu Spacia X to Nikko",
+        "note": "From Asakusa · reserved seats · ~2h.",
         "placeId": "nikko-toshogu",
+        "end": "08:30",
+        "category": "culture"
+      },
+      {
+        "time": "09:00",
+        "title": "Bus UP to Lake Chuzenji",
+        "note": "~45–60 min winding road — go up first while energy is high.",
+        "placeId": "chuzenji",
         "category": "transit"
       },
       {
         "time": "10:00",
-        "title": "Toshogu Shrine",
-        "note": "Ornate UNESCO shrine in the forest.",
-        "placeId": "nikko-toshogu",
+        "title": "Kegon Falls & Lake Chuzenji",
+        "note": "Waterfall + lakeside stroll / lunch nearby.",
+        "placeId": "kegon-falls",
         "end": "13:00",
-        "category": "culture"
+        "category": "dining"
       },
       {
         "time": "13:30",
-        "title": "Lake Chuzenji & Kegon Falls",
-        "note": "Mountain lake + waterfall.",
-        "placeId": "chuzenji",
-        "end": "16:00",
+        "title": "Bus DOWN to Toshogu",
+        "note": "Closer to Nikko Station for the return.",
+        "placeId": "nikko-toshogu",
+        "category": "transit"
+      },
+      {
+        "time": "14:00",
+        "title": "Toshogu Shrine",
+        "note": "Ornate UNESCO shrine in the forest.",
+        "placeId": "nikko-toshogu",
+        "end": "16:15",
         "category": "culture"
       },
       {
-        "time": "16:30",
+        "time": "16:45",
         "title": "Return train to Tokyo",
-        "note": "",
+        "note": "From Nikko / Tobu-Nikko — evening arrival.",
         "category": "transit"
       },
       {
