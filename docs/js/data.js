@@ -123,7 +123,7 @@ window.TRIP = {
     "Tokyo first base: Hotel Gracery Shinjuku · 2–7 Sep (Kabukicho).",
     "Kyoto hotel: KABIN Koji · 11–15 Sep (Kawaramachi).",
     "Osaka hotel: Apartment Hotel 11 Shinsaibashi 2 · 15–21 Sep.",
-    "Tokyo return base: Shinjuku (21–25 Sep).",
+    "Tokyo return base: The Royal Park Canvas Ginza 8 · 21–25 Sep.",
     "Leave Japan ~25 Sep: Emirates Narita → Dubai (DXB) → Tirana (TIA) — book / confirm flight numbers.",
     "Tap places for Google / Kakao / Naver / Yahoo! / Apple Maps."
   ]
@@ -634,6 +634,21 @@ window.PLACES = {
     "lng": 139.7023,
     "blurb": "Booked — first Tokyo base in Kabukicho (Godzilla head) · nights 2–6/9, checkout 7/9 for Hakone.",
     "taxiAddress": "東京都新宿区歌舞伎町1-19-1"
+  },
+  "canvas-ginza8": {
+    "id": "canvas-ginza8",
+    "name": "The Royal Park Canvas Ginza 8",
+    "nameJa": "ザ ロイヤルパークキャンバス銀座８",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "hotel",
+      "booked"
+    ],
+    "lat": 35.6664,
+    "lng": 139.7628,
+    "blurb": "Booked — second Tokyo base in Ginza 8-chome · nights 21–24/9, checkout 25/9 · 5 min from Ginza Station exit A3 / 7 min from Shimbashi.",
+    "taxiAddress": "東京都中央区銀座8-9-4"
   },
   "keio-plaza": {
     "id": "keio-plaza",
@@ -4653,25 +4668,27 @@ window.DAYS = [
     "weekday": "Monday",
     "city": "Tokyo",
     "country": "JP",
-    "hotelId": null,
-    "title": "Leave Osaka → Tokyo, Nakano Broadway & Shinjuku night",
-    "summary": "Checkout Osaka, Nozomi to Tokyo (~2.5h), Shinjuku hotel check-in, Nakano Broadway otaku maze, then Azabudai/Roppongi, Tokyo Tower night and Kabukicho.",
-    "food": "Dinner near Azabudai / Roppongi or Shinjuku.",
+    "hotelId": "canvas-ginza8",
+    "title": "Leave Osaka → Tokyo, Nakano Broadway & Ginza night",
+    "summary": "Checkout Osaka, Nozomi to Tokyo Station (~2.5h), check in at The Royal Park Canvas Ginza 8, Nakano Broadway otaku maze, then Azabudai/Roppongi and Tokyo Tower night — back to Ginza for dinner.",
+    "food": "Dinner in Ginza / Yurakucho near the hotel.",
     "placeIds": [
-      "shinjuku",
+      "canvas-ginza8",
       "nakano-broadway",
       "azabudai",
       "roppongi",
       "tokyo-tower",
-      "kabukicho"
+      "ginza"
     ],
     "transport": [
-      "Nozomi Osaka → Tokyo (~2.5h).",
-      "Local to Shinjuku hotel; short train to Nakano."
+      "Nozomi Shin-Osaka → Tokyo Station (~2.5h).",
+      "Walk / metro to Ginza 8 (~10–15 min from Tokyo Station).",
+      "Metro Ginza → Nakano (~25–35 min)."
     ],
     "tips": [
-      "Nakano Broadway is ~5–10 min from Shinjuku by train.",
-      "Apartment Hotel 11 nights end with morning checkout 21/9."
+      "Hotel is booked: The Royal Park Canvas Ginza 8 · 銀座8-9-4 · nights 21–24/9, checkout 25/9.",
+      "Apartment Hotel 11 nights end with morning checkout 21/9.",
+      "Nakano Broadway is ~25–35 min from Ginza (not next door)."
     ],
     "timeline": [
       {
@@ -4690,15 +4707,15 @@ window.DAYS = [
       },
       {
         "time": "12:30",
-        "title": "Check-in at Shinjuku hotel",
-        "note": "Final Tokyo hotel · still to book.",
-        "placeId": "shinjuku",
-        "category": "dining"
+        "title": "Check-in at The Royal Park Canvas Ginza 8",
+        "note": "Booked · Ginza 8-chome · 銀座8-9-4 · ~10–15 min from Tokyo Station.",
+        "placeId": "canvas-ginza8",
+        "category": "hotel"
       },
       {
         "time": "13:45",
-        "title": "Travel by JR / metro · from Shinjuku to Nakano",
-        "note": "~5–10 min · no booking.",
+        "title": "Travel by metro / JR · from Ginza to Nakano",
+        "note": "~25–35 min · no booking.",
         "placeId": "nakano-broadway",
         "category": "transit"
       },
@@ -4725,10 +4742,10 @@ window.DAYS = [
         "category": "attraction"
       },
       {
-        "time": "20:30",
-        "title": "Kabukicho nightlife",
-        "note": "Neon streets near the hotel.",
-        "placeId": "kabukicho",
+        "time": "20:45",
+        "title": "Dinner / drinks in Ginza",
+        "note": "Back near the hotel — Yurakucho yakitori or Ginza bars.",
+        "placeId": "ginza",
         "category": "dining"
       }
     ],
@@ -4747,26 +4764,35 @@ window.DAYS = [
     "weekday": "Tuesday",
     "city": "Tokyo",
     "country": "JP",
-    "hotelId": null,
+    "hotelId": "canvas-ginza8",
     "title": "Nikko day trip (lake first)",
     "summary": "Early Tobu Spacia X to Nikko, bus UP first to Lake Chuzenji & Kegon Falls, then down to Toshogu in the afternoon (closer to the station if buses run late), evening return to Tokyo.",
-    "food": "Lunch by the lake / Chuzenji; dinner back in Tokyo.",
+    "food": "Lunch by the lake / Chuzenji; dinner back in Ginza.",
     "placeIds": [
+      "canvas-ginza8",
       "chuzenji",
       "kegon-falls",
       "nikko-toshogu"
     ],
     "transport": [
-      "Tobu Spacia X from Asakusa ~06:30 (book reserved seats).",
+      "Metro Ginza → Asakusa (~15–20 min), then Tobu Spacia X ~06:30 (book reserved seats).",
       "Nikko Station → bus UP to Chuzenji / Kegon (~45–60m winding road).",
       "Afternoon bus DOWN to Toshogu, then train home."
     ],
     "tips": [
       "Book Spacia X early — aim ~06:30 departure so the mountain bus isn’t a race.",
       "Do the lake/falls FIRST; Toshogu is nearer the station if traffic eats the afternoon.",
-      "Comfortable shoes; mountain weather can be cooler than Tokyo."
+      "Comfortable shoes; mountain weather can be cooler than Tokyo.",
+      "Ginza Line from the hotel to Asakusa is ~15–20 min — leave ~05:45."
     ],
     "timeline": [
+      {
+        "time": "05:45",
+        "title": "Travel by metro · from Ginza to Asakusa",
+        "note": "Ginza Line · ~15–20 min · no booking.",
+        "placeId": "canvas-ginza8",
+        "category": "hotel"
+      },
       {
         "time": "06:30",
         "title": "Travel by Tobu Spacia X · from Asakusa to Nikko",
@@ -4814,10 +4840,10 @@ window.DAYS = [
       },
       {
         "time": "19:30",
-        "title": "Dinner in Tokyo",
-        "note": "",
-        "placeId": "shinjuku",
-        "category": "dining"
+        "title": "Dinner in Ginza",
+        "note": "Back near The Royal Park Canvas Ginza 8.",
+        "placeId": "canvas-ginza8",
+        "category": "hotel"
       }
     ]
   },
@@ -4827,28 +4853,30 @@ window.DAYS = [
     "weekday": "Wednesday",
     "city": "Tokyo",
     "country": "JP",
-    "hotelId": null,
+    "hotelId": "canvas-ginza8",
     "title": "Kamakura & Enoshima day trip",
     "summary": "Day trip to Kamakura (Great Buddha + Hasedera), scenic Enoden to Enoshima island lanes and seaside sunset, then back to Tokyo.",
     "food": "Kamakura / Enoshima lunch; dinner back in Tokyo.",
     "placeIds": [
       "kamakura",
       "hasedera",
-      "enoshima"
+      "enoshima",
+      "canvas-ginza8"
     ],
     "transport": [
-      "JR to Kamakura (~50m).",
+      "JR Yokosuka from Tokyo Station / Shimbashi (~50m).",
       "Enoden coastal train to Enoshima.",
       "Return evening."
     ],
     "tips": [
-      "Enoden is the scenic coastal hop — worth it for photos."
+      "Enoden is the scenic coastal hop — worth it for photos.",
+      "Yokosuka Line from Tokyo Station is the easy hop from Ginza 8."
     ],
     "timeline": [
       {
         "time": "09:00",
-        "title": "Travel by JR Yokosuka / Shonan-Shinjuku · from Tokyo to Kamakura",
-        "note": "JR · ~50 min · no booking.",
+        "title": "Travel by JR Yokosuka · from Tokyo Station to Kamakura",
+        "note": "JR · ~50 min · no booking · Shimbashi also works.",
         "placeId": "kamakura",
         "category": "transit"
       },
@@ -4896,21 +4924,23 @@ window.DAYS = [
     "weekday": "Thursday",
     "city": "Tokyo",
     "country": "JP",
-    "hotelId": null,
+    "hotelId": "canvas-ginza8",
     "title": "Full shopping day & farewell dinner",
-    "summary": "Ginza shopping morning (Ginza Six, Uniqlo Ginza, Itoya, depachika), afternoon in Shibuya/Omotesando, Akihabara or Shinjuku, then farewell dinner.",
+    "summary": "Ginza shopping from the hotel (Ginza Six, Uniqlo Ginza, Itoya, depachika), afternoon in Shibuya/Omotesando, Akihabara or Shinjuku, then farewell dinner.",
     "food": "Depachika graze; farewell wagyu or sushi dinner.",
     "placeIds": [
+      "canvas-ginza8",
       "ginza",
       "omotesando",
       "akihabara",
       "shinjuku"
     ],
     "transport": [
-      "Morning in Ginza; one secondary area in the afternoon."
+      "Morning in Ginza from the hotel; one secondary area in the afternoon."
     ],
     "tips": [
-      "Confirm farewell dinner reservation and arrival time."
+      "Confirm farewell dinner reservation and arrival time.",
+      "The Royal Park Canvas Ginza 8 is in 8-chome — Ginza Six / Uniqlo are a short walk."
     ],
     "timeline": [
       {
@@ -4951,14 +4981,16 @@ window.DAYS = [
     "weekday": "Friday",
     "city": "Tokyo",
     "country": "JP",
-    "hotelId": null,
+    "hotelId": "canvas-ginza8",
     "title": "Tokyo → Tirana via Dubai",
-    "summary": "Checkout, transfer to Narita, and fly Emirates to Tirana via Dubai (DXB).",
+    "summary": "Checkout The Royal Park Canvas Ginza 8, transfer to Narita, and fly Emirates to Tirana via Dubai (DXB).",
     "food": "Airport meal before departure.",
     "placeIds": [
+      "canvas-ginza8",
       "narita"
     ],
     "transport": [
+      "N'EX from Tokyo Station (~10–15 min from the hotel).",
       "Allow 2.5–3h door-to-gate for NRT.",
       "Emirates connection in Dubai (DXB)."
     ],
@@ -4969,13 +5001,14 @@ window.DAYS = [
     "timeline": [
       {
         "time": "09:00",
-        "title": "Final pack & checkout",
-        "note": "",
-        "category": "attraction"
+        "title": "Final pack & checkout — The Royal Park Canvas Ginza 8",
+        "note": "Ginza 8-chome · bags to Tokyo Station.",
+        "placeId": "canvas-ginza8",
+        "category": "hotel"
       },
       {
         "time": "12:00",
-        "title": "Travel by N'EX / limousine · from Shinjuku to Narita",
+        "title": "Travel by N'EX / limousine · from Tokyo Station to Narita",
         "note": "N'EX reserved optional · ~60–90 min + airport buffer · allow 2.5–3h door-to-gate.",
         "placeId": "narita",
         "category": "transit"

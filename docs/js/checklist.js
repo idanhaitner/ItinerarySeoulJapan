@@ -236,11 +236,12 @@ window.CHECKLIST = {
         },
         {
           id: "h-tokyo2",
-          label: "מלון טוקיו סיום — שינג׳וקו (21–25 בספט׳)",
-          window: "להזמין בהקדם",
-          priority: "high",
+          label: "The Royal Park Canvas Ginza 8 — טוקיו סיום (21–25 בספט׳)",
+          window: "銀座8-9-4 · ~5 דק׳ מתחנת Ginza (A3)",
+          priority: "low",
+          done: true,
           linkCheckin: true,
-          linkTitles: ["Hotel check-in — Shinjuku", "במלון בשינג׳וקו"],
+          linkTitles: ["Royal Park Canvas", "Canvas Ginza", "צ׳ק־אין ב־The Royal Park Canvas"],
         },
         {
           id: "h-seoul",

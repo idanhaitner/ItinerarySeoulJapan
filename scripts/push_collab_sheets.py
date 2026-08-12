@@ -297,7 +297,7 @@ def build_hotels(days):
         ("Kawaguchiko", 0): ("קוואגוצ׳יקו", "Fujiyoshida / ליד Fuji-Q", "HOTEL MYSTAYS Fuji Onsen Resort", "הוזמן", "לילות 8–9/9 · צ׳ק־אאוט בוקר 10/9 לפני Fuji-Q / אוטובוס לילה"),
         ("Kyoto", 0): ("קיוטו", "Kawaramachi / Shijo", "KABIN Koji", "הוזמן", "מ־11/9 ערב ל־15/9 ערב"),
         ("Osaka", 0): ("אוסקה", "Higashi-Shinsaibashi / Dotonbori", "Apartment Hotel 11 Shinsaibashi 2", "הוזמן", "מ־15/9 ערב ל־21/9 בוקר"),
-        ("Tokyo", 1): ("טוקיו (סיום)", "Shinjuku", "", "לטפל", "בסיס אחרון · קרוב לנאקאנו / N'EX"),
+        ("Tokyo", 1): ("טוקיו (סיום)", "Ginza 8", "The Royal Park Canvas Ginza 8", "הוזמן", "בסיס אחרון · לילות 21–24/9 · צ׳ק־אאוט 25/9"),
     }
     rows = [["עיר", "מתאריך", "עד תאריך", "מלון", "אזור מועדף", "סטטוס", "הערות"]]
     tokyo_i = 0
@@ -324,6 +324,12 @@ def build_hotels(days):
             area = "Kabukicho / Shinjuku"
             end = "2026-09-07"
             notes = "הוזמן · לילות 2–6/9 · צ׳ק־אאוט בוקר 7/9 (Romancecar להקונה) · 歌舞伎町1-19-1 · בניין Godzilla"
+        if city == "Tokyo" and key_i == 1:
+            hotel = "The Royal Park Canvas Ginza 8"
+            status = "הוזמן"
+            area = "Ginza 8-chome"
+            end = "2026-09-25"
+            notes = "הוזמן · לילות 21–24/9 · צ׳ק־אאוט 25/9 · 銀座8-9-4 · ~5 דק׳ מתחנת Ginza (A3) / ~7 דק׳ משימבאשי"
         if city == "Hakone":
             hotel = "Tsukino Yado Sara (月の宿 紗ら)"
             status = "הוזמן"
