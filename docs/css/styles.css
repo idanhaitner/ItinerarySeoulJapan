@@ -2178,14 +2178,116 @@ a { color: inherit; }
 .timeline-item.city-line-Osaka .timeline-card::before { background: var(--osaka); opacity: 0.85; }
 .timeline-item.city-line-Hiroshima .timeline-card::before { background: var(--hiroshima); opacity: 0.85; }
 
+/* Travel legs = quiet connectors between stops (not louder cards) */
+.timeline-item.is-travel {
+  background: transparent;
+}
+
+.timeline-item.is-travel .timeline-meta {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  align-items: flex-end;
+}
+
+.timeline-item.is-travel .timeline-time {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.travel-meta-mark {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 18px;
+  margin-bottom: 2px;
+}
+
+.travel-meta-mark span {
+  width: 7px;
+  height: 7px;
+  border: 1.5px solid var(--indigo);
+  border-radius: 50%;
+  background: var(--paper);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--indigo) 12%, transparent);
+}
+
 .timeline-item.is-travel .timeline-card {
-  background: color-mix(in srgb, var(--navy) 4%, transparent);
+  background: transparent;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
-.timeline-item.is-travel .timeline-title {
+
+.timeline-item.is-travel .timeline-card::before {
+  top: 8px;
+  bottom: 8px;
+  width: 0;
+  border-inline-start: 1.5px dashed color-mix(in srgb, var(--indigo) 55%, transparent);
+  background: transparent;
+  opacity: 1;
+}
+
+.travel-body {
+  position: relative;
+  padding: 10px 14px;
+  border: 1px dashed color-mix(in srgb, var(--indigo) 28%, var(--line));
+  border-radius: 2px;
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--indigo) 5%, transparent) 0,
+      transparent 42%
+    );
+}
+
+.travel-eyebrow {
+  display: inline-block;
+  font-size: 10px;
   font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--indigo);
+  margin-bottom: 4px;
 }
-.timeline-item.is-travel .cat-chip {
-  color: var(--navy);
+
+.timeline-item.is-travel .timeline-title.travel-mode {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--navy-2);
+  margin-bottom: 2px;
+  line-height: 1.35;
+}
+
+.travel-route {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: 4px;
+  letter-spacing: 0.01em;
+}
+
+.timeline-item.is-travel .timeline-note {
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.timeline-item.is-travel .timeline-actions {
+  margin-top: 8px;
+  opacity: 0.85;
+}
+
+.timeline-item.is-travel.fav .timeline-card,
+.timeline-item.is-travel.fav .travel-body {
+  background: color-mix(in srgb, var(--gold) 6%, transparent);
+}
+
+@media (hover: hover) {
+  .timeline-item.is-travel:hover {
+    background: transparent;
+  }
+  .timeline-item.is-travel:hover .travel-body {
+    border-color: color-mix(in srgb, var(--indigo) 42%, var(--line));
+  }
 }
 
 .cat-chip {
@@ -4667,6 +4769,26 @@ a { color: inherit; }
   .timeline-meta .cat-chip {
     order: 1;
     letter-spacing: 0.08em;
+  }
+  .timeline-item.is-travel .timeline-meta {
+    align-items: center;
+  }
+  .timeline-item.is-travel .travel-meta-mark {
+    order: 1;
+    height: auto;
+    margin-bottom: 0;
+  }
+  .timeline-item.is-travel .timeline-time {
+    order: 0;
+  }
+  .timeline-item.is-travel .timeline-card {
+    padding-inline-start: 12px;
+  }
+  .timeline-item.is-travel .timeline-card::before {
+    display: none;
+  }
+  .travel-body {
+    padding: 10px 12px;
   }
   .timeline-time {
     order: 0;

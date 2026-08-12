@@ -510,8 +510,41 @@
             const isTravel =
               item.category === "transit" ||
               /^(Travel by |נסיעה)/.test(item.title || "");
-            return `
-            <li class="timeline-item city-line-${day.city} ${done} ${fav}${isTravel ? " is-travel" : ""}" data-tl-idx="${idx}">
+
+            let travelHtml = "";
+            if (isTravel) {
+              const raw = item.title || "";
+              const he = raw.match(/^נסיעה ב־(.+?)(?:\s*·\s*(.+))?$/);
+              const en = raw.match(/^Travel by (.+?)(?:\s*·\s*(.+))?$/);
+              const mode = (he && he[1]) || (en && en[1]) || raw;
+              const route = (he && he[2]) || (en && en[2]) || "";
+              travelHtml = `
+            <li class="timeline-item is-travel city-line-${day.city} ${done} ${fav}" data-tl-idx="${idx}">
+              <div class="timeline-meta">
+                <div class="travel-meta-mark" aria-hidden="true"><span></span></div>
+                <div class="timeline-time">${escapeHtml(timeLabel)}</div>
+              </div>
+              <div class="timeline-card travel-card">
+                <div class="travel-body">
+                  <span class="travel-eyebrow">נסיעה</span>
+                  <div class="timeline-title travel-mode">${escapeHtml(mode)}</div>
+                  ${route ? `<div class="travel-route">${escapeHtml(route)}</div>` : ""}
+                  ${item.note ? `<p class="timeline-note">${escapeHtml(item.note)}</p>` : ""}
+                  ${booking.html}
+                  <div class="timeline-actions">
+                    ${links ? `<a href="${links.primary.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.primary.label)}</a>` : ""}
+                    <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "בוצע" : "סיימתי"}</button>
+                    <button type="button" class="${storage.isFavorite(day.id, item) ? "active-fav" : ""}" data-fav="${idx}">${storage.isFavorite(day.id, item) ? "שמור" : "שמירה"}</button>
+                  </div>
+                </div>
+              </div>
+            </li>`;
+            }
+
+            return isTravel
+              ? travelHtml
+              : `
+            <li class="timeline-item city-line-${day.city} ${done} ${fav}" data-tl-idx="${idx}">
               <div class="timeline-meta">
                 <div class="cat-chip">${meta.label}</div>
                 <div class="timeline-time">${escapeHtml(timeLabel)}</div>
