@@ -6,8 +6,8 @@ window.TRIP = {
   "route": [
     "Seoul",
     "Tokyo",
-    "Hakone",
     "Kawaguchiko",
+    "Hakone",
     "Kyoto",
     "Osaka",
     "Tokyo"
@@ -106,13 +106,13 @@ window.TRIP = {
     }
   ],
   "notes": [
-    "Route: Tel Aviv → Seoul → Tokyo → Hakone → Kawaguchiko → Kyoto → Osaka (+ Kobe day) → Tokyo → Tirana (via Dubai).",
+    "Route: Tel Aviv → Seoul → Tokyo → Kawaguchiko → Hakone → Kyoto → Osaka (+ Kobe day) → Tokyo → Tirana (via Dubai).",
     "Outbound booked: ET0419 + ET0672 (26–27 Aug).",
     "Seoul→Tokyo booked: Air Premia YP7321 (2 Sep · ICN 08:50 → NRT 11:20).",
     "Sep 4: Tsukiji sushi/fish + teamLab Planets (weekday) + Odaiba + Ginza.",
     "Sep 5: Asakusa + Skytree + Akihabara.",
     "Sep 6: Kichijoji + Shimokitazawa day, night Street Kart ~19:00 (IDP).",
-    "Sep 11: Arrive Kyoto (overnight bus) — rest + Gion/Pontocho.",
+    "Sep 11: Already in Kyoto — easy Nishiki day. Sep 10: Hikari Odawara → Kyoto (no overnight bus).",
     "Sep 12: Fushimi Inari + Uji (Byodo-in / matcha) + Nishiki.",
     "Sep 14: Kibune nagashi somen (Hirobun walk-in) + Kurama trek + teamLab Biovortex booked 18:00–18:30. Sep 15: Kyoto zen → Osaka evening.",
     "Sep 20: Kobe day trip from Osaka.",
@@ -121,7 +121,8 @@ window.TRIP = {
     "Sep 24: Full Ginza shopping day + farewell dinner.",
     "Seoul hotel: Amanti Hongdae · 27 Aug–2 Sep.",
     "Tokyo first base: Hotel Gracery Shinjuku · 2–7 Sep (Kabukicho).",
-    "Kyoto hotel: KABIN Koji · 11–15 Sep (Kawaramachi).",
+    "Kyoto hotel: KABIN Koji · add night 10/9 · nights 10–14 Sep, checkout 15 Sep (Kawaramachi).",
+    "Kawaguchiko hotel: MYSTAYS — change nights 8–9/9 → 7–8/9. Hakone: Sara — change 7/9 → 9/9.",
     "Osaka hotel: Apartment Hotel 11 Shinsaibashi 2 · 15–21 Sep.",
     "Tokyo return base: The Royal Park Canvas Ginza 8 · 21–25 Sep.",
     "Leave Japan ~25 Sep: Emirates Narita → Dubai (DXB) → Tirana (TIA) — book / confirm flight numbers.",
@@ -632,7 +633,7 @@ window.PLACES = {
     ],
     "lat": 35.6956,
     "lng": 139.7023,
-    "blurb": "Booked — first Tokyo base in Kabukicho (Godzilla head) · nights 2–6/9, checkout 7/9 for Hakone.",
+    "blurb": "Booked — first Tokyo base in Kabukicho (Godzilla head) · nights 2–6/9, checkout 7/9 for Kawaguchiko.",
     "taxiAddress": "東京都新宿区歌舞伎町1-19-1"
   },
   "canvas-ginza8": {
@@ -1032,7 +1033,7 @@ window.PLACES = {
     ],
     "lat": 35.2291,
     "lng": 139.0983,
-    "blurb": "Booked — Hakone-Yumoto ryokan · rooms with open-air baths · kaiseki · ~10 min from Hakone-Yumoto Station.",
+    "blurb": "Booked 7/9 — change to night 9/9, checkout 10/9 · Hakone-Yumoto ryokan · rooms with open-air baths · kaiseki · ~10 min from Hakone-Yumoto Station.",
     "taxiAddress": "神奈川県足柄下郡箱根町湯本588-1"
   },
   "owakudani": {
@@ -1119,6 +1120,19 @@ window.PLACES = {
     "lng": 138.7689,
     "blurb": "Famous Fuji convenience-store shot."
   },
+  "odawara": {
+    "id": "odawara",
+    "name": "Odawara Station",
+    "nameJa": "小田原駅",
+    "city": "Hakone",
+    "country": "JP",
+    "tags": [
+      "transport"
+    ],
+    "lat": 35.2561,
+    "lng": 139.1549,
+    "blurb": "Shinkansen gateway from Hakone to Kyoto — ~15 min from Hakone-Yumoto."
+  },
   "gotemba-outlets": {
     "id": "gotemba-outlets",
     "name": "Gotemba Premium Outlets",
@@ -1127,11 +1141,11 @@ window.PLACES = {
     "country": "JP",
     "tags": [
       "shopping",
-      "must-see"
+      "inspiration"
     ],
     "lat": 35.3086,
     "lng": 138.9365,
-    "blurb": "Huge outlet mall with Fuji views — brands at discount; open 10:00–20:00 Mar–Nov."
+    "blurb": "Outlet mall with Fuji views — optional if energy remains; not on the main path after the reverse."
   },
   "oishi-park": {
     "id": "oishi-park",
@@ -1188,7 +1202,7 @@ window.PLACES = {
     ],
     "lat": 35.4921,
     "lng": 138.7801,
-    "blurb": "Booked — Fujiyoshida / Kawaguchiko base · onsen resort · ~5 min walk from Fujikyu Highland Station · nights 8–9/9, checkout 10/9.",
+    "blurb": "Booked 8–9/9 — change to nights 7–8/9, checkout 9/9 for Fuji-Q · Fujiyoshida / Kawaguchiko base · onsen · ~5 min walk from Fujikyu Highland Station.",
     "taxiAddress": "山梨県富士吉田市新倉2654"
   },
   "kabin-koji": {
@@ -1203,7 +1217,7 @@ window.PLACES = {
     ],
     "lat": 35.0003,
     "lng": 135.7647,
-    "blurb": "Booked — Kyoto base near Kawaramachi / Shijo · ~6 min walk from Kawaramachi Station · nights 11–14/9, checkout 15/9.",
+    "blurb": "Booked 11–15/9 — add night 10/9 (nights 10–14/9, checkout 15/9) · Kyoto base near Kawaramachi / Shijo · ~6 min walk from Kawaramachi Station.",
     "taxiAddress": "京都府京都市下京区筋屋町152"
   },
   "musse-kyoto": {
@@ -3419,78 +3433,84 @@ window.DAYS = [
     "id": "d12",
     "date": "2026-09-07",
     "weekday": "Monday",
-    "city": "Hakone",
+    "city": "Kawaguchiko",
     "country": "JP",
-    "hotelId": "tsukino-yado-sara",
-    "title": "Romancecar & Tsukino Yado Sara",
-    "summary": "Morning Takkyubin of big bags Tokyo→Kawaguchiko hotel, Romancecar (try Observation Car) into Hakone-Yumoto, Owakudani, then check-in at Tsukino Yado Sara for onsen + kaiseki.",
-    "food": "Black eggs; kaiseki dinner at Tsukino Yado Sara.",
+    "hotelId": "mystays-fuji-onsen",
+    "title": "Tokyo → Kawaguchiko",
+    "summary": "Highway bus from Shinjuku to Kawaguchiko (~2h), check in at HOTEL MYSTAYS Fuji Onsen Resort next to Fuji-Q, then an easy lake evening — no overnight bus later in the trip.",
+    "food": "Lunch near Kawaguchiko Station; dinner near the hotel.",
     "placeIds": [
-      "owakudani",
-      "tsukino-yado-sara"
+      "gracery-shinjuku",
+      "mystays-fuji-onsen",
+      "fuji-lawson"
     ],
     "transport": [
-      "Odakyu Romancecar Shinjuku → Hakone-Yumoto (~80m, ~¥2,470).",
-      "Ropeway to Owakudani.",
-      "Sara is ~7–10 min taxi/walk from Hakone-Yumoto Station."
+      "Highway bus Shinjuku Expressway Bus Terminal → Kawaguchiko / Fujiyoshida (~1h45–2h15, reserved)."
     ],
     "tips": [
-      "Send large suitcases Tokyo→HOTEL MYSTAYS Fuji Onsen Resort via Takkyubin; travel Hakone/Fuji with backpacks only.",
-      "Book Romancecar ~1 month ahead — request front Observation Car seats.",
-      "Tsukino Yado Sara booked · check-in from 15:00 · all rooms have open-air baths.",
-      "Onsen etiquette at the ryokan."
+      "Change MYSTAYS dates to nights 7–8/9 (checkout 9/9 for Fuji-Q) — currently booked 8–9/9.",
+      "Bags can ride the highway bus; optional Takkyubin from Gracery on 6/9 if you prefer not to haul them.",
+      "Book the highway bus reserved seats (Keio / Fujikyu).",
+      "Keep the evening light — Chureito sunrise is tomorrow."
     ],
     "timeline": [
       {
-        "time": "08:00",
-        "title": "Takkyubin drop at Hotel Gracery",
-        "note": "Forward large bags to HOTEL MYSTAYS Fuji Onsen Resort.",
+        "time": "08:30",
+        "title": "Checkout — Hotel Gracery Shinjuku",
+        "note": "Last Tokyo-1 morning · bags on the bus or already forwarded.",
         "placeId": "gracery-shinjuku",
         "category": "hotel"
       },
       {
-        "time": "09:00",
-        "title": "Travel by Odakyu Romancecar · from Shinjuku to Hakone-Yumoto",
-        "note": "Limited express · reserved seats · ~80 min · book ~1 month ahead · request Observation Car.",
-        "end": "10:40",
-        "category": "transit"
-      },
-      {
-        "time": "11:00",
-        "title": "Arrive Hakone-Yumoto",
-        "note": "Leave bags / plan Owakudani before check-in opens at 15:00.",
-        "category": "attraction"
-      },
-      {
-        "time": "12:30",
-        "title": "Owakudani volcanic valley",
-        "note": "Black eggs + Fuji views.",
-        "placeId": "owakudani",
-        "end": "16:00",
-        "category": "dining"
-      },
-      {
-        "time": "17:00",
-        "title": "Check-in at ryokan Tsukino Yado Sara",
-        "note": "Hakone-Yumoto · private open-air bath rooms · onsen.",
-        "placeId": "tsukino-yado-sara",
+        "time": "09:30",
+        "title": "Travel by highway bus · from Shinjuku to Kawaguchiko",
+        "note": "Reserved seats · ~1h45–2h15 · book ahead · Busta Shinjuku.",
+        "placeId": "mystays-fuji-onsen",
         "category": "hotel"
       },
       {
-        "time": "19:00",
-        "title": "Kaiseki dinner at ryokan Sara",
-        "note": "Multi-course dinner at the ryokan.",
-        "placeId": "tsukino-yado-sara",
+        "time": "12:00",
+        "title": "Arrive Kawaguchiko / Fujiyoshida",
+        "note": "Short hop to MYSTAYS · next to Fuji-Q.",
+        "placeId": "mystays-fuji-onsen",
+        "category": "hotel"
+      },
+      {
+        "time": "12:30",
+        "title": "Lunch near the station",
+        "note": "Easy noodles / lake café.",
+        "placeId": "fuji-lawson",
+        "category": "dining"
+      },
+      {
+        "time": "15:00",
+        "title": "Check-in at hotel MYSTAYS Fuji Onsen Resort",
+        "note": "Onsen resort · ~5 min from Fujikyu Highland Station.",
+        "placeId": "mystays-fuji-onsen",
+        "category": "hotel"
+      },
+      {
+        "time": "16:30",
+        "title": "Lawson Kawaguchiko Fuji photo",
+        "note": "The famous convenience-store Fuji shot if the sky is clear.",
+        "placeId": "fuji-lawson",
+        "category": "attraction"
+      },
+      {
+        "time": "18:30",
+        "title": "Dinner near the hotel",
+        "note": "Early night · rest for Chureito sunrise.",
+        "placeId": "mystays-fuji-onsen",
         "category": "hotel"
       }
     ],
     "transfer": {
-      "mode": "train",
-      "label": "Tokyo → Hakone",
-      "detail": "Odakyu Romancecar Shinjuku → Hakone-Yumoto (~¥2,470)",
-      "duration": "~80 minutes",
+      "mode": "bus",
+      "label": "Tokyo → Kawaguchiko",
+      "detail": "Highway bus Shinjuku → Kawaguchiko (~2h, reserved)",
+      "duration": "~1h45–2h15",
       "fromCity": "Tokyo",
-      "toCity": "Hakone"
+      "toCity": "Kawaguchiko"
     }
   },
   {
@@ -3500,104 +3520,8 @@ window.DAYS = [
     "city": "Kawaguchiko",
     "country": "JP",
     "hotelId": "mystays-fuji-onsen",
-    "title": "Sunrise torii, pirate ship, Gotemba & calm Kawaguchiko",
-    "summary": "Sunrise at Hakone Shrine floating torii (Fuji if clear), Lake Ashi pirate ship, afternoon Gotemba Premium Outlets shopping, then check-in at HOTEL MYSTAYS Fuji Onsen Resort for a calm evening.",
-    "food": "Outlet lunch at Gotemba; calm dinner near the hotel / lake.",
-    "placeIds": [
-      "hakone-shrine",
-      "lake-ashi",
-      "gotemba-outlets",
-      "mystays-fuji-onsen"
-    ],
-    "transport": [
-      "Early transfer to Motohakone for Hakone Shrine sunrise.",
-      "Lake Ashi pirate ship, then afternoon bus to Gotemba Premium Outlets and on to Kawaguchiko."
-    ],
-    "tips": [
-      "Sunrise ~05:30 in early Sep — leave the ryokan with warm layers.",
-      "Gotemba open 10:00–20:00 — aim for a midday/afternoon shop window (~3h).",
-      "Collect Tokyo→MYSTAYS Takkyubin bags at the hotel if they arrived.",
-      "Keep the evening light — big Fuji day tomorrow."
-    ],
-    "timeline": [
-      {
-        "time": "05:00",
-        "title": "Travel by taxi / bus · from Sara to Hakone Shrine (Motohakone)",
-        "note": "Early transfer · ~20–30 min · no booking.",
-        "placeId": "tsukino-yado-sara",
-        "category": "hotel"
-      },
-      {
-        "time": "05:30",
-        "title": "Visit Hakone Shrine floating torii at sunrise",
-        "note": "Torii + lake · Fuji if the sky is clear.",
-        "placeId": "hakone-shrine",
-        "end": "07:15",
-        "category": "culture"
-      },
-      {
-        "time": "07:45",
-        "title": "Lake Ashi pirate ship",
-        "note": "Short sightseeing cruise while the morning is clear.",
-        "placeId": "lake-ashi",
-        "end": "09:00",
-        "category": "attraction"
-      },
-      {
-        "time": "09:30",
-        "title": "Travel by bus · from Hakone to Gotemba Premium Outlets",
-        "note": "From Togendai / Hakone-Yumoto · ~30–50 min · no booking.",
-        "category": "transit"
-      },
-      {
-        "time": "12:00",
-        "title": "Gotemba Premium Outlets shopping",
-        "note": "Dedicated outlet time — brands + Fuji views.",
-        "placeId": "gotemba-outlets",
-        "end": "15:00",
-        "category": "shopping"
-      },
-      {
-        "time": "15:15",
-        "title": "Travel by Fujikyu bus / limited-express GL · from Gotemba to Kawaguchiko",
-        "note": "~60–70 min · GL limited express optional if available.",
-        "placeId": "gotemba-outlets",
-        "end": "17:00",
-        "category": "transit"
-      },
-      {
-        "time": "17:15",
-        "title": "Check-in at hotel MYSTAYS Fuji Onsen Resort",
-        "note": "Fujiyoshida · onsen · collect forwarded bags.",
-        "placeId": "mystays-fuji-onsen",
-        "category": "hotel"
-      },
-      {
-        "time": "19:00",
-        "title": "Calm dinner near the hotel",
-        "note": "Early-ish night · rest for Chureito sunrise.",
-        "placeId": "mystays-fuji-onsen",
-        "category": "hotel"
-      }
-    ],
-    "transfer": {
-      "mode": "bus",
-      "label": "Hakone → Gotemba Outlets → Kawaguchiko",
-      "detail": "Hakone → Gotemba Premium Outlets (shop) → Fujikyu bus to Kawaguchiko",
-      "duration": "shop ~3h + buses",
-      "fromCity": "Hakone",
-      "toCity": "Kawaguchiko"
-    }
-  },
-  {
-    "id": "d14",
-    "date": "2026-09-09",
-    "weekday": "Wednesday",
-    "city": "Kawaguchiko",
-    "country": "JP",
-    "hotelId": "mystays-fuji-onsen",
     "title": "Fuji sunrise, Lawson & sightseeing loop",
-    "summary": "Sunrise at Chureito Pagoda, the Lawson Fuji photo stop, then Kawaguchiko sightseeing buses and north-shore viewpoints. Sleep early at MYSTAYS.",
+    "summary": "Sunrise at Chureito Pagoda, then Kawaguchiko sightseeing buses and north-shore viewpoints. Sleep early at MYSTAYS before Fuji-Q.",
     "food": "Café / lakeside lunch; early dinner.",
     "placeIds": [
       "chureito",
@@ -3608,13 +3532,12 @@ window.DAYS = [
     ],
     "transport": [
       "Dawn taxi/bus to Chureito (Arakurayama) — close to the hotel.",
-      "Kawaguchiko Sightseeing Bus loops (red/green/blue) between viewpoints.",
-      "Optional mountain bus toward Fuji if seats/weather allow."
+      "Kawaguchiko Sightseeing Bus loops (red/green/blue) between viewpoints."
     ],
     "tips": [
       "Chureito stairs in the dark — headlamp helps.",
       "Buy a 1- or 2-day sightseeing bus pass at Kawaguchiko Station.",
-      "Sleep early tonight — Fuji-Q opens tomorrow morning (hotel is near Fujikyu Highland Station)."
+      "Sleep early tonight — Fuji-Q opens tomorrow morning (hotel is next door)."
     ],
     "timeline": [
       {
@@ -3628,7 +3551,7 @@ window.DAYS = [
       {
         "time": "07:30",
         "title": "Lawson Kawaguchiko Fuji photo",
-        "note": "The famous convenience-store Fuji shot.",
+        "note": "Repeat or catch it if yesterday was cloudy.",
         "placeId": "fuji-lawson",
         "category": "attraction"
       },
@@ -3665,41 +3588,42 @@ window.DAYS = [
       {
         "time": "18:30",
         "title": "Early dinner & early night at MYSTAYS",
-        "note": "Rest for an early Fuji-Q start tomorrow.",
+        "note": "Rest for Fuji-Q opening tomorrow.",
         "placeId": "mystays-fuji-onsen",
         "category": "hotel"
       }
     ]
   },
   {
-    "id": "d15",
-    "date": "2026-09-10",
-    "weekday": "Thursday",
-    "city": "Kawaguchiko",
+    "id": "d14",
+    "date": "2026-09-09",
+    "weekday": "Wednesday",
+    "city": "Hakone",
     "country": "JP",
-    "hotelId": null,
-    "title": "Fuji-Q Highland & overnight bus to Kyoto",
-    "summary": "Checkout MYSTAYS, Fuji-Q from opening (hotel is next door), send bags ahead to KABIN Koji, then overnight highway bus to Kyoto (no hotel night tonight).",
-    "food": "Park food; light snack before the overnight bus.",
+    "hotelId": "tsukino-yado-sara",
+    "title": "Fuji-Q Highland, then Hakone onsen",
+    "summary": "Checkout MYSTAYS, Fuji-Q from opening (hotel is next door), send bags to KABIN Koji, then a late-afternoon bus to Hakone-Yumoto. Check in at Tsukino Yado Sara for onsen and kaiseki — recover after the park instead of an overnight bus.",
+    "food": "Park food; kaiseki dinner at Sara.",
     "placeIds": [
       "fuji-q",
-      "mystays-fuji-onsen"
+      "mystays-fuji-onsen",
+      "tsukino-yado-sara"
     ],
     "transport": [
-      "Arrive Fuji-Q for opening (~09:00) — short hop from MYSTAYS.",
-      "Evening overnight bus Kawaguchiko / Fujikyu area → Kyoto."
+      "Short hop MYSTAYS → Fuji-Q for opening (~09:00).",
+      "Afternoon highway bus Fuji-Q / Kawaguchiko → Hakone-Yumoto via Gotemba (~2–2.5h)."
     ],
     "tips": [
-      "Wake ~08:00 for park opening.",
-      "Do-Dodonpa / Takabisha are the headline coasters.",
-      "Same-day Takkyubin: send bags from MYSTAYS to KABIN Koji.",
-      "Overnight bus is reserved seats — sleep on the bus; KABIN Koji from 11/9."
+      "Change Sara to night 9/9 (checkout 10/9) — currently booked 7/9. Tell the ryokan you arrive ~18:00.",
+      "Leave Fuji-Q ~15:15 so kaiseki is not rushed. Tell Sara if you will be later.",
+      "Morning Takkyubin MYSTAYS → KABIN Koji so bags wait in Kyoto on 10/9. Hakone with backpacks only.",
+      "Do-Dodonpa / Takabisha are the headline coasters."
     ],
     "timeline": [
       {
-        "time": "08:00",
-        "title": "Checkout hotel MYSTAYS & bag prep",
-        "note": "Bags ready for Takkyubin to KABIN Koji.",
+        "time": "07:45",
+        "title": "Checkout hotel MYSTAYS & send bags to Kyoto",
+        "note": "Takkyubin to KABIN Koji · backpacks only to Hakone.",
         "placeId": "mystays-fuji-onsen",
         "category": "hotel"
       },
@@ -3713,84 +3637,122 @@ window.DAYS = [
       {
         "time": "09:00",
         "title": "Visit Fuji-Q Highland theme park",
-        "note": "Full theme-park day from opening.",
+        "note": "Park day from opening — leave ~15:15 for the Hakone bus.",
         "placeId": "fuji-q",
-        "end": "17:30",
-        "category": "attraction"
+        "end": "15:15",
+        "category": "transit"
       },
       {
-        "time": "17:45",
-        "title": "Send bags ahead to hotel KABIN Koji",
-        "note": "Takkyubin / hotel luggage service — arrive Kyoto ahead of you.",
-        "placeId": "mystays-fuji-onsen",
+        "time": "15:30",
+        "title": "Travel by highway bus · from Fuji-Q to Hakone-Yumoto",
+        "note": "Via Gotemba · ~2–2.5h · reserved if available · no overnight bus.",
+        "placeId": "tsukino-yado-sara",
+        "category": "hotel"
+      },
+      {
+        "time": "18:00",
+        "title": "Arrive Hakone-Yumoto",
+        "note": "Taxi ~7–10 min to Sara.",
+        "placeId": "tsukino-yado-sara",
+        "category": "hotel"
+      },
+      {
+        "time": "18:15",
+        "title": "Check-in at ryokan Tsukino Yado Sara",
+        "note": "Hakone-Yumoto · private open-air bath · onsen after the park.",
+        "placeId": "tsukino-yado-sara",
         "category": "hotel"
       },
       {
         "time": "19:00",
-        "title": "Light dinner near the bus stop",
-        "note": "",
-        "category": "transit"
-      },
-      {
-        "time": "21:30",
-        "title": "Travel by overnight highway bus · from Kawaguchiko to Kyoto",
-        "note": "Reserved seats · book ahead · ~8–10h · arrive Kyoto morning 11/9 · no hotel tonight.",
-        "category": "transit"
+        "title": "Kaiseki dinner at ryokan Sara",
+        "note": "Multi-course dinner at the ryokan.",
+        "placeId": "tsukino-yado-sara",
+        "category": "hotel"
       }
     ],
     "transfer": {
       "mode": "bus",
-      "label": "Kawaguchiko → Kyoto (overnight bus)",
-      "detail": "Overnight highway bus after Fuji-Q — arrive Kyoto morning 11/9 · no hotel night on 10/9",
-      "duration": "~8–10h overnight",
+      "label": "Kawaguchiko → Hakone",
+      "detail": "After Fuji-Q · highway bus via Gotemba to Hakone-Yumoto (~2–2.5h)",
+      "duration": "~2–2.5 hours",
       "fromCity": "Kawaguchiko",
-      "toCity": "Kyoto"
+      "toCity": "Hakone"
     }
   },
   {
-    "id": "d16",
-    "date": "2026-09-11",
-    "weekday": "Friday",
+    "id": "d15",
+    "date": "2026-09-10",
+    "weekday": "Thursday",
     "city": "Kyoto",
     "country": "JP",
     "hotelId": "kabin-koji",
-    "title": "Arrive Kyoto, Gion & riverside alleys",
-    "summary": "Morning arrival on the overnight bus, check in at KABIN Koji and bag pickup, then rest and an easy Gion dusk stroll with Pontocho riverside dinner.",
-    "food": "Pontocho riverside dinner along the Kamogawa.",
+    "title": "Hakone morning & Shinkansen to Kyoto",
+    "summary": "Easy Hakone morning (onsen, optional shrine or Lake Ashi — not a 5am start), then Hakone-Yumoto to Odawara and Hikari to Kyoto. Extra night at KABIN Koji, Gion dusk and Pontocho dinner.",
+    "food": "Ryokan breakfast; Pontocho riverside dinner.",
     "placeIds": [
+      "tsukino-yado-sara",
+      "hakone-shrine",
+      "lake-ashi",
+      "odawara",
       "kabin-koji",
       "gion",
       "pontocho"
     ],
     "transport": [
-      "Overnight bus arrives Kyoto morning.",
-      "Walk/taxi to KABIN Koji (Kawaramachi) · easy evening in Higashiyama / Pontocho."
+      "Hakone-Yumoto → Odawara (~15 min).",
+      "Hikari Shinkansen Odawara → Kyoto (~2h10 · reserved SmartEX). Most Nozomi trains skip Odawara."
     ],
     "tips": [
-      "KABIN Koji nights: 11/9 evening → 15/9 evening · 152 Sujiyacho, Shimogyo.",
-      "Collect Takkyubin bags at the hotel if they arrive first.",
-      "Keep the day light after the overnight bus.",
-      "Respectful photos in Gion."
+      "Add a KABIN Koji night on 10/9 (or one nearby hotel) — currently booked from 11/9.",
+      "Book Hikari reserved seats Odawara → Kyoto · Oversized Baggage if bags >160 cm (backpacks should be fine).",
+      "Morning is for recovering — skip the pre-dawn shrine run.",
+      "Collect Takkyubin bags at KABIN when they arrive."
     ],
     "timeline": [
       {
-        "time": "06:30",
-        "title": "Arrive Kyoto (overnight bus)",
-        "note": "Stretch, coffee, shower priority.",
-        "category": "transit"
+        "time": "08:00",
+        "title": "Breakfast & onsen at ryokan Sara",
+        "note": "Recover after Fuji-Q.",
+        "placeId": "tsukino-yado-sara",
+        "category": "hotel"
       },
       {
-        "time": "09:00",
-        "title": "Check-in at hotel KABIN Koji",
-        "note": "Kawaramachi base · collect forwarded bags when ready.",
-        "placeId": "kabin-koji",
+        "time": "09:30",
+        "title": "Optional Hakone Shrine or Lake Ashi",
+        "note": "Relaxed visit — not sunrise. Skip if you want more onsen.",
+        "placeId": "hakone-shrine",
+        "end": "11:15",
+        "category": "culture"
+      },
+      {
+        "time": "11:30",
+        "title": "Checkout — Tsukino Yado Sara",
+        "note": "Taxi / walk to Hakone-Yumoto Station.",
+        "placeId": "tsukino-yado-sara",
         "category": "hotel"
       },
       {
         "time": "12:00",
-        "title": "Easy lunch & rest",
-        "note": "Nap if needed after the bus.",
+        "title": "Travel by Hakone Tozan / Odakyu · from Hakone-Yumoto to Odawara",
+        "note": "~15 min · no booking.",
+        "placeId": "odawara",
         "category": "transit"
+      },
+      {
+        "time": "12:30",
+        "title": "Travel by Hikari Shinkansen · from Odawara to Kyoto",
+        "note": "Reserved seats via SmartEX · ~2h10 · book ahead.",
+        "placeId": "odawara",
+        "end": "14:40",
+        "category": "transit"
+      },
+      {
+        "time": "15:30",
+        "title": "Check-in at hotel KABIN Koji",
+        "note": "Kawaramachi base · extra night 10/9 · collect forwarded bags.",
+        "placeId": "kabin-koji",
+        "category": "hotel"
       },
       {
         "time": "17:30",
@@ -3807,6 +3769,78 @@ window.DAYS = [
         "placeId": "pontocho",
         "end": "21:30",
         "category": "dining"
+      }
+    ],
+    "transfer": {
+      "mode": "train",
+      "label": "Hakone → Kyoto",
+      "detail": "Hakone-Yumoto → Odawara (~15 min) · Hikari Shinkansen to Kyoto (~2h10)",
+      "duration": "~2.5–3 hours door to door",
+      "fromCity": "Hakone",
+      "toCity": "Kyoto"
+    }
+  },
+  {
+    "id": "d16",
+    "date": "2026-09-11",
+    "weekday": "Friday",
+    "city": "Kyoto",
+    "country": "JP",
+    "hotelId": "kabin-koji",
+    "title": "Kyoto at an easy pace",
+    "summary": "Already in Kyoto — Nishiki morning, a neighborhood wander, and rest. No overnight-bus recovery. Tomorrow is the packed Fushimi / Uji / Kiyomizu day.",
+    "food": "Nishiki graze; dinner near Kawaramachi.",
+    "placeIds": [
+      "kabin-koji",
+      "nishiki",
+      "gion"
+    ],
+    "transport": [
+      "Walk from KABIN Koji to Nishiki / Kawaramachi."
+    ],
+    "tips": [
+      "KABIN Koji · nights 10–14/9, checkout 15/9 · 152 Sujiyacho, Shimogyo — once the extra night is confirmed.",
+      "Keep the day light before Fushimi sunrise tomorrow.",
+      "Respectful photos in Gion if you wander back."
+    ],
+    "timeline": [
+      {
+        "time": "09:30",
+        "title": "Nishiki Market",
+        "note": "Kyoto’s kitchen — street-food graze.",
+        "placeId": "nishiki",
+        "end": "11:30",
+        "category": "dining"
+      },
+      {
+        "time": "12:00",
+        "title": "Kawaramachi / downtown wander",
+        "note": "Shops, cafés, easy lunch near the hotel.",
+        "placeId": "kabin-koji",
+        "end": "14:00",
+        "category": "hotel"
+      },
+      {
+        "time": "14:30",
+        "title": "Café rest",
+        "note": "Buffer before the big Higashiyama day tomorrow.",
+        "placeId": "kabin-koji",
+        "category": "hotel"
+      },
+      {
+        "time": "17:00",
+        "title": "Optional second Gion look",
+        "note": "Only if you want another dusk walk.",
+        "placeId": "gion",
+        "end": "18:30",
+        "category": "attraction"
+      },
+      {
+        "time": "19:00",
+        "title": "Dinner near Kawaramachi",
+        "note": "Keep it simple.",
+        "placeId": "kabin-koji",
+        "category": "hotel"
       }
     ]
   },
