@@ -294,7 +294,7 @@ def build_hotels(days):
         ("Seoul", 0): ("סיאול", "Hongdae", "Amanti Hotel Seoul Hongdae", "הוזמן", "בסיס סיאול · צ׳ק־אאוט 2 בספט׳"),
         ("Tokyo", 0): ("טוקיו (התחלה)", "Kabukicho / Shinjuku", "Hotel Gracery Shinjuku", "הוזמן", "לילות 2–6/9 · צ׳ק־אאוט בוקר 7/9 להקונה"),
         ("Hakone", 0): ("הקונה", "Hakone-Yumoto", "Tsukino Yado Sara (月の宿 紗ら)", "לטפל", "לשנות לילה מ־07/9 ל־09/9 · צ׳ק־אאוט 10/9 לאוטובוס לילה · קייסקי + אונסן אחרי אוטובוס ישיר מגוטמבה"),
-        ("Kawaguchiko", 0): ("קוואגוצ׳יקו", "Fujiyoshida / ליד Fuji-Q", "HOTEL MYSTAYS Fuji Onsen Resort", "לטפל", "לשנות לילות מ־8–9/9 ל־7–8/9 · צ׳ק־אאוט 9/9 לגוטמבה"),
+        ("Kawaguchiko", 0): ("קוואגוצ׳יקו", "Fujiyoshida / ליד Fuji-Q", "HOTEL MYSTAYS Fuji Onsen Resort", "הוזמן", "לילות 7–8/9 · צ׳ק־אאוט 9/9 לגוטמבה"),
         ("Kyoto", 0): ("קיוטו", "Kawaramachi / Shijo", "KABIN Koji", "הוזמן", "לילות 11–14/9 · צ׳ק־אאוט 15/9 · אוטובוס לילה WILLER ב־10/9 · מזוודות מחכות בדלפק מ־10/9"),
         ("Osaka", 0): ("אוסקה", "Higashi-Shinsaibashi / Dotonbori", "Apartment Hotel 11 Shinsaibashi 2", "הוזמן", "מ־15/9 ערב ל־21/9 בוקר"),
         ("Tokyo", 1): ("טוקיו (סיום)", "Ginza 8", "The Royal Park Canvas Ginza 8", "הוזמן", "בסיס אחרון · לילות 21–24/9 · צ׳ק־אאוט 25/9"),
@@ -338,10 +338,10 @@ def build_hotels(days):
             notes = "לשנות לילה מ־07/9 ל־09/9 · צ׳ק־אאוט 10/9 לאוטובוס לילה WILLER · הגעה ~16:30 אחרי אוטובוס ישיר מגוטמבה · קייסקי + אונסן (ספינה מחר במעגל)"
         if city == "Kawaguchiko":
             hotel = "HOTEL MYSTAYS Fuji Onsen Resort"
-            status = "לטפל"
+            status = "הוזמן"
             area = "Fujiyoshida / ליד Fuji-Q"
             end = "2026-09-09"
-            notes = "לשנות לילות מ־8–9/9 ל־7–8/9 · צ׳ק־אאוט בוקר 9/9 (אוטובוס לגוטמבה) · Fuji-Q ב־8/9 ליד המלון · ~5 דק׳ מתחנת Fujikyu Highland"
+            notes = "הוזמן · לילות 7–8/9 · צ׳ק־אאוט בוקר 9/9 (אוטובוס לגוטמבה) · Fuji-Q ב־8/9 ליד המלון · ~5 דק׳ מתחנת Fujikyu Highland"
         if city == "Kyoto":
             hotel = "KABIN Koji"
             status = "הוזמן"
@@ -390,7 +390,7 @@ def build_bookings(days):
         # 4 · Stays / experiences
         ("Tsukino Yado Sara — ריוקאן הקונה", "d14", "לטפל", "לשנות 07/9 → 09/9 · Hakone-Yumoto · קייסקי + אונסן · הגעה ~16:30 אחרי אוטובוס ישיר מגוטמבה · צ׳ק־אאוט 10/9 לאוטובוס לילה"),
         ("Hotel Gracery Shinjuku — טוקיו התחלה", "d07", "הוזמן", "2–7/9 · Kabukicho 1-19-1 · בניין Godzilla"),
-        ("מלון קוואגוצ׳יקו — MYSTAYS Fuji Onsen", "d12", "לטפל", "לשנות לילות 8–9/9 → 7–8/9 · צ׳ק־אאוט 9/9 לגוטמבה · Fuji-Q ב־8/9 ליד"),
+        ("מלון קוואגוצ׳יקו — MYSTAYS Fuji Onsen", "d12", "הוזמן", "לילות 7–8/9 · צ׳ק־אאוט 9/9 לגוטמבה · Fuji-Q ב־8/9 ליד"),
         ("KABIN Koji — מלון קיוטו", "d16", "הוזמן", "לילות 11–14/9 · צ׳ק־אאוט 15/9 · 筋屋町152 · Kawaramachi · מתאים לאוטובוס לילה · איסוף מזוודות 11/9 אחה״צ"),
         ("Apartment Hotel 11 Shinsaibashi 2 — אוסקה", "d20", "הוזמן", "מ־15/9 ערב ל־21/9 בוקר · 東心斎橋2-2-12"),
         ("Nagashi somen ב־Hirobun", "d19", "סגור", "14/9 · בלי הזמנה · מזומן ~¥2,000 · להגיע ~09:45–10:00 · גשם ב־10:00 מבטל"),

@@ -123,7 +123,7 @@ window.TRIP = {
     "Seoul hotel: Amanti Hongdae · 27 Aug–2 Sep.",
     "Tokyo first base: Hotel Gracery Shinjuku · 2–7 Sep (Kabukicho).",
     "Kyoto hotel: KABIN Koji · nights 11–14 Sep, checkout 15 Sep (Kawaramachi) — existing booking matches the night bus; bags wait at the desk from 10/9.",
-    "Kawaguchiko hotel: MYSTAYS — change nights 8–9/9 → 7–8/9 (Fuji-Q on 8/9, checkout 9/9 for Gotemba). Hakone: Sara — change 7/9 → 9/9.",
+    "Kawaguchiko hotel: MYSTAYS Fuji Onsen · nights 7–8 Sep, checkout 9 Sep for Gotemba (Fuji-Q on 8/9). Hakone: Sara — change 7/9 → 9/9.",
     "Osaka hotel: Apartment Hotel 11 Shinsaibashi 2 · 15–21 Sep.",
     "Tokyo return base: The Royal Park Canvas Ginza 8 · 21–25 Sep.",
     "Leave Japan ~25 Sep: Emirates Narita → Dubai (DXB) → Tirana (TIA) — book / confirm flight numbers.",
@@ -1243,7 +1243,7 @@ window.PLACES = {
     ],
     "lat": 35.4921,
     "lng": 138.7801,
-    "blurb": "Booked 8–9/9 — change to nights 7–8/9, checkout 9/9 for Gotemba · Fuji-Q is 8/9 next door · onsen · ~5 min walk from Fujikyu Highland Station.",
+    "blurb": "Booked nights 7–8/9, checkout 9/9 for Gotemba · Fuji-Q is 8/9 next door · onsen · ~5 min walk from Fujikyu Highland Station.",
     "taxiAddress": "山梨県富士吉田市新倉2654"
   },
   "kabin-koji": {
@@ -3493,7 +3493,7 @@ window.DAYS = [
       "Red Line sightseeing bus station → Oishi Park (~30 min each way). Last buses ~17:30–18:00."
     ],
     "tips": [
-      "Change MYSTAYS dates to nights 7–8/9 (checkout 9/9 for Gotemba) — currently booked 8–9/9.",
+      "MYSTAYS booked nights 7–8/9, checkout 9/9 for Gotemba — next door to Fuji-Q.",
       "Send bags: Takkyubin from Gracery on 6/9 evening or 7/9 morning so you travel light on the bus.",
       "Book the highway bus reserved seats (Keio / Fujikyu).",
       "Do Chureito first from the station — it is east (Shimo-Yoshida), Oishi is north shore. Don’t zigzag.",

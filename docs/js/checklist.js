@@ -234,10 +234,10 @@ window.CHECKLIST = {
         },
         {
           id: "h-kawaguchiko",
-          label: "HOTEL MYSTAYS Fuji Onsen — לשנות לילות מ־8–9/9 ל־7–8/9 (צ׳ק־אאוט 9/9 לגוטמבה · Fuji-Q ב־8/9 ליד המלון)",
+          label: "HOTEL MYSTAYS Fuji Onsen — קוואגוצ׳יקו (לילות 7–8/9 · צ׳ק־אאוט 9/9 לגוטמבה · Fuji-Q ב־8/9 ליד המלון)",
           window: "ליד Fuji-Q / Fujikyu Highland",
-          priority: "critical",
-          done: false,
+          priority: "low",
+          done: true,
           linkCheckin: true,
           linkTitles: ["HOTEL MYSTAYS", "MYSTAYS Fuji"],
         },
