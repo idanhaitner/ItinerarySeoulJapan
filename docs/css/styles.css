@@ -3225,27 +3225,77 @@ a { color: inherit; }
   overflow: hidden;
 }
 
+.booking-group.is-urgent {
+  border-color: color-mix(in srgb, var(--kyoto) 35%, var(--line));
+  background: color-mix(in srgb, var(--kyoto) 6%, var(--surface));
+}
+
 .booking-group-head {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 16px 20px 12px;
+  padding: 14px 18px;
+  min-height: 52px;
+  list-style: none;
+  cursor: pointer;
+  border-bottom: 0;
+}
+
+.booking-group-head::-webkit-details-marker { display: none; }
+.booking-group-head::marker { content: ""; }
+
+.booking-group-head.is-static {
+  cursor: default;
+}
+
+.booking-group-head:hover {
+  background: color-mix(in srgb, var(--paper) 70%, var(--surface));
+}
+
+.booking-group-head.is-static:hover {
+  background: transparent;
+}
+
+.booking-group[open] > .booking-group-head,
+.booking-group.is-urgent > .booking-group-head {
   border-bottom: 1px solid var(--line);
 }
 
-.booking-group-head h3 {
-  margin: 0;
+.booking-group-title {
   font-size: 18px;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--navy);
 }
 
-.booking-group-head span {
+.booking-group.is-urgent .booking-group-title {
+  color: #8a4b12;
+}
+
+.booking-group-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
   font-size: 12px;
   font-weight: 500;
   color: var(--soft);
+}
+
+.booking-group-meta .chev {
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid var(--soft);
+  border-bottom: 1.5px solid var(--soft);
+  transform: rotate(45deg);
+  transition: transform 0.25s ease;
+  margin-top: -4px;
+}
+
+.booking-group[open] .booking-group-meta .chev {
+  transform: rotate(225deg);
+  margin-top: 4px;
 }
 
 .booking-group-list {

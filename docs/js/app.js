@@ -506,6 +506,11 @@
       const checked = checklistCheckedMap();
       if (checked[bookingId]) state.bookingsFilter = "all";
       else state.bookingsFilter = "open";
+      const item = allChecklistItems().find((i) => i.id === bookingId);
+      if (item && !isOpenCritical(item, checked)) {
+        const group = bookingGroupForItem(bookingId);
+        if (group) storage.setBookingFold(group.id, true);
+      }
     }
     showView("bookings");
     requestAnimationFrame(() => {
@@ -830,6 +835,55 @@
     return map;
   }
 
+  const BOOKING_PRIORITY = { critical: 0, high: 1, medium: 2, low: 3 };
+
+  function bookingWhenStamp(item) {
+    const when = String(item.when || "");
+    if (/עכשיו/.test(when)) return 0;
+    const m = when.match(/(\d{1,2})\s*\/\s*(\d{1,2})/);
+    if (m) return Number(m[2]) * 32 + Number(m[1]);
+    if (/לפני/.test(when)) return 1;
+    return 900;
+  }
+
+  function bookingUrgencyStamp(item) {
+    const blob = `${item.when || ""} ${item.window || ""}`;
+    if (/עכשיו/.test(blob)) return 0;
+    if (/לטפל/.test(blob)) return 1;
+    if (/בהקדם|ברגע שנפתח/.test(blob)) return 2;
+    return 10;
+  }
+
+  function sortBookingItems(items, checked) {
+    return [...items].sort((a, b) => {
+      const doneA = checked[a.id] ? 1 : 0;
+      const doneB = checked[b.id] ? 1 : 0;
+      if (doneA !== doneB) return doneA - doneB;
+      const pa = BOOKING_PRIORITY[a.priority] ?? 2;
+      const pb = BOOKING_PRIORITY[b.priority] ?? 2;
+      if (pa !== pb) return pa - pb;
+      const ua = bookingUrgencyStamp(a);
+      const ub = bookingUrgencyStamp(b);
+      if (ua !== ub) return ua - ub;
+      return bookingWhenStamp(a) - bookingWhenStamp(b);
+    });
+  }
+
+  function isOpenCritical(item, checked) {
+    return item.priority === "critical" && !checked[item.id];
+  }
+
+  function bookingGroupForItem(itemId) {
+    return checklistData.groups.find((g) => g.items.some((item) => item.id === itemId)) || null;
+  }
+
+  function snapshotBookingFolds() {
+    if (!els.bookingsRoot) return;
+    els.bookingsRoot.querySelectorAll("details[data-booking-group]").forEach((d) => {
+      storage.setBookingFold(d.getAttribute("data-booking-group"), d.open);
+    });
+  }
+
   function bookingItemHtml(item, checked) {
     const done = !!checked[item.id];
     const critical = item.priority === "critical" && !done;
@@ -849,30 +903,93 @@
       </label>`;
   }
 
+  function bookingGroupHtml(opts) {
+    const { id, title, items, checked, open, urgent } = opts;
+    const openInGroup = items.filter((item) => !checked[item.id]).length;
+    const countLabel = urgent
+      ? `${items.length} לסגור`
+      : openInGroup
+        ? `${openInGroup} פתוחים`
+        : "הכול סגור";
+    const list = sortBookingItems(items, checked)
+      .map((item) => bookingItemHtml(item, checked))
+      .join("");
+    if (urgent) {
+      return `
+        <section class="booking-group is-urgent">
+          <header class="booking-group-head is-static">
+            <span class="booking-group-title">${escapeHtml(title)}</span>
+            <span class="booking-group-meta"><span>${escapeHtml(countLabel)}</span></span>
+          </header>
+          <div class="booking-group-list">${list}</div>
+        </section>`;
+    }
+    return `
+      <details class="booking-group" data-booking-group="${escapeHtml(id)}"${open ? " open" : ""}>
+        <summary class="booking-group-head">
+          <span class="booking-group-title">${escapeHtml(title)}</span>
+          <span class="booking-group-meta">
+            <span>${escapeHtml(countLabel)}</span>
+            <span class="chev" aria-hidden="true"></span>
+          </span>
+        </summary>
+        <div class="booking-group-list">${list}</div>
+      </details>`;
+  }
+
   function renderBookings() {
     const checked = checklistCheckedMap();
     const allItems = allChecklistItems();
     const doneCount = allItems.filter((i) => checked[i.id]).length;
     const openCount = allItems.length - doneCount;
     const filter = state.bookingsFilter === "all" ? "all" : "open";
+    const folds = storage.getBookingFolds();
+    const focusId = state.focusBookingId;
 
-    const groupsHtml = checklistData.groups
+    const urgentItems = sortBookingItems(
+      allItems.filter((item) => isOpenCritical(item, checked)),
+      checked
+    );
+    const urgentIds = new Set(urgentItems.map((item) => item.id));
+
+    const groups = [...checklistData.groups]
       .map((g) => {
-        const items = g.items.filter((item) => filter === "all" || !checked[item.id]);
-        if (!items.length) return "";
-        const openInGroup = g.items.filter((item) => !checked[item.id]).length;
-        return `
-          <section class="booking-group">
-            <header class="booking-group-head">
-              <h3>${escapeHtml(g.title)}</h3>
-              <span>${openInGroup ? `${openInGroup} פתוחים` : "הכול סגור"}</span>
-            </header>
-            <div class="booking-group-list">
-              ${items.map((item) => bookingItemHtml(item, checked)).join("")}
-            </div>
-          </section>`;
+        const items = g.items.filter((item) => {
+          if (filter !== "all" && checked[item.id]) return false;
+          if (urgentIds.has(item.id)) return false;
+          return true;
+        });
+        const minOpen = Math.min(
+          ...g.items
+            .filter((item) => !checked[item.id])
+            .map((item) => BOOKING_PRIORITY[item.priority] ?? 2),
+          50
+        );
+        return { g, items, minOpen };
+      })
+      .filter((row) => row.items.length)
+      .sort((a, b) => a.minOpen - b.minOpen || a.g.title.localeCompare(b.g.title, "he"));
+
+    const urgentHtml = urgentItems.length
+      ? bookingGroupHtml({
+          id: "urgent",
+          title: "דחוף עכשיו",
+          items: urgentItems,
+          checked,
+          open: true,
+          urgent: true,
+        })
+      : "";
+
+    const groupsHtml = groups
+      .map(({ g, items }) => {
+        const focusedHere = focusId && items.some((item) => item.id === focusId);
+        const open = focusedHere || folds[g.id] === true;
+        return bookingGroupHtml({ id: g.id, title: g.title, items, checked, open, urgent: false });
       })
       .join("");
+
+    const body = urgentHtml + groupsHtml;
 
     els.bookingsRoot.innerHTML = `
       <div class="plan-intro">
@@ -889,7 +1006,7 @@
       </div>
       <div class="bookings-list">
         ${
-          groupsHtml ||
+          body ||
           `<p class="bookings-empty">הכול סגור. אפשר לעבור ל«הכול» כדי לראות מה כבר הוזמן.</p>`
         }
       </div>`;
@@ -1301,6 +1418,7 @@
     els.bookingsRoot.addEventListener("change", (e) => {
       const input = e.target.closest("input[data-check]");
       if (!input) return;
+      snapshotBookingFolds();
       storage.setChecklistItem(input.dataset.check, input.checked);
       renderBookings();
     });
@@ -1308,9 +1426,22 @@
     els.bookingsRoot.addEventListener("click", (e) => {
       const filterBtn = e.target.closest("[data-bookings-filter]");
       if (!filterBtn) return;
+      snapshotBookingFolds();
       state.bookingsFilter = filterBtn.getAttribute("data-bookings-filter") === "all" ? "all" : "open";
       renderBookings();
     });
+
+    els.bookingsRoot.addEventListener(
+      "toggle",
+      (e) => {
+        const details = e.target;
+        if (!details || details.tagName !== "DETAILS") return;
+        const id = details.getAttribute("data-booking-group");
+        if (!id) return;
+        storage.setBookingFold(id, details.open);
+      },
+      true
+    );
 
     if (els.guideRoot) {
       els.guideRoot.addEventListener("click", (e) => {

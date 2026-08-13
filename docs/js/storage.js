@@ -82,6 +82,15 @@ window.TripStorage = (function () {
     setRates(rates) {
       set("fxRates", rates);
     },
+    getBookingFolds() {
+      return get("bookingFolds", {});
+    },
+    setBookingFold(id, open) {
+      const map = this.getBookingFolds();
+      map[id] = !!open;
+      set("bookingFolds", map);
+      return !!map[id];
+    },
     resetChecklist() {
       this.setChecklist({});
     },
