@@ -76,6 +76,7 @@
     dayId: null,
     focusBookingId: null,
     bookingsFilter: "open",
+    guideCountry: "kr",
   };
 
   const els = {
@@ -83,6 +84,7 @@
       itinerary: document.getElementById("panel-itinerary"),
       flights: document.getElementById("panel-flights"),
       bookings: document.getElementById("panel-bookings"),
+      guide: document.getElementById("panel-guide"),
       maps: document.getElementById("panel-maps"),
       recs: document.getElementById("panel-recs"),
       tools: document.getElementById("panel-tools"),
@@ -99,6 +101,7 @@
     topbar: document.getElementById("topbar"),
     masthead: document.getElementById("masthead"),
     bookingsRoot: document.getElementById("bookings-root"),
+    guideRoot: document.getElementById("guide-root"),
     flightsRoot: document.getElementById("flights-root"),
     toolsRoot: document.getElementById("tools-root"),
     navButtons: document.querySelectorAll("[data-nav]"),
@@ -893,6 +896,14 @@
     setResultCount(`${openCount} פתוחים`);
   }
 
+  function renderGuide() {
+    const Guide = window.TripGuide;
+    if (!Guide || !els.guideRoot) return;
+    Guide.render(els.guideRoot, { country: state.guideCountry || "kr" });
+    const label = state.guideCountry === "kr" ? "קוריאה" : "יפן";
+    setResultCount(label);
+  }
+
 
   function sectionStage(opts) {
     const {
@@ -1191,6 +1202,7 @@
       </div>
       <div class="tools-actions">
         <button type="button" class="btn-primary" id="open-tips">טיפים לתחבורה</button>
+        <button type="button" class="btn-ghost" id="open-guide-tab">מדריך למדינה</button>
         <button type="button" class="btn-ghost" id="open-flights-tab">לטיסות</button>
       </div>
       <div id="fx-root"></div>
@@ -1199,6 +1211,8 @@
     tools.renderTaxiCards(document.getElementById("taxi-root"), places);
     const goFlights = document.getElementById("open-flights-tab");
     if (goFlights) goFlights.addEventListener("click", () => showView("flights"));
+    const goGuide = document.getElementById("open-guide-tab");
+    if (goGuide) goGuide.addEventListener("click", () => showView("guide"));
     setResultCount("כלים");
   }
 
@@ -1247,6 +1261,7 @@
     else if (state.view === "maps") renderMaps();
     else if (state.view === "recs") renderRecs();
     else if (state.view === "bookings") renderBookings();
+    else if (state.view === "guide") renderGuide();
     else if (state.view === "tools") renderTools();
     else if (state.view === "detail" && state.dayId) renderDetail(state.dayId);
 
@@ -1296,6 +1311,25 @@
       state.bookingsFilter = filterBtn.getAttribute("data-bookings-filter") === "all" ? "all" : "open";
       renderBookings();
     });
+
+    if (els.guideRoot) {
+      els.guideRoot.addEventListener("click", (e) => {
+        const countryBtn = e.target.closest("[data-guide-country]");
+        if (countryBtn) {
+          state.guideCountry = countryBtn.getAttribute("data-guide-country") === "kr" ? "kr" : "jp";
+          renderGuide();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          return;
+        }
+        const jump = e.target.closest("[data-guide-jump]");
+        if (jump) {
+          e.preventDefault();
+          if (window.TripGuide && typeof window.TripGuide.jump === "function") {
+            window.TripGuide.jump(jump.getAttribute("data-guide-jump"));
+          }
+        }
+      });
+    }
 
     document.body.addEventListener("click", (e) => {
       const bookingJump = e.target.closest("[data-open-booking]");
