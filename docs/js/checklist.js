@@ -132,11 +132,19 @@ window.CHECKLIST = {
         },
         {
           id: "j-gotemba-bus",
-          label: "אוטובוס מקוואגוצ׳יקו לאאוטלט גוטמבה (09/9 בוקר) — ואז גוטמבה ל־Togendai לשייט הפיראטים",
+          label: "אוטובוס מקוואגוצ׳יקו לאאוטלט גוטמבה (09/9 בוקר) — ואז אוטובוס ישיר להקונה־יומוטו (~45–60 דק׳, לא דרך Togendai)",
           window: "9 בספט׳ בבוקר אחרי צ׳ק־אאוט",
           priority: "high",
-          linkPlaceIds: ["gotemba-outlets", "lake-ashi"],
-          linkTitles: ["Gotemba", "Hakone bus", "pirate ship", "ספינת פיראטים"],
+          linkPlaceIds: ["gotemba-outlets"],
+          linkTitles: ["Gotemba", "Hakone Tozan bus", "Hakone-Yumoto"],
+        },
+        {
+          id: "j-hakone-freepass",
+          label: "Hakone Freepass ליום אחד (10/9) — אוטובוס + ספינת פיראטים + רכבל + כבלים + Tozan · לקנות בהקונה־יומוטו בבוקר",
+          window: "10 בספט׳ אחרי ארוחת הבוקר",
+          priority: "high",
+          linkPlaceIds: ["lake-ashi", "owakudani", "hakone-shrine"],
+          linkTitles: ["Hakone Freepass", "pirate ship", "ספינת פיראטים", "ropeway"],
         },
         {
           id: "j-shinkansen",
@@ -194,7 +202,7 @@ window.CHECKLIST = {
         {
           id: "h-hakone",
           label: "Tsukino Yado Sara — לשנות לילה מ־07/9 ל־09/9 (צ׳ק־אאוט 10/9 לקיוטו)",
-          window: "Hakone-Yumoto · קייסקי + אונסן · לעדכן הגעה ~18:00 אחרי גוטמבה והשייט",
+          window: "Hakone-Yumoto · קייסקי + אונסן · לעדכן הגעה ~16:30 אחרי אוטובוס ישיר מגוטמבה",
           priority: "critical",
           done: false,
           linkCheckin: true,
@@ -276,9 +284,9 @@ window.CHECKLIST = {
         },
         { id: "hk-onsen-etiquette", label: "בדיקת כללי אונסן במלון הקונה", window: "לפני הצ׳ק־אין", priority: "low" },
         { id: "s-jimjilbang", label: "ג׳ימג׳ילבאנג ליד Jamsil אחרי לוטה", window: "31 באוג׳ בערב", priority: "low" },
-        { id: "ky-fushimi", label: "יציאה מוקדמת ל־Fushimi Inari + יום מאצ'ה באוג'י (Byodo-in)", window: "12 בספט׳", priority: "low" },
+        { id: "ky-fushimi", label: "יציאה מוקדמת ל־Fushimi Inari + אוג'י + נישיקי עד ~16:00 (קיומיזו ב־11/9)", window: "12 בספט׳", priority: "low" },
         { id: "ky-bags", label: "איסוף מזוודות Takkyubin בקיוטו (הגיעו מקוואגוצ׳יקו)", window: "בהגעה 10/9", priority: "medium" },
-        { id: "kw-chureito", label: "צ׳ורייטו + לוסון + אוישי אחה״צ (אחרי האוטובוס מטוקיו)", window: "7 בספט׳ אחה״צ", priority: "low" },
+        { id: "kw-chureito", label: "צ׳ורייטו ב־Fujikyu ל־Shimo-Yoshida, לוסון, אוטובוס אדום לאוישי (לצאת עד ~17:15)", window: "7 בספט׳ אחה״צ", priority: "low" },
       ],
     },
     {
