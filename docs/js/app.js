@@ -75,6 +75,7 @@
     query: "",
     dayId: null,
     focusBookingId: null,
+    bookingsFilter: "open",
   };
 
   const els = {
@@ -498,6 +499,11 @@
 
   function openBookingsFocus(bookingId) {
     state.focusBookingId = bookingId || null;
+    if (bookingId) {
+      const checked = checklistCheckedMap();
+      if (checked[bookingId]) state.bookingsFilter = "all";
+      else state.bookingsFilter = "open";
+    }
     showView("bookings");
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
@@ -821,41 +827,70 @@
     return map;
   }
 
+  function bookingItemHtml(item, checked) {
+    const done = !!checked[item.id];
+    const critical = item.priority === "critical" && !done;
+    const meta = [item.when, item.window].filter(Boolean).join(" · ");
+    return `
+      <label id="booking-${escapeHtml(item.id)}" class="booking-item${done ? " done" : ""}${critical ? " booking-critical" : ""}">
+        <input type="checkbox" data-check="${item.id}" ${done ? "checked" : ""} />
+        <span class="booking-body">
+          <span class="booking-top">
+            <span class="booking-label">${escapeHtml(item.label)}</span>
+            ${critical ? `<span class="booking-flag">דחוף</span>` : ""}
+            ${done ? `<span class="booking-flag is-done">הוזמן</span>` : ""}
+          </span>
+          ${item.note ? `<span class="booking-note">${escapeHtml(item.note)}</span>` : ""}
+          ${meta ? `<span class="booking-meta">${escapeHtml(meta)}</span>` : ""}
+        </span>
+      </label>`;
+  }
+
   function renderBookings() {
     const checked = checklistCheckedMap();
     const allItems = allChecklistItems();
-    const done = allItems.filter((i) => checked[i.id]).length;
-    const total = allItems.length;
+    const doneCount = allItems.filter((i) => checked[i.id]).length;
+    const openCount = allItems.length - doneCount;
+    const filter = state.bookingsFilter === "all" ? "all" : "open";
+
+    const groupsHtml = checklistData.groups
+      .map((g) => {
+        const items = g.items.filter((item) => filter === "all" || !checked[item.id]);
+        if (!items.length) return "";
+        const openInGroup = g.items.filter((item) => !checked[item.id]).length;
+        return `
+          <section class="booking-group">
+            <header class="booking-group-head">
+              <h3>${escapeHtml(g.title)}</h3>
+              <span>${openInGroup ? `${openInGroup} פתוחים` : "הכול סגור"}</span>
+            </header>
+            <div class="booking-group-list">
+              ${items.map((item) => bookingItemHtml(item, checked)).join("")}
+            </div>
+          </section>`;
+      })
+      .join("");
 
     els.bookingsRoot.innerHTML = `
       <div class="plan-intro">
         <p class="plan-kicker">הזמנות · 予約</p>
-        <h2 class="plan-title">מה נשאר לסגור</h2>
-        <p class="plan-lead">ממוין לפי דחיפות — חלון ההזמנות לרוב האטרקציות פתוח עכשיו. מתחילים ממסמכים בארץ, אחר כך כרטיסים שנחטפים. מה שכבר סגור מסומן בצד. מהלו״ז אפשר לקפוץ ישר לפריט הרלוונטי.</p>
+        <h2 class="plan-title">רק מה שחייב מראש</h2>
+        <p class="plan-lead">כרטיסים שנחטפים, שינקנסן ארוך, לינות שצריך לשנות, וסעודות שצריך לשריין. רכבות מקומיות ושילוח מזוודות לא כאן — אותם סוגרים במקום.</p>
+      </div>
+      <div class="bookings-toolbar">
+        <p class="bookings-count"><strong>${openCount}</strong> נשארו לסגור${doneCount ? ` · ${doneCount} כבר הוזמנו` : ""}</p>
+        <div class="bookings-filters" role="tablist" aria-label="סינון הזמנות">
+          <button type="button" class="bookings-filter${filter === "open" ? " is-on" : ""}" data-bookings-filter="open">פתוחים</button>
+          <button type="button" class="bookings-filter${filter === "all" ? " is-on" : ""}" data-bookings-filter="all">הכול</button>
+        </div>
       </div>
       <div class="bookings-list">
-        ${checklistData.groups
-          .map(
-            (g) => `
-          <section class="booking-group">
-            <h3>${escapeHtml(g.title)}</h3>
-            ${g.items
-              .map(
-                (item) => `
-              <label id="booking-${escapeHtml(item.id)}" class="booking-item ${checked[item.id] ? "done" : ""}${item.priority === "critical" ? " booking-critical" : ""}">
-                <input type="checkbox" data-check="${item.id}" ${checked[item.id] ? "checked" : ""} />
-                <span>
-                  <div class="booking-label">${escapeHtml(item.label)}</div>
-                  <span class="window-badge">${escapeHtml(item.window)}</span>
-                </span>
-              </label>`
-              )
-              .join("")}
-          </section>`
-          )
-          .join("")}
+        ${
+          groupsHtml ||
+          `<p class="bookings-empty">הכול סגור. אפשר לעבור ל«הכול» כדי לראות מה כבר הוזמן.</p>`
+        }
       </div>`;
-    setResultCount(`${done}/${total}`);
+    setResultCount(`${openCount} פתוחים`);
   }
 
 
@@ -1252,6 +1287,13 @@
       const input = e.target.closest("input[data-check]");
       if (!input) return;
       storage.setChecklistItem(input.dataset.check, input.checked);
+      renderBookings();
+    });
+
+    els.bookingsRoot.addEventListener("click", (e) => {
+      const filterBtn = e.target.closest("[data-bookings-filter]");
+      if (!filterBtn) return;
+      state.bookingsFilter = filterBtn.getAttribute("data-bookings-filter") === "all" ? "all" : "open";
       renderBookings();
     });
 
