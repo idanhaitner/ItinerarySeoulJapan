@@ -113,8 +113,8 @@ window.TRIP = {
     "Sep 5: Asakusa + Skytree + Akihabara.",
     "Sep 6: Kichijoji + Shimokitazawa day, night Street Kart ~19:00 (IDP).",
     "Sep 7: Bus to Kawaguchiko Station → Chureito (Fujikyu) → Lawson → Red Line to Oishi (last buses ~17:30). Sep 8: full Fuji-Q day. Sep 9: Gotemba Outlets, then direct bus to Hakone-Yumoto + Sara kaiseki (no pirate ship).",
-    "Sep 10: Hakone Loop (shrine → pirate ship → Owakudani → Tozan), evening Shinkansen Odawara → Tokyo, WILLER ReBorn 21:55 Otemachi Grand Cube → Kyoto Hachijo Exit East 05:50. Sep 11: Fushimi morning, KABIN check-in + bags, then Kiyomizu / Gion / Pontocho.",
-    "Sep 12: Uji (Byodo-in / matcha) + Nishiki before 17:30.",
+    "Sep 10: Hakone Loop, then evening Hikari Odawara → Kyoto and check-in at KABIN. Sep 11: Kiyomizu / Sannenzaka toward sunset, then Gion + Pontocho.",
+    "Sep 12: Fushimi Inari + Uji (Byodo-in / matcha) + Nishiki before 17:30.",
     "Sep 14: Kibune nagashi somen (Hirobun walk-in) + Kurama trek + teamLab Biovortex booked 18:00–18:30. Sep 15: Kyoto zen → Osaka evening.",
     "Sep 20: Kobe day trip from Osaka.",
     "Sep 21: Leave Osaka for Tokyo.",
@@ -122,7 +122,7 @@ window.TRIP = {
     "Sep 24: Full Ginza shopping day + farewell dinner.",
     "Seoul hotel: Amanti Hongdae · 27 Aug–2 Sep.",
     "Tokyo first base: Hotel Gracery Shinjuku · 2–7 Sep (Kabukicho).",
-    "Kyoto hotel: KABIN Koji · nights 11–14 Sep, checkout 15 Sep (Kawaramachi) — existing booking matches the night bus; bags wait at the desk from 10/9.",
+    "Kyoto hotel: KABIN Koji · add night 10/9 · nights 10–14 Sep, checkout 15 Sep (Kawaramachi).",
     "Kawaguchiko hotel: MYSTAYS Fuji Onsen · nights 7–8 Sep, checkout 9 Sep for Gotemba (Fuji-Q on 8/9). Hakone: Sara — change 7/9 → 9/9.",
     "Osaka hotel: Apartment Hotel 11 Shinsaibashi 2 · 15–21 Sep.",
     "Tokyo return base: The Royal Park Canvas Ginza 8 · 21–25 Sep.",
@@ -1132,7 +1132,7 @@ window.PLACES = {
     ],
     "lat": 35.2561,
     "lng": 139.1549,
-    "blurb": "Shinkansen hop Hakone → Tokyo Station on 10/9 evening (~35 min, ~¥3,700) — ~15 min from Hakone-Yumoto."
+    "blurb": "Shinkansen station for the evening Hikari to Kyoto on 10/9 — about 15 minutes from Hakone-Yumoto."
   },
   "tokyo-station": {
     "id": "tokyo-station",
@@ -1145,7 +1145,7 @@ window.PLACES = {
     ],
     "lat": 35.6812,
     "lng": 139.7671,
-    "blurb": "Marunouchi North Exit — 5–8 min walk to WILLER Otemachi (Grand Cube)."
+    "blurb": "Main Tokyo rail hub — Marunouchi side."
   },
   "willer-otemachi": {
     "id": "willer-otemachi",
@@ -1158,21 +1158,21 @@ window.PLACES = {
     ],
     "lat": 35.6875,
     "lng": 139.7633,
-    "blurb": "ReBorn private sleep-capsule · check in by 21:35 for the 21:55 to Kyoto Station Hachijo Exit East.",
+    "blurb": "Night-bus terminal — not on this itinerary.",
     "taxiAddress": "東京都千代田区大手町1-9-2 大手町フィナンシャルシティ グランキューブ"
   },
   "kyoto-station": {
     "id": "kyoto-station",
-    "name": "Kyoto Station Hachijo Exit East",
-    "nameJa": "京都駅八条口東",
+    "name": "Kyoto Station",
+    "nameJa": "京都駅",
     "city": "Kyoto",
     "country": "JP",
     "tags": [
       "transport"
     ],
     "lat": 34.9858,
-    "lng": 135.7602,
-    "blurb": "WILLER arrival 05:50 on 11/9 — Hachijo East, south side of Kyoto Station, backpacks only until KABIN check-in."
+    "lng": 135.7588,
+    "blurb": "Arrive here on the evening Hikari from Odawara on 10/9."
   },
   "gotemba-outlets": {
     "id": "gotemba-outlets",
@@ -1258,7 +1258,7 @@ window.PLACES = {
     ],
     "lat": 35.0003,
     "lng": 135.7647,
-    "blurb": "Booked 11–15/9, checkout 15/9 — existing dates now match the night bus · Kyoto base near Kawaramachi / Shijo · ~6 min walk from Kawaramachi Station · Takkyubin bags wait at the desk from 10/9.",
+    "blurb": "Booked 11–15/9 — add night 10/9 (nights 10–14/9, checkout 15/9) · Kyoto base near Kawaramachi / Shijo · ~6 min walk from Kawaramachi Station.",
     "taxiAddress": "京都府京都市下京区筋屋町152"
   },
   "musse-kyoto": {
@@ -1345,7 +1345,7 @@ window.PLACES = {
     ],
     "lat": 34.9671,
     "lng": 135.7727,
-    "blurb": "Thousands of torii — 11/9 morning right after the night bus (~5 min JR from Kyoto Station)."
+    "blurb": "Thousands of torii gates — early on 12/9, before Uji."
   },
   "tofukuji": {
     "id": "tofukuji",
@@ -3478,8 +3478,8 @@ window.DAYS = [
     "country": "JP",
     "hotelId": "mystays-fuji-onsen",
     "title": "Tokyo → Kawaguchiko (Fuji views)",
-    "summary": "Send bags, morning highway bus to Kawaguchiko Station. Then the geography-right loop: Fujikyu to Chureito, Lawson at the station, Red Line bus to Oishi before the last buses. Stay at HOTEL MYSTAYS.",
-    "food": "Lunch near Kawaguchiko Station; dinner near the hotel.",
+    "summary": "Checkout Gracery and take a reserved intercity bus from Shinjuku to Kawaguchiko. From the station: Chureito Pagoda first, then the Lawson photo, then the north-shore bus to Oishi before the last buses. Sleep at MYSTAYS.",
+    "food": "Lunch near Kawaguchiko Station; dinner at the hotel.",
     "placeIds": [
       "chureito",
       "fuji-lawson",
@@ -3487,58 +3487,59 @@ window.DAYS = [
       "mystays-fuji-onsen"
     ],
     "transport": [
-      "Highway bus Shinjuku Expressway Bus Terminal → Kawaguchiko Station (~1h45–2h15, reserved).",
-      "If the bus stops at Fuji-Q / Fujikyu Highland first, drop bags at MYSTAYS then continue to the station.",
-      "Fujikyu railway Kawaguchiko → Shimo-Yoshida for Chureito (~10 min + ~400 stairs).",
-      "Red Line sightseeing bus station → Oishi Park (~30 min each way). Last buses ~17:30–18:00."
+      "Reserved intercity bus from Busta Shinjuku (the highway-bus terminal) to Kawaguchiko Station, about 2 hours.",
+      "Some buses stop at Fuji-Q / Fujikyu Highland before the station. If yours does, leave the big bags at MYSTAYS (next door) and continue to the station with a small bag.",
+      "If the bus goes straight to Kawaguchiko Station, use the station lockers until hotel check-in.",
+      "Local Fujikyu train to Shimo-Yoshida for Chureito (~10 min, then ~400 stairs).",
+      "Red Line sightseeing bus from the station to Oishi Park (~30 min each way). Last buses around 17:30–18:00."
     ],
     "tips": [
-      "MYSTAYS booked nights 7–8/9, checkout 9/9 for Gotemba — next door to Fuji-Q.",
-      "Send bags: Takkyubin from Gracery on 6/9 evening or 7/9 morning so you travel light on the bus.",
-      "Book the highway bus reserved seats (Keio / Fujikyu).",
-      "Do Chureito first from the station — it is east (Shimo-Yoshida), Oishi is north shore. Don’t zigzag.",
-      "Leave Oishi by ~17:15. Taxi backup if you want to stay later for sunset."
+      "MYSTAYS is booked: nights 7–8/9, checkout 9/9 for Gotemba. The hotel is next to Fuji-Q.",
+      "Optional: send big bags from Gracery to MYSTAYS the evening of 6/9 or the morning of 7/9, so you ride the bus with a small bag only.",
+      "Book the Shinjuku–Kawaguchiko bus in advance (Keio or Fujikyu).",
+      "Do Chureito first (east of the station), then Oishi (north shore). Don’t go north and then back east.",
+      "Leave Oishi by ~17:15. Take a taxi if you want to stay for sunset."
     ],
     "timeline": [
       {
         "time": "08:00",
         "title": "Checkout — Hotel Gracery Shinjuku",
-        "note": "Last Tokyo-1 morning · bags already forwarded or on the bus.",
+        "note": "Last morning of the first Tokyo stay. Bags are either already shipped or coming with you on the bus.",
         "placeId": "gracery-shinjuku",
         "category": "hotel"
       },
       {
         "time": "09:00",
-        "title": "Travel by highway bus · from Shinjuku to Kawaguchiko Station",
-        "note": "Reserved seats · ~1h45–2h15 · book ahead · Busta Shinjuku.",
+        "title": "Travel by intercity bus · from Shinjuku to Kawaguchiko Station",
+        "note": "Reserved seats from Busta Shinjuku. About 1h45–2h15.",
         "placeId": "fuji-lawson",
         "category": "transit"
       },
       {
         "time": "11:30",
         "title": "Arrive Kawaguchiko Station",
-        "note": "If the bus stopped at Fuji-Q first, bags are already at MYSTAYS; otherwise station lockers.",
+        "note": "If the bus stopped at Fuji-Q first, the bags are already at MYSTAYS. If not, use station lockers until check-in.",
         "placeId": "fuji-lawson",
         "category": "transit"
       },
       {
         "time": "12:00",
         "title": "Lunch near the station",
-        "note": "Easy noodles / lake café — then go east to Chureito.",
+        "note": "Noodles or a café by the lake, then head east to Chureito.",
         "placeId": "fuji-lawson",
         "category": "dining"
       },
       {
         "time": "12:45",
         "title": "Travel by Fujikyu · from Kawaguchiko to Shimo-Yoshida (Chureito)",
-        "note": "~10 min · then ~400 stairs up to the pagoda.",
+        "note": "About 10 minutes, then ~400 stairs up to the pagoda.",
         "placeId": "chureito",
         "category": "transit"
       },
       {
         "time": "13:00",
         "title": "Chureito Pagoda",
-        "note": "Classic pagoda + Fuji shot — afternoon light.",
+        "note": "Pagoda with Fuji in the background — afternoon light.",
         "placeId": "chureito",
         "end": "14:30",
         "category": "attraction"
@@ -3546,21 +3547,21 @@ window.DAYS = [
       {
         "time": "14:45",
         "title": "Lawson Kawaguchiko Fuji photo",
-        "note": "Back at the station — famous convenience-store Fuji shot if the sky is clear.",
+        "note": "Back at the station. The famous convenience-store shot, if the sky is clear.",
         "placeId": "fuji-lawson",
         "category": "attraction"
       },
       {
         "time": "15:15",
         "title": "Travel by Red Line bus · from Kawaguchiko Station to Oishi Park",
-        "note": "~30 min · sightseeing bus · last buses ~17:30–18:00.",
+        "note": "Sightseeing bus, about 30 minutes. Last buses around 17:30–18:00.",
         "placeId": "fuji-view-bus",
         "category": "transit"
       },
       {
         "time": "15:45",
         "title": "Oishi Park & north-shore views",
-        "note": "Flower path + lake & Fuji. Leave by ~17:15 for the last bus.",
+        "note": "Lake and Fuji from the north shore. Leave by ~17:15 for the last bus.",
         "placeId": "oishi-park",
         "end": "17:15",
         "category": "transit"
@@ -3568,7 +3569,7 @@ window.DAYS = [
       {
         "time": "18:00",
         "title": "Check-in & dinner at MYSTAYS",
-        "note": "Onsen after the viewpoints · rest for Fuji-Q tomorrow.",
+        "note": "Onsen after the viewpoints. Rest for Fuji-Q tomorrow.",
         "placeId": "mystays-fuji-onsen",
         "category": "hotel"
       }
@@ -3576,7 +3577,7 @@ window.DAYS = [
     "transfer": {
       "mode": "bus",
       "label": "Tokyo → Kawaguchiko",
-      "detail": "Highway bus Shinjuku → Kawaguchiko (~2h, reserved)",
+      "detail": "Intercity bus from Shinjuku to Kawaguchiko Station (~2h, reserved seat)",
       "duration": "~1h45–2h15",
       "fromCity": "Tokyo",
       "toCity": "Kawaguchiko"
@@ -3650,15 +3651,15 @@ window.DAYS = [
     ],
     "tips": [
       "Change Sara to night 9/9 (checkout 10/9) — currently booked 7/9. Tell the ryokan you arrive ~16:30 after shopping.",
-      "Morning Takkyubin (Yamato) MYSTAYS → KABIN Koji: ~¥2,000–2,500/bag. Bags arrive Kyoto 10/9 and wait at the desk until 11/9 afternoon check-in. Hakone + night bus with a small backpack only (Hakone clothes, night-bus set, toiletries, charger, documents).",
-      "Gotemba Outlets open ~10:00 — a few hours of shopping with Fuji views, then leave with time for the Yumoto bus.",
-      "Pirate ship is tomorrow on the Hakone Loop — last boats today are ~16:30–17:00 and would make kaiseki a sprint."
+      "In the morning, send the big bags from MYSTAYS to KABIN Koji (Yamato, about ¥2,000–2,500 per bag). They arrive in Kyoto on 10/9. Hakone is backpacks only.",
+      "Gotemba Outlets open ~10:00. Shop a few hours with Fuji views, then leave in time for the bus to Hakone-Yumoto.",
+      "The pirate ship is tomorrow on the Hakone Loop. Today’s last boats are ~16:30–17:00 and would make kaiseki a rush."
     ],
     "timeline": [
       {
         "time": "07:45",
         "title": "Checkout hotel MYSTAYS & send bags to Kyoto",
-        "note": "Yamato Takkyubin to KABIN Koji · ~¥2,000–2,500/bag · backpacks only through Hakone and the night bus.",
+        "note": "Yamato desk at the hotel, about ¥2,000–2,500 per bag. Backpacks only from here through Hakone.",
         "placeId": "mystays-fuji-onsen",
         "category": "hotel"
       },
@@ -3712,51 +3713,50 @@ window.DAYS = [
     "id": "d15",
     "date": "2026-09-10",
     "weekday": "Thursday",
-    "city": "Hakone",
+    "city": "Kyoto",
     "country": "JP",
-    "hotelId": null,
-    "title": "Hakone Loop & WILLER night bus to Kyoto",
-    "summary": "Classic Hakone Loop with a small backpack only, then an evening hop to Tokyo and the WILLER EXPRESS ReBorn overnight bus. Large bags were already sent Takkyubin to KABIN — sleep on the bus, no extra Kyoto hotel night.",
-    "food": "Ryokan breakfast; easy dinner near Otemachi / Tokyo Station before boarding.",
+    "hotelId": "kabin-koji",
+    "title": "Hakone Loop & evening shinkansen to Kyoto",
+    "summary": "Classic Hakone Loop with a small backpack: shrine, pirate ship, Owakudani, then back down to Hakone-Yumoto. Evening Hikari from Odawara to Kyoto, check-in at KABIN, and collect the bags sent ahead.",
+    "food": "Ryokan breakfast; simple dinner near KABIN after arrival.",
     "placeIds": [
       "hakone-shrine",
       "lake-ashi",
       "owakudani",
       "odawara",
-      "tokyo-station",
-      "willer-otemachi"
+      "kabin-koji"
     ],
     "transport": [
       "Bus Hakone-Yumoto → Moto-Hakone (~35–40 min) for the shrine.",
-      "Short walk to Hakone-machi pier · pirate ship to Togendai (~30–40 min).",
-      "Hakone Ropeway Togendai → Owakudani → Sounzan, cable car to Gora, Tozan train to Hakone-Yumoto.",
-      "Evening: Hakone-Yumoto → Odawara (~15 min) · Shinkansen to Tokyo Station (~35 min, ~¥3,700 at machines) · 5–8 min walk from Marunouchi North Exit to Otemachi Grand Cube."
+      "Short walk to Hakone-machi pier, then the pirate ship to Togendai (~30–40 min).",
+      "Hakone Ropeway Togendai → Owakudani → Sounzan, cable car to Gora, Tozan train down to Hakone-Yumoto.",
+      "Hakone-Yumoto → Odawara (~15 min), then Hikari shinkansen to Kyoto (~2h10). Most Nozomi trains skip Odawara."
     ],
     "tips": [
-      "KABIN is already booked from 11/9 — the night of 10/9 is the bus. No extra Kyoto night to add.",
-      "Hakone Freepass (1 day from Hakone-Yumoto) covers the bus, ship, ropeway, cable and Tozan — buy at the station after breakfast.",
-      "Leave Hakone-Yumoto ~18:30–19:00 so you reach Otemachi with time for dinner. Be at Grand Cube by 21:35; ReBorn departs 21:55.",
-      "Backpack only: Hakone day clothes + night-bus set, small toiletries, phone charger, documents. Bags wait at KABIN."
+      "Add a KABIN Koji night on 10/9 to the existing 11–15/9 booking (or a cheap hotel near Kyoto Station).",
+      "Buy a 1-day Hakone Freepass at Hakone-Yumoto after breakfast. It covers the bus, ship, ropeway, cable car and Tozan.",
+      "Book reserved Hikari seats Odawara → Kyoto for around 17:00–17:30. Backpacks are fine; oversized-baggage rules only apply if a bag is over 160 cm.",
+      "Leave Hakone-Yumoto by ~16:45 so you have a buffer at Odawara. Collect the forwarded bags at KABIN."
     ],
     "timeline": [
       {
         "time": "07:30",
         "title": "Breakfast & checkout — Tsukino Yado Sara",
-        "note": "Backpacks only · Freepass at Hakone-Yumoto if you didn’t buy yesterday.",
+        "note": "Backpacks only. Buy the Freepass at Hakone-Yumoto if you didn’t buy it yesterday.",
         "placeId": "tsukino-yado-sara",
         "category": "hotel"
       },
       {
         "time": "08:30",
         "title": "Travel by bus · from Hakone-Yumoto to Moto-Hakone",
-        "note": "Hakone Tozan bus · ~35–40 min · covered by Freepass.",
+        "note": "Hakone Tozan bus, about 35–40 minutes, covered by the Freepass.",
         "placeId": "hakone-shrine",
         "category": "transit"
       },
       {
         "time": "09:15",
         "title": "Hakone Shrine floating torii",
-        "note": "Lakeside gate at Moto-Hakone — then a short walk to the pier.",
+        "note": "The lakeside gate at Moto-Hakone, then a short walk to the pier.",
         "placeId": "hakone-shrine",
         "end": "10:15",
         "category": "culture"
@@ -3764,7 +3764,7 @@ window.DAYS = [
       {
         "time": "10:30",
         "title": "Lake Ashi pirate ship · from Hakone-machi to Togendai",
-        "note": "Sightseeing cruise · ~30–40 min · one-way on the loop.",
+        "note": "Sightseeing cruise, about 30–40 minutes, one way on the loop.",
         "placeId": "lake-ashi",
         "end": "11:15",
         "category": "attraction"
@@ -3772,79 +3772,59 @@ window.DAYS = [
       {
         "time": "11:30",
         "title": "Travel by Hakone Ropeway · from Togendai to Owakudani",
-        "note": "Ropeway over the volcanic valley · ~10–15 min.",
+        "note": "Ropeway over the volcanic valley, about 10–15 minutes.",
         "placeId": "owakudani",
         "category": "transit"
       },
       {
         "time": "11:45",
         "title": "Owakudani — black eggs",
-        "note": "Volcanic valley + kuro-tamago · extra time now that the Kyoto shinkansen is gone.",
+        "note": "Volcanic valley and kuro-tamago.",
         "placeId": "owakudani",
         "end": "13:00",
-        "category": "transit"
+        "category": "dining"
       },
       {
         "time": "13:15",
         "title": "Travel by ropeway / cable / Tozan · from Owakudani to Hakone-Yumoto",
-        "note": "Sounzan → Gora cable car → Hakone Tozan Train down · ~50–70 min.",
+        "note": "Sounzan → Gora cable car → Hakone Tozan Train down, about 50–70 minutes.",
         "placeId": "odawara",
         "category": "transit"
       },
       {
         "time": "14:45",
         "title": "Buffer in Hakone-Yumoto",
-        "note": "Coffee / rest with backpacks only · leave the station ~18:30–19:00.",
+        "note": "Coffee and a rest with backpacks only. Leave the station around 16:45.",
         "category": "attraction"
       },
       {
-        "time": "18:30",
+        "time": "16:45",
         "title": "Travel by Hakone Tozan / Odakyu · from Hakone-Yumoto to Odawara",
-        "note": "~15 min · no booking.",
+        "note": "About 15 minutes. No booking needed.",
         "placeId": "odawara",
         "category": "transit"
       },
       {
-        "time": "19:05",
-        "title": "Travel by Shinkansen · from Odawara to Tokyo Station",
-        "note": "Kodama/Hikari · ~35 min · ~¥3,700 at station machines · Marunouchi North Exit.",
-        "placeId": "tokyo-station",
+        "time": "17:15",
+        "title": "Travel by Hikari Shinkansen · from Odawara to Kyoto",
+        "note": "Reserved seats on SmartEX, about 2h10. Book ahead.",
+        "placeId": "odawara",
+        "end": "19:25",
         "category": "transit"
       },
       {
-        "time": "20:00",
-        "title": "Walk to WILLER terminal · from Tokyo Station to Otemachi Grand Cube",
-        "note": "Marunouchi North Exit · 5–8 min underground or street.",
-        "placeId": "willer-otemachi",
-        "category": "transit"
-      },
-      {
-        "time": "20:15",
-        "title": "Dinner near Otemachi / Tokyo Station",
-        "note": "Unhurried dinner · backpacks only · be at Grand Cube by 21:35.",
-        "category": "dining"
-      },
-      {
-        "time": "21:35",
-        "title": "Check in at WILLER EXPRESS Otemachi (Grand Cube)",
-        "note": "ReBorn private sleep capsule · Tokyo Otemachi Grand Cube.",
-        "placeId": "willer-otemachi",
-        "category": "transit"
-      },
-      {
-        "time": "21:55",
-        "title": "Travel by WILLER EXPRESS ReBorn night bus · from Tokyo Otemachi to Kyoto",
-        "note": "Departs 21:55 · arrives Kyoto Station Hachijo Exit East 05:50.",
-        "placeId": "willer-otemachi",
-        "end": "05:50",
-        "category": "transit"
+        "time": "19:45",
+        "title": "Check-in at hotel KABIN Koji",
+        "note": "Kawaramachi base. Extra night 10/9. Collect the bags sent from MYSTAYS.",
+        "placeId": "kabin-koji",
+        "category": "hotel"
       }
     ],
     "transfer": {
-      "mode": "bus",
-      "label": "Hakone → Kyoto (night bus)",
-      "detail": "Hakone-Yumoto → Odawara (~15 min) · Shinkansen to Tokyo Station (~35 min) · walk to Otemachi Grand Cube · WILLER EXPRESS ReBorn 21:55 → Kyoto Station Hachijo Exit East 05:50",
-      "duration": "evening hop + overnight bus",
+      "mode": "train",
+      "label": "Hakone → Kyoto",
+      "detail": "Hakone-Yumoto to Odawara (~15 min), then Hikari shinkansen to Kyoto (~2h10)",
+      "duration": "~2.5–3 hours door to door",
       "fromCity": "Hakone",
       "toCity": "Kyoto"
     }
@@ -3856,105 +3836,65 @@ window.DAYS = [
     "city": "Kyoto",
     "country": "JP",
     "hotelId": "kabin-koji",
-    "title": "Night-bus arrival, Fushimi morning, then Kiyomizu & Gion",
-    "summary": "Arrive Kyoto Station Hachijo Exit East 05:50 with just a backpack. Light morning at Fushimi Inari (closest big sight to the station), then KABIN check-in and Takkyubin bag pickup in the afternoon. Late afternoon downhill into Kiyomizu, Sannenzaka, Gion and Pontocho.",
-    "food": "Light lunch after Fushimi; Pontocho riverside dinner.",
+    "title": "Kiyomizu sunset, Gion & Pontocho",
+    "summary": "Easy morning after a real bed. Afternoon at Kiyomizu-dera, then downhill through Sannenzaka and Ninenzaka into Gion at dusk, and dinner in Pontocho by the river.",
+    "food": "Lunch near Kawaramachi; Pontocho riverside dinner.",
     "placeIds": [
-      "kyoto-station",
-      "fushimi-inari",
-      "kabin-koji",
       "kiyomizu",
       "sannenzaka",
       "gion",
       "pontocho"
     ],
     "transport": [
-      "JR Kyoto → Inari (~5 min, 2 stops) for Fushimi — skip Arashiyama this morning (full west-Kyoto day is Sunday).",
-      "Walk / bus from KABIN Koji to Kiyomizu-Gojo after check-in, then uphill to the temple.",
-      "Walk down Sannenzaka / Ninenzaka into Gion — Pontocho is a short walk from there."
+      "Walk or bus from KABIN Koji to Kiyomizu-Gojo, then uphill to the temple.",
+      "Walk down Sannenzaka / Ninenzaka into Gion. Pontocho is a short walk from there."
     ],
     "tips": [
-      "KABIN Koji · nights 11–14/9, checkout 15/9 · 152 Sujiyacho, Shimogyo — existing booking now matches; collect bags at the desk (arrived 10/9).",
-      "Typical check-in ~15:00 — leave backpacks at the desk earlier if they allow. If the night bus wiped you out, skip Kiyomizu and rest.",
-      "Give Kiyomizu + the stone streets ~2 hours. Don’t squeeze Nishiki today — it closes ~17:30 and is tomorrow after Uji.",
-      "Respectful photos in Gion — no chasing geiko."
+      "KABIN Koji: nights 10–14/9, checkout 15/9, once the extra night is confirmed.",
+      "Give Kiyomizu and the stone streets 2.5–3 hours. Skip Nishiki today — it closes around 17:30 and is tomorrow after Uji.",
+      "In Gion, take photos respectfully. Don’t chase geiko."
     ],
     "timeline": [
       {
-        "time": "05:50",
-        "title": "Arrive Kyoto Station Hachijo Exit East",
-        "note": "WILLER ReBorn · backpacks only · bags already waiting at KABIN.",
-        "placeId": "kyoto-station",
+        "time": "10:00",
+        "title": "Sleep in & easy morning at KABIN",
+        "note": "Normal bed after the ryokan. Café or a slow lunch nearby.",
+        "placeId": "kabin-koji",
+        "category": "hotel"
+      },
+      {
+        "time": "13:00",
+        "title": "Travel by bus / walk · to Kiyomizu-Gojo",
+        "note": "About 15–25 minutes, then uphill to the temple.",
+        "placeId": "kiyomizu",
         "category": "transit"
       },
       {
-        "time": "06:20",
-        "title": "Travel by JR · from Kyoto Station to Inari",
-        "note": "~5 min · 2 stops · no booking · bathroom / coffee at the station first if needed.",
-        "placeId": "fushimi-inari",
-        "category": "transit"
-      },
-      {
-        "time": "06:35",
-        "title": "Visit Fushimi Inari Taisha shrine",
-        "note": "Early torii hike — quieter before tour groups.",
-        "placeId": "fushimi-inari",
-        "end": "11:00",
+        "time": "13:30",
+        "title": "Visit Kiyomizu-dera temple",
+        "note": "Wooden stage temple — unhurried afternoon.",
+        "placeId": "kiyomizu",
+        "end": "15:30",
         "category": "culture"
       },
       {
-        "time": "11:15",
-        "title": "Travel by JR · from Inari toward Kawaramachi",
-        "note": "Back toward the hotel area · light lunch · bags wait at the desk.",
-        "placeId": "kabin-koji",
-        "category": "hotel"
-      },
-      {
-        "time": "12:30",
-        "title": "Lunch near Kawaramachi",
-        "note": "Easy meal with just a backpack · check-in is usually 15:00.",
-        "category": "dining"
-      },
-      {
-        "time": "15:00",
-        "title": "Check-in at hotel KABIN Koji & collect Takkyubin bags",
-        "note": "Kawaramachi base · nights 11–14/9 · Yamato bags from MYSTAYS.",
-        "placeId": "kabin-koji",
-        "category": "hotel"
-      },
-      {
-        "time": "15:45",
-        "title": "Travel by bus / walk · to Kiyomizu-Gojo",
-        "note": "~15–25 min · then uphill to the temple.",
-        "placeId": "kiyomizu",
-        "category": "transit"
-      },
-      {
-        "time": "16:00",
-        "title": "Visit Kiyomizu-dera temple",
-        "note": "Wooden stage temple — skip if exhausted from the bus.",
-        "placeId": "kiyomizu",
-        "end": "17:30",
-        "category": "transit"
-      },
-      {
-        "time": "17:35",
+        "time": "15:35",
         "title": "Sannenzaka & Ninenzaka",
-        "note": "Preserved stone streets — walk downhill toward Gion.",
+        "note": "Preserved stone streets. Walk downhill toward Gion.",
         "placeId": "sannenzaka",
-        "end": "18:30",
+        "end": "17:15",
         "category": "dining"
       },
       {
-        "time": "18:40",
+        "time": "17:30",
         "title": "Gion dusk stroll",
-        "note": "Geisha district lanes at sunset — short walk from Ninenzaka.",
+        "note": "Geisha-district lanes at sunset. Short walk from Ninenzaka.",
         "placeId": "gion",
-        "end": "19:30",
+        "end": "19:00",
         "category": "attraction"
       },
       {
-        "time": "19:40",
+        "time": "19:15",
         "title": "Pontocho riverside dinner",
         "note": "Kamogawa atmosphere.",
         "placeId": "pontocho",
@@ -3970,66 +3910,84 @@ window.DAYS = [
     "city": "Kyoto",
     "country": "JP",
     "hotelId": "kabin-koji",
-    "title": "Uji matcha & Nishiki",
-    "summary": "Fushimi was yesterday after the night bus. Today is Uji only: Byodo-in, matcha Omotesando and the river, then Nishiki at an easy pace (stalls wind down ~17:30–18:00).",
-    "food": "Matcha snacks in Uji; Nishiki graze before it closes.",
+    "title": "Fushimi Inari, Uji matcha & Nishiki",
+    "summary": "South Kyoto: sunrise at Fushimi Inari, then Uji for Byodo-in, matcha street and the river, back to central Kyoto for Nishiki before stalls close.",
+    "food": "Matcha snacks in Uji; graze at Nishiki before it closes.",
     "placeIds": [
+      "fushimi-inari",
       "byodoin",
       "uji-omotesando",
       "uji-river",
       "nishiki"
     ],
     "transport": [
-      "JR / Keihan from Kyoto to Uji (~20–30m).",
-      "Return to Kawaramachi / Nishiki — not Higashiyama (Kiyomizu was yesterday)."
+      "Early JR or Keihan to Fushimi-Inari (about 10–15 min from central Kyoto).",
+      "JR or Keihan from Fushimi to Uji (about 20–30 min).",
+      "Return to Kawaramachi / Nishiki. Not Higashiyama — Kiyomizu was yesterday."
     ],
     "tips": [
+      "Higher Fushimi paths are quieter than the first gates.",
       "Byodo-in Phoenix Hall is the temple on the ¥10 coin.",
-      "Be at Nishiki by ~16:00 — popular stalls start closing ~17:30–18:00."
+      "Be at Nishiki by ~16:00. Popular stalls start closing around 17:30–18:00."
     ],
     "timeline": [
       {
-        "time": "09:00",
-        "title": "Travel by JR / Keihan · from Kyoto to Uji",
-        "note": "~20–30 min · no booking.",
+        "time": "06:00",
+        "title": "Travel by Keihan / JR · from central Kyoto to Fushimi-Inari",
+        "note": "About 10–15 minutes. Early train for sunrise.",
+        "placeId": "fushimi-inari",
+        "category": "transit"
+      },
+      {
+        "time": "06:30",
+        "title": "Visit Fushimi Inari Taisha shrine",
+        "note": "Sunrise torii hike.",
+        "placeId": "fushimi-inari",
+        "end": "09:45",
+        "category": "culture"
+      },
+      {
+        "time": "10:00",
+        "title": "Travel by JR / Keihan · from Fushimi to Uji",
+        "note": "About 20–30 minutes.",
         "placeId": "byodoin",
         "category": "transit"
       },
       {
-        "time": "09:40",
+        "time": "10:30",
         "title": "Visit Byodo-in temple (Phoenix Hall)",
-        "note": "Phoenix Hall — iconic Uji temple.",
+        "note": "Phoenix Hall — the iconic Uji temple.",
         "placeId": "byodoin",
-        "end": "11:10",
+        "end": "12:00",
         "category": "culture"
       },
       {
-        "time": "11:20",
+        "time": "12:15",
         "title": "Uji Omotesando matcha street",
         "note": "Tea shops, matcha soft-serve and sweets.",
         "placeId": "uji-omotesando",
-        "end": "13:00",
+        "end": "14:00",
         "category": "dining"
       },
       {
-        "time": "13:10",
+        "time": "14:00",
         "title": "Uji River walk",
-        "note": "Bridges and riverside stroll.",
+        "note": "Bridges and a riverside stroll.",
         "placeId": "uji-river",
-        "end": "14:10",
+        "end": "15:00",
         "category": "attraction"
       },
       {
-        "time": "14:20",
+        "time": "15:15",
         "title": "Travel by JR / Keihan · from Uji to central Kyoto (Kawaramachi)",
-        "note": "~30–40 min · no booking.",
+        "note": "About 30–40 minutes.",
         "placeId": "nishiki",
         "category": "transit"
       },
       {
-        "time": "15:15",
+        "time": "16:00",
         "title": "Nishiki Market",
-        "note": "Kyoto’s kitchen — graze before stalls wind down ~17:30–18:00.",
+        "note": "Kyoto’s kitchen. Graze before stalls wind down around 17:30–18:00.",
         "placeId": "nishiki",
         "end": "18:00",
         "category": "dining"
@@ -4037,7 +3995,7 @@ window.DAYS = [
       {
         "time": "18:30",
         "title": "Dinner near Kawaramachi",
-        "note": "Near Nishiki / the hotel.",
+        "note": "Near Nishiki or the hotel.",
         "category": "dining"
       }
     ]
