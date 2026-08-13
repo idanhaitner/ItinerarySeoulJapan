@@ -3346,10 +3346,23 @@ a { color: inherit; }
   color: var(--ink);
 }
 
+.booking-kind {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+  background: color-mix(in srgb, var(--navy) 7%, var(--surface));
+  border: 1px solid var(--line);
+}
+
 .booking-note {
   font-size: 14px;
-  line-height: 1.45;
+  line-height: 1.55;
   color: var(--muted);
+  max-width: 42rem;
 }
 
 .booking-meta {
@@ -3383,7 +3396,8 @@ a { color: inherit; }
 }
 
 .booking-item.done .booking-note,
-.booking-item.done .booking-meta {
+.booking-item.done .booking-meta,
+.booking-item.done .booking-kind {
   color: var(--soft);
 }
 
@@ -3400,6 +3414,8 @@ a { color: inherit; }
 /* ——— Country guide ——— */
 .guide-page {
   --guide: var(--tokyo);
+  --guide-do: var(--ok);
+  --guide-dont: var(--seal);
   padding-bottom: 24px;
 }
 
@@ -3521,7 +3537,7 @@ a { color: inherit; }
 }
 
 .guide-section {
-  margin: 8px 0 28px;
+  margin: 8px 0 36px;
 }
 
 .guide-section-head {
@@ -3584,71 +3600,173 @@ a { color: inherit; }
   color: var(--text);
 }
 
-.guide-tickets,
-.guide-grid {
+.guide-tickets {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin-bottom: 12px;
-}
-
-.guide-ticket,
-.guide-card {
+  gap: 0;
+  margin: 0 0 16px;
   border: 1px solid var(--line);
   background: var(--surface);
-  padding: 16px 16px 14px;
-  border-inline-start: 3px solid var(--navy);
 }
+
+.guide-ticket {
+  display: grid;
+  grid-template-columns: minmax(11rem, 0.85fr) minmax(0, 1.4fr);
+  gap: 18px;
+  align-items: start;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-ticket:last-child { border-bottom: 0; }
 
 .guide-ticket header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 8px;
+  display: grid;
+  gap: 5px;
+  margin: 0;
 }
 
-.guide-ticket h4,
-.guide-card h4 {
+.guide-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--guide);
+}
+
+.guide-ticket h4 {
   margin: 0;
   font-size: 16px;
   font-weight: 650;
   color: var(--ink);
 }
 
-.guide-ticket p,
-.guide-card p {
+.guide-ticket p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.guide-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-items: start;
+  margin: 0 0 14px;
+}
+
+.guide-split.is-single {
+  grid-template-columns: 1fr;
+}
+
+.guide-col {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  overflow: hidden;
+  min-width: 0;
+}
+
+.guide-col-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-col-mark {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+}
+
+.guide-col.is-do .guide-col-head {
+  color: var(--guide-do);
+  background: color-mix(in srgb, var(--guide-do) 8%, var(--surface));
+}
+
+.guide-col.is-do .guide-col-mark {
+  background: var(--guide-do);
+}
+
+.guide-col.is-dont .guide-col-head {
+  color: var(--guide-dont);
+  background: color-mix(in srgb, var(--guide-dont) 8%, var(--surface));
+}
+
+.guide-col.is-dont .guide-col-mark {
+  background: var(--guide-dont);
+}
+
+.guide-col-list {
+  display: grid;
+}
+
+.guide-row {
+  padding: 14px 16px 15px;
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-row:last-child { border-bottom: 0; }
+
+.guide-row h4 {
+  margin: 0 0 5px;
+  font-size: 15.5px;
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.guide-row p {
   margin: 0;
   font-size: 14px;
   line-height: 1.5;
   color: var(--muted);
 }
 
-.guide-verdict {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--ok);
-  white-space: nowrap;
+.guide-notes {
+  display: grid;
+  gap: 10px;
 }
 
-.guide-verdict.is-no { color: var(--seal); }
-.guide-verdict.is-mid { color: var(--gold); }
+.guide-note {
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-inline-start: 3px solid var(--gold);
+}
 
-.guide-card-kicker {
-  margin: 0 0 6px;
+.guide-note.is-info {
+  border-inline-start-color: var(--guide);
+}
+
+.guide-note-kicker {
+  margin: 0 0 4px;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.06em;
+  color: var(--gold);
 }
 
-.guide-card.is-do { border-inline-start-color: var(--ok); }
-.guide-card.is-do .guide-card-kicker { color: var(--ok); }
-.guide-card.is-dont { border-inline-start-color: var(--seal); }
-.guide-card.is-dont .guide-card-kicker { color: var(--seal); }
-.guide-card.is-trip { border-inline-start-color: var(--gold); }
-.guide-card.is-trip .guide-card-kicker { color: var(--gold); }
-.guide-card.is-info { border-inline-start-color: var(--guide); }
-.guide-card.is-info .guide-card-kicker { color: var(--guide); }
+.guide-note.is-info .guide-note-kicker {
+  color: var(--guide);
+}
+
+.guide-note h4 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.guide-note p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
 
 .guide-extra {
   margin-top: 8px;
@@ -3671,17 +3789,12 @@ a { color: inherit; }
   gap: 8px;
 }
 
-.guide-extra-foot {
-  margin: 14px 0 0;
-  font-size: 13px;
-  color: var(--soft);
-}
-
 @media (max-width: 720px) {
-  .guide-tickets,
-  .guide-grid {
+  .guide-split,
+  .guide-ticket {
     grid-template-columns: 1fr;
   }
+  .guide-ticket { gap: 8px; }
   .guide-now,
   .guide-how,
   .guide-extra {

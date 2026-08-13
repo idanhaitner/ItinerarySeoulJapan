@@ -884,15 +884,33 @@
     });
   }
 
+  const BOOKING_KIND_HE = {
+    document: "מסמך",
+    flight: "טיסה",
+    hotel: "מלון",
+    ryokan: "ריוקאן",
+    train: "רכבת",
+    bus: "אוטובוס",
+    attraction: "אטרקציה",
+    meal: "ארוחה",
+    clinic: "טיפול",
+  };
+
+  function bookingKindLabel(item) {
+    return BOOKING_KIND_HE[item.kind] || "";
+  }
+
   function bookingItemHtml(item, checked) {
     const done = !!checked[item.id];
     const critical = item.priority === "critical" && !done;
+    const kind = bookingKindLabel(item);
     const meta = [item.when, item.window].filter(Boolean).join(" · ");
     return `
       <label id="booking-${escapeHtml(item.id)}" class="booking-item${done ? " done" : ""}${critical ? " booking-critical" : ""}">
         <input type="checkbox" data-check="${item.id}" ${done ? "checked" : ""} />
         <span class="booking-body">
           <span class="booking-top">
+            ${kind ? `<span class="booking-kind">${escapeHtml(kind)}</span>` : ""}
             <span class="booking-label">${escapeHtml(item.label)}</span>
             ${critical ? `<span class="booking-flag">דחוף</span>` : ""}
             ${done ? `<span class="booking-flag is-done">הוזמן</span>` : ""}
@@ -994,8 +1012,8 @@
     els.bookingsRoot.innerHTML = `
       <div class="plan-intro">
         <p class="plan-kicker">הזמנות · 予約</p>
-        <h2 class="plan-title">רק מה שחייב מראש</h2>
-        <p class="plan-lead">כרטיסים שנחטפים, שינקנסן ארוך, לינות שצריך לשנות, וסעודות שצריך לשריין. רכבות מקומיות ושילוח מזוודות לא כאן — אותם סוגרים במקום.</p>
+        <h2 class="plan-title">הזמנות</h2>
+        <p class="plan-lead">טיסות, מלונות, כרטיסי אטרקציות, רכבות ארוכות וסעודות שדורשות הזמנה מראש.</p>
       </div>
       <div class="bookings-toolbar">
         <p class="bookings-count"><strong>${openCount}</strong> נשארו לסגור${doneCount ? ` · ${doneCount} כבר הוזמנו` : ""}</p>
@@ -1007,7 +1025,7 @@
       <div class="bookings-list">
         ${
           body ||
-          `<p class="bookings-empty">הכול סגור. אפשר לעבור ל«הכול» כדי לראות מה כבר הוזמן.</p>`
+          `<p class="bookings-empty">אין הזמנות פתוחות.</p>`
         }
       </div>`;
     setResultCount(`${openCount} פתוחים`);

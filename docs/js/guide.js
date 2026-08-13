@@ -13,6 +13,7 @@ window.TripGuide = (function () {
       he: "קוריאה",
       local: "한국",
       kicker: "סיאול · 서울",
+      dates: "27 באוגוסט – 2 בספטמבר",
       lead: "שישה לילות בהונגדה. סיאול מהירה, כנה, ומאוד קלה ברגע שמבינים את הכרטיס, את המפה ואת כללי השולחן.",
     },
     jp: {
@@ -20,6 +21,7 @@ window.TripGuide = (function () {
       he: "יפן",
       local: "日本",
       kicker: "טוקיו עד אוסקה · 日本",
+      dates: "2–25 בספטמבר",
       lead: "שקט ברכבת, תורים ישרים, ואונסן עירום. רוב הדברים עובדים מצוין אם עושים כמו כולם ולא מנסים «לשפר».",
     },
   };
@@ -51,13 +53,13 @@ window.TripGuide = (function () {
           "מונית: אפליקציית Kakao T. הכתובת הקוריאנית של המלון שמורה במפות אצלנו.",
         ],
         tickets: [
-          { name: "T-Money", verdict: "כן", body: "כרטיס רב־פעמי לרכבת, אוטובוס ונוחות. עובד גם מחוץ לסיאול. כדאי תמיד, גם אם יש Climate Card — לגיבוי ול־AREX." },
-          { name: "Climate Card", verdict: "כן לסיאול", body: "כרטיס יומי לרכבת ולאוטובוס בסיאול (3/5/7 ימים). לא תקף ב־AREX Express לשדה, לא במוניות, ולא ברכבות לרחוק." },
-          { name: "AREX Express", verdict: "לשדה", body: "הרכבת המהירה לאינצ׳און. קונים כרטיס נפרד. All-Stop זול ואיטי יותר, ושם Climate Card כן יכול לעבוד." },
-          { name: "מונית / Kakao T", verdict: "לפעמים", body: "משדה למלון עם מזוודות, או בלילה מאיטאוון. לא לכל נסיעה בתוך העיר." },
+          { name: "T-Money", tag: "יומיומי", body: "כרטיס רב־פעמי למטרו, אוטובוס וחנות נוחות. טוענים בנחיתה; משמש גם מחוץ לסיאול, ב־AREX All-Stop ובגיבוי ל־Climate Card." },
+          { name: "Climate Card", tag: "כרטיס יומי", body: "מטרו ואוטובוס עירוני בסיאול ל־3, 5 או 7 ימים. לשדה ב־AREX Express, למונית ולרכבת בין-עירונית — T-Money או כרטיס נפרד." },
+          { name: "AREX Express", tag: "לשדה", body: "הרכבת המהירה מאינצ׳און. כרטיס נפרד. All-Stop איטי יותר, ועליו אפשר לנסוע עם T-Money או Climate Card." },
+          { name: "מונית / Kakao T", tag: "מונית", body: "מאינצ׳און להונגדה עם מזוודות, ובלילה מאיטאוון. מזמינים באפליקציית Kakao T; הכתובת הקוריאנית של המלון שמורה במפות." },
         ],
         items: [
-          { kind: "trip", title: "הנחיתה שלכם", body: "Climate Card לא תקף ב־AREX Express. מאינצ׳און להונגדה: כרטיס Express, All-Stop, T-Money או מונית." },
+          { kind: "trip", title: "מאינצ׳און להונגדה", body: "Express בכרטיס נפרד, All-Stop עם T-Money או Climate Card, או מונית ב־Kakao T." },
           { kind: "do", title: "מפה מקומית", body: "Kakao Map או Naver Map. באפליקציות שלנו בכל מקום בסיאול יש קישור ישיר." },
         ],
       },
@@ -115,18 +117,17 @@ window.TripGuide = (function () {
       transit: {
         kicker: "02 · תחבורה",
         title: "IC, שינקנסן ואוטובוס",
-        lead: "כרטיס אחד על הטלפון מכסה כמעט הכול בעיר. שינקנסן ארוך מזמינים מראש. אוטובוס בין-עירוני לקוואגוצ׳יקו גם כן. JR Pass לטיול הזה כנראה מיותר.",
+        lead: "כרטיס IC בטלפון מכסה את הנסיעות בעיר. שינקנסן ארוך ואוטובוס בין-עירוני לקוואגוצ׳יקו מזמינים מראש.",
         how: [
           "Suica או Pasmo באייפון / אנדרואיד, או כרטיס פלסטיק בהגעה. מעבירים בכניסה וביציאה. אותו כרטיס עובד בטוקיו, קיוטו ואוסקה.",
           "ברכבת העירונית אין מושב שמור. בשינקנסן יש: Hikari 653 ב־10/9 קונים במכונות באודאווארה; Nozomi ב־21/9 מזמינים ב־SmartEX.",
           "מונית: הדלת האחורית נפתחת לבד. לא סוגרים אותה חזק. יקרה — בעיקר כשיורד גשם או אחרי חצות.",
         ],
         tickets: [
-          { name: "Suica / Pasmo", verdict: "כן", body: "כרטיס היום־יום. טוענים ין במכונה או באפליקציה. עובד גם בנוחות ובחלק מהאוטובוסים." },
-          { name: "JR Pass", verdict: "לא אצלכם", body: "הטיול שלכם כולל טיסה לטוקיו, אוטובוס לקוואגוצ׳יקו, ורק שני שינקנסן ארוכים (הקונה–קיוטו, אוסקה–טוקיו). הפאס כנראה לא מחזיר את עצמו." },
-          { name: "SmartEX", verdict: "לשינקנסן", body: "Hikari 653 מאודאווארה לקיוטו ב־10/9 קונים במכונות באודאווארה (18:07). Nozomi מאוסקה לטוקיו ב־21/9 — מושבים שמורים ב־SmartEX. אם מזוודה מעל 160 ס״מ — לסמן Oversized Baggage." },
-          { name: "אוטובוס שינג׳וקו–קוואגוצ׳יקו", verdict: "כן, שמור", body: "מושב מטרמינל Busta Shinjuku. כשעתיים. לא קונים בבוקר בתחנה אם אפשר להזמין." },
-          { name: "Hakone Freepass", verdict: "ביום", body: "קונים בהקונה־יומוטו בבוקר 10/9. מכסה אוטובוס, ספינה, רכבל, כבלים ו־Tozan. אין צורך מראש." },
+          { name: "Suica / Pasmo", tag: "יומיומי", body: "כרטיס IC באייפון, באנדרואיד או בפלסטיק. טוענים ין במכונה או באפליקציה. עובד במטרו, ברכבת עירונית ובחנות נוחות בטוקיו, קיוטו ואוסקה." },
+          { name: "SmartEX", tag: "שינקנסן", body: "Hikari 653 מאודאווארה לקיוטו ב־10/9 — כרטיסים במכונות באודאווארה לקראת 18:07. Nozomi מאוסקה לטוקיו ב־21/9 — מושבים שמורים באפליקציה. מזוודה מעל 160 ס״מ מסומנת כ־Oversized Baggage." },
+          { name: "אוטובוס שינג׳וקו–קוואגוצ׳יקו", tag: "בין-עירוני", body: "מושב שמור מטרמינל Busta Shinjuku ב־7/9. כשעתיים עד תחנת קוואגוצ׳יקו." },
+          { name: "Hakone Freepass", tag: "יום בהקונה", body: "קונים בהקונה־יומוטו בבוקר 10/9. מכסה אוטובוס, ספינה, רכבל, כבלים ו־Tozan." },
         ],
         items: [
           { kind: "trip", title: "מזוודות", body: "מקוואגוצ׳יקו לקיוטו שולחים Yamato בבוקר 9/9. להקונה נוסעים עם תיק גב. לוקרים בתחנות ליום." },
@@ -144,7 +145,7 @@ window.TripGuide = (function () {
           { kind: "info", title: "אוטושי", body: "באיזקאיה לעיתים מגיעה מנת פתיחה בתשלום, גם בלי שהוזמנה. זה לא טעות — זה דמי שולחן." },
           { kind: "do", title: "נוחות", body: "7‑Eleven, FamilyMart, Lawson: ארוחות חמות, ביצים, קפה מכונה. הלוסון בקוואגוצ׳יקו הוא גם נקודת צילום." },
           { kind: "dont", title: "לא על האורז", body: "לא שופכים רוטב סויה על קערת אורז לבן. לסושי — טיבול קל של הדג, לא של האורז." },
-          { kind: "trip", title: "סעודות שכן מזמינים", body: "קייסקי ב־Sara בערב 9/9 (כלול בריוקאן). בשר קובה ב־20/9 וארוחת פרידה ב־24/9 — לשריין מראש." },
+          { kind: "trip", title: "סעודות שמזמינים מראש", body: "קייסקי ב־Sara בערב 9/9 כלול בריוקאן. בשר קובה ב־20/9 וארוחת פרידה ב־24/9 — לשריין מראש." },
         ],
       },
       stay: {
@@ -158,7 +159,7 @@ window.TripGuide = (function () {
           { kind: "info", title: "קעקועים", body: "חלק מהמקומות עדיין מגבילים קעקועים. ב־MYSTAYS וב־Sara כדאי לשאול בדלפק. לפעמים מדבקות כיסוי מספיקות." },
           { kind: "do", title: "יוקאטה", body: "בריוקאן לובשים את החלוק כשהשמאל על הימין (ההפך הוא תכריך). אפשר לאכול וללכת במסדרון כך." },
           { kind: "do", title: "וושלט", body: "השלט על האסלה. אם לא בטוחים — כפתור ההדחה הגדול. נייר לא באסלה רק אם יש שלט מפורש אחרת; ברוב המלונות כן." },
-          { kind: "trip", title: "אצלכם", body: "אונסן ב־MYSTAYS אחרי Fuji-Q, וב־Sara אחרי גוטמבה. שם לומדים את הטקס פעם אחת — אחר כך זה נעים." },
+          { kind: "trip", title: "האונסן במסלול", body: "אונסן ב־MYSTAYS אחרי Fuji-Q, וב־Sara אחרי גוטמבה. שם לומדים את הטקס פעם אחת — אחר כך זה נעים." },
           { kind: "info", title: "חשמל", body: "יפן 100V, תקע אמריקאי שטוח. צריך מתאם מישראל. מייבש שיער של המלון עדיף על מכשיר חזק מהבית." },
         ],
       },
@@ -181,27 +182,53 @@ window.TripGuide = (function () {
       .replace(/"/g, "&quot;");
   }
 
-  function kindLabel(kind) {
-    if (kind === "do") return "כן";
-    if (kind === "dont") return "לא";
-    if (kind === "trip") return "אצלכם";
-    return "לדעת";
+  function noteKicker(kind) {
+    return kind === "trip" ? "במסלול" : "כדאי לדעת";
   }
 
-  function verdictClass(verdict) {
-    const v = String(verdict || "");
-    if (v.startsWith("לא")) return " is-no";
-    if (v === "לפעמים") return " is-mid";
-    return "";
-  }
-
-  function itemCard(item) {
+  function rowHtml(item) {
     return `
-      <article class="guide-card is-${escapeHtml(item.kind)}">
-        <p class="guide-card-kicker">${kindLabel(item.kind)}</p>
+      <article class="guide-row">
         <h4>${escapeHtml(item.title)}</h4>
         <p>${escapeHtml(item.body)}</p>
       </article>`;
+  }
+
+  function colHtml(kind, title, items) {
+    if (!items.length) return "";
+    return `
+      <section class="guide-col is-${kind}" aria-label="${escapeHtml(title)}">
+        <header class="guide-col-head">
+          <span class="guide-col-mark" aria-hidden="true"></span>
+          <span>${escapeHtml(title)}</span>
+        </header>
+        <div class="guide-col-list">${items.map(rowHtml).join("")}</div>
+      </section>`;
+  }
+
+  function notesHtml(items) {
+    if (!items.length) return "";
+    return `
+      <div class="guide-notes">
+        ${items
+          .map(
+            (item) => `
+          <article class="guide-note is-${escapeHtml(item.kind)}">
+            <p class="guide-note-kicker">${noteKicker(item.kind)}</p>
+            <h4>${escapeHtml(item.title)}</h4>
+            <p>${escapeHtml(item.body)}</p>
+          </article>`
+          )
+          .join("")}
+      </div>`;
+  }
+
+  function splitItems(items) {
+    return {
+      doItems: items.filter((i) => i.kind === "do"),
+      dontItems: items.filter((i) => i.kind === "dont"),
+      notes: items.filter((i) => i.kind === "trip" || i.kind === "info"),
+    };
   }
 
   function sectionHtml(id, block) {
@@ -210,8 +237,8 @@ window.TripGuide = (function () {
         (t) => `
         <article class="guide-ticket">
           <header>
+            <span class="guide-tag">${escapeHtml(t.tag)}</span>
             <h4>${escapeHtml(t.name)}</h4>
-            <span class="guide-verdict${verdictClass(t.verdict)}">${escapeHtml(t.verdict)}</span>
           </header>
           <p>${escapeHtml(t.body)}</p>
         </article>`
@@ -220,6 +247,11 @@ window.TripGuide = (function () {
     const how = (block.how || [])
       .map((step, i) => `<li><em>${String(i + 1).padStart(2, "0")}</em><span>${escapeHtml(step)}</span></li>`)
       .join("");
+    const { doItems, dontItems, notes } = splitItems(block.items || []);
+    const splitMod = doItems.length && dontItems.length ? "" : " is-single";
+    const split = doItems.length || dontItems.length
+      ? `<div class="guide-split${splitMod}">${colHtml("do", "לעשות", doItems)}${colHtml("dont", "להימנע", dontItems)}</div>`
+      : "";
     return `
       <section class="guide-section" id="guide-${id}">
         <header class="guide-section-head">
@@ -229,7 +261,8 @@ window.TripGuide = (function () {
         </header>
         ${how ? `<ol class="guide-how">${how}</ol>` : ""}
         ${tickets ? `<div class="guide-tickets">${tickets}</div>` : ""}
-        <div class="guide-grid">${(block.items || []).map(itemCard).join("")}</div>
+        ${split}
+        ${notesHtml(notes)}
       </section>`;
   }
 
@@ -238,26 +271,25 @@ window.TripGuide = (function () {
     const country = opts.country === "kr" ? "kr" : "jp";
     const meta = COUNTRIES[country];
     const data = DATA[country];
-    const other = country === "jp" ? COUNTRIES.kr : COUNTRIES.jp;
 
     root.innerHTML = `
       <div class="guide-page is-${country}">
         <div class="plan-intro">
           <p class="plan-kicker">מדריך · 案内</p>
           <h2 class="plan-title">איך זה עובד שם</h2>
-          <p class="plan-lead">תרבות, תחבורה, אוכל ואירוח — לפי המדינה שאתם בה, ובלי עצות כלליות שמבזבזות זמן.</p>
+          <p class="plan-lead">תרבות, תחבורה, אוכל ואירוח — לפי המדינה שבה אתם נמצאים.</p>
         </div>
 
         <div class="guide-switch" role="tablist" aria-label="בחירת מדינה">
           <button type="button" class="guide-switch-btn${country === "kr" ? " is-on" : ""}" data-guide-country="kr">
             <span class="guide-switch-local">한국</span>
             <strong>קוריאה</strong>
-            <span>סיאול קודם</span>
+            <span>${escapeHtml(COUNTRIES.kr.dates)}</span>
           </button>
           <button type="button" class="guide-switch-btn${country === "jp" ? " is-on" : ""}" data-guide-country="jp">
             <span class="guide-switch-local">日本</span>
             <strong>יפן</strong>
-            <span>טוקיו עד אוסקה</span>
+            <span>${escapeHtml(COUNTRIES.jp.dates)}</span>
           </button>
         </div>
 
@@ -279,7 +311,6 @@ window.TripGuide = (function () {
         <aside class="guide-extra">
           <h3>${escapeHtml(data.extra.title)}</h3>
           <ul>${data.extra.bits.map((b) => `<li>${escapeHtml(b)}</li>`).join("")}</ul>
-          <p class="guide-extra-foot">אפשר תמיד לחזור ל־${escapeHtml(other.he)} למעלה.</p>
         </aside>
       </div>`;
   }
