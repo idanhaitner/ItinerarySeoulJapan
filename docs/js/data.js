@@ -113,7 +113,7 @@ window.TRIP = {
     "Sep 5: Asakusa + Skytree + Akihabara.",
     "Sep 6: Kichijoji + Shimokitazawa day, night Street Kart ~19:00 (IDP).",
     "Sep 7: Bus to Kawaguchiko Station → Chureito (Fujikyu) → Lawson → Red Line to Oishi (last buses ~17:30). Sep 8: full Fuji-Q day. Sep 9: Gotemba Outlets, then direct bus to Hakone-Yumoto + Sara kaiseki (no pirate ship).",
-    "Sep 10: Hakone Loop, then evening Hikari Odawara → Kyoto and check-in at KABIN. Sep 11: Kiyomizu / Sannenzaka toward sunset, then Gion + Pontocho.",
+    "Sep 10: Hakone Loop until 17:00, then Hikari 653 Odawara 18:07 → Kyoto 20:12 and check-in at KABIN. Sep 11: Kiyomizu / Sannenzaka toward sunset, then Gion + Pontocho.",
     "Sep 12: Fushimi Inari + Uji (Byodo-in / matcha) + Nishiki before 17:30.",
     "Sep 14: Kibune nagashi somen (Hirobun walk-in) + Kurama trek + teamLab Biovortex booked 18:00–18:30. Sep 15: Kyoto zen → Osaka evening.",
     "Sep 20: Kobe day trip from Osaka.",
@@ -1132,7 +1132,7 @@ window.PLACES = {
     ],
     "lat": 35.2561,
     "lng": 139.1549,
-    "blurb": "Shinkansen station for the evening Hikari to Kyoto on 10/9 — about 15 minutes from Hakone-Yumoto."
+    "blurb": "Shinkansen station for Hikari 653 to Kyoto on 10/9 (18:07). About 15 minutes from Hakone-Yumoto. Most Nozomi trains skip Odawara."
   },
   "tokyo-station": {
     "id": "tokyo-station",
@@ -1172,7 +1172,7 @@ window.PLACES = {
     ],
     "lat": 34.9858,
     "lng": 135.7588,
-    "blurb": "Arrive here on the evening Hikari from Odawara on 10/9."
+    "blurb": "Arrive 20:12 on Hikari 653 from Odawara on 10/9."
   },
   "gotemba-outlets": {
     "id": "gotemba-outlets",
@@ -3717,7 +3717,7 @@ window.DAYS = [
     "country": "JP",
     "hotelId": "kabin-koji",
     "title": "Hakone Loop & evening shinkansen to Kyoto",
-    "summary": "Classic Hakone Loop with a small backpack: shrine, pirate ship, Owakudani, then back down to Hakone-Yumoto. Evening Hikari from Odawara to Kyoto, check-in at KABIN, and collect the bags sent ahead.",
+    "summary": "Classic Hakone Loop with a small backpack until 17:00 — the big bags are already at KABIN. Then Hakone-Yumoto to Odawara, Hikari 653 at 18:07, Kyoto at 20:12, and the bags waiting at reception.",
     "food": "Ryokan breakfast; simple dinner near KABIN after arrival.",
     "placeIds": [
       "hakone-shrine",
@@ -3730,13 +3730,13 @@ window.DAYS = [
       "Bus Hakone-Yumoto → Moto-Hakone (~35–40 min) for the shrine.",
       "Short walk to Hakone-machi pier, then the pirate ship to Togendai (~30–40 min).",
       "Hakone Ropeway Togendai → Owakudani → Sounzan, cable car to Gora, Tozan train down to Hakone-Yumoto.",
-      "Hakone-Yumoto → Odawara (~15 min), then Hikari shinkansen to Kyoto (~2h10). Most Nozomi trains skip Odawara."
+      "Hakone-Yumoto → Odawara 17:15–17:40, then Hikari 653 to Kyoto 18:07–20:12. Most Nozomi trains skip Odawara."
     ],
     "tips": [
       "Add a KABIN Koji night on 10/9 to the existing 11–15/9 booking (or a cheap hotel near Kyoto Station).",
       "Buy a 1-day Hakone Freepass at Hakone-Yumoto after breakfast. It covers the bus, ship, ropeway, cable car and Tozan.",
-      "Book reserved Hikari seats Odawara → Kyoto for around 17:00–17:30. Backpacks are fine; oversized-baggage rules only apply if a bag is over 160 cm.",
-      "Leave Hakone-Yumoto by ~16:45 so you have a buffer at Odawara. Collect the forwarded bags at KABIN."
+      "Stay in Hakone until 17:00 with backpacks only. Leave Hakone-Yumoto around 17:15 for Odawara.",
+      "Buy Hikari 653 tickets at the Odawara machines at 17:45 (18:07–20:12). Collect the forwarded bags at KABIN reception."
     ],
     "timeline": [
       {
@@ -3793,29 +3793,38 @@ window.DAYS = [
       },
       {
         "time": "14:45",
-        "title": "Buffer in Hakone-Yumoto",
-        "note": "Coffee and a rest with backpacks only. Leave the station around 16:45.",
+        "title": "Hakone at ease with a small backpack",
+        "note": "Tour until 17:00. Big bags already sent to the Kyoto hotel.",
+        "end": "17:00",
         "category": "attraction"
       },
       {
-        "time": "16:45",
-        "title": "Travel by Hakone Tozan / Odakyu · from Hakone-Yumoto to Odawara",
-        "note": "About 15 minutes. No booking needed.",
-        "placeId": "odawara",
-        "category": "transit"
-      },
-      {
         "time": "17:15",
-        "title": "Travel by Hikari Shinkansen · from Odawara to Kyoto",
-        "note": "Reserved seats on SmartEX, about 2h10. Book ahead.",
+        "title": "Travel by Hakone Tozan / Odakyu · from Hakone-Yumoto to Odawara",
+        "note": "Short ride, about 15–25 minutes. No booking needed.",
         "placeId": "odawara",
-        "end": "19:25",
+        "end": "17:40",
         "category": "transit"
       },
       {
-        "time": "19:45",
+        "time": "17:45",
+        "title": "Buy tickets at the machines — Odawara Station",
+        "note": "Hikari 653 to Kyoto. Machines in the shinkansen concourse.",
+        "placeId": "odawara",
+        "category": "transit"
+      },
+      {
+        "time": "18:07",
+        "title": "Travel by Hikari 653 · from Odawara to Kyoto",
+        "note": "About 2h05. Backpacks only.",
+        "placeId": "odawara",
+        "end": "20:12",
+        "category": "transit"
+      },
+      {
+        "time": "20:30",
         "title": "Check-in at hotel KABIN Koji",
-        "note": "Kawaramachi base. Extra night 10/9. Collect the bags sent from MYSTAYS.",
+        "note": "From Kyoto Station to Kawaramachi. Bags already waiting at reception.",
         "placeId": "kabin-koji",
         "category": "hotel"
       }
@@ -3823,8 +3832,8 @@ window.DAYS = [
     "transfer": {
       "mode": "train",
       "label": "Hakone → Kyoto",
-      "detail": "Hakone-Yumoto to Odawara (~15 min), then Hikari shinkansen to Kyoto (~2h10)",
-      "duration": "~2.5–3 hours door to door",
+      "detail": "Hakone-Yumoto to Odawara 17:15–17:40, tickets at the machines, then Hikari 653 to Kyoto 18:07–20:12",
+      "duration": "~3 hours door to door",
       "fromCity": "Hakone",
       "toCity": "Kyoto"
     }
