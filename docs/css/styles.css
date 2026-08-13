@@ -3471,37 +3471,6 @@ a { color: inherit; }
 
 .guide-switch-btn.is-on strong { color: var(--guide); }
 
-.guide-now {
-  padding: 22px 22px 20px;
-  margin-bottom: 16px;
-  border: 1px solid var(--line);
-  background:
-    linear-gradient(165deg, color-mix(in srgb, var(--guide) 10%, var(--surface)) 0%, var(--surface) 48%);
-}
-
-.guide-now-kicker {
-  margin: 0 0 6px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--guide);
-}
-
-.guide-now h3 {
-  margin: 0 0 8px;
-  font-size: clamp(26px, 4vw, 34px);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-}
-
-.guide-now p {
-  margin: 0;
-  max-width: 38rem;
-  font-size: 15.5px;
-  line-height: 1.55;
-  color: var(--muted);
-}
-
 .guide-topics {
   position: sticky;
   top: var(--topbar-h);
@@ -3795,7 +3764,6 @@ a { color: inherit; }
     grid-template-columns: 1fr;
   }
   .guide-ticket { gap: 8px; }
-  .guide-now,
   .guide-how,
   .guide-extra {
     padding: 16px;

@@ -12,17 +12,13 @@ window.TripGuide = (function () {
       id: "kr",
       he: "קוריאה",
       local: "한국",
-      kicker: "סיאול · 서울",
       dates: "27 באוגוסט – 2 בספטמבר",
-      lead: "שישה לילות בסיאול, בבסיס בהונגדה. מדריך קצר לתרבות, תחבורה, אוכל ואירוח.",
     },
     jp: {
       id: "jp",
       he: "יפן",
       local: "日本",
-      kicker: "טוקיו עד אוסקה · 日本",
       dates: "2–25 בספטמבר",
-      lead: "מטוקיו דרך הקונה וקיוטו עד אוסקה. מדריך קצר לתרבות, תחבורה, אוכל ואירוח.",
     },
   };
 
@@ -264,7 +260,6 @@ window.TripGuide = (function () {
   function render(root, opts) {
     if (!root) return;
     const country = opts.country === "kr" ? "kr" : "jp";
-    const meta = COUNTRIES[country];
     const data = DATA[country];
 
     root.innerHTML = `
@@ -286,12 +281,6 @@ window.TripGuide = (function () {
             <strong>יפן</strong>
             <span>${escapeHtml(COUNTRIES.jp.dates)}</span>
           </button>
-        </div>
-
-        <div class="guide-now">
-          <p class="guide-now-kicker">${escapeHtml(meta.kicker)}</p>
-          <h3>${escapeHtml(meta.he)}</h3>
-          <p>${escapeHtml(meta.lead)}</p>
         </div>
 
         <nav class="guide-topics" aria-label="פרקי המדריך">
