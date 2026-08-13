@@ -125,11 +125,11 @@ window.CHECKLIST = {
         },
         {
           id: "j-willer-kyoto",
-          label: "WILLER EXPRESS ReBorn — אוטובוס לילה מטוקיו לקיוטו (10/9) · Otemachi ~22:30 → Kyoto Station Hachijo ~06:30 · התייצבות 22:15",
+          label: "WILLER EXPRESS ReBorn — אוטובוס לילה מטוקיו לקיוטו (10/9) · Otemachi Grand Cube 21:55 → Kyoto Station Hachijo Exit East 05:50 · התייצבות 21:35",
           window: "להזמין / לאשר · מושב ReBorn (קפסולת שינה פרטית)",
           priority: "critical",
           linkPlaceIds: ["willer-otemachi", "kyoto-station"],
-          linkTitles: ["WILLER", "Willer", "ReBorn", "Otemachi"],
+          linkTitles: ["WILLER", "Willer", "ReBorn", "Otemachi", "Grand Cube"],
         },
         {
           id: "j-odawara-tokyo",
@@ -293,7 +293,7 @@ window.CHECKLIST = {
         },
         { id: "hk-onsen-etiquette", label: "בדיקת כללי אונסן במלון הקונה", window: "לפני הצ׳ק־אין", priority: "low" },
         { id: "s-jimjilbang", label: "ג׳ימג׳ילבאנג ליד Jamsil אחרי לוטה", window: "31 באוג׳ בערב", priority: "low" },
-        { id: "ky-fushimi", label: "פושימי אינארי בבוקר אחרי אוטובוס הלילה (11/9 ~07:00) · ארשיאמה נשאר ליום ראשון", window: "11 בספט׳ בוקר", priority: "low" },
+        { id: "ky-fushimi", label: "פושימי אינארי בבוקר אחרי אוטובוס הלילה (הגעה 05:50 · יציאה ל־Inari ~06:20) · ארשיאמה נשאר ליום ראשון", window: "11 בספט׳ בוקר", priority: "low" },
         { id: "ky-bags", label: "איסוף מזוודות Takkyubin ב־KABIN (הגיעו מקוואגוצ׳יקו ב־10/9)", window: "צ׳ק־אין 11/9 אחה״צ", priority: "medium" },
         { id: "kw-chureito", label: "צ׳ורייטו ב־Fujikyu ל־Shimo-Yoshida, לוסון, אוטובוס אדום לאוישי (לצאת עד ~17:15)", window: "7 בספט׳ אחה״צ", priority: "low" },
       ],

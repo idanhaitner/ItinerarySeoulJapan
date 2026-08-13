@@ -347,7 +347,7 @@ def build_hotels(days):
             status = "הוזמן"
             area = "Kawaramachi / Shijo"
             end = "2026-09-15"
-            notes = "הוזמן 11–15/9 · מתאים לאוטובוס לילה WILLER (הגעה 11/9 ~06:30) · 下京区筋屋町152 · מזוודות Takkyubin מחכות בדלפק מ־10/9"
+            notes = "הוזמן 11–15/9 · מתאים לאוטובוס לילה WILLER (הגעה 11/9 05:50 ל־Hachijo Exit East) · 下京区筋屋町152 · מזוודות Takkyubin מחכות בדלפק מ־10/9"
         if city == "Osaka":
             hotel = "Apartment Hotel 11 Shinsaibashi 2"
             status = "הוזמן"
@@ -381,7 +381,7 @@ def build_bookings(days):
         # 3 · Transport
         ("אוטובוס כביש משינג׳וקו לקוואגוצ׳יקו", "d12", "לטפל", "07/9 · מושבים שמורים · Keio / Fujikyu מ־Busta Shinjuku"),
         ("אוטובוס מקוואגוצ׳יקו לאאוטלט גוטמבה + הקונה־יומוטו", "d14", "לטפל", "09/9 בוקר · ~50–70 דק׳ לגוטמבה · אחרי הקניות אוטובוס ישיר להקונה־יומוטו ~45–60 דק׳ (לא Togendai)"),
-        ("WILLER EXPRESS ReBorn — אוטובוס לילה מטוקיו לקיוטו", "d15", "לטפל", "10/9 · Otemachi ~22:30 → Kyoto Station Hachijo ~06:30 · מושב ReBorn (קפסולת שינה) · התייצבות 22:15"),
+        ("WILLER EXPRESS ReBorn — אוטובוס לילה מטוקיו לקיוטו", "d15", "לטפל", "10/9 · Otemachi Grand Cube 21:55 → Kyoto Station Hachijo Exit East 05:50 · מושב ReBorn · התייצבות 21:35"),
         ("שינקנסן אודאווארה לטוקיו (תחנת טוקיו)", "d15", "לטפל", "10/9 ערב · ~35 דק׳ · ~¥3,700 במכונות בתחנה · יציאת Marunouchi North להליכה ל־Otemachi"),
         ("Hakone Freepass ליום אחד", "d15", "לטפל", "10/9 · אוטובוס + ספינה + רכבל + כבלים + Tozan · לקנות בהקונה־יומוטו בבוקר"),
         ("שינקנסן SmartEX (+ oversized baggage)", "d26", "לטפל", "21/9 מאוסקה לטוקיו בלבד"),

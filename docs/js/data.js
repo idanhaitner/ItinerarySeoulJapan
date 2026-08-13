@@ -113,7 +113,7 @@ window.TRIP = {
     "Sep 5: Asakusa + Skytree + Akihabara.",
     "Sep 6: Kichijoji + Shimokitazawa day, night Street Kart ~19:00 (IDP).",
     "Sep 7: Bus to Kawaguchiko Station → Chureito (Fujikyu) → Lawson → Red Line to Oishi (last buses ~17:30). Sep 8: full Fuji-Q day. Sep 9: Gotemba Outlets, then direct bus to Hakone-Yumoto + Sara kaiseki (no pirate ship).",
-    "Sep 10: Hakone Loop (shrine → pirate ship → Owakudani → Tozan), evening Shinkansen Odawara → Tokyo, WILLER ReBorn night bus ~22:30 Otemachi → Kyoto ~06:30. Sep 11: Fushimi morning, KABIN check-in + bags, then Kiyomizu / Gion / Pontocho.",
+    "Sep 10: Hakone Loop (shrine → pirate ship → Owakudani → Tozan), evening Shinkansen Odawara → Tokyo, WILLER ReBorn 21:55 Otemachi Grand Cube → Kyoto Hachijo Exit East 05:50. Sep 11: Fushimi morning, KABIN check-in + bags, then Kiyomizu / Gion / Pontocho.",
     "Sep 12: Uji (Byodo-in / matcha) + Nishiki before 17:30.",
     "Sep 14: Kibune nagashi somen (Hirobun walk-in) + Kurama trek + teamLab Biovortex booked 18:00–18:30. Sep 15: Kyoto zen → Osaka evening.",
     "Sep 20: Kobe day trip from Osaka.",
@@ -1145,12 +1145,12 @@ window.PLACES = {
     ],
     "lat": 35.6812,
     "lng": 139.7671,
-    "blurb": "Marunouchi North Exit — 5–8 min walk to the WILLER Otemachi night-bus terminal."
+    "blurb": "Marunouchi North Exit — 5–8 min walk to WILLER Otemachi (Grand Cube)."
   },
   "willer-otemachi": {
     "id": "willer-otemachi",
-    "name": "WILLER EXPRESS Tokyo Otemachi",
-    "nameJa": "ウィラーバスターミナル東京（大手町）",
+    "name": "WILLER EXPRESS Otemachi (Grand Cube)",
+    "nameJa": "ウィラーバスターミナル東京（大手町グランキューブ）",
     "city": "Tokyo",
     "country": "JP",
     "tags": [
@@ -1158,21 +1158,21 @@ window.PLACES = {
     ],
     "lat": 35.6875,
     "lng": 139.7633,
-    "blurb": "ReBorn private sleep-capsule night bus · board ~22:15 for ~22:30 to Kyoto Station Hachijo.",
-    "taxiAddress": "東京都千代田区大手町1-2-1"
+    "blurb": "ReBorn private sleep-capsule · check in by 21:35 for the 21:55 to Kyoto Station Hachijo Exit East.",
+    "taxiAddress": "東京都千代田区大手町1-9-2 大手町フィナンシャルシティ グランキューブ"
   },
   "kyoto-station": {
     "id": "kyoto-station",
-    "name": "Kyoto Station Hachijo Exit",
-    "nameJa": "京都駅八条口",
+    "name": "Kyoto Station Hachijo Exit East",
+    "nameJa": "京都駅八条口東",
     "city": "Kyoto",
     "country": "JP",
     "tags": [
       "transport"
     ],
-    "lat": 34.9855,
-    "lng": 135.7588,
-    "blurb": "WILLER arrival ~06:30 on 11/9 — south side of Kyoto Station, backpacks only until KABIN check-in."
+    "lat": 34.9858,
+    "lng": 135.7602,
+    "blurb": "WILLER arrival 05:50 on 11/9 — Hachijo East, south side of Kyoto Station, backpacks only until KABIN check-in."
   },
   "gotemba-outlets": {
     "id": "gotemba-outlets",
@@ -3730,12 +3730,12 @@ window.DAYS = [
       "Bus Hakone-Yumoto → Moto-Hakone (~35–40 min) for the shrine.",
       "Short walk to Hakone-machi pier · pirate ship to Togendai (~30–40 min).",
       "Hakone Ropeway Togendai → Owakudani → Sounzan, cable car to Gora, Tozan train to Hakone-Yumoto.",
-      "Evening: Hakone-Yumoto → Odawara (~15 min) · Shinkansen to Tokyo Station (~35 min, ~¥3,700 at machines) · 5–8 min walk from Marunouchi North Exit to Otemachi."
+      "Evening: Hakone-Yumoto → Odawara (~15 min) · Shinkansen to Tokyo Station (~35 min, ~¥3,700 at machines) · 5–8 min walk from Marunouchi North Exit to Otemachi Grand Cube."
     ],
     "tips": [
       "KABIN is already booked from 11/9 — the night of 10/9 is the bus. No extra Kyoto night to add.",
       "Hakone Freepass (1 day from Hakone-Yumoto) covers the bus, ship, ropeway, cable and Tozan — buy at the station after breakfast.",
-      "Leave Hakone-Yumoto ~18:30–19:00 so you reach Otemachi with time for dinner. Be at the WILLER terminal by 22:15; ReBorn departs ~22:30.",
+      "Leave Hakone-Yumoto ~18:30–19:00 so you reach Otemachi with time for dinner. Be at Grand Cube by 21:35; ReBorn departs 21:55.",
       "Backpack only: Hakone day clothes + night-bus set, small toiletries, phone charger, documents. Bags wait at KABIN."
     ],
     "timeline": [
@@ -3813,7 +3813,7 @@ window.DAYS = [
       },
       {
         "time": "20:00",
-        "title": "Walk to WILLER terminal · from Tokyo Station to Otemachi",
+        "title": "Walk to WILLER terminal · from Tokyo Station to Otemachi Grand Cube",
         "note": "Marunouchi North Exit · 5–8 min underground or street.",
         "placeId": "willer-otemachi",
         "category": "transit"
@@ -3821,29 +3821,29 @@ window.DAYS = [
       {
         "time": "20:15",
         "title": "Dinner near Otemachi / Tokyo Station",
-        "note": "Unhurried dinner · backpacks only · be at the terminal by 22:15.",
+        "note": "Unhurried dinner · backpacks only · be at Grand Cube by 21:35.",
         "category": "dining"
       },
       {
-        "time": "22:15",
-        "title": "Check in at WILLER EXPRESS Otemachi",
-        "note": "ReBorn private sleep capsule · Tokyo Otemachi Station.",
+        "time": "21:35",
+        "title": "Check in at WILLER EXPRESS Otemachi (Grand Cube)",
+        "note": "ReBorn private sleep capsule · Tokyo Otemachi Grand Cube.",
         "placeId": "willer-otemachi",
         "category": "transit"
       },
       {
-        "time": "22:30",
+        "time": "21:55",
         "title": "Travel by WILLER EXPRESS ReBorn night bus · from Tokyo Otemachi to Kyoto",
-        "note": "Departs ~22:30 · arrives Kyoto Station Hachijo Exit ~06:30.",
+        "note": "Departs 21:55 · arrives Kyoto Station Hachijo Exit East 05:50.",
         "placeId": "willer-otemachi",
-        "end": "06:30",
+        "end": "05:50",
         "category": "transit"
       }
     ],
     "transfer": {
       "mode": "bus",
       "label": "Hakone → Kyoto (night bus)",
-      "detail": "Hakone-Yumoto → Odawara (~15 min) · Shinkansen to Tokyo Station (~35 min) · walk to Otemachi · WILLER EXPRESS ReBorn ~22:30 → Kyoto Station Hachijo ~06:30",
+      "detail": "Hakone-Yumoto → Odawara (~15 min) · Shinkansen to Tokyo Station (~35 min) · walk to Otemachi Grand Cube · WILLER EXPRESS ReBorn 21:55 → Kyoto Station Hachijo Exit East 05:50",
       "duration": "evening hop + overnight bus",
       "fromCity": "Hakone",
       "toCity": "Kyoto"
@@ -3857,7 +3857,7 @@ window.DAYS = [
     "country": "JP",
     "hotelId": "kabin-koji",
     "title": "Night-bus arrival, Fushimi morning, then Kiyomizu & Gion",
-    "summary": "Arrive Kyoto Station Hachijo ~06:30 with just a backpack. Light morning at Fushimi Inari (closest big sight to the station), then KABIN check-in and Takkyubin bag pickup in the afternoon. Late afternoon downhill into Kiyomizu, Sannenzaka, Gion and Pontocho.",
+    "summary": "Arrive Kyoto Station Hachijo Exit East 05:50 with just a backpack. Light morning at Fushimi Inari (closest big sight to the station), then KABIN check-in and Takkyubin bag pickup in the afternoon. Late afternoon downhill into Kiyomizu, Sannenzaka, Gion and Pontocho.",
     "food": "Light lunch after Fushimi; Pontocho riverside dinner.",
     "placeIds": [
       "kyoto-station",
@@ -3881,21 +3881,21 @@ window.DAYS = [
     ],
     "timeline": [
       {
-        "time": "06:30",
-        "title": "Arrive Kyoto Station Hachijo Exit",
+        "time": "05:50",
+        "title": "Arrive Kyoto Station Hachijo Exit East",
         "note": "WILLER ReBorn · backpacks only · bags already waiting at KABIN.",
         "placeId": "kyoto-station",
         "category": "transit"
       },
       {
-        "time": "07:00",
+        "time": "06:20",
         "title": "Travel by JR · from Kyoto Station to Inari",
-        "note": "~5 min · 2 stops · no booking.",
+        "note": "~5 min · 2 stops · no booking · bathroom / coffee at the station first if needed.",
         "placeId": "fushimi-inari",
         "category": "transit"
       },
       {
-        "time": "07:15",
+        "time": "06:35",
         "title": "Visit Fushimi Inari Taisha shrine",
         "note": "Early torii hike — quieter before tour groups.",
         "placeId": "fushimi-inari",
