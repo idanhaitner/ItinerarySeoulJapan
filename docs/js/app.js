@@ -121,6 +121,25 @@
     return CITY_LOCAL[city] || city;
   }
 
+  function isHotelNight(day, index) {
+    if (!day || !day.hotelId) return false;
+    return Boolean(days[index + 1]);
+  }
+
+  function hotelNightsByCity() {
+    const nights = {};
+    days.forEach((d, i) => {
+      if (!isHotelNight(d, i)) return;
+      nights[d.city] = (nights[d.city] || 0) + 1;
+    });
+    return nights;
+  }
+
+  function hotelNightsLabel(count) {
+    if (!count) return "";
+    return `<span class="nights">(${count})</span>`;
+  }
+
   function formatDate(iso) {
     const d = new Date(iso + "T12:00:00");
     return d.toLocaleDateString("he-IL", { day: "numeric", month: "short" });
@@ -333,8 +352,9 @@
           state.view === "itinerary" && (state.query || state.city !== "all") && !anyVisible
             ? "is-dim"
             : "";
+        const nights = g.items.filter(({ day, index }) => isHotelNight(day, index)).length;
         return `<div class="day-group ${cityClass(g.city)} ${dim}">
-          <div class="day-group-label">${cityLocal(g.city)}<span class="local">${g.city}</span></div>
+          <div class="day-group-label">${cityLocal(g.city)}${hotelNightsLabel(nights)}<span class="local">${g.city}</span></div>
           <div class="day-group-days">
             ${g.items
               .map(({ day }) => {
@@ -354,12 +374,13 @@
 
   function renderChips() {
     const cities = ["all", ...trip.route.filter((c, i, arr) => arr.indexOf(c) === i)];
+    const nightsByCity = hotelNightsByCity();
     els.chips.innerHTML = cities
       .map((c) => {
         if (c === "all") {
           return `<button type="button" class="chip ${state.city === c ? "active" : ""}" data-city="${c}">הכל<span class="chip-local">全体</span></button>`;
         }
-        return `<button type="button" class="chip ${state.city === c ? "active" : ""}" data-city="${c}">${cityLocal(c)}<span class="chip-local">${c}</span></button>`;
+        return `<button type="button" class="chip ${state.city === c ? "active" : ""}" data-city="${c}">${cityLocal(c)}${hotelNightsLabel(nightsByCity[c] || 0)}<span class="chip-local">${c}</span></button>`;
       })
       .join("");
   }
@@ -1337,11 +1358,12 @@
   function initMasthead() {
     const routeEl = document.getElementById("masthead-route");
     const uniqueCities = trip.route.filter((c, i, arr) => arr.indexOf(c) === i);
+    const nightsByCity = hotelNightsByCity();
     if (routeEl) {
       routeEl.innerHTML = uniqueCities
         .map((c) => {
           return `<div class="route-stop city-${c}">
-            <span class="en">${cityLocal(c)}</span>
+            <span class="en">${cityLocal(c)}${hotelNightsLabel(nightsByCity[c] || 0)}</span>
             <span class="local">${c}</span>
           </div>`;
         })

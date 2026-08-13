@@ -1510,6 +1510,18 @@ a { color: inherit; }
 .day-group.city-Bangkok .day-group-label { color: var(--bangkok); }
 .day-group.city-Tirana .day-group-label { color: var(--tirana); }
 
+.day-group-label .nights,
+.chip .nights,
+.route-stop .nights {
+  font-weight: 600;
+  opacity: 0.78;
+  letter-spacing: 0;
+}
+
+.chip .nights {
+  margin-inline-start: 4px;
+}
+
 .day-group-label .local {
   font-family: var(--font-ui);
   font-weight: 500;
