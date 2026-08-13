@@ -67,7 +67,7 @@ window.CHECKLIST = {
         },
         {
           id: "j-fujiq",
-          label: "Fuji-Q Highland (09/9) — Freepass דיגיטלי מראש · פתיחה ~09:00 · יציאה ~15:15 לאוטובוס להקונה",
+          label: "Fuji-Q Highland (08/9) — Freepass דיגיטלי מראש · יום מלא מהפתיחה ~09:00 · המלון ליד",
           window: "להזמין 2–4 שבועות לפני",
           priority: "high",
           linkPlaceIds: ["fuji-q"],
@@ -131,11 +131,12 @@ window.CHECKLIST = {
           linkTitles: ["Hikari", "Odawara", "שינקנסן לקיוטו"],
         },
         {
-          id: "j-fujiq-hakone-bus",
-          label: "אוטובוס כביש מ־Fuji-Q / קוואגוצ׳יקו להקונה־יומוטו (09/9 אחה״צ) — יציאה ~15:30",
-          window: "9 בספט׳ אחרי הפארק",
+          id: "j-gotemba-bus",
+          label: "אוטובוס מקוואגוצ׳יקו לאאוטלט גוטמבה (09/9 בוקר) — ואז גוטמבה ל־Togendai לשייט הפיראטים",
+          window: "9 בספט׳ בבוקר אחרי צ׳ק־אאוט",
           priority: "high",
-          linkTitles: ["Hakone bus", "Gotemba"],
+          linkPlaceIds: ["gotemba-outlets", "lake-ashi"],
+          linkTitles: ["Gotemba", "Hakone bus", "pirate ship", "ספינת פיראטים"],
         },
         {
           id: "j-shinkansen",
@@ -171,14 +172,14 @@ window.CHECKLIST = {
         },
         {
           id: "g-luggage",
-          label: "אופציונלי: Takkyubin מזוודות מ־Hotel Gracery ל־MYSTAYS ב־6/9 — אחרת המזוודות נוסעות באוטובוס הכביש ב־7/9",
-          window: "6 בספט׳ או באוטובוס 7/9",
+          label: "אופציונלי: Takkyubin מזוודות מ־Hotel Gracery ל־MYSTAYS ב־6/9 ערב / 7/9 בוקר — אחרת המזוודות נוסעות באוטובוס הכביש ב־7/9",
+          window: "6 בספט׳ ערב או בוקר 7/9",
           priority: "medium",
         },
         {
           id: "g-luggage-kyoto",
-          label: "Takkyubin: מזוודות מ־MYSTAYS Fuji Onsen ל־KABIN Koji בבוקר Fuji-Q (09/9) — יגיעו לקיוטו ל־10/9",
-          window: "9 בספט׳ בבוקר לפני הפארק",
+          label: "Takkyubin: מזוודות מ־MYSTAYS Fuji Onsen ל־KABIN Koji בבוקר גוטמבה (09/9) — יגיעו לקיוטו ל־10/9",
+          window: "9 בספט׳ בבוקר לפני האוטובוס לגוטמבה",
           priority: "high",
         },
         { id: "t2-airport", label: "N'EX / רכבת לנריטה (NRT) — יציאה באמירייטס דרך DXB", window: "25 בספט׳ · לפי שעת הטיסה", priority: "medium" },
@@ -193,7 +194,7 @@ window.CHECKLIST = {
         {
           id: "h-hakone",
           label: "Tsukino Yado Sara — לשנות לילה מ־07/9 ל־09/9 (צ׳ק־אאוט 10/9 לקיוטו)",
-          window: "Hakone-Yumoto · קייסקי + אונסן · לעדכן הגעה ~18:00 אחרי Fuji-Q",
+          window: "Hakone-Yumoto · קייסקי + אונסן · לעדכן הגעה ~18:00 אחרי גוטמבה והשייט",
           priority: "critical",
           done: false,
           linkCheckin: true,
@@ -216,7 +217,7 @@ window.CHECKLIST = {
         },
         {
           id: "h-kawaguchiko",
-          label: "HOTEL MYSTAYS Fuji Onsen — לשנות לילות מ־8–9/9 ל־7–8/9 (צ׳ק־אאוט 9/9 ל־Fuji-Q)",
+          label: "HOTEL MYSTAYS Fuji Onsen — לשנות לילות מ־8–9/9 ל־7–8/9 (צ׳ק־אאוט 9/9 לגוטמבה · Fuji-Q ב־8/9 ליד המלון)",
           window: "ליד Fuji-Q / Fujikyu Highland",
           priority: "critical",
           done: false,
@@ -276,8 +277,8 @@ window.CHECKLIST = {
         { id: "hk-onsen-etiquette", label: "בדיקת כללי אונסן במלון הקונה", window: "לפני הצ׳ק־אין", priority: "low" },
         { id: "s-jimjilbang", label: "ג׳ימג׳ילבאנג ליד Jamsil אחרי לוטה", window: "31 באוג׳ בערב", priority: "low" },
         { id: "ky-fushimi", label: "יציאה מוקדמת ל־Fushimi Inari + יום מאצ'ה באוג'י (Byodo-in)", window: "12 בספט׳", priority: "low" },
-        { id: "ky-bags", label: "איסוף מזוודות Takkyubin בקיוטו (הגיעו מקוואגוצ׳יקו)", window: "בהגעה 11/9", priority: "medium" },
-        { id: "kw-chureito", label: "זריחה בצ׳ורייטו + לוסון פוג׳י", window: "9 בספט׳ מוקדם", priority: "low" },
+        { id: "ky-bags", label: "איסוף מזוודות Takkyubin בקיוטו (הגיעו מקוואגוצ׳יקו)", window: "בהגעה 10/9", priority: "medium" },
+        { id: "kw-chureito", label: "צ׳ורייטו + לוסון + אוישי אחה״צ (אחרי האוטובוס מטוקיו)", window: "7 בספט׳ אחה״צ", priority: "low" },
       ],
     },
     {
