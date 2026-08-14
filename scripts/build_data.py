@@ -314,7 +314,6 @@ DAYS = [
       ["tlv", "add", "icn"],
       ["TLV T3 → ADD → ICN.", "Overnight connection in Addis (~2h45)."],
       [
-        "Arrive Ben Gurion ~3h before departure.",
       ],
       [
         t("12:30", "Arrive Ben Gurion (TLV T3)", "tlv", "Ethiopian Airlines check-in / security."),
@@ -329,9 +328,7 @@ DAYS = [
       ["icn", "amanti-hotel", "hongdae"],
       ["ICN → Amanti (~1h AREX Express or taxi). Climate Card is not valid on AREX Express."],
       [
-        "Land ~16:00 on ET0672.",
-        "Climate Card covers Seoul metro/bus (3/5/7 days) but not AREX Express — only All-Stop. Keep T-Money or cash as backup for the airport run.",
-        "Stay in Hongdae tonight — Amanti is in the middle of the neighborhood.",
+        "Climate Card covers Seoul metro/bus but not AREX Express — only All-Stop. Keep T-Money or cash for the airport run.",
       ],
       [
         t("16:00", "Land ICN — ET0672", "icn", "Ethiopian from Addis · immigration + bags."),
@@ -346,9 +343,8 @@ DAYS = [
       ["gyeongbokgung", "bukchon", "ikseon", "insadong", "gwangjang"],
       ["Hongdae → Gyeongbokgung (~25m).", "Walk Bukchon → Ikseon → Insadong → Gwangjang."],
       [
-        "Arrive early for the 10:00 guard ceremony at Gwanghwamun (~20 min).",
         "Rent hanbok for free palace entry.",
-        "Gwangjang: be there by 19:30 at the latest — popular food stalls wind down ~20:30–21:00 even if the market stays open later.",
+        "Gwangjang: popular food stalls wind down ~20:30–21:00 even if the market stays open — be there by 19:30.",
       ],
       [
         t("09:15", "Arrive Gyeongbokgung palace / hanbok", "gyeongbokgung", "Get set before the ceremony."),
@@ -364,8 +360,7 @@ DAYS = [
       ["jogyesa", "changdeokgung", "unni-guide", "gangnam", "seongsu", "seoul-forest"],
       ["Hongdae → Jogyesa / Changdeokgung.", "Subway to Gangnam / Sinnonhyeon for Unni Guide.", "Line 2 Gangnam → Seongsu (~20–25 min)."],
       [
-        "Unni Guide 15:00–16:00.",
-        "After treatment: indoor Seongsu cafés first; keep Seoul Forest short and shaded if skin is sensitive. Optional 20-min Starfield stop at COEX only if you are already passing Samseong.",
+        "After treatment: indoor cafés first; keep Seoul Forest short and shaded if skin is sensitive.",
       ],
       [
         t("09:00", "Jogyesa Temple", "jogyesa", "Buddhist temple near Insadong.", "10:00"),
@@ -385,7 +380,7 @@ DAYS = [
       ["forena-clinic", "yeonnam", "mangwon", "hongdae"],
       ["Walk from Amanti Hongdae to Forena (H-CUBE, Yanghwa-ro · Hongik Univ. exit 9).", "Walk Yeonnam → Mangwon → back to Hongdae."],
       [
-        "Stay in west Seoul today — no Seongsu. After the facial, skip long sun and sweat (no park walk).",
+        "After the facial, skip long sun and sweat.",
       ],
       [
         t("10:30", "Forena Clinic — consultation + treatment", "forena-clinic", "Booked · Hongdae · H-CUBE 7F, 140 Yanghwa-ro.", "12:15"),
@@ -400,7 +395,7 @@ DAYS = [
       "Park / Lotte mall snacks; simple dinner near Jamsil after the spa.",
       ["lotte-world", "seokchon", "lotte-tower", "jimjilbang"],
       ["Subway to Jamsil (~40–50m from Hongdae).", "Stay Jamsil-side for spa + dinner."],
-      ["Evening: spa + dinner near Jamsil."],
+      [],
       [
         t("08:30", "Travel by subway · from Hongdae to Jamsil (Lotte World)", "amanti-hotel", "Seoul Metro · ~40–50 min · no booking."),
         t("10:00", "Lotte World", "lotte-world", "Indoor/outdoor theme park.", "17:00"),
@@ -415,7 +410,6 @@ DAYS = [
       ["namdaemun", "myeongdong", "cheonggyecheon", "dongdaemun", "namsan-cable", "n-tower", "itaewon"],
       ["Hongdae → Namdaemun / Myeongdong.", "Walk Cheonggyecheon toward Dongdaemun.", "Back to the Namsan cable (above Myeongdong), then south to Itaewon."],
       [
-        "Namdaemun and Myeongdong are a short walk apart — do them together in the morning.",
         "Cable tickets are sold at the base, just above Myeongdong.",
         "From Namsan go south to Itaewon — don’t backtrack across town.",
       ],
@@ -438,10 +432,9 @@ DAYS = [
       ["amanti-hotel", "icn", "narita", "gracery-shinjuku", "shinjuku-gyoen", "tocho", "kabukicho", "omoide-yokocho", "golden-gai"],
       ["Amanti → ICN T1 (~1h).", "Air Premia YP7321.", "N'EX / limousine → Hotel Gracery Shinjuku (Kabukicho).", "All evening stops walkable from the hotel."],
       [
-        "Air Premia YP7321 · ICN 08:50 → NRT 11:20 (T2). Be at ICN ~06:30–07:00.",
         "Climate Card is not valid on AREX Express — Express ticket, All-Stop, T-Money, or taxi to ICN.",
         "Set up Suica/Pasmo on arrival.",
-        "After bags: go straight to Shinjuku Gyoen (last entry ~16:30, closes 17:00). Lunch after.",
+        "Shinjuku Gyoen last entry ~16:30, closes 17:00 in September.",
         "Tocho South Observatory is free (closed every other Monday).",
       ],
       [
@@ -489,7 +482,6 @@ DAYS = [
       ["Tsukiji early.", "Yurikamome/Rinkai Toyosu → Odaiba.", "Yurikamome or subway back toward Ginza."],
       [
         "Some rooms have water — wear shorts you can roll up / bring a small towel.",
-        "Ginza: Mitsukoshi/Ginza Six depachika, Uniqlo Tokyo flagship, Itoya stationery.",
       ],
       [
         t("07:30", "Travel by subway / Yurikamome · toward Tsukiji", "tsukiji", "Local metro · ~25–35 min from Shinjuku · no booking."),
@@ -512,7 +504,6 @@ DAYS = [
         "Senso-ji before 8:30 if you want fewer crowds (Saturday gets busy fast).",
         "Kappabashi: plastic food samples + kitchen knives (check luggage rules).",
         "Skytree ticket optional — Solamachi mall + exterior views are free.",
-        "Optional detour: Ueno Park + Ameyoko before Akihabara if you want street-food market energy.",
       ],
       [
         t("07:30", "Travel by subway · from Shinjuku to Asakusa", "asakusa", "Tokyo Metro / Toei · ~25–35 min · no booking."),
@@ -538,7 +529,6 @@ DAYS = [
       [
         "Physical International Driving Permit required — photocopies not accepted.",
         "Check the meetup shop the night before; Shibuya works well for neon.",
-        "Keep the day light so the kart is the evening highlight.",
       ],
       [
         t("10:00", "Travel by JR Chuo Line · from Shinjuku to Kichijoji", "kichijoji", "Chuo Rapid · ~20–25 min · no booking."),
@@ -564,9 +554,8 @@ DAYS = [
         "From Kawaguchiko Station to MYSTAYS: one Fujikyu stop to Fujikyu-Highland, a short walk, or a taxi.",
       ],
       [
-        "Bags ride the bus from Tokyo, or were sent from the Gracery desk in the morning.",
         "Dinner by 20:00 — restaurants around Fujikyu-Highland close early.",
-        "Convenience-store run (Lawson / 7-Eleven) is required tonight: drinks, snacks, and something light for the 05:45 start.",
+        "Convenience-store run tonight: drinks, snacks, and something light for the 05:45 start.",
       ],
       [
         t("08:30", "Checkout — Hotel Gracery Shinjuku", "gracery-shinjuku", "Keys at reception. Walk ~10 min to Busta Shinjuku.", "08:50"),
@@ -593,10 +582,7 @@ DAYS = [
         "Short walk from MYSTAYS to Fuji-Q Highland for 09:00 opening.",
       ],
       [
-        "Bags stay in the MYSTAYS room all day.",
-        "Eat the convenience-store stash at 05:45 — in the room or on the way.",
-        "Hotel is next door if you need a break.",
-        "Do-Dodonpa / Takabisha are the headline coasters.",
+        "Do-Dodonpa / Takabisha are the headline coasters at Fuji-Q.",
       ],
       [
         t("05:45", "Early bite from last night’s convenience-store run", "mystays-fuji-onsen", "Eat something light in the room or on the way.", None, "dining"),
@@ -622,7 +608,6 @@ DAYS = [
         "8-minute walk or a short taxi from Hakone-Yumoto Station to Sara.",
       ],
       [
-        "Arrive at the ryokan around 15:30. Dinner is included.",
         "Gotemba lockers at the entrance for backpacks while you shop.",
       ],
       [
@@ -649,8 +634,7 @@ DAYS = [
         "Local train Hakone-Yumoto → Odawara 17:00–17:25, then Hikari 653 to Kyoto 18:07–20:12. Most Nozomi trains skip Odawara.",
       ],
       [
-        "Big bags are already on the way to KABIN. Backpacks at the ryokan or a station locker until ~16:30.",
-        "Collect Hikari 653 tickets at the Odawara machines at 17:30. Convenience store in the station for the ride, or wait for dinner in Kyoto.",
+        "Buy a one-day Hakone Freepass at Hakone-Yumoto after breakfast. It covers the bus, pirate ship, ropeway, cable car, and Tozan train.",
       ],
       [
         t("08:00", "Breakfast at ryokan Sara (included)", "tsukino-yado-sara", "Breakfast included in the booking.", "09:00", "dining"),
@@ -678,7 +662,6 @@ DAYS = [
         "Walk down Sannenzaka / Ninenzaka into Gion. Pontocho is a short walk from there.",
       ],
       [
-        "Give Kiyomizu and the stone streets 2.5–3 hours.",
         "In Gion, take photos respectfully. Don’t chase geiko.",
       ],
       [
@@ -701,7 +684,6 @@ DAYS = [
       ],
       [
         "Higher Fushimi paths are quieter than the first gates.",
-        "Byodo-in Phoenix Hall is the temple on the ¥10 coin.",
         "Be at Nishiki by ~16:00. Popular stalls start closing around 17:30–18:00.",
       ],
       [
@@ -721,7 +703,10 @@ DAYS = [
       "Lunch near Togetsukyo Bridge.",
       ["otagi", "adashino", "saga-toriimoto", "bamboo", "tenryuji", "kimono-forest", "togetsukyo", "monkey-park"],
       ["Train/bus toward Saga-Arashiyama; walk the west Kyoto chain."],
-      ["Bamboo grove in the morning.", "Monkey park hike."],
+      [
+        "Bamboo grove in the morning, before the tour buses.",
+        "Monkey park is a short uphill hike — not a cage by the entrance.",
+      ],
       [
         t("07:30", "Travel by JR / Randen · from central Kyoto to Saga-Arashiyama", "bamboo", "~20–30 min · no booking."),
         t("08:00", "Visit Otagi Nenbutsu-ji temple", "otagi", "1,200 stone rakan statues.", "09:15"),
@@ -746,8 +731,8 @@ DAYS = [
       ],
       [
         "Nagashi somen is walk-in only · cash ~¥2,000 · aim for Hirobun ~09:45–10:00 for the numbered fan.",
-        "Monday helps — weekend waits can exceed 3h. Rain at 10:00 cancels somen → lunch in Kibune or return to Kyoto.",
-        "Save the Biovortex QR offline. Allow 2–3h inside.",
+        "Rain at 10:00 cancels somen — lunch in Kibune or return to Kyoto.",
+        "Save the Biovortex QR offline.",
       ],
       [
         t("07:45", "Travel by Eizan · from Demachiyanagi to Kibuneguchi", "kifune", "Eizan Electric Railway · ~30 min · no booking · Kibune first for the somen queue."),
@@ -772,10 +757,7 @@ DAYS = [
         "Morning east/west Kyoto zen loop.",
         "Afternoon/evening JR Kyoto → Osaka (~30–45m).",
       ],
-      [
-        "Checkout KABIN Koji for the evening move to Osaka (Apartment Hotel 11 · nights 15–21/9).",
-        "Keep the evening moderate before the park day.",
-      ],
+      [],
       [
         t("08:00", "Visit Ginkaku-ji temple (Silver Pavilion)", "ginkakuji", "Morning gardens.", "09:30"),
         t("09:45", "Philosopher’s Path", "philosophers-path", "Peaceful canal walk.", "11:00"),
@@ -793,10 +775,6 @@ DAYS = [
       ["usj"],
       ["Subway to Universal City (~25–35m). Leave by ~07:30 to clear security before the 09:20 SNW window."],
       [
-        "Timed: SNW 09:20–10:20 · Mario Kart 09:20–09:50 · Yoshi 09:50–10:20 · Mine Cart 10:20–10:50 · Hippogriff 18:30–19:00.",
-        "Anytime express: Harry Potter and the Forbidden Journey.",
-        "Choice A (pick one): Jurassic Park — The Ride OR JAWS.",
-        "Choice B (pick one): Despicable Me: Minion Mayhem OR The Flying Dinosaur.",
         "Save QR screens offline — park Wi‑Fi can drop.",
       ],
       [
@@ -835,7 +813,7 @@ DAYS = [
       "Kuromon snacks; dinner near Dotonbori.",
       ["ramen-museum", "kuromon", "tenjinbashi", "hozenji"],
       ["Hankyu to Ikeda for the museum (~30–40m).", "Metro / walk for markets and arcade."],
-      ["Easy recovery day between Nara and castle/Umeda."],
+      [],
       [
         t("09:00", "Travel by Hankyu · from Osaka to Ikeda (Cup Noodle Museum)", "ramen-museum", "Hankyu · ~30–40 min · no booking."),
         t("09:30", "Visit Instant Ramen Museum (Ikeda)", "ramen-museum", "Make-your-own Cup Noodle if booked; museum walk.", "12:00"),
@@ -870,7 +848,6 @@ DAYS = [
       ],
       [
         "Check Nunobiki ropeway last cars for the season.",
-        "Sleep in Osaka tonight — checkout tomorrow for Tokyo.",
       ],
       [
         t("08:30", "Travel by JR Special Rapid · from Osaka/Umeda to Kobe-Sannomiya", None, "JR Special Rapid · ~30 min · no booking."),
@@ -887,7 +864,7 @@ DAYS = [
       "Dinner in Ginza / Yurakucho near the hotel.",
       ["canvas-ginza8", "nakano-broadway", "azabudai", "roppongi", "tokyo-tower", "ginza"],
       ["Nozomi Shin-Osaka → Tokyo Station (~2.5h).", "Walk / metro to Ginza 8 (~10–15 min from Tokyo Station).", "Metro Ginza → Nakano (~25–35 min)."],
-      ["Morning checkout from Apartment Hotel 11.", "Nakano Broadway is ~25–35 min from Ginza (not next door)."],
+      ["Nakano Broadway is ~25–35 min from Ginza — not next door."],
       [
         t("09:00", "Checkout — Apartment Hotel 11", "apt-hotel-11-shinsaibashi", "Morning checkout · bags to Shin-Osaka."),
         t("09:45", "Travel by Nozomi Shinkansen · from Shin-Osaka to Tokyo", None, "Nozomi · reserved seats via SmartEX · ~2.5h · book ahead · Oversized Baggage if bags >160 cm.", "12:15"),
@@ -911,7 +888,6 @@ DAYS = [
       [
         "Do the lake/falls FIRST; Toshogu is nearer the station if traffic eats the afternoon.",
         "Comfortable shoes; mountain weather can be cooler than Tokyo.",
-        "Ginza Line from the hotel to Asakusa is ~15–20 min — leave ~05:45.",
       ],
       [
         t("05:45", "Travel by metro · from Ginza to Asakusa", "canvas-ginza8", "Ginza Line · ~15–20 min · no booking."),
@@ -929,7 +905,7 @@ DAYS = [
       "Kamakura / Enoshima lunch; dinner back in Tokyo.",
       ["kamakura", "hasedera", "enoshima", "canvas-ginza8"],
       ["JR Yokosuka from Tokyo Station / Shimbashi (~50m).", "Enoden coastal train to Enoshima.", "Return evening."],
-      ["Enoden is the scenic coastal hop — worth it for photos.", "Yokosuka Line from Tokyo Station is the easy hop from Ginza 8."],
+      [],
       [
         t("09:00", "Travel by JR Yokosuka · from Tokyo Station to Kamakura", "kamakura", "JR · ~50 min · no booking · Shimbashi also works."),
         t("10:00", "Visit Great Buddha & Hasedera temple", "kamakura", "Daibutsu + hillside temple.", "13:00"),
@@ -944,7 +920,7 @@ DAYS = [
       "Depachika graze; farewell wagyu or sushi dinner.",
       ["canvas-ginza8", "ginza", "omotesando", "akihabara", "shinjuku"],
       ["Morning in Ginza from the hotel; one secondary area in the afternoon."],
-      ["The Royal Park Canvas Ginza 8 is in 8-chome — Ginza Six / Uniqlo are a short walk."],
+      [],
       [
         t("10:00", "Ginza shopping — Ginza Six, Uniqlo, Itoya", "ginza", "Luxury + megastore classics.", "14:00"),
         t("14:00", "Depachika graze", "ginza", "Mitsukoshi / Matsuya basement food halls.", "15:30"),
@@ -957,7 +933,7 @@ DAYS = [
       "Airport meal before departure.",
       ["canvas-ginza8", "narita"],
       ["N'EX from Tokyo Station (~10–15 min from the hotel).", "Allow 2.5–3h door-to-gate for NRT.", "Emirates connection in Dubai (DXB)."],
-      ["Passports ready at security."],
+      [],
       [
         t("09:00", "Final pack & checkout — The Royal Park Canvas Ginza 8", "canvas-ginza8", "Ginza 8-chome · bags to Tokyo Station."),
         t("12:00", "Travel by N'EX / limousine · from Tokyo Station to Narita", "narita", "N'EX reserved optional · ~60–90 min + airport buffer · allow 2.5–3h door-to-gate."),
