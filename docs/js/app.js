@@ -810,10 +810,14 @@
             <div class="side-block-head">איך מגיעים</div>
             <ol>${(day.transport || []).map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ol>
           </div>
-          <div class="side-block">
+          ${
+            (day.tips || []).length
+              ? `<div class="side-block">
             <div class="side-block-head">המלצות</div>
-            <ul>${(day.tips || []).map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ul>
-          </div>
+            <ul>${day.tips.map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ul>
+          </div>`
+              : ""
+          }
         </div>
       </div>
       <section class="places-section">
