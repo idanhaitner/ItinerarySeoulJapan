@@ -371,7 +371,7 @@ def build_bookings(days):
         ("USJ Studio Pass (כרטיס כניסה)", "d21", "לטפל", "16/9 · חובה בנפרד מה־Express"),
         ("USJ Express Pass 7 Minecart & Selection", "d21", "הוזמן", "16/9"),
         ("Shibuya Sky sunset", "d08", "לטפל", "3/9 · נפתח 28 ימים מראש"),
-        ("Street Kart Tokyo — סלוט ערב", "d11", "לטפל", "06/9 · ~19:00 · IDP פיזי"),
+        ("Street Kart Tokyo — תור מוזמן לערב", "d11", "לטפל", "06/9 · ~19:00 · IDP פיזי"),
         ("teamLab Planets Tokyo", "d09", "לטפל", "4/9 שישי · כרטיס מתוזמן"),
         ("teamLab Biovortex Kyoto", "d19", "הוזמן", "14/9 · כניסה 18:00–18:30"),
         ("Fuji-Q Freepass", "d13", "לטפל", "8/9 · יום מלא"),

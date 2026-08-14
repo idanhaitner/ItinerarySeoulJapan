@@ -117,7 +117,7 @@ window.CHECKLIST = {
           kind: "attraction",
           label: "Street Kart",
           when: "6/9 ערב",
-          note: "סלוט ערב בטוקיו, באתר Street Kart או ב־Klook. רישיון בינלאומי פיזי חובה ביד.",
+          note: "תור מוזמן לערב בטוקיו, באתר Street Kart או ב־Klook. רישיון בינלאומי פיזי חובה ביד.",
           window: "להזמין בהקדם",
           priority: "high",
           linkPlaceIds: ["street-kart"],

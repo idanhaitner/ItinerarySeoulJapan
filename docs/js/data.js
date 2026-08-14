@@ -3539,8 +3539,7 @@ window.DAYS = [
       "Book the Shinjuku–Kawaguchiko bus in advance (Keio or Fujikyu).",
       "MYSTAYS is booked: nights 7–8/9, checkout 9/9. Next door to Fuji-Q.",
       "Dinner by 20:00 — restaurants around Fujikyu-Highland close early.",
-      "Convenience-store run (Lawson / 7-Eleven) is required tonight: drinks, snacks, and something light for the 05:45 start.",
-      "Chureito is tomorrow at sunrise, not today."
+      "Convenience-store run (Lawson / 7-Eleven) is required tonight: drinks, snacks, and something light for the 05:45 start."
     ],
     "timeline": [
       {
@@ -3772,9 +3771,8 @@ window.DAYS = [
     ],
     "tips": [
       "Critical luggage: at 08:15 hand the big bags to the MYSTAYS desk for Yamato to Kyoto (about ¥2,000–2,500 per bag, forms take 15–20 min). Hakone is backpacks only. Bags arrive at KABIN on 10/9.",
-      "Change Sara to night 9/9 (checkout 10/9) — currently booked 7/9. Tell the ryokan you arrive ~15:30.",
-      "Gotemba lockers at the entrance for backpacks while you shop.",
-      "The pirate ship is tomorrow on the Hakone Loop — do not try to squeeze it in today."
+      "Arrive at the ryokan around 15:30. Dinner is included.",
+      "Gotemba lockers at the entrance for backpacks while you shop."
     ],
     "timeline": [
       {
@@ -3886,7 +3884,7 @@ window.DAYS = [
       "Local train Hakone-Yumoto → Odawara 17:00–17:25, then Hikari 653 to Kyoto 18:07–20:12. Most Nozomi trains skip Odawara."
     ],
     "tips": [
-      "Add a KABIN Koji night on 10/9 to the existing 11–15/9 booking.",
+      "KABIN Koji: nights 10–14/9, checkout 15/9.",
       "Buy a 1-day Hakone Freepass at Hakone-Yumoto after breakfast. It covers the bus, ship, ropeway, cable car and Tozan.",
       "Big bags are already on the way to KABIN. Backpacks at the ryokan or a station locker until ~16:30.",
       "Collect Hikari 653 tickets at the Odawara machines at 17:30. Convenience store in the station for the ride, or wait for dinner in Kyoto."
@@ -4030,8 +4028,8 @@ window.DAYS = [
       "Walk down Sannenzaka / Ninenzaka into Gion. Pontocho is a short walk from there."
     ],
     "tips": [
-      "KABIN Koji: nights 10–14/9, checkout 15/9, once the extra night is confirmed.",
-      "Give Kiyomizu and the stone streets 2.5–3 hours. Skip Nishiki today — it closes around 17:30 and is tomorrow after Uji.",
+      "KABIN Koji: nights 10–14/9, checkout 15/9.",
+      "Give Kiyomizu and the stone streets 2.5–3 hours.",
       "In Gion, take photos respectfully. Don’t chase geiko."
     ],
     "timeline": [
@@ -4103,7 +4101,7 @@ window.DAYS = [
     "transport": [
       "Early JR or Keihan to Fushimi-Inari (about 10–15 min from central Kyoto).",
       "JR or Keihan from Fushimi to Uji (about 20–30 min).",
-      "Return to Kawaramachi / Nishiki. Not Higashiyama — Kiyomizu was yesterday."
+      "Return to Kawaramachi / Nishiki."
     ],
     "tips": [
       "Higher Fushimi paths are quieter than the first gates.",
@@ -4424,7 +4422,7 @@ window.DAYS = [
     ],
     "tips": [
       "Checkout KABIN Koji for the evening move to Osaka (Apartment Hotel 11 · nights 15–21/9).",
-      "USJ is tomorrow (16/9) — keep the evening moderate."
+      "Keep the evening moderate before the park day."
     ],
     "timeline": [
       {
