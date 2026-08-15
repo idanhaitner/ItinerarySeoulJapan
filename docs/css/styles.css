@@ -2202,21 +2202,6 @@ a { color: inherit; }
   color: var(--muted);
 }
 
-.travel-meta-mark {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 22px;
-  margin-bottom: 2px;
-  color: var(--travel, var(--indigo));
-}
-
-.travel-meta-mark .travel-icon {
-  width: 18px;
-  height: 18px;
-  display: block;
-}
-
 .timeline-item.is-travel .timeline-card {
   background: transparent;
   padding-top: 12px;
@@ -5329,11 +5314,6 @@ a { color: inherit; }
   }
   .timeline-item.is-travel .timeline-meta {
     align-items: center;
-  }
-  .timeline-item.is-travel .travel-meta-mark {
-    order: 1;
-    height: auto;
-    margin-bottom: 0;
   }
   .timeline-item.is-travel .timeline-time {
     order: 0;

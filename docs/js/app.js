@@ -528,7 +528,6 @@
               travelHtml = `
             <li class="timeline-item is-travel travel-mode-${info.type} city-line-${day.city} ${done} ${fav}" data-tl-idx="${idx}">
               <div class="timeline-meta">
-                <div class="travel-meta-mark" aria-hidden="true">${info.icon}</div>
                 <div class="timeline-time">${escapeHtml(timeLabel)}</div>
               </div>
               <div class="timeline-card travel-card">
