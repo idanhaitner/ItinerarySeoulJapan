@@ -12,6 +12,138 @@ window.TripTools = (function () {
     return CAT_META[cat] || CAT_META.attraction;
   }
 
+  const TRAVEL_LABELS = {
+    flight: "טיסה",
+    shinkansen: "שינקנסן",
+    express: "רכבת מהירה",
+    ropeway: "רכבל",
+    bus: "אוטובוס",
+    subway: "רכבת תחתית",
+    taxi: "מונית",
+    train: "רכבת",
+  };
+
+  const TRAVEL_ICONS = {
+    flight:
+      '<svg class="travel-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9L2 14v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>',
+    shinkansen:
+      '<svg class="travel-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 14c0-5 4.2-8 10.2-8H20v2.2c-1.6 1.4-2.6 3.4-2.8 5.8H4zm0 2h18v2H4zm2.2 3 .8 2h2.2l-.8-2zm8.6 0 .8 2h2.2l-.8-2zM7 12.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm5.5 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>',
+    express:
+      '<svg class="travel-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 11h3l1.2-3h9.6L18 11h3v2h-1.2c-.5 2.2-2.2 4-4.5 4.7L16 20h-2l-.6-2h-2.8L10 20H8l.7-2.3C6.4 17 4.7 15.2 4.2 13H3zm5.3 0h7.4l-.6-1.6H8.9zm.2 4.2c.4.5 1 .8 1.6.8h3.8c.6 0 1.2-.3 1.6-.8.2-.3.4-.6.5-1H7.9c.1.4.3.7.6 1z"/></svg>',
+    train:
+      '<svg class="travel-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.5 3h11A3.5 3.5 0 0 1 21 6.5V15a3 3 0 0 1-3 3h-.4l.9 2h-2.1l-.8-2H8.4l-.8 2H5.5l.9-2H6a3 3 0 0 1-3-3V6.5A3.5 3.5 0 0 1 6.5 3zM6 8h12v5H6zm2.5 7.2a1.3 1.3 0 1 0 0-2.6 1.3 1.3 0 0 0 0 2.6zm7 0a1.3 1.3 0 1 0 0-2.6 1.3 1.3 0 0 0 0 2.6z"/></svg>',
+    subway:
+      '<svg class="travel-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 4h14a2 2 0 0 1 2 2v9a3 3 0 0 1-3 3h-.2l.7 2h-2.1l-.7-2H8.3l-.7 2H5.5l.7-2H6a3 3 0 0 1-3-3V6a2 2 0 0 1 2-2zm1 3h12v6H6zm2.5 8.2a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4zm7 0a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4zM8 6.6h8v1.2H8z"/></svg>',
+    bus:
+      '<svg class="travel-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5 4h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-.3l.8 2h-2.1l-.8-2H7.4l-.8 2H4.5l.8-2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm1 3h12v6H6zm2.3 8.3a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4zm7.4 0a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4z"/></svg>',
+    ropeway:
+      '<svg class="travel-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2 5.2 22 3v1.8L13 6.6V8h3.5A2.5 2.5 0 0 1 19 10.5V18a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3v-7.5A2.5 2.5 0 0 1 7.5 8H11V6.8zM7 12h10v7H7z"/></svg>',
+    taxi:
+      '<svg class="travel-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.8 8 8 5h8l1.2 3H20v2h-1.1l.1.4L20 16v4h-2v-2H6v2H4v-4l1-5.6.1-.4H4V8zm2.4 0h5.6l-.6-1.6H9.8zM7.2 16.2a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4zm9.6 0a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4z"/></svg>',
+  };
+
+  const TYPE_PREFIX = {
+    flight: /^(?:טיסת|טיסה|Travel by)\s+/i,
+    shinkansen: /^(?:שינקנסן|Travel by)\s+/i,
+    express: /^(?:רכבת מהירה|Travel by)\s+/i,
+    ropeway: /^(?:רכבל),?\s*(?:כבלים ו־Tozan\s+)?/i,
+    bus: /^(?:אוטובוס(?:\s+בין-עירוני)?|Travel by)\s+/i,
+    subway: /^(?:רכבת תחתית|מטרו)(?:\s+או\s+\S+)?\s+|^(?:Travel by)\s+/i,
+    taxi: /^(?:מונית)\s+|^(?:Travel by taxi(?:\s*\/\s*)?)\s*/i,
+    train: /^(?:רכבת(?:\s+מקומית)?|Travel by)\s+/i,
+  };
+
+  function classifyTravelType(title, note) {
+    const raw = title || "";
+    const blob = `${raw} ${note || ""}`;
+    const low = blob.toLowerCase();
+
+    if (/טיסת|טיסה\b|flight|ethiopian|air premia|emirates|\byt0|\byp\d|airlines/.test(low)) return "flight";
+    if (/שינקנסן|shinkansen|\bhikari\b|\bnozomi\b/.test(low)) return "shinkansen";
+    if (/spacia|n['’]?ex\b|arex|special rapid|limited express|ltd\.?\s*exp|limousine|לימוזינה|chuo rapid/.test(low)) {
+      return "express";
+    }
+
+    if (/^(אוטובוס|travel by .{0,50}\bbus\b|travel by intercity|travel by red line|travel by fujikyu bus|travel by hakone tozan bus)/i.test(raw)) {
+      return "bus";
+    }
+    if (/^(רכבת תחתית|מטרו|travel by subway|travel by metro)/i.test(raw)) return "subway";
+    if (/^(רכבל|travel by .{0,40}(ropeway|cable))/i.test(raw)) return "ropeway";
+    if (/^(מונית|travel by taxi)/i.test(raw)) return "taxi";
+    if (/^(רכבת|jr |hankyu|kintetsu|enoden|eizan|yurikamome|travel by )/i.test(raw)) return "train";
+
+    if (/\bbus\b|אוטובוס|red line|tozan bus/.test(low)) return "bus";
+    if (/רכבת תחתית|subway|\bmetro\b|מטרו/.test(low)) return "subway";
+    if (/רכבל|ropeway|cable car|\bcable\b|כבלים/.test(low)) return "ropeway";
+    if (/מונית|\btaxi\b/.test(low)) return "taxi";
+    return "train";
+  }
+
+  function extractTravelRoute(title) {
+    const raw = title || "";
+    const en = raw.match(/(?:·\s*)?(from\s+.+?\s+to\s+.+)$/i);
+    if (en) return { route: en[1].trim(), rest: raw.slice(0, en.index).replace(/[·,\s]+$/, "").trim() };
+
+    const toward = raw.match(/(לכיוון\s+.+)$/);
+    if (toward) return { route: toward[1].trim(), rest: raw.slice(0, toward.index).trim() };
+
+    const back = raw.match(/(חזרה\s+ל.+)$/);
+    if (back) return { route: back[1].trim(), rest: raw.slice(0, back.index).trim() };
+
+    const dash = raw.match(/(מ[־].+?\s+ל[־].+)$/);
+    if (dash) return { route: dash[1].trim(), rest: raw.slice(0, dash.index).trim() };
+
+    const glued = raw.match(/((?:^|\s)מ(?!ונית)(?:ה)?\S.*?\s+ל\S.+)$/);
+    if (glued) return { route: glued[1].trim(), rest: raw.slice(0, glued.index).trim() };
+
+    const destOnly = raw.match(/\s(ל[־]?\S.+)$/);
+    if (destOnly && !/או הליכה/.test(raw.slice(0, destOnly.index + 1))) {
+      return { route: destOnly[1].trim(), rest: raw.slice(0, destOnly.index).trim() };
+    }
+    return { route: "", rest: raw };
+  }
+
+  function travelInfo(item) {
+    const raw = (item && item.title) || "";
+    const type = classifyTravelType(raw, (item && item.note) || "");
+    const { route, rest } = extractTravelRoute(raw);
+    const prefix = TYPE_PREFIX[type];
+    let headline = rest.replace(/^(?:נסיעה ב־|Travel by )\s*/i, "").trim();
+    const mixed = / או | \/ /.test(headline);
+    if (!mixed && prefix) headline = headline.replace(prefix, "").trim();
+    headline = headline.replace(/[·,]\s*$/, "").trim();
+    if (!mixed) headline = headline.replace(/^(?:או)\s+/, "").trim();
+    if (!headline || headline === TRAVEL_LABELS[type]) {
+      headline = route || raw;
+      return {
+        type,
+        label: TRAVEL_LABELS[type] || "נסיעה",
+        title: headline,
+        route: headline === route ? "" : route,
+        icon: TRAVEL_ICONS[type] || TRAVEL_ICONS.train,
+      };
+    }
+    return {
+      type,
+      label: TRAVEL_LABELS[type] || "נסיעה",
+      title: headline,
+      route,
+      icon: TRAVEL_ICONS[type] || TRAVEL_ICONS.train,
+    };
+  }
+
+  function isTravelItem(item) {
+    if (!item) return false;
+    if (item.category === "transit") return true;
+    const title = item.title || "";
+    if (/^(Travel by |נסיעה)/.test(title)) return true;
+    if (/^(טיסת|טיסה |אוטובוס|רכבת|מטרו|שינקנסן|מונית|Hikari|Nozomi|N['’]EX|AREX|Tobu |Hankyu|Kintetsu|JR )/.test(title)) {
+      return true;
+    }
+    if (/^רכבל/.test(title) && /(?:מ[־]|\sמ(?!ונית)\S.*\sל)/.test(title)) return true;
+    return false;
+  }
+
   /** Short Hebrew “what is this place?” label from tags/name. */
   function placeKindHe(place) {
     if (!place) return "";
@@ -226,5 +358,5 @@ window.TripTools = (function () {
     modal.classList.add("open");
   }
 
-  return { categoryMeta, placeKindHe, convert, renderConverter, renderTaxiCards, openTipsModal, hotelTaxiCards };
+  return { categoryMeta, placeKindHe, convert, renderConverter, renderTaxiCards, openTipsModal, hotelTaxiCards, travelInfo, isTravelItem };
 })();

@@ -2150,10 +2150,6 @@ a { color: inherit; }
   text-align: end;
 }
 
-.timeline-meta .cat-chip {
-  margin-bottom: 0;
-}
-
 .timeline-time {
   font-family: var(--font-display);
   font-size: 16px;
@@ -2210,17 +2206,15 @@ a { color: inherit; }
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 18px;
+  height: 22px;
   margin-bottom: 2px;
+  color: var(--travel, var(--indigo));
 }
 
-.travel-meta-mark span {
-  width: 7px;
-  height: 7px;
-  border: 1.5px solid var(--indigo);
-  border-radius: 50%;
-  background: var(--paper);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--indigo) 12%, transparent);
+.travel-meta-mark .travel-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
 }
 
 .timeline-item.is-travel .timeline-card {
@@ -2233,7 +2227,7 @@ a { color: inherit; }
   top: 8px;
   bottom: 8px;
   width: 0;
-  border-inline-start: 1.5px dashed color-mix(in srgb, var(--indigo) 55%, transparent);
+  border-inline-start: 1.5px dashed color-mix(in srgb, var(--travel, var(--indigo)) 55%, transparent);
   background: transparent;
   opacity: 1;
 }
@@ -2241,14 +2235,28 @@ a { color: inherit; }
 .travel-body {
   position: relative;
   padding: 10px 14px;
-  border: 1px dashed color-mix(in srgb, var(--indigo) 28%, var(--line));
-  border-radius: 2px;
+  border: 1px dashed color-mix(in srgb, var(--travel, var(--indigo)) 32%, var(--line));
+  border-radius: 4px;
   background:
     linear-gradient(
       90deg,
-      color-mix(in srgb, var(--indigo) 5%, transparent) 0,
-      transparent 42%
+      color-mix(in srgb, var(--travel, var(--indigo)) 8%, transparent) 0,
+      transparent 46%
     );
+}
+
+.travel-kicker {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+  color: var(--travel, var(--indigo));
+}
+
+.travel-kicker .travel-icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
 }
 
 .travel-eyebrow {
@@ -2257,8 +2265,32 @@ a { color: inherit; }
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--indigo);
-  margin-bottom: 4px;
+  color: var(--travel, var(--indigo));
+}
+
+.timeline-item.travel-mode-flight { --travel: #5a6d7c; }
+.timeline-item.travel-mode-shinkansen { --travel: #1a4b8c; }
+.timeline-item.travel-mode-express { --travel: #2a7a78; }
+.timeline-item.travel-mode-train { --travel: #4a7a4a; }
+.timeline-item.travel-mode-subway { --travel: #a45a6a; }
+.timeline-item.travel-mode-bus { --travel: #c4842a; }
+.timeline-item.travel-mode-ropeway { --travel: #b45a3a; }
+.timeline-item.travel-mode-taxi { --travel: #b08a2a; }
+
+.timeline-item.travel-mode-shinkansen .travel-body {
+  border-style: solid;
+  border-width: 1.5px;
+  border-color: color-mix(in srgb, var(--travel) 42%, var(--line));
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--travel) 12%, transparent) 0,
+      transparent 52%
+    );
+}
+
+.timeline-item.travel-mode-shinkansen .timeline-card::before {
+  border-inline-start-style: solid;
 }
 
 .timeline-item.is-travel .timeline-title.travel-mode {
@@ -2297,18 +2329,8 @@ a { color: inherit; }
     background: transparent;
   }
   .timeline-item.is-travel:hover .travel-body {
-    border-color: color-mix(in srgb, var(--indigo) 42%, var(--line));
+    border-color: color-mix(in srgb, var(--travel, var(--indigo)) 48%, var(--line));
   }
-}
-
-.cat-chip {
-  display: inline-block;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: none;
-  color: var(--soft);
-  margin-bottom: 6px;
 }
 
 .timeline-title {
@@ -5304,10 +5326,6 @@ a { color: inherit; }
     padding: 0 0 8px;
     border-inline-end: 0;
     text-align: start;
-  }
-  .timeline-meta .cat-chip {
-    order: 1;
-    letter-spacing: 0.08em;
   }
   .timeline-item.is-travel .timeline-meta {
     align-items: center;

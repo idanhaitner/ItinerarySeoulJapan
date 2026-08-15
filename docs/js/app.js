@@ -516,33 +516,29 @@
           .map((item, idx) => {
             const place = item.placeId ? places[item.placeId] : null;
             const links = place ? mapsLinks(place) : null;
-            const meta = tools.categoryMeta(item.category || "attraction");
             const timeLabel = item.end ? `${item.time}–${item.end}` : item.time;
             const done = storage.isCompleted(day.id, item) ? "done" : "";
             const fav = storage.isFavorite(day.id, item) ? "fav" : "";
             const booking = timelineBookingHtml(item, seenBookingIds);
-            const isTravel =
-              item.category === "transit" ||
-              /^(Travel by |נסיעה)/.test(item.title || "");
+            const isTravel = tools.isTravelItem(item);
 
             let travelHtml = "";
             if (isTravel) {
-              const raw = item.title || "";
-              const he = raw.match(/^נסיעה ב־(.+?)(?:\s*·\s*(.+))?$/);
-              const en = raw.match(/^Travel by (.+?)(?:\s*·\s*(.+))?$/);
-              const mode = (he && he[1]) || (en && en[1]) || raw;
-              const route = (he && he[2]) || (en && en[2]) || "";
+              const info = tools.travelInfo(item);
               travelHtml = `
-            <li class="timeline-item is-travel city-line-${day.city} ${done} ${fav}" data-tl-idx="${idx}">
+            <li class="timeline-item is-travel travel-mode-${info.type} city-line-${day.city} ${done} ${fav}" data-tl-idx="${idx}">
               <div class="timeline-meta">
-                <div class="travel-meta-mark" aria-hidden="true"><span></span></div>
+                <div class="travel-meta-mark" aria-hidden="true">${info.icon}</div>
                 <div class="timeline-time">${escapeHtml(timeLabel)}</div>
               </div>
               <div class="timeline-card travel-card">
                 <div class="travel-body">
-                  <span class="travel-eyebrow">נסיעה</span>
-                  <div class="timeline-title travel-mode">${escapeHtml(mode)}</div>
-                  ${route ? `<div class="travel-route">${escapeHtml(route)}</div>` : ""}
+                  <div class="travel-kicker">
+                    ${info.icon}
+                    <span class="travel-eyebrow">${escapeHtml(info.label)}</span>
+                  </div>
+                  <div class="timeline-title travel-mode">${escapeHtml(info.title)}</div>
+                  ${info.route ? `<div class="travel-route">${escapeHtml(info.route)}</div>` : ""}
                   ${item.note ? `<p class="timeline-note">${escapeHtml(item.note)}</p>` : ""}
                   ${booking.html}
                   <div class="timeline-actions">
@@ -560,7 +556,6 @@
               : `
             <li class="timeline-item city-line-${day.city} ${done} ${fav}" data-tl-idx="${idx}">
               <div class="timeline-meta">
-                <div class="cat-chip">${meta.label}</div>
                 <div class="timeline-time">${escapeHtml(timeLabel)}</div>
               </div>
               <div class="timeline-card">

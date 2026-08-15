@@ -123,7 +123,7 @@ window.TRIP = {
     "Seoul hotel: Amanti Hongdae · 27 Aug–2 Sep.",
     "Tokyo first base: Hotel Gracery Shinjuku · 2–7 Sep (Kabukicho).",
     "Kyoto hotel: KABIN Koji · add night 10/9 · nights 10–14 Sep, checkout 15 Sep (Kawaramachi).",
-    "Kawaguchiko hotel: MYSTAYS Fuji Onsen · nights 7–8 Sep, checkout 9 Sep for Gotemba (Fuji-Q on 8/9). Hakone: Sara — change 7/9 → 9/9.",
+    "Kawaguchiko hotel: MYSTAYS Fuji Onsen · nights 7–8 Sep, checkout 9 Sep for Gotemba (Fuji-Q on 8/9). Hakone: Tsukino Yado Sara · booked night 9/9, checkout 10/9.",
     "Osaka hotel: Apartment Hotel 11 Shinsaibashi 2 · 15–21 Sep.",
     "Tokyo return base: The Royal Park Canvas Ginza 8 · 21–25 Sep.",
     "Leave Japan ~25 Sep: Emirates Narita → Dubai (DXB) → Tirana (TIA) — book / confirm flight numbers.",
@@ -1034,7 +1034,7 @@ window.PLACES = {
     ],
     "lat": 35.2291,
     "lng": 139.0983,
-    "blurb": "Booked 7/9 — change to night 9/9, checkout 10/9 · Hakone-Yumoto ryokan · rooms with open-air baths · kaiseki included · arrive ~15:30 · ~8 min walk from Hakone-Yumoto Station.",
+    "blurb": "Booked night 9/9, checkout 10/9 · Hakone-Yumoto ryokan · rooms with open-air baths · kaiseki included · arrive ~15:30 · ~8 min walk from Hakone-Yumoto Station.",
     "taxiAddress": "神奈川県足柄下郡箱根町湯本588-1"
   },
   "owakudani": {
@@ -2920,7 +2920,7 @@ window.DAYS = [
         "note": "Up Namsan toward N Tower · station just above Myeongdong.",
         "placeId": "namsan-cable",
         "end": "18:00",
-        "category": "transit"
+        "category": "attraction"
       },
       {
         "time": "18:05",
