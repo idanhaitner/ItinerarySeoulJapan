@@ -23,6 +23,7 @@
     "Tel Aviv": "תל אביב",
     Bangkok: "בנגקוק",
     Tirana: "טירנה",
+    Dubai: "דובאי",
   };
 
   const WEEKDAY_HE = {

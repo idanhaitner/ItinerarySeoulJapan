@@ -69,40 +69,41 @@ window.TRIP = {
       "note": "~2h30 · some boards list YP731"
     },
     {
-      "id": "emirates-nrt-dxb",
+      "id": "ek319",
       "journey": "tokyo-tirana",
       "journeyLabel": "Tokyo → Tirana",
-      "status": "todo",
+      "status": "booked",
       "airline": "Emirates",
-      "flight": "TBD",
+      "flight": "EK319",
       "date": "2026-09-25",
       "from": "NRT",
       "fromName": "Tokyo Narita",
       "to": "DXB",
       "toName": "Dubai",
-      "depart": "—",
-      "arrive": "—",
+      "depart": "22:30",
+      "arrive": "04:05",
+      "arriveDate": "2026-09-26",
       "terminal": "NRT → DXB",
       "dayId": "d30",
-      "note": "Leg 1 · Emirates · confirm flight #"
+      "note": "Leg 1 · ~10h35 · A380 · Economy Flex · nonstop"
     },
     {
-      "id": "emirates-dxb-tia",
+      "id": "ek2478",
       "journey": "tokyo-tirana",
       "journeyLabel": "Tokyo → Tirana",
-      "status": "todo",
+      "status": "booked",
       "airline": "Emirates",
-      "flight": "TBD",
-      "date": "2026-09-25",
+      "flight": "EK2478",
+      "date": "2026-09-26",
       "from": "DXB",
       "fromName": "Dubai",
       "to": "TIA",
       "toName": "Tirana",
-      "depart": "—",
-      "arrive": "—",
+      "depart": "07:05",
+      "arrive": "10:45",
       "terminal": "DXB → TIA",
       "dayId": "d30",
-      "note": "Leg 2 · Emirates · arrival may be next calendar day · confirm times"
+      "note": "Leg 2 · ~5h40 · 737 MAX 8 · Economy Flex · 3h connection in DXB"
     }
   ],
   "notes": [
@@ -126,7 +127,7 @@ window.TRIP = {
     "Kawaguchiko hotel: MYSTAYS Fuji Onsen · nights 7–8 Sep, checkout 9 Sep for Gotemba (Fuji-Q on 8/9). Hakone: Tsukino Yado Sara · booked night 9/9, checkout 10/9.",
     "Osaka hotel: Apartment Hotel 11 Shinsaibashi 2 · 15–21 Sep.",
     "Tokyo return base: The Royal Park Canvas Ginza 8 · 21–25 Sep.",
-    "Leave Japan ~25 Sep: Emirates Narita → Dubai (DXB) → Tirana (TIA) — book / confirm flight numbers.",
+    "Leave Japan 25 Sep: Emirates EK319 NRT 22:30 → DXB 04:05 (26 Sep) + EK2478 DXB 07:05 → TIA 10:45 · Economy Flex · booked.",
     "Tap places for Google / Kakao / Naver / Yahoo! / Apple Maps."
   ]
 };
@@ -677,7 +678,33 @@ window.PLACES = {
     ],
     "lat": 35.772,
     "lng": 140.3929,
-    "blurb": "Tokyo arrival / later departure to Tirana via Dubai (Emirates)."
+    "blurb": "Tokyo arrival / departure EK319 22:30 on 25/9 to Dubai, then EK2478 to Tirana."
+  },
+  "dxb": {
+    "id": "dxb",
+    "name": "Dubai International (DXB)",
+    "nameJa": "دبي",
+    "city": "Dubai",
+    "country": "AE",
+    "tags": [
+      "transport"
+    ],
+    "lat": 25.2532,
+    "lng": 55.3657,
+    "blurb": "Emirates hub — 3h connection EK319 → EK2478 on 26/9."
+  },
+  "tia": {
+    "id": "tia",
+    "name": "Tirana Airport (TIA)",
+    "nameJa": "Tiranë",
+    "city": "Tirana",
+    "country": "AL",
+    "tags": [
+      "transport"
+    ],
+    "lat": 41.4147,
+    "lng": 19.7206,
+    "blurb": "Arrival EK2478 10:45 on 26/9."
   },
   "shinjuku": {
     "id": "shinjuku",
@@ -5175,53 +5202,78 @@ window.DAYS = [
     "country": "JP",
     "hotelId": "canvas-ginza8",
     "title": "Tokyo → Tirana via Dubai",
-    "summary": "Checkout The Royal Park Canvas Ginza 8, transfer to Narita, and fly Emirates to Tirana via Dubai (DXB).",
-    "food": "Airport meal before departure.",
+    "summary": "Checkout The Royal Park Canvas Ginza 8, N'EX to Narita, then Emirates EK319 overnight to Dubai and EK2478 on to Tirana (arrive 10:45 Saturday).",
+    "food": "Airport meal at Narita before EK319; snack during the DXB connection if needed.",
     "placeIds": [
       "canvas-ginza8",
-      "narita"
+      "narita",
+      "dxb",
+      "tia"
     ],
     "transport": [
       "N'EX from Tokyo Station (~10–15 min from the hotel).",
-      "Allow 2.5–3h door-to-gate for NRT.",
-      "Emirates connection in Dubai (DXB)."
+      "Be at NRT by ~19:30 for EK319 at 22:30.",
+      "3h Emirates connection in Dubai (DXB), then EK2478 07:05–10:45 to Tirana."
     ],
     "tips": [],
     "timeline": [
       {
-        "time": "09:00",
-        "title": "Final pack & checkout — The Royal Park Canvas Ginza 8",
-        "note": "Ginza 8-chome · bags to Tokyo Station.",
+        "time": "11:00",
+        "title": "Checkout — The Royal Park Canvas Ginza 8",
+        "note": "Ginza 8-chome · bags to Tokyo Station for N'EX.",
         "placeId": "canvas-ginza8",
         "category": "hotel"
       },
       {
-        "time": "12:00",
+        "time": "17:45",
         "title": "Travel by N'EX / limousine · from Tokyo Station to Narita",
-        "note": "N'EX reserved optional · ~60–90 min + airport buffer · allow 2.5–3h door-to-gate.",
+        "note": "N'EX reserved optional · ~60–90 min. Be at NRT by ~19:30.",
         "placeId": "narita",
         "category": "transit"
       },
       {
-        "time": "15:00",
-        "title": "Narita Airport",
-        "note": "Security, food, duty-free.",
+        "time": "19:15",
+        "title": "Narita Airport — Emirates check-in",
+        "note": "EK319 Economy Flex · A380. Security, food, duty-free.",
         "placeId": "narita",
         "category": "transit"
       },
       {
-        "time": "18:00",
-        "title": "Travel by Emirates · from Narita to Dubai to Tirana",
-        "note": "Book / confirm flight numbers & times.",
+        "time": "22:30",
+        "title": "Travel by Emirates EK319 · from Narita to Dubai",
+        "note": "Flight · ~10h35 · A380 · Economy Flex · booked.",
         "placeId": "narita",
+        "end": "04:05",
+        "category": "transit"
+      },
+      {
+        "time": "04:05",
+        "title": "Land Dubai (DXB) — connection",
+        "note": "3-hour connection airside · EK2478 at 07:05.",
+        "placeId": "dxb",
+        "category": "transit"
+      },
+      {
+        "time": "07:05",
+        "title": "Travel by Emirates EK2478 · from Dubai to Tirana",
+        "note": "Flight · ~5h40 · 737 MAX 8 · Economy Flex · booked.",
+        "placeId": "dxb",
+        "end": "10:45",
+        "category": "transit"
+      },
+      {
+        "time": "10:45",
+        "title": "Land Tirana (TIA)",
+        "note": "Saturday 26 Sep · end of the trip.",
+        "placeId": "tia",
         "category": "transit"
       }
     ],
     "transfer": {
       "mode": "flight",
       "label": "Tokyo → Tirana (via Dubai)",
-      "detail": "Emirates · NRT → DXB → TIA · flight TBD",
-      "duration": "to book / confirm"
+      "detail": "Emirates EK319 NRT 22:30 → DXB 04:05 + EK2478 DXB 07:05 → TIA 10:45",
+      "duration": "19h15 door to door · 3h connection in DXB"
     }
   }
 ];
