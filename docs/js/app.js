@@ -1271,8 +1271,12 @@
                     const nextDay = f.arriveDate && f.arriveDate !== f.date;
                     const arriveLabel = nextDay ? `${f.arrive || "—"}` : f.arrive || "—";
                     const statusChip = f.status === "booked" ? "הוזמן" : "לטפל";
-                    const durationMatch = String(f.note || "").match(/~\d+h\d*/i);
-                    const duration = durationMatch ? durationMatch[0] : j.legs.length === 1 ? "direct" : "";
+                    const durationMatch = String(f.note || "").match(/~(\d+)\s*h\s*(\d*)/i);
+                    const duration = durationMatch
+                      ? durationMatch[2]
+                        ? `~${durationMatch[1]}H${durationMatch[2]}`
+                        : `~${durationMatch[1]}H`
+                      : "";
                     const footBits = [f.terminal, f.note].filter(Boolean);
                     return `
                   <article class="fx-leg${f.status !== "booked" ? " is-todo" : ""}" dir="ltr">
@@ -1295,9 +1299,14 @@
                         <span class="fx-leg-date">${escapeHtml(formatFlightDate(f.date))}</span>
                       </div>
                       <div class="fx-leg-mid" aria-hidden="true">
-                        ${duration ? `<span class="fx-leg-dur">${escapeHtml(duration)}</span>` : ""}
-                        <div class="fx-leg-track"><span>✈</span></div>
-                        ${nextDay ? `<span class="fx-leg-plus">+1 day</span>` : `<span class="fx-leg-plus">&nbsp;</span>`}
+                        ${duration ? `<span class="fx-leg-dur">${escapeHtml(duration)}</span>` : `<span class="fx-leg-dur fx-leg-dur-empty">&nbsp;</span>`}
+                        <div class="fx-leg-track">
+                          <span class="fx-leg-track-line"></span>
+                          <span class="fx-leg-plane">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9L2 14v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>
+                          </span>
+                        </div>
+                        ${nextDay ? `<span class="fx-leg-plus">+1 DAY</span>` : `<span class="fx-leg-plus fx-leg-plus-empty">&nbsp;</span>`}
                       </div>
                       <div class="fx-leg-end is-arr">
                         <em>${escapeHtml(f.to)}</em>
