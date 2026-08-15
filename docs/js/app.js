@@ -1581,12 +1581,11 @@
   function initMasthead() {
     const routeEl = document.getElementById("masthead-route");
     const uniqueCities = trip.route.filter((c, i, arr) => arr.indexOf(c) === i);
-    const nightsByCity = hotelNightsByCity();
     if (routeEl) {
       routeEl.innerHTML = uniqueCities
         .map((c) => {
           return `<div class="route-stop city-${c}">
-            <span class="en">${cityLocal(c)}${hotelNightsLabel(nightsByCity[c] || 0)}</span>
+            <span class="en">${cityLocal(c)}</span>
             <span class="local">${c}</span>
           </div>`;
         })
