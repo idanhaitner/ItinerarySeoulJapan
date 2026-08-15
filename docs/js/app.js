@@ -1146,6 +1146,44 @@
     return d.toLocaleDateString("he-IL", { weekday: "short", day: "numeric", month: "short" });
   }
 
+  function flightMinutes(hhmm) {
+    const m = String(hhmm || "").match(/^(\d{1,2}):(\d{2})$/);
+    if (!m) return null;
+    return Number(m[1]) * 60 + Number(m[2]);
+  }
+
+  function layoverMinutes(prev, next) {
+    const arr = flightMinutes(prev && prev.arrive);
+    const dep = flightMinutes(next && next.depart);
+    if (arr == null || dep == null) return null;
+    let mins = dep - arr;
+    const arrDate = prev.arriveDate || prev.date;
+    const depDate = next.date;
+    if (arrDate && depDate) {
+      const a = new Date(arrDate + "T12:00:00");
+      const b = new Date(depDate + "T12:00:00");
+      mins += Math.round((b - a) / 86400000) * 24 * 60;
+    } else if (mins < 0) {
+      mins += 24 * 60;
+    }
+    return mins >= 0 ? mins : null;
+  }
+
+  function formatWaitHe(mins) {
+    const h = Math.floor(mins / 60);
+    const m = mins % 60;
+    if (h && m) return h === 1 ? `שעה ו־${m} דקות` : `${h} שעות ו־${m} דקות`;
+    if (h) return h === 1 ? "שעה" : `${h} שעות`;
+    return `${m} דקות`;
+  }
+
+  function formatLegDuration(f) {
+    const raw = f.duration || f.note || "";
+    const match = String(raw).match(/~(\d+)\s*h\s*(\d*)/i);
+    if (!match) return "";
+    return match[2] ? `~${match[1]}H${match[2]}` : `~${match[1]}H`;
+  }
+
   function renderFlights() {
     const flights = trip.flights || [];
     const booked = flights.filter((f) => f.status === "booked").length;
@@ -1268,17 +1306,23 @@
               <div class="fx-pass-legs">
                 ${j.legs
                   .map((f, li) => {
+                    const prev = li > 0 ? j.legs[li - 1] : null;
+                    const waitMins = prev ? layoverMinutes(prev, f) : null;
                     const nextDay = f.arriveDate && f.arriveDate !== f.date;
-                    const arriveLabel = nextDay ? `${f.arrive || "—"}` : f.arrive || "—";
+                    const arriveLabel = f.arrive || "—";
                     const statusChip = f.status === "booked" ? "הוזמן" : "לטפל";
-                    const durationMatch = String(f.note || "").match(/~(\d+)\s*h\s*(\d*)/i);
-                    const duration = durationMatch
-                      ? durationMatch[2]
-                        ? `~${durationMatch[1]}H${durationMatch[2]}`
-                        : `~${durationMatch[1]}H`
-                      : "";
-                    const footBits = [f.terminal, f.note].filter(Boolean);
+                    const duration = formatLegDuration(f);
+                    const footBits = [f.terminal, f.aircraft, f.cabin].filter(Boolean);
+                    const waitHtml =
+                      waitMins != null
+                        ? `<div class="fx-connect" dir="rtl">
+                            <span class="fx-connect-kicker">המתנה בשדה</span>
+                            <strong>${escapeHtml(formatWaitHe(waitMins))}</strong>
+                            <span class="fx-connect-place">${escapeHtml(f.fromName || f.from)} · ${escapeHtml(f.from)}</span>
+                          </div>`
+                        : "";
                     return `
+                  ${waitHtml}
                   <article class="fx-leg${f.status !== "booked" ? " is-todo" : ""}" dir="ltr">
                     <header class="fx-leg-top">
                       <div class="fx-leg-id">

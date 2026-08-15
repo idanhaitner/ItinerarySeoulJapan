@@ -29,7 +29,7 @@ window.TRIP = {
       "arrive": "19:50",
       "terminal": "TLV T3",
       "dayId": "d00",
-      "note": "Leg 1 · ~4h15"
+      "duration": "~4h15"
     },
     {
       "id": "et0672",
@@ -48,7 +48,7 @@ window.TRIP = {
       "arriveDate": "2026-08-27",
       "terminal": "ADD T2 → ICN",
       "dayId": "d00",
-      "note": "Leg 2 · overnight ~11h · lands next day"
+      "duration": "~11h"
     },
     {
       "id": "yp7321",
@@ -66,7 +66,7 @@ window.TRIP = {
       "arrive": "11:20",
       "terminal": "ICN T1 → NRT T2",
       "dayId": "d07",
-      "note": "~2h30 · some boards list YP731"
+      "duration": "~2h30"
     },
     {
       "id": "ek319",
@@ -85,7 +85,9 @@ window.TRIP = {
       "arriveDate": "2026-09-26",
       "terminal": "NRT → DXB",
       "dayId": "d30",
-      "note": "Leg 1 · ~10h35 · A380 · Economy Flex · nonstop"
+      "duration": "~10h35",
+      "aircraft": "A380",
+      "cabin": "Economy Flex"
     },
     {
       "id": "ek2478",
@@ -103,7 +105,9 @@ window.TRIP = {
       "arrive": "10:45",
       "terminal": "DXB → TIA",
       "dayId": "d30",
-      "note": "Leg 2 · ~5h40 · 737 MAX 8 · Economy Flex · 3h connection in DXB"
+      "duration": "~5h40",
+      "aircraft": "737 MAX 8",
+      "cabin": "Economy Flex"
     }
   ],
   "notes": [
