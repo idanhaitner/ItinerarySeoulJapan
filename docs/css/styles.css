@@ -2346,6 +2346,15 @@ a { color: inherit; }
   font-weight: 400;
 }
 
+.timeline-what {
+  margin: 8px 0 6px;
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.45;
+  max-width: 54ch;
+}
+
 .timeline-note {
   margin: 0;
   color: var(--muted);
@@ -5450,6 +5459,10 @@ a { color: inherit; }
   }
   .timeline-place {
     font-size: 12px;
+  }
+  .timeline-what {
+    font-size: 14px;
+    max-width: none;
   }
   .timeline-note {
     font-size: 13px;

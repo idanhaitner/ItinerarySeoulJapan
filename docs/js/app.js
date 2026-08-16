@@ -587,7 +587,8 @@
                   const ja = place.nameJa ? ` · ${escapeHtml(place.nameJa)}` : "";
                   return `${kindBit}<span class="place-name">${escapeHtml(place.name)}</span>${ja}`;
                 })()}</div>` : ""}
-                ${item.note ? `<p class="timeline-note">${escapeHtml(item.note)}</p>` : ""}
+                ${place && place.blurb ? `<p class="timeline-what">${escapeHtml(place.blurb)}</p>` : ""}
+                ${item.note && item.note !== (place && place.blurb) ? `<p class="timeline-note">${escapeHtml(item.note)}</p>` : ""}
                 ${booking.html}
                 <div class="timeline-actions">
                   ${links ? `<a href="${links.primary.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.primary.label)}</a>` : ""}
