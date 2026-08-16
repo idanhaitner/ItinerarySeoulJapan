@@ -340,14 +340,14 @@ window.CHECKLIST = {
         {
           id: "h-seoul",
           kind: "hotel",
-          label: "Amanti Hongdae",
+          label: "9 Brick Hotel Hongdae",
           when: "27/8–2/9",
           note: "מלון בהונגדה, סיאול. שישה לילות, 27 באוגוסט עד 2 בספטמבר. צ׳ק־אאוט בבוקר הטיסה לטוקיו.",
           window: "הוזמן",
           priority: "low",
           done: true,
           linkCheckin: true,
-          linkTitles: ["Amanti"],
+          linkTitles: ["9 Brick"],
         },
         {
           id: "h-tokyo1",

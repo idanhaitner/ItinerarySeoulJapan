@@ -125,7 +125,7 @@ window.TRIP = {
     "Sep 21: Leave Osaka for Tokyo — Nakano Broadway, Azabudai / optional Borderless, Tokyo Tower night-photo walk.",
     "Sep 22: Nikko — Spacia X 07:30–09:30 (book 22/8 09:00 JST), Kegon/Chuzenji first, Toshogu + Shinkyo. Sep 23: Equinox holiday — Ginza pedestrian paradise (not Kamakura). Sep 24: Kamakura & Enoshima weekday.",
     "Sep 25: Imperial East Gardens + Tokyo Station City, N'EX 17:45, EK319 22:30.",
-    "Seoul hotel: Amanti Hongdae · 27 Aug–2 Sep.",
+    "Seoul hotel: 9 Brick Hotel Hongdae · 27 Aug–2 Sep.",
     "Tokyo first base: Hotel Gracery Shinjuku · 2–7 Sep (Kabukicho).",
     "Kyoto hotel: KABIN Koji · add night 10/9 · nights 10–14 Sep, checkout 15 Sep (Kawaramachi).",
     "Kawaguchiko hotel: MYSTAYS Fuji Onsen · nights 7–8 Sep, checkout 9 Sep for Gotemba (Fuji-Q on 8/9). Hakone: Tsukino Yado Sara · booked night 9/9, checkout 10/9.",
@@ -136,20 +136,20 @@ window.TRIP = {
   ]
 };
 window.PLACES = {
-  "amanti-hotel": {
-    "id": "amanti-hotel",
-    "name": "Amanti Hotel Seoul Hongdae",
-    "nameJa": "아만티호텔 서울",
+  "nine-bricks": {
+    "id": "nine-bricks",
+    "name": "9 Brick Hotel",
+    "nameJa": "나인브릭 호텔",
     "city": "Seoul",
     "country": "KR",
     "tags": [
       "hotel",
       "booked"
     ],
-    "lat": 37.5577,
-    "lng": 126.9248,
+    "lat": 37.5555,
+    "lng": 126.9235,
     "blurb": "Booked — Seoul base in Hongdae (27 Aug–2 Sep).",
-    "taxiAddress": "서울특별시 마포구 월드컵북로 31"
+    "taxiAddress": "서울특별시 마포구 홍익로5길 32"
   },
   "namdaemun": {
     "id": "namdaemun",
@@ -2785,17 +2785,17 @@ window.DAYS = [
     "weekday": "Thursday",
     "city": "Seoul",
     "country": "KR",
-    "hotelId": "amanti-hotel",
+    "hotelId": "nine-bricks",
     "title": "Arrival & Hongdae night",
-    "summary": "Land ICN on ET0672, check in at Amanti Hotel Hongdae, then stay in the neighborhood — street food, busking, and bars. Rest after the long flight; Myeongdong moves to Tuesday.",
+    "summary": "Land ICN on ET0672, check in at 9 Brick Hotel Hongdae, then stay in the neighborhood — street food, busking, and bars. Rest after the long flight; Myeongdong moves to Tuesday.",
     "food": "Hongdae street food and a late snack or drink nearby.",
     "placeIds": [
       "icn",
-      "amanti-hotel",
+      "nine-bricks",
       "hongdae"
     ],
     "transport": [
-      "ICN → Amanti (~1h AREX Express or taxi). Climate Card is not valid on AREX Express."
+      "ICN → 9 Brick (~1h AREX Express or taxi). Climate Card is not valid on AREX Express."
     ],
     "tips": [
       "Climate Card covers Seoul metro/bus but not AREX Express — only All-Stop. Keep T-Money or cash for the airport run."
@@ -2817,9 +2817,9 @@ window.DAYS = [
       },
       {
         "time": "18:00",
-        "title": "Check in — Amanti Hotel Seoul Hongdae",
+        "title": "Check in — 9 Brick Hotel",
         "note": "Hongdae base · 27 Aug–2 Sep.",
-        "placeId": "amanti-hotel",
+        "placeId": "nine-bricks",
         "category": "hotel"
       },
       {
@@ -2838,7 +2838,7 @@ window.DAYS = [
     "weekday": "Friday",
     "city": "Seoul",
     "country": "KR",
-    "hotelId": "amanti-hotel",
+    "hotelId": "nine-bricks",
     "title": "Royal heart of Seoul",
     "summary": "Gyeongbokgung with the 10:00 changing of the guard + hanbok, Bukchon, Ikseon → Insadong, Gwangjang Market dinner.",
     "food": "Gwangjang Market street-food feast — famous stalls start closing ~20:30–21:00.",
@@ -2905,7 +2905,7 @@ window.DAYS = [
     "weekday": "Saturday",
     "city": "Seoul",
     "country": "KR",
-    "hotelId": "amanti-hotel",
+    "hotelId": "nine-bricks",
     "title": "Secret Garden, Unni Guide & Seongsu",
     "summary": "Jogyesa and Changdeokgung Secret Garden in the morning, Unni Guide 15:00–16:00 plus treatment in Gangnam, then Seongsu and Seoul Forest — much closer to Gangnam than to Hongdae.",
     "food": "Lunch near the palace or on the way to Gangnam; dinner in Seongsu.",
@@ -3003,7 +3003,7 @@ window.DAYS = [
     "weekday": "Sunday",
     "city": "Seoul",
     "country": "KR",
-    "hotelId": "amanti-hotel",
+    "hotelId": "nine-bricks",
     "title": "Forena Clinic & west Seoul",
     "summary": "Booked Forena Clinic consultation + treatment in Hongdae at 10:30, then a calm café in Yeonnam, Mangwon Market, and a Hongdae evening — stay on the west side after the facial.",
     "food": "Café lunch in Yeonnam / Mangwon; Hongdae street food at night.",
@@ -3014,7 +3014,7 @@ window.DAYS = [
       "hongdae"
     ],
     "transport": [
-      "Walk from Amanti Hongdae to Forena (H-CUBE, Yanghwa-ro · Hongik Univ. exit 9).",
+      "Walk from 9 Brick to Forena (H-CUBE, Yanghwa-ro · Hongik Univ. exit 9).",
       "Walk Yeonnam → Mangwon → back to Hongdae."
     ],
     "tips": [
@@ -3069,7 +3069,7 @@ window.DAYS = [
     "weekday": "Monday",
     "city": "Seoul",
     "country": "KR",
-    "hotelId": "amanti-hotel",
+    "hotelId": "nine-bricks",
     "title": "Lotte World + spa night",
     "summary": "Full Lotte World day, Seokchon Lake / Lotte Tower Seoul Sky, then jimjilbang and dinner near Jamsil.",
     "food": "Park / Lotte mall snacks; simple dinner near Jamsil after the spa.",
@@ -3089,7 +3089,7 @@ window.DAYS = [
         "time": "08:30",
         "title": "Travel by subway · from Hongdae to Jamsil (Lotte World)",
         "note": "Seoul Metro · ~40–50 min · no booking.",
-        "placeId": "amanti-hotel",
+        "placeId": "nine-bricks",
         "category": "hotel"
       },
       {
@@ -3132,7 +3132,7 @@ window.DAYS = [
     "weekday": "Tuesday",
     "city": "Seoul",
     "country": "KR",
-    "hotelId": "amanti-hotel",
+    "hotelId": "nine-bricks",
     "title": "Downtown, Myeongdong, N Tower & Itaewon",
     "summary": "Namdaemun and Myeongdong in the morning, Cheonggyecheon and DDP / Dongdaemun midday, Namsan cable and N Tower at sunset, then south to Itaewon for dinner and nightlife.",
     "food": "Myeongdong street food; dinner in Itaewon.",
@@ -3159,7 +3159,7 @@ window.DAYS = [
         "time": "08:45",
         "title": "Travel by subway · from Hongdae to Namdaemun",
         "note": "Seoul Metro · ~25–30 min · no booking.",
-        "placeId": "amanti-hotel",
+        "placeId": "nine-bricks",
         "category": "hotel"
       },
       {
@@ -3242,10 +3242,10 @@ window.DAYS = [
     "country": "JP",
     "hotelId": "gracery-shinjuku",
     "title": "Seoul → Tokyo & Shinjuku lights",
-    "summary": "Early checkout from Amanti, Air Premia YP7321 ICN→NRT. Immigration + bags + N'EX typically put you at Gracery around 14:15–14:30 — don’t rush. Shinjuku Gyoen 15:00–16:45 (last entry ~16:30), then Shinjuku evening: 3D cat screen, Godzilla head, free Tocho views, Kabukicho neon, Omoide yakitori and Golden Gai. Optional Shin-Okubo if you still have energy.",
+    "summary": "Early checkout from 9 Brick, Air Premia YP7321 ICN→NRT. Immigration + bags + N'EX typically put you at Gracery around 14:15–14:30 — don’t rush. Shinjuku Gyoen 15:00–16:45 (last entry ~16:30), then Shinjuku evening: 3D cat screen, Godzilla head, free Tocho views, Kabukicho neon, Omoide yakitori and Golden Gai. Optional Shin-Okubo if you still have energy.",
     "food": "Snack/late lunch in or right after Gyoen; yakitori in Omoide Yokocho; drinks in Golden Gai. Optional Korean street food in Shin-Okubo (~10 min north of the hotel).",
     "placeIds": [
-      "amanti-hotel",
+      "nine-bricks",
       "icn",
       "narita",
       "gracery-shinjuku",
@@ -3258,7 +3258,7 @@ window.DAYS = [
       "shin-okubo"
     ],
     "transport": [
-      "Amanti → ICN T1 (~1h).",
+      "9 Brick → ICN T1 (~1h).",
       "Air Premia YP7321.",
       "N'EX ~75 min → Hotel Gracery Shinjuku (Kabukicho).",
       "All evening stops walkable from the hotel."
@@ -3277,7 +3277,7 @@ window.DAYS = [
         "time": "05:30",
         "title": "Travel by taxi / AREX · from Hongdae to Incheon T1",
         "note": "Leave hotel · ~1 hour to ICN. Climate Card is not valid on AREX Express — Express ticket, All-Stop, T-Money, or taxi.",
-        "placeId": "amanti-hotel",
+        "placeId": "nine-bricks",
         "category": "hotel"
       },
       {

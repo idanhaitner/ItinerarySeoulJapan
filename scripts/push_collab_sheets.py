@@ -250,7 +250,7 @@ def build_days(days, places, he_places=None):
     for d in days:
         hotel = places.get(d.get("hotelId") or "", {})
         hotel_name = hotel.get("name") or "טרם נבחר"
-        if d.get("hotelId") == "amanti-hotel":
+        if d.get("hotelId") == "nine-bricks":
             hotel_name += " ✓"
         tips = " • ".join(d.get("tips") or [])
         tr = d.get("transfer") or {}
@@ -291,7 +291,7 @@ def build_hotels(days):
     """Hotels tracker with real trip date ranges."""
     # Preferred labels / areas for known stays
     meta = {
-        ("Seoul", 0): ("סיאול", "Hongdae", "Amanti Hotel Seoul Hongdae", "הוזמן", "בסיס סיאול · צ׳ק־אאוט 2 בספט׳"),
+        ("Seoul", 0): ("סיאול", "Hongdae", "9 Brick Hotel", "הוזמן", "בסיס סיאול · צ׳ק־אאוט 2 בספט׳"),
         ("Tokyo", 0): ("טוקיו (התחלה)", "Kabukicho / Shinjuku", "Hotel Gracery Shinjuku", "הוזמן", "לילות 2–6/9 · צ׳ק־אאוט בוקר 7/9 להקונה"),
         ("Hakone", 0): ("הקונה", "Hakone-Yumoto", "Tsukino Yado Sara (月の宿 紗ら)", "הוזמן", "הוזמן · לילה 9/9 · צ׳ק־אאוט 10/9 לשינקנסן לקיוטו · קייסקי + אונסן אחרי אוטובוס ישיר מגוטמבה"),
         ("Kawaguchiko", 0): ("קוואגוצ׳יקו", "Fujiyoshida / ליד Fuji-Q", "HOTEL MYSTAYS Fuji Onsen Resort", "הוזמן", "לילות 7–8/9 · צ׳ק־אאוט 9/9 לגוטמבה"),
@@ -315,7 +315,7 @@ def build_hotels(days):
         end = block["end"]
         # Seoul hotel already booked — nights through 1 Sep, checkout morning of 2 Sep
         if city == "Seoul":
-            hotel = "Amanti Hotel Seoul Hongdae"
+            hotel = "9 Brick Hotel"
             status = "הוזמן"
             end = "2026-09-02"
         if city == "Tokyo" and key_i == 0:
