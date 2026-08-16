@@ -310,28 +310,48 @@
 
   function updateTopbarHeight() {
     if (!els.topbar) return;
-    const h = Math.ceil(els.topbar.getBoundingClientRect().height);
-    document.documentElement.style.setProperty("--topbar-h", `${h}px`);
+    const h = Math.round(els.topbar.getBoundingClientRect().height);
+    const next = `${h}px`;
+    if (document.documentElement.style.getPropertyValue("--topbar-h") === next) return;
+    document.documentElement.style.setProperty("--topbar-h", next);
   }
+
+  let chromeMinLock = false;
+  let chromeMinTimer = 0;
 
   function setChromeMinimized(minimized) {
     if (!els.topbar) return;
     const next = Boolean(minimized);
-    if (els.topbar.classList.contains("is-minimized") === next) {
-      updateTopbarHeight();
-      return;
-    }
+    if (els.topbar.classList.contains("is-minimized") === next) return;
+    chromeMinLock = true;
     els.topbar.classList.toggle("is-minimized", next);
     if (els.ribbon) els.ribbon.classList.toggle("is-minimized", next);
-    requestAnimationFrame(updateTopbarHeight);
-    // After CSS transition finishes, remeasure sticky offset for the day rail.
-    window.setTimeout(updateTopbarHeight, 300);
+    requestAnimationFrame(() => {
+      updateTopbarHeight();
+      requestAnimationFrame(() => {
+        chromeMinLock = false;
+      });
+    });
+    window.clearTimeout(chromeMinTimer);
+    chromeMinTimer = window.setTimeout(updateTopbarHeight, 300);
   }
 
   function syncScrollChrome() {
+    if (chromeMinLock) return;
     const searchFocused = Boolean(els.search && document.activeElement === els.search);
-    const shouldMinimize = !searchFocused && window.scrollY > 48;
-    setChromeMinimized(shouldMinimize);
+    if (searchFocused) {
+      setChromeMinimized(false);
+      return;
+    }
+    // Hysteresis: hiding the search row shrinks the sticky header by ~70px and
+    // the browser then reduces scrollY, which used to flip the class every frame.
+    const y = window.scrollY;
+    const minimized = els.topbar.classList.contains("is-minimized");
+    if (minimized) {
+      if (y < 12) setChromeMinimized(false);
+    } else if (y > 96) {
+      setChromeMinimized(true);
+    }
   }
 
   function setResultCount(text) {
