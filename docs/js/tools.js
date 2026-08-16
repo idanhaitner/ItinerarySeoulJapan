@@ -343,7 +343,7 @@ window.TripTools = (function () {
             <section>
               <h3>יפן</h3>
               <ul>
-                <li>הוסיפו <strong>Suica / Pasmo</strong> ל־Apple Wallet לפני הנסיעה (או קנו IC בהגעה).</li>
+                <li>הוסיפו <strong>Suica / Pasmo</strong> ל־Apple Wallet לפני הנסיעה (או קנו Welcome Suica בהגעה).</li>
                 <li>שקט ברכבות — שיחות טלפון לא מקובלות.</li>
                 <li>תור מסודר; מושבי עדיפות אמיתיים — הציעו אותם בלב שלם.</li>
               </ul>

@@ -114,15 +114,15 @@ window.TRIP = {
     "Route: Tel Aviv → Seoul → Tokyo → Kawaguchiko → Hakone → Kyoto → Osaka (+ Kobe day) → Tokyo → Tirana (via Dubai).",
     "Outbound booked: ET0419 + ET0672 (26–27 Aug).",
     "Seoul→Tokyo booked: Air Premia YP7321 (2 Sep · ICN 08:50 → NRT 11:20).",
-    "Sep 4: Tsukiji sushi/fish + teamLab Planets (weekday) + Odaiba + Ginza.",
+    "Sep 4: Tsukiji sushi/fish + teamLab Planets (~1.5–2h) + Senkyaku Banrai lunch + Odaiba + Azabudai/Tokyo Tower/Roppongi (skip Ginza — later stay).",
     "Sep 5: Asakusa + Skytree + Akihabara.",
-    "Sep 6: Kichijoji + Shimokitazawa day, night Street Kart ~19:00 (IDP).",
+    "Sep 6: Kichijoji + Shimokitazawa (Bonus Track / Reload) day, night Street Kart ~19:00 (1949 IDP).",
     "Sep 7: Bus 09:15 Busta Shinjuku → Kawaguchiko; lockers; Red Line Oishi + panoramic ropeway; dinner near MYSTAYS; convenience store for 05:45. Sep 8: Chureito sunrise + Lawson, then full Fuji-Q day. Sep 9: Yamato bags to Kyoto at 08:15, Gotemba Outlets, Tozan bus L to Sara kaiseki.",
     "Sep 10: Hakone Loop, Odawara 17:00, Hikari 653 18:07 → Kyoto 20:12, dinner near KABIN. Sep 11: Easy Kyoto morning (cafés near the hotel), then Kiyomizu / Sannenzaka / Gion + Pontocho.",
     "Sep 12: Fushimi Inari + Uji (Byodo-in / matcha) + Nishiki before 17:30.",
     "Sep 14: Kibune nagashi somen (Hirobun walk-in) + Kurama trek + teamLab Biovortex booked 18:00–18:30. Sep 15: Kyoto zen → Osaka evening.",
     "Sep 20: Kobe day trip from Osaka.",
-    "Sep 21: Leave Osaka for Tokyo.",
+    "Sep 21: Leave Osaka for Tokyo — Nakano Broadway then first Ginza evening from the hotel.",
     "Sep 22: Nikko — Spacia X ~06:30, lake/Kegon first, Toshogu afternoon. Sep 23: Kamakura & Enoshima.",
     "Sep 24: Full Ginza shopping day + farewell dinner.",
     "Seoul hotel: Amanti Hongdae · 27 Aug–2 Sep.",
@@ -766,7 +766,7 @@ window.PLACES = {
     ],
     "lat": 35.6702,
     "lng": 139.705,
-    "blurb": "Harajuku crepes & youth fashion."
+    "blurb": "Harajuku crepes & youth fashion — most shops open ~10:00–10:30."
   },
   "cat-street": {
     "id": "cat-street",
@@ -823,7 +823,7 @@ window.PLACES = {
     ],
     "lat": 35.7148,
     "lng": 139.7967,
-    "blurb": "Classic temple Tokyo."
+    "blurb": "Classic temple Tokyo — Nakamise stalls mostly open ~09:30–10:00."
   },
   "kappabashi": {
     "id": "kappabashi",
@@ -907,7 +907,7 @@ window.PLACES = {
     ],
     "lat": 35.649,
     "lng": 139.7868,
-    "blurb": "Immersive water-based digital art — book ahead."
+    "blurb": "Immersive water-based digital art — typically 1.5–2 hours including lockers · book timed tickets."
   },
   "odaiba": {
     "id": "odaiba",
@@ -936,7 +936,7 @@ window.PLACES = {
     ],
     "lat": 35.6585,
     "lng": 139.7015,
-    "blurb": "Night go-kart through neon streets — physical IDP required · book an evening slot (~19:00)."
+    "blurb": "Night go-kart through neon streets — physical 1949-convention IDP required (Israeli/digital licence refused, no refund) · book an evening slot (~19:00)."
   },
   "kichijoji": {
     "id": "kichijoji",
@@ -2112,7 +2112,7 @@ window.PLACES = {
     ],
     "lat": 35.6616,
     "lng": 139.6683,
-    "blurb": "Vintage & indie cafés."
+    "blurb": "Vintage & indie cafés — don’t miss Bonus Track / Reload."
   },
   "omoide-yokocho": {
     "id": "omoide-yokocho",
@@ -2141,7 +2141,7 @@ window.PLACES = {
     ],
     "lat": 35.6585,
     "lng": 139.7024,
-    "blurb": "Sunset observation deck — book timed tickets."
+    "blurb": "Sunset observation deck — timed tickets go on sale exactly 4 weeks ahead at midnight JST and sell out in minutes."
   },
   "ueno-park": {
     "id": "ueno-park",
@@ -2257,7 +2257,7 @@ window.PLACES = {
     ],
     "lat": 35.6605,
     "lng": 139.74,
-    "blurb": "Modern complex — teamLab Borderless home."
+    "blurb": "New landmark complex — Mori JP Tower, shops, and close-up Tokyo Tower views."
   },
   "tokyo-tower": {
     "id": "tokyo-tower",
@@ -2330,6 +2330,92 @@ window.PLACES = {
     "lat": 35.6711,
     "lng": 139.6949,
     "blurb": "Green stretch between Meiji Jingu and Harajuku."
+  },
+  "cross-shinjuku-vision": {
+    "id": "cross-shinjuku-vision",
+    "name": "Cross Shinjuku Vision (3D Cat)",
+    "nameJa": "クロス新宿ビジョン",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "icon",
+      "neighborhood"
+    ],
+    "lat": 35.6912,
+    "lng": 139.7018,
+    "blurb": "Giant 3D cat screen at Shinjuku Station east exit — 2-minute stop on the way to the hotel."
+  },
+  "shin-okubo": {
+    "id": "shin-okubo",
+    "name": "Shin-Okubo Koreatown",
+    "nameJa": "新大久保",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "food",
+      "neighborhood"
+    ],
+    "lat": 35.7013,
+    "lng": 139.7001,
+    "blurb": "Tokyo’s Koreatown — 10 min walk north of Hotel Gracery · Korean street food and cosmetics if you still have energy."
+  },
+  "shibuya-parco": {
+    "id": "shibuya-parco",
+    "name": "Shibuya PARCO",
+    "nameJa": "渋谷PARCO",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "shopping",
+      "must-see"
+    ],
+    "lat": 35.6619,
+    "lng": 139.6983,
+    "blurb": "6F pop-culture floor: Nintendo TOKYO, Pokémon Center, JUMP SHOP, Capcom."
+  },
+  "miyashita-park": {
+    "id": "miyashita-park",
+    "name": "Miyashita Park",
+    "nameJa": "宮下パーク",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "park",
+      "food",
+      "shopping"
+    ],
+    "lat": 35.6616,
+    "lng": 139.7011,
+    "blurb": "Rooftop urban park over a mall, a few minutes from Shibuya Station — good café stop."
+  },
+  "bonus-track": {
+    "id": "bonus-track",
+    "name": "Bonus Track / Reload",
+    "nameJa": "ボーナストラック / リロード",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "shopping",
+      "neighborhood",
+      "food"
+    ],
+    "lat": 35.661,
+    "lng": 139.6672,
+    "blurb": "New Shimokitazawa complexes — indie bookshops, coffee roaster, music boutiques, outdoor seating."
+  },
+  "senkyaku-banrai": {
+    "id": "senkyaku-banrai",
+    "name": "Senkyaku Banrai (Toyosu)",
+    "nameJa": "千客万来",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "food",
+      "market"
+    ],
+    "lat": 35.645,
+    "lng": 139.7842,
+    "blurb": "Food complex next to Toyosu Market — relaxed lunch after teamLab Planets."
   },
   "harmonica": {
     "id": "harmonica",
@@ -2986,29 +3072,34 @@ window.DAYS = [
     "country": "JP",
     "hotelId": "gracery-shinjuku",
     "title": "Seoul → Tokyo & Shinjuku lights",
-    "summary": "Early checkout from Amanti, Air Premia YP7321 ICN→NRT, Suica/eSIM, drop bags at Hotel Gracery Shinjuku, go straight to Shinjuku Gyoen (last entry ~16:30), then Shinjuku evening: Godzilla head, free Tocho views, Kabukicho neon, Omoide yakitori and Golden Gai.",
-    "food": "Snack/late lunch in or right after Gyoen; yakitori in Omoide Yokocho; drinks in Golden Gai.",
+    "summary": "Early checkout from Amanti, Air Premia YP7321 ICN→NRT. Immigration + bags + N'EX typically put you at Gracery around 14:15–14:30 — don’t rush. Shinjuku Gyoen 15:00–16:45 (last entry ~16:30), then Shinjuku evening: 3D cat screen, Godzilla head, free Tocho views, Kabukicho neon, Omoide yakitori and Golden Gai. Optional Shin-Okubo if you still have energy.",
+    "food": "Snack/late lunch in or right after Gyoen; yakitori in Omoide Yokocho; drinks in Golden Gai. Optional Korean street food in Shin-Okubo (~10 min north of the hotel).",
     "placeIds": [
       "amanti-hotel",
       "icn",
       "narita",
       "gracery-shinjuku",
+      "cross-shinjuku-vision",
       "shinjuku-gyoen",
       "tocho",
       "kabukicho",
       "omoide-yokocho",
-      "golden-gai"
+      "golden-gai",
+      "shin-okubo"
     ],
     "transport": [
       "Amanti → ICN T1 (~1h).",
       "Air Premia YP7321.",
-      "N'EX / limousine → Hotel Gracery Shinjuku (Kabukicho).",
+      "N'EX ~75 min → Hotel Gracery Shinjuku (Kabukicho).",
       "All evening stops walkable from the hotel."
     ],
     "tips": [
       "Climate Card is not valid on AREX Express — Express ticket, All-Stop, T-Money, or taxi to ICN.",
-      "Set up Suica/Pasmo on arrival.",
-      "Shinjuku Gyoen last entry ~16:30, closes 17:00 in September.",
+      "Load a digital Suica in Apple Wallet / Google Wallet before landing (or buy Welcome Suica at NRT).",
+      "Don’t rush the airport: immigration + bags + N'EX (~75 min) usually means Shinjuku station ~13:45–14:00 and the hotel ~14:15–14:30.",
+      "Shinjuku Gyoen last entry ~16:30, closes 17:00 in September — 15:00–16:45 is still a full two hours.",
+      "Cross Shinjuku Vision (3D cat) is at the east exit — 2 minutes on the way.",
+      "Optional: Shin-Okubo Koreatown is a 10-min walk north of Gracery.",
       "Tocho South Observatory is free (closed every other Monday)."
     ],
     "timeline": [
@@ -3037,30 +3128,37 @@ window.DAYS = [
       {
         "time": "11:20",
         "title": "Land Narita (NRT T2)",
-        "note": "Immigration + bags.",
+        "note": "Immigration + bags — allow ~40–60 min, not a sprint.",
         "placeId": "narita",
         "category": "transit"
       },
       {
-        "time": "12:00",
-        "title": "Travel by N'EX / limousine · from Narita to Shinjuku",
-        "note": "N'EX ~60–80 min (reserved seats optional) or airport limousine bus · Suica/eSIM on arrival.",
+        "time": "12:15",
+        "title": "Travel by N'EX · from Narita to Shinjuku",
+        "note": "N'EX itself ~75 min · digital Suica in Wallet before/on arrival, or Welcome Suica at the station.",
         "placeId": "narita",
         "category": "transit"
       },
       {
-        "time": "13:00",
-        "title": "Check-in at Hotel Gracery Shinjuku",
-        "note": "Leave luggage (shower later) · Godzilla building.",
+        "time": "14:00",
+        "title": "Shinjuku Station east exit — 3D cat screen",
+        "note": "Giant 3D cat at Cross Shinjuku Vision · 2-minute stop on the way to the hotel.",
+        "placeId": "cross-shinjuku-vision",
+        "category": "attraction"
+      },
+      {
+        "time": "14:15",
+        "title": "Drop bags at Hotel Gracery Shinjuku",
+        "note": "Realistic arrival ~14:15–14:30 · leave luggage (shower later) · Godzilla building.",
         "placeId": "gracery-shinjuku",
         "category": "hotel"
       },
       {
-        "time": "13:30",
-        "title": "Shinjuku Gyoen — go now",
-        "note": "Straight from the hotel · last entry ~16:30 / closes 17:00 in Sep · snack inside or right after.",
+        "time": "15:00",
+        "title": "Shinjuku Gyoen",
+        "note": "Don’t rush — still two full hours · last entry ~16:30 / closes 17:00 in Sep · snack inside or right after.",
         "placeId": "shinjuku-gyoen",
-        "end": "16:30",
+        "end": "16:45",
         "category": "dining"
       },
       {
@@ -3126,8 +3224,8 @@ window.DAYS = [
     "country": "JP",
     "hotelId": "gracery-shinjuku",
     "title": "West Tokyo: Meiji, Harajuku, Omotesando & Shibuya Sky",
-    "summary": "Full west-Tokyo loop: Meiji Jingu and Yoyogi, Takeshita + Cat Street, Omotesando lunch, Shibuya Crossing / Hachiko / Center-gai, timed Shibuya Sky sunset, then dinner in Shibuya.",
-    "food": "Crepes or cafe lunch on Omotesando; dinner in Shibuya (Nonbei Yokocho or Center-gai).",
+    "summary": "Full west-Tokyo loop: Meiji Jingu and Yoyogi, Takeshita + Cat Street, Omotesando lunch, Shibuya Crossing / Hachiko, PARCO 6F pop-culture shops, Miyashita Park café, timed Shibuya Sky sunset, then dinner in Shibuya.",
+    "food": "Crepes or cafe lunch on Omotesando; café at Miyashita Park; dinner in Shibuya (Nonbei Yokocho or Center-gai).",
     "placeIds": [
       "meiji-jingu",
       "yoyogi",
@@ -3135,6 +3233,8 @@ window.DAYS = [
       "cat-street",
       "omotesando",
       "shibuya-crossing",
+      "shibuya-parco",
+      "miyashita-park",
       "shibuya-sky"
     ],
     "transport": [
@@ -3142,7 +3242,9 @@ window.DAYS = [
     ],
     "tips": [
       "Passport for tax-free shopping.",
-      "Meiji Jingu opens early — arrive before tour buses if you can."
+      "Meiji Jingu opens early — arrive before tour buses if you can.",
+      "Takeshita shops mostly open 10:00–10:30 — 10:20 is fine; some stalls are still lifting shutters.",
+      "Shibuya Sky timed tickets go on sale exactly 4 weeks ahead at midnight JST and vanish in minutes — sunset window ~17:00–18:00 in September."
     ],
     "timeline": [
       {
@@ -3164,7 +3266,7 @@ window.DAYS = [
       {
         "time": "10:20",
         "title": "Takeshita Street",
-        "note": "Crepes, youth fashion, souvenir stalls.",
+        "note": "Crepes, youth fashion — many stalls only opening 10:00–10:30.",
         "placeId": "takeshita",
         "end": "11:20",
         "category": "dining"
@@ -3201,16 +3303,24 @@ window.DAYS = [
       },
       {
         "time": "15:00",
-        "title": "Center-gai & Shibuya shopping",
-        "note": "109, Tower Records, Loft, Mag’s Park rooftop if energy.",
-        "placeId": "shibuya-crossing",
-        "end": "16:45",
+        "title": "Shibuya PARCO 6F & Center-gai",
+        "note": "Nintendo TOKYO, Pokémon Center, JUMP SHOP, Capcom on PARCO 6F · then 109 / Tower Records / Loft.",
+        "placeId": "shibuya-parco",
+        "end": "16:20",
         "category": "shopping"
+      },
+      {
+        "time": "16:20",
+        "title": "Miyashita Park café",
+        "note": "Rooftop urban park over a mall — short café stop before Shibuya Sky.",
+        "placeId": "miyashita-park",
+        "end": "16:45",
+        "category": "dining"
       },
       {
         "time": "17:00",
         "title": "Shibuya Sky sunset",
-        "note": "Timed ticket — arrive 15–20 min early.",
+        "note": "Timed ticket — arrive 15–20 min early · sunset window ~17:00–18:00 in September.",
         "placeId": "shibuya-sky",
         "end": "19:00",
         "category": "attraction"
@@ -3231,22 +3341,27 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": "gracery-shinjuku",
-    "title": "Tsukiji, teamLab Planets, Odaiba & Ginza",
-    "summary": "Weekday plan for fewer crowds: Tsukiji Outer Market sushi/fish breakfast, timed teamLab Planets in Toyosu, Odaiba Gundam + waterfront, then a long Ginza evening of depachika, flagships and dinner.",
-    "food": "Tsukiji sushi and fish; Ginza depachika snacks + sushi, tonkatsu, or yakiniku dinner.",
+    "title": "Tsukiji, teamLab Planets, Odaiba & Tokyo Tower",
+    "summary": "Weekday plan for fewer crowds: Tsukiji Outer Market sushi/fish breakfast, timed teamLab Planets in Toyosu (~1.5–2h), relaxed lunch at Senkyaku Banrai, Odaiba Gundam + waterfront, then Azabudai Hills / Tokyo Tower night and dinner in Roppongi. Ginza is saved for the later hotel stay.",
+    "food": "Tsukiji sushi and fish; lunch at Senkyaku Banrai (Toyosu); dinner in Roppongi or Akasaka.",
     "placeIds": [
       "tsukiji",
       "teamlab-planets",
+      "senkyaku-banrai",
       "odaiba",
-      "ginza"
+      "azabudai",
+      "tokyo-tower",
+      "roppongi"
     ],
     "transport": [
       "Tsukiji early.",
       "Yurikamome/Rinkai Toyosu → Odaiba.",
-      "Yurikamome or subway back toward Ginza."
+      "Odaiba → Azabudai / Roppongi (skip Ginza tonight)."
     ],
     "tips": [
-      "Some rooms have water — wear shorts you can roll up / bring a small towel."
+      "Some rooms have water — wear shorts you can roll up / bring a small towel.",
+      "teamLab Planets is 1.5–2 hours including lockers — you’ll be out by ~13:00.",
+      "Skip Ginza tonight: you sleep there 21–25/9. Azabudai + Tokyo Tower + Roppongi dinner instead."
     ],
     "timeline": [
       {
@@ -3274,46 +3389,62 @@ window.DAYS = [
       {
         "time": "11:00",
         "title": "Visit teamLab Planets museum",
-        "note": "Water-based digital art in Toyosu — weekday timed tickets.",
+        "note": "Water-based digital art in Toyosu — typically 1.5–2h including lockers.",
         "placeId": "teamlab-planets",
-        "end": "14:00",
+        "end": "13:00",
         "category": "culture"
       },
       {
-        "time": "14:15",
+        "time": "13:00",
+        "title": "Lunch at Senkyaku Banrai (Toyosu)",
+        "note": "Food complex next to Toyosu Market — unhurried lunch before Odaiba.",
+        "placeId": "senkyaku-banrai",
+        "end": "14:15",
+        "category": "dining"
+      },
+      {
+        "time": "14:30",
         "title": "Travel by Yurikamome / Rinkai · from Toyosu to Odaiba",
         "note": "Local train · ~10–15 min · no booking.",
         "placeId": "odaiba",
         "category": "transit"
       },
       {
-        "time": "14:30",
+        "time": "14:45",
         "title": "Odaiba waterfront & Gundam",
         "note": "DiverCity Gundam, bay promenade, Rainbow Bridge views.",
         "placeId": "odaiba",
-        "end": "17:00",
+        "end": "17:15",
         "category": "shopping"
       },
       {
-        "time": "17:15",
-        "title": "Travel by Yurikamome / subway · from Odaiba to Ginza",
-        "note": "Local train · ~20–30 min · no booking.",
-        "placeId": "ginza",
+        "time": "17:30",
+        "title": "Travel by Yurikamome / subway · from Odaiba to Azabudai",
+        "note": "Local train · ~20–30 min · skip Ginza (you’ll sleep there later).",
+        "placeId": "azabudai",
         "category": "transit"
       },
       {
-        "time": "17:30",
-        "title": "Ginza arrival — depachika & flagships",
-        "note": "Basement food halls + Uniqlo / Itoya / Ginza Six.",
-        "placeId": "ginza",
-        "end": "19:30",
-        "category": "dining"
+        "time": "18:00",
+        "title": "Azabudai Hills",
+        "note": "New landmark skyscraper complex — wander + close-up Tokyo Tower views.",
+        "placeId": "azabudai",
+        "end": "19:15",
+        "category": "shopping"
       },
       {
-        "time": "19:45",
-        "title": "Ginza dinner",
-        "note": "Sushi, tonkatsu, or yakiniku.",
-        "placeId": "ginza",
+        "time": "19:20",
+        "title": "Tokyo Tower night views",
+        "note": "Classic tower lit at night from the Azabudai / Shiba side.",
+        "placeId": "tokyo-tower",
+        "end": "20:00",
+        "category": "attraction"
+      },
+      {
+        "time": "20:15",
+        "title": "Dinner in Roppongi or Akasaka",
+        "note": "Izakaya, yakiniku, or a view restaurant.",
+        "placeId": "roppongi",
         "category": "dining"
       }
     ]
@@ -3342,6 +3473,7 @@ window.DAYS = [
     ],
     "tips": [
       "Senso-ji before 8:30 if you want fewer crowds (Saturday gets busy fast).",
+      "Nakamise at 09:15 is great for empty photos — most souvenir and food stalls open ~09:30–10:00.",
       "Kappabashi: plastic food samples + kitchen knives (check luggage rules).",
       "Skytree ticket optional — Solamachi mall + exterior views are free."
     ],
@@ -3364,7 +3496,7 @@ window.DAYS = [
       {
         "time": "09:15",
         "title": "Nakamise shopping street",
-        "note": "Ningyo-yaki, senbei, small souvenirs.",
+        "note": "Best for photos before the crowds · most stalls open ~09:30–10:00.",
         "placeId": "asakusa",
         "end": "10:15",
         "category": "dining"
@@ -3433,13 +3565,14 @@ window.DAYS = [
     "country": "JP",
     "hotelId": "gracery-shinjuku",
     "title": "Kichijoji, Shimokitazawa & night Street Kart",
-    "summary": "Easy west-Tokyo Sunday: Inokashira and Harmonica lunch in Kichijoji, vintage Shimokitazawa afternoon, early dinner near Shibuya, then night Street Kart through neon (~19:00).",
+    "summary": "Easy west-Tokyo Sunday: Inokashira and Harmonica lunch in Kichijoji, vintage Shimokitazawa afternoon (Bonus Track / Reload), early dinner near Shibuya, then night Street Kart through neon (~19:00).",
     "food": "Lunch in Harmonica Yokocho / Kichijoji; early dinner near Shibuya (ramen, tonkatsu, sushi, or yakiniku); light snack after kart if needed.",
     "placeIds": [
       "inokashira",
       "kichijoji",
       "harmonica",
       "shimokitazawa",
+      "bonus-track",
       "street-kart"
     ],
     "transport": [
@@ -3447,7 +3580,7 @@ window.DAYS = [
       "Evening: head to Street Kart shop (often Shibuya) — arrive 30 min before the slot."
     ],
     "tips": [
-      "Physical International Driving Permit required — photocopies not accepted.",
+      "Physical International Driving Permit (1949 Geneva Convention) required — Japanese operators are strict. Israeli licence or a digital copy will get you turned away with no refund.",
       "Check the meetup shop the night before; Shibuya works well for neon."
     ],
     "timeline": [
@@ -3483,9 +3616,9 @@ window.DAYS = [
       },
       {
         "time": "14:30",
-        "title": "Shimokitazawa vintage & cafés",
-        "note": "Thrift floors, record shops, indie cafés — unhurried afternoon.",
-        "placeId": "shimokitazawa",
+        "title": "Shimokitazawa vintage, Bonus Track & Reload",
+        "note": "Thrift floors and record shops, then Bonus Track / Reload — indie books, coffee roaster, music boutiques, outdoor seating.",
+        "placeId": "bonus-track",
         "end": "17:30",
         "category": "dining"
       },
@@ -4902,15 +5035,12 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": "canvas-ginza8",
-    "title": "Leave Osaka → Tokyo, Nakano Broadway & Ginza night",
-    "summary": "Checkout Osaka, Nozomi to Tokyo Station (~2.5h), check in at The Royal Park Canvas Ginza 8, Nakano Broadway otaku maze, then Azabudai/Roppongi and Tokyo Tower night — back to Ginza for dinner.",
-    "food": "Dinner in Ginza / Yurakucho near the hotel.",
+    "title": "Leave Osaka → Tokyo, Nakano Broadway & first Ginza night",
+    "summary": "Checkout Osaka, Nozomi to Tokyo Station (~2.5h), check in at The Royal Park Canvas Ginza 8, Nakano Broadway otaku maze, then a first proper Ginza evening from the hotel (depachika, flagships, dinner nearby). Azabudai / Tokyo Tower was already on 4/9.",
+    "food": "Dinner in Ginza / Yurakucho near the hotel — first night of the Ginza stay.",
     "placeIds": [
       "canvas-ginza8",
       "nakano-broadway",
-      "azabudai",
-      "roppongi",
-      "tokyo-tower",
       "ginza"
     ],
     "transport": [
@@ -4919,7 +5049,8 @@ window.DAYS = [
       "Metro Ginza → Nakano (~25–35 min)."
     ],
     "tips": [
-      "Nakano Broadway is ~25–35 min from Ginza — not next door."
+      "Nakano Broadway is ~25–35 min from Ginza — not next door.",
+      "Ginza tonight is from the hotel — you skipped it on 4/9 on purpose."
     ],
     "timeline": [
       {
@@ -4959,23 +5090,24 @@ window.DAYS = [
         "category": "shopping"
       },
       {
-        "time": "18:30",
-        "title": "Visit Azabudai Hills complex / Roppongi",
-        "note": "Modern complex wander.",
-        "placeId": "azabudai",
-        "category": "shopping"
+        "time": "17:45",
+        "title": "Travel by metro / JR · from Nakano back to Ginza",
+        "note": "~25–35 min · no booking.",
+        "placeId": "ginza",
+        "category": "transit"
       },
       {
-        "time": "19:30",
-        "title": "Tokyo Tower night photos",
-        "note": "Classic night landmark views.",
-        "placeId": "tokyo-tower",
-        "category": "attraction"
+        "time": "18:15",
+        "title": "Ginza evening — depachika & flagships",
+        "note": "First night of the Ginza stay: Uniqlo / Itoya / Ginza Six + basement food halls.",
+        "placeId": "ginza",
+        "end": "20:15",
+        "category": "dining"
       },
       {
-        "time": "20:45",
+        "time": "20:30",
         "title": "Dinner / drinks in Ginza",
-        "note": "Back near the hotel — Yurakucho yakitori or Ginza bars.",
+        "note": "Yurakucho yakitori or Ginza bars — walk back to Canvas.",
         "placeId": "ginza",
         "category": "dining"
       }
