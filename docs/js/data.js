@@ -122,9 +122,9 @@ window.TRIP = {
     "Sep 12: Fushimi Inari + Uji (Byodo-in / matcha) + Nishiki before 17:30.",
     "Sep 14: Kibune nagashi somen (Hirobun walk-in) + Kurama trek + teamLab Biovortex booked 18:00–18:30. Sep 15: Kyoto zen → Osaka evening.",
     "Sep 20: Kobe day trip from Osaka.",
-    "Sep 21: Leave Osaka for Tokyo — Nakano Broadway then first Ginza evening from the hotel.",
-    "Sep 22: Nikko — Spacia X ~06:30, lake/Kegon first, Toshogu afternoon. Sep 23: Kamakura & Enoshima.",
-    "Sep 24: Full Ginza shopping day + farewell dinner.",
+    "Sep 21: Leave Osaka for Tokyo — Nakano Broadway, Azabudai / optional Borderless, Tokyo Tower night-photo walk.",
+    "Sep 22: Nikko — Spacia X 07:30–09:30 (book 22/8 09:00 JST), Kegon/Chuzenji first, Toshogu + Shinkyo. Sep 23: Equinox holiday — Ginza pedestrian paradise (not Kamakura). Sep 24: Kamakura & Enoshima weekday.",
+    "Sep 25: Imperial East Gardens + Tokyo Station City, N'EX 17:45, EK319 22:30.",
     "Seoul hotel: Amanti Hongdae · 27 Aug–2 Sep.",
     "Tokyo first base: Hotel Gracery Shinjuku · 2–7 Sep (Kabukicho).",
     "Kyoto hotel: KABIN Koji · add night 10/9 · nights 10–14 Sep, checkout 15 Sep (Kawaramachi).",
@@ -879,7 +879,7 @@ window.PLACES = {
     ],
     "lat": 35.6865,
     "lng": 139.7575,
-    "blurb": "Quiet castle gardens."
+    "blurb": "Free Edo-castle gardens ~10 min from Tokyo Station — last entry ~16:00, closed Mondays."
   },
   "ginza": {
     "id": "ginza",
@@ -2443,7 +2443,177 @@ window.PLACES = {
     ],
     "lat": 35.7093,
     "lng": 139.6652,
-    "blurb": "Otaku shopping maze — figures, vintage, Mandarake."
+    "blurb": "Otaku shopping maze — figures, vintage, Mandarake, pre-owned luxury watches."
+  },
+  "teamlab-borderless": {
+    "id": "teamlab-borderless",
+    "name": "teamLab Borderless",
+    "nameJa": "チームラボボーダレス",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "culture",
+      "must-see"
+    ],
+    "lat": 35.6606,
+    "lng": 139.7403,
+    "blurb": "Digital-art museum inside Azabudai Hills — timed tickets required if you go on 21/9."
+  },
+  "tofu-ukai": {
+    "id": "tofu-ukai",
+    "name": "Tofu Ukai stairs (Tokyo Tower)",
+    "nameJa": "とうふ屋うかい",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "icon",
+      "view"
+    ],
+    "lat": 35.6573,
+    "lng": 139.7448,
+    "blurb": "Famous low-angle Tokyo Tower photo stairs by the restaurant."
+  },
+  "shiba-park": {
+    "id": "shiba-park",
+    "name": "Shiba Park",
+    "nameJa": "芝公園",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "park",
+      "view"
+    ],
+    "lat": 35.6548,
+    "lng": 139.7485,
+    "blurb": "Lawn views of Tokyo Tower — wide pastoral night shot."
+  },
+  "shinkyo": {
+    "id": "shinkyo",
+    "name": "Shinkyo Bridge",
+    "nameJa": "神橋",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "icon",
+      "must-see"
+    ],
+    "lat": 36.7536,
+    "lng": 139.6004,
+    "blurb": "Red sacred bridge at the entrance to Nikko’s shrine area."
+  },
+  "nihonbashi": {
+    "id": "nihonbashi",
+    "name": "Nihonbashi",
+    "nameJa": "日本橋",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "neighborhood",
+      "shopping",
+      "icon"
+    ],
+    "lat": 35.684,
+    "lng": 139.7744,
+    "blurb": "Historic bridge + Coredo Muromachi · Pokémon Center DX nearby."
+  },
+  "yurakucho": {
+    "id": "yurakucho",
+    "name": "Yurakucho Yakitori Alley",
+    "nameJa": "有楽町 焼き鳥横丁",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "food",
+      "nightlife",
+      "must-see"
+    ],
+    "lat": 35.6751,
+    "lng": 139.763,
+    "blurb": "Izakaya and yakitori under the JR tracks — holiday-night energy."
+  },
+  "komachi-dori": {
+    "id": "komachi-dori",
+    "name": "Komachi-dori",
+    "nameJa": "小町通り",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "shopping",
+      "food"
+    ],
+    "lat": 35.3192,
+    "lng": 139.551,
+    "blurb": "Kamakura souvenir and street-food lane near the station."
+  },
+  "kamakurakokomae": {
+    "id": "kamakurakokomae",
+    "name": "Kamakurakokomae crossing",
+    "nameJa": "鎌倉高校前",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "icon",
+      "must-see"
+    ],
+    "lat": 35.3066,
+    "lng": 139.5004,
+    "blurb": "Famous Enoden photo stop — crossing, tracks, and the sea."
+  },
+  "enoshima-shrine": {
+    "id": "enoshima-shrine",
+    "name": "Enoshima Shrine",
+    "nameJa": "江島神社",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "shrine",
+      "must-see"
+    ],
+    "lat": 35.3003,
+    "lng": 139.4796,
+    "blurb": "Hilltop shrine on Enoshima — climb the island lanes."
+  },
+  "sea-candle": {
+    "id": "sea-candle",
+    "name": "Enoshima Sea Candle",
+    "nameJa": "江の島シーキャンドル",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "view",
+      "must-see"
+    ],
+    "lat": 35.2995,
+    "lng": 139.4758,
+    "blurb": "Lighthouse observatory — best Enoshima sunset."
+  },
+  "tokyo-character-street": {
+    "id": "tokyo-character-street",
+    "name": "Tokyo Character Street",
+    "nameJa": "東京キャラクターストリート",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "shopping",
+      "must-see"
+    ],
+    "lat": 35.681,
+    "lng": 139.7685,
+    "blurb": "Official Pokémon, Ghibli, Sanrio and JUMP shops under Tokyo Station."
+  },
+  "daimaru-tokyo": {
+    "id": "daimaru-tokyo",
+    "name": "Daimaru Tokyo depachika",
+    "nameJa": "大丸東京店",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "food",
+      "shopping"
+    ],
+    "lat": 35.6814,
+    "lng": 139.7679,
+    "blurb": "Station department-store food floor — Tokyo Banana and gifts for home."
   },
   "kamakura": {
     "id": "kamakura",
@@ -2502,7 +2672,7 @@ window.PLACES = {
     ],
     "lat": 36.7581,
     "lng": 139.5988,
-    "blurb": "Ornate UNESCO shrine deep in the forest."
+    "blurb": "Ornate UNESCO shrine — last entry ~16:00, closes 17:00."
   },
   "chuzenji": {
     "id": "chuzenji",
@@ -2530,7 +2700,7 @@ window.PLACES = {
     ],
     "lat": 36.738,
     "lng": 139.445,
-    "blurb": "Dramatic waterfall by Lake Chuzenji."
+    "blurb": "Dramatic waterfall by Lake Chuzenji — elevator down to the main viewpoint."
   },
   "kasuga": {
     "id": "kasuga",
@@ -5035,80 +5205,103 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": "canvas-ginza8",
-    "title": "Leave Osaka → Tokyo, Nakano Broadway & first Ginza night",
-    "summary": "Checkout Osaka, Nozomi to Tokyo Station (~2.5h), check in at The Royal Park Canvas Ginza 8, Nakano Broadway otaku maze, then a first proper Ginza evening from the hotel (depachika, flagships, dinner nearby). Azabudai / Tokyo Tower was already on 4/9.",
-    "food": "Dinner in Ginza / Yurakucho near the hotel — first night of the Ginza stay.",
+    "title": "Osaka → Tokyo, Nakano Broadway & Tokyo Tower night",
+    "summary": "Checkout Osaka, Nozomi to Tokyo Station, drop bags at The Royal Park Canvas Ginza 8, then a long Nakano Broadway vintage/collectibles afternoon. Evening: Azabudai Hills (optional teamLab Borderless), then a Tokyo Tower night-photo walk (Azabudai slope, Tofu Ukai stairs, Shiba Park) and dinner in Roppongi/Akasaka or Ginza.",
+    "food": "Light lunch in or beside Nakano Broadway; dinner in Roppongi / Akasaka or back in Ginza.",
     "placeIds": [
       "canvas-ginza8",
       "nakano-broadway",
-      "ginza"
+      "azabudai",
+      "teamlab-borderless",
+      "tokyo-tower",
+      "tofu-ukai",
+      "shiba-park",
+      "roppongi"
     ],
     "transport": [
       "Nozomi Shin-Osaka → Tokyo Station (~2.5h).",
       "Walk / metro to Ginza 8 (~10–15 min from Tokyo Station).",
-      "Metro Ginza → Nakano (~25–35 min)."
+      "Metro Ginza → Nakano (~25–35 min), then Nakano → Azabudai / Kamiyacho (~25–35 min)."
     ],
     "tips": [
       "Nakano Broadway is ~25–35 min from Ginza — not next door.",
-      "Ginza tonight is from the hotel — you skipped it on 4/9 on purpose."
+      "teamLab Borderless is optional inside Azabudai Hills — timed tickets required; keep it ~90 min so you’re outside for Tower lights ~18:30.",
+      "This is the dedicated Tokyo Tower photo walk (Tofu Ukai stairs + Shiba Park). Sep 4 was a first look after Odaiba."
     ],
     "timeline": [
       {
-        "time": "09:00",
+        "time": "08:30",
         "title": "Checkout — Apartment Hotel 11",
-        "note": "Morning checkout · bags to Shin-Osaka.",
+        "note": "Leave for Shin-Osaka · bags on the Nozomi.",
         "placeId": "apt-hotel-11-shinsaibashi",
         "category": "hotel"
       },
       {
-        "time": "09:45",
+        "time": "09:00",
         "title": "Travel by Nozomi Shinkansen · from Shin-Osaka to Tokyo",
         "note": "Nozomi · reserved seats via SmartEX · ~2.5h · book ahead · Oversized Baggage if bags >160 cm.",
-        "end": "12:15",
+        "end": "11:25",
         "category": "transit"
       },
       {
-        "time": "12:30",
-        "title": "Check-in at The Royal Park Canvas Ginza 8",
-        "note": "Booked · Ginza 8-chome · 銀座8-9-4 · ~10–15 min from Tokyo Station.",
+        "time": "11:30",
+        "title": "Drop bags at The Royal Park Canvas Ginza 8",
+        "note": "Booked · Ginza 8-chome · 銀座8-9-4 · ~10–15 min from Tokyo Station · shower later.",
         "placeId": "canvas-ginza8",
         "category": "hotel"
       },
       {
-        "time": "13:45",
-        "title": "Travel by metro / JR · from Ginza to Nakano",
-        "note": "~25–35 min · no booking.",
+        "time": "12:00",
+        "title": "Nakano Broadway shopping",
+        "note": "Vintage, Mandarake, figures, pre-owned watches · light lunch in the complex or nearby alleys.",
         "placeId": "nakano-broadway",
-        "category": "transit"
-      },
-      {
-        "time": "14:00",
-        "title": "Browse Nakano Broadway shopping mall",
-        "note": "Vintage, collectibles & otaku maze.",
-        "placeId": "nakano-broadway",
-        "end": "17:30",
-        "category": "shopping"
-      },
-      {
-        "time": "17:45",
-        "title": "Travel by metro / JR · from Nakano back to Ginza",
-        "note": "~25–35 min · no booking.",
-        "placeId": "ginza",
-        "category": "transit"
-      },
-      {
-        "time": "18:15",
-        "title": "Ginza evening — depachika & flagships",
-        "note": "First night of the Ginza stay: Uniqlo / Itoya / Ginza Six + basement food halls.",
-        "placeId": "ginza",
-        "end": "20:15",
+        "end": "15:30",
         "category": "dining"
       },
       {
-        "time": "20:30",
-        "title": "Dinner / drinks in Ginza",
-        "note": "Yurakucho yakitori or Ginza bars — walk back to Canvas.",
-        "placeId": "ginza",
+        "time": "15:40",
+        "title": "Travel by metro · from Nakano to Azabudai",
+        "note": "~25–35 min · no booking.",
+        "placeId": "azabudai",
+        "category": "transit"
+      },
+      {
+        "time": "16:00",
+        "title": "Azabudai Hills (+ optional teamLab Borderless)",
+        "note": "New landmark complex · Borderless only if tickets are booked.",
+        "placeId": "azabudai",
+        "end": "18:30",
+        "category": "shopping"
+      },
+      {
+        "time": "18:30",
+        "title": "Tokyo Tower night-photo walk",
+        "note": "Spot 1: slope down from Azabudai toward the lit tower.",
+        "placeId": "tokyo-tower",
+        "end": "19:15",
+        "category": "attraction"
+      },
+      {
+        "time": "19:15",
+        "title": "Tofu Ukai stairs",
+        "note": "Spot 2: low-angle tower shot from the restaurant stairs.",
+        "placeId": "tofu-ukai",
+        "end": "20:00",
+        "category": "attraction"
+      },
+      {
+        "time": "20:00",
+        "title": "Shiba Park lawns",
+        "note": "Spot 3: wide pastoral view of the tower.",
+        "placeId": "shiba-park",
+        "end": "21:00",
+        "category": "attraction"
+      },
+      {
+        "time": "21:00",
+        "title": "Dinner in Roppongi / Akasaka or Ginza",
+        "note": "Izakaya or yakiniku nearby, or metro back to the hotel.",
+        "placeId": "roppongi",
         "category": "dining"
       }
     ],
@@ -5129,80 +5322,90 @@ window.DAYS = [
     "country": "JP",
     "hotelId": "canvas-ginza8",
     "title": "Nikko day trip (lake first)",
-    "summary": "Early Tobu Spacia X to Nikko, bus UP first to Lake Chuzenji & Kegon Falls, then down to Toshogu in the afternoon (closer to the station if buses run late), evening return to Tokyo.",
-    "food": "Lunch by the lake / Chuzenji; dinner back in Ginza.",
+    "summary": "Spacia X from Asakusa, bus UP first to Kegon Falls (elevator viewpoint) and Lake Chuzenji lunch, bus DOWN to Toshogu (enter by 16:00), Shinkyo Bridge photos, evening train back to Tokyo.",
+    "food": "Lunch by the lake / Chuzenji; easy dinner back in Ginza.",
     "placeIds": [
       "canvas-ginza8",
       "chuzenji",
       "kegon-falls",
-      "nikko-toshogu"
+      "nikko-toshogu",
+      "shinkyo"
     ],
     "transport": [
-      "Metro Ginza → Asakusa (~15–20 min), then Tobu Spacia X ~06:30 (book reserved seats).",
-      "Nikko Station → bus UP to Chuzenji / Kegon (~45–60m winding road).",
-      "Afternoon bus DOWN to Toshogu, then train home."
+      "Metro Ginza → Asakusa (~15–20 min), then Tobu Spacia X 07:30–09:30 (book reserved seats).",
+      "Nikko Station → mountain bus UP to Chuzenji / Kegon (~45–60 min).",
+      "Afternoon bus DOWN to Toshogu, Shinkyo, then train home."
     ],
     "tips": [
-      "Do the lake/falls FIRST; Toshogu is nearer the station if traffic eats the afternoon.",
+      "Book Spacia X exactly one month ahead: 22/8 at 09:00 Japan time.",
+      "Lake and falls FIRST; Toshogu last entry ~16:00, closes 17:00.",
       "Comfortable shoes; mountain weather can be cooler than Tokyo."
     ],
     "timeline": [
       {
-        "time": "05:45",
+        "time": "07:00",
         "title": "Travel by metro · from Ginza to Asakusa",
         "note": "Ginza Line · ~15–20 min · no booking.",
         "placeId": "canvas-ginza8",
         "category": "hotel"
       },
       {
-        "time": "06:30",
+        "time": "07:30",
         "title": "Travel by Tobu Spacia X · from Asakusa to Nikko",
-        "note": "Limited express · reserved seats · book ahead · ~2h.",
+        "note": "Limited express · reserved seats · book 22/8 09:00 JST · ~2h.",
         "placeId": "nikko-toshogu",
-        "end": "08:30",
+        "end": "09:30",
         "category": "transit"
       },
       {
-        "time": "09:00",
+        "time": "09:30",
         "title": "Travel by bus · from Nikko Station to Lake Chuzenji / Kegon",
         "note": "Mountain bus UP · ~45–60 min · no booking · go up first.",
         "placeId": "chuzenji",
         "category": "transit"
       },
       {
-        "time": "10:00",
+        "time": "10:15",
         "title": "Kegon Falls & Lake Chuzenji",
-        "note": "Waterfall + lakeside stroll / lunch nearby.",
+        "note": "Elevator to the main viewpoint + short lakeside walk / lunch nearby.",
         "placeId": "kegon-falls",
         "end": "13:00",
         "category": "dining"
       },
       {
-        "time": "13:30",
-        "title": "Travel by bus · from Chuzenji to Toshogu",
-        "note": "Bus DOWN · closer to Nikko Station for the return.",
+        "time": "13:00",
+        "title": "Travel by bus · from Chuzenji down to Toshogu",
+        "note": "Bus DOWN · ~45–60 min · closer to Nikko Station for the return.",
         "placeId": "nikko-toshogu",
         "category": "transit"
       },
       {
         "time": "14:00",
         "title": "Visit Toshogu Shrine",
-        "note": "Ornate UNESCO shrine in the forest.",
+        "note": "Ornate UNESCO shrine · last entry ~16:00 / closes 17:00.",
         "placeId": "nikko-toshogu",
-        "end": "16:15",
+        "end": "16:30",
         "category": "culture"
       },
       {
-        "time": "16:45",
+        "time": "16:30",
+        "title": "Shinkyo Bridge photos",
+        "note": "Red sacred bridge on the river at the shrine-area entrance.",
+        "placeId": "shinkyo",
+        "end": "17:15",
+        "category": "culture"
+      },
+      {
+        "time": "17:30",
         "title": "Travel by Tobu limited express · from Nikko to Tokyo",
-        "note": "Reserved seats preferred · ~2h · evening arrival.",
-        "end": "18:45",
+        "note": "Reserved seats preferred · ~2h · Asakusa / Ginza evening.",
+        "end": "19:30",
         "category": "transit"
       },
       {
-        "time": "19:30",
+        "time": "20:00",
         "title": "Dinner in Ginza",
-        "note": "Back near The Royal Park Canvas Ginza 8.",
+        "note": "Easy meal near The Royal Park Canvas Ginza 8.",
         "placeId": "canvas-ginza8",
         "category": "hotel"
       }
@@ -5215,64 +5418,58 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": "canvas-ginza8",
-    "title": "Kamakura & Enoshima day trip",
-    "summary": "Day trip to Kamakura (Great Buddha + Hasedera), scenic Enoden to Enoshima island lanes and seaside sunset, then back to Tokyo.",
-    "food": "Kamakura / Enoshima lunch; dinner back in Tokyo.",
+    "title": "Holiday Ginza pedestrian paradise (not Kamakura)",
+    "summary": "23/9 is Autumnal Equinox — Kamakura would be packed, while Ginza’s Chuo-dori becomes a pedestrian paradise (Hokousha Tengoku). Light Tsukiji morning from the hotel, flagship shopping + Mitsukoshi depachika, optional Nihonbashi, then Yurakucho yakitori under the tracks.",
+    "food": "Tsukiji snacks (sushi, tamagoyaki, wagyu skewers); Mitsukoshi depachika; Yurakucho yakitori dinner.",
     "placeIds": [
-      "kamakura",
-      "hasedera",
-      "enoshima",
+      "tsukiji",
+      "ginza",
+      "nihonbashi",
+      "yurakucho",
       "canvas-ginza8"
     ],
     "transport": [
-      "JR Yokosuka from Tokyo Station / Shimbashi (~50m).",
-      "Enoden coastal train to Enoshima.",
-      "Return evening."
+      "Walk / short metro from Ginza 8 to Tsukiji, then back to Chuo-dori.",
+      "Optional walk to Nihonbashi / Coredo Muromachi.",
+      "Yurakucho is next to Ginza — walk home."
     ],
-    "tips": [],
+    "tips": [
+      "National holiday: Chuo-dori is typically closed to cars midday (often ~12:00–17:00) — shops open earlier.",
+      "Skip Kamakura today on purpose — do it tomorrow as a weekday.",
+      "Tsukiji is a second, lighter visit from the hotel (full breakfast was 4/9)."
+    ],
     "timeline": [
       {
         "time": "09:00",
-        "title": "Travel by JR Yokosuka · from Tokyo Station to Kamakura",
-        "note": "JR · ~50 min · no booking · Shimbashi also works.",
-        "placeId": "kamakura",
-        "category": "transit"
+        "title": "Tsukiji Outer Market",
+        "note": "Easy morning from Ginza — sushi, tamagoyaki, wagyu skewers, seafood snacks.",
+        "placeId": "tsukiji",
+        "end": "11:00",
+        "category": "dining"
       },
       {
-        "time": "10:00",
-        "title": "Visit Great Buddha & Hasedera temple",
-        "note": "Daibutsu + hillside temple.",
-        "placeId": "kamakura",
-        "end": "13:00",
-        "category": "culture"
+        "time": "11:00",
+        "title": "Ginza Hokousha Tengoku & flagships",
+        "note": "Pedestrian Chuo-dori · Uniqlo Ginza (12F), Ginza Six, Itoya (12F), Mitsukoshi depachika.",
+        "placeId": "ginza",
+        "end": "16:30",
+        "category": "dining"
       },
       {
-        "time": "13:30",
-        "title": "Travel by Enoden · from Kamakura to Enoshima",
-        "note": "Scenic coastal train · ~25 min · no booking.",
-        "placeId": "enoshima",
-        "category": "transit"
+        "time": "16:30",
+        "title": "Optional Nihonbashi",
+        "note": "Historic bridge, Coredo Muromachi, or Pokémon Center DX.",
+        "placeId": "nihonbashi",
+        "end": "18:30",
+        "category": "shopping"
       },
       {
-        "time": "14:00",
-        "title": "Enoshima island lanes & seaside walk",
-        "note": "Island lanes + seaside walk.",
-        "placeId": "enoshima",
-        "end": "17:30",
-        "category": "attraction"
-      },
-      {
-        "time": "17:45",
-        "title": "Sunset by the sea",
-        "note": "If timing works.",
-        "placeId": "enoshima",
-        "category": "attraction"
-      },
-      {
-        "time": "18:30",
-        "title": "Travel by JR · from Enoshima / Kamakura to Tokyo",
-        "note": "JR · ~60–75 min · no booking.",
-        "category": "transit"
+        "time": "19:00",
+        "title": "Yurakucho yakitori alley",
+        "note": "Izakaya under the JR tracks — festive holiday night.",
+        "placeId": "yurakucho",
+        "end": "22:00",
+        "category": "dining"
       }
     ]
   },
@@ -5283,50 +5480,76 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": "canvas-ginza8",
-    "title": "Full shopping day & farewell dinner",
-    "summary": "Ginza shopping from the hotel (Ginza Six, Uniqlo Ginza, Itoya, depachika), afternoon in Shibuya/Omotesando, Akihabara or Shinjuku, then farewell dinner.",
-    "food": "Depachika graze; farewell wagyu or sushi dinner.",
+    "title": "Kamakura & Enoshima day trip (weekday)",
+    "summary": "Weekday Kamakura: Great Buddha, Hasedera, Komachi-dori snacks, Enoden with a Kamakurakokomae photo stop, then Enoshima shrine lanes and Sea Candle sunset. Back to Ginza to rest.",
+    "food": "Komachi-dori / Enoshima lunch; light dinner back in Ginza if you still want it.",
     "placeIds": [
-      "canvas-ginza8",
-      "ginza",
-      "omotesando",
-      "akihabara",
-      "shinjuku"
+      "kamakura",
+      "hasedera",
+      "komachi-dori",
+      "kamakurakokomae",
+      "enoshima",
+      "enoshima-shrine",
+      "sea-candle",
+      "canvas-ginza8"
     ],
     "transport": [
-      "Morning in Ginza from the hotel; one secondary area in the afternoon."
+      "JR Yokosuka from Tokyo Station / Shimbashi (~50 min).",
+      "Enoden coastal train via Kamakurakokomae to Enoshima.",
+      "Return evening to Ginza."
     ],
-    "tips": [],
+    "tips": [
+      "Moved from 23/9 so you skip the equinox crowds.",
+      "Kamakurakokomae is a short hop — get off for the crossing/sea shot, then continue."
+    ],
     "timeline": [
       {
-        "time": "10:00",
-        "title": "Ginza shopping — Ginza Six, Uniqlo, Itoya",
-        "note": "Luxury + megastore classics.",
-        "placeId": "ginza",
-        "end": "14:00",
+        "time": "08:00",
+        "title": "Travel by JR Yokosuka · from Tokyo / Ginza to Kamakura",
+        "note": "JR · ~50 min · no booking · Shimbashi also works.",
+        "placeId": "kamakura",
+        "end": "09:00",
+        "category": "transit"
+      },
+      {
+        "time": "09:00",
+        "title": "Kotoku-in, Hasedera & Komachi-dori",
+        "note": "Great Buddha + hillside temple + souvenir / street-food lane.",
+        "placeId": "kamakura",
+        "end": "12:30",
         "category": "dining"
       },
       {
-        "time": "14:00",
-        "title": "Depachika graze",
-        "note": "Mitsukoshi / Matsuya basement food halls.",
-        "placeId": "ginza",
-        "end": "15:30",
-        "category": "dining"
+        "time": "12:30",
+        "title": "Travel by Enoden · Kamakura → Kamakurakokomae → Enoshima",
+        "note": "Vintage coastal train · photo stop at the sea crossing · ~25–40 min.",
+        "placeId": "kamakurakokomae",
+        "end": "13:30",
+        "category": "transit"
       },
       {
-        "time": "16:00",
-        "title": "Shopping — Shibuya / Omotesando, Akihabara or Shinjuku",
-        "note": "Second shopping district.",
-        "placeId": "omotesando",
-        "end": "18:30",
-        "category": "shopping"
+        "time": "13:30",
+        "title": "Enoshima island & shrine",
+        "note": "Walk the bridge, climb the lanes, Enoshima Shrine.",
+        "placeId": "enoshima-shrine",
+        "end": "16:30",
+        "category": "culture"
       },
       {
-        "time": "19:30",
-        "title": "Farewell Japan dinner",
-        "note": "Wagyu or sushi/omakase.",
-        "category": "dining"
+        "time": "16:30",
+        "title": "Enoshima Sea Candle sunset",
+        "note": "Lighthouse observatory over the bay.",
+        "placeId": "sea-candle",
+        "end": "17:30",
+        "category": "attraction"
+      },
+      {
+        "time": "18:00",
+        "title": "Travel by JR · from Enoshima / Kamakura to Tokyo",
+        "note": "JR · ~60–75 min · back to Ginza to rest.",
+        "placeId": "canvas-ginza8",
+        "end": "19:30",
+        "category": "hotel"
       }
     ]
   },
@@ -5337,33 +5560,64 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": "canvas-ginza8",
-    "title": "Tokyo → Tirana via Dubai",
-    "summary": "Checkout The Royal Park Canvas Ginza 8, N'EX to Narita, then Emirates EK319 overnight to Dubai and EK2478 on to Tirana (arrive 10:45 Saturday).",
-    "food": "Airport meal at Narita before EK319; snack during the DXB connection if needed.",
+    "title": "Imperial gardens, Tokyo Station & flight home",
+    "summary": "Pack and checkout by 11:00 (bags at the hotel or Tokyo Station lockers), Imperial Palace East Gardens, then Tokyo Station City (Character Street, Ramen Street, Daimaru depachika). Collect bags for the 17:45 N'EX to Narita, Emirates EK319 overnight to Dubai and EK2478 on to Tirana (arrive 10:45 Saturday).",
+    "food": "Ramen at Tokyo Ramen Street; Daimaru sweets / snacks for the flight; airport meal at Narita before EK319.",
     "placeIds": [
       "canvas-ginza8",
+      "imperial-east",
+      "tokyo-character-street",
+      "daimaru-tokyo",
+      "tokyo-station",
       "narita",
       "dxb",
       "tia"
     ],
     "transport": [
-      "N'EX from Tokyo Station (~10–15 min from the hotel).",
-      "Be at NRT by ~19:30 for EK319 at 22:30.",
+      "Walk ~10 min from Tokyo Station to the East Gardens.",
+      "N'EX 17:45 from Tokyo Station · be at NRT ~19:00 for EK319 at 22:30.",
       "3h Emirates connection in Dubai (DXB), then EK2478 07:05–10:45 to Tirana."
     ],
-    "tips": [],
+    "tips": [
+      "East Gardens last entry ~16:00 — you’re there at 11:00, plenty of time. Closed Mondays (today is Friday).",
+      "Reserve N'EX 17:45 if you want seats; Welcome Suica / digital Suica still works for the ride."
+    ],
     "timeline": [
       {
-        "time": "11:00",
-        "title": "Checkout — The Royal Park Canvas Ginza 8",
-        "note": "Ginza 8-chome · bags to Tokyo Station for N'EX.",
+        "time": "09:00",
+        "title": "Pack & checkout window",
+        "note": "Last packing · checkout by 11:00 · leave bags at the hotel or Tokyo Station lockers.",
         "placeId": "canvas-ginza8",
+        "end": "11:00",
         "category": "hotel"
       },
       {
+        "time": "11:00",
+        "title": "Imperial Palace East Gardens",
+        "note": "Free Edo-castle lawns and woods · ~10 min from Tokyo Station.",
+        "placeId": "imperial-east",
+        "end": "13:00",
+        "category": "culture"
+      },
+      {
+        "time": "13:00",
+        "title": "Tokyo Station City — Character Street, ramen & Daimaru",
+        "note": "Pokémon / Ghibli / Sanrio / JUMP shops, Tokyo Ramen Street lunch, Daimaru depachika gifts (Tokyo Banana).",
+        "placeId": "tokyo-character-street",
+        "end": "17:00",
+        "category": "dining"
+      },
+      {
+        "time": "17:15",
+        "title": "Collect bags · N'EX platform",
+        "note": "Hotel or locker pickup, then the Narita Express gates.",
+        "placeId": "tokyo-station",
+        "category": "transit"
+      },
+      {
         "time": "17:45",
-        "title": "Travel by N'EX / limousine · from Tokyo Station to Narita",
-        "note": "N'EX reserved optional · ~60–90 min. Be at NRT by ~19:30.",
+        "title": "Travel by N'EX · from Tokyo Station to Narita",
+        "note": "N'EX reserved optional · ~60 min. Be at NRT by ~19:00.",
         "placeId": "narita",
         "category": "transit"
       },
