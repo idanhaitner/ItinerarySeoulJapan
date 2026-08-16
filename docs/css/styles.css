@@ -2319,6 +2319,25 @@ a { color: inherit; }
   }
 }
 
+.timeline-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 12px;
+  margin-bottom: 4px;
+}
+
+.timeline-title-row .timeline-title {
+  flex: 1 1 12rem;
+  margin-bottom: 0;
+}
+
+.timeline-title-row .tl-book-row {
+  margin-top: 0;
+  flex: 0 0 auto;
+}
+
 .timeline-title {
   font-family: var(--font-display);
   font-size: 22px;

@@ -471,34 +471,54 @@
 
   function isCheckinTitle(title) {
     const t = String(title || "").trim();
-    return /^(hotel\s+)?check[\s-]?in\b|^צ['׳]ק[\s-]?אין/i.test(t);
+    if (/^(hotel\s+)?check[\s-]?in\b|^צ['׳]ק[\s\-־]?אין/i.test(t)) return true;
+    // Same-day hotel drop-off before the official check-in hour.
+    return /^(drop bags at|השארת מזוודות ב)/i.test(t);
   }
 
-  function bookingsForTimelineItem(item) {
+  function bookingLinkOn(ci) {
+    if (ci.linkOn) return ci.linkOn;
+    if (ci.linkCheckin) return "checkin";
+    if (ci.kind === "train" || ci.kind === "bus" || ci.kind === "flight") return "travel";
+    return "visit";
+  }
+
+  function titleMatchesLinks(title, titleLinks) {
+    const hay = String(title || "").toLowerCase();
+    return (titleLinks || []).some((t) => hay.includes(String(t).toLowerCase()));
+  }
+
+  function bookingsForTimelineItem(item, day) {
     const title = String(item.title || "");
-    const hay = `${title} ${item.note || ""}`.toLowerCase();
+    const isTravel = tools.isTravelItem(item);
+    const isCheckin = isCheckinTitle(title);
+    const dayId = day && day.id;
     const matches = [];
     allChecklistItems().forEach((ci) => {
       const placeLinks = ci.linkPlaceIds || [];
       const titleLinks = ci.linkTitles || [];
+      const dayLinks = ci.linkDayIds || [];
       if (!placeLinks.length && !titleLinks.length && !ci.linkCheckin) return;
-      let hit = false;
-      if (ci.linkCheckin) {
-        // Hotels: badge only on actual check-in stops — never bag drops / return-to-hotel.
-        if (isCheckinTitle(title) && titleLinks.some((t) => hay.includes(String(t).toLowerCase()))) {
-          hit = true;
-        }
-      } else {
-        if (item.placeId && placeLinks.includes(item.placeId)) hit = true;
-        if (!hit && titleLinks.some((t) => hay.includes(String(t).toLowerCase()))) hit = true;
+      if (dayLinks.length && dayId && !dayLinks.includes(dayId)) return;
+
+      const on = bookingLinkOn(ci);
+      if (on === "checkin") {
+        if (isCheckin && titleMatchesLinks(title, titleLinks)) matches.push(ci);
+        return;
       }
+      if (on === "travel" && !isTravel) return;
+      if (on === "visit" && isTravel) return;
+
+      let hit = false;
+      if (item.placeId && placeLinks.includes(item.placeId)) hit = true;
+      if (!hit && titleMatchesLinks(title, titleLinks)) hit = true;
       if (hit) matches.push(ci);
     });
     return matches;
   }
 
-  function timelineBookingHtml(item, seenBookingIds) {
-    const bookings = bookingsForTimelineItem(item);
+  function timelineBookingHtml(item, seenBookingIds, day) {
+    const bookings = bookingsForTimelineItem(item, day);
     if (!bookings.length) return { html: "", needs: false, open: false };
 
     const fresh = bookings.filter((b) => !seenBookingIds.has(b.id));
@@ -561,7 +581,7 @@
             const timeLabel = item.end ? `${item.time}–${item.end}` : item.time;
             const done = storage.isCompleted(day.id, item) ? "done" : "";
             const fav = storage.isFavorite(day.id, item) ? "fav" : "";
-            const booking = timelineBookingHtml(item, seenBookingIds);
+            const booking = timelineBookingHtml(item, seenBookingIds, day);
             const isTravel = tools.isTravelItem(item);
 
             let travelHtml = "";
@@ -578,10 +598,12 @@
                     ${info.icon}
                     <span class="travel-eyebrow">${escapeHtml(info.label)}</span>
                   </div>
-                  <div class="timeline-title travel-mode">${escapeHtml(info.title)}</div>
+                  <div class="timeline-title-row">
+                    <div class="timeline-title travel-mode">${escapeHtml(info.title)}</div>
+                    ${booking.html}
+                  </div>
                   ${info.route ? `<div class="travel-route">${escapeHtml(info.route)}</div>` : ""}
                   ${item.note ? `<p class="timeline-note">${escapeHtml(item.note)}</p>` : ""}
-                  ${booking.html}
                   <div class="timeline-actions">
                     ${links ? `<a href="${links.primary.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.primary.label)}</a>` : ""}
                     <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "בוצע" : "סיימתי"}</button>
@@ -600,7 +622,10 @@
                 <div class="timeline-time">${escapeHtml(timeLabel)}</div>
               </div>
               <div class="timeline-card">
-                <div class="timeline-title">${escapeHtml(item.title)}</div>
+                <div class="timeline-title-row">
+                  <div class="timeline-title">${escapeHtml(item.title)}</div>
+                  ${booking.html}
+                </div>
                 ${place ? `<div class="timeline-place">${(() => {
                   const kind = tools.placeKindHe(place);
                   const kindBit = kind ? `<span class="place-kind">${escapeHtml(kind)}</span><span class="place-kind-sep"> · </span>` : "";
@@ -608,7 +633,6 @@
                   return `${kindBit}<span class="place-name">${escapeHtml(place.name)}</span>${ja}`;
                 })()}</div>` : ""}
                 ${place && place.blurb ? `<p class="timeline-what">${escapeHtml(place.blurb)}</p>` : ""}
-                ${booking.html}
                 <div class="timeline-actions">
                   ${links ? `<a href="${links.primary.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.primary.label)}</a>` : ""}
                   <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "בוצע" : "סיימתי"}</button>
