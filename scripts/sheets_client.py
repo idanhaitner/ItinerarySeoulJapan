@@ -43,9 +43,14 @@ def get_credentials(*, interactive: bool = True) -> Credentials:
     if creds and creds.valid:
         return creds
     if creds and creds.expired and creds.refresh_token:
-        creds.refresh(Request())
-        token_file.write_text(creds.to_json(), encoding="utf-8")
-        return creds
+        try:
+            creds.refresh(Request())
+            token_file.write_text(creds.to_json(), encoding="utf-8")
+            return creds
+        except Exception:
+            creds = None
+            if token_file.exists():
+                token_file.unlink()
     if not interactive:
         raise SystemExit(
             "Google access not authorized yet. Run:\n  python3 scripts/sheets_auth.py"
