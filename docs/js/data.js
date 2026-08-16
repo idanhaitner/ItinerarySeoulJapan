@@ -117,7 +117,7 @@ window.TRIP = {
     "Sep 4: Tsukiji sushi/fish + teamLab Planets (~1.5–2h) + Senkyaku Banrai lunch + Odaiba + Azabudai/Tokyo Tower/Roppongi (skip Ginza — later stay).",
     "Sep 5: Asakusa + Skytree + Akihabara.",
     "Sep 6: Kichijoji + Shimokitazawa (Bonus Track / Reload) day, night Street Kart ~19:00 (1949 IDP).",
-    "Sep 7: Bus 09:15 Busta Shinjuku → Kawaguchiko; lockers; Red Line Oishi + panoramic ropeway; dinner near MYSTAYS; convenience store for 05:45. Sep 8: Chureito sunrise + Lawson, then full Fuji-Q day. Sep 9: Yamato bags to Kyoto at 08:15, Gotemba Outlets, Tozan bus L to Sara kaiseki.",
+    "Sep 7: Bus 09:15 Busta Shinjuku → Kawaguchiko; lockers; Red Line Oishi + panoramic ropeway; dinner near MYSTAYS; convenience store for 05:45. Sep 8: Chureito sunrise + Lawson, then full Fuji-Q day. Sep 9: Yamato bags to Kyoto at 08:15, Gotemba Outlets, Tozan bus L to Hotel Zagakukan (check-in 17:00).",
     "Sep 10: Hakone Loop, Odawara 17:00, Hikari 653 18:07 → Kyoto 20:12, dinner near KABIN. Sep 11: Easy Kyoto morning (cafés near the hotel), then Kiyomizu / Sannenzaka / Gion + Pontocho.",
     "Sep 12: Fushimi Inari + Uji (Byodo-in / matcha) + Nishiki before 17:30.",
     "Sep 14: Kibune nagashi somen (Hirobun walk-in) + Kurama trek + teamLab Biovortex booked 18:00–18:30. Sep 15: Kyoto zen → Osaka evening.",
@@ -128,7 +128,7 @@ window.TRIP = {
     "Seoul hotel: 9 Brick Hotel Hongdae · 27 Aug–2 Sep.",
     "Tokyo first base: Hotel Gracery Shinjuku · 2–7 Sep (Kabukicho).",
     "Kyoto hotel: KABIN Koji · add night 10/9 · nights 10–14 Sep, checkout 15 Sep (Kawaramachi).",
-    "Kawaguchiko hotel: MYSTAYS Fuji Onsen · nights 7–8 Sep, checkout 9 Sep for Gotemba (Fuji-Q on 8/9). Hakone: Tsukino Yado Sara · booked night 9/9, checkout 10/9.",
+    "Kawaguchiko hotel: MYSTAYS Fuji Onsen · nights 7–8 Sep, checkout 9 Sep for Gotemba (Fuji-Q on 8/9). Hakone: Hotel Zagakukan · booked night 9/9, checkout 10/9 (check-in 17:00).",
     "Osaka hotel: Apartment Hotel 11 Shinsaibashi 2 · 15–21 Sep.",
     "Tokyo return base: The Royal Park Canvas Ginza 8 · 21–25 Sep.",
     "Leave Japan 25 Sep: Emirates EK319 NRT 22:30 → DXB 04:05 (26 Sep) + EK2478 DXB 07:05 → TIA 10:45 · Economy Flex · booked.",
@@ -1052,10 +1052,10 @@ window.PLACES = {
     "lng": 139.0885,
     "blurb": "Hakone ryokan — not on this itinerary."
   },
-  "tsukino-yado-sara": {
-    "id": "tsukino-yado-sara",
-    "name": "Tsukino Yado Sara",
-    "nameJa": "月の宿 紗ら",
+  "zagakukan": {
+    "id": "zagakukan",
+    "name": "Hotel Zagakukan",
+    "nameJa": "坐樂閑",
     "city": "Hakone",
     "country": "JP",
     "tags": [
@@ -1063,10 +1063,10 @@ window.PLACES = {
       "onsen",
       "booked"
     ],
-    "lat": 35.2291,
-    "lng": 139.0983,
-    "blurb": "Booked night 9/9, checkout 10/9 · Hakone-Yumoto ryokan · rooms with open-air baths · kaiseki included · arrive ~15:30 · ~8 min walk from Hakone-Yumoto Station.",
-    "taxiAddress": "神奈川県足柄下郡箱根町湯本588-1"
+    "lat": 35.2313,
+    "lng": 139.0999,
+    "blurb": "Booked night 9/9, checkout 10/9 · Hakone-Yumoto boutique hotel · private onsen in the room · check-in 17:00, checkout 13:00 · ~5–8 min walk from Hakone-Yumoto Station via Yumoto Bridge.",
+    "taxiAddress": "神奈川県足柄下郡箱根町湯本642-1"
   },
   "owakudani": {
     "id": "owakudani",
@@ -4059,22 +4059,24 @@ window.DAYS = [
     "weekday": "Wednesday",
     "city": "Hakone",
     "country": "JP",
-    "hotelId": "tsukino-yado-sara",
-    "title": "Gotemba shopping & Hakone ryokan",
-    "summary": "Checkout MYSTAYS at 08:15 and send the big bags to KABIN Koji (Yamato). Fujikyu bus from platform 6 to Gotemba Premium Outlets for shopping and lunch (backpacks in lockers). Direct Hakone Tozan bus L to Hakone-Yumoto, check in at Tsukino Yado Sara, onsen, a convenience-store hop, then kaiseki at the ryokan.",
-    "food": "Lunch: restaurants at the outlet food court. Afternoon convenience store near the ryokan. Dinner: full kaiseki included at Sara.",
+    "hotelId": "zagakukan",
+    "title": "Gotemba shopping & Hakone onsen",
+    "summary": "Checkout MYSTAYS at 08:15 and send the big bags to KABIN Koji (Yamato). Fujikyu bus from platform 6 to Gotemba Premium Outlets for shopping and lunch (backpacks in lockers). Direct Hakone Tozan bus L to Hakone-Yumoto, leave bags at Hotel Zagakukan, stroll the onsen town until official check-in at 17:00, then private onsen and dinner at Kin no dashi Sho or nearby.",
+    "food": "Lunch: restaurants at the outlet food court. Afternoon café in Yumoto while waiting for 17:00 check-in. Dinner: Kin no dashi Sho at the hotel, or restaurants in Hakone-Yumoto.",
     "placeIds": [
       "gotemba-outlets",
-      "tsukino-yado-sara"
+      "hakone-yumoto",
+      "zagakukan"
     ],
     "transport": [
       "Walk / Fujikyu to Kawaguchiko Station after checkout.",
       "Fujikyu bus from platform 6, Kawaguchiko → Gotemba Premium Outlets (~09:10–10:15).",
       "Direct Hakone Tozan Bus line L, Gotemba Outlets → Hakone-Yumoto (~14:15–15:15). Not via Togendai.",
-      "8-minute walk or a short taxi from Hakone-Yumoto Station to Sara."
+      "5–8 minute walk from Hakone-Yumoto Station via the shopping street and Yumoto Bridge."
     ],
     "tips": [
-      "Gotemba lockers at the entrance for backpacks while you shop."
+      "Gotemba lockers at the entrance for backpacks while you shop.",
+      "Zagakukan check-in is 17:00 — leave bags at the desk if you arrive ~15:20."
     ],
     "timeline": [
       {
@@ -4123,32 +4125,47 @@ window.DAYS = [
         "category": "transit"
       },
       {
+        "time": "15:20",
+        "title": "Walk to Hotel Zagakukan & leave bags",
+        "note": "About 5–8 min via Yumoto shopping street and Yumoto Bridge. Check-in is 17:00.",
+        "placeId": "zagakukan",
+        "category": "hotel"
+      },
+      {
         "time": "15:30",
-        "title": "Check-in at ryokan Tsukino Yado Sara",
-        "note": "8-minute walk or a short taxi from the station. Room with open-air bath.",
-        "placeId": "tsukino-yado-sara",
+        "title": "Hakone-Yumoto town stroll until check-in",
+        "note": "Onsen-town shops and a café while waiting for 17:00.",
+        "placeId": "hakone-yumoto",
+        "end": "17:00",
+        "category": "dining"
+      },
+      {
+        "time": "17:00",
+        "title": "Check-in at Hotel Zagakukan",
+        "note": "Official check-in 17:00, checkout 13:00 next day. Private onsen in the room.",
+        "placeId": "zagakukan",
         "category": "hotel"
       },
       {
-        "time": "16:00",
-        "title": "Onsen & rest at Sara",
-        "note": "Ryokan baths and time in the room.",
-        "placeId": "tsukino-yado-sara",
-        "end": "18:00",
+        "time": "17:15",
+        "title": "Onsen in the room",
+        "note": "Private hot-spring bath — no meal-bell schedule.",
+        "placeId": "zagakukan",
+        "end": "18:45",
         "category": "hotel"
       },
       {
-        "time": "16:30",
-        "title": "Convenience-store shop (7-Eleven near Sara)",
+        "time": "18:00",
+        "title": "Convenience-store shop near the hotel",
         "note": "Short hop for drinks and snacks for the room.",
-        "placeId": "tsukino-yado-sara",
+        "placeId": "zagakukan",
         "category": "shopping"
       },
       {
         "time": "19:00",
-        "title": "Dinner at the ryokan (included)",
-        "note": "Full dinner included in the Sara booking.",
-        "placeId": "tsukino-yado-sara",
+        "title": "Dinner at Kin no dashi Sho or nearby",
+        "note": "Hotel restaurant on the 1st floor (oden / ochazuke), or restaurants in Yumoto.",
+        "placeId": "zagakukan",
         "category": "dining"
       }
     ],
@@ -4169,8 +4186,8 @@ window.DAYS = [
     "country": "JP",
     "hotelId": "kabin-koji",
     "title": "Hakone Loop & evening shinkansen to Kyoto",
-    "summary": "Breakfast at Sara, checkout at 09:15, leave backpacks at the ryokan or a Hakone-Yumoto locker. Hakone Loop: shrine, pirate ship, ropeway to Owakudani and lunch, then down via Sounzan / Gora / Tozan. Town stroll and café, collect bags, local train to Odawara, Hikari 653 at 18:07, KABIN at 20:30 with the big bags waiting, dinner nearby.",
-    "food": "Breakfast included at the ryokan. Lunch: restaurants/stalls at Owakudani. Café/dessert in Hakone-Yumoto. Convenience store at Odawara for the train, or save appetite for Kyoto. Dinner: restaurants near KABIN (the area stays open late).",
+    "summary": "Breakfast at Zagakukan or a Yumoto café, checkout in the morning (official 13:00), leave backpacks at the hotel. Hakone Loop: shrine, pirate ship, ropeway to Owakudani and lunch, then down via Sounzan / Gora / Tozan. Town stroll and café, collect bags, local train to Odawara, Hikari 653 at 18:07, KABIN at 20:30 with the big bags waiting, dinner nearby.",
+    "food": "Breakfast at the hotel restaurant or a Yumoto café. Lunch: restaurants/stalls at Owakudani. Café/dessert in Hakone-Yumoto. Convenience store at Odawara for the train, or save appetite for Kyoto. Dinner: restaurants near KABIN (the area stays open late).",
     "placeIds": [
       "hakone-shrine",
       "lake-ashi",
@@ -4191,17 +4208,17 @@ window.DAYS = [
     "timeline": [
       {
         "time": "08:00",
-        "title": "Breakfast at ryokan Sara (included)",
-        "note": "Breakfast included in the booking.",
-        "placeId": "tsukino-yado-sara",
+        "title": "Breakfast at Zagakukan or a Yumoto café",
+        "note": "Hotel restaurant Kin no dashi Sho, or a café in town. Official checkout is 13:00.",
+        "placeId": "zagakukan",
         "end": "09:00",
         "category": "dining"
       },
       {
         "time": "09:15",
-        "title": "Checkout — leave backpacks at Sara or a station locker",
-        "note": "Ryokan luggage hold or Hakone-Yumoto lockers.",
-        "placeId": "tsukino-yado-sara",
+        "title": "Checkout — leave backpacks at Zagakukan",
+        "note": "Official checkout 13:00; leave early for the loop. Ask the desk to hold bags until ~16:00.",
+        "placeId": "zagakukan",
         "category": "hotel"
       },
       {

@@ -315,15 +315,15 @@ window.CHECKLIST = {
       items: [
         {
           id: "h-hakone",
-          kind: "ryokan",
-          label: "Sara",
+          kind: "hotel",
+          label: "Hotel Zagakukan",
           when: "9/9",
-          note: "ריוקאן בהקונה־יומוטו, כולל קייסקי ואונסן. לילה 9 בספטמבר, צ׳ק־אאוט 10 בספטמבר. הגעה בסביבות 15:30 אחרי גוטמבה.",
+          note: "מלון בוטיק בהקונה־יומוטו, אונסן בחדר. לילה 9 בספטמבר, צ׳ק־אין ב־17:00, צ׳ק־אאוט 10 בספטמבר. הגעה בסביבות 15:20 אחרי גוטמבה.",
           window: "הוזמן",
           priority: "low",
           done: true,
           linkCheckin: true,
-          linkTitles: ["Tsukino Yado Sara", "Tsukino Yado Sara"],
+          linkTitles: ["Zagakukan", "Hotel Zagakukan"],
         },
         {
           id: "h-kyoto",
