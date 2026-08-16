@@ -31,6 +31,7 @@ Open http://localhost:8080
 ```bash
 python3 scripts/fetch_collab_sheets.py   # משיכת ה־Sheet
 python3 scripts/push_collab_sheets.py    # ריענון/עיצוב ה־Sheet מהמסלול
+python3 scripts/export_mymaps_attractions.py  # אטרקציות → Google My Maps (CSV/KML + טאב בשיט)
 ```
 
 ## עדכון תוכן האתר

@@ -1,0 +1,2752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>Korea + Japan 2026 — Attractions</name>
+<Style id="attraction">
+  <IconStyle>
+    <scale>1.1</scale>
+    <Icon><href>http://maps.google.com/mapfiles/kml/paddle/red-stars.png</href></Icon>
+  </IconStyle>
+</Style>
+<Folder>
+<name>Attractions</name>
+<Placemark>
+<name>Bongeunsa Temple</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>temple</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>봉은사</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>bongeunsa</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מקדש ליד COEX — ניגוד שקט ל־Gangnam.</p><p>Seoul · 봉은사</p>]]></description>
+<Point>
+<coordinates>127.057400,37.515200,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Bukchon Hanok Village</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>북촌한옥마을</value></Data>
+  <Data name="Days"><value>28/8</value></Data>
+  <Data name="Place ID"><value>bukchon</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>סמטאות בתי עץ מסורתיים (האנוק) על גבעה. יפה לצילום — לשמור על שקט ליד הבתים.</p><p>Seoul · 북촌한옥마을 · Days 28/8</p>]]></description>
+<Point>
+<coordinates>126.983100,37.582600,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Changdeokgung + Secret Garden</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>창덕궁 후원</value></Data>
+  <Data name="Days"><value>29/8</value></Data>
+  <Data name="Place ID"><value>changdeokgung</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>ארמון UNESCO. הגן הסודי נכנסים רק בסיור מודרך עם שעה.</p><p>Seoul · 창덕궁 후원 · Days 29/8</p>]]></description>
+<Point>
+<coordinates>126.991000,37.579400,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Cheonggyecheon Stream</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>nature</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>청계천</value></Data>
+  <Data name="Days"><value>1/9</value></Data>
+  <Data name="Place ID"><value>cheonggyecheon</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>נחל מלאכותי במרכז העיר. הליכה קלה בין השווקים.</p><p>Seoul · 청계천 · Days 1/9</p>]]></description>
+<Point>
+<coordinates>126.978400,37.569600,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>COEX &amp; Starfield Library</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>코엑스 별마당도서관</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>coex</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>קניון ענק + Starfield Library האייקוני.</p><p>Seoul · 코엑스 별마당도서관</p>]]></description>
+<Point>
+<coordinates>127.059500,37.511700,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Dongdaemun Night Market / DDP</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>동대문</value></Data>
+  <Data name="Days"><value>1/9</value></Data>
+  <Data name="Place ID"><value>dongdaemun</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>שוקי אופנה בלילה + הבניין העתידני DDP. קניות אחרי השקיעה.</p><p>Seoul · 동대문 · Days 1/9</p>]]></description>
+<Point>
+<coordinates>127.009200,37.566500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Eunpyeong Hanok Village</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>은평한옥마을</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>eunpyeong</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>חלופה שקטה יותר של כפר מסורתי.</p><p>Seoul · 은평한옥마을</p>]]></description>
+<Point>
+<coordinates>126.934500,37.640800,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Forena Clinic</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>포레나의원</value></Data>
+  <Data name="Days"><value>30/8</value></Data>
+  <Data name="Place ID"><value>forena-clinic</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>הוזמן — ייעוץ + טיפול 30 באוג׳ 10:30 · הונגדה · H-CUBE קומה 7.</p><p>Seoul · 포레나의원 · Days 30/8</p>]]></description>
+<Point>
+<coordinates>126.923600,37.556800,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Gangnam</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>shopping</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>강남</value></Data>
+  <Data name="Days"><value>29/8</value></Data>
+  <Data name="Place ID"><value>gangnam</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>אזור עסקים מודרני: טיפוח, קניות וציוני דרך של קיי־פופ.</p><p>Seoul · 강남 · Days 29/8</p>]]></description>
+<Point>
+<coordinates>127.027600,37.497900,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Gwangjang Market</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>market</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>광장시장</value></Data>
+  <Data name="Days"><value>28/8</value></Data>
+  <Data name="Place ID"><value>gwangjang</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>שוק האוכל הלילי המפורסם (בינדאטוק, קימבאפ). הדוכנים המפורסמים נסגרים ~20:30 — להגיע עד 19:30.</p><p>Seoul · 광장시장 · Days 28/8</p>]]></description>
+<Point>
+<coordinates>126.999600,37.570000,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Gyeongbokgung Palace</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>경복궁</value></Data>
+  <Data name="Days"><value>28/8</value></Data>
+  <Data name="Place ID"><value>gyeongbokgung</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>הארמון המלכותי הראשי של סיאול. אפשר לשכור האנבוק ולהיכנס בחינם.</p><p>Seoul · 경복궁 · Days 28/8</p>]]></description>
+<Point>
+<coordinates>126.977000,37.579600,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Hongdae</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>홍대</value></Data>
+  <Data name="Days"><value>27/8, 30/8</value></Data>
+  <Data name="Place ID"><value>hongdae</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>רובע סטודנטים צעיר: אוכל רחוב, הופעות רחוב, קפה וברים. הבסיס שלכם בסיאול.</p><p>Seoul · 홍대 · Days 27/8, 30/8</p>]]></description>
+<Point>
+<coordinates>126.923600,37.556300,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Ikseon-dong</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>익선동</value></Data>
+  <Data name="Days"><value>28/8</value></Data>
+  <Data name="Place ID"><value>ikseon</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>האנוק היפסטרי: קפה, ברים וסמטאות צרות ליד אינסאדונג.</p><p>Seoul · 익선동 · Days 28/8</p>]]></description>
+<Point>
+<coordinates>126.989700,37.574000,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Insadong</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>인사동</value></Data>
+  <Data name="Days"><value>28/8</value></Data>
+  <Data name="Place ID"><value>insadong</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>רחוב תה, מלאכות ומזכרות. עצירת קניות קלה בין הארמונות.</p><p>Seoul · 인사동 · Days 28/8</p>]]></description>
+<Point>
+<coordinates>126.984700,37.574200,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Itaewon</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>이태원</value></Data>
+  <Data name="Days"><value>1/9</value></Data>
+  <Data name="Place ID"><value>itaewon</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>רובע ברים בינלאומי וחיי לילה, כולל אזור LGBTQ+.</p><p>Seoul · 이태원 · Days 1/9</p>]]></description>
+<Point>
+<coordinates>126.994400,37.534500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Jimjilbang (spa complex)</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>찜질방</value></Data>
+  <Data name="Days"><value>31/8</value></Data>
+  <Data name="Place ID"><value>jimjilbang</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>ספא קוריאני: סאונות, רחצה ומנוחה. איפוס אחרי לוטה וורלד.</p><p>Seoul · 찜질방 · Days 31/8</p>]]></description>
+<Point>
+<coordinates>127.098000,37.511000,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Jogyesa Temple</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>temple</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>조계사</value></Data>
+  <Data name="Days"><value>29/8</value></Data>
+  <Data name="Place ID"><value>jogyesa</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מקדש בודהיסטי מרכזי ליד אינסאדונג. עצירה קצרה ושקטה.</p><p>Seoul · 조계사 · Days 29/8</p>]]></description>
+<Point>
+<coordinates>126.982500,37.573500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Lotte World Adventure</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>롯데월드</value></Data>
+  <Data name="Days"><value>31/8</value></Data>
+  <Data name="Place ID"><value>lotte-world</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>פארק שעשועים מקורה ופתוח בלב סיאול. יום מלא של מתקנים.</p><p>Seoul · 롯데월드 · Days 31/8</p>]]></description>
+<Point>
+<coordinates>127.098000,37.511000,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Lotte World Tower Seoul Sky</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>view</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>롯데월드타워</value></Data>
+  <Data name="Days"><value>31/8</value></Data>
+  <Data name="Place ID"><value>lotte-tower</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>אחד המגדלים הגבוהים בעולם. מצפה Seoul Sky על סיאול כולה.</p><p>Seoul · 롯데월드타워 · Days 31/8</p>]]></description>
+<Point>
+<coordinates>127.102500,37.512600,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Mangwon Market</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>market</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>망원시장</value></Data>
+  <Data name="Days"><value>30/8</value></Data>
+  <Data name="Place ID"><value>mangwon</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>שוק שכונתי מקומי ליד יונאם — נשנושים ותוצרת, פחות תיירותי ממיונגדונג.</p><p>Seoul · 망원시장 · Days 30/8</p>]]></description>
+<Point>
+<coordinates>126.910200,37.556000,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Myeongdong</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>명동</value></Data>
+  <Data name="Days"><value>1/9</value></Data>
+  <Data name="Place ID"><value>myeongdong</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>רחוב הקניות התיירותי: K-beauty, אוכל רחוב וניאון. צמוד לנאמדאמון.</p><p>Seoul · 명동 · Days 1/9</p>]]></description>
+<Point>
+<coordinates>126.986900,37.563600,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>N Seoul Tower</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>view</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>N서울타워</value></Data>
+  <Data name="Days"><value>1/9</value></Data>
+  <Data name="Place ID"><value>n-tower</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>התצפית הקלאסית של סיאול: שקיעה על העיר ומנעולי אהבה.</p><p>Seoul · N서울타워 · Days 1/9</p>]]></description>
+<Point>
+<coordinates>126.988200,37.551200,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Namdaemun Market</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>market</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>남대문시장</value></Data>
+  <Data name="Days"><value>1/9</value></Data>
+  <Data name="Place ID"><value>namdaemun</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>השוק המרכזי הקלאסי של סיאול: בגדים, מזכרות ואוכל רחוב בלב העיר.</p><p>Seoul · 남대문시장 · Days 1/9</p>]]></description>
+<Point>
+<coordinates>126.977000,37.559500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Namsan Cable Car</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>view</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>남산케이블카</value></Data>
+  <Data name="Days"><value>1/9</value></Data>
+  <Data name="Place ID"><value>namsan-cable</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>רכבל להר נאמסן בדרך למגדל N. עולים ולא הולכים את כל ההר.</p><p>Seoul · 남산케이블카 · Days 1/9</p>]]></description>
+<Point>
+<coordinates>126.990500,37.548600,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Seokchon Lake</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>nature</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>석촌호수</value></Data>
+  <Data name="Days"><value>31/8</value></Data>
+  <Data name="Place ID"><value>seokchon</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>טיילת אגם ליד מגדל לוטה. נשימה קצרה אחרי הפארק.</p><p>Seoul · 석촌호수 · Days 31/8</p>]]></description>
+<Point>
+<coordinates>127.103500,37.509500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Seongsu-dong</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>성수동</value></Data>
+  <Data name="Days"><value>29/8</value></Data>
+  <Data name="Place ID"><value>seongsu</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>רובע קפה ועיצוב בסגנון ברוקלין. פופ־אפים וגלריות.</p><p>Seoul · 성수동 · Days 29/8</p>]]></description>
+<Point>
+<coordinates>127.055700,37.544500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Seoul Forest</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>서울숲</value></Data>
+  <Data name="Days"><value>29/8</value></Data>
+  <Data name="Place ID"><value>seoul-forest</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>פארק גדול ליד סונגסו. הליכה ירוקה בין בתי הקפה.</p><p>Seoul · 서울숲 · Days 29/8</p>]]></description>
+<Point>
+<coordinates>127.037500,37.544300,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Unni Guide Center</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>언니 가이드 센터</value></Data>
+  <Data name="Days"><value>29/8</value></Data>
+  <Data name="Place ID"><value>unni-guide</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מרכז בגנגנאם שמתאים מרפאות וטיפולים למבקרים. ייעוץ לפני הטיפול.</p><p>Seoul · 언니 가이드 센터 · Days 29/8</p>]]></description>
+<Point>
+<coordinates>127.025000,37.504500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Yeonnam-dong</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>연남동</value></Data>
+  <Data name="Days"><value>30/8</value></Data>
+  <Data name="Place ID"><value>yeonnam</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>שכונת קפה ובוטיקים שקטה ליד הונגדה, לאורך פסי הרכבת הישנים.</p><p>Seoul · 연남동 · Days 30/8</p>]]></description>
+<Point>
+<coordinates>126.925400,37.566200,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Akihabara</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>shopping</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>秋葉原</value></Data>
+  <Data name="Days"><value>5/9</value></Data>
+  <Data name="Place ID"><value>akihabara</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>עיירת החשמל — כלבו אנימה בקומות, משחקי רטרו, ארקיידים ומסעדות מייד. חובה: עשר הקומות של Radio Kaikan, ואז ארקייד GiGO. טיפ: המציאות הנדירות בקומות העליונות — להתחיל למעלה ולרדת; דרכון ל־tax-free.</p><p>Tokyo · 秋葉原 · Days 5/9</p>]]></description>
+<Point>
+<coordinates>139.774500,35.702300,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Ameyoko Market</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>market</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>アメ横</value></Data>
+  <Data name="Days"><value>5/9</value></Data>
+  <Data name="Place ID"><value>ameyoko</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>שוק רחוב תוסס מתחת למסילות ליד אואינו. נשנושים בדרך לאקיהברה.</p><p>Tokyo · アメ横 · Days 5/9</p>]]></description>
+<Point>
+<coordinates>139.774500,35.709500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Asakusa / Senso-ji</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>浅草寺</value></Data>
+  <Data name="Days"><value>5/9</value></Data>
+  <Data name="Place ID"><value>asakusa</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>המקדש העתיק של טוקיו (645 לספירה) — הפנס האדום של Kaminarimon, קדרת הקטורת, פגודה בת חמש קומות. חובה: אומיקוג׳י + צילומי Nakamise לפני שהדוכנים נפתחים (~09:30–10:00). טיפ: השטח פתוח 24 שעות והאולם מ־6:00 — לפני 8:30 מנצחים את הקבוצות.</p><p>Tokyo · 浅草寺 · Days 5/9</p>]]></description>
+<Point>
+<coordinates>139.796700,35.714800,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Azabudai Hills</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>麻布台ヒルズ</value></Data>
+  <Data name="Days"><value>4/9, 21/9</value></Data>
+  <Data name="Place ID"><value>azabudai</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מתחם גורדי השחקים החדש של טוקיו. חנויות ותצפית מקרוב על המגדל האדום.</p><p>Tokyo · 麻布台ヒルズ · Days 4/9, 21/9</p>]]></description>
+<Point>
+<coordinates>139.740000,35.660500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Bonus Track / Reload</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>ボーナストラック / リロード</value></Data>
+  <Data name="Days"><value>6/9</value></Data>
+  <Data name="Place ID"><value>bonus-track</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>שני מתחמים חדשים בשימוקיטה: ספרים עצמאיים, קליית קפה וישיבה בחוץ.</p><p>Tokyo · ボーナストラック / リロード · Days 6/9</p>]]></description>
+<Point>
+<coordinates>139.667200,35.661000,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Cat Street</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>shopping</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>キャットストリート</value></Data>
+  <Data name="Days"><value>3/9</value></Data>
+  <Data name="Place ID"><value>cat-street</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>רחוב אחורי נמוך של סטריטוור, וינטג׳ וקפה שמחבר הראג׳וקו לשיבויה. חובה: קפה לקחת בין הבוטיקים. טיפ: הקטע הכי רגוע ביום — להשתמש בו כשחרור בין קהלים.</p><p>Tokyo · キャットストリート · Days 3/9</p>]]></description>
+<Point>
+<coordinates>139.703800,35.665800,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Cross Shinjuku Vision (3D Cat)</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>icon</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>クロス新宿ビジョン</value></Data>
+  <Data name="Days"><value>2/9</value></Data>
+  <Data name="Place ID"><value>cross-shinjuku-vision</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>חתול תלת־ממדי ענק על בניין ביציאה המזרחית של שינג׳וקו. עצירת 2 דקות.</p><p>Tokyo · クロス新宿ビジョン · Days 2/9</p>]]></description>
+<Point>
+<coordinates>139.701800,35.691200,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Daikanyama T-Site</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>代官山T-SITE</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>daikanyama</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>כפר חנויות הספרים של Tsutaya — שלושה בניינים מכוסי קיסוס, ספרי אמנות, ויניל וקפה מרפסת. חובה: קיר המגזינים והמרפסת בערב. טיפ: לא במסלול; 10 דק׳ משיבויה אם מדלגים על PARCO.</p><p>Tokyo · 代官山T-SITE</p>]]></description>
+<Point>
+<coordinates>139.703200,35.649200,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Daimaru Tokyo depachika</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>大丸東京店</value></Data>
+  <Data name="Days"><value>25/9</value></Data>
+  <Data name="Place ID"><value>daimaru-tokyo</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>קומת האוכל של הכלבו בתחנה. Tokyo Banana ומתנות מתוקות הביתה.</p><p>Tokyo · 大丸東京店 · Days 25/9</p>]]></description>
+<Point>
+<coordinates>139.767900,35.681400,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Enoshima</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>nature</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>江の島</value></Data>
+  <Data name="Days"><value>24/9</value></Data>
+  <Data name="Place ID"><value>enoshima</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>אי קטן שמחובר לגשר. סמטאות שעולות למקדש ושקיעה מול הים.</p><p>Tokyo · 江の島 · Days 24/9</p>]]></description>
+<Point>
+<coordinates>139.480800,35.299700,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Enoshima Sea Candle</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>view</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>江の島シーキャンドル</value></Data>
+  <Data name="Days"><value>24/9</value></Data>
+  <Data name="Place ID"><value>sea-candle</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מגדלור־תצפית על האי. השקיעה הכי טובה באנושימה.</p><p>Tokyo · 江の島シーキャンドル · Days 24/9</p>]]></description>
+<Point>
+<coordinates>139.475800,35.299500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Enoshima Shrine</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>shrine</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>江島神社</value></Data>
+  <Data name="Days"><value>24/9</value></Data>
+  <Data name="Place ID"><value>enoshima-shrine</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מקדש בראש האי אנושימה. מגיעים אחרי עלייה בסמטאות.</p><p>Tokyo · 江島神社 · Days 24/9</p>]]></description>
+<Point>
+<coordinates>139.479600,35.300300,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Ghibli Museum</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>三鷹の森ジブリ美術館</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>ghibli</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>המוזיאון ההפכפך של מיאזאקי במיטאקה — כרטיסים רק במכירה מראש ב־10 לחודש הקודם (10:00 שעון יפן, Lawson), בלי מכירה בדלת. לא במסלול אלא אם יופיעו החזרות.</p><p>Tokyo · 三鷹の森ジブリ美術館</p>]]></description>
+<Point>
+<coordinates>139.570300,35.696200,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Ginza</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>銀座</value></Data>
+  <Data name="Days"><value>23/9</value></Data>
+  <Data name="Place ID"><value>ginza</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>הרחוב המלוטש של טוקיו — חנויות דגל ב־12 קומות (Uniqlo, Itoya), Ginza Six ואולמות אוכל במרתף. חובה: קומת האוכל של Mitsukoshi + גן הגג החינמי של Ginza Six. טיפ: בסופי שבוע וחגים Chuo-dori נסגר לרכבים 12:00–18:00 (אפר׳–ספט׳).</p><p>Tokyo · 銀座 · Days 23/9</p>]]></description>
+<Point>
+<coordinates>139.764900,35.671200,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Hama-rikyu Gardens</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>浜離宮恩賜庭園</value></Data>
+  <Data name="Days"><value>23/9</value></Data>
+  <Data name="Place ID"><value>hamarikyu</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>שטח ציד הברווזים של השוגון על מפרץ טוקיו — בריכות מי ים, אי בית תה, וגורדי שחקים מעל האורנים. חובה: בית התה Nakajima-no-ichiken באמצע הבריכה. טיפ: נפתח 9:00, 300 ין, כניסה אחרונה 16:30; 10 דק׳ מגינזה 8 — הגן שחסר בלינה הזו.</p><p>Tokyo · 浜離宮恩賜庭園 · Days 23/9</p>]]></description>
+<Point>
+<coordinates>139.763500,35.659700,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Harmonica Yokocho</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>ハモニカ横丁</value></Data>
+  <Data name="Days"><value>6/9</value></Data>
+  <Data name="Place ID"><value>harmonica</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>סמטאות מקורות עם אוכל וברים ליד תחנת קיצ׳וג׳י.</p><p>Tokyo · ハモニカ横丁 · Days 6/9</p>]]></description>
+<Point>
+<coordinates>139.579200,35.703300,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Hasedera Temple</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>temple</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>長谷寺</value></Data>
+  <Data name="Days"><value>24/9</value></Data>
+  <Data name="Place ID"><value>hasedera</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מקדש על גבעה בקמאקורה עם גנים ונוף למפרץ.</p><p>Tokyo · 長谷寺 · Days 24/9</p>]]></description>
+<Point>
+<coordinates>139.533300,35.312800,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Imperial Palace East Gardens</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>皇居東御苑</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>imperial-east</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>גני מצודת אדו חינם כ־10 דק׳ מתחנת טוקיו — הגן הפנימי שאי אפשר לבקר בו בטיול הזה. חובה: לדלג. טיפ: סגור בימי שני ושישי (25/9 זה שישי); Kokyo Gaien / ניג׳ובאשי ליד הוא התחליף, פתוח 24/7.</p><p>Tokyo · 皇居東御苑</p>]]></description>
+<Point>
+<coordinates>139.757500,35.686500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Inokashira Park</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>井の頭恩賜公園</value></Data>
+  <Data name="Days"><value>6/9</value></Data>
+  <Data name="Place ID"><value>inokashira</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>פארק אגם עם סירות ליד קיצ׳וג׳י. הליכה ירוקה רגועה.</p><p>Tokyo · 井の頭恩賜公園 · Days 6/9</p>]]></description>
+<Point>
+<coordinates>139.575000,35.700000,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Isetan Shinjuku depachika</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>伊勢丹新宿店</value></Data>
+  <Data name="Days"><value>2/9</value></Data>
+  <Data name="Place ID"><value>isetan-shinjuku</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מרתף האוכל הכי רציני בכלבו ביפן — וואגיו, ווגאשי עונתי, בנטו ארוז ומרתף שהמקומיים באמת משתמשים בו. חובה: כמה דלפקים ואז ישיבה באיט־אין. טיפ: בדרך מגיון לתחנת שינג׳וקו; דרכון ל־tax-free למעלה, מזומן או IC במרתף.</p><p>Tokyo · 伊勢丹新宿店 · Days 2/9</p>]]></description>
+<Point>
+<coordinates>139.704600,35.691700,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kabukicho</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>nightlife</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>歌舞伎町</value></Data>
+  <Data name="Days"><value>2/9</value></Data>
+  <Data name="Place ID"><value>kabukicho</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>רובע חיי הלילה הניאון ליד המלון בשינג׳וקו. לטייל בחוץ, לא להיכנס למועדונים חשודים.</p><p>Tokyo · 歌舞伎町 · Days 2/9</p>]]></description>
+<Point>
+<coordinates>139.702600,35.695000,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kamakura / Kotoku-in</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>temple</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>鎌倉・高徳院</value></Data>
+  <Data name="Days"><value>24/9</value></Data>
+  <Data name="Place ID"><value>kamakura</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>פסל הבודהה הענק (דאיבוצו) יושב בחוץ במקדש Kotoku-in.</p><p>Tokyo · 鎌倉・高徳院 · Days 24/9</p>]]></description>
+<Point>
+<coordinates>139.535700,35.316700,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kamakurakokomae crossing</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>icon</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>鎌倉高校前</value></Data>
+  <Data name="Days"><value>24/9</value></Data>
+  <Data name="Place ID"><value>kamakurakokomae</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מעבר החצייה המפורסם עם המסילה והים. עצירת Enoden קצרה לצילום.</p><p>Tokyo · 鎌倉高校前 · Days 24/9</p>]]></description>
+<Point>
+<coordinates>139.500400,35.306600,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kappabashi Street</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>合羽橋道具街</value></Data>
+  <Data name="Days"><value>5/9</value></Data>
+  <Data name="Place ID"><value>kappabashi</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>800 מ׳ של חנויות ציוד למסעדות בין אסאקוסה לאואינו — סכינים מחושלים, קרמיקה, אוכל פלסטיק מטעה. חובה: סכין מטבח עם חריטת שם במקום. טיפ: רוב החנויות נסגרות ~17:00; הגדולות עושות tax-free עם דרכון.</p><p>Tokyo · 合羽橋道具街 · Days 5/9</p>]]></description>
+<Point>
+<coordinates>139.787000,35.715500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kegon Falls</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>nature</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>華厳の滝</value></Data>
+  <Data name="Days"><value>22/9</value></Data>
+  <Data name="Place ID"><value>kegon-falls</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מפל גבוה ליד האגם. יורדים במעלית לתצפית הקרובה.</p><p>Tokyo · 華厳の滝 · Days 22/9</p>]]></description>
+<Point>
+<coordinates>139.445000,36.738000,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kichijoji</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>吉祥寺</value></Data>
+  <Data name="Days"><value>6/9</value></Data>
+  <Data name="Place ID"><value>kichijoji</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>נבחרת שוב ושוב כשכונה הכי טובה למגורים בטוקיו — ארקדת Sun Road, בוטיקים, קפה ג׳אז ליד אינוקאשירה. חובה: התור למנצ׳י־קאצו של Satou. טיפ: קודם לולאת הפארק, צהריים אחרי.</p><p>Tokyo · 吉祥寺 · Days 6/9</p>]]></description>
+<Point>
+<coordinates>139.579800,35.703100,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kokyo Gaien &amp; Nijubashi</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>皇居外苑・二重橋</value></Data>
+  <Data name="Days"><value>25/9</value></Data>
+  <Data name="Place ID"><value>kokyo-gaien</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>הגן הטקסי של הארמון — מדשאות אורנים, תעלות ברבורים, ותצפית ניג׳ובאשי עם המגדל מאחור. חובה: ניג׳ובאשי מעבר למואט מהכיכר. טיפ: חינם ופתוח תמיד — בניגוד לגנים המזרחיים שלידם, שסגורים בימי שני ושישי (לכן זו תמונת הארמון של 25/9).</p><p>Tokyo · 皇居外苑・二重橋 · Days 25/9</p>]]></description>
+<Point>
+<coordinates>139.755000,35.679000,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Komachi-dori</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>小町通り</value></Data>
+  <Data name="Days"><value>24/9</value></Data>
+  <Data name="Place ID"><value>komachi-dori</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>רחוב מזכרות ואוכל רחוב ליד תחנת קמאקורה.</p><p>Tokyo · 小町通り · Days 24/9</p>]]></description>
+<Point>
+<coordinates>139.551000,35.319200,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Lake Chuzenji</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>nature</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>中禅寺湖</value></Data>
+  <Data name="Days"><value>22/9</value></Data>
+  <Data name="Place ID"><value>chuzenji</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>אגם הררי מעל ניקו. אוויר קריר וצהריים מול המים.</p><p>Tokyo · 中禅寺湖 · Days 22/9</p>]]></description>
+<Point>
+<coordinates>139.447000,36.739000,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Meiji Jingu</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>shrine</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>明治神宮</value></Data>
+  <Data name="Days"><value>3/9</value></Data>
+  <Data name="Place ID"><value>meiji-jingu</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מקדש שינטו לקיסר מייג׳י מוסתר ביער של 100,000 עצים — שקט מוחלט חמש דקות מהראג׳וקו. חובה: הטוריי הענק מקפריס וקיר חביות הסאקה. טיפ: פתוח מזריחה; לפני 9:00 אפשר לתפוס תהלוכת חתונה במקום אוטובוסים.</p><p>Tokyo · 明治神宮 · Days 3/9</p>]]></description>
+<Point>
+<coordinates>139.699300,35.676400,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Miyashita Park</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>宮下パーク</value></Data>
+  <Data name="Days"><value>3/9</value></Data>
+  <Data name="Place ID"><value>miyashita-park</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>פארק על גג קניון ליד תחנת שיבויה. עצירת קפה לפני Shibuya Sky.</p><p>Tokyo · 宮下パーク · Days 3/9</p>]]></description>
+<Point>
+<coordinates>139.701100,35.661600,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Nakameguro / Meguro River</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>中目黒</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>nakameguro</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>בוטיקים וקפה לאורך תעלת מגורו, תחנה אחת דרומית לדאיקאנמה. חובה: שביל הדובדבן לאורך התעלה (יפה גם מחוץ לעונה). טיפ: לא מתוזמן — רק אם מוותרים על בלוק קניות בשיבויה.</p><p>Tokyo · 中目黒</p>]]></description>
+<Point>
+<coordinates>139.698800,35.644200,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Nakano Broadway</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>中野ブロードウェイ</value></Data>
+  <Data name="Days"><value>21/9</value></Data>
+  <Data name="Place ID"><value>nakano-broadway</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מבוך קומות של וינטג׳, דמויות, Mandarake ושעונים יד־שנייה.</p><p>Tokyo · 中野ブロードウェイ · Days 21/9</p>]]></description>
+<Point>
+<coordinates>139.665200,35.709300,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>New York Bar (Park Hyatt)</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>view</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>ニューヨークバー</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>ny-bar</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>בר הג׳אז מ־Lost in Translation בקומה 52 של Park Hyatt שינג׳וקו. חובה: מושב ליד החלון בשעה כחולה. טיפ: נפתח מחדש בדצמ׳ 2025; להזמין שבועות מראש, לא walk-in.</p><p>Tokyo · ニューヨークバー</p>]]></description>
+<Point>
+<coordinates>139.690500,35.685500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Nihonbashi</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>icon</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>日本橋</value></Data>
+  <Data name="Days"><value>23/9</value></Data>
+  <Data name="Place ID"><value>nihonbashi</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>הגשר ההיסטורי שממנו נמדדה יפן, פלוס Pokémon Center DX במתחם ליד.</p><p>Tokyo · 日本橋 · Days 23/9</p>]]></description>
+<Point>
+<coordinates>139.774400,35.684000,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Nikko Toshogu Shrine</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>shrine</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>日光東照宮</value></Data>
+  <Data name="Days"><value>22/9</value></Data>
+  <Data name="Place ID"><value>nikko-toshogu</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>המקדש המוזהב והמפואר ביותר בניקו (UNESCO). כניסה אחרונה ~16:00, סגירה 17:00.</p><p>Tokyo · 日光東照宮 · Days 22/9</p>]]></description>
+<Point>
+<coordinates>139.598800,36.758100,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Nonbei Yokocho</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>のんべい横丁</value></Data>
+  <Data name="Days"><value>3/9</value></Data>
+  <Data name="Place ID"><value>nonbei-yokocho</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>רצועת פנסים של ~30 איזאקאיה זעירים ליד מסילות JR, שתי דקות מיציאת Shibuya Sky. חובה: דלפק אחד, היייבול אחד, רכבות מעליכם. טיפ: רוב המקומות רוצים מזומן ודמי כיסוי קטנים; ללכת ישר אחרי ה־Sky לפני הרעש של Center-gai.</p><p>Tokyo · のんべい横丁 · Days 3/9</p>]]></description>
+<Point>
+<coordinates>139.701600,35.659200,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Odaiba / DiverCity Gundam</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>お台場</value></Data>
+  <Data name="Days"><value>4/9</value></Data>
+  <Data name="Place ID"><value>odaiba</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>אי מלאכותי במפרץ — גאנדאם יוניקורן 20 מ׳, קניון DiverCity, פסל חירות רטרו. חובה: מופעי טרנספורמציה 11:00/13:00/15:00/17:00 (מופעי אור אחרי החשכה). טיפ: הפארק הימי ממסגר את Rainbow Bridge עם העיר מאחור — הכי יפה באור מאוחר.</p><p>Tokyo · お台場 · Days 4/9</p>]]></description>
+<Point>
+<coordinates>139.775500,35.625100,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Omoide Yokocho (Memory Lane)</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>思い出横丁</value></Data>
+  <Data name="Days"><value>2/9</value></Data>
+  <Data name="Place ID"><value>omoide-yokocho</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>סמטת יקיטורי ממלחמת העולם השנייה, פנסים אדומים מתחת למסילות שינג׳וקו. חובה: שיפודי פחם + בירה, כתף-אל-כתף בדלפק. טיפ: כמעט רק מזומן ודמי ישיבה נורמליים; לשבת לפני 21:00.</p><p>Tokyo · 思い出横丁 · Days 2/9</p>]]></description>
+<Point>
+<coordinates>139.699500,35.693500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Omotesando</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>shopping</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>表参道</value></Data>
+  <Data name="Days"><value>3/9</value></Data>
+  <Data name="Place ID"><value>omotesando</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>שדרת הזלקובה של חנויות דגל — השאנז־אליזה של טוקיו. חובה: בניין הקריסטל של פראדה וחזית דיור של SANAA. טיפ: חנויות דגל עושות tax-free מעל 5,000 ין — דרכון בדלפק.</p><p>Tokyo · 表参道 · Days 3/9</p>]]></description>
+<Point>
+<coordinates>139.712200,35.665200,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Roppongi</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>nightlife</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>六本木</value></Data>
+  <Data name="Days"><value>4/9, 21/9</value></Data>
+  <Data name="Place ID"><value>roppongi</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>רובע חיי לילה ומסעדות. ערב טוב אחרי מגדל טוקיו.</p><p>Tokyo · 六本木 · Days 4/9, 21/9</p>]]></description>
+<Point>
+<coordinates>139.731400,35.662800,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Ryogoku Kokugikan</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>両国国技館</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>ryogoku</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>אצטדיון הסומו הלאומי — טורניר ספטמבר (Aki basho) רץ ~13–27/9 וחופף ללינה השנייה בטוקיו. חובה: אחר־צהריים בזירה אם מופיעים כרטיסים. טיפ: לא הוזמן במסלול; לבדוק החזרות בבוקר אצל איגוד הסומו / NHK.</p><p>Tokyo · 両国国技館</p>]]></description>
+<Point>
+<coordinates>139.793500,35.697100,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Senkyaku Banrai (Toyosu)</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>market</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>千客万来</value></Data>
+  <Data name="Days"><value>4/9</value></Data>
+  <Data name="Place ID"><value>senkyaku-banrai</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מתחם אוכל ליד שוק טויוסו. צהריים רגועים אחרי teamLab Planets.</p><p>Tokyo · 千客万来 · Days 4/9</p>]]></description>
+<Point>
+<coordinates>139.784200,35.645000,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Shiba Park</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>芝公園</value></Data>
+  <Data name="Days"><value>21/9</value></Data>
+  <Data name="Place ID"><value>shiba-park</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מדשאות מול המגדל האדום. זווית לילה רחבה ופסטורלית.</p><p>Tokyo · 芝公園 · Days 21/9</p>]]></description>
+<Point>
+<coordinates>139.748500,35.654800,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Shibuya Crossing</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>icon</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>渋谷スクランブル交差点</value></Data>
+  <Data name="Days"><value>3/9</value></Data>
+  <Data name="Place ID"><value>shibuya-crossing</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>עד 3,000 איש בכל אור ירוק בהצלבה הסואנת בעולם, מתחת למסכי וידאו. חובה: חלון הסטארבקס ב־Tsutaya או Mag&#x27;s Park מעל 109. טיפ: לחצות כמה פעמים — לילות גשם עם מטריות הם הכי קולנועיים.</p><p>Tokyo · 渋谷スクランブル交差点 · Days 3/9</p>]]></description>
+<Point>
+<coordinates>139.700500,35.659500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Shibuya PARCO</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>shopping</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>渋谷PARCO</value></Data>
+  <Data name="Days"><value>3/9</value></Data>
+  <Data name="Place ID"><value>shibuya-parco</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>קומה 6 לחובבי פופ: Nintendo, Pokémon Center, JUMP Shop ו־Capcom.</p><p>Tokyo · 渋谷PARCO · Days 3/9</p>]]></description>
+<Point>
+<coordinates>139.698300,35.661900,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Shibuya Sky</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>view</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>渋谷スカイ</value></Data>
+  <Data name="Days"><value>3/9</value></Data>
+  <Data name="Place ID"><value>shibuya-sky</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>דק פתוח 229 מ׳ מעל ההצלבה — פינות זכוכית, מדשאת גג, פוג׳י בשקיעה כשבהיר. חובה: הפינה בדיוק מעל ההצלבה בשעה הזהובה. טיפ: כרטיסים נפתחים בדיוק 4 שבועות מראש בחצות יפן ונחטפים בדקות — ב־3/9 שקיעה ~18:05, כניסה 17:00–17:30. בלי חצובות.</p><p>Tokyo · 渋谷スカイ · Days 3/9</p>]]></description>
+<Point>
+<coordinates>139.702400,35.658500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Shimokitazawa</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>shopping</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>下北沢</value></Data>
+  <Data name="Days"><value>6/9</value></Data>
+  <Data name="Place ID"><value>shimokitazawa</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>רובע וינטג׳, תקליטים וקפה אינדי. לא לפספס את Bonus Track / Reload.</p><p>Tokyo · 下北沢 · Days 6/9</p>]]></description>
+<Point>
+<coordinates>139.668300,35.661600,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Shin-Okubo Koreatown</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>新大久保</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>shin-okubo</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>קוריאה־טאון של טוקיו, 10 דק׳ צפונית למלון. אוכל רחוב וקוסמטיקה אם יש כוח.</p><p>Tokyo · 新大久保</p>]]></description>
+<Point>
+<coordinates>139.700100,35.701300,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Shinjuku</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>新宿</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>shinjuku</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>חדר המנוע הניאון של טוקיו — התחנה העמוסה בעולם, חנויות ענק וקומות איזאקאיה. חובה: ניאון יסוקוני־דורי משער קבוקיצ׳ו. טיפ: לנווט לפי ציוני דרך ביציאה המזרחית; התחנה עצמה בולעת מתחילים.</p><p>Tokyo · 新宿</p>]]></description>
+<Point>
+<coordinates>139.703400,35.693800,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Shinjuku Golden Gai</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>nightlife</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>新宿ゴールデン街</value></Data>
+  <Data name="Days"><value>2/9</value></Data>
+  <Data name="Place ID"><value>golden-gai</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>שש סמטאות פנסים, 200+ ברים בגודל ארון — לכל אחד נושא וקבועים. חובה: לבחור דלת לפי המוזיקה ולדבר עם הבעלים. טיפ: לבדוק שלטי דמי כיסוי (~500–1,000 ין נורמלי); כוס אחת לכל בר, ואז לעבור.</p><p>Tokyo · 新宿ゴールデン街 · Days 2/9</p>]]></description>
+<Point>
+<coordinates>139.704700,35.693800,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Shinjuku Gyoen</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>新宿御苑</value></Data>
+  <Data name="Days"><value>2/9</value></Data>
+  <Data name="Place ID"><value>shinjuku-gyoen</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>גן אימפריאלי לשעבר שמשלב נוף צרפתי, אנגלי ויפני — הנשימה העמוקה ביותר בטוקיו. חובה: הבריכה והביתן בגן היפני. טיפ: 500 ין; עד סוף ספטמבר פתוח עד 18:00 (כניסה אחרונה 17:30), סגור בימי שני; בלי אלכוהול.</p><p>Tokyo · 新宿御苑 · Days 2/9</p>]]></description>
+<Point>
+<coordinates>139.710100,35.685200,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Shinkyo Bridge</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>icon</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>神橋</value></Data>
+  <Data name="Days"><value>22/9</value></Data>
+  <Data name="Place ID"><value>shinkyo</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>הגשר האדום על הנהר בכניסה למתחם המקדשים בניקו. עצירת צילום.</p><p>Tokyo · 神橋 · Days 22/9</p>]]></description>
+<Point>
+<coordinates>139.600400,36.753600,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Street Kart Tokyo</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>ストリートカート東京</value></Data>
+  <Data name="Days"><value>6/9</value></Data>
+  <Data name="Place ID"><value>street-kart</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>קארטים אמיתיים בתחפושת שזולגים בתוך התנועה בלילה — אבסורדי, רועש, בלתי נשכח. חובה: לנהוג בקניוני הניאון בתחפושת מלאה. טיפ: IDP פיזי לפי אמנת 1949 + דרכון חובה (רישיון ישראלי או דיגיטלי = סירוב בלי החזר); תור ערב ~19:00 ולהתלבש חם.</p><p>Tokyo · ストリートカート東京 · Days 6/9</p>]]></description>
+<Point>
+<coordinates>139.701500,35.658500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Takeshita Street</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>竹下通り</value></Data>
+  <Data name="Days"><value>3/9</value></Data>
+  <Data name="Place ID"><value>takeshita</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מסדרון אופנת הנוער של הראג׳וקו, 350 מ׳ — קרפים, פוריקורה ומרצ׳ איידולים. חובה: קרפ קצפת מ־Marion Crepes. טיפ: חנויות נפתחות ~10:00–10:30 וזה כתף-אל-כתף עד הצהריים — לבוא ממש בפתיחה.</p><p>Tokyo · 竹下通り · Days 3/9</p>]]></description>
+<Point>
+<coordinates>139.705000,35.670200,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>teamLab Borderless</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>チームラボボーダレス</value></Data>
+  <Data name="Days"><value>21/9</value></Data>
+  <Data name="Place ID"><value>teamlab-borderless</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מוזיאון דיגיטלי בתוך Azabudai Hills. חדרים בלי סוף; כרטיס עם שעה אם הולכים.</p><p>Tokyo · チームラボボーダレス · Days 21/9</p>]]></description>
+<Point>
+<coordinates>139.740300,35.660600,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>teamLab Planets Tokyo</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>チームラボプラネッツ</value></Data>
+  <Data name="Days"><value>4/9</value></Data>
+  <Data name="Place ID"><value>teamlab-planets</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>אמנות דיגיטלית יחפה שצועדים בתוכה — מים עד הברך עם קוי מוקרן, חדרי מראות, גן פרחים צף. חובה: אורות הקוי מתפזרים סביב הקרסוליים בחדר המים. טיפ: חובה כרטיס עם שעה; מכנסיים שאפשר להפשיל, לוקרים במקום, כשעה וחצי–שעתיים.</p><p>Tokyo · チームラボプラネッツ · Days 4/9</p>]]></description>
+<Point>
+<coordinates>139.786800,35.649000,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tofu Ukai stairs (Tokyo Tower)</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>view</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>とうふ屋うかい</value></Data>
+  <Data name="Days"><value>21/9</value></Data>
+  <Data name="Place ID"><value>tofu-ukai</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>המדרגות המפורסמות לצילום טוקיו טאוור מלמטה למעלה, ליד המסעדה.</p><p>Tokyo · とうふ屋うかい · Days 21/9</p>]]></description>
+<Point>
+<coordinates>139.744800,35.657300,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tokyo Character Street</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>shopping</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>東京キャラクターストリート</value></Data>
+  <Data name="Days"><value>25/9</value></Data>
+  <Data name="Place ID"><value>tokyo-character-street</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>שורת חנויות רשמיות (Pokémon, Ghibli, Sanrio, JUMP) במרתף תחנת טוקיו.</p><p>Tokyo · 東京キャラクターストリート · Days 25/9</p>]]></description>
+<Point>
+<coordinates>139.768500,35.681000,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tokyo DisneySea</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>東京ディズニーシー</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>disneysea</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>פארק Disney ייחודי — לא במסלול שלנו.</p><p>Tokyo · 東京ディズニーシー</p>]]></description>
+<Point>
+<coordinates>139.885100,35.626700,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tokyo Metropolitan Government Building</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>view</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>東京都庁</value></Data>
+  <Data name="Days"><value>2/9</value></Data>
+  <Data name="Place ID"><value>tocho</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מצפה חינם בגובה 202 מ׳ בבניין העירייה התאום. חובה: רשת הניאון של שינג׳וקו בשעה כחולה — צללית פוג׳י ביום בהיר. טיפ: מגדל דרום עד 22:00; בידוק קצר, בלי הזמנה.</p><p>Tokyo · 東京都庁 · Days 2/9</p>]]></description>
+<Point>
+<coordinates>139.691700,35.689600,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tokyo Skytree</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>view</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>東京スカイツリー</value></Data>
+  <Data name="Days"><value>5/9</value></Data>
+  <Data name="Place ID"><value>skytree</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>המבנה הגבוה ביפן (634 מ׳) מעל קניון Solamachi. הזווית החינמית הכי טובה: גדת הסומידה וגשר Jukken בדרך. טיפ: הדקים אופציונליים — אם עולים, כרטיס עם שעה אונליין מדלג על התור.</p><p>Tokyo · 東京スカイツリー · Days 5/9</p>]]></description>
+<Point>
+<coordinates>139.810700,35.710100,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tokyo Tower</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>view</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>東京タワー</value></Data>
+  <Data name="Days"><value>4/9, 21/9</value></Data>
+  <Data name="Place ID"><value>tokyo-tower</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>המגדל האדום הקלאסי של טוקיו. הכי יפה מואר בלילה.</p><p>Tokyo · 東京タワー · Days 4/9, 21/9</p>]]></description>
+<Point>
+<coordinates>139.745400,35.658600,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tokyu Plaza Omotesando (Omohara Forest)</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>icon</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>トウキョウプラザ表参道原宿</value></Data>
+  <Data name="Days"><value>3/9</value></Data>
+  <Data name="Place ID"><value>omohara-forest</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>קניון המראות בפינת Omotesando / Meiji-dori שגג ״Omohara Forest״ שלו ממסגר את הראג׳וקו בהשתקפויות. חובה: הסלפי במדרגות הנעות והעצים מעל Takeshita. טיפ: 10 דקות מספיקות; החנויות נפתחות ~11:00 אבל הגג הוא עצירת צילום, לא קניון.</p><p>Tokyo · トウキョウプラザ表参道原宿 · Days 3/9</p>]]></description>
+<Point>
+<coordinates>139.705800,35.668900,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tsukiji Outer Market</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>築地場外市場</value></Data>
+  <Data name="Days"><value>4/9, 23/9</value></Data>
+  <Data name="Place ID"><value>tsukiji</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>הסמטאות החיצוניות של שוק הדגים הישן עדיין אורזות 100+ דוכני אוכל וחנויות סכינים. חובה: סושי בעמידה או קייסנדון, טמאגויאקי על מקל לקינוח. טיפ: כמעט רק מזומן ומתדלדל עד ~14:00 — שטרות קטנים, אוכלים ליד הדוכן לא בהליכה.</p><p>Tokyo · 築地場外市場 · Days 4/9, 23/9</p>]]></description>
+<Point>
+<coordinates>139.770700,35.665400,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Ueno Park</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>上野公園</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>ueno-park</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>פארק גדול עם מוזיאונים ומקדשים. לא ביום מתוכנן, רק אם יש עודף זמן.</p><p>Tokyo · 上野公園</p>]]></description>
+<Point>
+<coordinates>139.773300,35.714700,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Yoyogi Park</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>代々木公園</value></Data>
+  <Data name="Days"><value>3/9</value></Data>
+  <Data name="Place ID"><value>yoyogi</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>פארק ירוק בין מקדש מייג׳י להראג׳וקו. מעבר קצר בדרך ל־Takeshita.</p><p>Tokyo · 代々木公園 · Days 3/9</p>]]></description>
+<Point>
+<coordinates>139.694900,35.671100,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Yurakucho Yakitori Alley</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>有楽町 焼き鳥横丁</value></Data>
+  <Data name="Days"><value>23/9</value></Data>
+  <Data name="Place ID"><value>yurakucho</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>סמטאות יקיטורי ואיזאקאיה מתחת למסילות JR, ליד גינזה.</p><p>Tokyo · 有楽町 焼き鳥横丁 · Days 23/9</p>]]></description>
+<Point>
+<coordinates>139.763000,35.675100,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Zojo-ji Temple</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>shrine</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>増上寺</value></Data>
+  <Data name="Days"><value>4/9, 21/9</value></Data>
+  <Data name="Place ID"><value>zojoji</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מקדש משפחת טוקוגאווה בטוקיו, עם שער Sangedatsumon ענק ושורות ג׳יזו תחת מגדל טוקיו. חובה: השער ממסגר את הסריג הכתום אחרי החשכה. טיפ: השטח חינם ופתוח עד מאוחר; שתי דקות מפארק שיבא — קודם השער, אחר כך המדשאות.</p><p>Tokyo · 増上寺 · Days 4/9, 21/9</p>]]></description>
+<Point>
+<coordinates>139.748400,35.657400,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Chureito Pagoda</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>icon</value></Data>
+  <Data name="City"><value>Kawaguchiko</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>忠霊塔</value></Data>
+  <Data name="Days"><value>8/9</value></Data>
+  <Data name="Place ID"><value>chureito</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>פגודה אדומה מול פוג׳י. כ־400 מדרגות; הכי יפה בזריחה לפני Fuji-Q.</p><p>Kawaguchiko · 忠霊塔 · Days 8/9</p>]]></description>
+<Point>
+<coordinates>138.801300,35.501200,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Fuji-Q Highland</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Kawaguchiko</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>富士急ハイランド</value></Data>
+  <Data name="Days"><value>8/9</value></Data>
+  <Data name="Place ID"><value>fuji-q</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>פארק רכבות הרים מהקשים בעולם. המלון צמוד לשער.</p><p>Kawaguchiko · 富士急ハイランド · Days 8/9</p>]]></description>
+<Point>
+<coordinates>138.780600,35.487100,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Lawson Kawaguchiko Station</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>icon</value></Data>
+  <Data name="City"><value>Kawaguchiko</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>ローソン河口湖駅前</value></Data>
+  <Data name="Days"><value>7/9, 8/9, 9/9</value></Data>
+  <Data name="Place ID"><value>fuji-lawson</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>חנות הנוחות המפורסמת עם הר פוג׳י ברקע. צילום של 30 שניות ליד התחנה.</p><p>Kawaguchiko · ローソン河口湖駅前 · Days 7/9, 8/9, 9/9</p>]]></description>
+<Point>
+<coordinates>138.768900,35.498300,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Mount Fuji Panoramic Ropeway</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>view</value></Data>
+  <Data name="City"><value>Kawaguchiko</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>富士山パノラマロープウェイ</value></Data>
+  <Data name="Days"><value>7/9</value></Data>
+  <Data name="Place ID"><value>fuji-panoramic-ropeway</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>רכבל קצר לנקודת תצפית על האגם ופוג׳י מלמעלה.</p><p>Kawaguchiko · 富士山パノラマロープウェイ · Days 7/9</p>]]></description>
+<Point>
+<coordinates>138.760700,35.505400,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Oishi Park</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>view</value></Data>
+  <Data name="City"><value>Kawaguchiko</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>大石公園</value></Data>
+  <Data name="Days"><value>7/9</value></Data>
+  <Data name="Place ID"><value>oishi-park</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>פארק על שפת האגם מול פוג׳י. התצפית הכי פתוחה בקו האדום.</p><p>Kawaguchiko · 大石公園 · Days 7/9</p>]]></description>
+<Point>
+<coordinates>138.747000,35.524500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Gotemba Premium Outlets</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>shopping</value></Data>
+  <Data name="City"><value>Hakone</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>御殿場プレミアム・アウトレット</value></Data>
+  <Data name="Days"><value>9/9</value></Data>
+  <Data name="Place ID"><value>gotemba-outlets</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>אאוטלט גדול עם נוף לפוג׳י. עצירת קניות בדרך מקוואגוצ׳יקו להקונה.</p><p>Hakone · 御殿場プレミアム・アウトレット · Days 9/9</p>]]></description>
+<Point>
+<coordinates>138.936500,35.308600,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Hakone Open-Air Museum</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Hakone</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>箱根彫刻の森美術館</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>open-air</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מוזיאון פסלים באוויר הפתוח בהקונה.</p><p>Hakone · 箱根彫刻の森美術館</p>]]></description>
+<Point>
+<coordinates>139.051500,35.244500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Hakone Shrine</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>shrine</value></Data>
+  <Data name="City"><value>Hakone</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>箱根神社</value></Data>
+  <Data name="Days"><value>10/9</value></Data>
+  <Data name="Place ID"><value>hakone-shrine</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>הטוריי האדום הצף באגם אשי. צילום הקלאסיקה של הקונה.</p><p>Hakone · 箱根神社 · Days 10/9</p>]]></description>
+<Point>
+<coordinates>139.025600,35.205100,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Hakone-Yumoto</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Hakone</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>箱根湯本</value></Data>
+  <Data name="Days"><value>9/9, 10/9</value></Data>
+  <Data name="Place ID"><value>hakone-yumoto</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>עיירת האונסן של הקונה ליד התחנה. חנויות, קפה ומסלול לריוקאן.</p><p>Hakone · 箱根湯本 · Days 9/9, 10/9</p>]]></description>
+<Point>
+<coordinates>139.106800,35.233500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Lake Ashi Pirate Ship</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Hakone</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>箱根海賊船</value></Data>
+  <Data name="Days"><value>10/9</value></Data>
+  <Data name="Place ID"><value>lake-ashi</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>שיט תיירותי על האגם בספינת פיראטים, בין המקדש לרכבל.</p><p>Hakone · 箱根海賊船 · Days 10/9</p>]]></description>
+<Point>
+<coordinates>139.025000,35.206500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Owakudani</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>nature</value></Data>
+  <Data name="City"><value>Hakone</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>大涌谷</value></Data>
+  <Data name="Days"><value>10/9</value></Data>
+  <Data name="Place ID"><value>owakudani</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>עמק געשי בהקונה: קיטור, ריח גופרית וביצים שחורות. מגיעים ברכבל.</p><p>Hakone · 大涌谷 · Days 10/9</p>]]></description>
+<Point>
+<coordinates>139.020400,35.242400,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Adashino Nenbutsu-ji</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>temple</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>化野念仏寺</value></Data>
+  <Data name="Days"><value>13/9</value></Data>
+  <Data name="Place ID"><value>adashino</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>במבוק ואלפי פסלי בודהה באבן. ליד אוטגי, בדרך לארשיאמה.</p><p>Kyoto · 化野念仏寺 · Days 13/9</p>]]></description>
+<Point>
+<coordinates>135.664500,35.026700,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Arashiyama Bamboo Grove</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>nature</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>竹林の小径</value></Data>
+  <Data name="Days"><value>13/9</value></Data>
+  <Data name="Place ID"><value>bamboo</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>שביל הבמבוק האייקוני של ארשיאמה. עמוס, אבל שווה כמה דקות.</p><p>Kyoto · 竹林の小径 · Days 13/9</p>]]></description>
+<Point>
+<coordinates>135.672100,35.017300,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Byodo-in</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>temple</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>平等院</value></Data>
+  <Data name="Days"><value>12/9</value></Data>
+  <Data name="Place ID"><value>byodoin</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>היכל הפניקס באוג׳י — המקדש שמופיע על מטבע ה־10 ין.</p><p>Kyoto · 平等院 · Days 12/9</p>]]></description>
+<Point>
+<coordinates>135.807700,34.889400,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Fushimi Inari Taisha</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>shrine</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>伏見稲荷大社</value></Data>
+  <Data name="Days"><value>12/9</value></Data>
+  <Data name="Place ID"><value>fushimi-inari</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>אלפי שערי טוריי אדומים במעלה ההר. להגיע מוקדם לפני הקהל.</p><p>Kyoto · 伏見稲荷大社 · Days 12/9</p>]]></description>
+<Point>
+<coordinates>135.772700,34.967100,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Ginkaku-ji</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>temple</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>銀閣寺</value></Data>
+  <Data name="Days"><value>15/9</value></Data>
+  <Data name="Place ID"><value>ginkakuji</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>ביתן הכסף: מקדש זן עם גן חול, לא מצופה כסף באמת.</p><p>Kyoto · 銀閣寺 · Days 15/9</p>]]></description>
+<Point>
+<coordinates>135.798600,35.026400,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Gion</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>neighborhood</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>祇園</value></Data>
+  <Data name="Days"><value>11/9</value></Data>
+  <Data name="Place ID"><value>gion</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>רובע הגיישות של קיוטו. לצלם בכבוד, בלי לרדוף אחרי מישהי בקימונו.</p><p>Kyoto · 祇園 · Days 11/9</p>]]></description>
+<Point>
+<coordinates>135.778800,35.003700,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Hirobun Nagashi Somen</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>料理旅館 ひろ文（流しそうめん）</value></Data>
+  <Data name="Days"><value>14/9</value></Data>
+  <Data name="Place ID"><value>hirobun</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>נגאשי סומן: אטריות קרות על במת נחל. בלי הזמנה, משלמים במזומן.</p><p>Kyoto · 料理旅館 ひろ文（流しそうめん） · Days 14/9</p>]]></description>
+<Point>
+<coordinates>135.763200,35.122000,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Iwatayama Monkey Park</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>嵐山モンキーパーク</value></Data>
+  <Data name="Days"><value>13/9</value></Data>
+  <Data name="Place ID"><value>monkey-park</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>עלייה קצרה לקופים חופשיים ונוף על קיוטו מלמעלה.</p><p>Kyoto · 嵐山モンキーパーク · Days 13/9</p>]]></description>
+<Point>
+<coordinates>135.676100,35.011700,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kennin-ji</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>temple</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>建仁寺</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>kenninji</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מקדש הזן העתיק ביותר בקיוטו.</p><p>Kyoto · 建仁寺</p>]]></description>
+<Point>
+<coordinates>135.773500,35.000800,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kifune Shrine</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>shrine</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>貴船神社</value></Data>
+  <Data name="Days"><value>14/9</value></Data>
+  <Data name="Place ID"><value>kifune</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מקדש בהר עם מדרגות פנסים אדומים. האווירה של קיבונה.</p><p>Kyoto · 貴船神社 · Days 14/9</p>]]></description>
+<Point>
+<coordinates>135.763100,35.121600,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kimono Forest</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>icon</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>キモノフォレスト</value></Data>
+  <Data name="Days"><value>13/9</value></Data>
+  <Data name="Place ID"><value>kimono-forest</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>עמודי קימונו מוארים ליד תחנת ארשיאמה. עצירת צילום קצרה.</p><p>Kyoto · キモノフォレスト · Days 13/9</p>]]></description>
+<Point>
+<coordinates>135.677500,35.015300,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kinkaku-ji</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>temple</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>金閣寺</value></Data>
+  <Data name="Days"><value>15/9</value></Data>
+  <Data name="Place ID"><value>kinkakuji</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>ביתן הזהב — המקדש הכי מצולם בקיוטו, מצופה עלה זהב מעל בריכה.</p><p>Kyoto · 金閣寺 · Days 15/9</p>]]></description>
+<Point>
+<coordinates>135.729200,35.039400,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kiyomizu-dera</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>temple</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>清水寺</value></Data>
+  <Data name="Days"><value>11/9</value></Data>
+  <Data name="Place ID"><value>kiyomizu</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מקדש עם במה מעץ מעל העיר. הכי יפה לקראת שקיעה.</p><p>Kyoto · 清水寺 · Days 11/9</p>]]></description>
+<Point>
+<coordinates>135.785000,34.994900,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kurama Onsen</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>onsen</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>鞍馬温泉</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>kurama-onsen</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>אונסן בהרים ליד קורמה.</p><p>Kyoto · 鞍馬温泉</p>]]></description>
+<Point>
+<coordinates>135.772500,35.112800,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kurama-dera</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>temple</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>鞍馬寺</value></Data>
+  <Data name="Days"><value>14/9</value></Data>
+  <Data name="Place ID"><value>kurama-dera</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מקדש הר בסוף שביל היער מקיבונה לקורמה.</p><p>Kyoto · 鞍馬寺 · Days 14/9</p>]]></description>
+<Point>
+<coordinates>135.770900,35.118100,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Nanzen-ji</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>temple</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>南禅寺</value></Data>
+  <Data name="Days"><value>15/9</value></Data>
+  <Data name="Place ID"><value>nanzenji</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מקדש זן עם אקוודוקט לבנים. צילום שונה משאר קיוטו.</p><p>Kyoto · 南禅寺 · Days 15/9</p>]]></description>
+<Point>
+<coordinates>135.794500,35.011600,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Nishiki Market</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>錦市場</value></Data>
+  <Data name="Days"><value>12/9</value></Data>
+  <Data name="Place ID"><value>nishiki</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>“המטבח של קיוטו”: שוק מקורה עם טעימות ואוכל רחוב. דוכנים נסגרים ~17:30.</p><p>Kyoto · 錦市場 · Days 12/9</p>]]></description>
+<Point>
+<coordinates>135.764900,35.005000,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Otagi Nenbutsu-ji</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>temple</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>愛宕念仏寺</value></Data>
+  <Data name="Days"><value>13/9</value></Data>
+  <Data name="Place ID"><value>otagi</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>1,200 פסלי נזירים מחייכים באבן. מקדש שקט ומקסים מחוץ לזרם.</p><p>Kyoto · 愛宕念仏寺 · Days 13/9</p>]]></description>
+<Point>
+<coordinates>135.662800,35.031700,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Philosopher’s Path</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>nature</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>哲学の道</value></Data>
+  <Data name="Days"><value>15/9</value></Data>
+  <Data name="Place ID"><value>philosophers-path</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>הליכה רגועה לאורך תעלה בין מקדשים במזרח קיוטו.</p><p>Kyoto · 哲学の道 · Days 15/9</p>]]></description>
+<Point>
+<coordinates>135.795500,35.020500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Pontocho Alley</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>先斗町</value></Data>
+  <Data name="Days"><value>11/9</value></Data>
+  <Data name="Place ID"><value>pontocho</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>סמטת מסעדות צרה ליד נהר קמוגאווה. ערב אוכל קלאסי.</p><p>Kyoto · 先斗町 · Days 11/9</p>]]></description>
+<Point>
+<coordinates>135.771200,35.004500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Saga Toriimoto</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>neighborhood</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>嵯峨鳥居本</value></Data>
+  <Data name="Days"><value>13/9</value></Data>
+  <Data name="Place ID"><value>saga-toriimoto</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>רחוב גישה משומר עם בתים ישנים בין המקדשים לארשיאמה.</p><p>Kyoto · 嵯峨鳥居本 · Days 13/9</p>]]></description>
+<Point>
+<coordinates>135.668000,35.025500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Sannenzaka &amp; Ninenzaka</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>三年坂・二年坂</value></Data>
+  <Data name="Days"><value>11/9</value></Data>
+  <Data name="Place ID"><value>sannenzaka</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>רחובות אבן משופעים עם בתים מסורתיים. גלויה חיה בין קיומיזו לגיון.</p><p>Kyoto · 三年坂・二年坂 · Days 11/9</p>]]></description>
+<Point>
+<coordinates>135.781500,34.995800,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>teamLab Biovortex Kyoto</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>チームラボ バイオヴォルテックス 京都</value></Data>
+  <Data name="Days"><value>14/9</value></Data>
+  <Data name="Place ID"><value>teamlab-biovortex</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>ה־teamLab הגדול ביפן, ליד תחנת קיוטו. כרטיס כניסה 18:00–18:30 ב־14/9.</p><p>Kyoto · チームラボ バイオヴォルテックス 京都 · Days 14/9</p>]]></description>
+<Point>
+<coordinates>135.756800,34.982800,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tenryu-ji</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>temple</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>天龍寺</value></Data>
+  <Data name="Days"><value>13/9</value></Data>
+  <Data name="Place ID"><value>tenryuji</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>גן זן UNESCO ליד חורשת הבמבוק. שקט יחסית לצילום.</p><p>Kyoto · 天龍寺 · Days 13/9</p>]]></description>
+<Point>
+<coordinates>135.673600,35.015600,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tofuku-ji</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>temple</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>東福寺</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>tofukuji</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מקדש זן ליד פושימי — גשר Tsutenkyo וגנים.</p><p>Kyoto · 東福寺</p>]]></description>
+<Point>
+<coordinates>135.780000,34.960600,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Togetsukyo Bridge</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>nature</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>渡月橋</value></Data>
+  <Data name="Days"><value>13/9</value></Data>
+  <Data name="Place ID"><value>togetsukyo</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>הגשר הראשי של ארשיאמה מעל הנהר. נקודת הציון של הרובע.</p><p>Kyoto · 渡月橋 · Days 13/9</p>]]></description>
+<Point>
+<coordinates>135.677800,35.013500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Uji / Byodo-in</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>temple</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>宇治・平等院</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>uji</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>בירת המאצ׳ה של יפן, עם מקדש Byodo-in.</p><p>Kyoto · 宇治・平等院</p>]]></description>
+<Point>
+<coordinates>135.807700,34.889400,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Uji Omotesando</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>宇治表参道</value></Data>
+  <Data name="Days"><value>12/9</value></Data>
+  <Data name="Place ID"><value>uji-omotesando</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>רחוב חנויות תה היסטורי. המקום לטעום מאצ׳ה וקינוחים.</p><p>Kyoto · 宇治表参道 · Days 12/9</p>]]></description>
+<Point>
+<coordinates>135.808800,34.890500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Uji River</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>nature</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>宇治川</value></Data>
+  <Data name="Days"><value>12/9</value></Data>
+  <Data name="Place ID"><value>uji-river</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>טיילת וגשרים מול המקדש באוג׳י. הליכה קצרה אחרי Byodo-in.</p><p>Kyoto · 宇治川 · Days 12/9</p>]]></description>
+<Point>
+<coordinates>135.809500,34.891200,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Amerikamura</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>shopping</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>アメリカ村</value></Data>
+  <Data name="Days"><value>17/9</value></Data>
+  <Data name="Place ID"><value>amerikamura</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>רובע אופנת נוער וערב קל ליד שינסאיבאשי.</p><p>Osaka · アメリカ村 · Days 17/9</p>]]></description>
+<Point>
+<coordinates>135.498500,34.672800,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Dotonbori</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>道頓堀</value></Data>
+  <Data name="Days"><value>15/9, 19/9</value></Data>
+  <Data name="Place ID"><value>dotonbori</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>נהר הניאון של אוסקה: שלטי גיזה, טקאויאקי ואוכל רחוב עד הלילה.</p><p>Osaka · 道頓堀 · Days 15/9, 19/9</p>]]></description>
+<Point>
+<coordinates>135.501300,34.668700,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Hozenji Yokocho</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>法善寺横丁</value></Data>
+  <Data name="Days"><value>15/9, 18/9</value></Data>
+  <Data name="Place ID"><value>hozenji</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>סמטת פנסים עם אזוב ליד דוטונבורי. שקטה יותר מהנהר הראשי.</p><p>Osaka · 法善寺横丁 · Days 15/9, 18/9</p>]]></description>
+<Point>
+<coordinates>135.502500,34.667800,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Instant Ramen Museum</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>カップヌードルミュージアム池田</value></Data>
+  <Data name="Days"><value>18/9</value></Data>
+  <Data name="Place ID"><value>ramen-museum</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מוזיאון שבו מכינים את ה־Cup Noodle שלכם. כיף קליל באיקדה.</p><p>Osaka · カップヌードルミュージアム池田 · Days 18/9</p>]]></description>
+<Point>
+<coordinates>135.425800,34.819500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kasuga Taisha</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>shrine</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>春日大社</value></Data>
+  <Data name="Days"><value>17/9</value></Data>
+  <Data name="Place ID"><value>kasuga</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מקדש בנארה עם אלפי פנסי אבן וברונזה ביער.</p><p>Osaka · 春日大社 · Days 17/9</p>]]></description>
+<Point>
+<coordinates>135.848200,34.681400,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kitano Ijinkan</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>北野異人館</value></Data>
+  <Data name="Days"><value>20/9</value></Data>
+  <Data name="Place ID"><value>kitano-ijinkan</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>בתי מגורים מערביים ישנים על גבעת קיטנו. קובה של המאה ה־19.</p><p>Osaka · 北野異人館 · Days 20/9</p>]]></description>
+<Point>
+<coordinates>135.190000,34.698500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kuromon Market</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>黒門市場</value></Data>
+  <Data name="Days"><value>18/9</value></Data>
+  <Data name="Place ID"><value>kuromon</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>שוק הדגים והאוכל של אוסקה. שיפודים, פירות ים ונשנושים.</p><p>Osaka · 黒門市場 · Days 18/9</p>]]></description>
+<Point>
+<coordinates>135.506400,34.666400,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Meriken Park &amp; Harborland</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>view</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>メリケンパーク・ハーバーランド</value></Data>
+  <Data name="Days"><value>20/9</value></Data>
+  <Data name="Place ID"><value>meriken-park</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>פארק הנמל של קובה: מגדל פורט, טיילת וקניות Harborland.</p><p>Osaka · メリケンパーク・ハーバーランド · Days 20/9</p>]]></description>
+<Point>
+<coordinates>135.186500,34.682500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Nankinmachi (Kobe Chinatown)</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>南京町</value></Data>
+  <Data name="Days"><value>20/9</value></Data>
+  <Data name="Place ID"><value>nankinmachi</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>צ׳יינהטאון הקטן של קובה. נשנושים בין מוטומאצ׳י לסנומיה.</p><p>Osaka · 南京町 · Days 20/9</p>]]></description>
+<Point>
+<coordinates>135.189000,34.688500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Nara Park / Todai-ji</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>奈良公園・東大寺</value></Data>
+  <Data name="Days"><value>17/9</value></Data>
+  <Data name="Place ID"><value>nara-park</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>פארק עם איילים חופשיים והבודהה הגדול בטודאי־ג׳י. לא להאכיל באגרסיביות.</p><p>Osaka · 奈良公園・東大寺 · Days 17/9</p>]]></description>
+<Point>
+<coordinates>135.839800,34.688900,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Nunobiki Herb Garden / Ropeway</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>view</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>布引ハーブ園</value></Data>
+  <Data name="Days"><value>20/9</value></Data>
+  <Data name="Place ID"><value>nunobiki</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>רכבל מעל קובה לגני תבלינים. נוף לעיר ולמפרץ.</p><p>Osaka · 布引ハーブ園 · Days 20/9</p>]]></description>
+<Point>
+<coordinates>135.190600,34.719400,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Osaka Castle</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>大阪城</value></Data>
+  <Data name="Days"><value>19/9</value></Data>
+  <Data name="Place ID"><value>osaka-castle</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>טירה משוחזרת בפארק גדול. בוקר טוב לפני שינסקאי.</p><p>Osaka · 大阪城 · Days 19/9</p>]]></description>
+<Point>
+<coordinates>135.526200,34.687300,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Shinsaibashi</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>shopping</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>心斎橋</value></Data>
+  <Data name="Days"><value>17/9</value></Data>
+  <Data name="Place ID"><value>shinsaibashi</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>ארקדת הקניות הראשית של אוסקה, ליד נמבה והמלון.</p><p>Osaka · 心斎橋 · Days 17/9</p>]]></description>
+<Point>
+<coordinates>135.501300,34.675000,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Shinsekai / Tsutenkaku</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>新世界・通天閣</value></Data>
+  <Data name="Days"><value>19/9</value></Data>
+  <Data name="Place ID"><value>shinsekai</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>אוסקה רטרו סביב מגדל צוטנקאקו: קושיקאצו וניאון ישן.</p><p>Osaka · 新世界・通天閣 · Days 19/9</p>]]></description>
+<Point>
+<coordinates>135.506300,34.652500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>teamLab Botanical Garden Osaka</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>チームラボ ボタニカルガーデン 大阪</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>teamlab-botanical</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>לא במסלול (נבחר Biovortex בקיוטו).</p><p>Osaka · チームラボ ボタニカルガーデン 大阪</p>]]></description>
+<Point>
+<coordinates>135.523600,34.611900,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tenjinbashi-suji</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>天神橋筋商店街</value></Data>
+  <Data name="Days"><value>18/9</value></Data>
+  <Data name="Place ID"><value>tenjinbashi</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>הארקדה הארוכה ביפן. קניות מקומיות מקורות לאורך קילומטרים.</p><p>Osaka · 天神橋筋商店街 · Days 18/9</p>]]></description>
+<Point>
+<coordinates>135.511000,34.704500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Umeda Sky Building</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>view</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>梅田スカイビル</value></Data>
+  <Data name="Days"><value>19/9</value></Data>
+  <Data name="Place ID"><value>umeda-sky</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>שני מגדלים מחוברים עם תצפית “גן מרחף” על הגג.</p><p>Osaka · 梅田スカイビル · Days 19/9</p>]]></description>
+<Point>
+<coordinates>135.489700,34.705500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Universal Studios Japan</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>ユニバーサル・スタジオ・ジャパン</value></Data>
+  <Data name="Days"><value>16/9</value></Data>
+  <Data name="Place ID"><value>usj</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>יוניברסל סטודיוס יפן — פארק שעשועים שלם. יש לכם Express Pass 7 ליום 16/9.</p><p>Osaka · ユニバーサル・スタジオ・ジャパン · Days 16/9</p>]]></description>
+<Point>
+<coordinates>135.432300,34.665400,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Itsukushima Shrine</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>shrine</value></Data>
+  <Data name="City"><value>Hiroshima</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>厳島神社</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>miyajima</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>הטורי הצף של מיאג׳ימה.</p><p>Hiroshima · 厳島神社</p>]]></description>
+<Point>
+<coordinates>132.319800,34.296000,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Mt. Misen Ropeway</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>view</value></Data>
+  <Data name="City"><value>Hiroshima</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>弥山ロープウェイ</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>misen</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>פסגת האי מיאג׳ימה.</p><p>Hiroshima · 弥山ロープウェイ</p>]]></description>
+<Point>
+<coordinates>132.318500,34.290500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Okonomi-mura</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Hiroshima</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>お好み村</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>okonomiyaki</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>אולם okonomiyaki ב־Hiroshima.</p><p>Hiroshima · お好み村</p>]]></description>
+<Point>
+<coordinates>132.462200,34.393800,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Peace Memorial Park</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Hiroshima</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>平和記念公園</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>peace-park</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>כיפת השלום והמוזיאון בהירושימה.</p><p>Hiroshima · 平和記念公園</p>]]></description>
+<Point>
+<coordinates>132.453600,34.395500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Shukkeien Garden</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Hiroshima</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>縮景園</value></Data>
+  <Data name="Days"><value></value></Data>
+  <Data name="Place ID"><value>shukkeien</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>גן נוף מיניאטורי.</p><p>Hiroshima · 縮景園</p>]]></description>
+<Point>
+<coordinates>132.467400,34.399500,0</coordinates>
+</Point>
+</Placemark>
+</Folder>
+</Document>
+</kml>

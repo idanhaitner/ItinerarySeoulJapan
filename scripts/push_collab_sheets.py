@@ -87,6 +87,7 @@ FONT_FAMILY = "Rubik"  # excellent Hebrew support in Google Sheets
 # Do NOT set tab colors — Google Sheets tints the A/B/C + row-number chrome from tab color.
 
 TAB_ORDER = ["לוח זמנים", "ימים", "מלונות", "להזמין", "רעיונות"]
+KEEP_TABS = set(TAB_ORDER) | {"אטרקציות"}  # My Maps import tab from export_mymaps_attractions.py
 OLD_TABS = {
     "Overview", "Days", "Timeline", "Hotels", "Bookings", "Ideas",
     "Sheet1", "גיליון1", "איך משתמשים",
@@ -935,18 +936,18 @@ def main() -> int:
             format_days_plan_column(wb, wb.worksheet(title), len(values))
         created.append(title)
 
-    # Delete old/messy tabs
+    # Delete old/messy tabs (keep My Maps attractions export)
     for ws in list(wb.worksheets()):
-        if ws.title not in created and (ws.title in OLD_TABS or ws.title not in TAB_ORDER):
+        if ws.title in KEEP_TABS:
+            continue
+        if ws.title in OLD_TABS or ws.title not in TAB_ORDER:
             if len(wb.worksheets()) <= 1:
                 break
-            # keep only our tabs
-            if ws.title not in TAB_ORDER:
-                try:
-                    print(f"Removing old tab: {ws.title}")
-                    wb.del_worksheet(ws)
-                except Exception as e:
-                    print(f"  skip delete {ws.title}: {e}")
+            try:
+                print(f"Removing old tab: {ws.title}")
+                wb.del_worksheet(ws)
+            except Exception as e:
+                print(f"  skip delete {ws.title}: {e}")
 
     # Reorder tabs
     requests = []
