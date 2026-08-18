@@ -87,10 +87,10 @@
   <Data name="City"><value>Seoul</value></Data>
   <Data name="Country"><value>KR</value></Data>
   <Data name="Local name"><value>코엑스 별마당도서관</value></Data>
-  <Data name="Days"><value></value></Data>
+  <Data name="Days"><value>29/8</value></Data>
   <Data name="Place ID"><value>coex</value></Data>
 </ExtendedData>
-<description><![CDATA[<p>קניון ענק + Starfield Library האייקוני.</p><p>Seoul · 코엑스 별마당도서관</p>]]></description>
+<description><![CDATA[<p>קניון ענק + Starfield Library האייקוני.</p><p>Seoul · 코엑스 별마당도서관 · Days 29/8</p>]]></description>
 <Point>
 <coordinates>127.059500,37.511700,0</coordinates>
 </Point>
@@ -104,12 +104,29 @@
   <Data name="City"><value>Seoul</value></Data>
   <Data name="Country"><value>KR</value></Data>
   <Data name="Local name"><value>동대문</value></Data>
-  <Data name="Days"><value>1/9</value></Data>
+  <Data name="Days"><value>29/8, 1/9</value></Data>
   <Data name="Place ID"><value>dongdaemun</value></Data>
 </ExtendedData>
-<description><![CDATA[<p>שוקי אופנה בלילה + הבניין העתידני DDP. קניות אחרי השקיעה.</p><p>Seoul · 동대문 · Days 1/9</p>]]></description>
+<description><![CDATA[<p>שוקי אופנה בלילה + הבניין העתידני DDP. קניות אחרי השקיעה.</p><p>Seoul · 동대문 · Days 29/8, 1/9</p>]]></description>
 <Point>
 <coordinates>127.009200,37.566500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Eulji-ro (Hipjiro)</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>을지로</value></Data>
+  <Data name="Days"><value>28/8</value></Data>
+  <Data name="Place ID"><value>euljiro</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>סמטאות דפוס ביום, אוהלי בירה ונוגארי וברים מוסתרים בלילה — הליכה קצרה מערבית לגוואנגג׳אנג.</p><p>Seoul · 을지로 · Days 28/8</p>]]></description>
+<Point>
+<coordinates>126.992800,37.566300,0</coordinates>
 </Point>
 </Placemark>
 <Placemark>
@@ -155,10 +172,10 @@
   <Data name="City"><value>Seoul</value></Data>
   <Data name="Country"><value>KR</value></Data>
   <Data name="Local name"><value>강남</value></Data>
-  <Data name="Days"><value>29/8</value></Data>
+  <Data name="Days"><value></value></Data>
   <Data name="Place ID"><value>gangnam</value></Data>
 </ExtendedData>
-<description><![CDATA[<p>אזור עסקים מודרני: טיפוח, קניות וציוני דרך של קיי־פופ.</p><p>Seoul · 강남 · Days 29/8</p>]]></description>
+<description><![CDATA[<p>אזור עסקים מודרני: טיפוח, קניות וציוני דרך של קיי־פופ.</p><p>Seoul · 강남</p>]]></description>
 <Point>
 <coordinates>127.027600,37.497900,0</coordinates>
 </Point>
@@ -351,6 +368,23 @@
 </Point>
 </Placemark>
 <Placemark>
+<name>Moclock Gangnam</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>모클락 강남본점</value></Data>
+  <Data name="Days"><value>29/8</value></Data>
+  <Data name="Place ID"><value>moclock</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>טיפול שיער / קרקפת בגנגנאם. תור של שחר ב־29 באוג׳ 17:00 · יציאה 3 בנונהיון.</p><p>Seoul · 모클락 강남본점 · Days 29/8</p>]]></description>
+<Point>
+<coordinates>127.023400,37.508800,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
 <name>Myeongdong</name>
 <styleUrl>#attraction</styleUrl>
 <ExtendedData>
@@ -359,10 +393,10 @@
   <Data name="City"><value>Seoul</value></Data>
   <Data name="Country"><value>KR</value></Data>
   <Data name="Local name"><value>명동</value></Data>
-  <Data name="Days"><value>1/9</value></Data>
+  <Data name="Days"><value>27/8, 1/9</value></Data>
   <Data name="Place ID"><value>myeongdong</value></Data>
 </ExtendedData>
-<description><![CDATA[<p>רחוב הקניות התיירותי: K-beauty, אוכל רחוב וניאון. צמוד לנאמדאמון.</p><p>Seoul · 명동 · Days 1/9</p>]]></description>
+<description><![CDATA[<p>רחוב הקניות התיירותי: K-beauty, אוכל רחוב וניאון. צמוד לנאמדאמון.</p><p>Seoul · 명동 · Days 27/8, 1/9</p>]]></description>
 <Point>
 <coordinates>126.986900,37.563600,0</coordinates>
 </Point>
@@ -444,10 +478,10 @@
   <Data name="City"><value>Seoul</value></Data>
   <Data name="Country"><value>KR</value></Data>
   <Data name="Local name"><value>성수동</value></Data>
-  <Data name="Days"><value>29/8</value></Data>
+  <Data name="Days"><value></value></Data>
   <Data name="Place ID"><value>seongsu</value></Data>
 </ExtendedData>
-<description><![CDATA[<p>רובע קפה ועיצוב בסגנון ברוקלין. פופ־אפים וגלריות.</p><p>Seoul · 성수동 · Days 29/8</p>]]></description>
+<description><![CDATA[<p>רובע קפה ועיצוב בסגנון ברוקלין. פופ־אפים וגלריות.</p><p>Seoul · 성수동</p>]]></description>
 <Point>
 <coordinates>127.055700,37.544500,0</coordinates>
 </Point>
@@ -461,10 +495,10 @@
   <Data name="City"><value>Seoul</value></Data>
   <Data name="Country"><value>KR</value></Data>
   <Data name="Local name"><value>서울숲</value></Data>
-  <Data name="Days"><value>29/8</value></Data>
+  <Data name="Days"><value></value></Data>
   <Data name="Place ID"><value>seoul-forest</value></Data>
 </ExtendedData>
-<description><![CDATA[<p>פארק גדול ליד סונגסו. הליכה ירוקה בין בתי הקפה.</p><p>Seoul · 서울숲 · Days 29/8</p>]]></description>
+<description><![CDATA[<p>פארק גדול ליד סונגסו. הליכה ירוקה בין בתי הקפה.</p><p>Seoul · 서울숲</p>]]></description>
 <Point>
 <coordinates>127.037500,37.544300,0</coordinates>
 </Point>
@@ -481,9 +515,26 @@
   <Data name="Days"><value>29/8</value></Data>
   <Data name="Place ID"><value>unni-guide</value></Data>
 </ExtendedData>
-<description><![CDATA[<p>מרכז בגנגנאם שמתאים מרפאות וטיפולים למבקרים. ייעוץ לפני הטיפול.</p><p>Seoul · 언니 가이드 센터 · Days 29/8</p>]]></description>
+<description><![CDATA[<p>מרכז בגנגנאם שמתאים מרפאות וטיפולים למבקרים. ייעוץ עד 16:00, לפני Moclock.</p><p>Seoul · 언니 가이드 센터 · Days 29/8</p>]]></description>
 <Point>
 <coordinates>127.025000,37.504500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Yeonnam Chwihyang</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>연남취향</value></Data>
+  <Data name="Days"><value>30/8</value></Data>
+  <Data name="Place ID"><value>yeonnam-chwihyang</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מסעדת אוכל מערבי ביונאם — ארוחת צהריים 30 באוג׳ 15:00. לעיתים תור; נפתח 12:30.</p><p>Seoul · 연남취향 · Days 30/8</p>]]></description>
+<Point>
+<coordinates>126.925400,37.561900,0</coordinates>
 </Point>
 </Placemark>
 <Placemark>

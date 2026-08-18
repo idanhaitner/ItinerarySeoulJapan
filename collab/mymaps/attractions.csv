@@ -3,11 +3,12 @@ Bongeunsa Temple,37.515200,127.057400,מקדש ליד COEX — ניגוד שקט
 Bukchon Hanok Village,37.582600,126.983100,סמטאות בתי עץ מסורתיים (האנוק) על גבעה. יפה לצילום — לשמור על שקט ליד הבתים.,attraction,culture,Seoul,KR,북촌한옥마을,28/8,bukchon
 Changdeokgung + Secret Garden,37.579400,126.991000,ארמון UNESCO. הגן הסודי נכנסים רק בסיור מודרך עם שעה.,attraction,culture,Seoul,KR,창덕궁 후원,29/8,changdeokgung
 Cheonggyecheon Stream,37.569600,126.978400,נחל מלאכותי במרכז העיר. הליכה קלה בין השווקים.,attraction,nature,Seoul,KR,청계천,1/9,cheonggyecheon
-COEX & Starfield Library,37.511700,127.059500,קניון ענק + Starfield Library האייקוני.,attraction,culture,Seoul,KR,코엑스 별마당도서관,,coex
-Dongdaemun Night Market / DDP,37.566500,127.009200,שוקי אופנה בלילה + הבניין העתידני DDP. קניות אחרי השקיעה.,attraction,food,Seoul,KR,동대문,1/9,dongdaemun
+COEX & Starfield Library,37.511700,127.059500,קניון ענק + Starfield Library האייקוני.,attraction,culture,Seoul,KR,코엑스 별마당도서관,29/8,coex
+Dongdaemun Night Market / DDP,37.566500,127.009200,שוקי אופנה בלילה + הבניין העתידני DDP. קניות אחרי השקיעה.,attraction,food,Seoul,KR,동대문,"29/8, 1/9",dongdaemun
+Eulji-ro (Hipjiro),37.566300,126.992800,"סמטאות דפוס ביום, אוהלי בירה ונוגארי וברים מוסתרים בלילה — הליכה קצרה מערבית לגוואנגג׳אנג.",attraction,food,Seoul,KR,을지로,28/8,euljiro
 Eunpyeong Hanok Village,37.640800,126.934500,חלופה שקטה יותר של כפר מסורתי.,attraction,culture,Seoul,KR,은평한옥마을,,eunpyeong
 Forena Clinic,37.556800,126.923600,הוזמן — ייעוץ + טיפול 30 באוג׳ 10:30 · הונגדה · H-CUBE קומה 7.,attraction,culture,Seoul,KR,포레나의원,30/8,forena-clinic
-Gangnam,37.497900,127.027600,"אזור עסקים מודרני: טיפוח, קניות וציוני דרך של קיי־פופ.",attraction,shopping,Seoul,KR,강남,29/8,gangnam
+Gangnam,37.497900,127.027600,"אזור עסקים מודרני: טיפוח, קניות וציוני דרך של קיי־פופ.",attraction,shopping,Seoul,KR,강남,,gangnam
 Gwangjang Market,37.570000,126.999600,"שוק האוכל הלילי המפורסם (בינדאטוק, קימבאפ). הדוכנים המפורסמים נסגרים ~20:30 — להגיע עד 19:30.",attraction,market,Seoul,KR,광장시장,28/8,gwangjang
 Gyeongbokgung Palace,37.579600,126.977000,הארמון המלכותי הראשי של סיאול. אפשר לשכור האנבוק ולהיכנס בחינם.,attraction,culture,Seoul,KR,경복궁,28/8,gyeongbokgung
 Hongdae,37.556300,126.923600,"רובע סטודנטים צעיר: אוכל רחוב, הופעות רחוב, קפה וברים. הבסיס שלכם בסיאול.",attraction,food,Seoul,KR,홍대,"27/8, 30/8",hongdae
@@ -19,14 +20,16 @@ Jogyesa Temple,37.573500,126.982500,מקדש בודהיסטי מרכזי ליד 
 Lotte World Adventure,37.511000,127.098000,פארק שעשועים מקורה ופתוח בלב סיאול. יום מלא של מתקנים.,attraction,park,Seoul,KR,롯데월드,31/8,lotte-world
 Lotte World Tower Seoul Sky,37.512600,127.102500,אחד המגדלים הגבוהים בעולם. מצפה Seoul Sky על סיאול כולה.,attraction,view,Seoul,KR,롯데월드타워,31/8,lotte-tower
 Mangwon Market,37.556000,126.910200,"שוק שכונתי מקומי ליד יונאם — נשנושים ותוצרת, פחות תיירותי ממיונגדונג.",attraction,market,Seoul,KR,망원시장,30/8,mangwon
-Myeongdong,37.563600,126.986900,"רחוב הקניות התיירותי: K-beauty, אוכל רחוב וניאון. צמוד לנאמדאמון.",attraction,food,Seoul,KR,명동,1/9,myeongdong
+Moclock Gangnam,37.508800,127.023400,טיפול שיער / קרקפת בגנגנאם. תור של שחר ב־29 באוג׳ 17:00 · יציאה 3 בנונהיון.,attraction,culture,Seoul,KR,모클락 강남본점,29/8,moclock
+Myeongdong,37.563600,126.986900,"רחוב הקניות התיירותי: K-beauty, אוכל רחוב וניאון. צמוד לנאמדאמון.",attraction,food,Seoul,KR,명동,"27/8, 1/9",myeongdong
 N Seoul Tower,37.551200,126.988200,התצפית הקלאסית של סיאול: שקיעה על העיר ומנעולי אהבה.,attraction,view,Seoul,KR,N서울타워,1/9,n-tower
 Namdaemun Market,37.559500,126.977000,"השוק המרכזי הקלאסי של סיאול: בגדים, מזכרות ואוכל רחוב בלב העיר.",attraction,market,Seoul,KR,남대문시장,1/9,namdaemun
 Namsan Cable Car,37.548600,126.990500,רכבל להר נאמסן בדרך למגדל N. עולים ולא הולכים את כל ההר.,attraction,view,Seoul,KR,남산케이블카,1/9,namsan-cable
 Seokchon Lake,37.509500,127.103500,טיילת אגם ליד מגדל לוטה. נשימה קצרה אחרי הפארק.,attraction,nature,Seoul,KR,석촌호수,31/8,seokchon
-Seongsu-dong,37.544500,127.055700,רובע קפה ועיצוב בסגנון ברוקלין. פופ־אפים וגלריות.,attraction,food,Seoul,KR,성수동,29/8,seongsu
-Seoul Forest,37.544300,127.037500,פארק גדול ליד סונגסו. הליכה ירוקה בין בתי הקפה.,attraction,park,Seoul,KR,서울숲,29/8,seoul-forest
-Unni Guide Center,37.504500,127.025000,מרכז בגנגנאם שמתאים מרפאות וטיפולים למבקרים. ייעוץ לפני הטיפול.,attraction,culture,Seoul,KR,언니 가이드 센터,29/8,unni-guide
+Seongsu-dong,37.544500,127.055700,רובע קפה ועיצוב בסגנון ברוקלין. פופ־אפים וגלריות.,attraction,food,Seoul,KR,성수동,,seongsu
+Seoul Forest,37.544300,127.037500,פארק גדול ליד סונגסו. הליכה ירוקה בין בתי הקפה.,attraction,park,Seoul,KR,서울숲,,seoul-forest
+Unni Guide Center,37.504500,127.025000,"מרכז בגנגנאם שמתאים מרפאות וטיפולים למבקרים. ייעוץ עד 16:00, לפני Moclock.",attraction,culture,Seoul,KR,언니 가이드 센터,29/8,unni-guide
+Yeonnam Chwihyang,37.561900,126.925400,מסעדת אוכל מערבי ביונאם — ארוחת צהריים 30 באוג׳ 15:00. לעיתים תור; נפתח 12:30.,attraction,food,Seoul,KR,연남취향,30/8,yeonnam-chwihyang
 Yeonnam-dong,37.566200,126.925400,"שכונת קפה ובוטיקים שקטה ליד הונגדה, לאורך פסי הרכבת הישנים.",attraction,food,Seoul,KR,연남동,30/8,yeonnam
 Akihabara,35.702300,139.774500,"עיירת החשמל — כלבו אנימה בקומות, משחקי רטרו, ארקיידים ומסעדות מייד. חובה: עשר הקומות של Radio Kaikan, ואז ארקייד GiGO. טיפ: המציאות הנדירות בקומות העליונות — להתחיל למעלה ולרדת; דרכון ל־tax-free.",attraction,shopping,Tokyo,JP,秋葉原,5/9,akihabara
 Ameyoko Market,35.709500,139.774500,שוק רחוב תוסס מתחת למסילות ליד אואינו. נשנושים בדרך לאקיהברה.,attraction,market,Tokyo,JP,アメ横,5/9,ameyoko

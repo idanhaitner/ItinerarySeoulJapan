@@ -568,6 +568,51 @@ window.PLACES = {
     "blurb": "Booked — consultation + treatment 30 Aug 10:30 · Hongdae · H-CUBE 7F, 140 Yanghwa-ro · Hongik Univ. Station exit 9.",
     "taxiAddress": "서울특별시 마포구 양화로 140 H-CUBE 7층"
   },
+  "moclock": {
+    "id": "moclock",
+    "name": "Moclock Gangnam",
+    "nameJa": "모클락 강남본점",
+    "city": "Seoul",
+    "country": "KR",
+    "tags": [
+      "must-see",
+      "culture"
+    ],
+    "lat": 37.5088,
+    "lng": 127.0234,
+    "blurb": "Shahar’s hair / scalp appointment 29 Aug 17:00 · Nonhyeon Station exit 3 · Yeongdong Bldg 2F, 520 Gangnam-daero.",
+    "taxiAddress": "서울특별시 강남구 강남대로 520 영동빌딩 2층 201호"
+  },
+  "euljiro": {
+    "id": "euljiro",
+    "name": "Eulji-ro (Hipjiro)",
+    "nameJa": "을지로",
+    "city": "Seoul",
+    "country": "KR",
+    "tags": [
+      "nightlife",
+      "food",
+      "neighborhood"
+    ],
+    "lat": 37.5663,
+    "lng": 126.9928,
+    "blurb": "Print-shop alleys by day, nogari-and-beer tents and hidden bars after dark — a short walk west of Gwangjang."
+  },
+  "yeonnam-chwihyang": {
+    "id": "yeonnam-chwihyang",
+    "name": "Yeonnam Chwihyang",
+    "nameJa": "연남취향",
+    "city": "Seoul",
+    "country": "KR",
+    "tags": [
+      "must-see",
+      "food"
+    ],
+    "lat": 37.5619,
+    "lng": 126.9254,
+    "blurb": "Western-style restaurant in Yeonnam — lunch 30 Aug 15:00. Often a wait; opens 12:30.",
+    "taxiAddress": "서울특별시 마포구 연희로1길 36 1.5층"
+  },
   "yeonnam": {
     "id": "yeonnam",
     "name": "Yeonnam-dong",
@@ -2875,19 +2920,22 @@ window.DAYS = [
     "city": "Seoul",
     "country": "KR",
     "hotelId": "nine-bricks",
-    "title": "Arrival & Hongdae night",
-    "summary": "Land ICN on ET0672, check in at 9 Brick Hotel Hongdae, then stay in the neighborhood — street food, busking, and bars. Rest after the long flight; Myeongdong moves to Tuesday.",
-    "food": "Hongdae street food and a late snack or drink nearby.",
+    "title": "Arrival — Myeongdong if early, Hongdae if late",
+    "summary": "Land ICN on ET0672 and check in at 9 Brick Hotel Hongdae. If you’re at the hotel by ~18:30, go to Myeongdong for street food and neon; if the airport run runs late, stay in Hongdae next door.",
+    "food": "Myeongdong street food if early; otherwise Hongdae snacks and a drink near the hotel.",
     "placeIds": [
       "icn",
       "nine-bricks",
+      "myeongdong",
       "hongdae"
     ],
     "transport": [
-      "ICN → 9 Brick (~1h AREX Express or taxi). Climate Card is not valid on AREX Express."
+      "ICN → 9 Brick (~1h AREX Express or taxi). Climate Card is not valid on AREX Express.",
+      "Hongdae → Myeongdong ~20 min subway if you still have energy."
     ],
     "tips": [
-      "Climate Card covers Seoul metro/bus but not AREX Express — only All-Stop. Keep T-Money or cash for the airport run."
+      "Climate Card covers Seoul metro/bus but not AREX Express — only All-Stop. Keep T-Money or cash for the airport run.",
+      "Fork after check-in: hotel by ~18:30 → Myeongdong. Later → Hongdae and sleep. Tuesday still covers Myeongdong properly."
     ],
     "timeline": [
       {
@@ -2913,8 +2961,8 @@ window.DAYS = [
       },
       {
         "time": "19:00",
-        "title": "Hongdae evening — street food, busking, bars",
-        "note": "Stay in the neighborhood after the long flight.",
+        "title": "Evening — Myeongdong if early, Hongdae if late",
+        "note": "Hotel by ~18:30 → Myeongdong (~20 min subway). Later → street food, busking and bars next to the hotel.",
         "placeId": "hongdae",
         "end": "22:30",
         "category": "transit"
@@ -2928,23 +2976,25 @@ window.DAYS = [
     "city": "Seoul",
     "country": "KR",
     "hotelId": "nine-bricks",
-    "title": "Royal heart of Seoul",
-    "summary": "Gyeongbokgung with the 10:00 changing of the guard + hanbok, Bukchon, Ikseon → Insadong, Gwangjang Market dinner.",
-    "food": "Gwangjang Market street-food feast — famous stalls start closing ~20:30–21:00.",
+    "title": "Royal heart of Seoul, then Eulji-ro",
+    "summary": "Gyeongbokgung with the 10:00 changing of the guard + hanbok, Bukchon, Ikseon → Insadong, Gwangjang Market dinner, then west into Eulji-ro for Friday-night beer alleys.",
+    "food": "Gwangjang Market street-food feast — famous stalls start closing ~20:30–21:00. Then beer and nogari in Eulji-ro.",
     "placeIds": [
       "gyeongbokgung",
       "bukchon",
       "ikseon",
       "insadong",
-      "gwangjang"
+      "gwangjang",
+      "euljiro"
     ],
     "transport": [
       "Hongdae → Gyeongbokgung (~25m).",
-      "Walk Bukchon → Ikseon → Insadong → Gwangjang."
+      "Walk Bukchon → Ikseon → Insadong → Gwangjang → Eulji-ro (~10–15 min west of the market)."
     ],
     "tips": [
       "Rent hanbok for free palace entry.",
-      "Gwangjang: popular food stalls wind down ~20:30–21:00 even if the market stays open — be there by 19:30."
+      "Gwangjang: popular food stalls wind down ~20:30–21:00 even if the market stays open — be there by 19:30.",
+      "After the market, walk to Eulji-ro 3-ga / Nogari Alley — Friday night is when the print-shop alleys turn into beer tents."
     ],
     "timeline": [
       {
@@ -2983,7 +3033,15 @@ window.DAYS = [
         "title": "Gwangjang Market feast",
         "note": "Arrive by 19:30 at the latest · famous stalls close ~20:30–21:00.",
         "placeId": "gwangjang",
-        "end": "21:00",
+        "end": "20:30",
+        "category": "dining"
+      },
+      {
+        "time": "20:45",
+        "title": "Eulji-ro night — Nogari Alley & bars",
+        "note": "Short walk west of Gwangjang · beer, dried pollack, hidden bars. Friday is the best night.",
+        "placeId": "euljiro",
+        "end": "23:00",
         "category": "dining"
       }
     ]
@@ -2995,24 +3053,27 @@ window.DAYS = [
     "city": "Seoul",
     "country": "KR",
     "hotelId": "nine-bricks",
-    "title": "Secret Garden, Unni Guide & Seongsu",
-    "summary": "Jogyesa and Changdeokgung Secret Garden in the morning, Unni Guide 15:00–16:00 plus treatment in Gangnam, then Seongsu and Seoul Forest — much closer to Gangnam than to Hongdae.",
-    "food": "Lunch near the palace or on the way to Gangnam; dinner in Seongsu.",
+    "title": "Secret Garden, Unni Guide, Moclock & COEX",
+    "summary": "Jogyesa and Changdeokgung Secret Garden in the morning, Unni Guide 15:00–16:00 in Gangnam, Shahar’s Moclock hair appointment at 17:00, then COEX + Starfield Library. Seongsu shops shut ~20:00 and go quiet — skip it and take Line 2 to Dongdaemun’s night malls (or Myeongdong / Hongdae / Itaewon if energy is gone).",
+    "food": "Lunch near the palace or on the way to Gangnam; easy dinner at COEX or Dongdaemun night food.",
     "placeIds": [
       "jogyesa",
       "changdeokgung",
       "unni-guide",
-      "gangnam",
-      "seongsu",
-      "seoul-forest"
+      "moclock",
+      "coex",
+      "dongdaemun"
     ],
     "transport": [
       "Hongdae → Jogyesa / Changdeokgung.",
-      "Subway to Gangnam / Sinnonhyeon for Unni Guide.",
-      "Line 2 Gangnam → Seongsu (~20–25 min)."
+      "Subway to Gangnam / Sinnonhyeon for Unni Guide, then Nonhyeon exit 3 for Moclock.",
+      "Line 2 Nonhyeon / Gangnam → Samseong (COEX), then Line 2 to Dongdaemun History & Culture Park."
     ],
     "tips": [
-      "After treatment: indoor cafés first; keep Seoul Forest short and shaded if skin is sensitive."
+      "Unni Guide ends at 16:00 — leave a buffer to walk/subway to Moclock (Nonhyeon exit 3, Yeongdong Bldg 2F).",
+      "Moclock Saturday hours usually run until ~18:00; confirm Shahar’s 17:00 slot.",
+      "Seongsu boutiques close around 20:00 and the streets empty — don’t plan dinner there. After COEX go to Dongdaemun night malls, or fall back to Myeongdong / Hongdae / Itaewon.",
+      "Tuesday still has DDP in daylight — tonight is the late fashion malls (Doota / Migliore)."
     ],
     "timeline": [
       {
@@ -3041,47 +3102,47 @@ window.DAYS = [
       {
         "time": "15:00",
         "title": "Unni Guide Center — Gangnam",
-        "note": "Clinic matching / skin analysis / booking help.",
+        "note": "Clinic matching / skin analysis · done by 16:00.",
         "placeId": "unni-guide",
         "end": "16:00",
         "category": "culture"
       },
       {
-        "time": "16:15",
-        "title": "Gangnam treatment",
-        "note": "Treatment via Unni Guide / clinic.",
-        "placeId": "gangnam",
-        "end": "17:30",
-        "category": "shopping"
+        "time": "17:00",
+        "title": "Moclock Gangnam — Shahar hair appointment",
+        "note": "Nonhyeon Station exit 3 · Yeongdong Bldg 2F, 520 Gangnam-daero.",
+        "placeId": "moclock",
+        "end": "18:15",
+        "category": "culture"
       },
       {
-        "time": "17:45",
-        "title": "Travel by subway · from Gangnam to Seongsu",
-        "note": "Line 2 · ~20–25 min · no booking.",
-        "placeId": "gangnam",
+        "time": "18:30",
+        "title": "Travel by subway · from Nonhyeon to COEX (Samseong)",
+        "note": "Line 2 · ~10–15 min · no booking.",
+        "placeId": "coex",
         "category": "transit"
       },
       {
-        "time": "18:15",
-        "title": "Seongsu-dong",
-        "note": "Cafés, boutiques, and pop-ups — indoor-friendly after treatment.",
-        "placeId": "seongsu",
-        "end": "19:15",
-        "category": "dining"
-      },
-      {
-        "time": "19:15",
-        "title": "Seoul Forest",
-        "note": "Short dusk stroll next to Seongsu · skip or stay in shade if skin is sensitive.",
-        "placeId": "seoul-forest",
+        "time": "18:45",
+        "title": "COEX Mall + Starfield Library",
+        "note": "Giant mall and the iconic library hall — indoor after the hair appointment.",
+        "placeId": "coex",
         "end": "20:15",
-        "category": "attraction"
+        "category": "shopping"
       },
       {
         "time": "20:30",
-        "title": "Dinner in Seongsu",
-        "note": "Dinner nearby.",
-        "placeId": "seongsu",
+        "title": "Travel by subway · from COEX to Dongdaemun",
+        "note": "Line 2 · ~20 min · no booking · Seongsu is already shutting.",
+        "placeId": "dongdaemun",
+        "category": "transit"
+      },
+      {
+        "time": "20:50",
+        "title": "Dongdaemun night malls",
+        "note": "Doota / Migliore / fashion markets after 20:00. Fallback: Myeongdong, Hongdae, or Itaewon.",
+        "placeId": "dongdaemun",
+        "end": "23:00",
         "category": "dining"
       }
     ]
@@ -3093,21 +3154,23 @@ window.DAYS = [
     "city": "Seoul",
     "country": "KR",
     "hotelId": "nine-bricks",
-    "title": "Forena Clinic & west Seoul",
-    "summary": "Booked Forena Clinic consultation + treatment in Hongdae at 10:30, then a calm café in Yeonnam, Mangwon Market, and a Hongdae evening — stay on the west side after the facial.",
-    "food": "Café lunch in Yeonnam / Mangwon; Hongdae street food at night.",
+    "title": "Forena Clinic, Yeonnam lunch & west Seoul",
+    "summary": "Booked Forena Clinic consultation + treatment in Hongdae at 10:30, a calm Yeonnam stroll, lunch at Yeonnam Chwihyang at 15:00, then Mangwon Market and a Hongdae evening — stay on the west side after the facial.",
+    "food": "Lunch at Yeonnam Chwihyang (연남취향) at 15:00; light Mangwon snacks after; Hongdae street food at night.",
     "placeIds": [
       "forena-clinic",
       "yeonnam",
+      "yeonnam-chwihyang",
       "mangwon",
       "hongdae"
     ],
     "transport": [
       "Walk from 9 Brick to Forena (H-CUBE, Yanghwa-ro · Hongik Univ. exit 9).",
-      "Walk Yeonnam → Mangwon → back to Hongdae."
+      "Walk Yeonnam → Chwihyang → Mangwon → back to Hongdae."
     ],
     "tips": [
-      "After the facial, skip long sun and sweat."
+      "After the facial, skip long sun and sweat.",
+      "Yeonnam Chwihyang often has a weekend wait and is mostly walk-in — be nearby from ~14:45. Opens 12:30."
     ],
     "timeline": [
       {
@@ -3119,27 +3182,27 @@ window.DAYS = [
         "category": "culture"
       },
       {
-        "time": "12:15",
+        "time": "12:30",
         "title": "Yeonnam-dong café stroll",
-        "note": "Calm cafés and boutiques by the Gyeongui Line Forest.",
+        "note": "Calm cafés and boutiques by the Gyeongui Line Forest — stay nearby for the 15:00 lunch.",
         "placeId": "yeonnam",
-        "end": "14:00",
+        "end": "14:45",
         "category": "dining"
       },
       {
-        "time": "14:15",
+        "time": "15:00",
+        "title": "Lunch at Yeonnam Chwihyang",
+        "note": "연남취향 · 1.5F, 36 Yeonhui-ro 1-gil · omelette rice / pasta. Often a wait.",
+        "placeId": "yeonnam-chwihyang",
+        "end": "16:30",
+        "category": "dining"
+      },
+      {
+        "time": "16:45",
         "title": "Mangwon Market",
         "note": "Local market snacks next to Yeonnam.",
         "placeId": "mangwon",
-        "end": "15:45",
-        "category": "dining"
-      },
-      {
-        "time": "16:00",
-        "title": "Hongdae shopping & rest",
-        "note": "Easy west-side afternoon near the hotel.",
-        "placeId": "hongdae",
-        "end": "18:30",
+        "end": "18:00",
         "category": "dining"
       },
       {
@@ -3241,7 +3304,8 @@ window.DAYS = [
     ],
     "tips": [
       "Cable tickets are sold at the base, just above Myeongdong.",
-      "From Namsan go south to Itaewon — don’t backtrack across town."
+      "From Namsan go south to Itaewon — don’t backtrack across town.",
+      "Saturday night already covers Dongdaemun’s late fashion malls — today keep DDP + a short shop, then Namsan on time."
     ],
     "timeline": [
       {
