@@ -96,6 +96,23 @@
 </Point>
 </Placemark>
 <Placemark>
+<name>Dior Seongsu</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>shopping</value></Data>
+  <Data name="City"><value>Seoul</value></Data>
+  <Data name="Country"><value>KR</value></Data>
+  <Data name="Local name"><value>디올 성수</value></Data>
+  <Data name="Days"><value>1/9</value></Data>
+  <Data name="Place ID"><value>dior-seongsu</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>בוטיק דגל + קפה גן ברחוב Yeonmujang — תחנת הצילום של סאונגסו.</p><p>Seoul · 디올 성수 · Days 1/9</p>]]></description>
+<Point>
+<coordinates>127.051300,37.544600,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
 <name>Dongdaemun Night Market / DDP</name>
 <styleUrl>#attraction</styleUrl>
 <ExtendedData>
@@ -104,10 +121,10 @@
   <Data name="City"><value>Seoul</value></Data>
   <Data name="Country"><value>KR</value></Data>
   <Data name="Local name"><value>동대문</value></Data>
-  <Data name="Days"><value>29/8, 1/9</value></Data>
+  <Data name="Days"><value>29/8</value></Data>
   <Data name="Place ID"><value>dongdaemun</value></Data>
 </ExtendedData>
-<description><![CDATA[<p>שוקי אופנה בלילה + הבניין העתידני DDP. קניות אחרי השקיעה.</p><p>Seoul · 동대문 · Days 29/8, 1/9</p>]]></description>
+<description><![CDATA[<p>שוקי אופנה בלילה + הבניין העתידני DDP. קניות אחרי השקיעה.</p><p>Seoul · 동대문 · Days 29/8</p>]]></description>
 <Point>
 <coordinates>127.009200,37.566500,0</coordinates>
 </Point>
@@ -444,10 +461,10 @@
   <Data name="City"><value>Seoul</value></Data>
   <Data name="Country"><value>KR</value></Data>
   <Data name="Local name"><value>남산케이블카</value></Data>
-  <Data name="Days"><value>1/9</value></Data>
+  <Data name="Days"><value></value></Data>
   <Data name="Place ID"><value>namsan-cable</value></Data>
 </ExtendedData>
-<description><![CDATA[<p>רכבל להר נאמסן בדרך למגדל N. עולים ולא הולכים את כל ההר.</p><p>Seoul · 남산케이블카 · Days 1/9</p>]]></description>
+<description><![CDATA[<p>רכבל להר נאמסן בדרך למגדל N. ביום שלישי עולים באוטובוס 01A/01B במקום התור בשקיעה.</p><p>Seoul · 남산케이블카</p>]]></description>
 <Point>
 <coordinates>126.990500,37.548600,0</coordinates>
 </Point>
@@ -478,10 +495,10 @@
   <Data name="City"><value>Seoul</value></Data>
   <Data name="Country"><value>KR</value></Data>
   <Data name="Local name"><value>성수동</value></Data>
-  <Data name="Days"><value></value></Data>
+  <Data name="Days"><value>1/9</value></Data>
   <Data name="Place ID"><value>seongsu</value></Data>
 </ExtendedData>
-<description><![CDATA[<p>רובע קפה ועיצוב בסגנון ברוקלין. פופ־אפים וגלריות.</p><p>Seoul · 성수동</p>]]></description>
+<description><![CDATA[<p>הברוקלין של סיאול: חנויות מעצבים, פופ־אפים ובתי קפה.</p><p>Seoul · 성수동 · Days 1/9</p>]]></description>
 <Point>
 <coordinates>127.055700,37.544500,0</coordinates>
 </Point>

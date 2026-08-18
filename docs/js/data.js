@@ -522,7 +522,22 @@ window.PLACES = {
     ],
     "lat": 37.5445,
     "lng": 127.0557,
-    "blurb": "Brooklyn-feel cafés, pop-ups, and design shops."
+    "blurb": "Brooklyn-feel Seoul — designer shops, pop-ups, and cafés."
+  },
+  "dior-seongsu": {
+    "id": "dior-seongsu",
+    "name": "Dior Seongsu",
+    "nameJa": "디올 성수",
+    "city": "Seoul",
+    "country": "KR",
+    "tags": [
+      "shopping",
+      "must-see"
+    ],
+    "lat": 37.5446,
+    "lng": 127.0513,
+    "blurb": "Dior flagship + garden café on Yeonmujang-gil — the Seongsu photo stop.",
+    "taxiAddress": "서울특별시 성동구 연무장5길 7"
   },
   "seoul-forest": {
     "id": "seoul-forest",
@@ -3054,7 +3069,7 @@ window.DAYS = [
     "country": "KR",
     "hotelId": "nine-bricks",
     "title": "Secret Garden, Unni Guide, Moclock & COEX",
-    "summary": "Jogyesa and Changdeokgung Secret Garden in the morning, Unni Guide 15:00–16:00 in Gangnam, Shahar’s Moclock hair appointment at 17:00, then COEX + Starfield Library. Seongsu shops shut ~20:00 and go quiet — skip it and take Line 2 to Dongdaemun’s night malls (or Myeongdong / Hongdae / Itaewon if energy is gone).",
+    "summary": "Jogyesa and Changdeokgung Secret Garden in the morning, Unni Guide 15:00–16:00 in Gangnam, Shahar’s Moclock hair appointment at 17:00, then COEX + Starfield Library. Seongsu shops shut ~20:00 — skip it tonight and take Line 2 to Dongdaemun night malls and late-night DDP (this is the DDP visit). Seongsu moves to Tuesday afternoon.",
     "food": "Lunch near the palace or on the way to Gangnam; easy dinner at COEX or Dongdaemun night food.",
     "placeIds": [
       "jogyesa",
@@ -3072,8 +3087,7 @@ window.DAYS = [
     "tips": [
       "Unni Guide ends at 16:00 — leave a buffer to walk/subway to Moclock (Nonhyeon exit 3, Yeongdong Bldg 2F).",
       "Moclock Saturday hours usually run until ~18:00; confirm Shahar’s 17:00 slot.",
-      "Seongsu boutiques close around 20:00 and the streets empty — don’t plan dinner there. After COEX go to Dongdaemun night malls, or fall back to Myeongdong / Hongdae / Itaewon.",
-      "Tuesday still has DDP in daylight — tonight is the late fashion malls (Doota / Migliore)."
+      "Seongsu boutiques close around 20:00 — don’t plan dinner there. After COEX this is the late DDP + night-mall visit (Doota / Migliore stay open late)."
     ],
     "timeline": [
       {
@@ -3139,8 +3153,8 @@ window.DAYS = [
       },
       {
         "time": "20:50",
-        "title": "Dongdaemun night malls",
-        "note": "Doota / Migliore / fashion markets after 20:00. Fallback: Myeongdong, Hongdae, or Itaewon.",
+        "title": "Dongdaemun night malls + DDP",
+        "note": "Keep the late DDP visit — plaza and night malls (Doota / Migliore) stay open late.",
         "placeId": "dongdaemun",
         "end": "23:00",
         "category": "dining"
@@ -3206,9 +3220,9 @@ window.DAYS = [
         "category": "dining"
       },
       {
-        "time": "19:00",
-        "title": "Hongdae evening — food, busking, bars",
-        "note": "Stay in the neighborhood.",
+        "time": "18:15",
+        "title": "Back to Hongdae — dinner, busking, bars",
+        "note": "Straight back to Hongdae for dinner, street performances and bars.",
         "placeId": "hongdae",
         "end": "22:30",
         "category": "transit"
@@ -3285,27 +3299,27 @@ window.DAYS = [
     "city": "Seoul",
     "country": "KR",
     "hotelId": "nine-bricks",
-    "title": "Downtown, Myeongdong, N Tower & Itaewon",
-    "summary": "Namdaemun and Myeongdong in the morning, Cheonggyecheon and DDP / Dongdaemun midday, Namsan cable and N Tower at sunset, then south to Itaewon for dinner and nightlife.",
+    "title": "Downtown, Seongsu, N Tower & Itaewon",
+    "summary": "Namdaemun and Myeongdong in the morning, Cheonggyecheon after, then Seongsu-dong (Dior Seongsu, designer shops, pop-ups) instead of a second DDP. Namsan Bus 01A/01B up to N Tower at sunset, then south to Itaewon for dinner and nightlife.",
     "food": "Myeongdong street food; dinner in Itaewon.",
     "placeIds": [
       "namdaemun",
       "myeongdong",
       "cheonggyecheon",
-      "dongdaemun",
-      "namsan-cable",
+      "seongsu",
+      "dior-seongsu",
       "n-tower",
       "itaewon"
     ],
     "transport": [
       "Hongdae → Namdaemun / Myeongdong.",
-      "Walk Cheonggyecheon toward Dongdaemun.",
-      "Back to the Namsan cable (above Myeongdong), then south to Itaewon."
+      "Cheonggyecheon walk, then Line 2 to Seongsu.",
+      "Seongsu → Chungmuro / Dongguk Univ. → Namsan Bus 01A/01B to the tower, then south to Itaewon."
     ],
     "tips": [
-      "Cable tickets are sold at the base, just above Myeongdong.",
-      "From Namsan go south to Itaewon — don’t backtrack across town.",
-      "Saturday night already covers Dongdaemun’s late fashion malls — today keep DDP + a short shop, then Namsan on time."
+      "Saturday already did late-night DDP — today is Seongsu in daylight, while shops are open (Dior Seongsu until 20:00).",
+      "Skip the Namsan cable-car queue at sunset. Board Bus 01A or 01B (green/mint electric — not the old yellow paint) at Chungmuro Station exit 2 or Dongguk Univ. exit 6; T-Money / Climate Card, no cash. 01B is the shorter hop to the tower.",
+      "From Namsan go south to Itaewon — don’t backtrack across town."
     ],
     "timeline": [
       {
@@ -3334,38 +3348,37 @@ window.DAYS = [
       {
         "time": "12:45",
         "title": "Cheonggyecheon Stream walk",
-        "note": "Easy downtown stream toward Dongdaemun.",
+        "note": "Easy downtown stream after Myeongdong.",
         "placeId": "cheonggyecheon",
         "end": "13:45",
         "category": "attraction"
       },
       {
-        "time": "14:00",
-        "title": "Dongdaemun / DDP",
-        "note": "DDP + APM / Fashion Mall / outlets.",
-        "placeId": "dongdaemun",
-        "end": "16:15",
-        "category": "dining"
-      },
-      {
-        "time": "16:30",
-        "title": "Travel by subway / taxi · from Dongdaemun to Namsan cable",
-        "note": "Back toward Myeongdong · ~15–20 min · no booking.",
-        "placeId": "dongdaemun",
+        "time": "13:50",
+        "title": "Travel by subway · from Cheonggyecheon to Seongsu",
+        "note": "Line 2 · ~20 min · no booking.",
+        "placeId": "seongsu",
         "category": "transit"
       },
       {
-        "time": "17:30",
-        "title": "Namsan cable car",
-        "note": "Up Namsan toward N Tower · station just above Myeongdong.",
-        "placeId": "namsan-cable",
-        "end": "18:00",
-        "category": "attraction"
+        "time": "14:00",
+        "title": "Seongsu-dong — Dior, designer shops & pop-ups",
+        "note": "Seoul’s Brooklyn: Dior Seongsu, Yeonmujang-gil shops and pop-ups. Daylight visit so shops are open.",
+        "placeId": "seongsu",
+        "end": "16:30",
+        "category": "dining"
       },
       {
-        "time": "18:05",
-        "title": "N Seoul Tower sunset",
-        "note": "City viewpoint + love locks.",
+        "time": "16:40",
+        "title": "Travel by subway · from Seongsu to Chungmuro (Namsan Bus 01)",
+        "note": "Line 2 to Dongdaemun History & Culture Park, Line 4 to Chungmuro · ~20–25 min · no booking.",
+        "placeId": "n-tower",
+        "category": "transit"
+      },
+      {
+        "time": "17:00",
+        "title": "Namsan Bus 01A/01B + N Seoul Tower sunset",
+        "note": "Board at Chungmuro exit 2 or Dongguk Univ. exit 6 · skips the cable-car sunset queue · viewpoint + love locks.",
         "placeId": "n-tower",
         "end": "19:30",
         "category": "attraction"
