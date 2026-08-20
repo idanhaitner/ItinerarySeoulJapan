@@ -1255,7 +1255,7 @@ for d in DAYS:
         d["transfer"] = TRANSFERS[d["id"]]
     d["summary"] = clip_text(d.get("summary") or "", 110)
     d["food"] = clip_text(d.get("food") or "", 90)
-    d["tips"] = [clip_text(x, 100) for x in (d.get("tips") or []) if str(x).strip()][:2]
+    d["tips"] = []
     d["transport"] = [clip_text(x, 90) for x in (d.get("transport") or []) if str(x).strip()]
     seen_times = set()
     for item in d.get("timeline") or []:

@@ -2421,71 +2421,6 @@ a { color: inherit; }
   list-style: none;
 }
 
-.flow-anchor {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 0;
-  background: var(--surface);
-  border: 1px solid var(--line-strong);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 1px 0 rgba(47, 43, 40, 0.04);
-}
-
-.flow-anchor .timeline-meta {
-  padding: 18px 12px;
-  padding-inline-end: 12px;
-  background: color-mix(in srgb, var(--paper-2) 70%, var(--surface));
-  border-inline-end: 1px solid var(--line);
-  gap: 8px;
-}
-
-.flow-anchor .time-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 4.6em;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: var(--navy);
-  color: #fff;
-  font-family: var(--font-display);
-  font-size: 15px;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
-}
-
-.flow-anchor .time-kind {
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: 999px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: rgba(196, 60, 44, 0.1);
-  color: var(--seal);
-}
-
-.flow-anchor .time-kind.kind-flight { background: rgba(90, 109, 124, 0.16); color: #3d4e5a; }
-.flow-anchor .time-kind.kind-train { background: rgba(26, 75, 140, 0.12); color: #1a4b8c; }
-.flow-anchor .time-kind.kind-bus { background: rgba(196, 132, 42, 0.16); color: #8a5a12; }
-.flow-anchor .time-kind.kind-ticket { background: rgba(196, 60, 44, 0.1); color: var(--seal); }
-.flow-anchor .time-kind.kind-appointment { background: rgba(42, 107, 90, 0.14); color: var(--jade); }
-.flow-anchor .time-kind.kind-hotel { background: rgba(156, 107, 47, 0.14); color: var(--gold); }
-
-.flow-anchor .timeline-card {
-  padding: 16px 16px 16px 20px;
-}
-
-.flow-anchor .timeline-card::before {
-  top: 16px;
-  bottom: 16px;
-  width: 3px;
-}
-
 .flow-sequence {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -2535,6 +2470,11 @@ a { color: inherit; }
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
+.route-step.is-timed .step-n {
+  background: var(--navy);
+  color: #fff;
+}
+
 .route-step.done { opacity: 0.55; }
 .route-step.fav .step-body {
   background: rgba(156, 107, 47, 0.06);
@@ -2544,6 +2484,7 @@ a { color: inherit; }
 .step-body {
   min-width: 0;
   padding: 2px 4px 0;
+  text-align: start;
 }
 
 .step-body .timeline-title {
@@ -2551,40 +2492,61 @@ a { color: inherit; }
   font-weight: 600;
 }
 
-.flow-hop {
-  display: block;
-  border: 0;
-  background: transparent;
+.step-time {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  color: var(--seal);
+  line-height: 1.2;
+  margin-bottom: 4px;
 }
 
-.flow-hop .hop-body {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 14px;
-  padding: 8px 14px;
+.route-step.is-timed .step-body {
+  padding: 8px 10px 10px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--paper-2) 80%, var(--surface));
+  border-inline-start: 3px solid var(--navy);
+}
+
+.route-step.is-hop {
+  padding-top: 4px;
+  padding-bottom: 8px;
+}
+
+.route-step.is-hop::before {
+  top: 28px;
+}
+
+.step-n-dot {
+  width: 10px;
+  height: 10px;
+  margin: 9px 9px 0;
+  background: var(--line-strong);
+  box-shadow: 0 0 0 4px var(--surface);
+}
+
+.hop-inline {
+  padding: 6px 10px;
   border: 1px dashed var(--line-strong);
   border-radius: 12px;
   background: color-mix(in srgb, var(--paper-2) 55%, transparent);
 }
 
-.flow-hop .timeline-title {
+.hop-inline .timeline-title {
   font-size: 14px;
   font-weight: 500;
 }
 
-.flow-hop .timeline-actions {
-  margin-top: 0;
-  margin-inline-start: auto;
+.hop-inline .timeline-actions {
+  margin-top: 6px;
 }
 
-.flow-hop.done { opacity: 0.5; }
+.route-step.is-hop.done { opacity: 0.5; }
 
 @media (hover: hover) {
-  .flow-anchor:hover {
-    border-color: color-mix(in srgb, var(--navy) 22%, var(--line));
-  }
-  .route-step:hover .step-n {
+  .route-step:hover .step-n:not(.step-n-dot) {
     background: var(--navy);
     color: #fff;
   }
@@ -2666,6 +2628,7 @@ a { color: inherit; }
 .timeline-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   gap: 4px 18px;
   margin-top: 10px;
 }
@@ -2707,6 +2670,8 @@ a { color: inherit; }
   background: var(--surface);
   margin-bottom: 16px;
   overflow: hidden;
+  direction: rtl;
+  text-align: start;
 }
 
 .side-block-head {
@@ -5487,7 +5452,7 @@ a { color: inherit; }
 @media (min-width: 900px) {
   .app { padding-bottom: 48px; }
   .mobile-nav { display: none; }
-  .detail-layout {
+  .detail-layout:has(:nth-child(2)) {
     grid-template-columns: 1.45fr 0.8fr;
     align-items: start;
   }
@@ -5694,31 +5659,6 @@ a { color: inherit; }
   .timeline-note {
     font-size: 13px;
     max-width: none;
-  }
-  .flow-anchor {
-    grid-template-columns: 1fr;
-  }
-  .flow-anchor .timeline-meta {
-    flex-direction: row;
-    justify-content: flex-start;
-    width: 100%;
-    padding: 12px 14px 0;
-    border-inline-end: 0;
-    background: transparent;
-    gap: 8px;
-  }
-  .flow-anchor .timeline-card {
-    padding: 10px 14px 14px;
-  }
-  .flow-anchor .timeline-card::before {
-    display: none;
-  }
-  .flow-hop .hop-body {
-    align-items: flex-start;
-  }
-  .flow-hop .timeline-actions {
-    margin-inline-start: 0;
-    width: 100%;
   }
   .day-anchor-chip [dir="auto"] {
     max-width: 16ch;

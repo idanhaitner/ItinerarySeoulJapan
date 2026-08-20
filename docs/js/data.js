@@ -2942,10 +2942,7 @@ window.DAYS = [
       "ICN → 9 Brick (~1h AREX Express or taxi).",
       "Hongdae → Myeongdong ~20 min subway if you still have energy."
     ],
-    "tips": [
-      "Climate Card covers Seoul metro/bus but not AREX Express — only All-Stop.",
-      "Fork after check-in: hotel by ~18:30 → Myeongdong."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "16:00",
@@ -3005,10 +3002,7 @@ window.DAYS = [
       "Hongdae → Gyeongbokgung (~25m).",
       "Walk Bukchon → Ikseon → Insadong → Gwangjang → Eulji-ro (~10–15 min west of the market)."
     ],
-    "tips": [
-      "Rent hanbok for free palace entry.",
-      "Gwangjang: popular food stalls wind down ~20:30–21:00 even if the market stays open — be there by."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "09:15",
@@ -3083,10 +3077,7 @@ window.DAYS = [
       "Subway to Gangnam / Sinnonhyeon for Unni Guide, then Nonhyeon exit 3 for Moclock.",
       "Line 2 Nonhyeon / Gangnam → Samseong (COEX), then Line 2 to Dongdaemun History & Culture."
     ],
-    "tips": [
-      "Unni Guide ends at 16:00 — leave a buffer to walk/subway to Moclock (Nonhyeon exit 3, Yeongdong.",
-      "Moclock Saturday hours usually run until ~18:00; confirm Shahar’s 17:00 slot."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "09:00",
@@ -3189,10 +3180,7 @@ window.DAYS = [
       "Walk from 9 Brick to Forena (H-CUBE, Yanghwa-ro · Hongik Univ.",
       "Walk Yeonnam → Chwihyang → Mangwon → back to Hongdae."
     ],
-    "tips": [
-      "After the facial, skip long sun and sweat.",
-      "Yeonnam Chwihyang often has a weekend wait and is mostly walk-in — be nearby from ~14:45."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "10:30",
@@ -3326,10 +3314,7 @@ window.DAYS = [
       "Cheonggyecheon walk, then Line 2 to Seongsu.",
       "Seongsu → Chungmuro / Dongguk Univ."
     ],
-    "tips": [
-      "Saturday already did late-night DDP — today is Seongsu in daylight, while shops are open (Dior.",
-      "Skip the Namsan cable-car queue at sunset."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "08:45",
@@ -3442,10 +3427,7 @@ window.DAYS = [
       "N'EX ~75 min → Hotel Gracery Shinjuku (Kabukicho).",
       "Evening: east (Gyoen/Isetan) → west (Tocho/Omoide) → east (Kabukicho/Golden Gai/hotel)."
     ],
-    "tips": [
-      "Climate Card is not valid on AREX Express — Express ticket, All-Stop, T-Money, or taxi to ICN.",
-      "Load a digital Suica in Apple Wallet before landing."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "05:30",
@@ -3593,10 +3575,7 @@ window.DAYS = [
     "transport": [
       "Walk Meiji → Harajuku → Omotesando → Shibuya (or one Yamanote hop if legs are done)."
     ],
-    "tips": [
-      "Carry passports all day — flagships and PARCO do tax-free over ¥5,000, processed at the counter.",
-      "Meiji Jingu inner precinct opens at sunrise; 08:30 still beats the tour buses."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "08:30",
@@ -3723,10 +3702,7 @@ window.DAYS = [
       "Yurikamome Toyosu → Odaiba (above-ground, scenic).",
       "Yurikamome / metro Odaiba → Azabudai / Kamiyacho (skip Ginza tonight)."
     ],
-    "tips": [
-      "Shinjuku → Tsukiji is 25–35 min, not 15.",
-      "This is the old outer market, not the wholesale tuna auction (that moved to Toyosu)."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "07:15",
@@ -3842,10 +3818,7 @@ window.DAYS = [
       "Walk Asakusa → Mizumachi → Skytree (east).",
       "Then west: Skytree → Kappabashi → Ameyoko → Akihabara."
     ],
-    "tips": [
-      "Senso-ji before 8:30 if you want fewer crowds (Saturday fills fast).",
-      "Nakamise at 09:15 is for empty photos — most souvenir and food stalls open ~09:30–10:00 and are."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "07:30",
@@ -3952,10 +3925,7 @@ window.DAYS = [
       "Keio Inokashira or Odakyu to Shimokita (~15–25 min).",
       "Evening: Street Kart shop (Shibuya works for neon) — arrive 30 min before the slot."
     ],
-    "tips": [
-      "Physical International Driving Permit (1949 Geneva Convention) + passport required — Japanese.",
-      "Dinner and the kart call were overlapping."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "10:00",
@@ -4055,10 +4025,7 @@ window.DAYS = [
       "Red Line from platform 1: Oishi Park, then Mount Fuji Panoramic Ropeway, then back to the.",
       "From Kawaguchiko Station to MYSTAYS: one Fujikyu stop to Fujikyu-Highland, a short walk."
     ],
-    "tips": [
-      "Dinner by 20:00 — restaurants around Fujikyu-Highland close early.",
-      "Convenience-store run tonight: drinks, snacks, and something light for the 05:45 start."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "08:30",
@@ -4188,9 +4155,7 @@ window.DAYS = [
       "Lawson Kawaguchiko Station for the Fuji photo on the way back.",
       "Short walk from MYSTAYS to Fuji-Q Highland for 09:00 opening."
     ],
-    "tips": [
-      "Do-Dodonpa / Takabisha are the headline coasters at Fuji-Q."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "05:45",
@@ -4297,10 +4262,7 @@ window.DAYS = [
       "Direct Hakone Tozan Bus line L, Gotemba Outlets → Hakone-Yumoto (~14:15–15:15).",
       "5–8 minute walk from Hakone-Yumoto Station via the shopping street and Yumoto Bridge."
     ],
-    "tips": [
-      "Gotemba lockers at the entrance for backpacks while you shop.",
-      "Zagakukan check-in is 17:00 — leave bags at the desk if you arrive ~15:20."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "08:15",
@@ -4435,9 +4397,7 @@ window.DAYS = [
       "Hakone Ropeway Togendai → Owakudani → Sounzan, cable car to Gora, Tozan train to.",
       "Local train Hakone-Yumoto → Odawara 17:00–17:25, then Hikari 653 to Kyoto 18:07–20:12."
     ],
-    "tips": [
-      "Buy a one-day Hakone Freepass at Hakone-Yumoto after breakfast."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "08:00",
@@ -4585,9 +4545,7 @@ window.DAYS = [
       "Walk or bus from KABIN Koji to Kiyomizu-Gojo, then uphill to the temple.",
       "Walk down Sannenzaka / Ninenzaka into Gion."
     ],
-    "tips": [
-      "In Gion, take photos respectfully."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "08:30",
@@ -4661,10 +4619,7 @@ window.DAYS = [
       "JR or Keihan from Fushimi to Uji (about 20–30 min).",
       "Return to Kawaramachi / Nishiki."
     ],
-    "tips": [
-      "Higher Fushimi paths are quieter than the first gates.",
-      "Be at Nishiki by ~16:00."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "06:00",
@@ -4762,10 +4717,7 @@ window.DAYS = [
     "transport": [
       "Train/bus toward Saga-Arashiyama; walk the west Kyoto chain."
     ],
-    "tips": [
-      "Bamboo grove in the morning, before the tour buses.",
-      "Monkey park is a short uphill hike — not a cage by the entrance."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "07:30",
@@ -4868,10 +4820,7 @@ window.DAYS = [
       "After somen: trek Kibune → Kurama (~45m); train down from Kurama.",
       "teamLab Biovortex ~7 min from Kyoto Station Hachijo East — be there before 18:00."
     ],
-    "tips": [
-      "Nagashi somen is walk-in only · cash ~¥2,000 · aim for Hirobun ~09:45–10:00 for the numbered fan.",
-      "Rain at 10:00 cancels somen — lunch in Kibune or return to Kyoto."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "07:45",
@@ -5085,9 +5034,7 @@ window.DAYS = [
     "transport": [
       "Subway to Universal City (~25–35m)."
     ],
-    "tips": [
-      "Save QR screens offline — park Wi‑Fi can drop."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "07:30",
@@ -5228,10 +5175,7 @@ window.DAYS = [
       "Kintetsu/JR to Nara (~45m).",
       "Return for evening shopping."
     ],
-    "tips": [
-      "Guard bags around deer.",
-      "Deer crackers available on site."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "08:30",
@@ -5438,9 +5382,7 @@ window.DAYS = [
       "Local walk / City Loop bus between Kitano, Motomachi and the harbor.",
       "Evening JR back to Osaka."
     ],
-    "tips": [
-      "Check Nunobiki ropeway last cars for the season."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "08:30",
@@ -5532,10 +5474,7 @@ window.DAYS = [
       "Walk / metro to Ginza 8 (~10–15 min from Tokyo Station).",
       "Metro Ginza → Nakano (~25–35 min), then Nakano → Azabudai / Kamiyacho (~25–35 min)."
     ],
-    "tips": [
-      "21/9 is Respect-for-the-Aged Day, the start of Silver Week 2026 (21–23/9) — ALL Nozomi run.",
-      "This is a travel day plus a west-Tokyo hop: Nakano is ~25–35 min from Ginza, not next door."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "08:30",
@@ -5650,10 +5589,7 @@ window.DAYS = [
       "Nikko Station → mountain bus UP to Chuzenji / Kegon (~45–60 min).",
       "Afternoon bus DOWN to Toshogu, Shinkyo, then train home."
     ],
-    "tips": [
-      "Book Spacia X exactly one month ahead: 22/8 at 09:00 Japan time.",
-      "22/9 is a bonus national holiday in 2026 (sandwiched inside Silver Week) — Nikko will run at."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "07:00",
@@ -5756,10 +5692,7 @@ window.DAYS = [
       "Optional walk to Nihonbashi / Coredo Muromachi.",
       "Yurakucho is next to Ginza — walk home."
     ],
-    "tips": [
-      "National holiday: Chuo-dori goes car-free 12:00–18:00 (Apr–Sep hours) — shops open earlier, so.",
-      "Hama-rikyu replaces a second full Tsukiji breakfast (you already did that on 4/9)."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "09:00",
@@ -5820,10 +5753,7 @@ window.DAYS = [
       "Enoden coastal train via Kamakurakokomae to Enoshima.",
       "Return evening to Ginza."
     ],
-    "tips": [
-      "Moved from 23/9 so you skip the equinox crowds.",
-      "Kamakurakokomae is a short hop — get off for the crossing/sea shot, then continue."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "08:00",
@@ -5900,10 +5830,7 @@ window.DAYS = [
       "N'EX 17:45 from Tokyo Station · be at NRT ~19:00 for EK319 at 22:30.",
       "3h Emirates connection in Dubai (DXB), then EK2478 07:05–10:45 to Tirana."
     ],
-    "tips": [
-      "The Imperial Palace East Gardens are CLOSED on Fridays — Kokyo Gaien and the Nijubashi viewpoint.",
-      "Reserve N'EX 17:45 if you want seats; digital Suica still works for the ride."
-    ],
+    "tips": [],
     "timeline": [
       {
         "time": "09:00",

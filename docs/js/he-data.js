@@ -2267,7 +2267,7 @@
       if (h.title != null) day.title = h.title;
       if (h.summary != null) day.summary = clipHe(h.summary, 110);
       if (h.food != null) day.food = clipHe(h.food, 90);
-      if (Array.isArray(h.tips)) day.tips = h.tips.map((t) => clipHe(t, 100)).filter(Boolean).slice(0, 2);
+      if (Array.isArray(h.tips)) day.tips = [];
       if (h.transport) day.transport = h.transport.map((t) => clipHe(t, 90)).filter(Boolean);
       if (h.transfer === null) day.transfer = null;
       else if (h.transfer) day.transfer = Object.assign({}, day.transfer || {}, h.transfer);

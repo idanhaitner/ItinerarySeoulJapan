@@ -568,44 +568,12 @@
     });
   }
 
-  const KIND_HE = {
-    flight: "טיסה",
-    ticket: "כרטיס",
-    train: "רכבת",
-    bus: "אוטובוס",
-    appointment: "תור",
-    hotel: "צ׳ק-אין",
-  };
-
-  function autoDir(str) {
-    return `<span dir="auto">${escapeHtml(str)}</span>`;
-  }
-
   function isFlowHop(item) {
     return tools.isTravelItem(item) && !item.timed;
   }
 
-  function flowGroups(items) {
-    const groups = [];
-    let seq = [];
-    const flush = () => {
-      if (!seq.length) return;
-      groups.push({ type: "sequence", items: seq });
-      seq = [];
-    };
-    (items || []).forEach((item, idx) => {
-      if (item.timed) {
-        flush();
-        groups.push({ type: "anchor", item, idx });
-      } else if (isFlowHop(item)) {
-        flush();
-        groups.push({ type: "hop", item, idx });
-      } else {
-        seq.push({ item, idx });
-      }
-    });
-    flush();
-    return groups;
+  function autoDir(str) {
+    return `<span dir="auto">${escapeHtml(str)}</span>`;
   }
 
   function timelineActionsHtml(day, item, idx) {
@@ -634,49 +602,46 @@
     const booking = timelineBookingHtml(item, seenBookingIds, day);
     const info = tools.travelInfo(item);
     return `
-            <li class="flow-block flow-hop timeline-item is-travel travel-mode-${info.type} city-line-${day.city} ${done} ${fav}" data-tl-idx="${idx}">
-              <div class="travel-body hop-body">
-                <div class="travel-kicker">
-                  ${info.icon}
-                  <span class="travel-eyebrow">${escapeHtml(info.label)}</span>
+              <li class="route-step is-hop ${done} ${fav}" data-tl-idx="${idx}">
+                <span class="step-n step-n-dot" aria-hidden="true"></span>
+                <div class="step-body hop-inline">
+                  <div class="travel-kicker">
+                    ${info.icon}
+                    <span class="travel-eyebrow">${escapeHtml(info.label)}</span>
+                  </div>
+                  <div class="timeline-title-row">
+                    <div class="timeline-title travel-mode" dir="auto">${escapeHtml(info.title)}</div>
+                    ${booking.html}
+                  </div>
+                  ${info.route ? `<div class="travel-route" dir="auto">${escapeHtml(info.route)}</div>` : ""}
+                  <div class="timeline-actions">
+                    ${links ? `<a href="${links.primary.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.primary.label)}</a>` : ""}
+                    <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "בוצע" : "סיימתי"}</button>
+                    <button type="button" class="${storage.isFavorite(day.id, item) ? "active-fav" : ""}" data-fav="${idx}">${storage.isFavorite(day.id, item) ? "שמור" : "שמירה"}</button>
+                  </div>
                 </div>
-                <div class="timeline-title-row">
-                  <div class="timeline-title travel-mode" dir="auto">${escapeHtml(info.title)}</div>
-                  ${booking.html}
-                </div>
-                ${info.route ? `<div class="travel-route" dir="auto">${escapeHtml(info.route)}</div>` : ""}
-                <div class="timeline-actions">
-                  ${links ? `<a href="${links.primary.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.primary.label)}</a>` : ""}
-                  <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "בוצע" : "סיימתי"}</button>
-                  <button type="button" class="${storage.isFavorite(day.id, item) ? "active-fav" : ""}" data-fav="${idx}">${storage.isFavorite(day.id, item) ? "שמור" : "שמירה"}</button>
-                </div>
-              </div>
-            </li>`;
+              </li>`;
   }
 
-  function anchorHtml(day, item, idx, seenBookingIds) {
+  function stopHtml(day, item, idx, step, seenBookingIds) {
     const place = item.placeId ? places[item.placeId] : null;
-    const links = place ? mapsLinks(place) : null;
-    const timeLabel = item.end ? `${item.time}–${item.end}` : item.time;
+    const timeLabel = item.timed ? (item.end ? `${item.time}–${item.end}` : item.time) : "";
     const done = storage.isCompleted(day.id, item) ? "done" : "";
     const fav = storage.isFavorite(day.id, item) ? "fav" : "";
     const booking = timelineBookingHtml(item, seenBookingIds, day);
-    const kindLabel = KIND_HE[item.kind] || "";
     const isTravel = tools.isTravelItem(item);
-    const badge = kindLabel
-      ? `<span class="time-kind kind-${escapeHtml(item.kind || "ticket")}">${escapeHtml(kindLabel)}</span>`
+    const timedClass = item.timed ? "is-timed" : "";
+    const timeLine = timeLabel
+      ? `<div class="step-time" dir="ltr">${escapeHtml(timeLabel)}</div>`
       : "";
 
     if (isTravel) {
       const info = tools.travelInfo(item);
       return `
-            <li class="flow-block flow-anchor timeline-item is-travel travel-mode-${info.type} city-line-${day.city} ${done} ${fav}" data-tl-idx="${idx}">
-              <div class="timeline-meta">
-                <div class="time-pill">${escapeHtml(timeLabel)}</div>
-                ${badge}
-              </div>
-              <div class="timeline-card travel-card">
-                <div class="travel-body">
+              <li class="route-step ${timedClass} is-travel travel-mode-${info.type} ${done} ${fav}" data-tl-idx="${idx}">
+                <span class="step-n">${step}</span>
+                <div class="step-body">
+                  ${timeLine}
                   <div class="travel-kicker">
                     ${info.icon}
                     <span class="travel-eyebrow">${escapeHtml(info.label)}</span>
@@ -687,75 +652,44 @@
                   </div>
                   ${info.route ? `<div class="travel-route" dir="auto">${escapeHtml(info.route)}</div>` : ""}
                   ${item.note ? `<p class="timeline-note" dir="auto">${escapeHtml(item.note)}</p>` : ""}
-                  <div class="timeline-actions">
-                    ${links ? `<a href="${links.primary.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.primary.label)}</a>` : ""}
-                    <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "בוצע" : "סיימתי"}</button>
-                    <button type="button" class="${storage.isFavorite(day.id, item) ? "active-fav" : ""}" data-fav="${idx}">${storage.isFavorite(day.id, item) ? "שמור" : "שמירה"}</button>
-                  </div>
+                  ${timelineActionsHtml(day, item, idx)}
                 </div>
-              </div>
-            </li>`;
+              </li>`;
     }
 
     return `
-            <li class="flow-block flow-anchor timeline-item city-line-${day.city} ${done} ${fav}" data-tl-idx="${idx}">
-              <div class="timeline-meta">
-                <div class="time-pill">${escapeHtml(timeLabel)}</div>
-                ${badge}
-              </div>
-              <div class="timeline-card">
-                <div class="timeline-title-row">
-                  <div class="timeline-title" dir="auto">${escapeHtml(item.title)}</div>
-                  ${booking.html}
-                </div>
-                ${placeLineHtml(place)}
-                ${item.note ? `<p class="timeline-note" dir="auto">${escapeHtml(item.note)}</p>` : ""}
-                ${timelineActionsHtml(day, item, idx)}
-              </div>
-            </li>`;
-  }
-
-  function sequenceHtml(day, entries, seenBookingIds) {
-    const steps = entries
-      .map(({ item, idx }, stepIdx) => {
-        const place = item.placeId ? places[item.placeId] : null;
-        const done = storage.isCompleted(day.id, item) ? "done" : "";
-        const fav = storage.isFavorite(day.id, item) ? "fav" : "";
-        const booking = timelineBookingHtml(item, seenBookingIds, day);
-        return `
-              <li class="route-step ${done} ${fav}" data-tl-idx="${idx}">
-                <span class="step-n" aria-hidden="true">${stepIdx + 1}</span>
+              <li class="route-step ${timedClass} ${done} ${fav}" data-tl-idx="${idx}">
+                <span class="step-n">${step}</span>
                 <div class="step-body">
+                  ${timeLine}
                   <div class="timeline-title-row">
                     <div class="timeline-title" dir="auto">${escapeHtml(item.title)}</div>
                     ${booking.html}
                   </div>
                   ${placeLineHtml(place)}
+                  ${item.note ? `<p class="timeline-note" dir="auto">${escapeHtml(item.note)}</p>` : ""}
                   ${timelineActionsHtml(day, item, idx)}
                 </div>
               </li>`;
-      })
-      .join("");
-    return `
-            <li class="flow-block flow-sequence city-line-${day.city}">
-              <ol class="route-steps">${steps}</ol>
-            </li>`;
   }
 
   function timelineHtml(day) {
     const items = day.timeline || [];
     const seenBookingIds = new Set();
-    const groups = flowGroups(items);
+    let step = 0;
+    const rows = items
+      .map((item, idx) => {
+        if (isFlowHop(item)) return hopHtml(day, item, idx, seenBookingIds);
+        step += 1;
+        return stopHtml(day, item, idx, step, seenBookingIds);
+      })
+      .join("");
     return `
       <div class="section-title">המסלול · 行程</div>
       <ol class="timeline day-flow">
-        ${groups
-          .map((g) => {
-            if (g.type === "anchor") return anchorHtml(day, g.item, g.idx, seenBookingIds);
-            if (g.type === "hop") return hopHtml(day, g.item, g.idx, seenBookingIds);
-            return sequenceHtml(day, g.items, seenBookingIds);
-          })
-          .join("")}
+        <li class="flow-block flow-sequence city-line-${day.city}">
+          <ol class="route-steps">${rows}</ol>
+        </li>
       </ol>`;
   }
 
@@ -966,24 +900,16 @@
         <div>
           ${timelineHtml(day)}
         </div>
-        <div>
-          ${
-            (day.transport || []).length
-              ? `<div class="side-block">
+        ${
+          (day.transport || []).length
+            ? `<div>
+          <div class="side-block">
             <div class="side-block-head">איך מגיעים</div>
-            <ol>${day.transport.map((t) => `<li dir="auto">${escapeHtml(t)}</li>`).join("")}</ol>
-          </div>`
-              : ""
-          }
-          ${
-            (day.tips || []).length
-              ? `<div class="side-block">
-            <div class="side-block-head">המלצות</div>
-            <ul>${day.tips.map((t) => `<li dir="auto">${escapeHtml(t)}</li>`).join("")}</ul>
-          </div>`
-              : ""
-          }
-        </div>
+            <ol>${day.transport.map((t) => `<li><span>${escapeHtml(t)}</span></li>`).join("")}</ol>
+          </div>
+        </div>`
+            : ""
+        }
       </div>
     `;
     setResultCount(`${parts.day} ${parts.month}`);
