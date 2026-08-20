@@ -2241,8 +2241,23 @@
 }
 ;
 
+  function clipHe(text, limit) {
+    const raw = String(text || "").trim();
+    if (!raw) return "";
+    const stripped = raw.split(/\s*(?:טיפ:|חובה:|Must-see|Must-do|Tip:)/)[0].trim();
+    if (stripped.length <= limit) return stripped;
+    const clause = stripped.split(/\s*[·—–|]\s*/)[0].trim();
+    if (clause && clause.length <= limit) return clause;
+    const sentence = stripped.split(/(?<=[.!?。])\s+/)[0].trim();
+    if (sentence && sentence.length <= limit) return sentence;
+    return stripped.slice(0, limit).replace(/\s+\S*$/, "").replace(/[·,;:،]+$/, "") + "…";
+  }
+
   if (window.TRIP && HE.trip) {
     Object.assign(window.TRIP, HE.trip);
+    if (Array.isArray(window.TRIP.notes)) {
+      window.TRIP.notes = window.TRIP.notes.map((n) => clipHe(n, 120)).filter(Boolean).slice(0, 8);
+    }
   }
 
   if (window.DAYS && HE.days) {
@@ -2250,17 +2265,21 @@
       const h = HE.days[day.id];
       if (!h) return;
       if (h.title != null) day.title = h.title;
-      if (h.summary != null) day.summary = h.summary;
-      if (h.food != null) day.food = h.food;
-      if (Array.isArray(h.tips)) day.tips = h.tips;
-      if (h.transport) day.transport = h.transport;
+      if (h.summary != null) day.summary = clipHe(h.summary, 110);
+      if (h.food != null) day.food = clipHe(h.food, 90);
+      if (Array.isArray(h.tips)) day.tips = h.tips.map((t) => clipHe(t, 100)).filter(Boolean).slice(0, 2);
+      if (h.transport) day.transport = h.transport.map((t) => clipHe(t, 90)).filter(Boolean);
       if (h.transfer === null) day.transfer = null;
       else if (h.transfer) day.transfer = Object.assign({}, day.transfer || {}, h.transfer);
       if (h.timeline && day.timeline) {
         h.timeline.forEach((item, i) => {
           if (!day.timeline[i]) return;
           if (item.title != null) day.timeline[i].title = item.title;
-          if (item.note != null) day.timeline[i].note = item.note;
+          if (day.timeline[i].timed) {
+            day.timeline[i].note = clipHe(item.note != null ? item.note : day.timeline[i].note, 80);
+          } else {
+            day.timeline[i].note = "";
+          }
         });
       }
     });
@@ -2269,7 +2288,7 @@
   if (window.PLACES && HE.places) {
     Object.keys(HE.places).forEach((id) => {
       if (!window.PLACES[id]) return;
-      if (HE.places[id].blurb != null) window.PLACES[id].blurb = HE.places[id].blurb;
+      if (HE.places[id].blurb != null) window.PLACES[id].blurb = clipHe(HE.places[id].blurb, 100);
     });
   }
 })();

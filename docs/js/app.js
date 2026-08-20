@@ -568,29 +568,112 @@
     });
   }
 
-  function timelineHtml(day) {
-    const items = day.timeline || [];
-    const seenBookingIds = new Set();
-    return `
-      <div class="section-title">לוח זמנים · 日程</div>
-      <ol class="timeline">
-        ${items
-          .map((item, idx) => {
-            const place = item.placeId ? places[item.placeId] : null;
-            const links = place ? mapsLinks(place) : null;
-            const timeLabel = item.end ? `${item.time}–${item.end}` : item.time;
-            const done = storage.isCompleted(day.id, item) ? "done" : "";
-            const fav = storage.isFavorite(day.id, item) ? "fav" : "";
-            const booking = timelineBookingHtml(item, seenBookingIds, day);
-            const isTravel = tools.isTravelItem(item);
+  const KIND_HE = {
+    flight: "טיסה",
+    ticket: "כרטיס",
+    train: "רכבת",
+    bus: "אוטובוס",
+    appointment: "תור",
+    hotel: "צ׳ק-אין",
+  };
 
-            let travelHtml = "";
-            if (isTravel) {
-              const info = tools.travelInfo(item);
-              travelHtml = `
-            <li class="timeline-item is-travel travel-mode-${info.type} city-line-${day.city} ${done} ${fav}" data-tl-idx="${idx}">
+  function autoDir(str) {
+    return `<span dir="auto">${escapeHtml(str)}</span>`;
+  }
+
+  function isFlowHop(item) {
+    return tools.isTravelItem(item) && !item.timed;
+  }
+
+  function flowGroups(items) {
+    const groups = [];
+    let seq = [];
+    const flush = () => {
+      if (!seq.length) return;
+      groups.push({ type: "sequence", items: seq });
+      seq = [];
+    };
+    (items || []).forEach((item, idx) => {
+      if (item.timed) {
+        flush();
+        groups.push({ type: "anchor", item, idx });
+      } else if (isFlowHop(item)) {
+        flush();
+        groups.push({ type: "hop", item, idx });
+      } else {
+        seq.push({ item, idx });
+      }
+    });
+    flush();
+    return groups;
+  }
+
+  function timelineActionsHtml(day, item, idx) {
+    const place = item.placeId ? places[item.placeId] : null;
+    const links = place ? mapsLinks(place) : null;
+    return `<div class="timeline-actions">
+      ${links ? `<a href="${links.primary.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.primary.label)}</a>` : ""}
+      <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "בוצע" : "סיימתי"}</button>
+      <button type="button" class="${storage.isFavorite(day.id, item) ? "active-fav" : ""}" data-fav="${idx}">${storage.isFavorite(day.id, item) ? "שמור" : "שמירה"}</button>
+    </div>`;
+  }
+
+  function placeLineHtml(place) {
+    if (!place) return "";
+    const kind = tools.placeKindHe(place);
+    const kindBit = kind ? `<span class="place-kind">${escapeHtml(kind)}</span><span class="place-kind-sep"> · </span>` : "";
+    const ja = place.nameJa ? ` · <span lang="ja">${escapeHtml(place.nameJa)}</span>` : "";
+    return `<div class="timeline-place">${kindBit}<span class="place-name" dir="auto">${escapeHtml(place.name)}</span>${ja}</div>`;
+  }
+
+  function hopHtml(day, item, idx, seenBookingIds) {
+    const place = item.placeId ? places[item.placeId] : null;
+    const links = place ? mapsLinks(place) : null;
+    const done = storage.isCompleted(day.id, item) ? "done" : "";
+    const fav = storage.isFavorite(day.id, item) ? "fav" : "";
+    const booking = timelineBookingHtml(item, seenBookingIds, day);
+    const info = tools.travelInfo(item);
+    return `
+            <li class="flow-block flow-hop timeline-item is-travel travel-mode-${info.type} city-line-${day.city} ${done} ${fav}" data-tl-idx="${idx}">
+              <div class="travel-body hop-body">
+                <div class="travel-kicker">
+                  ${info.icon}
+                  <span class="travel-eyebrow">${escapeHtml(info.label)}</span>
+                </div>
+                <div class="timeline-title-row">
+                  <div class="timeline-title travel-mode" dir="auto">${escapeHtml(info.title)}</div>
+                  ${booking.html}
+                </div>
+                ${info.route ? `<div class="travel-route" dir="auto">${escapeHtml(info.route)}</div>` : ""}
+                <div class="timeline-actions">
+                  ${links ? `<a href="${links.primary.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.primary.label)}</a>` : ""}
+                  <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "בוצע" : "סיימתי"}</button>
+                  <button type="button" class="${storage.isFavorite(day.id, item) ? "active-fav" : ""}" data-fav="${idx}">${storage.isFavorite(day.id, item) ? "שמור" : "שמירה"}</button>
+                </div>
+              </div>
+            </li>`;
+  }
+
+  function anchorHtml(day, item, idx, seenBookingIds) {
+    const place = item.placeId ? places[item.placeId] : null;
+    const links = place ? mapsLinks(place) : null;
+    const timeLabel = item.end ? `${item.time}–${item.end}` : item.time;
+    const done = storage.isCompleted(day.id, item) ? "done" : "";
+    const fav = storage.isFavorite(day.id, item) ? "fav" : "";
+    const booking = timelineBookingHtml(item, seenBookingIds, day);
+    const kindLabel = KIND_HE[item.kind] || "";
+    const isTravel = tools.isTravelItem(item);
+    const badge = kindLabel
+      ? `<span class="time-kind kind-${escapeHtml(item.kind || "ticket")}">${escapeHtml(kindLabel)}</span>`
+      : "";
+
+    if (isTravel) {
+      const info = tools.travelInfo(item);
+      return `
+            <li class="flow-block flow-anchor timeline-item is-travel travel-mode-${info.type} city-line-${day.city} ${done} ${fav}" data-tl-idx="${idx}">
               <div class="timeline-meta">
-                <div class="timeline-time">${escapeHtml(timeLabel)}</div>
+                <div class="time-pill">${escapeHtml(timeLabel)}</div>
+                ${badge}
               </div>
               <div class="timeline-card travel-card">
                 <div class="travel-body">
@@ -599,11 +682,11 @@
                     <span class="travel-eyebrow">${escapeHtml(info.label)}</span>
                   </div>
                   <div class="timeline-title-row">
-                    <div class="timeline-title travel-mode">${escapeHtml(info.title)}</div>
+                    <div class="timeline-title travel-mode" dir="auto">${escapeHtml(info.title)}</div>
                     ${booking.html}
                   </div>
-                  ${info.route ? `<div class="travel-route">${escapeHtml(info.route)}</div>` : ""}
-                  ${item.note ? `<p class="timeline-note">${escapeHtml(item.note)}</p>` : ""}
+                  ${info.route ? `<div class="travel-route" dir="auto">${escapeHtml(info.route)}</div>` : ""}
+                  ${item.note ? `<p class="timeline-note" dir="auto">${escapeHtml(item.note)}</p>` : ""}
                   <div class="timeline-actions">
                     ${links ? `<a href="${links.primary.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.primary.label)}</a>` : ""}
                     <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "בוצע" : "סיימתי"}</button>
@@ -612,34 +695,65 @@
                 </div>
               </div>
             </li>`;
-            }
+    }
 
-            return isTravel
-              ? travelHtml
-              : `
-            <li class="timeline-item city-line-${day.city} ${done} ${fav}" data-tl-idx="${idx}">
+    return `
+            <li class="flow-block flow-anchor timeline-item city-line-${day.city} ${done} ${fav}" data-tl-idx="${idx}">
               <div class="timeline-meta">
-                <div class="timeline-time">${escapeHtml(timeLabel)}</div>
+                <div class="time-pill">${escapeHtml(timeLabel)}</div>
+                ${badge}
               </div>
               <div class="timeline-card">
                 <div class="timeline-title-row">
-                  <div class="timeline-title">${escapeHtml(item.title)}</div>
+                  <div class="timeline-title" dir="auto">${escapeHtml(item.title)}</div>
                   ${booking.html}
                 </div>
-                ${place ? `<div class="timeline-place">${(() => {
-                  const kind = tools.placeKindHe(place);
-                  const kindBit = kind ? `<span class="place-kind">${escapeHtml(kind)}</span><span class="place-kind-sep"> · </span>` : "";
-                  const ja = place.nameJa ? ` · ${escapeHtml(place.nameJa)}` : "";
-                  return `${kindBit}<span class="place-name">${escapeHtml(place.name)}</span>${ja}`;
-                })()}</div>` : ""}
-                ${place && place.blurb ? `<p class="timeline-what">${escapeHtml(place.blurb)}</p>` : ""}
-                <div class="timeline-actions">
-                  ${links ? `<a href="${links.primary.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.primary.label)}</a>` : ""}
-                  <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "בוצע" : "סיימתי"}</button>
-                  <button type="button" class="${storage.isFavorite(day.id, item) ? "active-fav" : ""}" data-fav="${idx}">${storage.isFavorite(day.id, item) ? "שמור" : "שמירה"}</button>
-                </div>
+                ${placeLineHtml(place)}
+                ${item.note ? `<p class="timeline-note" dir="auto">${escapeHtml(item.note)}</p>` : ""}
+                ${timelineActionsHtml(day, item, idx)}
               </div>
             </li>`;
+  }
+
+  function sequenceHtml(day, entries, seenBookingIds) {
+    const steps = entries
+      .map(({ item, idx }, stepIdx) => {
+        const place = item.placeId ? places[item.placeId] : null;
+        const done = storage.isCompleted(day.id, item) ? "done" : "";
+        const fav = storage.isFavorite(day.id, item) ? "fav" : "";
+        const booking = timelineBookingHtml(item, seenBookingIds, day);
+        return `
+              <li class="route-step ${done} ${fav}" data-tl-idx="${idx}">
+                <span class="step-n" aria-hidden="true">${stepIdx + 1}</span>
+                <div class="step-body">
+                  <div class="timeline-title-row">
+                    <div class="timeline-title" dir="auto">${escapeHtml(item.title)}</div>
+                    ${booking.html}
+                  </div>
+                  ${placeLineHtml(place)}
+                  ${timelineActionsHtml(day, item, idx)}
+                </div>
+              </li>`;
+      })
+      .join("");
+    return `
+            <li class="flow-block flow-sequence city-line-${day.city}">
+              <ol class="route-steps">${steps}</ol>
+            </li>`;
+  }
+
+  function timelineHtml(day) {
+    const items = day.timeline || [];
+    const seenBookingIds = new Set();
+    const groups = flowGroups(items);
+    return `
+      <div class="section-title">המסלול · 行程</div>
+      <ol class="timeline day-flow">
+        ${groups
+          .map((g) => {
+            if (g.type === "anchor") return anchorHtml(day, g.item, g.idx, seenBookingIds);
+            if (g.type === "hop") return hopHtml(day, g.item, g.idx, seenBookingIds);
+            return sequenceHtml(day, g.items, seenBookingIds);
           })
           .join("")}
       </ol>`;
@@ -656,6 +770,15 @@
       .map((d) => {
         const parts = formatDateParts(d.date);
         const steps = (d.timeline || []).length;
+        const anchors = (d.timeline || []).filter((item) => item.timed);
+        const chips = anchors
+          .slice(0, 3)
+          .map(
+            (item) =>
+              `<span class="day-anchor-chip"><span class="t">${escapeHtml(item.time)}</span> ${autoDir(item.title)}</span>`
+          )
+          .join("");
+        const extra = anchors.length > 3 ? `<span class="day-anchor-more">+${anchors.length - 3}</span>` : "";
         return `
           <button type="button" class="day-row ${cityClass(d.city)}" data-day="${d.id}">
             <div class="day-row-num">
@@ -675,8 +798,8 @@
                   
                 </div>
               </div>
-              <h3>${escapeHtml(d.title)}</h3>
-              <p>${escapeHtml(d.summary)}</p>
+              <h3 dir="auto">${escapeHtml(d.title)}</h3>
+              ${chips ? `<div class="day-anchor-row">${chips}${extra}</div>` : ""}
             </div>
           </button>`;
       })
@@ -812,7 +935,6 @@
     if (!day) return;
     const parts = formatDateParts(day.date);
     const hotel = day.hotelId ? places[day.hotelId] : null;
-    const dayPlaces = day.placeIds.map((id) => places[id]).filter(Boolean);
     const local = cityLocal(day.city);
 
     els.detail.innerHTML = `
@@ -827,8 +949,8 @@
         </div>
         <div class="detail-hero-grid">
           <div>
-            <h2>${escapeHtml(day.title)}</h2>
-            <div class="detail-meta">${escapeHtml(day.summary)}</div>
+            <h2 dir="auto">${escapeHtml(day.title)}</h2>
+            ${day.summary ? `<div class="detail-meta" dir="auto">${escapeHtml(day.summary)}</div>` : ""}
             ${
               hotel
                 ? `<div class="tag-row" style="margin-top:16px"><span class="tag">לינה · ${escapeHtml(hotel.name)}</span></div>`
@@ -837,7 +959,7 @@
                   : ""
             }
           </div>
-          ${day.food ? `<div class="food-banner"><strong>אוכל היום</strong><span>${escapeHtml(day.food)}</span></div>` : ""}
+          ${day.food ? `<div class="food-banner"><strong>אוכל היום</strong><span dir="auto">${escapeHtml(day.food)}</span></div>` : ""}
         </div>
       </div>
       <div class="detail-layout">
@@ -845,24 +967,24 @@
           ${timelineHtml(day)}
         </div>
         <div>
-          <div class="side-block">
+          ${
+            (day.transport || []).length
+              ? `<div class="side-block">
             <div class="side-block-head">איך מגיעים</div>
-            <ol>${(day.transport || []).map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ol>
-          </div>
+            <ol>${day.transport.map((t) => `<li dir="auto">${escapeHtml(t)}</li>`).join("")}</ol>
+          </div>`
+              : ""
+          }
           ${
             (day.tips || []).length
               ? `<div class="side-block">
             <div class="side-block-head">המלצות</div>
-            <ul>${day.tips.map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ul>
+            <ul>${day.tips.map((t) => `<li dir="auto">${escapeHtml(t)}</li>`).join("")}</ul>
           </div>`
               : ""
           }
         </div>
       </div>
-      <section class="places-section">
-        <div class="section-title">מקומות · 場所</div>
-        <div class="places-grid">${dayPlaces.map((p) => placeCardHtml(p)).join("")}</div>
-      </section>
     `;
     setResultCount(`${parts.day} ${parts.month}`);
   }

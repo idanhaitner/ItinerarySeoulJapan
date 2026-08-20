@@ -2,6 +2,7 @@
 """Build docs/js/data.js with Seoul + Japan detailed timelines."""
 from __future__ import annotations
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -258,15 +259,87 @@ def infer_category(title, place_id, note=""):
         return "dining"
     return "attraction"
 
-def t(time, title, place_id=None, note="", end=None, category=None):
-    item = {"time": time, "title": title, "note": note}
+def t(time, title, place_id=None, note="", end=None, category=None, *, timed=False, kind=None):
+    item = {"time": time, "title": title, "note": note, "timed": bool(timed)}
     if place_id:
         item["placeId"] = place_id
     if end:
         item["end"] = end
     if category:
         item["category"] = category
+    if kind:
+        item["kind"] = kind
     return item
+
+
+def clip_text(text, limit=110):
+    raw = str(text or "").strip()
+    if not raw:
+        return ""
+    stripped = re.split(
+        r"\s+(?:Must-see|Must-do|Must-try|Must-buy|Must-visit|Must-order|Best shot|Best stop|Best bite|Best combo|Best angles|Best view|Highlight|Tip:)",
+        raw,
+        maxsplit=1,
+    )[0].strip()
+    stripped = stripped.rstrip("—–,; ")
+    first = re.split(r"(?<=[.!?])\s+", stripped, maxsplit=1)[0].strip()
+    if first and len(first) <= limit:
+        if first[-1] not in ".!?":
+            first += "."
+        return first
+    if len(stripped) <= limit:
+        return stripped if stripped.endswith((".", "!", "?")) else stripped + "."
+    cut = stripped[:limit].rsplit(" ", 1)[0].rstrip(".,;:—–")
+    return cut + "."
+
+
+# Hard reservations / published constraints — clocks show only for these.
+# Keyed by (day id, start time); times are unique within each day.
+TIMED = {
+    ("d00", "12:30"): ("flight", "Ethiopian check-in, T3."),
+    ("d00", "15:35"): ("flight", "ET0419 · ~4h15 · booked."),
+    ("d00", "19:50"): ("flight", "Stay airside."),
+    ("d00", "22:35"): ("flight", "ET0672 · ~11h · booked."),
+    ("d01", "16:00"): ("flight", "ET0672 · immigration."),
+    ("d01", "16:45"): ("train", "AREX Express ~1h. Climate Card not valid."),
+    ("d03", "10:15"): ("ticket", "Secret Garden timed tour."),
+    ("d03", "15:00"): ("appointment", "Unni Guide · done by 16:00."),
+    ("d03", "17:00"): ("appointment", "Moclock · Nonhyeon exit 3."),
+    ("d04", "10:30"): ("appointment", "Forena · booked · H-CUBE 7F."),
+    ("d07", "05:30"): ("train", "AREX / taxi to ICN T1 · ~1h."),
+    ("d07", "06:45"): ("flight", "YP7321 · ICN T1."),
+    ("d07", "08:50"): ("flight", "YP7321 · ICN → NRT · ~2h30."),
+    ("d07", "11:20"): ("flight", "NRT T2 · immigration ~40–60 min."),
+    ("d07", "12:15"): ("train", "N'EX · ~75 min."),
+    ("d08", "17:00"): ("ticket", "Shibuya Sky · arrive 15 min early."),
+    ("d09", "11:00"): ("ticket", "teamLab Planets · ~1.5–2h."),
+    ("d11", "18:30"): ("ticket", "Street Kart shop call · 1949 IDP + passport."),
+    ("d11", "19:00"): ("ticket", "Night Street Kart · Shibuya."),
+    ("d12", "09:15"): ("bus", "Reserved · Busta Shinjuku 4F · ~2h."),
+    ("d13", "09:00"): ("ticket", "Fuji-Q Freepass · next door."),
+    ("d14", "09:10"): ("bus", "Fujikyu platform 6 · ~1h to Gotemba."),
+    ("d14", "14:15"): ("bus", "Hakone Tozan L · direct to Yumoto."),
+    ("d14", "17:00"): ("hotel", "Zagakukan check-in."),
+    ("d15", "17:00"): ("train", "Local · Yumoto → Odawara · ~15–25 min."),
+    ("d15", "18:07"): ("train", "Hikari 653 · Odawara → Kyoto · 20:12."),
+    ("d19", "18:00"): ("ticket", "Biovortex · 18:00–18:30 window."),
+    ("d21", "08:45"): ("ticket", "Studio Pass + Express QR."),
+    ("d21", "09:20"): ("ticket", "Express 09:20–09:50."),
+    ("d21", "09:50"): ("ticket", "Express 09:50–10:20."),
+    ("d21", "10:20"): ("ticket", "Express 10:20–10:50."),
+    ("d21", "13:30"): ("ticket", "Express Choice B · pick one."),
+    ("d21", "15:00"): ("ticket", "Express Choice A · pick one."),
+    ("d21", "18:30"): ("ticket", "Express 18:30–19:00."),
+    ("d26", "09:00"): ("train", "Nozomi · reserved · ~2.5h."),
+    ("d27", "07:30"): ("train", "Tobu Spacia X · reserved · ~2h."),
+    ("d27", "17:30"): ("train", "Tobu limited express · reserved."),
+    ("d30", "17:45"): ("train", "N'EX · Tokyo → Narita · ~60 min."),
+    ("d30", "19:15"): ("flight", "EK319 check-in."),
+    ("d30", "22:30"): ("flight", "EK319 · NRT → DXB · booked."),
+    ("d30", "04:05"): ("flight", "DXB · 3h connection."),
+    ("d30", "07:05"): ("flight", "EK2478 · DXB → TIA · booked."),
+    ("d30", "10:45"): ("flight", "Land Tirana."),
+}
 
 
 TRANSFERS = {
@@ -1174,12 +1247,37 @@ TRIP = {
 }
 
 
+for p in PLACES.values():
+    p["blurb"] = clip_text(p.get("blurb") or "", 100)
+
 for d in DAYS:
     if d["id"] in TRANSFERS:
         d["transfer"] = TRANSFERS[d["id"]]
+    d["summary"] = clip_text(d.get("summary") or "", 110)
+    d["food"] = clip_text(d.get("food") or "", 90)
+    d["tips"] = [clip_text(x, 100) for x in (d.get("tips") or []) if str(x).strip()][:2]
+    d["transport"] = [clip_text(x, 90) for x in (d.get("transport") or []) if str(x).strip()]
+    seen_times = set()
     for item in d.get("timeline") or []:
+        tkey = item.get("time")
+        if tkey in seen_times:
+            raise SystemExit(f"Duplicate timeline time {d['id']} {tkey}")
+        seen_times.add(tkey)
+        spec = TIMED.get((d["id"], tkey))
+        if spec:
+            kind, note = spec
+            item["timed"] = True
+            item["kind"] = kind
+            item["note"] = note
+        else:
+            item["timed"] = False
+            item["note"] = ""
+            item.pop("end", None)
+            item.pop("kind", None)
         if not item.get("category"):
             item["category"] = infer_category(item.get("title", ""), item.get("placeId"), item.get("note", ""))
+
+TRIP["notes"] = [clip_text(x, 120) for x in (TRIP.get("notes") or []) if str(x).strip()][:8]
 
 def dumps(obj):
     return json.dumps(obj, ensure_ascii=False, indent=2)
