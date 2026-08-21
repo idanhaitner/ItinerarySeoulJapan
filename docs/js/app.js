@@ -600,32 +600,28 @@
           .slice(0, 3)
           .map(
             (item) =>
-              `<span class="day-anchor-chip"><span class="t">${escapeHtml(item.time)}</span> ${autoDir(item.title)}</span>`
+              `<span class="day-anchor-chip"><span class="t" dir="ltr">${escapeHtml(item.time)}</span><span dir="auto">${escapeHtml(item.title)}</span></span>`
           )
           .join("");
         const extra = anchors.length > 3 ? `<span class="day-anchor-more">+${anchors.length - 3}</span>` : "";
         return `
           <button type="button" class="day-row ${cityClass(d.city)}" data-day="${d.id}">
-            <div class="day-row-num">
+            <div class="day-row-num" aria-hidden="true">
               <span class="n">${parts.day}</span>
               <span class="d">${escapeHtml(parts.month)}</span>
             </div>
             <div class="day-row-body">
-              <div class="day-row-top">
-                <div class="day-row-city">
-                  <span class="he">${cityLocal(d.city)}</span>
-                  <span class="en">${d.city}</span>
-                </div>
-                <div class="day-row-meta">
-                  <span>${weekdayHe(d)}</span>
-                  <span class="dot" aria-hidden="true">·</span>
-                  <span>${steps ? `${steps} עצירות` : "—"}</span>
-                  
-                </div>
-              </div>
+              <p class="day-row-meta">
+                <span class="day-row-city">${cityLocal(d.city)}</span>
+                <span class="dot" aria-hidden="true">·</span>
+                <span>${weekdayHe(d)}</span>
+                <span class="dot" aria-hidden="true">·</span>
+                <span>${steps ? `${steps} עצירות` : "—"}</span>
+              </p>
               <h3 dir="auto">${escapeHtml(d.title)}</h3>
               ${chips ? `<div class="day-anchor-row">${chips}${extra}</div>` : ""}
             </div>
+            <span class="day-row-arrow" aria-hidden="true">‹</span>
           </button>`;
       })
       .join("");
