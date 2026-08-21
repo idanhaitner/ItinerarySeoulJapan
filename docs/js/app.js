@@ -19,6 +19,7 @@
     Kyoto: "קיוטו",
     Osaka: "אוסקה",
     Kobe: "קובה",
+    Nara: "נארה",
     Hiroshima: "הירושימה",
     "Tel Aviv": "תל אביב",
     Bangkok: "בנגקוק",

@@ -141,24 +141,37 @@ Togetsukyo Bridge,35.013500,135.677800,הגשר הראשי של ארשיאמה �
 Uji / Byodo-in,34.889400,135.807700,"בירת המאצ׳ה של יפן, עם מקדש Byodo-in.",attraction,temple,Kyoto,JP,宇治・平等院,,uji
 Uji Omotesando,34.890500,135.808800,רחוב חנויות תה היסטורי. המקום לטעום מאצ׳ה וקינוחים.,attraction,food,Kyoto,JP,宇治表参道,12/9,uji-omotesando
 Uji River,34.891200,135.809500,טיילת וגשרים מול המקדש באוג׳י. הליכה קצרה אחרי Byodo-in.,attraction,nature,Kyoto,JP,宇治川,12/9,uji-river
-Amerikamura,34.672800,135.498500,רובע אופנת נוער וערב קל ליד שינסאיבאשי.,attraction,shopping,Osaka,JP,アメリカ村,17/9,amerikamura
+Amerikamura,34.672800,135.498500,רובע אופנת נוער וערב קל ליד שינסאיבאשי.,attraction,shopping,Osaka,JP,アメリカ村,,amerikamura
 Dotonbori,34.668700,135.501300,"נהר הניאון של אוסקה: שלטי גיזה, טקאויאקי ואוכל רחוב עד הלילה.",attraction,food,Osaka,JP,道頓堀,"15/9, 19/9",dotonbori
+Gango-ji & Koshi-no-Ie,34.677800,135.831500,"מקדש יונסקו בנאראמאצ׳י, ולידו בית סוחר משוחזר מתקופת אדו.",attraction,temple,Osaka,JP,元興寺・格子の家,17/9,gango-ji
 Hozenji Yokocho,34.667800,135.502500,סמטת פנסים עם אזוב ליד דוטונבורי. שקטה יותר מהנהר הראשי.,attraction,culture,Osaka,JP,法善寺横丁,"15/9, 18/9",hozenji
+Ikuta Shrine,34.695000,135.188600,מקדש שינטו עתיק מוסתר בחורשה קטנה בלב סנומיה.,attraction,shrine,Osaka,JP,生田神社,20/9,ikuta-shrine
 Instant Ramen Museum,34.819500,135.425800,מוזיאון שבו מכינים את ה־Cup Noodle שלכם. כיף קליל באיקדה.,attraction,park,Osaka,JP,カップヌードルミュージアム池田,18/9,ramen-museum
-Kasuga Taisha,34.681400,135.848200,מקדש בנארה עם אלפי פנסי אבן וברונזה ביער.,attraction,shrine,Osaka,JP,春日大社,17/9,kasuga
-Kitano Ijinkan,34.698500,135.190000,בתי מגורים מערביים ישנים על גבעת קיטנו. קובה של המאה ה־19.,attraction,culture,Osaka,JP,北野異人館,20/9,kitano-ijinkan
+Kasuga Taisha,34.681400,135.848200,מקדש בנארה עם אלפי פנסי אבן וברונזה ביער — להגיע לפני העומס.,attraction,shrine,Osaka,JP,春日大社,17/9,kasuga
+Kikuseidai (Mt. Maya),34.733600,135.203600,תצפית Kikuseidai על הר מאיה — נוף הלילה המפורסם של קובה. רכבל + כבל.,attraction,view,Osaka,JP,掬星台（摩耶山）,20/9,mt-maya
+Kitano Ijinkan,34.698500,135.190000,בתי סוחרים אירופיים ישנים על גבעת קיטנו. הכי יפה בבוקר שקט.,attraction,culture,Osaka,JP,北野異人館,20/9,kitano-ijinkan
+Kobe beef (Sannomiya),34.693800,135.195500,"טפניאקי בשר קובה ליד סנומיה. Steakland, Ishida, Mouriya או Aoyama — להזמין 2–3 שבועות מראש.",attraction,food,Osaka,JP,神戸ビーフ（三宮）,20/9,kobe-beef
+Kofuku-ji & Higashimuki,34.683200,135.831400,"פגודת חמש הקומות של קופוקו־ג׳י, ואז מדרחוב Higashimuki ליד התחנה.",attraction,temple,Osaka,JP,興福寺・東向商店街,17/9,kofuku-ji
 Kuromon Market,34.666400,135.506400,"שוק הדגים והאוכל של אוסקה. שיפודים, פירות ים ונשנושים.",attraction,food,Osaka,JP,黒門市場,18/9,kuromon
-Meriken Park & Harborland,34.682500,135.186500,"פארק הנמל של קובה: מגדל פורט, טיילת וקניות Harborland.",attraction,view,Osaka,JP,メリケンパーク・ハーバーランド,20/9,meriken-park
-Nankinmachi (Kobe Chinatown),34.688500,135.189000,צ׳יינהטאון הקטן של קובה. נשנושים בין מוטומאצ׳י לסנומיה.,attraction,food,Osaka,JP,南京町,20/9,nankinmachi
-Nara Park / Todai-ji,34.688900,135.839800,פארק עם איילים חופשיים והבודהה הגדול בטודאי־ג׳י. לא להאכיל באגרסיביות.,attraction,culture,Osaka,JP,奈良公園・東大寺,17/9,nara-park
-Nunobiki Herb Garden / Ropeway,34.719400,135.190600,רכבל מעל קובה לגני תבלינים. נוף לעיר ולמפרץ.,attraction,view,Osaka,JP,布引ハーブ園,20/9,nunobiki
+Meriken Park & Harborland,34.682500,135.186500,"פארק הנמל של קובה: מגדל פורט מואר, טיילת ו־Harborland בלילה.",attraction,view,Osaka,JP,メリケンパーク・ハーバーランド,20/9,meriken-park
+Mt. Wakakusa,34.691700,135.854700,הר דשא קצר מעל נארה. 15–20 דקות טיפוס ותצפית עם איילים.,attraction,view,Osaka,JP,若草山,17/9,wakakusa
+Nada sake breweries (Hakutsuru),34.712900,135.247800,מוזיאון מבשלת Hakutsuru בנאדה — סיור וטעימות. חלופה: Kikumasamune. כניסה אחרונה ~16:00.,attraction,culture,Osaka,JP,白鶴酒造資料館,20/9,nada-sake
+Nakatanidou,34.682400,135.829800,"מופע הכנת מוצ׳י המהיר בנארה, ואז מוצ׳י ירוק חם וטרי.",attraction,food,Osaka,JP,中谷堂,17/9,nakatanidou
+Nankinmachi (Kobe Chinatown),34.688500,135.189000,"צ׳יינהטאון הקטן של קובה. כיסוני סטימר, באנס ואוכל רחוב בין מוטומאצ׳י לסנומיה.",attraction,food,Osaka,JP,南京町,20/9,nankinmachi
+Naramachi,34.675600,135.829800,"שכונת הסוחרים ההיסטורית של נארה. סומן, קארי ובתי מאצ׳יה.",attraction,culture,Osaka,JP,奈良町,17/9,naramachi
+Nigatsu-do,34.689200,135.844400,אולם משנה של טודאי־ג׳י עם מרפסת תצפית מעל נארה.,attraction,temple,Osaka,JP,二月堂,17/9,nigatsu-do
+Nunobiki Herb Garden / Ropeway,34.719400,135.190600,"רכבל שינ־קובה לגני התבלינים, נוף למפרץ והליכה קצרה למפלי נונוביקי.",attraction,view,Osaka,JP,布引ハーブ園,20/9,nunobiki
 Osaka Castle,34.687300,135.526200,טירה משוחזרת בפארק גדול. בוקר טוב לפני שינסקאי.,attraction,culture,Osaka,JP,大阪城,19/9,osaka-castle
-Shinsaibashi,34.675000,135.501300,"ארקדת הקניות הראשית של אוסקה, ליד נמבה והמלון.",attraction,shopping,Osaka,JP,心斎橋,17/9,shinsaibashi
+Sarusawa-ike / Nara Park,34.681900,135.830000,"אגם סארוסאווה ופארק האיילים — הכי יפה מוקדם, לפני האוטובוסים.",attraction,park,Osaka,JP,猿沢池・奈良公園,17/9,nara-park
+Shinsaibashi,34.675000,135.501300,"ארקדת הקניות הראשית של אוסקה, ליד נמבה והמלון.",attraction,shopping,Osaka,JP,心斎橋,,shinsaibashi
 Shinsekai / Tsutenkaku,34.652500,135.506300,אוסקה רטרו סביב מגדל צוטנקאקו: קושיקאצו וניאון ישן.,attraction,food,Osaka,JP,新世界・通天閣,19/9,shinsekai
 teamLab Botanical Garden Osaka,34.611900,135.523600,לא במסלול (נבחר Biovortex בקיוטו).,attraction,park,Osaka,JP,チームラボ ボタニカルガーデン 大阪,,teamlab-botanical
 Tenjinbashi-suji,34.704500,135.511000,הארקדה הארוכה ביפן. קניות מקומיות מקורות לאורך קילומטרים.,attraction,food,Osaka,JP,天神橋筋商店街,18/9,tenjinbashi
+Todai-ji (Great Buddha),34.689000,135.839800,הבודהה הענק (Daibutsu) באולם העץ הגדול ביפן.,attraction,temple,Osaka,JP,東大寺,17/9,todai-ji
+Ukimido Pavilion,34.685400,135.843700,ביתן עץ משושה שצף על אגם סאגי בפארק נארה.,attraction,park,Osaka,JP,浮見堂,17/9,ukimido
 Umeda Sky Building,34.705500,135.489700,שני מגדלים מחוברים עם תצפית “גן מרחף” על הגג.,attraction,view,Osaka,JP,梅田スカイビル,19/9,umeda-sky
 Universal Studios Japan,34.665400,135.432300,יוניברסל סטודיוס יפן — פארק שעשועים שלם. יש לכם Express Pass 7 ליום 16/9.,attraction,park,Osaka,JP,ユニバーサル・スタジオ・ジャパン,16/9,usj
+Yoshikien Garden,34.685500,135.836400,שלושה גנים יפניים מסורתיים. חינם לתיירים זרים בהצגת דרכון.,attraction,park,Osaka,JP,吉城園,17/9,yoshikien
 Itsukushima Shrine,34.296000,132.319800,הטורי הצף של מיאג׳ימה.,attraction,shrine,Hiroshima,JP,厳島神社,,miyajima
 Mt. Misen Ropeway,34.290500,132.318500,פסגת האי מיאג׳ימה.,attraction,view,Hiroshima,JP,弥山ロープウェイ,,misen
 Okonomi-mura,34.393800,132.462200,אולם okonomiyaki ב־Hiroshima.,attraction,food,Hiroshima,JP,お好み村,,okonomiyaki

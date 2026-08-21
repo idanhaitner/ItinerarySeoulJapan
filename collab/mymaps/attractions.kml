@@ -2433,10 +2433,10 @@
   <Data name="City"><value>Osaka</value></Data>
   <Data name="Country"><value>JP</value></Data>
   <Data name="Local name"><value>アメリカ村</value></Data>
-  <Data name="Days"><value>17/9</value></Data>
+  <Data name="Days"><value></value></Data>
   <Data name="Place ID"><value>amerikamura</value></Data>
 </ExtendedData>
-<description><![CDATA[<p>רובע אופנת נוער וערב קל ליד שינסאיבאשי.</p><p>Osaka · アメリカ村 · Days 17/9</p>]]></description>
+<description><![CDATA[<p>רובע אופנת נוער וערב קל ליד שינסאיבאשי.</p><p>Osaka · アメリカ村</p>]]></description>
 <Point>
 <coordinates>135.498500,34.672800,0</coordinates>
 </Point>
@@ -2459,6 +2459,23 @@
 </Point>
 </Placemark>
 <Placemark>
+<name>Gango-ji &amp; Koshi-no-Ie</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>temple</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>元興寺・格子の家</value></Data>
+  <Data name="Days"><value>17/9</value></Data>
+  <Data name="Place ID"><value>gango-ji</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מקדש יונסקו בנאראמאצ׳י, ולידו בית סוחר משוחזר מתקופת אדו.</p><p>Osaka · 元興寺・格子の家 · Days 17/9</p>]]></description>
+<Point>
+<coordinates>135.831500,34.677800,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
 <name>Hozenji Yokocho</name>
 <styleUrl>#attraction</styleUrl>
 <ExtendedData>
@@ -2473,6 +2490,23 @@
 <description><![CDATA[<p>סמטת פנסים עם אזוב ליד דוטונבורי. שקטה יותר מהנהר הראשי.</p><p>Osaka · 法善寺横丁 · Days 15/9, 18/9</p>]]></description>
 <Point>
 <coordinates>135.502500,34.667800,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Ikuta Shrine</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>shrine</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>生田神社</value></Data>
+  <Data name="Days"><value>20/9</value></Data>
+  <Data name="Place ID"><value>ikuta-shrine</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מקדש שינטו עתיק מוסתר בחורשה קטנה בלב סנומיה.</p><p>Osaka · 生田神社 · Days 20/9</p>]]></description>
+<Point>
+<coordinates>135.188600,34.695000,0</coordinates>
 </Point>
 </Placemark>
 <Placemark>
@@ -2504,9 +2538,26 @@
   <Data name="Days"><value>17/9</value></Data>
   <Data name="Place ID"><value>kasuga</value></Data>
 </ExtendedData>
-<description><![CDATA[<p>מקדש בנארה עם אלפי פנסי אבן וברונזה ביער.</p><p>Osaka · 春日大社 · Days 17/9</p>]]></description>
+<description><![CDATA[<p>מקדש בנארה עם אלפי פנסי אבן וברונזה ביער — להגיע לפני העומס.</p><p>Osaka · 春日大社 · Days 17/9</p>]]></description>
 <Point>
 <coordinates>135.848200,34.681400,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kikuseidai (Mt. Maya)</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>view</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>掬星台（摩耶山）</value></Data>
+  <Data name="Days"><value>20/9</value></Data>
+  <Data name="Place ID"><value>mt-maya</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>תצפית Kikuseidai על הר מאיה — נוף הלילה המפורסם של קובה. רכבל + כבל.</p><p>Osaka · 掬星台（摩耶山） · Days 20/9</p>]]></description>
+<Point>
+<coordinates>135.203600,34.733600,0</coordinates>
 </Point>
 </Placemark>
 <Placemark>
@@ -2521,9 +2572,43 @@
   <Data name="Days"><value>20/9</value></Data>
   <Data name="Place ID"><value>kitano-ijinkan</value></Data>
 </ExtendedData>
-<description><![CDATA[<p>בתי מגורים מערביים ישנים על גבעת קיטנו. קובה של המאה ה־19.</p><p>Osaka · 北野異人館 · Days 20/9</p>]]></description>
+<description><![CDATA[<p>בתי סוחרים אירופיים ישנים על גבעת קיטנו. הכי יפה בבוקר שקט.</p><p>Osaka · 北野異人館 · Days 20/9</p>]]></description>
 <Point>
 <coordinates>135.190000,34.698500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kobe beef (Sannomiya)</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>神戸ビーフ（三宮）</value></Data>
+  <Data name="Days"><value>20/9</value></Data>
+  <Data name="Place ID"><value>kobe-beef</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>טפניאקי בשר קובה ליד סנומיה. Steakland, Ishida, Mouriya או Aoyama — להזמין 2–3 שבועות מראש.</p><p>Osaka · 神戸ビーフ（三宮） · Days 20/9</p>]]></description>
+<Point>
+<coordinates>135.195500,34.693800,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Kofuku-ji &amp; Higashimuki</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>temple</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>興福寺・東向商店街</value></Data>
+  <Data name="Days"><value>17/9</value></Data>
+  <Data name="Place ID"><value>kofuku-ji</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>פגודת חמש הקומות של קופוקו־ג׳י, ואז מדרחוב Higashimuki ליד התחנה.</p><p>Osaka · 興福寺・東向商店街 · Days 17/9</p>]]></description>
+<Point>
+<coordinates>135.831400,34.683200,0</coordinates>
 </Point>
 </Placemark>
 <Placemark>
@@ -2555,9 +2640,60 @@
   <Data name="Days"><value>20/9</value></Data>
   <Data name="Place ID"><value>meriken-park</value></Data>
 </ExtendedData>
-<description><![CDATA[<p>פארק הנמל של קובה: מגדל פורט, טיילת וקניות Harborland.</p><p>Osaka · メリケンパーク・ハーバーランド · Days 20/9</p>]]></description>
+<description><![CDATA[<p>פארק הנמל של קובה: מגדל פורט מואר, טיילת ו־Harborland בלילה.</p><p>Osaka · メリケンパーク・ハーバーランド · Days 20/9</p>]]></description>
 <Point>
 <coordinates>135.186500,34.682500,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Mt. Wakakusa</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>view</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>若草山</value></Data>
+  <Data name="Days"><value>17/9</value></Data>
+  <Data name="Place ID"><value>wakakusa</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>הר דשא קצר מעל נארה. 15–20 דקות טיפוס ותצפית עם איילים.</p><p>Osaka · 若草山 · Days 17/9</p>]]></description>
+<Point>
+<coordinates>135.854700,34.691700,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Nada sake breweries (Hakutsuru)</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>culture</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>白鶴酒造資料館</value></Data>
+  <Data name="Days"><value>20/9</value></Data>
+  <Data name="Place ID"><value>nada-sake</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מוזיאון מבשלת Hakutsuru בנאדה — סיור וטעימות. חלופה: Kikumasamune. כניסה אחרונה ~16:00.</p><p>Osaka · 白鶴酒造資料館 · Days 20/9</p>]]></description>
+<Point>
+<coordinates>135.247800,34.712900,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Nakatanidou</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>中谷堂</value></Data>
+  <Data name="Days"><value>17/9</value></Data>
+  <Data name="Place ID"><value>nakatanidou</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מופע הכנת מוצ׳י המהיר בנארה, ואז מוצ׳י ירוק חם וטרי.</p><p>Osaka · 中谷堂 · Days 17/9</p>]]></description>
+<Point>
+<coordinates>135.829800,34.682400,0</coordinates>
 </Point>
 </Placemark>
 <Placemark>
@@ -2572,26 +2708,43 @@
   <Data name="Days"><value>20/9</value></Data>
   <Data name="Place ID"><value>nankinmachi</value></Data>
 </ExtendedData>
-<description><![CDATA[<p>צ׳יינהטאון הקטן של קובה. נשנושים בין מוטומאצ׳י לסנומיה.</p><p>Osaka · 南京町 · Days 20/9</p>]]></description>
+<description><![CDATA[<p>צ׳יינהטאון הקטן של קובה. כיסוני סטימר, באנס ואוכל רחוב בין מוטומאצ׳י לסנומיה.</p><p>Osaka · 南京町 · Days 20/9</p>]]></description>
 <Point>
 <coordinates>135.189000,34.688500,0</coordinates>
 </Point>
 </Placemark>
 <Placemark>
-<name>Nara Park / Todai-ji</name>
+<name>Naramachi</name>
 <styleUrl>#attraction</styleUrl>
 <ExtendedData>
   <Data name="Tag"><value>attraction</value></Data>
   <Data name="Kind"><value>culture</value></Data>
   <Data name="City"><value>Osaka</value></Data>
   <Data name="Country"><value>JP</value></Data>
-  <Data name="Local name"><value>奈良公園・東大寺</value></Data>
+  <Data name="Local name"><value>奈良町</value></Data>
   <Data name="Days"><value>17/9</value></Data>
-  <Data name="Place ID"><value>nara-park</value></Data>
+  <Data name="Place ID"><value>naramachi</value></Data>
 </ExtendedData>
-<description><![CDATA[<p>פארק עם איילים חופשיים והבודהה הגדול בטודאי־ג׳י. לא להאכיל באגרסיביות.</p><p>Osaka · 奈良公園・東大寺 · Days 17/9</p>]]></description>
+<description><![CDATA[<p>שכונת הסוחרים ההיסטורית של נארה. סומן, קארי ובתי מאצ׳יה.</p><p>Osaka · 奈良町 · Days 17/9</p>]]></description>
 <Point>
-<coordinates>135.839800,34.688900,0</coordinates>
+<coordinates>135.829800,34.675600,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Nigatsu-do</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>temple</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>二月堂</value></Data>
+  <Data name="Days"><value>17/9</value></Data>
+  <Data name="Place ID"><value>nigatsu-do</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>אולם משנה של טודאי־ג׳י עם מרפסת תצפית מעל נארה.</p><p>Osaka · 二月堂 · Days 17/9</p>]]></description>
+<Point>
+<coordinates>135.844400,34.689200,0</coordinates>
 </Point>
 </Placemark>
 <Placemark>
@@ -2606,7 +2759,7 @@
   <Data name="Days"><value>20/9</value></Data>
   <Data name="Place ID"><value>nunobiki</value></Data>
 </ExtendedData>
-<description><![CDATA[<p>רכבל מעל קובה לגני תבלינים. נוף לעיר ולמפרץ.</p><p>Osaka · 布引ハーブ園 · Days 20/9</p>]]></description>
+<description><![CDATA[<p>רכבל שינ־קובה לגני התבלינים, נוף למפרץ והליכה קצרה למפלי נונוביקי.</p><p>Osaka · 布引ハーブ園 · Days 20/9</p>]]></description>
 <Point>
 <coordinates>135.190600,34.719400,0</coordinates>
 </Point>
@@ -2629,6 +2782,23 @@
 </Point>
 </Placemark>
 <Placemark>
+<name>Sarusawa-ike / Nara Park</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>猿沢池・奈良公園</value></Data>
+  <Data name="Days"><value>17/9</value></Data>
+  <Data name="Place ID"><value>nara-park</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>אגם סארוסאווה ופארק האיילים — הכי יפה מוקדם, לפני האוטובוסים.</p><p>Osaka · 猿沢池・奈良公園 · Days 17/9</p>]]></description>
+<Point>
+<coordinates>135.830000,34.681900,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
 <name>Shinsaibashi</name>
 <styleUrl>#attraction</styleUrl>
 <ExtendedData>
@@ -2637,10 +2807,10 @@
   <Data name="City"><value>Osaka</value></Data>
   <Data name="Country"><value>JP</value></Data>
   <Data name="Local name"><value>心斎橋</value></Data>
-  <Data name="Days"><value>17/9</value></Data>
+  <Data name="Days"><value></value></Data>
   <Data name="Place ID"><value>shinsaibashi</value></Data>
 </ExtendedData>
-<description><![CDATA[<p>ארקדת הקניות הראשית של אוסקה, ליד נמבה והמלון.</p><p>Osaka · 心斎橋 · Days 17/9</p>]]></description>
+<description><![CDATA[<p>ארקדת הקניות הראשית של אוסקה, ליד נמבה והמלון.</p><p>Osaka · 心斎橋</p>]]></description>
 <Point>
 <coordinates>135.501300,34.675000,0</coordinates>
 </Point>
@@ -2697,6 +2867,40 @@
 </Point>
 </Placemark>
 <Placemark>
+<name>Todai-ji (Great Buddha)</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>temple</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>東大寺</value></Data>
+  <Data name="Days"><value>17/9</value></Data>
+  <Data name="Place ID"><value>todai-ji</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>הבודהה הענק (Daibutsu) באולם העץ הגדול ביפן.</p><p>Osaka · 東大寺 · Days 17/9</p>]]></description>
+<Point>
+<coordinates>135.839800,34.689000,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Ukimido Pavilion</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>浮見堂</value></Data>
+  <Data name="Days"><value>17/9</value></Data>
+  <Data name="Place ID"><value>ukimido</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>ביתן עץ משושה שצף על אגם סאגי בפארק נארה.</p><p>Osaka · 浮見堂 · Days 17/9</p>]]></description>
+<Point>
+<coordinates>135.843700,34.685400,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
 <name>Umeda Sky Building</name>
 <styleUrl>#attraction</styleUrl>
 <ExtendedData>
@@ -2728,6 +2932,23 @@
 <description><![CDATA[<p>יוניברסל סטודיוס יפן — פארק שעשועים שלם. יש לכם Express Pass 7 ליום 16/9.</p><p>Osaka · ユニバーサル・スタジオ・ジャパン · Days 16/9</p>]]></description>
 <Point>
 <coordinates>135.432300,34.665400,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Yoshikien Garden</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>park</value></Data>
+  <Data name="City"><value>Osaka</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>吉城園</value></Data>
+  <Data name="Days"><value>17/9</value></Data>
+  <Data name="Place ID"><value>yoshikien</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>שלושה גנים יפניים מסורתיים. חינם לתיירים זרים בהצגת דרכון.</p><p>Osaka · 吉城園 · Days 17/9</p>]]></description>
+<Point>
+<coordinates>135.836400,34.685500,0</coordinates>
 </Point>
 </Placemark>
 <Placemark>

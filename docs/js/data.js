@@ -1900,7 +1900,7 @@ window.PLACES = {
     ],
     "lat": 34.7194,
     "lng": 135.1906,
-    "blurb": "Ropeway above Kobe — herb gardens + city/bay views."
+    "blurb": "Shin-Kobe ropeway to the herb gardens, bay views, and a short walk to Nunobiki Falls."
   },
   "kitano-ijinkan": {
     "id": "kitano-ijinkan",
@@ -1915,7 +1915,22 @@ window.PLACES = {
     ],
     "lat": 34.6985,
     "lng": 135.19,
-    "blurb": "Former foreign residences on the Kitano hillside."
+    "blurb": "Quiet morning streets and former Western merchant houses on the Kitano hillside."
+  },
+  "ikuta-shrine": {
+    "id": "ikuta-shrine",
+    "name": "Ikuta Shrine",
+    "nameJa": "生田神社",
+    "city": "Osaka",
+    "country": "JP",
+    "tags": [
+      "shrine",
+      "culture",
+      "must-see"
+    ],
+    "lat": 34.695,
+    "lng": 135.1886,
+    "blurb": "Ancient Shinto shrine in a pocket of forest in the middle of Sannomiya."
   },
   "nankinmachi": {
     "id": "nankinmachi",
@@ -1930,7 +1945,51 @@ window.PLACES = {
     ],
     "lat": 34.6885,
     "lng": 135.189,
-    "blurb": "Compact Chinatown lanes — street snacks between Motomachi and Sannomiya."
+    "blurb": "Compact Chinatown lanes — xiaolongbao, buns, and street snacks between Motomachi and Sannomiya."
+  },
+  "nada-sake": {
+    "id": "nada-sake",
+    "name": "Nada sake breweries (Hakutsuru)",
+    "nameJa": "白鶴酒造資料館",
+    "city": "Osaka",
+    "country": "JP",
+    "tags": [
+      "food",
+      "culture",
+      "must-see"
+    ],
+    "lat": 34.7129,
+    "lng": 135.2478,
+    "blurb": "Nada district sake museum — tour and tastings at Hakutsuru (or Kikumasamune nearby)."
+  },
+  "mt-maya": {
+    "id": "mt-maya",
+    "name": "Kikuseidai (Mt. Maya)",
+    "nameJa": "掬星台（摩耶山）",
+    "city": "Osaka",
+    "country": "JP",
+    "tags": [
+      "must-see",
+      "view",
+      "nature"
+    ],
+    "lat": 34.7336,
+    "lng": 135.2036,
+    "blurb": "Sunset and night-view terrace — Kobe's famous 'ten-million-dollar night view'."
+  },
+  "kobe-beef": {
+    "id": "kobe-beef",
+    "name": "Kobe beef (Sannomiya)",
+    "nameJa": "神戸ビーフ（三宮）",
+    "city": "Osaka",
+    "country": "JP",
+    "tags": [
+      "food",
+      "must-see"
+    ],
+    "lat": 34.6938,
+    "lng": 135.1955,
+    "blurb": "Teppanyaki Kobe beef near Sannomiya — Steakland, Ishida, Mouriya or Aoyama; book 2–3 weeks ahead."
   },
   "meriken-park": {
     "id": "meriken-park",
@@ -1945,7 +2004,7 @@ window.PLACES = {
     ],
     "lat": 34.6825,
     "lng": 135.1865,
-    "blurb": "Waterfront park, Kobe Port Tower views, and Harborland shopping."
+    "blurb": "Waterfront park, lit Kobe Port Tower, and Harborland for a night-end walk."
   },
   "apt-hotel-11-shinsaibashi": {
     "id": "apt-hotel-11-shinsaibashi",
@@ -2050,17 +2109,151 @@ window.PLACES = {
   },
   "nara-park": {
     "id": "nara-park",
-    "name": "Nara Park / Todai-ji",
-    "nameJa": "奈良公園・東大寺",
+    "name": "Sarusawa-ike / Nara Park",
+    "nameJa": "猿沢池・奈良公園",
     "city": "Osaka",
     "country": "JP",
     "tags": [
       "must-see",
+      "nature",
+      "park"
+    ],
+    "lat": 34.6819,
+    "lng": 135.83,
+    "blurb": "Early-morning lake loop and the first deer of the day, a short walk from Kintetsu-Nara."
+  },
+  "ukimido": {
+    "id": "ukimido",
+    "name": "Ukimido Pavilion",
+    "nameJa": "浮見堂",
+    "city": "Osaka",
+    "country": "JP",
+    "tags": [
+      "icon",
+      "nature",
+      "park"
+    ],
+    "lat": 34.6854,
+    "lng": 135.8437,
+    "blurb": "Hexagonal wooden pavilion floating on Sagi-ike pond in Nara Park."
+  },
+  "wakakusa": {
+    "id": "wakakusa",
+    "name": "Mt. Wakakusa",
+    "nameJa": "若草山",
+    "city": "Osaka",
+    "country": "JP",
+    "tags": [
+      "must-see",
+      "view",
+      "nature"
+    ],
+    "lat": 34.6917,
+    "lng": 135.8547,
+    "blurb": "Short 15–20 min climb for a panorama of Nara with wild deer on the grass."
+  },
+  "todai-ji": {
+    "id": "todai-ji",
+    "name": "Todai-ji (Great Buddha)",
+    "nameJa": "東大寺",
+    "city": "Osaka",
+    "country": "JP",
+    "tags": [
+      "must-see",
+      "temple",
       "culture"
     ],
-    "lat": 34.6889,
+    "lat": 34.689,
     "lng": 135.8398,
-    "blurb": "Deer + Great Buddha."
+    "blurb": "The Great Buddha (Daibutsu) in Japan's largest wooden hall."
+  },
+  "nigatsu-do": {
+    "id": "nigatsu-do",
+    "name": "Nigatsu-do",
+    "nameJa": "二月堂",
+    "city": "Osaka",
+    "country": "JP",
+    "tags": [
+      "temple",
+      "view",
+      "culture"
+    ],
+    "lat": 34.6892,
+    "lng": 135.8444,
+    "blurb": "Sub-temple of Todai-ji with a terrace looking over Nara."
+  },
+  "yoshikien": {
+    "id": "yoshikien",
+    "name": "Yoshikien Garden",
+    "nameJa": "吉城園",
+    "city": "Osaka",
+    "country": "JP",
+    "tags": [
+      "must-see",
+      "culture",
+      "park"
+    ],
+    "lat": 34.6855,
+    "lng": 135.8364,
+    "blurb": "Three traditional Japanese gardens — free for foreign visitors with a passport."
+  },
+  "naramachi": {
+    "id": "naramachi",
+    "name": "Naramachi",
+    "nameJa": "奈良町",
+    "city": "Osaka",
+    "country": "JP",
+    "tags": [
+      "neighborhood",
+      "food",
+      "culture"
+    ],
+    "lat": 34.6756,
+    "lng": 135.8298,
+    "blurb": "Historic merchant-town lanes — cold somen, Japanese curry, and machiya houses."
+  },
+  "gango-ji": {
+    "id": "gango-ji",
+    "name": "Gango-ji & Koshi-no-Ie",
+    "nameJa": "元興寺・格子の家",
+    "city": "Osaka",
+    "country": "JP",
+    "tags": [
+      "temple",
+      "culture"
+    ],
+    "lat": 34.6778,
+    "lng": 135.8315,
+    "blurb": "UNESCO temple in Naramachi plus a restored Edo merchant house nearby."
+  },
+  "nakatanidou": {
+    "id": "nakatanidou",
+    "name": "Nakatanidou",
+    "nameJa": "中谷堂",
+    "city": "Osaka",
+    "country": "JP",
+    "tags": [
+      "food",
+      "must-see"
+    ],
+    "lat": 34.6824,
+    "lng": 135.8298,
+    "blurb": "Watch the famous high-speed mochi pounding, then eat hot yomogi mochi."
+  },
+  "kofuku-ji": {
+    "id": "kofuku-ji",
+    "name": "Kofuku-ji & Higashimuki",
+    "nameJa": "興福寺・東向商店街",
+    "city": "Osaka",
+    "country": "JP",
+    "tags": [
+      "temple",
+      "culture",
+      "shopping"
+    ],
+    "lat": 34.6832,
+    "lng": 135.8314,
+    "blurb": "Five-story pagoda, then the covered arcade next to Kintetsu-Nara station."
   },
   "shinsekai": {
     "id": "shinsekai",
@@ -2756,11 +2949,12 @@ window.PLACES = {
     "country": "JP",
     "tags": [
       "shrine",
-      "culture"
+      "culture",
+      "must-see"
     ],
     "lat": 34.6814,
     "lng": 135.8482,
-    "blurb": "Lantern shrine in Nara."
+    "blurb": "Lantern forest shrine — go early, before the tour groups."
   },
   "kokyo-gaien": {
     "id": "kokyo-gaien",
@@ -5162,69 +5356,125 @@ window.DAYS = [
     "city": "Osaka",
     "country": "JP",
     "hotelId": "apt-hotel-11-shinsaibashi",
-    "title": "Nara deer park day trip",
-    "summary": "Day trip to Nara for deer park, Todai-ji and Kasuga Taisha; evening back in Shinsaibashi and Amerikamura.",
-    "food": "Nara lunch; Amerikamura dinner.",
+    "title": "Full Nara day — park, temples, Wakakusa & Naramachi",
+    "summary": "Packed Nara day: early Sarusawa and deer, Kasuga and Ukimido, Mt.",
+    "food": "Quick station breakfast; Naramachi lunch (cold somen or local curry); Nakatanidou mochi.",
     "placeIds": [
       "nara-park",
       "kasuga",
-      "shinsaibashi",
-      "amerikamura"
+      "ukimido",
+      "wakakusa",
+      "todai-ji",
+      "nigatsu-do",
+      "yoshikien",
+      "naramachi",
+      "gango-ji",
+      "nakatanidou",
+      "kofuku-ji"
     ],
     "transport": [
-      "Kintetsu/JR to Nara (~45m).",
-      "Return for evening shopping."
+      "Kintetsu from Osaka-Namba to Kintetsu-Nara (~35–45m) — leave ~06:45 to start at 07:30.",
+      "All walking in Nara (~15–18 km).",
+      "Return Kintetsu / JR to Osaka ~17:30."
     ],
     "tips": [],
     "timeline": [
       {
-        "time": "08:30",
-        "title": "Travel by Kintetsu (or JR) · from Osaka to Nara",
+        "time": "06:45",
+        "title": "Travel by Kintetsu · from Osaka-Namba to Kintetsu-Nara",
         "note": "",
         "timed": false,
         "placeId": "nara-park",
         "category": "transit"
       },
       {
-        "time": "09:30",
-        "title": "Visit Nara Park & deer (Todai-ji temple)",
+        "time": "07:30",
+        "title": "Sarusawa-ike & early Nara Park",
         "note": "",
         "timed": false,
         "placeId": "nara-park",
-        "category": "culture"
+        "category": "attraction"
       },
       {
-        "time": "13:15",
-        "title": "Visit Kasuga Taisha shrine",
+        "time": "08:30",
+        "title": "Kasuga Taisha & Ukimido Pavilion",
         "note": "",
         "timed": false,
         "placeId": "kasuga",
         "category": "culture"
       },
       {
-        "time": "15:00",
+        "time": "09:45",
+        "title": "Climb Mt. Wakakusa",
+        "note": "",
+        "timed": false,
+        "placeId": "wakakusa",
+        "category": "attraction"
+      },
+      {
+        "time": "11:00",
+        "title": "Todai-ji & Nigatsu-do",
+        "note": "",
+        "timed": false,
+        "placeId": "todai-ji",
+        "category": "culture"
+      },
+      {
+        "time": "12:45",
+        "title": "Yoshikien Garden",
+        "note": "",
+        "timed": false,
+        "placeId": "yoshikien",
+        "category": "culture"
+      },
+      {
+        "time": "13:45",
+        "title": "Lunch in Naramachi",
+        "note": "",
+        "timed": false,
+        "placeId": "naramachi",
+        "category": "dining"
+      },
+      {
+        "time": "14:45",
+        "title": "Gango-ji & Koshi-no-Ie",
+        "note": "",
+        "timed": false,
+        "placeId": "gango-ji",
+        "category": "culture"
+      },
+      {
+        "time": "15:45",
+        "title": "Mochi show at Nakatanidou",
+        "note": "",
+        "timed": false,
+        "placeId": "nakatanidou",
+        "category": "dining"
+      },
+      {
+        "time": "16:30",
+        "title": "Kofuku-ji & Higashimuki arcade",
+        "note": "",
+        "timed": false,
+        "placeId": "kofuku-ji",
+        "category": "shopping"
+      },
+      {
+        "time": "17:30",
         "title": "Travel by Kintetsu / JR · from Nara to Osaka (Shinsaibashi)",
         "note": "",
         "timed": false,
         "category": "transit"
-      },
-      {
-        "time": "17:30",
-        "title": "Shinsaibashi shopping",
-        "note": "",
-        "timed": false,
-        "placeId": "shinsaibashi",
-        "category": "shopping"
-      },
-      {
-        "time": "19:30",
-        "title": "Dinner in Amerikamura",
-        "note": "",
-        "timed": false,
-        "placeId": "amerikamura",
-        "category": "dining"
       }
-    ]
+    ],
+    "transfer": {
+      "mode": "train",
+      "label": "Osaka ↔ Nara day trip",
+      "detail": "Kintetsu from Osaka-Namba to Kintetsu-Nara (~35–45m), return ~17:30",
+      "duration": "~40m each way",
+      "fromCity": "Osaka",
+      "toCity": "Nara"
+    }
   },
   {
     "id": "d23",
@@ -5368,70 +5618,100 @@ window.DAYS = [
     "city": "Osaka",
     "country": "JP",
     "hotelId": "apt-hotel-11-shinsaibashi",
-    "title": "Kobe day trip — ropeway, Kitano & harbor",
-    "summary": "Day trip to Kobe: Nunobiki ropeway & herb garden, Kitano Ijinkan hillside, Nankinmachi snacks, Meriken Park /.",
-    "food": "Nankinmachi snacks; Kobe beef dinner before heading back.",
+    "title": "Full Kobe day — Kitano, sake, Mt. Maya & Kobe beef",
+    "summary": "Packed Kobe day: Kitano-cho morning, Shin-Kobe ropeway and Nunobiki, Ikuta Shrine, Nankinmachi lunch, Nada.",
+    "food": "Light Nankinmachi lunch (xiaolongbao, buns); teppanyaki Kobe beef in Sannomiya — book 2–3.",
     "placeIds": [
-      "nunobiki",
       "kitano-ijinkan",
+      "nunobiki",
+      "ikuta-shrine",
       "nankinmachi",
+      "nada-sake",
+      "mt-maya",
+      "kobe-beef",
       "meriken-park"
     ],
     "transport": [
       "JR Special Rapid Osaka / Umeda → Sannomiya (~30m).",
-      "Local walk / City Loop bus between Kitano, Motomachi and the harbor.",
-      "Evening JR back to Osaka."
+      "Shin-Kobe ropeway for Nunobiki; Hanshin to Sumiyoshi for Nada; Maya Cable + Ropeway to.",
+      "Evening JR back to Osaka after Harborland."
     ],
     "tips": [],
     "timeline": [
       {
-        "time": "08:30",
+        "time": "07:15",
         "title": "Travel by JR Special Rapid · from Osaka/Umeda to Kobe-Sannomiya",
         "note": "",
         "timed": false,
+        "placeId": "kitano-ijinkan",
         "category": "transit"
       },
       {
-        "time": "09:30",
-        "title": "Nunobiki Herb Garden / Ropeway",
-        "note": "",
-        "timed": false,
-        "placeId": "nunobiki",
-        "category": "transit"
-      },
-      {
-        "time": "12:30",
-        "title": "Kitano Ijinkan stroll",
+        "time": "08:00",
+        "title": "Kitano-cho Ijinkan stroll",
         "note": "",
         "timed": false,
         "placeId": "kitano-ijinkan",
         "category": "culture"
       },
       {
-        "time": "14:15",
-        "title": "Nankinmachi Chinatown snacks",
+        "time": "09:15",
+        "title": "Shin-Kobe ropeway & Nunobiki gardens",
+        "note": "",
+        "timed": false,
+        "placeId": "nunobiki",
+        "category": "attraction"
+      },
+      {
+        "time": "11:15",
+        "title": "Ikuta Shrine",
+        "note": "",
+        "timed": false,
+        "placeId": "ikuta-shrine",
+        "category": "culture"
+      },
+      {
+        "time": "12:15",
+        "title": "Lunch in Nankinmachi",
         "note": "",
         "timed": false,
         "placeId": "nankinmachi",
         "category": "dining"
       },
       {
-        "time": "16:00",
-        "title": "Meriken Park & Harborland",
+        "time": "13:45",
+        "title": "Nada sake tasting (Hakutsuru or Kikumasamune)",
+        "note": "",
+        "timed": false,
+        "placeId": "nada-sake",
+        "category": "dining"
+      },
+      {
+        "time": "16:15",
+        "title": "Sunset at Kikuseidai (Mt. Maya)",
+        "note": "",
+        "timed": false,
+        "placeId": "mt-maya",
+        "category": "attraction"
+      },
+      {
+        "time": "19:00",
+        "title": "Kobe beef dinner (Sannomiya)",
+        "note": "",
+        "timed": false,
+        "placeId": "kobe-beef",
+        "category": "dining"
+      },
+      {
+        "time": "20:30",
+        "title": "Harborland & Kobe Port Tower",
         "note": "",
         "timed": false,
         "placeId": "meriken-park",
         "category": "attraction"
       },
       {
-        "time": "18:30",
-        "title": "Kobe beef dinner",
-        "note": "",
-        "timed": false,
-        "category": "dining"
-      },
-      {
-        "time": "20:45",
+        "time": "21:45",
         "title": "Travel by JR Special Rapid · from Sannomiya to Osaka (Shinsaibashi)",
         "note": "",
         "timed": false,
@@ -5442,7 +5722,7 @@ window.DAYS = [
     "transfer": {
       "mode": "train",
       "label": "Osaka ↔ Kobe day trip",
-      "detail": "JR Special Rapid Osaka/Umeda → Sannomiya (~30m), return evening",
+      "detail": "JR Special Rapid Osaka/Umeda → Sannomiya (~30m), return after Harborland",
       "duration": "~30m each way",
       "fromCity": "Osaka",
       "toCity": "Kobe"

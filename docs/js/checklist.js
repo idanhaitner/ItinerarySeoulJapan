@@ -453,9 +453,9 @@ window.CHECKLIST = {
           kind: "meal",
           label: "ארוחת בשר קובה",
           when: "20/9",
-          note: "מסעדה באזור סנומיה או מוטומאצ׳י ב־20 בספטמבר. לשריין כמה ימים עד שבוע מראש.",
-          window: "ימים עד שבוע לפני",
-          priority: "medium",
+          note: "טפניאקי באזור סנומיה ב־20 בספטמבר. חובה לשריין 2–3 שבועות מראש: Steakland, Ishida, Mouriya או Aoyama.",
+          window: "2–3 שבועות לפני",
+          priority: "high",
           linkTitles: ["Kobe beef", "בשר קובה"],
         },
         {

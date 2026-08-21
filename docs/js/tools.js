@@ -205,6 +205,7 @@ window.TripTools = (function () {
       Kyoto: "קיוטו",
       Osaka: "אוסקה",
       Kobe: "קובה",
+      Nara: "נארה",
       Hiroshima: "הירושימה",
     };
     return Object.values(places)
