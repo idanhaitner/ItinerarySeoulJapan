@@ -2253,7 +2253,7 @@ a { color: inherit; }
   border-radius: 4px;
   background:
     linear-gradient(
-      90deg,
+      to inline-start,
       color-mix(in srgb, var(--travel, var(--indigo)) 8%, transparent) 0,
       transparent 46%
     );
@@ -2262,6 +2262,8 @@ a { color: inherit; }
 .travel-kicker {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 4px;
   color: var(--travel, var(--indigo));
@@ -2282,14 +2284,22 @@ a { color: inherit; }
   color: var(--travel, var(--indigo));
 }
 
-.timeline-item.travel-mode-flight { --travel: #5a6d7c; }
-.timeline-item.travel-mode-shinkansen { --travel: #1a4b8c; }
-.timeline-item.travel-mode-express { --travel: #2a7a78; }
-.timeline-item.travel-mode-train { --travel: #4a7a4a; }
-.timeline-item.travel-mode-subway { --travel: #a45a6a; }
-.timeline-item.travel-mode-bus { --travel: #c4842a; }
-.timeline-item.travel-mode-ropeway { --travel: #b45a3a; }
-.timeline-item.travel-mode-taxi { --travel: #b08a2a; }
+.timeline-item.travel-mode-flight,
+.route-step.travel-mode-flight { --travel: #5a6d7c; }
+.timeline-item.travel-mode-shinkansen,
+.route-step.travel-mode-shinkansen { --travel: #1a4b8c; }
+.timeline-item.travel-mode-express,
+.route-step.travel-mode-express { --travel: #2a7a78; }
+.timeline-item.travel-mode-train,
+.route-step.travel-mode-train { --travel: #4a7a4a; }
+.timeline-item.travel-mode-subway,
+.route-step.travel-mode-subway { --travel: #a45a6a; }
+.timeline-item.travel-mode-bus,
+.route-step.travel-mode-bus { --travel: #c4842a; }
+.timeline-item.travel-mode-ropeway,
+.route-step.travel-mode-ropeway { --travel: #b45a3a; }
+.timeline-item.travel-mode-taxi,
+.route-step.travel-mode-taxi { --travel: #b08a2a; }
 
 .timeline-item.travel-mode-shinkansen .travel-body {
   border-style: solid;
@@ -2297,7 +2307,7 @@ a { color: inherit; }
   border-color: color-mix(in srgb, var(--travel) 42%, var(--line));
   background:
     linear-gradient(
-      90deg,
+      to inline-start,
       color-mix(in srgb, var(--travel) 12%, transparent) 0,
       transparent 52%
     );
@@ -2351,7 +2361,7 @@ a { color: inherit; }
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 8px 12px;
   margin-bottom: 4px;
 }
@@ -2359,10 +2369,12 @@ a { color: inherit; }
 .timeline-title-row .timeline-title {
   flex: 1 1 12rem;
   margin-bottom: 0;
+  text-align: start;
 }
 
 .timeline-title-row .tl-book-row {
   margin-top: 0;
+  margin-inline-start: auto;
   flex: 0 0 auto;
 }
 
@@ -2425,13 +2437,15 @@ a { color: inherit; }
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 16px;
-  padding: 6px 8px 6px 4px;
+  padding-block: 6px;
+  padding-inline: 8px 4px;
 }
 
 .route-steps {
   list-style: none;
   margin: 0;
-  padding: 8px 10px 8px 6px;
+  padding-block: 8px;
+  padding-inline: 10px 6px;
 }
 
 .route-step {
@@ -2487,20 +2501,44 @@ a { color: inherit; }
   text-align: start;
 }
 
+.step-body .timeline-title,
+.step-body .travel-route,
+.step-body .timeline-note,
+.step-body .timeline-place {
+  text-align: start;
+}
+
 .step-body .timeline-title {
   font-size: 16px;
   font-weight: 600;
 }
 
-.step-time {
-  font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.04em;
-  color: var(--seal);
-  line-height: 1.2;
+.step-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px 10px;
   margin-bottom: 4px;
+}
+
+.step-time {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  line-height: 1.2;
+  unicode-bidi: isolate;
+}
+
+.travel-kicker .step-time {
+  margin-inline-start: 2px;
+  padding-inline-start: 8px;
+  border-inline-start: 1px solid color-mix(in srgb, currentColor 28%, transparent);
+  color: color-mix(in srgb, var(--travel, var(--indigo)) 78%, var(--muted));
 }
 
 .route-step.is-timed .step-body {
@@ -5779,6 +5817,20 @@ a { color: inherit; }
 /* ——— RTL / Hebrew ——— */
 html[dir="rtl"] body {
   font-family: var(--font-ui);
+}
+
+html[dir="rtl"] .route-step .step-body,
+html[dir="rtl"] .route-step .timeline-title,
+html[dir="rtl"] .route-step .travel-route,
+html[dir="rtl"] .route-step .timeline-note,
+html[dir="rtl"] .route-step .timeline-place {
+  text-align: right;
+}
+
+html[dir="rtl"] .travel-kicker,
+html[dir="rtl"] .step-head,
+html[dir="rtl"] .timeline-actions {
+  justify-content: flex-start;
 }
 
 html[dir="rtl"] .leaflet-container,

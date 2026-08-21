@@ -577,6 +577,20 @@
     return `<span dir="auto">${escapeHtml(str)}</span>`;
   }
 
+  function stepTimeHtml(item) {
+    if (!item || !item.timed || !item.time) return "";
+    const label = item.end ? `${item.time}–${item.end}` : item.time;
+    return `<span class="step-time" dir="ltr">${escapeHtml(label)}</span>`;
+  }
+
+  function travelKickerHtml(info, item) {
+    return `<div class="travel-kicker">
+                    ${info.icon}
+                    <span class="travel-eyebrow">${escapeHtml(info.label)}</span>
+                    ${stepTimeHtml(item)}
+                  </div>`;
+  }
+
   function timelineActionsHtml(day, item, idx) {
     const place = item.placeId ? places[item.placeId] : null;
     const links = place ? mapsLinks(place) : null;
@@ -606,15 +620,12 @@
               <li class="route-step is-hop ${done} ${fav}" data-tl-idx="${idx}">
                 <span class="step-n step-n-dot" aria-hidden="true"></span>
                 <div class="step-body hop-inline">
-                  <div class="travel-kicker">
-                    ${info.icon}
-                    <span class="travel-eyebrow">${escapeHtml(info.label)}</span>
-                  </div>
+                  ${travelKickerHtml(info, item)}
                   <div class="timeline-title-row">
-                    <div class="timeline-title travel-mode" dir="auto">${escapeHtml(info.title)}</div>
+                    <div class="timeline-title travel-mode">${escapeHtml(info.title)}</div>
                     ${booking.html}
                   </div>
-                  ${info.route ? `<div class="travel-route" dir="auto">${escapeHtml(info.route)}</div>` : ""}
+                  ${info.route ? `<div class="travel-route">${escapeHtml(info.route)}</div>` : ""}
                   <div class="timeline-actions">
                     ${links ? `<a href="${links.primary.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.primary.label)}</a>` : ""}
                     <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "בוצע" : "סיימתי"}</button>
@@ -626,15 +637,11 @@
 
   function stopHtml(day, item, idx, step, seenBookingIds) {
     const place = item.placeId ? places[item.placeId] : null;
-    const timeLabel = item.timed ? (item.end ? `${item.time}–${item.end}` : item.time) : "";
     const done = storage.isCompleted(day.id, item) ? "done" : "";
     const fav = storage.isFavorite(day.id, item) ? "fav" : "";
     const booking = timelineBookingHtml(item, seenBookingIds, day);
     const isTravel = tools.isTravelItem(item);
     const timedClass = item.timed ? "is-timed" : "";
-    const timeLine = timeLabel
-      ? `<div class="step-time" dir="ltr">${escapeHtml(timeLabel)}</div>`
-      : "";
 
     if (isTravel) {
       const info = tools.travelInfo(item);
@@ -642,33 +649,30 @@
               <li class="route-step ${timedClass} is-travel travel-mode-${info.type} ${done} ${fav}" data-tl-idx="${idx}">
                 <span class="step-n">${step}</span>
                 <div class="step-body">
-                  ${timeLine}
-                  <div class="travel-kicker">
-                    ${info.icon}
-                    <span class="travel-eyebrow">${escapeHtml(info.label)}</span>
-                  </div>
+                  ${travelKickerHtml(info, item)}
                   <div class="timeline-title-row">
-                    <div class="timeline-title travel-mode" dir="auto">${escapeHtml(info.title)}</div>
+                    <div class="timeline-title travel-mode">${escapeHtml(info.title)}</div>
                     ${booking.html}
                   </div>
-                  ${info.route ? `<div class="travel-route" dir="auto">${escapeHtml(info.route)}</div>` : ""}
-                  ${item.note ? `<p class="timeline-note" dir="auto">${escapeHtml(item.note)}</p>` : ""}
+                  ${info.route ? `<div class="travel-route">${escapeHtml(info.route)}</div>` : ""}
+                  ${item.note ? `<p class="timeline-note">${escapeHtml(item.note)}</p>` : ""}
                   ${timelineActionsHtml(day, item, idx)}
                 </div>
               </li>`;
     }
 
+    const timeHead = item.timed ? `<div class="step-head">${stepTimeHtml(item)}</div>` : "";
     return `
               <li class="route-step ${timedClass} ${done} ${fav}" data-tl-idx="${idx}">
                 <span class="step-n">${step}</span>
                 <div class="step-body">
-                  ${timeLine}
+                  ${timeHead}
                   <div class="timeline-title-row">
-                    <div class="timeline-title" dir="auto">${escapeHtml(item.title)}</div>
+                    <div class="timeline-title">${escapeHtml(item.title)}</div>
                     ${booking.html}
                   </div>
                   ${placeLineHtml(place)}
-                  ${item.note ? `<p class="timeline-note" dir="auto">${escapeHtml(item.note)}</p>` : ""}
+                  ${item.note ? `<p class="timeline-note">${escapeHtml(item.note)}</p>` : ""}
                   ${timelineActionsHtml(day, item, idx)}
                 </div>
               </li>`;
