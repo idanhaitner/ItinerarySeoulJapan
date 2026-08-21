@@ -4,7 +4,6 @@
   const trip = window.TRIP;
   const storage = window.TripStorage;
   const tools = window.TripTools;
-  const checklistData = window.CHECKLIST;
 
   const FILTER_VIEWS = new Set(["itinerary", "maps", "recs", "detail"]);
   const CITY_CHIP_VIEWS = new Set(["itinerary", "maps", "detail"]);
@@ -76,8 +75,6 @@
     city: "all",
     query: "",
     dayId: null,
-    focusBookingId: null,
-    bookingsFilter: "open",
     guideCountry: "kr",
   };
 
@@ -85,7 +82,6 @@
     panels: {
       itinerary: document.getElementById("panel-itinerary"),
       flights: document.getElementById("panel-flights"),
-      bookings: document.getElementById("panel-bookings"),
       guide: document.getElementById("panel-guide"),
       maps: document.getElementById("panel-maps"),
       recs: document.getElementById("panel-recs"),
@@ -102,7 +98,6 @@
     topbarFilters: document.getElementById("topbar-filters"),
     topbar: document.getElementById("topbar"),
     masthead: document.getElementById("masthead"),
-    bookingsRoot: document.getElementById("bookings-root"),
     guideRoot: document.getElementById("guide-root"),
     flightsRoot: document.getElementById("flights-root"),
     toolsRoot: document.getElementById("tools-root"),
@@ -466,109 +461,6 @@
       </article>`;
   }
 
-  function allChecklistItems() {
-    return checklistData.groups.flatMap((g) => g.items);
-  }
-
-  function isCheckinTitle(title) {
-    const t = String(title || "").trim();
-    if (/^(hotel\s+)?check[\s-]?in\b|^צ['׳]ק[\s\-־]?אין/i.test(t)) return true;
-    // Same-day hotel drop-off before the official check-in hour.
-    return /^(drop bags at|השארת מזוודות ב)/i.test(t);
-  }
-
-  function bookingLinkOn(ci) {
-    if (ci.linkOn) return ci.linkOn;
-    if (ci.linkCheckin) return "checkin";
-    if (ci.kind === "train" || ci.kind === "bus" || ci.kind === "flight") return "travel";
-    return "visit";
-  }
-
-  function titleMatchesLinks(title, titleLinks) {
-    const hay = String(title || "").toLowerCase();
-    return (titleLinks || []).some((t) => hay.includes(String(t).toLowerCase()));
-  }
-
-  function bookingsForTimelineItem(item, day) {
-    const title = String(item.title || "");
-    const isTravel = tools.isTravelItem(item);
-    const isCheckin = isCheckinTitle(title);
-    const dayId = day && day.id;
-    const matches = [];
-    allChecklistItems().forEach((ci) => {
-      const placeLinks = ci.linkPlaceIds || [];
-      const titleLinks = ci.linkTitles || [];
-      const dayLinks = ci.linkDayIds || [];
-      if (!placeLinks.length && !titleLinks.length && !ci.linkCheckin) return;
-      if (dayLinks.length && dayId && !dayLinks.includes(dayId)) return;
-
-      const on = bookingLinkOn(ci);
-      if (on === "checkin") {
-        if (isCheckin && titleMatchesLinks(title, titleLinks)) matches.push(ci);
-        return;
-      }
-      if (on === "travel" && !isTravel) return;
-      if (on === "visit" && isTravel) return;
-
-      let hit = false;
-      if (item.placeId && placeLinks.includes(item.placeId)) hit = true;
-      if (!hit && titleMatchesLinks(title, titleLinks)) hit = true;
-      if (hit) matches.push(ci);
-    });
-    return matches;
-  }
-
-  function timelineBookingHtml(item, seenBookingIds, day) {
-    const bookings = bookingsForTimelineItem(item, day);
-    if (!bookings.length) return { html: "", needs: false, open: false };
-
-    const fresh = bookings.filter((b) => !seenBookingIds.has(b.id));
-    bookings.forEach((b) => seenBookingIds.add(b.id));
-    if (!fresh.length) return { html: "", needs: false, open: false };
-
-    const checked = checklistCheckedMap();
-    const openOnes = fresh.filter((b) => !checked[b.id]);
-    // One badge only: still-to-book wins over already-booked when both exist (e.g. USJ).
-    const primary = openOnes[0] || fresh[0];
-    const isDone = openOnes.length === 0;
-    const label = isDone ? "הוזמן" : "להזמין מראש";
-    const hint = isDone ? "לצפייה בהזמנות" : "לסימון ברשימת ההזמנות";
-    const html = `<div class="tl-book-row">
-      <a class="tl-book-link ${isDone ? "is-done" : "is-todo"}" href="#bookings" data-open-booking="${escapeHtml(primary.id)}" title="${escapeHtml(hint)}">
-        <span class="tl-book-mark" aria-hidden="true">${isDone ? "✓" : "!"}</span>
-        <span class="tl-book-label">${label}</span>
-      </a>
-    </div>`;
-    return { html, needs: true, open: !isDone };
-  }
-
-  function openBookingsFocus(bookingId) {
-    state.focusBookingId = bookingId || null;
-    if (bookingId) {
-      const checked = checklistCheckedMap();
-      if (checked[bookingId]) state.bookingsFilter = "all";
-      else state.bookingsFilter = "open";
-      const item = allChecklistItems().find((i) => i.id === bookingId);
-      if (item && !isOpenCritical(item, checked)) {
-        const group = bookingGroupForItem(bookingId);
-        if (group) storage.setBookingFold(group.id, true);
-      }
-    }
-    showView("bookings");
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        const id = state.focusBookingId;
-        state.focusBookingId = null;
-        if (!id) return;
-        const el = document.getElementById(`booking-${id}`);
-        if (!el) return;
-        el.classList.add("booking-flash");
-        el.scrollIntoView({ behavior: "smooth", block: "center" });
-        window.setTimeout(() => el.classList.remove("booking-flash"), 2200);
-      });
-    });
-  }
-
   function isFlowHop(item) {
     return tools.isTravelItem(item) && !item.timed;
   }
@@ -609,12 +501,11 @@
     return `<div class="timeline-place">${kindBit}<span class="place-name" dir="auto">${escapeHtml(place.name)}</span>${ja}</div>`;
   }
 
-  function hopHtml(day, item, idx, seenBookingIds) {
+  function hopHtml(day, item, idx) {
     const place = item.placeId ? places[item.placeId] : null;
     const links = place ? mapsLinks(place) : null;
     const done = storage.isCompleted(day.id, item) ? "done" : "";
     const fav = storage.isFavorite(day.id, item) ? "fav" : "";
-    const booking = timelineBookingHtml(item, seenBookingIds, day);
     const info = tools.travelInfo(item);
     return `
               <li class="route-step is-hop ${done} ${fav}" data-tl-idx="${idx}">
@@ -623,7 +514,6 @@
                   ${travelKickerHtml(info, item)}
                   <div class="timeline-title-row">
                     <div class="timeline-title travel-mode">${escapeHtml(info.title)}</div>
-                    ${booking.html}
                   </div>
                   ${info.route ? `<div class="travel-route">${escapeHtml(info.route)}</div>` : ""}
                   <div class="timeline-actions">
@@ -635,11 +525,10 @@
               </li>`;
   }
 
-  function stopHtml(day, item, idx, step, seenBookingIds) {
+  function stopHtml(day, item, idx, step) {
     const place = item.placeId ? places[item.placeId] : null;
     const done = storage.isCompleted(day.id, item) ? "done" : "";
     const fav = storage.isFavorite(day.id, item) ? "fav" : "";
-    const booking = timelineBookingHtml(item, seenBookingIds, day);
     const isTravel = tools.isTravelItem(item);
     const timedClass = item.timed ? "is-timed" : "";
 
@@ -652,7 +541,6 @@
                   ${travelKickerHtml(info, item)}
                   <div class="timeline-title-row">
                     <div class="timeline-title travel-mode">${escapeHtml(info.title)}</div>
-                    ${booking.html}
                   </div>
                   ${info.route ? `<div class="travel-route">${escapeHtml(info.route)}</div>` : ""}
                   ${item.note ? `<p class="timeline-note">${escapeHtml(item.note)}</p>` : ""}
@@ -669,7 +557,6 @@
                   ${timeHead}
                   <div class="timeline-title-row">
                     <div class="timeline-title">${escapeHtml(item.title)}</div>
-                    ${booking.html}
                   </div>
                   ${placeLineHtml(place)}
                   ${item.note ? `<p class="timeline-note">${escapeHtml(item.note)}</p>` : ""}
@@ -680,13 +567,12 @@
 
   function timelineHtml(day) {
     const items = day.timeline || [];
-    const seenBookingIds = new Set();
     let step = 0;
     const rows = items
       .map((item, idx) => {
-        if (isFlowHop(item)) return hopHtml(day, item, idx, seenBookingIds);
+        if (isFlowHop(item)) return hopHtml(day, item, idx);
         step += 1;
-        return stopHtml(day, item, idx, step, seenBookingIds);
+        return stopHtml(day, item, idx, step);
       })
       .join("");
     return `
@@ -918,213 +804,6 @@
       </div>
     `;
     setResultCount(`${parts.day} ${parts.month}`);
-  }
-
-  function checklistCheckedMap() {
-    const stored = storage.getChecklist();
-    const map = { ...stored };
-    checklistData.groups.forEach((g) => {
-      g.items.forEach((item) => {
-        if (!(item.id in map) && item.done) map[item.id] = true;
-      });
-    });
-    return map;
-  }
-
-  const BOOKING_PRIORITY = { critical: 0, high: 1, medium: 2, low: 3 };
-
-  function bookingWhenStamp(item) {
-    const when = String(item.when || "");
-    if (/עכשיו/.test(when)) return 0;
-    const m = when.match(/(\d{1,2})\s*\/\s*(\d{1,2})/);
-    if (m) return Number(m[2]) * 32 + Number(m[1]);
-    if (/לפני/.test(when)) return 1;
-    return 900;
-  }
-
-  function bookingUrgencyStamp(item) {
-    const blob = `${item.when || ""} ${item.window || ""}`;
-    if (/עכשיו/.test(blob)) return 0;
-    if (/לטפל/.test(blob)) return 1;
-    if (/בהקדם|ברגע שנפתח/.test(blob)) return 2;
-    return 10;
-  }
-
-  function sortBookingItems(items, checked) {
-    return [...items].sort((a, b) => {
-      const doneA = checked[a.id] ? 1 : 0;
-      const doneB = checked[b.id] ? 1 : 0;
-      if (doneA !== doneB) return doneA - doneB;
-      const pa = BOOKING_PRIORITY[a.priority] ?? 2;
-      const pb = BOOKING_PRIORITY[b.priority] ?? 2;
-      if (pa !== pb) return pa - pb;
-      const ua = bookingUrgencyStamp(a);
-      const ub = bookingUrgencyStamp(b);
-      if (ua !== ub) return ua - ub;
-      return bookingWhenStamp(a) - bookingWhenStamp(b);
-    });
-  }
-
-  function isOpenCritical(item, checked) {
-    return item.priority === "critical" && !checked[item.id];
-  }
-
-  function bookingGroupForItem(itemId) {
-    return checklistData.groups.find((g) => g.items.some((item) => item.id === itemId)) || null;
-  }
-
-  function snapshotBookingFolds() {
-    if (!els.bookingsRoot) return;
-    els.bookingsRoot.querySelectorAll("details[data-booking-group]").forEach((d) => {
-      storage.setBookingFold(d.getAttribute("data-booking-group"), d.open);
-    });
-  }
-
-  const BOOKING_KIND_HE = {
-    document: "מסמך",
-    flight: "טיסה",
-    hotel: "מלון",
-    ryokan: "ריוקאן",
-    train: "רכבת",
-    bus: "אוטובוס",
-    attraction: "אטרקציה",
-    meal: "ארוחה",
-    clinic: "טיפול",
-  };
-
-  function bookingKindLabel(item) {
-    return BOOKING_KIND_HE[item.kind] || "";
-  }
-
-  function bookingItemHtml(item, checked) {
-    const done = !!checked[item.id];
-    const critical = item.priority === "critical" && !done;
-    const kind = bookingKindLabel(item);
-    const meta = [item.when, item.window].filter(Boolean).join(" · ");
-    return `
-      <label id="booking-${escapeHtml(item.id)}" class="booking-item${done ? " done" : ""}${critical ? " booking-critical" : ""}">
-        <input type="checkbox" data-check="${item.id}" ${done ? "checked" : ""} />
-        <span class="booking-body">
-          <span class="booking-top">
-            ${kind ? `<span class="booking-kind">${escapeHtml(kind)}</span>` : ""}
-            <span class="booking-label">${escapeHtml(item.label)}</span>
-            ${critical ? `<span class="booking-flag">דחוף</span>` : ""}
-            ${done ? `<span class="booking-flag is-done">הוזמן</span>` : ""}
-          </span>
-          ${item.note ? `<span class="booking-note">${escapeHtml(item.note)}</span>` : ""}
-          ${meta ? `<span class="booking-meta">${escapeHtml(meta)}</span>` : ""}
-        </span>
-      </label>`;
-  }
-
-  function bookingGroupHtml(opts) {
-    const { id, title, items, checked, open, urgent } = opts;
-    const openInGroup = items.filter((item) => !checked[item.id]).length;
-    const countLabel = urgent
-      ? `${items.length} לסגור`
-      : openInGroup
-        ? `${openInGroup} פתוחים`
-        : "הכול סגור";
-    const list = sortBookingItems(items, checked)
-      .map((item) => bookingItemHtml(item, checked))
-      .join("");
-    if (urgent) {
-      return `
-        <section class="booking-group is-urgent">
-          <header class="booking-group-head is-static">
-            <span class="booking-group-title">${escapeHtml(title)}</span>
-            <span class="booking-group-meta"><span>${escapeHtml(countLabel)}</span></span>
-          </header>
-          <div class="booking-group-list">${list}</div>
-        </section>`;
-    }
-    return `
-      <details class="booking-group" data-booking-group="${escapeHtml(id)}"${open ? " open" : ""}>
-        <summary class="booking-group-head">
-          <span class="booking-group-title">${escapeHtml(title)}</span>
-          <span class="booking-group-meta">
-            <span>${escapeHtml(countLabel)}</span>
-            <span class="chev" aria-hidden="true"></span>
-          </span>
-        </summary>
-        <div class="booking-group-list">${list}</div>
-      </details>`;
-  }
-
-  function renderBookings() {
-    const checked = checklistCheckedMap();
-    const allItems = allChecklistItems();
-    const doneCount = allItems.filter((i) => checked[i.id]).length;
-    const openCount = allItems.length - doneCount;
-    const filter = state.bookingsFilter === "all" ? "all" : "open";
-    const folds = storage.getBookingFolds();
-    const focusId = state.focusBookingId;
-
-    const urgentItems = sortBookingItems(
-      allItems.filter((item) => isOpenCritical(item, checked)),
-      checked
-    );
-    const urgentIds = new Set(urgentItems.map((item) => item.id));
-
-    const groups = [...checklistData.groups]
-      .map((g) => {
-        const items = g.items.filter((item) => {
-          if (filter !== "all" && checked[item.id]) return false;
-          if (urgentIds.has(item.id)) return false;
-          return true;
-        });
-        const minOpen = Math.min(
-          ...g.items
-            .filter((item) => !checked[item.id])
-            .map((item) => BOOKING_PRIORITY[item.priority] ?? 2),
-          50
-        );
-        return { g, items, minOpen };
-      })
-      .filter((row) => row.items.length)
-      .sort((a, b) => a.minOpen - b.minOpen || a.g.title.localeCompare(b.g.title, "he"));
-
-    const urgentHtml = urgentItems.length
-      ? bookingGroupHtml({
-          id: "urgent",
-          title: "דחוף עכשיו",
-          items: urgentItems,
-          checked,
-          open: true,
-          urgent: true,
-        })
-      : "";
-
-    const groupsHtml = groups
-      .map(({ g, items }) => {
-        const focusedHere = focusId && items.some((item) => item.id === focusId);
-        const open = focusedHere || folds[g.id] === true;
-        return bookingGroupHtml({ id: g.id, title: g.title, items, checked, open, urgent: false });
-      })
-      .join("");
-
-    const body = urgentHtml + groupsHtml;
-
-    els.bookingsRoot.innerHTML = `
-      <div class="plan-intro">
-        <p class="plan-kicker">הזמנות · 予約</p>
-        <h2 class="plan-title">הזמנות</h2>
-        <p class="plan-lead">טיסות, מלונות, כרטיסי אטרקציות, רכבות ארוכות וסעודות שדורשות הזמנה מראש.</p>
-      </div>
-      <div class="bookings-toolbar">
-        <p class="bookings-count"><strong>${openCount}</strong> נשארו לסגור${doneCount ? ` · ${doneCount} כבר הוזמנו` : ""}</p>
-        <div class="bookings-filters" role="tablist" aria-label="סינון הזמנות">
-          <button type="button" class="bookings-filter${filter === "open" ? " is-on" : ""}" data-bookings-filter="open">פתוחים</button>
-          <button type="button" class="bookings-filter${filter === "all" ? " is-on" : ""}" data-bookings-filter="all">הכול</button>
-        </div>
-      </div>
-      <div class="bookings-list">
-        ${
-          body ||
-          `<p class="bookings-empty">אין הזמנות פתוחות.</p>`
-        }
-      </div>`;
-    setResultCount(`${openCount} פתוחים`);
   }
 
   function renderGuide() {
@@ -1544,7 +1223,6 @@
     else if (state.view === "flights") renderFlights();
     else if (state.view === "maps") renderMaps();
     else if (state.view === "recs") renderRecs();
-    else if (state.view === "bookings") renderBookings();
     else if (state.view === "guide") renderGuide();
     else if (state.view === "tools") renderTools();
     else if (state.view === "detail" && state.dayId) renderDetail(state.dayId);
@@ -1582,34 +1260,6 @@
       if (row) openDay(row.dataset.day);
     });
 
-    els.bookingsRoot.addEventListener("change", (e) => {
-      const input = e.target.closest("input[data-check]");
-      if (!input) return;
-      snapshotBookingFolds();
-      storage.setChecklistItem(input.dataset.check, input.checked);
-      renderBookings();
-    });
-
-    els.bookingsRoot.addEventListener("click", (e) => {
-      const filterBtn = e.target.closest("[data-bookings-filter]");
-      if (!filterBtn) return;
-      snapshotBookingFolds();
-      state.bookingsFilter = filterBtn.getAttribute("data-bookings-filter") === "all" ? "all" : "open";
-      renderBookings();
-    });
-
-    els.bookingsRoot.addEventListener(
-      "toggle",
-      (e) => {
-        const details = e.target;
-        if (!details || details.tagName !== "DETAILS") return;
-        const id = details.getAttribute("data-booking-group");
-        if (!id) return;
-        storage.setBookingFold(id, details.open);
-      },
-      true
-    );
-
     if (els.guideRoot) {
       els.guideRoot.addEventListener("click", (e) => {
         const countryBtn = e.target.closest("[data-guide-country]");
@@ -1630,12 +1280,6 @@
     }
 
     document.body.addEventListener("click", (e) => {
-      const bookingJump = e.target.closest("[data-open-booking]");
-      if (bookingJump) {
-        e.preventDefault();
-        openBookingsFocus(bookingJump.getAttribute("data-open-booking"));
-        return;
-      }
       if (e.target.id === "back-btn" || e.target.closest("#back-btn")) {
         showView("itinerary");
         return;
