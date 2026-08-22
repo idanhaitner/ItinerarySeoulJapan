@@ -582,7 +582,7 @@ window.PLACES = {
     ],
     "lat": 37.5088,
     "lng": 127.0234,
-    "blurb": "Booked — Shahar’s hair / scalp appointment 29 Aug 16:30–18:00 · Nonhyeon Station exit 3 · Yeongdong.",
+    "blurb": "Booked hair / scalp appointment 29 Aug 16:30–18:00 · Nonhyeon Station exit 3 · Yeongdong Bldg 2F.",
     "taxiAddress": "서울특별시 강남구 강남대로 520 영동빌딩 2층 201호"
   },
   "euljiro": {
@@ -3307,7 +3307,7 @@ window.DAYS = [
     "country": "KR",
     "hotelId": "nine-bricks",
     "title": "Secret Garden, Unni Guide, Moclock & COEX",
-    "summary": "Jogyesa and Changdeokgung Secret Garden in the morning, Unni Guide 15:00–16:00 in Gangnam, Shahar’s booked.",
+    "summary": "Jogyesa and Changdeokgung Secret Garden in the morning, Unni Guide 15:00–16:00 in Gangnam, booked Moclock.",
     "food": "Lunch near the palace or on the way to Gangnam; easy dinner at COEX or Dongdaemun night.",
     "placeIds": [
       "jogyesa",
@@ -3362,7 +3362,7 @@ window.DAYS = [
       },
       {
         "time": "16:30",
-        "title": "Moclock Gangnam — Shahar hair appointment",
+        "title": "Moclock Gangnam — hair appointment",
         "note": "Moclock · booked 16:30–18:00.",
         "timed": true,
         "placeId": "moclock",

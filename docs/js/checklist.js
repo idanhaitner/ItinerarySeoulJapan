@@ -219,7 +219,7 @@ window.CHECKLIST = {
           kind: "clinic",
           label: "Moclock Gangnam — טיפול שיער",
           when: "29/8 · 16:30–18:00",
-          note: "תור של שחר שהוזמן ל־16:30–18:00. יציאה 3 בנונהיון, בניין Yeongdong קומה 2.",
+          note: "טיפול שיער שהוזמן ל־16:30–18:00. יציאה 3 בנונהיון, בניין Yeongdong קומה 2.",
           window: "הוזמן",
           priority: "low",
           done: true,

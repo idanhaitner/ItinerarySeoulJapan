@@ -2054,7 +2054,7 @@ a { color: inherit; }
 
 @media (min-width: 800px) {
   .detail-hero-grid {
-    grid-template-columns: 1.4fr 0.8fr;
+    grid-template-columns: 1fr;
     align-items: end;
   }
 }

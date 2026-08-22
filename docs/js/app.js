@@ -775,7 +775,6 @@
         <div class="detail-hero-grid">
           <div>
             <h2 dir="auto">${escapeHtml(day.title)}</h2>
-            ${day.summary ? `<div class="detail-meta" dir="auto">${escapeHtml(day.summary)}</div>` : ""}
             ${
               hotel
                 ? `<div class="tag-row" style="margin-top:16px"><span class="tag">לינה · ${escapeHtml(hotel.name)}</span></div>`
@@ -784,7 +783,6 @@
                   : ""
             }
           </div>
-          ${day.food ? `<div class="food-banner"><strong>אוכל היום</strong><span dir="auto">${escapeHtml(day.food)}</span></div>` : ""}
         </div>
       </div>
       <div class="detail-layout">
