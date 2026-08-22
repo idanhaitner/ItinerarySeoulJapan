@@ -105,7 +105,7 @@ def fmt_time(t: str) -> str:
 def time_range(start: str, end: str) -> str:
     s, e = fmt_time(start), fmt_time(end)
     if s and e:
-        return f"{s} עד {e}"
+        return f"{s}-{e}"
     return s or e
 
 
@@ -169,18 +169,18 @@ def day_title(d: date, city: str, items: list[dict]) -> str:
     # fallback: first 2 activity titles
     picks = [t for t in titles if not t.startswith("נסיעה") and "צ'ק" not in t and "צ׳ק" not in t][:2]
     if picks:
-        return " · ".join(picks)
+        return ", ".join(picks)
     return city or "יום טיול"
 
 
 def plan_text(items: list[dict]) -> str:
-    """Chronological bullets of what we do — titles only, no clock times."""
+    """Chronological list — plain lines, no bullet dots (RTL-safe)."""
     lines = []
     for it in items:
         title = (it.get("title") or "").strip()
         if not title:
             continue
-        lines.append(f"• {title}")
+        lines.append(title)
     return "\n".join(lines)
 
 
@@ -315,7 +315,7 @@ def notes_text(d: date, items: list[dict], bookings_by_day: dict[date, list[dict
         elif re.search(r"YP7321|Air Premia", name, re.I):
             display = "טיסת Air Premia (YP7321)"
 
-        # Important note only (short) — skip if it just repeats the time we already show
+        # Important note only (short)
         important = ""
         note_clean = note
         if tr:
@@ -338,13 +338,14 @@ def notes_text(d: date, items: list[dict], bookings_by_day: dict[date, list[dict
         if "מזומן" in display and important and "מזומן" in important:
             important = ""
 
-        # RTL-friendly: bullet + time + middle-dot + text (no em-dash)
+        # Plain RTL-safe line: time then text — no bullets / middle-dots
         if tr:
-            line = f"• {tr} · {display}"
+            line = f"{tr}  {display}"
         else:
-            line = f"• {display}"
+            line = display
         if important and important not in line:
-            line += f" · {important}"
+            important = important.replace("·", "-").replace("→", "-")
+            line += f" ({important})" if "(" not in display else f" {important}"
         lines.append(line)
 
     return "\n".join(lines)
