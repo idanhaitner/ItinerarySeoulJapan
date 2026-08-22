@@ -45,27 +45,27 @@ CITY = {
     "Home": "הבית",
 }
 CITY_COLORS = {
-    # Soft non-green city tints (no green)
-    "תל אביב": {"red": 0.90, "green": 0.93, "blue": 0.97},
-    "אדיס אבבה": {"red": 0.95, "green": 0.92, "blue": 0.88},
-    "סיאול": {"red": 0.96, "green": 0.91, "blue": 0.97},
-    "טוקיו": {"red": 0.90, "green": 0.94, "blue": 0.99},
-    "קוואגוצ׳יקו": {"red": 0.90, "green": 0.95, "blue": 0.96},
-    "גוטמבה": {"red": 0.94, "green": 0.94, "blue": 0.90},
-    "הקונה": {"red": 0.98, "green": 0.94, "blue": 0.88},
-    "אודאווארה": {"red": 0.93, "green": 0.93, "blue": 0.95},
-    "קיוטו": {"red": 1.00, "green": 0.94, "blue": 0.90},
-    "אוג'י": {"red": 0.93, "green": 0.96, "blue": 0.92},
-    "אוג׳י": {"red": 0.93, "green": 0.96, "blue": 0.92},
-    "אוסקה": {"red": 0.99, "green": 0.91, "blue": 0.93},
-    "נארה": {"red": 0.95, "green": 0.93, "blue": 0.90},
-    "איקדה": {"red": 0.92, "green": 0.95, "blue": 0.93},
-    "קובה": {"red": 0.93, "green": 0.91, "blue": 0.96},
-    "ניקו": {"red": 0.91, "green": 0.95, "blue": 0.91},
-    "קמאקורה": {"red": 0.90, "green": 0.94, "blue": 0.95},
-    "אנושימה": {"red": 0.90, "green": 0.93, "blue": 0.96},
-    "דובאי": {"red": 0.97, "green": 0.93, "blue": 0.88},
-    "טירנה": {"red": 0.94, "green": 0.92, "blue": 0.96},
+    # Soft distinct tints — same city = same color everywhere in the workbook
+    "תל אביב": {"red": 0.88, "green": 0.92, "blue": 0.98},
+    "אדיס אבבה": {"red": 0.96, "green": 0.91, "blue": 0.84},
+    "סיאול": {"red": 0.96, "green": 0.88, "blue": 0.94},
+    "טוקיו": {"red": 0.86, "green": 0.92, "blue": 0.99},
+    "קוואגוצ׳יקו": {"red": 0.84, "green": 0.94, "blue": 0.95},
+    "גוטמבה": {"red": 0.94, "green": 0.93, "blue": 0.86},
+    "הקונה": {"red": 0.99, "green": 0.92, "blue": 0.82},
+    "אודאווארה": {"red": 0.90, "green": 0.90, "blue": 0.94},
+    "קיוטו": {"red": 1.00, "green": 0.90, "blue": 0.84},
+    "אוג'י": {"red": 0.88, "green": 0.95, "blue": 0.88},
+    "אוג׳י": {"red": 0.88, "green": 0.95, "blue": 0.88},
+    "אוסקה": {"red": 0.99, "green": 0.88, "blue": 0.90},
+    "נארה": {"red": 0.94, "green": 0.90, "blue": 0.84},
+    "איקדה": {"red": 0.86, "green": 0.94, "blue": 0.90},
+    "קובה": {"red": 0.90, "green": 0.86, "blue": 0.96},
+    "ניקו": {"red": 0.86, "green": 0.93, "blue": 0.86},
+    "קמאקורה": {"red": 0.86, "green": 0.91, "blue": 0.96},
+    "אנושימה": {"red": 0.92, "green": 0.88, "blue": 0.96},
+    "דובאי": {"red": 0.98, "green": 0.90, "blue": 0.82},
+    "טירנה": {"red": 0.92, "green": 0.90, "blue": 0.96},
 }
 HEADER_BG = {"red": 0.11, "green": 0.16, "blue": 0.24}  # deep navy
 HEADER_FG = {"red": 1, "green": 1, "blue": 1}
@@ -621,8 +621,30 @@ def set_basic_format(wb, ws, nrows: int, ncols: int):
         wb.batch_update({"requests": requests[i : i + 90]})
 
 
+def normalize_city_key(city: str) -> str:
+    """Canonical city key for color lookup (apostrophes + strip '(התחלה)' etc.)."""
+    s = (city or "").strip()
+    for ch in ("'", "'", "ʼ", "′", "`"):
+        s = s.replace(ch, "׳")
+    s = re.sub(r"\s*\([^)]*\)\s*$", "", s).strip()
+    return s
+
+
+def color_for_city(city: str) -> dict | None:
+    key = normalize_city_key(city)
+    if not key:
+        return None
+    if key in CITY_COLORS:
+        return CITY_COLORS[key]
+    # Prefix match for rare variants (e.g. still carrying extra words)
+    for name, color in CITY_COLORS.items():
+        if key.startswith(name) or name.startswith(key):
+            return color
+    return None
+
+
 def color_by_city(wb, ws, values: list[list[str]], city_col: int, ncols: int):
-    """Soft city tint on the city column only (not whole row — avoids green wash)."""
+    """Soft city tint on the city column only — same palette workbook-wide."""
     requests = []
     for r_idx, row in enumerate(values[1:], start=1):
         if len(row) <= city_col:
@@ -630,10 +652,10 @@ def color_by_city(wb, ws, values: list[list[str]], city_col: int, ncols: int):
         city = row[city_col]
         if not city:
             for up in range(r_idx - 1, 0, -1):
-                if values[up][city_col]:
+                if len(values[up]) > city_col and values[up][city_col]:
                     city = values[up][city_col]
                     break
-        color = CITY_COLORS.get(city)
+        color = color_for_city(city)
         if not color:
             continue
         requests.append(
@@ -930,7 +952,7 @@ def main() -> int:
     tabs = {
         "לוח זמנים": (build_timeline(days, places, he_places), {"city_col": 2, "date_cols": [0]}),
         "ימים": (build_days(days, places, he_places), {"city_col": 2, "date_cols": [0]}),
-        "מלונות": (build_hotels(days), {"status_col": 5, "date_cols": [1, 2]}),
+        "מלונות": (build_hotels(days), {"city_col": 0, "status_col": 5, "date_cols": [1, 2]}),
         "להזמין": (build_bookings(days), {"status_col": 2, "date_cols": [1]}),
         "רעיונות": (build_ideas(), {"status_col": 3}),
     }

@@ -35,30 +35,6 @@ from reformat_days_from_timeline import (  # noqa: E402
     restyle_days,
 )
 
-# Soft distinct fills per city (no neon)
-CITY_COLORS = {
-    "תל אביב": {"red": 0.90, "green": 0.93, "blue": 0.97},
-    "אדיס אבבה": {"red": 0.95, "green": 0.92, "blue": 0.88},
-    "סיאול": {"red": 0.96, "green": 0.91, "blue": 0.97},
-    "טוקיו": {"red": 0.90, "green": 0.94, "blue": 0.99},
-    "קוואגוצ׳יקו": {"red": 0.90, "green": 0.95, "blue": 0.96},
-    "גוטמבה": {"red": 0.94, "green": 0.94, "blue": 0.90},
-    "הקונה": {"red": 0.98, "green": 0.94, "blue": 0.88},
-    "אודאווארה": {"red": 0.93, "green": 0.93, "blue": 0.95},
-    "קיוטו": {"red": 1.00, "green": 0.94, "blue": 0.90},
-    "אוג'י": {"red": 0.93, "green": 0.96, "blue": 0.92},
-    "אוג׳י": {"red": 0.93, "green": 0.96, "blue": 0.92},
-    "אוסקה": {"red": 0.99, "green": 0.91, "blue": 0.93},
-    "נארה": {"red": 0.95, "green": 0.93, "blue": 0.90},
-    "איקדה": {"red": 0.92, "green": 0.95, "blue": 0.93},
-    "קובה": {"red": 0.93, "green": 0.91, "blue": 0.96},
-    "ניקו": {"red": 0.91, "green": 0.95, "blue": 0.91},
-    "קמאקורה": {"red": 0.90, "green": 0.94, "blue": 0.95},
-    "אנושימה": {"red": 0.90, "green": 0.93, "blue": 0.96},
-    "דובאי": {"red": 0.97, "green": 0.93, "blue": 0.88},
-    "טירנה": {"red": 0.94, "green": 0.92, "blue": 0.96},
-}
-
 FAKE_CITIES = {
     "נסיעה",
     "מעבר",
@@ -141,41 +117,8 @@ def resolve_city(raw: str, title: str, note: str, prev: str) -> str:
 
 
 def color_cities(wb, ws, values, city_col: int, ncols: int):
-    """Color city column using expanded palette (overrides push_collab_sheets map)."""
-    requests = []
-    for r_idx, row in enumerate(values[1:], start=1):
-        if len(row) <= city_col:
-            continue
-        city = normalize_apostrophe(row[city_col])
-        color = CITY_COLORS.get(city)
-        if not color:
-            continue
-        requests.append(
-            {
-                "repeatCell": {
-                    "range": {
-                        "sheetId": ws.id,
-                        "startRowIndex": r_idx,
-                        "endRowIndex": r_idx + 1,
-                        "startColumnIndex": city_col,
-                        "endColumnIndex": city_col + 1,
-                    },
-                    "cell": {
-                        "userEnteredFormat": {
-                            "backgroundColor": color,
-                            "textFormat": {
-                                "fontFamily": FONT_FAMILY,
-                                "bold": True,
-                                "fontSize": 11,
-                            },
-                        }
-                    },
-                    "fields": "userEnteredFormat(backgroundColor,textFormat)",
-                }
-            }
-        )
-    for i in range(0, len(requests), 80):
-        wb.batch_update({"requests": requests[i : i + 80]})
+    """Alias — always use the shared workbook palette."""
+    color_by_city(wb, ws, values, city_col, ncols)
 
 
 def restyle_timeline(wb, ws, values):
