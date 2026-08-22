@@ -174,16 +174,13 @@ def day_title(d: date, city: str, items: list[dict]) -> str:
 
 
 def plan_text(items: list[dict]) -> str:
+    """Chronological bullets of what we do — titles only, no clock times."""
     lines = []
     for it in items:
         title = (it.get("title") or "").strip()
         if not title:
             continue
-        tr = time_range(it.get("start") or "", it.get("end") or "")
-        if tr:
-            lines.append(f"• {tr} — {title}")
-        else:
-            lines.append(f"• {title}")
+        lines.append(f"• {title}")
     return "\n".join(lines)
 
 
@@ -218,33 +215,29 @@ def load_hotels(wb) -> list[dict]:
 
 
 def load_bookings(wb) -> dict[date, list[dict]]:
+    """Only already-booked items (הוזמן) from להזמין — no hotels / paperwork."""
     ws = wb.worksheet("להזמין")
     rows = ws.get_all_values()
     by: dict[date, list[dict]] = defaultdict(list)
     for r in rows[1:]:
         if len(r) < 3:
             continue
-        name = (r[0] or "").strip()
-        if not name or name.startswith("—"):
-            name = name.lstrip("— ").strip()
-        if not name:
+        name = (r[0] or "").strip().lstrip("— ").strip()
+        status = (r[2] or "").strip()
+        if not name or status != "הוזמן":
             continue
-        if any(name.startswith(p) or p in name[:20] for p in SKIP_BOOKING_PREFIXES):
-            # keep hotels out; keep IDP only if we want — skip
-            if name.startswith("מלון") or name.startswith("ביטוח") or "Visit Japan" in name or "רישיון" in name:
-                continue
+        if name.startswith("מלון") or name.startswith("ביטוח") or "Visit Japan" in name or "רישיון" in name:
+            continue
         d = parse_date(r[1])
         if not d:
-            # try fix 19/09.2026
-            raw = (r[1] or "").replace(".", "/")
-            d = parse_date(raw)
+            d = parse_date((r[1] or "").replace(".", "/"))
         if not d:
             continue
         by[d].append(
             {
                 "name": name,
-                "status": (r[2] or "").strip(),
-                "note": (r[3] if len(r) > 3 else "") or "",
+                "status": status,
+                "note": ((r[3] if len(r) > 3 else "") or "").strip(),
             }
         )
     return by
@@ -262,7 +255,6 @@ def timeline_time_for_booking(booking_name: str, items: list[dict]) -> str:
                 matches.append(it)
         if not matches:
             continue
-        # Prefer the visit/attraction row over "יציאה ל…" travel rows
         matches.sort(
             key=lambda it: (
                 0 if (it.get("end") or "") else 1,
@@ -275,42 +267,74 @@ def timeline_time_for_booking(booking_name: str, items: list[dict]) -> str:
 
 
 def notes_text(d: date, items: list[dict], bookings_by_day: dict[date, list[dict]]) -> str:
-    """Only time-scoped bookings/tickets/treatments from להזמין (+ USJ express windows)."""
+    """הערות: רק דברים שכבר הוזמנו מטאב להזמין (+ שעה / הערה חשובה)."""
     lines = []
-    seen_keys: set[str] = set()
+    seen: set[str] = set()
     for b in bookings_by_day.get(d, []):
-        status = b["status"] or ""
-        # Dedupe near-duplicate lunch/treatment bookings
-        key = re.sub(r"\s+", "", (b["name"] or "").lower())
-        fuzzy = "yeonnam" if re.search(r"yeonnam|chwihyang|צהריים בסיאול", b["name"], re.I) else key[:20]
-        if fuzzy in seen_keys:
+        name = b["name"]
+        fuzzy = "yeonnam" if re.search(r"yeonnam|chwihyang|צהריים בסיאול", name, re.I) else re.sub(r"\s+", "", name.lower())[:24]
+        if fuzzy in seen:
             continue
-        seen_keys.add(fuzzy)
+        seen.add(fuzzy)
 
-        tr = timeline_time_for_booking(b["name"], items)
+        tr = timeline_time_for_booking(name, items)
+        note = b["note"]
         if not tr:
-            m = re.search(r"(\d{1,2}:\d{2})(?:\s*[–\-]\s*(\d{1,2}:\d{2}))?", b["note"] or "")
+            m = re.search(r"(\d{1,2}:\d{2})(?:\s*[–\-→]\s*(\d{1,2}:\d{2}))?", note)
             if m:
                 tr = time_range(m.group(1), m.group(2) or "")
-        extra = (b["note"] or "").strip()
-        if len(extra) > 70:
-            extra = extra[:67] + "…"
-        bit = f"• {tr + ' — ' if tr else ''}{b['name']}"
-        if status:
-            bit += f" ({status})"
-        if extra and extra not in bit:
-            bit += f" — {extra}"
-        lines.append(bit)
 
-    # USJ: add Express timed ride windows from timeline (same day only)
-    if d == date(2026, 9, 16):
-        for it in items:
-            title = it.get("title") or ""
-            if re.search(r"Mario Kart|Yoshi|Mine Cart|Hippogriff|Choice |Forbidden Journey", title, re.I):
-                tr = time_range(it.get("start") or "", it.get("end") or "")
-                line = f"• {tr + ' — ' if tr else ''}{title}"
-                if line not in lines:
-                    lines.append(line)
+        # Clean display name
+        display = name
+        if re.search(r"שיער|Moclock", name, re.I):
+            display = "Moclock — טיפול שיער"
+        elif re.search(r"טיפול פנים|Forena", name, re.I):
+            display = "Forena Clinic — ייעוץ וטיפול"
+        elif re.search(r"צהריים בסיאול|Yeonnam|Chwihyang", name, re.I):
+            display = "Yeonnam Chwihyang — צהריים"
+        elif re.search(r"בשר קובה", name, re.I):
+            display = "ארוחת בשר קובה"
+        elif re.search(r"טונה|maguro", name, re.I):
+            display = "ארוחת טונה (Maguro Mart) — מזומן בלבד"
+        elif re.search(r"פנקייקים", name, re.I):
+            display = "פנקייקים — Panel Cafe Kyoto"
+        elif re.search(r"קוואוגוצ|Kawaguchiko|Koushiya", name, re.I):
+            display = "ארוחת ערב — Koushiya"
+        elif re.search(r"Biovortex", name, re.I):
+            display = "teamLab Biovortex"
+        elif re.search(r"Express Pass", name, re.I):
+            display = "USJ Express Pass"
+        elif re.search(r"Lotte", name, re.I):
+            display = "Lotte World"
+        elif re.search(r"N Seoul", name, re.I):
+            display = "N Seoul Tower — שקיעה"
+        elif re.search(r"Emirates|אמירייטס", name, re.I):
+            display = "טיסות Emirates (EK319 + EK2478)"
+        elif re.search(r"ET0419|ET0672", name, re.I):
+            display = "טיסות Ethiopian (ET0419 + ET0672)"
+        elif re.search(r"YP7321|Air Premia", name, re.I):
+            display = "טיסת Air Premia YP7321"
+
+        # Important note only (short) — skip if it just repeats the time we already show
+        important = ""
+        note_clean = note
+        if tr:
+            note_clean = re.sub(r"\d{1,2}:\d{2}(?:\s*[–\-→]\s*\d{1,2}:\d{2})?", "", note_clean)
+            note_clean = re.sub(r"\s{2,}", " ", note_clean).strip(" ·,-")
+        if re.search(r"מזומן|cash|Oversized|Economy|Gennkichi|Maguro|Panel", note_clean, re.I):
+            important = note_clean
+        elif note_clean and len(note_clean) <= 60 and not re.search(r"^(Forena|Moclock|Yeonnam|16/9|Lotte)", note_clean, re.I):
+            important = note_clean
+        if important and len(important) > 90:
+            important = important[:87] + "…"
+
+        if tr:
+            line = f"• {tr} — {display}"
+        else:
+            line = f"• {display}"
+        if important and important not in line:
+            line += f" · {important}"
+        lines.append(line)
 
     return "\n".join(lines)
 
