@@ -216,8 +216,8 @@ def restyle_timeline(wb, ws, values):
                     },
                     "cell": {
                         "userEnteredFormat": {
-                            "horizontalAlignment": "RIGHT",
-                            "verticalAlignment": "TOP",
+                            "horizontalAlignment": "CENTER",
+                            "verticalAlignment": "MIDDLE",
                             "wrapStrategy": "WRAP",
                         }
                     },
@@ -295,8 +295,8 @@ def restyle_days_full(wb, ws, values):
                     },
                     "cell": {
                         "userEnteredFormat": {
-                            "horizontalAlignment": "RIGHT",
-                            "verticalAlignment": "TOP",
+                            "horizontalAlignment": "CENTER",
+                            "verticalAlignment": "MIDDLE",
                             "wrapStrategy": "WRAP",
                         }
                     },

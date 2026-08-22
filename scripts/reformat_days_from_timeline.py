@@ -105,7 +105,7 @@ def fmt_time(t: str) -> str:
 def time_range(start: str, end: str) -> str:
     s, e = fmt_time(start), fmt_time(end)
     if s and e:
-        return f"{s}–{e}"
+        return f"{s} עד {e}"
     return s or e
 
 
@@ -284,22 +284,22 @@ def notes_text(d: date, items: list[dict], bookings_by_day: dict[date, list[dict
             if m:
                 tr = time_range(m.group(1), m.group(2) or "")
 
-        # Clean display name
+        # Clean display name — English in parentheses, no em-dashes (breaks RTL)
         display = name
         if re.search(r"שיער|Moclock", name, re.I):
-            display = "Moclock — טיפול שיער"
+            display = "טיפול שיער (Moclock)"
         elif re.search(r"טיפול פנים|Forena", name, re.I):
-            display = "Forena Clinic — ייעוץ וטיפול"
+            display = "ייעוץ וטיפול (Forena Clinic)"
         elif re.search(r"צהריים בסיאול|Yeonnam|Chwihyang", name, re.I):
-            display = "Yeonnam Chwihyang — צהריים"
+            display = "צהריים (Yeonnam Chwihyang)"
         elif re.search(r"בשר קובה", name, re.I):
             display = "ארוחת בשר קובה"
         elif re.search(r"טונה|maguro", name, re.I):
-            display = "ארוחת טונה (Maguro Mart) — מזומן בלבד"
+            display = "ארוחת טונה (Maguro Mart, מזומן בלבד)"
         elif re.search(r"פנקייקים", name, re.I):
-            display = "פנקייקים — Panel Cafe Kyoto"
+            display = "פנקייקים (Panel Cafe Kyoto)"
         elif re.search(r"קוואוגוצ|Kawaguchiko|Koushiya", name, re.I):
-            display = "ארוחת ערב — Koushiya"
+            display = "ארוחת ערב (Koushiya)"
         elif re.search(r"Biovortex", name, re.I):
             display = "teamLab Biovortex"
         elif re.search(r"Express Pass", name, re.I):
@@ -307,13 +307,13 @@ def notes_text(d: date, items: list[dict], bookings_by_day: dict[date, list[dict
         elif re.search(r"Lotte", name, re.I):
             display = "Lotte World"
         elif re.search(r"N Seoul", name, re.I):
-            display = "N Seoul Tower — שקיעה"
+            display = "שקיעה במגדל N"
         elif re.search(r"Emirates|אמירייטס", name, re.I):
             display = "טיסות Emirates (EK319 + EK2478)"
         elif re.search(r"ET0419|ET0672", name, re.I):
             display = "טיסות Ethiopian (ET0419 + ET0672)"
         elif re.search(r"YP7321|Air Premia", name, re.I):
-            display = "טיסת Air Premia YP7321"
+            display = "טיסת Air Premia (YP7321)"
 
         # Important note only (short) — skip if it just repeats the time we already show
         important = ""
@@ -321,15 +321,26 @@ def notes_text(d: date, items: list[dict], bookings_by_day: dict[date, list[dict
         if tr:
             note_clean = re.sub(r"\d{1,2}:\d{2}(?:\s*[–\-→]\s*\d{1,2}:\d{2})?", "", note_clean)
             note_clean = re.sub(r"\s{2,}", " ", note_clean).strip(" ·,-")
-        if re.search(r"מזומן|cash|Oversized|Economy|Gennkichi|Maguro|Panel", note_clean, re.I):
+        if re.search(r"מזומן|cash|Oversized|Economy", note_clean, re.I) and "מזומן" not in display:
             important = note_clean
-        elif note_clean and len(note_clean) <= 60 and not re.search(r"^(Forena|Moclock|Yeonnam|16/9|Lotte)", note_clean, re.I):
+        elif re.search(r"Gennkichi", note_clean, re.I):
+            important = "Gennkichi"
+        elif note_clean and len(note_clean) <= 40 and not re.search(
+            r"^(Forena|Moclock|Yeonnam|16/9|Lotte|panel|Air Premia|Ethiopian|Koushiya|maguro|Beef)",
+            note_clean,
+            re.I,
+        ):
             important = note_clean
-        if important and len(important) > 90:
-            important = important[:87] + "…"
+        if important and len(important) > 80:
+            important = important[:77] + "…"
+        if important and re.search(r"panel cafe|maguro mart", important, re.I):
+            important = ""
+        if "מזומן" in display and important and "מזומן" in important:
+            important = ""
 
+        # RTL-friendly: bullet + time + middle-dot + text (no em-dash)
         if tr:
-            line = f"• {tr} — {display}"
+            line = f"• {tr} · {display}"
         else:
             line = f"• {display}"
         if important and important not in line:
@@ -403,8 +414,8 @@ def restyle_timeline(wb, ws, values: list[list[str]]):
                     },
                     "cell": {
                         "userEnteredFormat": {
-                            "horizontalAlignment": "RIGHT",
-                            "verticalAlignment": "TOP",
+                            "horizontalAlignment": "CENTER",
+                            "verticalAlignment": "MIDDLE",
                             "wrapStrategy": "WRAP",
                         }
                     },
@@ -455,7 +466,7 @@ def restyle_days(wb, ws, values: list[list[str]]):
                 }
             }
         )
-    # Plan + notes: top/right wrap
+    # Plan + notes + title: centered wrap (RTL-safe)
     for col in (3, 4, 6):
         reqs.append(
             {
@@ -469,8 +480,8 @@ def restyle_days(wb, ws, values: list[list[str]]):
                     },
                     "cell": {
                         "userEnteredFormat": {
-                            "horizontalAlignment": "RIGHT",
-                            "verticalAlignment": "TOP",
+                            "horizontalAlignment": "CENTER",
+                            "verticalAlignment": "MIDDLE",
                             "wrapStrategy": "WRAP",
                         }
                     },
