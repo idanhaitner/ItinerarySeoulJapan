@@ -103,23 +103,52 @@ window.TripTools = (function () {
     return { route: "", rest: raw };
   }
 
+  function cleanTravelHeadline(raw) {
+    let headline = String(raw || "").trim();
+    headline = headline.replace(/\([^)]*\)/g, " ").replace(/\s+/g, " ").trim();
+    headline = headline.replace(/\s*\+\s*.+$/, "").trim();
+    headline = headline.replace(/^(?:Travel by)\s+[^·]+·\s*/i, "").trim();
+    headline = headline.replace(/^(?:נסיעה ב־|Travel by )\s*/i, "").trim();
+    headline = headline.replace(/^(?:אוטובוס|רכבת תחתית|מטרו|רכבת|מונית|רכבל|טיסה)\s+/i, "").trim();
+    headline = headline.replace(/\b(?:Bus|Line)\s+\d+[A-Za-z0-9/]*\b/gi, "").replace(/\s+/g, " ").trim();
+    headline = headline.replace(/(?:Namsan Bus|נאמסן)\s+\d+[A-Za-z0-9/]*/gi, "").replace(/\s+/g, " ").trim();
+    return headline;
+  }
+
+  function formatTravelRoute(route) {
+    const raw = String(route || "").trim();
+    if (!raw) return "";
+    const fromTo = raw.match(/^from\s+(.+?)\s+to\s+(.+)$/i);
+    if (fromTo) return `${fromTo[1]} → ${fromTo[2]}`;
+    const toward = raw.match(/^to\s+(.+)$/i);
+    if (toward) return toward[1];
+    return raw.replace(/\s*→\s*/g, " → ");
+  }
+
+  function travelRouteDisplay(item) {
+    const info = travelInfo(item);
+    const route = formatTravelRoute(info.route || info.title || (item && item.title) || "");
+    return route || formatTravelRoute((item && item.title) || "");
+  }
+
   function travelInfo(item) {
     const raw = (item && item.title) || "";
     const type = classifyTravelType(raw, (item && item.note) || "");
     const { route, rest } = extractTravelRoute(raw);
     const prefix = TYPE_PREFIX[type];
-    let headline = rest.replace(/^(?:נסיעה ב־|Travel by )\s*/i, "").trim();
+    let headline = cleanTravelHeadline(rest.replace(/^(?:נסיעה ב־|Travel by )\s*/i, "").trim());
     const mixed = / או | \/ /.test(headline);
     if (!mixed && prefix) headline = headline.replace(prefix, "").trim();
     headline = headline.replace(/[·,]\s*$/, "").trim();
     if (!mixed) headline = headline.replace(/^(?:או)\s+/, "").trim();
+    const routeClean = cleanTravelHeadline(route);
     if (!headline || headline === TRAVEL_LABELS[type]) {
-      headline = route || raw;
+      headline = routeClean || cleanTravelHeadline(raw);
       return {
         type,
         label: TRAVEL_LABELS[type] || "נסיעה",
         title: headline,
-        route: headline === route ? "" : route,
+        route: "",
         icon: TRAVEL_ICONS[type] || TRAVEL_ICONS.train,
       };
     }
@@ -127,20 +156,22 @@ window.TripTools = (function () {
       type,
       label: TRAVEL_LABELS[type] || "נסיעה",
       title: headline,
-      route,
+      route: routeClean && routeClean !== headline ? routeClean : "",
       icon: TRAVEL_ICONS[type] || TRAVEL_ICONS.train,
     };
   }
 
   function isTravelItem(item) {
     if (!item) return false;
-    if (item.category === "transit") return true;
     const title = item.title || "";
     if (/^(Travel by |נסיעה)/.test(title)) return true;
+    if (item.category === "transit") return true;
+    if (item.category && item.category !== "transit") return false;
     if (/^(טיסת|טיסה |אוטובוס|רכבת|מטרו|שינקנסן|מונית|Hikari|Nozomi|N['’]EX|AREX|Tobu |Hankyu|Kintetsu|JR )/.test(title)) {
       return true;
     }
     if (/^רכבל/.test(title) && /(?:מ[־]|\sמ(?!ונית)\S.*\sל)/.test(title)) return true;
+    if (/^רכבת תחתית|^מונית|^אוטובוס/.test(title) && /\sל/.test(title)) return true;
     return false;
   }
 
@@ -359,5 +390,5 @@ window.TripTools = (function () {
     modal.classList.add("open");
   }
 
-  return { categoryMeta, placeKindHe, convert, renderConverter, renderTaxiCards, openTipsModal, hotelTaxiCards, travelInfo, isTravelItem };
+  return { categoryMeta, placeKindHe, convert, renderConverter, renderTaxiCards, openTipsModal, hotelTaxiCards, travelInfo, travelRouteDisplay, formatTravelRoute, isTravelItem };
 })();

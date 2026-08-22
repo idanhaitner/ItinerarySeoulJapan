@@ -142,8 +142,20 @@ def load_trip():
 
 
 def fmt_date(iso: str) -> str:
-    """Return a value Google Sheets parses as a real date."""
-    return iso  # YYYY-MM-DD
+    """Unambiguous date for Sheets: =DATE(y,m,d) so locale can't flip day/month."""
+    raw = (iso or "").strip()
+    if not raw:
+        return ""
+    if raw.startswith("=DATE("):
+        return raw
+    if "/" in raw and "-" not in raw:
+        a, b, y = raw.split("/")[:3]
+        d, m = int(a), int(b)
+        return f"=DATE({int(y)},{m},{d})"
+    if "-" in raw:
+        y, m, d = raw.split("-")[:3]
+        return f"=DATE({int(y)},{int(m)},{int(d)})"
+    return raw
 
 
 def fmt_date_he(iso: str) -> str:
@@ -152,7 +164,13 @@ def fmt_date_he(iso: str) -> str:
         1: "ינו׳", 2: "פבר׳", 3: "מרץ", 4: "אפר׳", 5: "מאי", 6: "יונ׳",
         7: "יול׳", 8: "אוג׳", 9: "ספט׳", 10: "אוק׳", 11: "נוב׳", 12: "דצמ׳",
     }
-    y, m, d = iso.split("-")
+    raw = (iso or "").strip()
+    if "-" in raw:
+        y, m, d = raw.split("-")[:3]
+    elif "/" in raw:
+        d, m, y = raw.split("/")[:3]
+    else:
+        return raw
     return f"{int(d)} ב{months[int(m)]} {y}"
 
 
@@ -204,7 +222,7 @@ def build_timeline(days, places, he_places=None):
         for item in d.get("timeline") or []:
             rows.append(
                 [
-                    d["date"],  # real trip date (YYYY-MM-DD → Sheets date)
+                    fmt_date(d["date"]),  # =DATE(...) → displays dd/mm/yyyy on every tab
                     wd,
                     city,
                     item.get("time") or "",
@@ -273,7 +291,7 @@ def build_days(days, places, he_places=None):
             transfer = " — ".join(x for x in [tr.get("label"), tr.get("detail"), tr.get("duration")] if x)
         rows.append(
             [
-                d["date"],
+                fmt_date(d["date"]),
                 WD.get(d["weekday"], d["weekday"]),
                 CITY.get(d["city"], d["city"]),
                 d.get("title") or "",
@@ -369,7 +387,7 @@ def build_hotels(days):
             end = "2026-09-21"
             # block start may be 15 from city change; checkout morning 21/9 after Kobe day
             notes = "הוזמן · מ־15/9 ערב ל־21/9 בוקר · 東心斎橋2-2-12 · כולל ליל USJ ב־16/9 · טיול יום לקובה ב־20/9"
-        rows.append([label, block["start"], end, hotel, area, status, notes])
+        rows.append([label, fmt_date(block["start"]), fmt_date(end), hotel, area, status, notes])
     return rows
 
 
@@ -412,7 +430,7 @@ def build_bookings(days):
     ]
     rows = [["מה להזמין", "תאריך", "סטטוס", "הערות"]]
     for name, day_id, status, notes in items:
-        rows.append([name, by_id.get(day_id, ""), status, notes])
+        rows.append([name, fmt_date(by_id.get(day_id, "")), status, notes])
     return rows
 
 
@@ -856,6 +874,8 @@ def apply_spreadsheet_theme(wb):
                 {
                     "updateSpreadsheetProperties": {
                         "properties": {
+                            "locale": "iw_IL",
+                            "timeZone": "Asia/Jerusalem",
                             "spreadsheetTheme": {
                                 "primaryFontFamily": FONT_FAMILY,
                                 "themeColors": [
@@ -871,7 +891,7 @@ def apply_spreadsheet_theme(wb):
                                 ],
                             }
                         },
-                        "fields": "spreadsheetTheme",
+                        "fields": "locale,timeZone,spreadsheetTheme",
                     }
                 }
             ]

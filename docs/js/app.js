@@ -462,7 +462,7 @@
   }
 
   function isFlowHop(item) {
-    return tools.isTravelItem(item) && !item.timed;
+    return tools.isTravelItem(item);
   }
 
   function autoDir(str) {
@@ -501,26 +501,22 @@
     return `<div class="timeline-place">${kindBit}<span class="place-name" dir="auto">${escapeHtml(place.name)}</span>${ja}</div>`;
   }
 
+  function travelRouteLabel(item) {
+    const label = tools.travelRouteDisplay(item);
+    return label ? `<span dir="ltr">${escapeHtml(label)}</span>` : "";
+  }
+
   function hopHtml(day, item, idx) {
-    const place = item.placeId ? places[item.placeId] : null;
-    const links = place ? mapsLinks(place) : null;
     const done = storage.isCompleted(day.id, item) ? "done" : "";
     const fav = storage.isFavorite(day.id, item) ? "fav" : "";
     const info = tools.travelInfo(item);
+    const routeLabel = travelRouteLabel(item);
     return `
               <li class="route-step is-hop ${done} ${fav}" data-tl-idx="${idx}">
                 <span class="step-n step-n-dot" aria-hidden="true"></span>
                 <div class="step-body hop-inline">
                   ${travelKickerHtml(info, item)}
-                  <div class="timeline-title-row">
-                    <div class="timeline-title travel-mode">${escapeHtml(info.title)}</div>
-                  </div>
-                  ${info.route ? `<div class="travel-route">${escapeHtml(info.route)}</div>` : ""}
-                  <div class="timeline-actions">
-                    ${links ? `<a href="${links.primary.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.primary.label)}</a>` : ""}
-                    <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "בוצע" : "סיימתי"}</button>
-                    <button type="button" class="${storage.isFavorite(day.id, item) ? "active-fav" : ""}" data-fav="${idx}">${storage.isFavorite(day.id, item) ? "שמור" : "שמירה"}</button>
-                  </div>
+                  ${routeLabel ? `<div class="timeline-title-row"><div class="timeline-title travel-mode">${routeLabel}</div></div>` : ""}
                 </div>
               </li>`;
   }
@@ -534,17 +530,14 @@
 
     if (isTravel) {
       const info = tools.travelInfo(item);
+      const routeLabel = travelRouteLabel(item);
       return `
               <li class="route-step ${timedClass} is-travel travel-mode-${info.type} ${done} ${fav}" data-tl-idx="${idx}">
-                <span class="step-n">${step}</span>
-                <div class="step-body">
+                <span class="step-n step-n-dot" aria-hidden="true"></span>
+                <div class="step-body hop-inline">
                   ${travelKickerHtml(info, item)}
-                  <div class="timeline-title-row">
-                    <div class="timeline-title travel-mode">${escapeHtml(info.title)}</div>
-                  </div>
-                  ${info.route ? `<div class="travel-route">${escapeHtml(info.route)}</div>` : ""}
+                  ${routeLabel ? `<div class="timeline-title-row"><div class="timeline-title travel-mode">${routeLabel}</div></div>` : ""}
                   ${item.note ? `<p class="timeline-note">${escapeHtml(item.note)}</p>` : ""}
-                  ${timelineActionsHtml(day, item, idx)}
                 </div>
               </li>`;
     }
@@ -600,7 +593,7 @@
           .slice(0, 3)
           .map(
             (item) =>
-              `<span class="day-anchor-chip"><span class="t">${escapeHtml(item.time)}</span> ${autoDir(item.title)}</span>`
+              `<span class="day-anchor-chip" dir="rtl"><span class="t" dir="ltr">${escapeHtml(item.time)}</span> ${autoDir(item.title)}</span>`
           )
           .join("");
         const extra = anchors.length > 3 ? `<span class="day-anchor-more">+${anchors.length - 3}</span>` : "";
@@ -611,19 +604,16 @@
               <span class="d">${escapeHtml(parts.month)}</span>
             </div>
             <div class="day-row-body">
-              <div class="day-row-top">
-                <div class="day-row-city">
-                  <span class="he">${cityLocal(d.city)}</span>
-                  <span class="en">${d.city}</span>
-                </div>
-                <div class="day-row-meta">
-                  <span>${weekdayHe(d)}</span>
-                  <span class="dot" aria-hidden="true">·</span>
-                  <span>${steps ? `${steps} עצירות` : "—"}</span>
-                  
-                </div>
+              <div class="day-row-kicker">
+                <span class="he">${cityLocal(d.city)}</span>
+                <span class="sep" aria-hidden="true">·</span>
+                <span class="en" dir="ltr">${escapeHtml(d.city)}</span>
+                <span class="sep" aria-hidden="true">·</span>
+                <span>${weekdayHe(d)}</span>
+                <span class="sep" aria-hidden="true">·</span>
+                <span>${steps ? `${steps} עצירות` : "—"}</span>
               </div>
-              <h3 dir="auto">${escapeHtml(d.title)}</h3>
+              <h3 class="day-row-title" dir="rtl">${escapeHtml(d.title)}</h3>
               ${chips ? `<div class="day-anchor-row">${chips}${extra}</div>` : ""}
             </div>
           </button>`;
@@ -768,13 +758,15 @@
       <div class="detail-hero ${cityClass(day.city)}">
         <div class="detail-hero-top">
           <span class="day-num">${parts.day} ${escapeHtml(parts.month)}</span>
-          <span class="city-en">${local}</span>
-          <span class="city-local">${day.city}</span>
+          <span class="sep" aria-hidden="true">·</span>
           <span class="day-num">${weekdayHe(day)}</span>
+          <span class="sep" aria-hidden="true">·</span>
+          <span class="city-en">${local}</span>
+          <span class="city-local" dir="ltr">${escapeHtml(day.city)}</span>
         </div>
         <div class="detail-hero-grid">
           <div>
-            <h2 dir="auto">${escapeHtml(day.title)}</h2>
+            <h2 dir="rtl">${escapeHtml(day.title)}</h2>
             ${
               hotel
                 ? `<div class="tag-row" style="margin-top:16px"><span class="tag">לינה · ${escapeHtml(hotel.name)}</span></div>`

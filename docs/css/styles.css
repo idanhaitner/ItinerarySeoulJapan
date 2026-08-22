@@ -1720,64 +1720,50 @@ a { color: inherit; }
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
+  text-align: start;
 }
 
-.day-row-top {
+.day-row-kicker {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px 20px;
-  margin-bottom: 10px;
   flex-wrap: wrap;
-}
-
-.day-row-city {
-  display: flex;
   align-items: baseline;
-  gap: 8px;
-  min-width: 0;
+  justify-content: flex-start;
+  gap: 6px;
+  margin-bottom: 8px;
+  color: var(--soft);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+  width: 100%;
 }
 
-.day-row-city .he {
-  font-size: 12px;
+.day-row-kicker .he {
   font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: none;
   color: var(--ink);
 }
 
-.day-row-city .en {
+.day-row-kicker .en {
   font-size: 10px;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--soft);
 }
 
-/* City tint only on the date accent — keep labels quiet */
-.day-row.city-Seoul .day-row-city .he,
-.day-row.city-Tokyo .day-row-city .he,
-.day-row.city-Hakone .day-row-city .he,
-.day-row.city-Kawaguchiko .day-row-city .he,
-.day-row.city-Kyoto .day-row-city .he,
-.day-row.city-Hiroshima .day-row-city .he,
-.day-row.city-Osaka .day-row-city .he,
-.day-row.city-Kobe .day-row-city .he,
-.day-row.city-Tel-Aviv .day-row-city .he {
-  color: var(--ink);
+.day-row-kicker .sep {
+  opacity: 0.45;
 }
 
-.day-row.city-Bangkok .day-row-city .he,
-.day-row.city-Tirana .day-row-city .he {
-  color: var(--ink);
-}
-
+.day-row-title,
 .day-row-body h3 {
   font-size: clamp(22px, 2.7vw, 27px);
   margin: 0 0 10px;
   color: var(--navy);
   font-weight: 600;
-  max-width: 30ch;
+  max-width: none;
+  width: 100%;
+  text-align: start;
   letter-spacing: -0.015em;
   line-height: 1.28;
 }
@@ -1785,8 +1771,10 @@ a { color: inherit; }
 .day-anchor-row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   gap: 6px;
   margin-top: 2px;
+  width: 100%;
 }
 
 .day-anchor-chip {
@@ -1804,6 +1792,8 @@ a { color: inherit; }
 }
 
 .day-anchor-chip .t {
+  direction: ltr;
+  unicode-bidi: embed;
   font-variant-numeric: tabular-nums;
   font-weight: 700;
   color: var(--seal);
@@ -1978,10 +1968,17 @@ a { color: inherit; }
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px 16px;
+  justify-content: flex-start;
+  gap: 8px;
   margin-bottom: 16px;
   position: relative;
   z-index: 1;
+  text-align: start;
+}
+
+.detail-hero-top .sep {
+  opacity: 0.45;
+  color: var(--soft);
 }
 
 .detail-hero .day-num {
@@ -2017,7 +2014,8 @@ a { color: inherit; }
 .detail-hero h2 {
   font-size: clamp(32px, 6vw, 48px);
   margin: 0 0 12px;
-  max-width: 18ch;
+  max-width: none;
+  text-align: start;
   position: relative;
   z-index: 1;
   font-weight: 600;
@@ -2570,6 +2568,12 @@ a { color: inherit; }
   border: 1px dashed var(--line-strong);
   border-radius: 12px;
   background: color-mix(in srgb, var(--paper-2) 55%, transparent);
+  text-align: start;
+  width: 100%;
+}
+
+.hop-inline .travel-kicker {
+  justify-content: flex-start;
 }
 
 .hop-inline .timeline-title {
