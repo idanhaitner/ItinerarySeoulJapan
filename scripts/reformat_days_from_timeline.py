@@ -174,13 +174,13 @@ def day_title(d: date, city: str, items: list[dict]) -> str:
 
 
 def plan_text(items: list[dict]) -> str:
-    """Chronological list — plain lines, no bullet dots (RTL-safe)."""
+    """Chronological list with bullets (titles only, no times)."""
     lines = []
     for it in items:
         title = (it.get("title") or "").strip()
         if not title:
             continue
-        lines.append(title)
+        lines.append(f"• {title}")
     return "\n".join(lines)
 
 
