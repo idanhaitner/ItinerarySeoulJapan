@@ -48,12 +48,14 @@
 
   const TAG_HE = {
     architecture: "אדריכלות",
+    booked: "הוזמן",
     culture: "תרבות",
     food: "אוכל",
     hotel: "מלון",
-    icon: "אייקון",
+    icon: "אתר מוכר",
+    inspiration: "רעיון",
     market: "שוק",
-    "must-see": "חובה",
+    "must-see": "חובה לראות",
     nature: "טבע",
     neighborhood: "שכונה",
     nightlife: "חיי לילה",
@@ -63,7 +65,7 @@
     shrine: "מקדש שינטו",
     temple: "מקדש",
     transport: "תחבורה",
-    view: "נוף",
+    view: "תצפית",
   };
 
   function tagLabel(t) {
@@ -114,12 +116,61 @@
       .replace(/"/g, "&quot;");
   }
 
+  // Latin, CJK and numeric runs sitting inside Hebrew need their own bidi
+  // isolate, otherwise neighbouring separators and digits reorder.
+  function bdi(str) {
+    return `<bdi>${escapeHtml(str)}</bdi>`;
+  }
+
+  function bdiLtr(str) {
+    return `<bdi dir="ltr">${escapeHtml(str)}</bdi>`;
+  }
+
+  const LTR_LETTER = "A-Za-z\\u3040-\\u30ff\\u4e00-\\u9fff\\uac00-\\ud7af";
+  // Times and ranges stay inside the token so "Shibuya Sky 18:40–19:20" holds
+  // together as one left-to-right phrase instead of splitting the name from
+  // its hours across a direction change.
+  const LTR_TOKEN = `[0-9${LTR_LETTER}][0-9${LTR_LETTER}'’.:&!*+/\\u2013-]*`;
+  const LTR_RUN = new RegExp(`${LTR_TOKEN}(?:[ ]${LTR_TOKEN})*`, "g");
+  const HAS_LTR_LETTER = new RegExp(`[${LTR_LETTER}]`);
+  const TRAILING_PUNCT = /[.'’&!*+/:\u2013-]+$/;
+
+  // Hebrew prose here is full of Latin place names, station codes and times.
+  // Isolating each run keeps adjacent commas, brackets, tildes and digits on
+  // the side the author intended.
+  function richText(str) {
+    const raw = String(str == null ? "" : str);
+    let out = "";
+    let last = 0;
+    let m;
+    LTR_RUN.lastIndex = 0;
+    while ((m = LTR_RUN.exec(raw)) !== null) {
+      let run = m[0];
+      // Punctuation hanging off the end belongs to the Hebrew sentence.
+      const trimmed = run.replace(TRAILING_PUNCT, "");
+      if (trimmed) run = trimmed;
+      if (!HAS_LTR_LETTER.test(run)) continue;
+      out += escapeHtml(raw.slice(last, m.index));
+      out += `<bdi>${escapeHtml(run)}</bdi>`;
+      last = m.index + run.length;
+      LTR_RUN.lastIndex = last;
+    }
+    out += escapeHtml(raw.slice(last));
+    return out;
+  }
+
   function cityClass(city) {
     return `city-${String(city || "").replace(/\s+/g, "-")}`;
   }
 
   function cityLocal(city) {
     return CITY_LOCAL[city] || city;
+  }
+
+  const PLACE_LANG = { KR: "ko", JP: "ja", IL: "he", ET: "am", TH: "th", AL: "sq", AE: "ar" };
+
+  function placeLangTag(place) {
+    return PLACE_LANG[place && place.country] || "ja";
   }
 
   function isHotelNight(day, index) {
@@ -138,7 +189,7 @@
 
   function hotelNightsLabel(count) {
     if (!count) return "";
-    return `<span class="nights">(${count})</span>`;
+    return `<span class="nights" dir="ltr">(${count})</span>`;
   }
 
   function formatDate(iso) {
@@ -375,7 +426,7 @@
             : "";
         const nights = g.items.filter(({ day, index }) => isHotelNight(day, index)).length;
         return `<div class="day-group ${cityClass(g.city)} ${dim}">
-          <div class="day-group-label">${cityLocal(g.city)}${hotelNightsLabel(nights)}<span class="local">${g.city}</span></div>
+          <div class="day-group-label">${cityLocal(g.city)}${hotelNightsLabel(nights)}<span class="local">${bdi(g.city)}</span></div>
           <div class="day-group-days">
             ${g.items
               .map(({ day }) => {
@@ -401,7 +452,7 @@
         if (c === "all") {
           return `<button type="button" class="chip ${state.city === c ? "active" : ""}" data-city="${c}">הכל<span class="chip-local">全体</span></button>`;
         }
-        return `<button type="button" class="chip ${state.city === c ? "active" : ""}" data-city="${c}">${cityLocal(c)}${hotelNightsLabel(nightsByCity[c] || 0)}<span class="chip-local">${c}</span></button>`;
+        return `<button type="button" class="chip ${state.city === c ? "active" : ""}" data-city="${c}">${cityLocal(c)}${hotelNightsLabel(nightsByCity[c] || 0)}<span class="chip-local">${bdi(c)}</span></button>`;
       })
       .join("");
   }
@@ -423,8 +474,8 @@
     const flight = (transfer.mode || "") === "flight" ? " is-flight" : "";
     return `<div class="transfer-banner${flight}">
       <div class="tb-mode">${escapeHtml(transferModeHe(transfer.mode))}</div>
-      <div class="tb-label">${escapeHtml(transfer.label)}</div>
-      <div class="tb-meta">${escapeHtml(transfer.detail)} · ${escapeHtml(transfer.duration)}</div>
+      <div class="tb-label" dir="auto">${richText(transfer.label)}</div>
+      <div class="tb-meta" dir="auto">${bdi(transfer.detail)}<span class="sep" aria-hidden="true">·</span>${bdi(transfer.duration)}</div>
     </div>`;
   }
 
@@ -436,11 +487,11 @@
       <article class="place-card city-accent-${p.city}" data-place="${p.id}">
         <div class="place-card-top">
           <span class="city-pill ${cityClass(p.city)}">${cityLocal(p.city)}</span>
-          <span class="place-city-en">${escapeHtml(p.city)}</span>
+          <span class="place-city-en">${bdi(p.city)}</span>
         </div>
-        <h3>${escapeHtml(p.name)}</h3>
-        ${p.nameJa ? `<div class="place-ja">${escapeHtml(p.nameJa)}</div>` : ""}
-        ${p.blurb ? `<p class="place-blurb">${escapeHtml(p.blurb)}</p>` : ""}
+        <h3><bdi>${escapeHtml(p.name)}</bdi></h3>
+        ${p.nameJa ? `<div class="place-ja"><bdi lang="${placeLangTag(p)}">${escapeHtml(p.nameJa)}</bdi></div>` : ""}
+        ${p.blurb ? `<p class="place-blurb" dir="auto">${richText(p.blurb)}</p>` : ""}
         <div class="tag-row">${(p.tags || []).slice(0, 4).map((t) => `<span class="tag">${tagLabel(t)}</span>`).join("")}</div>
         <div class="maps-actions">
           ${
@@ -455,18 +506,10 @@
                   `<a class="maps-link" href="${a.href}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(a.label)}</span></a>`
               )
               .join("")}
-            <button type="button" class="maps-link" data-copy="${p.id}"><span>העתק שם</span></button>
+            <button type="button" class="maps-link" data-copy="${p.id}"><span>העתיקו שם</span></button>
           </div>
         </div>
       </article>`;
-  }
-
-  function isFlowHop(item) {
-    return tools.isTravelItem(item) && !item.timed;
-  }
-
-  function autoDir(str) {
-    return `<span dir="auto">${escapeHtml(str)}</span>`;
   }
 
   function stepTimeHtml(item) {
@@ -475,111 +518,77 @@
     return `<span class="step-time" dir="ltr">${escapeHtml(label)}</span>`;
   }
 
-  function travelKickerHtml(info, item) {
-    return `<div class="travel-kicker">
-                    ${info.icon}
-                    <span class="travel-eyebrow">${escapeHtml(info.label)}</span>
-                    ${stepTimeHtml(item)}
-                  </div>`;
-  }
-
   function timelineActionsHtml(day, item, idx) {
     const place = item.placeId ? places[item.placeId] : null;
     const links = place ? mapsLinks(place) : null;
     return `<div class="timeline-actions">
       ${links ? `<a href="${links.primary.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.primary.label)}</a>` : ""}
-      <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "בוצע" : "סיימתי"}</button>
-      <button type="button" class="${storage.isFavorite(day.id, item) ? "active-fav" : ""}" data-fav="${idx}">${storage.isFavorite(day.id, item) ? "שמור" : "שמירה"}</button>
+      <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "בוצע ✓" : "בוצע"}</button>
+      <button type="button" class="${storage.isFavorite(day.id, item) ? "active-fav" : ""}" data-fav="${idx}">${storage.isFavorite(day.id, item) ? "מועדף ★" : "מועדף"}</button>
     </div>`;
   }
 
   function placeLineHtml(place) {
     if (!place) return "";
     const kind = tools.placeKindHe(place);
-    const kindBit = kind ? `<span class="place-kind">${escapeHtml(kind)}</span><span class="place-kind-sep"> · </span>` : "";
-    const ja = place.nameJa ? ` · <span lang="ja">${escapeHtml(place.nameJa)}</span>` : "";
-    return `<div class="timeline-place">${kindBit}<span class="place-name" dir="auto">${escapeHtml(place.name)}</span>${ja}</div>`;
-  }
-
-  function hopHtml(day, item, idx) {
-    const place = item.placeId ? places[item.placeId] : null;
-    const links = place ? mapsLinks(place) : null;
-    const done = storage.isCompleted(day.id, item) ? "done" : "";
-    const fav = storage.isFavorite(day.id, item) ? "fav" : "";
-    const info = tools.travelInfo(item);
-    return `
-              <li class="route-step is-hop ${done} ${fav}" data-tl-idx="${idx}">
-                <span class="step-n step-n-dot" aria-hidden="true"></span>
-                <div class="step-body hop-inline">
-                  ${travelKickerHtml(info, item)}
-                  <div class="timeline-title-row">
-                    <div class="timeline-title travel-mode">${escapeHtml(info.title)}</div>
-                  </div>
-                  ${info.route ? `<div class="travel-route">${escapeHtml(info.route)}</div>` : ""}
-                  <div class="timeline-actions">
-                    ${links ? `<a href="${links.primary.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.primary.label)}</a>` : ""}
-                    <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "בוצע" : "סיימתי"}</button>
-                    <button type="button" class="${storage.isFavorite(day.id, item) ? "active-fav" : ""}" data-fav="${idx}">${storage.isFavorite(day.id, item) ? "שמור" : "שמירה"}</button>
-                  </div>
-                </div>
-              </li>`;
+    const kindBit = kind ? `<span class="place-kind">${escapeHtml(kind)}</span><span class="place-kind-sep" aria-hidden="true">·</span>` : "";
+    const ja = place.nameJa
+      ? `<span class="place-kind-sep" aria-hidden="true">·</span><bdi class="place-ja-inline" lang="${placeLangTag(place)}">${escapeHtml(place.nameJa)}</bdi>`
+      : "";
+    return `<div class="timeline-place">${kindBit}<bdi class="place-name">${escapeHtml(place.name)}</bdi>${ja}</div>`;
   }
 
   function stopHtml(day, item, idx, step) {
     const place = item.placeId ? places[item.placeId] : null;
     const done = storage.isCompleted(day.id, item) ? "done" : "";
     const fav = storage.isFavorite(day.id, item) ? "fav" : "";
-    const isTravel = tools.isTravelItem(item);
     const timedClass = item.timed ? "is-timed" : "";
-
-    if (isTravel) {
-      const info = tools.travelInfo(item);
-      return `
-              <li class="route-step ${timedClass} is-travel travel-mode-${info.type} ${done} ${fav}" data-tl-idx="${idx}">
-                <span class="step-n">${step}</span>
-                <div class="step-body">
-                  ${travelKickerHtml(info, item)}
-                  <div class="timeline-title-row">
-                    <div class="timeline-title travel-mode">${escapeHtml(info.title)}</div>
-                  </div>
-                  ${info.route ? `<div class="travel-route">${escapeHtml(info.route)}</div>` : ""}
-                  ${item.note ? `<p class="timeline-note">${escapeHtml(item.note)}</p>` : ""}
-                  ${timelineActionsHtml(day, item, idx)}
-                </div>
-              </li>`;
-    }
-
     const timeHead = item.timed ? `<div class="step-head">${stepTimeHtml(item)}</div>` : "";
     return `
               <li class="route-step ${timedClass} ${done} ${fav}" data-tl-idx="${idx}">
-                <span class="step-n">${step}</span>
+                <span class="step-n" dir="ltr">${step}</span>
                 <div class="step-body">
                   ${timeHead}
                   <div class="timeline-title-row">
-                    <div class="timeline-title">${escapeHtml(item.title)}</div>
+                    <div class="timeline-title" dir="auto">${richText(item.title)}</div>
                   </div>
                   ${placeLineHtml(place)}
-                  ${item.note ? `<p class="timeline-note">${escapeHtml(item.note)}</p>` : ""}
+                  ${item.note ? `<p class="timeline-note" dir="auto">${richText(item.note)}</p>` : ""}
                   ${timelineActionsHtml(day, item, idx)}
                 </div>
               </li>`;
   }
 
+  function dayPlaceItems(day) {
+    return (day.timeline || []).filter((item) => !tools.isTravelItem(item));
+  }
+
+  function tipsCompactHtml(day) {
+    const all = day.tips || [];
+    if (!all.length) return "";
+    const shown = all.slice(0, 2);
+    return `
+      <div class="side-block side-block-tips">
+        <div class="side-block-head">כדאי לדעת</div>
+        <ul>${shown.map((t) => `<li><span dir="auto">${richText(t)}</span></li>`).join("")}</ul>
+      </div>`;
+  }
+
   function timelineHtml(day) {
     const items = day.timeline || [];
+    const rows = [];
     let step = 0;
-    const rows = items
-      .map((item, idx) => {
-        if (isFlowHop(item)) return hopHtml(day, item, idx);
-        step += 1;
-        return stopHtml(day, item, idx, step);
-      })
-      .join("");
+    items.forEach((item, idx) => {
+      if (tools.isTravelItem(item)) return;
+      step += 1;
+      rows.push(stopHtml(day, item, idx, step));
+    });
+    if (!rows.length) return `<div class="empty">אין מקומות ליום הזה.</div>`;
     return `
       <div class="section-title">המסלול · 行程</div>
       <ol class="timeline day-flow">
         <li class="flow-block flow-sequence city-line-${day.city}">
-          <ol class="route-steps">${rows}</ol>
+          <ol class="route-steps">${rows.join("")}</ol>
         </li>
       </ol>`;
   }
@@ -588,22 +597,23 @@
     const list = filteredDays();
     setResultCount(`${list.length} ימים`);
     if (!list.length) {
-      els.dayList.innerHTML = `<div class="empty">אין ימים שמתאימים לסינון.</div>`;
+      els.dayList.innerHTML = `<div class="empty">לא נמצאו ימים מתאימים. נסו לשנות את הסינון או את החיפוש.</div>`;
       return;
     }
     els.dayList.innerHTML = list
       .map((d) => {
         const parts = formatDateParts(d.date);
-        const steps = (d.timeline || []).length;
-        const anchors = (d.timeline || []).filter((item) => item.timed);
+        const placeItems = dayPlaceItems(d);
+        const steps = placeItems.length;
+        const anchors = placeItems.filter((item) => item.timed);
         const chips = anchors
           .slice(0, 3)
           .map(
             (item) =>
-              `<span class="day-anchor-chip"><span class="t" dir="ltr">${escapeHtml(item.time)}</span><span dir="auto">${escapeHtml(item.title)}</span></span>`
+              `<span class="day-anchor-chip"><span class="t" dir="ltr">${escapeHtml(item.time)}</span><span dir="auto">${richText(item.title)}</span></span>`
           )
           .join("");
-        const extra = anchors.length > 3 ? `<span class="day-anchor-more">+${anchors.length - 3}</span>` : "";
+        const extra = anchors.length > 3 ? `<span class="day-anchor-more" dir="ltr">+${anchors.length - 3}</span>` : "";
         return `
           <button type="button" class="day-row ${cityClass(d.city)}" data-day="${d.id}">
             <div class="day-row-num" aria-hidden="true">
@@ -616,9 +626,10 @@
                 <span class="dot" aria-hidden="true">·</span>
                 <span>${weekdayHe(d)}</span>
                 <span class="dot" aria-hidden="true">·</span>
-                <span>${steps ? `${steps} עצירות` : "—"}</span>
+                <span>${steps ? `${steps} מקומות` : "—"}</span>
               </p>
-              <h3 dir="auto">${escapeHtml(d.title)}</h3>
+              <h3 dir="auto">${richText(d.title)}</h3>
+              ${d.summary ? `<p class="day-row-summary" dir="auto">${richText(d.summary)}</p>` : ""}
               ${chips ? `<div class="day-anchor-row">${chips}${extra}</div>` : ""}
             </div>
             <span class="day-row-arrow" aria-hidden="true">‹</span>
@@ -650,7 +661,7 @@
   }
 
   function placesGroupedHtml(list) {
-    if (!list.length) return `<div class="empty">אין מקומות שמתאימים לסינון.</div>`;
+    if (!list.length) return `<div class="empty">לא נמצאו מקומות מתאימים. נסו לשנות את הסינון או את החיפוש.</div>`;
     const groups = placesByCity(list);
     const openCity = state.city !== "all" ? state.city : groups[0] && groups[0].city;
     return `
@@ -663,10 +674,10 @@
             <summary class="city-fold-summary">
               <span class="city-fold-label">
                 <span class="en">${cityLocal(g.city)}</span>
-                <span class="local">${g.city}</span>
+                <span class="local">${bdi(g.city)}</span>
               </span>
               <span class="city-fold-meta">
-                <span class="count">${g.items.length}</span>
+                <span class="count" dir="ltr">${g.items.length}</span>
                 <span class="chev" aria-hidden="true"></span>
               </span>
             </summary>
@@ -693,7 +704,7 @@
           <div>
             <p class="plan-kicker">מפות · 地図</p>
             <h2 class="plan-title">עקבו אחרי המסלול</h2>
-            <p class="journey-sub">הימים מוצגים בסדר כרונולוגי. לחצו על סימון או עצירה כדי לפתוח את היום.</p>
+            <p class="journey-sub">הימים מסודרים לפי סדר הנסיעה. לחצו על נקודה במפה או על יום ברשימה כדי לפתוח אותו.</p>
           </div>
         </div>
         <div class="journey-layout">
@@ -703,7 +714,7 @@
       </section>
       <div class="places-all-head">
         <div class="section-title">כל המקומות · 場所</div>
-        <p class="journey-sub">מקובצים לפי עיר — פתחו עיר כדי לדפדף במקומות שלה.</p>
+        <p class="journey-sub">המקומות מקובצים לפי עיר. פתחו עיר כדי לראות מה יש בה.</p>
       </div>
       <div id="places-host"></div>
     `;
@@ -758,6 +769,7 @@
     const hotel = day.hotelId ? places[day.hotelId] : null;
     const local = cityLocal(day.city);
 
+    const tips = tipsCompactHtml(day);
     els.detail.innerHTML = `
       <button type="button" class="detail-back" id="back-btn">חזרה למסלול</button>
       ${transferHtml(day.transfer)}
@@ -765,38 +777,27 @@
         <div class="detail-hero-top">
           <span class="day-num">${parts.day} ${escapeHtml(parts.month)}</span>
           <span class="city-en">${local}</span>
-          <span class="city-local">${day.city}</span>
+          <span class="city-local">${bdi(day.city)}</span>
           <span class="day-num">${weekdayHe(day)}</span>
         </div>
         <div class="detail-hero-grid">
           <div>
-            <h2 dir="auto">${escapeHtml(day.title)}</h2>
-            ${day.summary ? `<div class="detail-meta" dir="auto">${escapeHtml(day.summary)}</div>` : ""}
+            <h2 dir="auto">${richText(day.title)}</h2>
             ${
               hotel
-                ? `<div class="tag-row" style="margin-top:16px"><span class="tag">לינה · ${escapeHtml(hotel.name)}</span></div>`
+                ? `<div class="tag-row" style="margin-top:16px"><span class="tag">לינה <span class="sep" aria-hidden="true">·</span> ${bdi(hotel.name)}</span></div>`
                 : day.city !== "Seoul"
                   ? `<div class="tag-row" style="margin-top:16px"><span class="tag tag-warn">לינה · עדיין לא הוזמן</span></div>`
                   : ""
             }
           </div>
-          ${day.food ? `<div class="food-banner"><strong>אוכל היום</strong><span dir="auto">${escapeHtml(day.food)}</span></div>` : ""}
         </div>
       </div>
       <div class="detail-layout">
         <div>
           ${timelineHtml(day)}
         </div>
-        ${
-          (day.transport || []).length
-            ? `<div>
-          <div class="side-block">
-            <div class="side-block-head">איך מגיעים</div>
-            <ol>${day.transport.map((t) => `<li><span>${escapeHtml(t)}</span></li>`).join("")}</ol>
-          </div>
-        </div>`
-            : ""
-        }
+        ${tips ? `<div class="detail-aside">${tips}</div>` : ""}
       </div>
     `;
     setResultCount(`${parts.day} ${parts.month}`);
@@ -1014,7 +1015,7 @@
       seal: "旅",
       kicker: "טיסות · フライト · BOARDING",
       title: "מסלול האוויר שלנו",
-      lead: "מתל אביב לסיאול, לטוקיו, לטירנה (דרך דובאי) · כרטיסים וסטטוס במבט אחד.",
+      lead: "מתל אביב לסיאול, משם לטוקיו ובחזרה לטירנה דרך דובאי. כל הכרטיסים והסטטוסים במקום אחד.",
       pills: [
         { em: booked, span: "הוזמנו" },
         { em: todo, span: "לטפל" },
@@ -1061,8 +1062,8 @@
             <div class="fx-pass-body">
               <header class="fx-pass-head">
                 <div>
-                  <p class="fx-pass-kicker">${escapeHtml(m.he)} · ${escapeHtml(m.blurb)}</p>
-                  <h3>מ־${escapeHtml(m.from)} ל־${escapeHtml(m.to)}</h3>
+                  <p class="fx-pass-kicker" dir="auto">${escapeHtml(m.he)}<span class="sep" aria-hidden="true">·</span>${bdi(m.blurb)}</p>
+                  <h3 dir="auto">מ${bdiLtr(m.from)} ל${bdiLtr(m.to)}</h3>
                   <p class="fx-pass-flightno" dir="ltr">
                     <span class="fx-pass-flightno-label">Flight</span>
                     <strong>${escapeHtml(codes)}</strong>
@@ -1090,7 +1091,7 @@
                         ? `<div class="fx-connect" dir="rtl">
                             <span class="fx-connect-kicker">המתנה בשדה</span>
                             <strong>${escapeHtml(formatWaitHe(waitMins))}</strong>
-                            <span class="fx-connect-place">${escapeHtml(f.fromName || f.from)} · ${escapeHtml(f.from)}</span>
+                            <span class="fx-connect-place">${bdi(f.fromName || f.from)}<span class="sep" aria-hidden="true">·</span>${bdiLtr(f.from)}</span>
                           </div>`
                         : "";
                     return `
@@ -1148,7 +1149,7 @@
           })
           .join("")}
       </div>
-      <p class="flights-footnote">השעות לפי לוח מפורסם — תמיד לאשר מול הכרטיס / כרטיס עלייה למטוס.</p>`;
+      <p class="flights-footnote">השעות לפי לוח הזמנים המפורסם. כדאי לאמת אותן מול הכרטיס או כרטיס העלייה למטוס לפני היציאה.</p>`;
 
     setResultCount(`${booked} הוזמנו · ${todo} לטפל`);
   }
@@ -1157,7 +1158,7 @@
     els.toolsRoot.innerHTML = `
       <div class="plan-intro">
         <p class="plan-kicker">כלים · 便利</p>
-        <h2 class="plan-title">הערכה לדרך</h2>
+        <h2 class="plan-title">כלים לדרך</h2>
       </div>
       <div class="tools-actions">
         <button type="button" class="btn-primary" id="open-tips">טיפים לתחבורה</button>

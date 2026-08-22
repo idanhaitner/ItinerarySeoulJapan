@@ -22,6 +22,52 @@
   --font-jp: "Shippori Mincho", serif;
   --font-ui: "Assistant", system-ui, sans-serif;
 
+  /* Type scale — Hebrew reads larger than Latin at the same px, so the
+     small end stays generous and tracking is never applied to Hebrew. */
+  --fs-micro: 11px;
+  --fs-caption: 12.5px;
+  --fs-small: 14px;
+  --fs-body: 15.5px;
+  --fs-body-lg: 17px;
+  --fs-title-sm: clamp(17px, 2vw, 19px);
+  --fs-title: clamp(19px, 2.6vw, 23px);
+  --fs-title-lg: clamp(23px, 3.4vw, 30px);
+  --fs-display: clamp(30px, 5vw, 44px);
+
+  --lh-tight: 1.28;
+  --lh-snug: 1.42;
+  --lh-body: 1.62;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* Spacing scale (4px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 56px;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(47, 43, 40, 0.05);
+  --shadow-md: 0 4px 16px rgba(47, 43, 40, 0.07);
+  --shadow-lg: 0 18px 48px rgba(47, 43, 40, 0.1);
+
+  /* Inline-axis sign. transform has no logical equivalent, so directional
+     nudges multiply by this instead of branching on [dir]. */
+  --flow-x: 1;
+
   /* Soft editorial city accents */
   --seoul: #b54a6a;
   --tokyo: #5b7388;
@@ -36,6 +82,9 @@
   --tirana: #3f6f7a;
 }
 
+[dir="rtl"] { --flow-x: -1; }
+[dir="ltr"] { --flow-x: 1; }
+
 * { box-sizing: border-box; }
 
 html {
@@ -49,7 +98,7 @@ body {
   min-height: 100dvh;
   color: var(--text);
   font-family: var(--font-ui);
-  font-weight: 400;
+  font-weight: var(--fw-regular);
   background: var(--paper);
   line-height: 1.55;
   letter-spacing: 0;
@@ -96,7 +145,7 @@ body {
 
 h1, h2, h3, .display {
   font-family: var(--font-display);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   letter-spacing: 0;
   margin: 0;
   line-height: 1.25;
@@ -112,6 +161,22 @@ a { color: inherit; }
   overflow: hidden;
   clip: rect(0,0,0,0);
   border: 0;
+}
+
+/* A bare "·" between a Hebrew and a Latin run is bidi-neutral and drifts to
+   the wrong side. Isolating it pins the separator between its neighbours. */
+.sep,
+.place-kind-sep {
+  unicode-bidi: isolate;
+  display: inline-block;
+  margin-inline: 0.42em;
+  opacity: 0.5;
+  font-weight: var(--fw-regular);
+}
+
+/* Latin, CJK and numeric fragments embedded in Hebrew prose. */
+bdi {
+  unicode-bidi: isolate;
 }
 
 .app {
@@ -172,8 +237,8 @@ a { color: inherit; }
 }
 
 @keyframes kickerIn {
-  from { opacity: 0; letter-spacing: 0.2em; transform: translateY(10px); }
-  to { opacity: 1; letter-spacing: 0.04em; transform: none; }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
 }
 
 @keyframes ctaIn {
@@ -336,8 +401,8 @@ a { color: inherit; }
 .masthead-kicker {
   margin: 0 0 18px;
   font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0;
   color: rgba(247, 243, 236, 0.78);
 }
 
@@ -355,7 +420,7 @@ a { color: inherit; }
 .masthead-names {
   font-family: var(--font-display);
   font-size: clamp(34px, 7.5vw, 60px);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   letter-spacing: -0.02em;
   color: #f7f3ec;
   line-height: 1.15;
@@ -365,7 +430,7 @@ a { color: inherit; }
 .masthead-trip {
   font-family: var(--font-display);
   font-size: clamp(32px, 7vw, 54px);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   letter-spacing: -0.02em;
   text-transform: none;
   color: #f0c9b0;
@@ -378,7 +443,7 @@ a { color: inherit; }
   max-width: 34ch;
   color: rgba(247, 243, 236, 0.82);
   font-size: clamp(15px, 2.2vw, 18px);
-  font-weight: 400;
+  font-weight: var(--fw-regular);
   line-height: 1.55;
 }
 
@@ -420,7 +485,7 @@ a { color: inherit; }
 
 .route-stop .en {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   letter-spacing: 0;
   text-transform: none;
   color: #f7f3ec;
@@ -456,7 +521,7 @@ a { color: inherit; }
   font-family: var(--font-display);
   font-style: normal;
   font-size: clamp(36px, 6vw, 48px);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   color: #f7f3ec;
   line-height: 1;
 }
@@ -466,7 +531,7 @@ a { color: inherit; }
   letter-spacing: 0;
   text-transform: none;
   color: rgba(247, 243, 236, 0.65);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
 }
 
 .masthead-cta {
@@ -478,7 +543,7 @@ a { color: inherit; }
   color: var(--ink);
   padding: 14px 22px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   letter-spacing: 0;
   text-transform: none;
   cursor: pointer;
@@ -504,8 +569,8 @@ a { color: inherit; }
 .plan-kicker {
   margin: 0 0 6px;
   font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0;
   text-transform: none;
   color: var(--seal);
 }
@@ -513,7 +578,7 @@ a { color: inherit; }
 .plan-title {
   font-size: clamp(30px, 4vw, 40px);
   color: var(--ink);
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   letter-spacing: 0;
 }
 
@@ -600,13 +665,13 @@ a { color: inherit; }
 .fx-strip-item em {
   font-style: normal;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   color: var(--soft);
 }
 
 .fx-strip-item strong {
   font-size: 13px;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   color: var(--ink);
   font-variant-numeric: tabular-nums;
 }
@@ -614,7 +679,7 @@ a { color: inherit; }
 .fx-strip-item span {
   font-size: 11px;
   color: var(--muted);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
 }
 
 .fx-strip-meta {
@@ -709,7 +774,7 @@ a { color: inherit; }
 
 .dest-city {
   font-size: 13px;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   color: var(--ink);
 }
 
@@ -733,7 +798,7 @@ a { color: inherit; }
 
 .dest-temp {
   font-size: 22px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   line-height: 1.1;
   color: var(--navy);
   margin: 0;
@@ -741,7 +806,7 @@ a { color: inherit; }
 
 .dest-wx-label {
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   color: var(--text);
   margin: 0;
 }
@@ -843,7 +908,7 @@ a { color: inherit; }
 .fuji-jp {
   font-family: var(--font-jp);
   font-size: 28px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   line-height: 1;
   letter-spacing: 0.04em;
   color: color-mix(in srgb, #f4f1ea 88%, #9ec4d0);
@@ -859,7 +924,7 @@ a { color: inherit; }
 
 .fuji-title {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   color: #f7f4ee;
   white-space: nowrap;
 }
@@ -867,7 +932,7 @@ a { color: inherit; }
 .fuji-sub {
   font-size: 11px;
   color: color-mix(in srgb, #f4f1ea 62%, transparent);
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
 }
 
 .fuji-empty {
@@ -899,7 +964,7 @@ a { color: inherit; }
 
 .fuji-place-name {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   color: rgba(250, 248, 244, 0.72);
   letter-spacing: 0.01em;
   direction: ltr;
@@ -914,7 +979,7 @@ a { color: inherit; }
 
 .fuji-place-score {
   font-size: 22px;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   font-variant-numeric: tabular-nums;
   line-height: 1;
   color: #faf8f4;
@@ -922,7 +987,7 @@ a { color: inherit; }
 
 .fuji-place-status {
   font-size: 12px;
-  font-weight: 650;
+  font-weight: var(--fw-semibold);
   color: rgba(250, 248, 244, 0.78);
 }
 
@@ -944,7 +1009,7 @@ a { color: inherit; }
 .fuji-source {
   margin-inline-start: auto;
   font-size: 11px;
-  font-weight: 650;
+  font-weight: var(--fw-semibold);
   color: rgba(250, 248, 244, 0.78);
   text-decoration: none;
   white-space: nowrap;
@@ -1078,7 +1143,7 @@ a { color: inherit; }
   padding: 10px 14px;
   background: var(--navy);
   color: #fff;
-  font-weight: 650;
+  font-weight: var(--fw-semibold);
   text-decoration: none;
   transform: translateY(-160%);
   transition: transform 0.2s ease;
@@ -1223,7 +1288,7 @@ a { color: inherit; }
   margin: 0;
   font-family: var(--font-display);
   font-size: 17px;
-  font-weight: 650;
+  font-weight: var(--fw-semibold);
   letter-spacing: -0.01em;
   color: #faf8f4;
   line-height: 1.15;
@@ -1232,7 +1297,7 @@ a { color: inherit; }
 .brand-meta {
   margin: 4px 0 0;
   font-size: 11px;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   text-transform: none;
   color: rgba(244, 241, 234, 0.48);
   white-space: nowrap;
@@ -1264,8 +1329,8 @@ a { color: inherit; }
   padding: 10px 14px;
   min-height: 44px;
   font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0;
   text-transform: none;
   cursor: pointer;
   position: relative;
@@ -1299,7 +1364,7 @@ a { color: inherit; }
 
 .tab.active {
   color: #faf8f4;
-  font-weight: 650;
+  font-weight: var(--fw-semibold);
   background: transparent;
   box-shadow: none;
 }
@@ -1307,8 +1372,7 @@ a { color: inherit; }
 .tab.active::after {
   content: "";
   position: absolute;
-  left: 14px;
-  right: 14px;
+  inset-inline: 14px;
   bottom: 4px;
   height: 1.5px;
   background: var(--seal);
@@ -1359,7 +1423,7 @@ a { color: inherit; }
   display: grid;
   place-items: center;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   letter-spacing: 0;
   text-transform: none;
   color: var(--muted);
@@ -1392,7 +1456,7 @@ a { color: inherit; }
   min-height: 44px;
   cursor: pointer;
   color: var(--soft);
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   font-size: 13px;
   letter-spacing: 0;
   text-transform: none;
@@ -1407,8 +1471,7 @@ a { color: inherit; }
 .chip.active::after {
   content: "";
   position: absolute;
-  left: 14px;
-  right: 14px;
+  inset-inline: 14px;
   bottom: 0;
   height: 2px;
   background: currentColor;
@@ -1431,7 +1494,7 @@ a { color: inherit; }
   margin-top: 2px;
   text-transform: uppercase;
   font-family: var(--font-ui);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
 }
 
 /* ——— Day rail: city-grouped journey ——— */
@@ -1489,7 +1552,7 @@ a { color: inherit; }
   justify-content: center;
   gap: 8px;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   letter-spacing: 0;
   text-transform: none;
   color: var(--muted);
@@ -1513,7 +1576,7 @@ a { color: inherit; }
 .day-group-label .nights,
 .chip .nights,
 .route-stop .nights {
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   opacity: 0.78;
   letter-spacing: 0;
 }
@@ -1524,7 +1587,7 @@ a { color: inherit; }
 
 .day-group-label .local {
   font-family: var(--font-ui);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   opacity: 0.65;
@@ -1556,7 +1619,7 @@ a { color: inherit; }
   color: var(--muted);
   font-family: var(--font-display);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   letter-spacing: 0;
   line-height: 1.05;
   cursor: pointer;
@@ -1565,13 +1628,13 @@ a { color: inherit; }
 
 .day-rail-btn .dr-day {
   font-size: 15px;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   color: inherit;
 }
 
 .day-rail-btn .dr-mon {
   font-size: 10px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   opacity: 0.78;
   letter-spacing: 0;
 }
@@ -1686,12 +1749,8 @@ a { color: inherit; }
   opacity: 1;
 }
 
-html[dir="rtl"] .day-row:hover .day-row-arrow {
-  transform: translateX(2px);
-}
-
-html[dir="ltr"] .day-row:hover .day-row-arrow {
-  transform: translateX(-2px);
+.day-row:hover .day-row-arrow {
+  transform: translateX(calc(-2px * var(--flow-x)));
 }
 
 .day-row-num {
@@ -1708,8 +1767,8 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .day-row-num .n {
   font-family: var(--font-display);
-  font-size: 28px;
-  font-weight: 650;
+  font-size: 32px;
+  font-weight: var(--fw-bold);
   line-height: 1;
   color: var(--navy);
   letter-spacing: -0.03em;
@@ -1717,12 +1776,12 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 }
 
 .day-row-num .d {
-  margin-top: 4px;
-  font-size: 11px;
-  letter-spacing: 0.02em;
+  margin-top: var(--space-1);
+  font-size: var(--fs-micro);
+  letter-spacing: 0;
   text-transform: none;
   color: var(--soft);
-  font-weight: 500;
+  font-weight: var(--fw-semibold);
 }
 
 .day-row-body {
@@ -1745,12 +1804,12 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
-  gap: 6px;
-  margin: 0 0 8px;
+  gap: var(--space-1) 6px;
+  margin: 0 0 6px;
   padding: 0;
   color: var(--soft);
-  font-size: 12px;
-  font-weight: 500;
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-medium);
   line-height: 1.35;
   white-space: normal;
   max-width: 100%;
@@ -1758,7 +1817,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .day-row-meta .day-row-city {
   color: var(--ink);
-  font-weight: 600;
+  font-weight: var(--fw-bold);
 }
 
 .day-row-meta .dot {
@@ -1789,14 +1848,32 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 }
 
 .day-row-body h3 {
-  font-size: clamp(18px, 2.4vw, 22px);
+  font-size: var(--fs-title);
   margin: 0;
   color: var(--navy);
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   max-width: none;
-  letter-spacing: -0.015em;
-  line-height: 1.35;
+  line-height: var(--lh-tight);
   text-align: start;
+  text-wrap: pretty;
+}
+
+/* Tier one: a two-line teaser on the list. The full text lives in the
+   day detail, so clamping here never hides content outright. */
+.day-row-summary {
+  margin: var(--space-2) 0 0;
+  max-width: 68ch;
+  color: var(--muted);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-snug);
+  text-align: start;
+  text-wrap: pretty;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
 }
 
 .day-anchor-row {
@@ -1813,18 +1890,24 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   gap: 6px;
   max-width: 100%;
   padding: 5px 10px;
-  border-radius: 6px;
+  border-radius: var(--radius-pill);
   background: var(--paper-2);
+  border: 1px solid transparent;
   color: var(--ink);
-  font-size: 12px;
-  font-weight: 500;
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-medium);
   line-height: 1.3;
   text-align: start;
 }
 
+.day-row:hover .day-anchor-chip {
+  background: var(--surface);
+  border-color: var(--line);
+}
+
 .day-anchor-chip .t {
   font-variant-numeric: tabular-nums;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   color: var(--seal);
   flex-shrink: 0;
 }
@@ -1841,7 +1924,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   align-self: center;
   color: var(--soft);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
 }
 
 .day-row-arrow {
@@ -1880,9 +1963,8 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .transfer-banner .tb-mode {
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0;
   color: var(--indigo);
 }
 
@@ -1902,10 +1984,9 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   border: 0;
   background: transparent;
   color: var(--muted);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0;
   padding: 0 0 18px;
   cursor: pointer;
   transition: color 0.2s ease;
@@ -1986,7 +2067,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .detail-hero .day-num {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   letter-spacing: 0;
   text-transform: none;
   color: var(--soft);
@@ -1994,7 +2075,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .detail-hero .city-en {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   letter-spacing: 0;
   text-transform: none;
   color: var(--seal);
@@ -2020,7 +2101,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   max-width: 18ch;
   position: relative;
   z-index: 1;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   color: var(--ink);
 }
 
@@ -2076,7 +2157,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   letter-spacing: 0;
   text-transform: none;
   margin-bottom: 4px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
 }
 
 .detail-hero.city-Seoul .food-banner {
@@ -2119,7 +2200,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 .food-banner span {
   color: var(--text);
   font-size: 14px;
-  font-weight: 400;
+  font-weight: var(--fw-regular);
 }
 
 .section-title {
@@ -2127,13 +2208,13 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   letter-spacing: 0;
   text-transform: none;
   color: var(--soft);
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   margin: 8px 0 18px;
 }
 
 .detail-layout {
   display: grid;
-  gap: 24px;
+  gap: var(--space-6);
 }
 
 /* ——— Timeline (no dots) ——— */
@@ -2181,7 +2262,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 .timeline-time {
   font-family: var(--font-display);
   font-size: 16px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   color: var(--navy);
   font-variant-numeric: tabular-nums;
   line-height: 1.25;
@@ -2227,7 +2308,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .timeline-item.is-travel .timeline-time {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   color: var(--muted);
 }
 
@@ -2278,9 +2359,8 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 .travel-eyebrow {
   display: inline-block;
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0;
   color: var(--travel, var(--indigo));
 }
 
@@ -2319,7 +2399,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .timeline-item.is-travel .timeline-title.travel-mode {
   font-size: 17px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   color: var(--navy-2);
   margin-bottom: 2px;
   line-height: 1.35;
@@ -2327,10 +2407,10 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .travel-route {
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   color: var(--muted);
   margin-bottom: 4px;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
 }
 
 .timeline-item.is-travel .timeline-note {
@@ -2380,46 +2460,51 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .timeline-title {
   font-family: var(--font-display);
-  font-size: 22px;
-  margin-bottom: 4px;
+  font-size: var(--fs-title-sm);
+  line-height: var(--lh-tight);
+  margin-bottom: var(--space-1);
   color: var(--navy);
-  font-weight: 500;
-  overflow-wrap: anywhere;
-  word-break: break-word;
+  font-weight: var(--fw-semibold);
+  overflow-wrap: break-word;
+  text-wrap: pretty;
 }
 
 .timeline-place {
-  font-size: 13px;
+  font-size: var(--fs-caption);
   color: var(--seal);
-  margin-bottom: 0;
-  font-weight: 500;
+  margin-bottom: var(--space-1);
+  font-weight: var(--fw-medium);
 }
 
 .timeline-place .place-kind {
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   color: color-mix(in srgb, var(--navy) 70%, var(--seal));
 }
 
 .timeline-place .place-kind-sep {
   opacity: 0.55;
-  font-weight: 400;
+  font-weight: var(--fw-regular);
 }
 
 .timeline-what {
   margin: 6px 0 0;
   color: var(--navy);
   font-size: 15px;
-  font-weight: 400;
+  font-weight: var(--fw-regular);
   line-height: 1.45;
   max-width: 54ch;
 }
 
+/* Now the main body copy of the timeline, so it gets a readable weight —
+   Assistant Light is too thin for Hebrew at this size. */
 .timeline-note {
   margin: 0;
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 300;
-  max-width: 52ch;
+  color: var(--text);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
+  max-width: 60ch;
+  text-wrap: pretty;
 }
 
 .day-flow {
@@ -2477,7 +2562,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   background: var(--paper-2);
   color: var(--navy);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   font-variant-numeric: tabular-nums;
   position: relative;
   z-index: 1;
@@ -2510,7 +2595,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .step-body .timeline-title {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
 }
 
 .step-head {
@@ -2526,7 +2611,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   display: inline-block;
   font-family: var(--font-display);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.02em;
   color: var(--muted);
@@ -2574,7 +2659,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .hop-inline .timeline-title {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--fw-medium);
 }
 
 .hop-inline .timeline-actions {
@@ -2604,8 +2689,8 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   padding: 5px 10px 5px 7px;
   border-radius: 999px;
   font-size: 12.5px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0;
   text-decoration: none;
   border: 1px solid transparent;
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
@@ -2631,7 +2716,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   border-radius: 50%;
   font-size: 11px;
   line-height: 1;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
 }
 
 .tl-book-link.is-todo .tl-book-mark {
@@ -2677,9 +2762,8 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   background: transparent;
   padding: 0;
   font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0;
   color: var(--soft);
   text-decoration: none;
   cursor: pointer;
@@ -2703,45 +2787,64 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   border-bottom-color: var(--gold);
 }
 
+.detail-aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
 .side-block {
   border: 1px solid var(--line);
+  border-radius: var(--radius-md);
   background: var(--surface);
-  margin-bottom: 16px;
   overflow: hidden;
-  direction: rtl;
   text-align: start;
+  box-shadow: var(--shadow-sm);
+}
+
+.detail-aside .side-block {
+  margin-bottom: 0;
 }
 
 .side-block-head {
-  padding: 16px 18px;
-  font-size: 16px;
-  letter-spacing: 0;
-  text-transform: none;
-  font-weight: 700;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
   border-bottom: 1px solid var(--line);
   color: var(--navy);
   background: color-mix(in srgb, var(--paper) 70%, var(--surface));
 }
 
+.side-block-tips .side-block-head {
+  color: var(--gold);
+  background: color-mix(in srgb, var(--gold) 7%, var(--surface));
+  border-bottom-color: color-mix(in srgb, var(--gold) 22%, var(--line));
+}
+
+.side-block-tips ul li::before {
+  background: var(--gold);
+}
+
 .side-block ol,
 .side-block ul {
   margin: 0;
-  padding: 8px 0;
+  padding: var(--space-1) 0;
   color: var(--text);
-  font-size: 15.5px;
-  font-weight: 400;
-  line-height: 1.55;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
   list-style: none;
 }
 
 .side-block li {
   margin: 0;
-  padding: 12px 18px;
+  padding: var(--space-3) var(--space-4);
   border-bottom: 1px solid var(--line);
   display: grid;
-  grid-template-columns: 1.6rem 1fr;
-  gap: 10px;
+  grid-template-columns: 1.5rem 1fr;
+  gap: var(--space-2);
   align-items: start;
+  text-wrap: pretty;
 }
 
 .side-block li:last-child {
@@ -2759,7 +2862,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .side-block ol li::before {
   content: counter(side-step);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   font-size: 13px;
   line-height: 1.55;
   color: var(--seal);
@@ -2786,7 +2889,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .tag {
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   letter-spacing: 0;
   text-transform: none;
   color: var(--muted);
@@ -2872,7 +2975,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .city-fold-label .en {
   font-size: 15px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   letter-spacing: 0;
   text-transform: none;
   color: var(--ink);
@@ -2880,7 +2983,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .city-fold-label .local {
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
@@ -2909,7 +3012,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .city-fold-meta .count {
   font-size: 11px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   letter-spacing: 0.08em;
   color: var(--soft);
   border: 1px solid var(--line);
@@ -2949,7 +3052,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   margin: 8px 0 0;
   color: var(--muted);
   font-size: 14.5px;
-  font-weight: 400;
+  font-weight: var(--fw-regular);
   max-width: 52ch;
   text-align: start;
 }
@@ -2988,7 +3091,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   color: #faf8f4;
   font-family: var(--font-display);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   letter-spacing: 0.02em;
   box-shadow: 0 4px 14px rgba(47, 43, 40, 0.22);
   border: 2px solid rgba(250, 248, 244, 0.95);
@@ -3041,7 +3144,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   color: #faf8f4;
   font-family: var(--font-display);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
 }
 
 .jl-copy {
@@ -3052,7 +3155,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .jl-copy strong {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   letter-spacing: 0;
   text-transform: none;
   color: var(--ink);
@@ -3064,7 +3167,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .jl-copy .jl-en {
   font-size: 10px;
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--soft);
@@ -3074,7 +3177,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   font-style: normal;
   font-size: 13px;
   color: var(--muted);
-  font-weight: 400;
+  font-weight: var(--fw-regular);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -3093,9 +3196,8 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .journey-popup .jp-day {
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0;
   color: var(--soft);
   margin-bottom: 4px;
 }
@@ -3119,9 +3221,8 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   color: #faf8f4;
   padding: 7px 10px;
   font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0;
   cursor: pointer;
 }
 
@@ -3209,7 +3310,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   display: inline-flex;
   align-items: center;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   letter-spacing: 0;
   text-transform: none;
   margin-bottom: 0;
@@ -3229,7 +3330,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .place-city-en {
   font-size: 11px;
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--soft);
@@ -3238,7 +3339,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 .place-card h3 {
   font-family: var(--font-ui);
   font-size: clamp(22px, 3vw, 26px);
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   letter-spacing: -0.01em;
   margin: 12px 18px 4px;
   color: var(--navy);
@@ -3256,14 +3357,14 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   font-size: 15px;
   margin: 0 18px 8px;
   font-family: var(--font-ui);
-  font-weight: 400;
+  font-weight: var(--fw-regular);
 }
 
 .place-blurb {
   margin: 0 18px;
   color: var(--muted);
   font-size: 14.5px;
-  font-weight: 400;
+  font-weight: var(--fw-regular);
   line-height: 1.5;
 }
 
@@ -3271,7 +3372,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   margin: 0;
   color: var(--muted);
   font-size: 14px;
-  font-weight: 400;
+  font-weight: var(--fw-regular);
 }
 
 .place-card .tag-row {
@@ -3303,7 +3404,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   padding: 12px 14px;
   min-height: 44px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   letter-spacing: 0;
   text-transform: none;
   border: 1px solid var(--line);
@@ -3350,7 +3451,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   min-height: 42px;
   font: inherit;
   font-size: 12.5px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   color: var(--text);
   cursor: pointer;
   text-decoration: none;
@@ -3386,10 +3487,9 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   padding: 10px 16px;
   cursor: pointer;
   color: var(--muted);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0;
   transition: all 0.25s ease;
 }
 
@@ -3427,7 +3527,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .bookings-count strong {
   font-size: 22px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   color: var(--ink);
   letter-spacing: -0.02em;
 }
@@ -3445,7 +3545,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   color: var(--muted);
   font: inherit;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   padding: 8px 14px;
   min-height: 36px;
   cursor: pointer;
@@ -3511,7 +3611,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .booking-group-title {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   letter-spacing: -0.01em;
   color: var(--navy);
 }
@@ -3526,7 +3626,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   gap: 12px;
   flex-shrink: 0;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   color: var(--soft);
 }
 
@@ -3587,7 +3687,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 }
 
 .booking-label {
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   font-size: 16px;
   line-height: 1.3;
   color: var(--ink);
@@ -3598,8 +3698,8 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   align-items: center;
   padding: 2px 8px;
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0;
   color: var(--navy);
   background: color-mix(in srgb, var(--navy) 7%, var(--surface));
   border: 1px solid var(--line);
@@ -3622,8 +3722,8 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   align-items: center;
   padding: 2px 8px;
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0;
   color: #8a4b12;
   background: rgba(196, 106, 82, 0.12);
 }
@@ -3639,7 +3739,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .booking-item.done .booking-label {
   color: var(--soft);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
 }
 
 .booking-item.done .booking-note,
@@ -3652,9 +3752,8 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   display: block;
   margin-top: 4px;
   font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0;
   color: var(--gold);
 }
 
@@ -3699,7 +3798,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 .guide-switch-btn strong {
   display: block;
   font-size: 20px;
-  font-weight: 650;
+  font-weight: var(--fw-semibold);
   color: var(--ink);
 }
 
@@ -3744,7 +3843,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   display: inline-flex;
   align-items: center;
   font-size: 13px;
-  font-weight: 650;
+  font-weight: var(--fw-semibold);
 }
 
 .guide-topics a:hover {
@@ -3764,15 +3863,15 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 .guide-kicker {
   margin: 0 0 6px;
   font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0;
   color: var(--guide);
 }
 
 .guide-section-head h3 {
   margin: 0 0 8px;
   font-size: clamp(24px, 3.4vw, 30px);
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   letter-spacing: -0.02em;
   color: var(--ink);
 }
@@ -3804,10 +3903,10 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .guide-how em {
   font-style: normal;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   font-size: 13px;
   color: var(--guide);
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
 }
 
 .guide-how span {
@@ -3843,15 +3942,15 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .guide-tag {
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0;
   color: var(--guide);
 }
 
 .guide-ticket h4 {
   margin: 0;
   font-size: 16px;
-  font-weight: 650;
+  font-weight: var(--fw-semibold);
   color: var(--ink);
 }
 
@@ -3888,8 +3987,8 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   margin: 0;
   padding: 12px 16px;
   font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -3931,7 +4030,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 .guide-row h4 {
   margin: 0 0 5px;
   font-size: 15.5px;
-  font-weight: 650;
+  font-weight: var(--fw-semibold);
   color: var(--ink);
 }
 
@@ -3961,8 +4060,8 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 .guide-note-kicker {
   margin: 0 0 4px;
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0;
   color: var(--gold);
 }
 
@@ -3973,7 +4072,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 .guide-note h4 {
   margin: 0 0 6px;
   font-size: 16px;
-  font-weight: 650;
+  font-weight: var(--fw-semibold);
   color: var(--ink);
 }
 
@@ -4034,7 +4133,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   gap: 6px;
   font-size: 12px;
   color: var(--muted);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
 }
 
 .fx-field {
@@ -4065,7 +4164,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   color: var(--navy);
   direction: ltr;
   unicode-bidi: isolate;
-  text-align: right;
+  text-align: end;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -4076,11 +4175,11 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .fx-result-approx {
   color: var(--muted);
-  font-weight: 400;
+  font-weight: var(--fw-regular);
 }
 
 .fx-result-to {
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
 }
 
 .fx-rates { margin-top: 12px; color: var(--muted); }
@@ -4127,8 +4226,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .sec-motif-svg {
   position: absolute;
-  left: 4%;
-  right: 4%;
+  inset-inline: 4%;
   bottom: 12%;
   width: 92%;
   height: 42%;
@@ -4138,8 +4236,8 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 /* Keep flight path round + spaced under the labels, not stretched under the pills */
 .sec-motif-svg.motif-flights {
-  left: 28px;
-  right: auto;
+  inset-inline-start: 28px;
+  inset-inline-end: auto;
   width: min(32rem, calc(100% - 11rem));
   height: auto;
   aspect-ratio: 640 / 160;
@@ -4201,7 +4299,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   text-align: center;
   font-family: var(--font-display);
   font-size: 0.82rem;
-  font-weight: 650;
+  font-weight: var(--fw-semibold);
   letter-spacing: 0.08em;
   color: rgba(244, 241, 234, 0.58);
   line-height: 1;
@@ -4282,8 +4380,8 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 .sec-kicker {
   margin: 0 0 10px;
   font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0;
   color: rgba(244, 241, 234, 0.55);
 }
 
@@ -4291,7 +4389,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   margin: 0;
   font-family: var(--font-display);
   font-size: clamp(1.85rem, 4.5vw, 2.45rem);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   letter-spacing: -0.02em;
   line-height: 1.15;
   color: #faf8f4;
@@ -4325,7 +4423,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   font-family: var(--font-display);
   font-style: normal;
   font-size: 1.35rem;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   line-height: 1;
   color: #fff;
 }
@@ -4346,7 +4444,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   max-width: 100%;
   font-family: var(--font-display);
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   letter-spacing: 0.04em;
   color: rgba(244, 241, 234, 0.4);
 }
@@ -4480,8 +4578,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .fx-route-svg {
   position: absolute;
-  left: 4%;
-  right: 4%;
+  inset-inline: 4%;
   bottom: 18%;
   width: 92%;
   height: 42%;
@@ -4543,9 +4640,8 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 .fx-kicker {
   margin: 0 0 10px;
   font-size: 0.72rem;
-  font-weight: 650;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0;
   color: rgba(244, 241, 234, 0.55);
 }
 
@@ -4553,7 +4649,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   margin: 0;
   font-family: var(--font-display);
   font-size: clamp(1.85rem, 4.5vw, 2.55rem);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   letter-spacing: -0.02em;
   line-height: 1.15;
   color: #faf8f4;
@@ -4588,7 +4684,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   font-family: var(--font-display);
   font-style: normal;
   font-size: 1.45rem;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   line-height: 1;
   color: #fff;
 }
@@ -4597,7 +4693,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   display: block;
   margin-top: 4px;
   font-size: 0.72rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0;
   color: rgba(244, 241, 234, 0.55);
 }
 
@@ -4609,7 +4705,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   max-width: 28rem;
   font-family: var(--font-display);
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   letter-spacing: 0.14em;
   color: rgba(244, 241, 234, 0.4);
 }
@@ -4672,7 +4768,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .fx-pass-en {
   font-size: 0.62rem;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   letter-spacing: 0.16em;
   color: rgba(244, 241, 234, 0.45);
 }
@@ -4680,7 +4776,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 .fx-pass-stub-num {
   font-family: var(--font-display);
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   letter-spacing: -0.03em;
   line-height: 1;
   margin: 8px 0 18px;
@@ -4694,8 +4790,8 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   border: 2px solid currentColor;
   border-radius: 2px;
   font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+  font-weight: var(--fw-extrabold);
+  letter-spacing: 0;
   transform: rotate(-8deg);
   opacity: 0.92;
 }
@@ -4737,8 +4833,8 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   margin: 0;
   font-family: var(--font-display);
   font-size: clamp(1.35rem, 3vw, 1.7rem);
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0;
   color: var(--navy);
 }
 
@@ -4774,7 +4870,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   border: 0;
   background: transparent;
   color: var(--jade);
-  font-weight: 650;
+  font-weight: var(--fw-semibold);
   font-size: 0.88rem;
   padding: 4px 0;
   cursor: pointer;
@@ -4824,7 +4920,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   margin-top: 6px;
   font-family: var(--font-display);
   font-size: 1.15rem;
-  font-weight: 650;
+  font-weight: var(--fw-semibold);
   color: var(--ink);
 }
 
@@ -4861,7 +4957,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .fx-mid-label {
   font-size: 0.62rem;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--soft);
@@ -4907,7 +5003,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   display: block;
   font-family: var(--font-display);
   font-size: clamp(1.7rem, 4vw, 2.2rem);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   letter-spacing: 0.03em;
   line-height: 1;
   color: var(--jade);
@@ -4921,7 +5017,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   display: block;
   margin-top: 6px;
   font-size: 0.88rem;
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   color: var(--muted);
 }
 
@@ -4935,14 +5031,20 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .fx-leg-badge,
 .fx-leg-status {
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-size: 0.68rem;
+  font-weight: var(--fw-bold);
   padding: 6px 9px;
   border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
   background: transparent;
   color: var(--soft);
+}
+
+/* Latin-only, so tracking and caps are safe here but not on the sibling
+   status chip, which carries Hebrew. */
+.fx-leg-badge {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .fx-leg-status.is-booked {
@@ -4985,7 +5087,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .fx-leg-city {
   font-size: 0.92rem;
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   color: var(--muted);
   white-space: nowrap;
   overflow: hidden;
@@ -4996,7 +5098,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   margin-top: 14px;
   font-family: var(--font-display);
   font-size: clamp(1.55rem, 3.8vw, 2rem);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   color: var(--ink);
   line-height: 1;
   font-variant-numeric: tabular-nums;
@@ -5018,7 +5120,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .fx-leg-dur {
   font-size: 0.78rem;
-  font-weight: 800;
+  font-weight: var(--fw-extrabold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--jade);
@@ -5084,7 +5186,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .fx-leg-plus {
   font-size: 0.62rem;
-  font-weight: 800;
+  font-weight: var(--fw-extrabold);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--soft);
@@ -5128,15 +5230,15 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .fx-connect-kicker {
   font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+  font-weight: var(--fw-extrabold);
+  letter-spacing: 0;
   color: var(--jade);
 }
 
 .fx-connect strong {
   font-family: var(--font-display);
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   color: var(--navy);
   line-height: 1.2;
 }
@@ -5348,10 +5450,9 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .taxi-city {
   font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  letter-spacing: 0;
   color: var(--indigo);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
 }
 
 .tools-actions {
@@ -5399,7 +5500,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .modal-close {
   position: absolute;
-  right: 14px;
+  inset-inline-end: 14px;
   top: 10px;
   border: 0;
   background: transparent;
@@ -5421,8 +5522,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 /* ——— Mobile nav ——— */
 .mobile-nav {
   position: fixed;
-  left: 0;
-  right: 0;
+  inset-inline: 0;
   bottom: 0;
   z-index: 50;
   display: grid;
@@ -5446,7 +5546,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   min-height: 56px;
   font-size: 10px;
   font-weight: 550;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
   text-transform: none;
   cursor: pointer;
   display: grid;
@@ -5473,7 +5573,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 
 .mobile-nav button.active {
   color: #faf8f4;
-  font-weight: 650;
+  font-weight: var(--fw-semibold);
   background: transparent;
 }
 
@@ -5481,8 +5581,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   content: "";
   position: absolute;
   top: 0;
-  left: 18%;
-  right: 18%;
+  inset-inline: 18%;
   height: 2px;
   background: var(--seal);
 }
@@ -5493,6 +5592,10 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   .detail-layout:has(:nth-child(2)) {
     grid-template-columns: 1.45fr 0.8fr;
     align-items: start;
+  }
+  .detail-aside {
+    position: sticky;
+    top: calc(var(--topbar-h) + var(--space-4));
   }
   .places-grid,
   .taxi-grid {
@@ -5543,7 +5646,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   }
   .masthead-kicker {
     font-size: 10px;
-    letter-spacing: 0.22em;
+    letter-spacing: 0;
     margin-bottom: 12px;
   }
   .masthead-names {
@@ -5552,7 +5655,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   }
   .masthead-trip {
     font-size: clamp(32px, 10vw, 46px);
-    letter-spacing: 0.1em;
+    letter-spacing: 0;
   }
   .masthead-sub {
     font-size: 14px;
@@ -5672,7 +5775,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   .timeline-time {
     order: 0;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: var(--fw-bold);
     color: var(--soft);
   }
   .timeline-card {
@@ -5712,7 +5815,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
     min-height: 36px;
     padding: 6px 0;
     font-size: 11px;
-    letter-spacing: 0.04em;
+    letter-spacing: 0;
   }
 
   .detail-hero { padding: 20px 16px 18px; }
@@ -5722,17 +5825,14 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
   .chip { padding: 10px 12px; }
 
   .app {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-inline: 12px;
     padding-bottom: calc(88px + var(--safe-bottom));
   }
   .topbar, .day-rail, .masthead {
-    margin-left: -12px;
-    margin-right: -12px;
+    margin-inline: -12px;
   }
   .topbar, .day-rail {
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-inline: 12px;
   }
   .day-rail {
     background: #fafaf8;
@@ -5740,8 +5840,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
     -webkit-backdrop-filter: none;
   }
   .mobile-nav {
-    left: 0;
-    right: 0;
+    inset-inline: 0;
     bottom: 0;
     padding: 0 0 var(--safe-bottom);
   }
@@ -5750,7 +5849,7 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
     font-size: 10.5px;
   }
   .masthead { padding-left: 0; padding-right: 0; }
-  .masthead-stage { border-left: 0; border-right: 0; }
+  .masthead-stage { border-inline: 0; }
 
   .journey-map {
     height: min(420px, 55dvh);
@@ -5816,44 +5915,43 @@ html[dir="ltr"] .day-row:hover .day-row-arrow {
 }
 
 
-/* ——— RTL / Hebrew ——— */
-html[dir="rtl"] body {
-  font-family: var(--font-ui);
+/* ——— Bidirectional layout ———
+   These rules are direction-agnostic: logical properties mean the same
+   declarations serve both RTL (Hebrew, the default) and any LTR subtree. */
+
+.route-step .step-body,
+.route-step .timeline-title,
+.route-step .travel-route,
+.route-step .timeline-note,
+.route-step .timeline-place {
+  text-align: start;
 }
 
-html[dir="rtl"] .route-step .step-body,
-html[dir="rtl"] .route-step .timeline-title,
-html[dir="rtl"] .route-step .travel-route,
-html[dir="rtl"] .route-step .timeline-note,
-html[dir="rtl"] .route-step .timeline-place {
-  text-align: right;
-}
-
-html[dir="rtl"] .travel-kicker,
-html[dir="rtl"] .step-head,
-html[dir="rtl"] .timeline-actions {
+.travel-kicker,
+.step-head,
+.timeline-actions {
   justify-content: flex-start;
 }
 
-html[dir="rtl"] .leaflet-container,
-html[dir="rtl"] .journey-map {
-  direction: ltr;
-  text-align: left;
-}
-
-html[dir="rtl"] .journey-popup {
-  direction: rtl;
-  text-align: right;
-  font-family: var(--font-ui);
-}
-
-html[dir="rtl"] .day-row-num {
+.day-row-num {
   align-items: flex-start;
   text-align: start;
 }
 
-html[dir="rtl"] .search svg {
-  order: 1;
+/* Geographic and numeric UI reads left-to-right regardless of page direction.
+   .is-ltr forces it; .is-rtl restores Hebrew flow for nested prose. */
+.is-ltr,
+.leaflet-container,
+.journey-map {
+  direction: ltr;
+  text-align: start;
+}
+
+.is-rtl,
+.journey-popup {
+  direction: rtl;
+  text-align: start;
+  font-family: var(--font-ui);
 }
 
 /* ——— Recommendations (multi-city) ——— */
@@ -5900,7 +5998,7 @@ html[dir="rtl"] .search svg {
 
 .rec-city-he {
   font-size: 0.92rem;
-  font-weight: 650;
+  font-weight: var(--fw-semibold);
   line-height: 1.2;
 }
 
@@ -6050,7 +6148,7 @@ html[dir="rtl"] .search svg {
 }
 
 .rec-rating strong {
-  font-weight: 650;
+  font-weight: var(--fw-semibold);
   font-size: 0.82rem;
   letter-spacing: -0.01em;
 }
@@ -6074,7 +6172,7 @@ html[dir="rtl"] .search svg {
 
 .rec-district {
   color: var(--seoul);
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
 }
 
 .rec-meta-item {
@@ -6084,7 +6182,7 @@ html[dir="rtl"] .search svg {
 .rec-name {
   margin: 0;
   font-size: 1.12rem;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   line-height: 1.3;
   color: var(--ink);
 }
@@ -6129,7 +6227,7 @@ html[dir="rtl"] .search svg {
   padding: 0 16px;
   font: inherit;
   font-size: 0.88rem;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   text-decoration: none;
   border: 1px solid transparent;
   border-radius: 999px;
@@ -6188,7 +6286,7 @@ html[dir="rtl"] .search svg {
 .rec-empty-title {
   margin: 0 0 6px;
   font-size: 1.05rem;
-  font-weight: 650;
+  font-weight: var(--fw-semibold);
   color: var(--ink);
 }
 
@@ -6371,15 +6469,15 @@ html.gate-locked .bg-layer {
 .gate-kicker {
   margin: 0 0 8px;
   font-size: 12px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0;
   color: var(--muted);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
 }
 
 .gate-title {
   margin: 0 0 8px;
   font-size: clamp(1.45rem, 4.5vw, 1.75rem);
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   color: var(--navy);
 }
 
@@ -6454,7 +6552,7 @@ html.gate-locked .bg-layer {
   height: 56px;
   border-radius: 0;
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   color: var(--navy);
   cursor: pointer;
   transition: background 0.15s ease, transform 0.12s ease, border-color 0.15s ease;
@@ -6486,7 +6584,7 @@ html.gate-locked .bg-layer {
   pointer-events: none;
   transform: scale(0.92);
   transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   color: var(--jade);
 }
 
