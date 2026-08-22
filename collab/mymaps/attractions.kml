@@ -396,7 +396,7 @@
   <Data name="Days"><value>29/8</value></Data>
   <Data name="Place ID"><value>moclock</value></Data>
 </ExtendedData>
-<description><![CDATA[<p>טיפול שיער / קרקפת בגנגנאם. תור של שחר ב־29 באוג׳ 17:00 · יציאה 3 בנונהיון.</p><p>Seoul · 모클락 강남본점 · Days 29/8</p>]]></description>
+<description><![CDATA[<p>טיפול שיער / קרקפת בגנגנאם. הוזמן לשחר ב־29 באוג׳ 16:30–18:00 · יציאה 3 בנונהיון.</p><p>Seoul · 모클락 강남본점 · Days 29/8</p>]]></description>
 <Point>
 <coordinates>127.023400,37.508800,0</coordinates>
 </Point>
@@ -1065,6 +1065,23 @@
 </Point>
 </Placemark>
 <Placemark>
+<name>Maguro Mart</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Tokyo</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>マグロマート</value></Data>
+  <Data name="Days"><value>21/9</value></Data>
+  <Data name="Place ID"><value>maguro-mart</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מסעדת טונה בנאקאנו. הוזמן ל־21/9 ב־20:45 · מזומן בלבד.</p><p>Tokyo · マグロマート · Days 21/9</p>]]></description>
+<Point>
+<coordinates>139.664000,35.707000,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
 <name>Meiji Jingu</name>
 <styleUrl>#attraction</styleUrl>
 <ExtendedData>
@@ -1260,10 +1277,10 @@
   <Data name="City"><value>Tokyo</value></Data>
   <Data name="Country"><value>JP</value></Data>
   <Data name="Local name"><value>六本木</value></Data>
-  <Data name="Days"><value>4/9, 21/9</value></Data>
+  <Data name="Days"><value>4/9</value></Data>
   <Data name="Place ID"><value>roppongi</value></Data>
 </ExtendedData>
-<description><![CDATA[<p>רובע חיי לילה ומסעדות. ערב טוב אחרי מגדל טוקיו.</p><p>Tokyo · 六本木 · Days 4/9, 21/9</p>]]></description>
+<description><![CDATA[<p>רובע חיי לילה ומסעדות. ערב טוב אחרי מגדל טוקיו.</p><p>Tokyo · 六本木 · Days 4/9</p>]]></description>
 <Point>
 <coordinates>139.731400,35.662800,0</coordinates>
 </Point>
@@ -1742,6 +1759,23 @@
 <description><![CDATA[<p>מקדש משפחת טוקוגאווה בטוקיו, עם שער Sangedatsumon ענק ושורות ג׳יזו תחת מגדל טוקיו. חובה: השער ממסגר את הסריג הכתום אחרי החשכה. טיפ: השטח חינם ופתוח עד מאוחר; שתי דקות מפארק שיבא — קודם השער, אחר כך המדשאות.</p><p>Tokyo · 増上寺 · Days 4/9, 21/9</p>]]></description>
 <Point>
 <coordinates>139.748400,35.657400,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Beef Cutlet Restaurant Koushiya</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Kawaguchiko</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>牛かつ専門店 甲州家</value></Data>
+  <Data name="Days"><value>7/9</value></Data>
+  <Data name="Place ID"><value>koushiya</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>מסעדת גיוקאטסו ליד תחנת קוואגוצ׳יקו. ארוחת ערב הוזמנה ל־7/9 ב־18:00.</p><p>Kawaguchiko · 牛かつ専門店 甲州家 · Days 7/9</p>]]></description>
+<Point>
+<coordinates>138.761800,35.503600,0</coordinates>
 </Point>
 </Placemark>
 <Placemark>
@@ -2238,6 +2272,23 @@
 </Point>
 </Placemark>
 <Placemark>
+<name>Panel Cafe Kyoto</name>
+<styleUrl>#attraction</styleUrl>
+<ExtendedData>
+  <Data name="Tag"><value>attraction</value></Data>
+  <Data name="Kind"><value>food</value></Data>
+  <Data name="City"><value>Kyoto</value></Data>
+  <Data name="Country"><value>JP</value></Data>
+  <Data name="Local name"><value>Panel Cafe 京都店</value></Data>
+  <Data name="Days"><value>15/9</value></Data>
+  <Data name="Place ID"><value>panel-cafe-kyoto</value></Data>
+</ExtendedData>
+<description><![CDATA[<p>פנקייקים יפניים אווריריים בגיון שיראקאווה. הוזמן ל־15/9 ב־10:00.</p><p>Kyoto · Panel Cafe 京都店 · Days 15/9</p>]]></description>
+<Point>
+<coordinates>135.772634,35.005139,0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
 <name>Philosopher’s Path</name>
 <styleUrl>#attraction</styleUrl>
 <ExtendedData>
@@ -2578,20 +2629,20 @@
 </Point>
 </Placemark>
 <Placemark>
-<name>Kobe beef (Sannomiya)</name>
+<name>Kobe Beef Gennkichi</name>
 <styleUrl>#attraction</styleUrl>
 <ExtendedData>
   <Data name="Tag"><value>attraction</value></Data>
   <Data name="Kind"><value>food</value></Data>
   <Data name="City"><value>Osaka</value></Data>
   <Data name="Country"><value>JP</value></Data>
-  <Data name="Local name"><value>神戸ビーフ（三宮）</value></Data>
+  <Data name="Local name"><value>神戸牛 源吉</value></Data>
   <Data name="Days"><value>20/9</value></Data>
-  <Data name="Place ID"><value>kobe-beef</value></Data>
+  <Data name="Place ID"><value>gennkichi</value></Data>
 </ExtendedData>
-<description><![CDATA[<p>טפניאקי בשר קובה ליד סנומיה. Steakland, Ishida, Mouriya או Aoyama — להזמין 2–3 שבועות מראש.</p><p>Osaka · 神戸ビーフ（三宮） · Days 20/9</p>]]></description>
+<description><![CDATA[<p>טפניאקי בשר קובה ליד סנומיה. הוזמן ל־20/9 ב־19:30.</p><p>Osaka · 神戸牛 源吉 · Days 20/9</p>]]></description>
 <Point>
-<coordinates>135.195500,34.693800,0</coordinates>
+<coordinates>135.192500,34.693700,0</coordinates>
 </Point>
 </Placemark>
 <Placemark>

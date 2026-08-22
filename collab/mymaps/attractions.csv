@@ -21,7 +21,7 @@ Jogyesa Temple,37.573500,126.982500,מקדש בודהיסטי מרכזי ליד 
 Lotte World Adventure,37.511000,127.098000,פארק שעשועים מקורה ופתוח בלב סיאול. יום מלא של מתקנים.,attraction,park,Seoul,KR,롯데월드,31/8,lotte-world
 Lotte World Tower Seoul Sky,37.512600,127.102500,אחד המגדלים הגבוהים בעולם. מצפה Seoul Sky על סיאול כולה.,attraction,view,Seoul,KR,롯데월드타워,31/8,lotte-tower
 Mangwon Market,37.556000,126.910200,"שוק שכונתי מקומי ליד יונאם — נשנושים ותוצרת, פחות תיירותי ממיונגדונג.",attraction,market,Seoul,KR,망원시장,30/8,mangwon
-Moclock Gangnam,37.508800,127.023400,טיפול שיער / קרקפת בגנגנאם. תור של שחר ב־29 באוג׳ 17:00 · יציאה 3 בנונהיון.,attraction,culture,Seoul,KR,모클락 강남본점,29/8,moclock
+Moclock Gangnam,37.508800,127.023400,טיפול שיער / קרקפת בגנגנאם. הוזמן לשחר ב־29 באוג׳ 16:30–18:00 · יציאה 3 בנונהיון.,attraction,culture,Seoul,KR,모클락 강남본점,29/8,moclock
 Myeongdong,37.563600,126.986900,"רחוב הקניות התיירותי: K-beauty, אוכל רחוב וניאון. צמוד לנאמדאמון.",attraction,food,Seoul,KR,명동,"27/8, 1/9",myeongdong
 N Seoul Tower,37.551200,126.988200,התצפית הקלאסית של סיאול: שקיעה על העיר ומנעולי אהבה.,attraction,view,Seoul,KR,N서울타워,1/9,n-tower
 Namdaemun Market,37.559500,126.977000,"השוק המרכזי הקלאסי של סיאול: בגדים, מזכרות ואוכל רחוב בלב העיר.",attraction,market,Seoul,KR,남대문시장,1/9,namdaemun
@@ -61,6 +61,7 @@ Kichijoji,35.703100,139.579800,"נבחרת שוב ושוב כשכונה הכי �
 Kokyo Gaien & Nijubashi,35.679000,139.755000,"הגן הטקסי של הארמון — מדשאות אורנים, תעלות ברבורים, ותצפית ניג׳ובאשי עם המגדל מאחור. חובה: ניג׳ובאשי מעבר למואט מהכיכר. טיפ: חינם ופתוח תמיד — בניגוד לגנים המזרחיים שלידם, שסגורים בימי שני ושישי (לכן זו תמונת הארמון של 25/9).",attraction,park,Tokyo,JP,皇居外苑・二重橋,25/9,kokyo-gaien
 Komachi-dori,35.319200,139.551000,רחוב מזכרות ואוכל רחוב ליד תחנת קמאקורה.,attraction,food,Tokyo,JP,小町通り,24/9,komachi-dori
 Lake Chuzenji,36.739000,139.447000,אגם הררי מעל ניקו. אוויר קריר וצהריים מול המים.,attraction,nature,Tokyo,JP,中禅寺湖,22/9,chuzenji
+Maguro Mart,35.707000,139.664000,מסעדת טונה בנאקאנו. הוזמן ל־21/9 ב־20:45 · מזומן בלבד.,attraction,food,Tokyo,JP,マグロマート,21/9,maguro-mart
 Meiji Jingu,35.676400,139.699300,"מקדש שינטו לקיסר מייג׳י מוסתר ביער של 100,000 עצים — שקט מוחלט חמש דקות מהראג׳וקו. חובה: הטוריי הענק מקפריס וקיר חביות הסאקה. טיפ: פתוח מזריחה; לפני 9:00 אפשר לתפוס תהלוכת חתונה במקום אוטובוסים.",attraction,shrine,Tokyo,JP,明治神宮,3/9,meiji-jingu
 Miyashita Park,35.661600,139.701100,פארק על גג קניון ליד תחנת שיבויה. עצירת קפה לפני Shibuya Sky.,attraction,park,Tokyo,JP,宮下パーク,3/9,miyashita-park
 Nakameguro / Meguro River,35.644200,139.698800,"בוטיקים וקפה לאורך תעלת מגורו, תחנה אחת דרומית לדאיקאנמה. חובה: שביל הדובדבן לאורך התעלה (יפה גם מחוץ לעונה). טיפ: לא מתוזמן — רק אם מוותרים על בלוק קניות בשיבויה.",attraction,food,Tokyo,JP,中目黒,,nakameguro
@@ -72,7 +73,7 @@ Nonbei Yokocho,35.659200,139.701600,"רצועת פנסים של ~30 איזאקא
 Odaiba / DiverCity Gundam,35.625100,139.775500,"אי מלאכותי במפרץ — גאנדאם יוניקורן 20 מ׳, קניון DiverCity, פסל חירות רטרו. חובה: מופעי טרנספורמציה 11:00/13:00/15:00/17:00 (מופעי אור אחרי החשכה). טיפ: הפארק הימי ממסגר את Rainbow Bridge עם העיר מאחור — הכי יפה באור מאוחר.",attraction,park,Tokyo,JP,お台場,4/9,odaiba
 Omoide Yokocho (Memory Lane),35.693500,139.699500,"סמטת יקיטורי ממלחמת העולם השנייה, פנסים אדומים מתחת למסילות שינג׳וקו. חובה: שיפודי פחם + בירה, כתף-אל-כתף בדלפק. טיפ: כמעט רק מזומן ודמי ישיבה נורמליים; לשבת לפני 21:00.",attraction,food,Tokyo,JP,思い出横丁,2/9,omoide-yokocho
 Omotesando,35.665200,139.712200,"שדרת הזלקובה של חנויות דגל — השאנז־אליזה של טוקיו. חובה: בניין הקריסטל של פראדה וחזית דיור של SANAA. טיפ: חנויות דגל עושות tax-free מעל 5,000 ין — דרכון בדלפק.",attraction,shopping,Tokyo,JP,表参道,3/9,omotesando
-Roppongi,35.662800,139.731400,רובע חיי לילה ומסעדות. ערב טוב אחרי מגדל טוקיו.,attraction,nightlife,Tokyo,JP,六本木,"4/9, 21/9",roppongi
+Roppongi,35.662800,139.731400,רובע חיי לילה ומסעדות. ערב טוב אחרי מגדל טוקיו.,attraction,nightlife,Tokyo,JP,六本木,4/9,roppongi
 Ryogoku Kokugikan,35.697100,139.793500,אצטדיון הסומו הלאומי — טורניר ספטמבר (Aki basho) רץ ~13–27/9 וחופף ללינה השנייה בטוקיו. חובה: אחר־צהריים בזירה אם מופיעים כרטיסים. טיפ: לא הוזמן במסלול; לבדוק החזרות בבוקר אצל איגוד הסומו / NHK.,attraction,culture,Tokyo,JP,両国国技館,,ryogoku
 Senkyaku Banrai (Toyosu),35.645000,139.784200,מתחם אוכל ליד שוק טויוסו. צהריים רגועים אחרי teamLab Planets.,attraction,market,Tokyo,JP,千客万来,4/9,senkyaku-banrai
 Shiba Park,35.654800,139.748500,מדשאות מול המגדל האדום. זווית לילה רחבה ופסטורלית.,attraction,park,Tokyo,JP,芝公園,21/9,shiba-park
@@ -101,6 +102,7 @@ Ueno Park,35.714700,139.773300,"פארק גדול עם מוזיאונים ומק
 Yoyogi Park,35.671100,139.694900,פארק ירוק בין מקדש מייג׳י להראג׳וקו. מעבר קצר בדרך ל־Takeshita.,attraction,park,Tokyo,JP,代々木公園,3/9,yoyogi
 Yurakucho Yakitori Alley,35.675100,139.763000,"סמטאות יקיטורי ואיזאקאיה מתחת למסילות JR, ליד גינזה.",attraction,food,Tokyo,JP,有楽町 焼き鳥横丁,23/9,yurakucho
 Zojo-ji Temple,35.657400,139.748400,"מקדש משפחת טוקוגאווה בטוקיו, עם שער Sangedatsumon ענק ושורות ג׳יזו תחת מגדל טוקיו. חובה: השער ממסגר את הסריג הכתום אחרי החשכה. טיפ: השטח חינם ופתוח עד מאוחר; שתי דקות מפארק שיבא — קודם השער, אחר כך המדשאות.",attraction,shrine,Tokyo,JP,増上寺,"4/9, 21/9",zojoji
+Beef Cutlet Restaurant Koushiya,35.503600,138.761800,מסעדת גיוקאטסו ליד תחנת קוואגוצ׳יקו. ארוחת ערב הוזמנה ל־7/9 ב־18:00.,attraction,food,Kawaguchiko,JP,牛かつ専門店 甲州家,7/9,koushiya
 Chureito Pagoda,35.501200,138.801300,פגודה אדומה מול פוג׳י. כ־400 מדרגות; הכי יפה בזריחה לפני Fuji-Q.,attraction,icon,Kawaguchiko,JP,忠霊塔,8/9,chureito
 Fuji-Q Highland,35.487100,138.780600,פארק רכבות הרים מהקשים בעולם. המלון צמוד לשער.,attraction,park,Kawaguchiko,JP,富士急ハイランド,8/9,fuji-q
 Lawson Kawaguchiko Station,35.498300,138.768900,חנות הנוחות המפורסמת עם הר פוג׳י ברקע. צילום של 30 שניות ליד התחנה.,attraction,icon,Kawaguchiko,JP,ローソン河口湖駅前,"7/9, 8/9, 9/9",fuji-lawson
@@ -130,6 +132,7 @@ Kurama-dera,35.118100,135.770900,מקדש הר בסוף שביל היער מקי
 Nanzen-ji,35.011600,135.794500,מקדש זן עם אקוודוקט לבנים. צילום שונה משאר קיוטו.,attraction,temple,Kyoto,JP,南禅寺,15/9,nanzenji
 Nishiki Market,35.005000,135.764900,“המטבח של קיוטו”: שוק מקורה עם טעימות ואוכל רחוב. דוכנים נסגרים ~17:30.,attraction,food,Kyoto,JP,錦市場,12/9,nishiki
 Otagi Nenbutsu-ji,35.031700,135.662800,"1,200 פסלי נזירים מחייכים באבן. מקדש שקט ומקסים מחוץ לזרם.",attraction,temple,Kyoto,JP,愛宕念仏寺,13/9,otagi
+Panel Cafe Kyoto,35.005139,135.772634,פנקייקים יפניים אווריריים בגיון שיראקאווה. הוזמן ל־15/9 ב־10:00.,attraction,food,Kyoto,JP,Panel Cafe 京都店,15/9,panel-cafe-kyoto
 Philosopher’s Path,35.020500,135.795500,הליכה רגועה לאורך תעלה בין מקדשים במזרח קיוטו.,attraction,nature,Kyoto,JP,哲学の道,15/9,philosophers-path
 Pontocho Alley,35.004500,135.771200,סמטת מסעדות צרה ליד נהר קמוגאווה. ערב אוכל קלאסי.,attraction,food,Kyoto,JP,先斗町,11/9,pontocho
 Saga Toriimoto,35.025500,135.668000,רחוב גישה משומר עם בתים ישנים בין המקדשים לארשיאמה.,attraction,neighborhood,Kyoto,JP,嵯峨鳥居本,13/9,saga-toriimoto
@@ -150,7 +153,7 @@ Instant Ramen Museum,34.819500,135.425800,מוזיאון שבו מכינים א�
 Kasuga Taisha,34.681400,135.848200,מקדש בנארה עם אלפי פנסי אבן וברונזה ביער — להגיע לפני העומס.,attraction,shrine,Osaka,JP,春日大社,17/9,kasuga
 Kikuseidai (Mt. Maya),34.733600,135.203600,תצפית Kikuseidai על הר מאיה — נוף הלילה המפורסם של קובה. רכבל + כבל.,attraction,view,Osaka,JP,掬星台（摩耶山）,20/9,mt-maya
 Kitano Ijinkan,34.698500,135.190000,בתי סוחרים אירופיים ישנים על גבעת קיטנו. הכי יפה בבוקר שקט.,attraction,culture,Osaka,JP,北野異人館,20/9,kitano-ijinkan
-Kobe beef (Sannomiya),34.693800,135.195500,"טפניאקי בשר קובה ליד סנומיה. Steakland, Ishida, Mouriya או Aoyama — להזמין 2–3 שבועות מראש.",attraction,food,Osaka,JP,神戸ビーフ（三宮）,20/9,kobe-beef
+Kobe Beef Gennkichi,34.693700,135.192500,טפניאקי בשר קובה ליד סנומיה. הוזמן ל־20/9 ב־19:30.,attraction,food,Osaka,JP,神戸牛 源吉,20/9,gennkichi
 Kofuku-ji & Higashimuki,34.683200,135.831400,"פגודת חמש הקומות של קופוקו־ג׳י, ואז מדרחוב Higashimuki ליד התחנה.",attraction,temple,Osaka,JP,興福寺・東向商店街,17/9,kofuku-ji
 Kuromon Market,34.666400,135.506400,"שוק הדגים והאוכל של אוסקה. שיפודים, פירות ים ונשנושים.",attraction,food,Osaka,JP,黒門市場,18/9,kuromon
 Meriken Park & Harborland,34.682500,135.186500,"פארק הנמל של קובה: מגדל פורט מואר, טיילת ו־Harborland בלילה.",attraction,view,Osaka,JP,メリケンパーク・ハーバーランド,20/9,meriken-park

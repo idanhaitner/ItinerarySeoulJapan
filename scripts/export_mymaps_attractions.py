@@ -177,7 +177,7 @@ def write_csv(rows: list[dict]) -> Path:
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     path = OUT_DIR / "attractions.csv"
     with path.open("w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=HEADERS)
+        w = csv.DictWriter(f, fieldnames=HEADERS, lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
     return path

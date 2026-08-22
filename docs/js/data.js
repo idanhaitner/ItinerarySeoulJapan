@@ -2,7 +2,7 @@
 window.TRIP = {
   "title": "Korea + Japan 2026",
   "subtitle": "Idan & Shahar itinerary",
-  "dates": "August 26 – September 25, 2026",
+  "dates": "August 26 – September 26, 2026",
   "route": [
     "Seoul",
     "Tokyo",
@@ -104,7 +104,7 @@ window.TRIP = {
       "depart": "07:05",
       "arrive": "10:45",
       "terminal": "DXB → TIA",
-      "dayId": "d30",
+      "dayId": "d31",
       "duration": "~5h40",
       "aircraft": "737 MAX 8",
       "cabin": "Economy Flex"
@@ -577,11 +577,12 @@ window.PLACES = {
     "country": "KR",
     "tags": [
       "must-see",
-      "culture"
+      "culture",
+      "booked"
     ],
     "lat": 37.5088,
     "lng": 127.0234,
-    "blurb": "Shahar’s hair / scalp appointment 29 Aug 17:00 · Nonhyeon Station exit 3 · Yeongdong Bldg 2F, 520.",
+    "blurb": "Booked — Shahar’s hair / scalp appointment 29 Aug 16:30–18:00 · Nonhyeon Station exit 3 · Yeongdong.",
     "taxiAddress": "서울특별시 강남구 강남대로 520 영동빌딩 2층 201호"
   },
   "euljiro": {
@@ -1365,6 +1366,22 @@ window.PLACES = {
     "blurb": "Booked nights 7–8/9, checkout 9/9 for Gotemba · Fuji-Q is 8/9 next door · onsen · ~5 min walk from.",
     "taxiAddress": "山梨県富士吉田市新倉2654"
   },
+  "koushiya": {
+    "id": "koushiya",
+    "name": "Beef Cutlet Restaurant Koushiya",
+    "nameJa": "牛かつ専門店 甲州家",
+    "city": "Kawaguchiko",
+    "country": "JP",
+    "tags": [
+      "food",
+      "must-see",
+      "booked"
+    ],
+    "lat": 35.5036,
+    "lng": 138.7618,
+    "blurb": "Booked dinner 7/9 at 18:00 · beef cutlet on a Fuji lava-stone plate · about 4 minutes from.",
+    "taxiAddress": "山梨県南都留郡富士河口湖町船津3753-1"
+  },
   "kabin-koji": {
     "id": "kabin-koji",
     "name": "KABIN Koji",
@@ -1377,7 +1394,7 @@ window.PLACES = {
     ],
     "lat": 35.0003,
     "lng": 135.7647,
-    "blurb": "Booked 11–15/9 — add night 10/9 (nights 10–14/9, checkout 15/9) · Kyoto base near Kawaramachi /.",
+    "blurb": "Booked nights 10–14/9, checkout 15/9 · Kyoto base near Kawaramachi / Shijo · ~6 min walk from.",
     "taxiAddress": "京都府京都市下京区筋屋町152"
   },
   "musse-kyoto": {
@@ -1775,6 +1792,22 @@ window.PLACES = {
     "lng": 135.7955,
     "blurb": "Canal stroll."
   },
+  "panel-cafe-kyoto": {
+    "id": "panel-cafe-kyoto",
+    "name": "Panel Cafe Kyoto",
+    "nameJa": "Panel Cafe 京都店",
+    "city": "Kyoto",
+    "country": "JP",
+    "tags": [
+      "food",
+      "must-see",
+      "booked"
+    ],
+    "lat": 35.0051395,
+    "lng": 135.772634,
+    "blurb": "Booked fluffy-pancake breakfast 15/9 at 10:00 · Gion Shirakawa, near Gion-Shijo Station.",
+    "taxiAddress": "京都府京都市東山区常盤町165 ジェイ・プライド祇園白川1階"
+  },
   "nanzenji": {
     "id": "nanzenji",
     "name": "Nanzen-ji",
@@ -1977,19 +2010,21 @@ window.PLACES = {
     "lng": 135.2036,
     "blurb": "Sunset and night-view terrace — Kobe's famous 'ten-million-dollar night view'."
   },
-  "kobe-beef": {
-    "id": "kobe-beef",
-    "name": "Kobe beef (Sannomiya)",
-    "nameJa": "神戸ビーフ（三宮）",
+  "gennkichi": {
+    "id": "gennkichi",
+    "name": "Kobe Beef Gennkichi",
+    "nameJa": "神戸牛 源吉",
     "city": "Osaka",
     "country": "JP",
     "tags": [
       "food",
-      "must-see"
+      "must-see",
+      "booked"
     ],
-    "lat": 34.6938,
-    "lng": 135.1955,
-    "blurb": "Teppanyaki Kobe beef near Sannomiya — Steakland, Ishida, Mouriya or Aoyama; book 2–3 weeks ahead."
+    "lat": 34.6937,
+    "lng": 135.1925,
+    "blurb": "Booked Kobe beef teppanyaki dinner 20/9 at 19:30 · Rainbow Building 1F near Sannomiya.",
+    "taxiAddress": "兵庫県神戸市中央区中山手通1丁目4-23 レインボービル1階"
   },
   "meriken-park": {
     "id": "meriken-park",
@@ -2684,6 +2719,22 @@ window.PLACES = {
     "lng": 139.6652,
     "blurb": "Four floors of otaku commerce — dozens of Mandarake specialty stores, vintage toys, anime cels."
   },
+  "maguro-mart": {
+    "id": "maguro-mart",
+    "name": "Maguro Mart",
+    "nameJa": "マグロマート",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "food",
+      "must-see",
+      "booked"
+    ],
+    "lat": 35.707,
+    "lng": 139.664,
+    "blurb": "Booked tuna dinner 21/9 at 20:45 · cash only · 1F/2F, 5-50-3 Nakano.",
+    "taxiAddress": "東京都中野区中野5-50-3 1F・2F"
+  },
   "teamlab-borderless": {
     "id": "teamlab-borderless",
     "name": "teamLab Borderless",
@@ -3256,7 +3307,7 @@ window.DAYS = [
     "country": "KR",
     "hotelId": "nine-bricks",
     "title": "Secret Garden, Unni Guide, Moclock & COEX",
-    "summary": "Jogyesa and Changdeokgung Secret Garden in the morning, Unni Guide 15:00–16:00 in Gangnam, Shahar’s Moclock.",
+    "summary": "Jogyesa and Changdeokgung Secret Garden in the morning, Unni Guide 15:00–16:00 in Gangnam, Shahar’s booked.",
     "food": "Lunch near the palace or on the way to Gangnam; easy dinner at COEX or Dongdaemun night.",
     "placeIds": [
       "jogyesa",
@@ -3310,12 +3361,12 @@ window.DAYS = [
         "category": "culture"
       },
       {
-        "time": "17:00",
+        "time": "16:30",
         "title": "Moclock Gangnam — Shahar hair appointment",
-        "note": "Moclock · Nonhyeon exit 3.",
+        "note": "Moclock · booked 16:30–18:00.",
         "timed": true,
         "placeId": "moclock",
-        "end": "18:15",
+        "end": "18:00",
         "kind": "appointment",
         "category": "culture"
       },
@@ -4205,12 +4256,13 @@ window.DAYS = [
     "country": "JP",
     "hotelId": "mystays-fuji-onsen",
     "title": "Tokyo → Kawaguchiko (lake & ropeway)",
-    "summary": "Checkout Gracery, walk to Busta Shinjuku, and take the reserved 09:15 bus to Kawaguchiko.",
-    "food": "Lunch: restaurants around Kawaguchiko Station.",
+    "summary": "Checkout Gracery and take the reserved 09:15 bus to Kawaguchiko.",
+    "food": "Lunch around Kawaguchiko Station; booked beef-cutlet dinner at Koushiya at 18:00.",
     "placeIds": [
       "oishi-park",
       "fuji-panoramic-ropeway",
-      "mystays-fuji-onsen"
+      "mystays-fuji-onsen",
+      "koushiya"
     ],
     "transport": [
       "Walk ~10 min from Hotel Gracery to Busta Shinjuku (4th floor).",
@@ -4287,7 +4339,7 @@ window.DAYS = [
         "category": "transit"
       },
       {
-        "time": "18:00",
+        "time": "17:30",
         "title": "Check-in at HOTEL MYSTAYS Fuji Onsen Resort",
         "note": "",
         "timed": false,
@@ -4295,12 +4347,14 @@ window.DAYS = [
         "category": "hotel"
       },
       {
-        "time": "18:30",
-        "title": "Dinner — restaurants near the hotel",
-        "note": "",
-        "timed": false,
-        "placeId": "mystays-fuji-onsen",
-        "category": "dining"
+        "time": "18:00",
+        "title": "Dinner at Beef Cutlet Restaurant Koushiya",
+        "note": "Koushiya · booked dinner.",
+        "timed": true,
+        "placeId": "koushiya",
+        "end": "19:30",
+        "category": "dining",
+        "kind": "reservation"
       },
       {
         "time": "20:00",
@@ -5120,13 +5174,14 @@ window.DAYS = [
     "city": "Osaka",
     "country": "JP",
     "hotelId": "apt-hotel-11-shinsaibashi",
-    "title": "Kyoto zen morning → Osaka night",
-    "summary": "Morning Ginkaku-ji / Philosopher’s Path / Nanzen-ji and Kinkaku-ji, then evening train to Osaka for Apartment.",
-    "food": "Lunch near Nanzen-ji; takoyaki & okonomiyaki in Dotonbori.",
+    "title": "Panel Cafe, Kyoto temples → Osaka night",
+    "summary": "Ginkaku-ji and a short Philosopher’s Path walk, booked fluffy pancakes at Panel Cafe Kyoto at 10:00, then.",
+    "food": "Booked pancakes at Panel Cafe Kyoto at 10:00; late lunch near Nanzen-ji; Dotonbori street.",
     "placeIds": [
       "kabin-koji",
       "ginkakuji",
       "philosophers-path",
+      "panel-cafe-kyoto",
       "nanzenji",
       "kinkakuji",
       "apt-hotel-11-shinsaibashi",
@@ -5148,16 +5203,26 @@ window.DAYS = [
         "category": "culture"
       },
       {
-        "time": "09:45",
-        "title": "Philosopher’s Path",
+        "time": "09:05",
+        "title": "Short Philosopher’s Path walk",
         "note": "",
         "timed": false,
         "placeId": "philosophers-path",
         "category": "attraction"
       },
       {
-        "time": "11:15",
-        "title": "Visit Nanzen-ji temple & lunch",
+        "time": "10:00",
+        "title": "Pancakes at Panel Cafe Kyoto",
+        "note": "Panel Cafe Kyoto · booked.",
+        "timed": true,
+        "placeId": "panel-cafe-kyoto",
+        "end": "11:00",
+        "category": "dining",
+        "kind": "reservation"
+      },
+      {
+        "time": "11:30",
+        "title": "Visit Nanzen-ji temple & late lunch",
         "note": "",
         "timed": false,
         "placeId": "nanzenji",
@@ -5620,7 +5685,7 @@ window.DAYS = [
     "hotelId": "apt-hotel-11-shinsaibashi",
     "title": "Full Kobe day — Kitano, sake, Mt. Maya & Kobe beef",
     "summary": "Packed Kobe day: Kitano-cho morning, Shin-Kobe ropeway and Nunobiki, Ikuta Shrine, Nankinmachi lunch, Nada.",
-    "food": "Light Nankinmachi lunch (xiaolongbao, buns); teppanyaki Kobe beef in Sannomiya — book 2–3.",
+    "food": "Light Nankinmachi lunch; booked Kobe beef teppanyaki at Gennkichi at 19:30.",
     "placeIds": [
       "kitano-ijinkan",
       "nunobiki",
@@ -5628,7 +5693,7 @@ window.DAYS = [
       "nankinmachi",
       "nada-sake",
       "mt-maya",
-      "kobe-beef",
+      "gennkichi",
       "meriken-park"
     ],
     "transport": [
@@ -5695,11 +5760,13 @@ window.DAYS = [
         "category": "attraction"
       },
       {
-        "time": "19:00",
-        "title": "Kobe beef dinner (Sannomiya)",
-        "note": "",
-        "timed": false,
-        "placeId": "kobe-beef",
+        "time": "19:30",
+        "title": "Kobe beef dinner at Gennkichi",
+        "note": "Gennkichi · booked Kobe beef dinner.",
+        "timed": true,
+        "placeId": "gennkichi",
+        "end": "20:30",
+        "kind": "reservation",
         "category": "dining"
       },
       {
@@ -5737,7 +5804,7 @@ window.DAYS = [
     "hotelId": "canvas-ginza8",
     "title": "Osaka → Tokyo, Nakano Broadway & Tokyo Tower night",
     "summary": "Checkout Osaka, Nozomi to Tokyo Station, drop bags at The Royal Park Canvas Ginza 8, then a long Nakano.",
-    "food": "Light lunch in or beside Nakano Broadway; dinner in Roppongi / Akasaka or back in Ginza.",
+    "food": "Light lunch in Nakano Broadway; booked tuna dinner at Maguro Mart at 20:45 (cash only).",
     "placeIds": [
       "canvas-ginza8",
       "nakano-broadway",
@@ -5747,7 +5814,7 @@ window.DAYS = [
       "tofu-ukai",
       "zojoji",
       "shiba-park",
-      "roppongi"
+      "maguro-mart"
     ],
     "transport": [
       "Nozomi Shin-Osaka → Tokyo Station (~2.5h).",
@@ -5806,7 +5873,7 @@ window.DAYS = [
         "category": "shopping"
       },
       {
-        "time": "18:30",
+        "time": "18:00",
         "title": "Tokyo Tower night-photo walk",
         "note": "",
         "timed": false,
@@ -5814,7 +5881,7 @@ window.DAYS = [
         "category": "attraction"
       },
       {
-        "time": "19:15",
+        "time": "18:40",
         "title": "Tofu Ukai stairs",
         "note": "",
         "timed": false,
@@ -5822,7 +5889,7 @@ window.DAYS = [
         "category": "attraction"
       },
       {
-        "time": "19:50",
+        "time": "19:05",
         "title": "Zojo-ji gate & Shiba Park lawns",
         "note": "",
         "timed": false,
@@ -5830,12 +5897,22 @@ window.DAYS = [
         "category": "culture"
       },
       {
-        "time": "21:00",
-        "title": "Dinner in Roppongi / Akasaka or Ginza",
+        "time": "19:40",
+        "title": "Travel by metro / JR · from Shiba Park to Nakano",
         "note": "",
         "timed": false,
-        "placeId": "roppongi",
-        "category": "dining"
+        "placeId": "maguro-mart",
+        "category": "transit"
+      },
+      {
+        "time": "20:45",
+        "title": "Tuna dinner at Maguro Mart",
+        "note": "Maguro Mart · booked · cash only.",
+        "timed": true,
+        "placeId": "maguro-mart",
+        "end": "22:15",
+        "category": "dining",
+        "kind": "reservation"
       }
     ],
     "transfer": {
@@ -6092,8 +6169,8 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": "canvas-ginza8",
-    "title": "Nijubashi, Tokyo Station & flight home",
-    "summary": "Pack and checkout by 11:00 (bags at the hotel or Tokyo Station lockers), Kokyo Gaien and the Nijubashi bridge.",
+    "title": "Nijubashi, Tokyo Station & overnight flight",
+    "summary": "Pack and checkout, visit Kokyo Gaien / Nijubashi and Tokyo Station City, then take the 17:45 N'EX to Narita.",
     "food": "Ramen at Tokyo Ramen Street; Daimaru sweets / snacks for the flight; airport meal at.",
     "placeIds": [
       "canvas-ginza8",
@@ -6101,14 +6178,11 @@ window.DAYS = [
       "tokyo-character-street",
       "daimaru-tokyo",
       "tokyo-station",
-      "narita",
-      "dxb",
-      "tia"
+      "narita"
     ],
     "transport": [
       "Walk ~10 min from Tokyo Station to Kokyo Gaien / Nijubashi.",
-      "N'EX 17:45 from Tokyo Station · be at NRT ~19:00 for EK319 at 22:30.",
-      "3h Emirates connection in Dubai (DXB), then EK2478 07:05–10:45 to Tirana."
+      "N'EX 17:45 from Tokyo Station · be at NRT ~19:00 for EK319 at 22:30."
     ],
     "tips": [],
     "timeline": [
@@ -6171,7 +6245,35 @@ window.DAYS = [
         "end": "04:05",
         "kind": "flight",
         "category": "transit"
-      },
+      }
+    ],
+    "transfer": {
+      "mode": "flight",
+      "label": "Tokyo → Dubai",
+      "detail": "Emirates EK319 NRT 22:30 → DXB 04:05",
+      "duration": "~10h35"
+    }
+  },
+  {
+    "id": "d31",
+    "date": "2026-09-26",
+    "weekday": "Saturday",
+    "city": "Dubai",
+    "country": "AE",
+    "hotelId": null,
+    "title": "Dubai connection → Tirana",
+    "summary": "Land in Dubai at 04:05, remain airside for the three-hour connection, then fly Emirates EK2478 at 07:05 to.",
+    "food": "Airport connection; breakfast/snacks airside if time allows.",
+    "placeIds": [
+      "dxb",
+      "tia"
+    ],
+    "transport": [
+      "Stay airside at DXB.",
+      "EK2478 DXB 07:05 → TIA 10:45."
+    ],
+    "tips": [],
+    "timeline": [
       {
         "time": "04:05",
         "title": "Land Dubai (DXB) — connection",
@@ -6203,9 +6305,9 @@ window.DAYS = [
     ],
     "transfer": {
       "mode": "flight",
-      "label": "Tokyo → Tirana (via Dubai)",
-      "detail": "Emirates EK319 NRT 22:30 → DXB 04:05 + EK2478 DXB 07:05 → TIA 10:45",
-      "duration": "19h15 door to door · 3h connection in DXB"
+      "label": "Dubai → Tirana",
+      "detail": "Emirates EK2478 DXB 07:05 → TIA 10:45",
+      "duration": "~5h40"
     }
   }
 ];

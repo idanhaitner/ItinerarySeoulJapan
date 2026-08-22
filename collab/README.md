@@ -1,6 +1,7 @@
 # Collaborative itinerary (Google Sheets)
 
-Shared Hebrew workbook for Idan + boyfriend.
+Shared Hebrew workbook for Idan + Shahar. This is the collaborative planning
+source of truth; the deployed site is generated from the synchronized builder.
 
 **Live Sheet:** see `config.json` → `googleSheetsUrl`
 
@@ -17,10 +18,20 @@ Shared Hebrew workbook for Idan + boyfriend.
 
 ```bash
 python3 scripts/sheets_auth.py           # one-time Google login
-python3 scripts/push_collab_sheets.py    # refresh Sheet from website data
 python3 scripts/fetch_collab_sheets.py   # pull Sheet → local for sync
+python3 scripts/build_data.py             # rebuild docs/js/data.js after sync
 python3 scripts/export_mymaps_attractions.py  # sights → אטרקציות + CSV/KML
+python3 scripts/push_collab_sheets.py    # website data → Sheet (intentional overwrite)
 ```
+
+`fetch_collab_sheets.py` records whether the Sheet changed since the last
+website sync. It does not rewrite the builder automatically: reconcile the
+timeline, bookings, hotels, Hebrew copy and place IDs first, then regenerate
+the website data.
+
+Do not run `push_collab_sheets.py` immediately after collaborators edit the
+Sheet. It rebuilds tabs from the website data and is therefore the reverse
+direction.
 
 ## Google My Maps (attractions layer)
 
