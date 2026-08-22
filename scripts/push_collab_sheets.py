@@ -46,13 +46,26 @@ CITY = {
 }
 CITY_COLORS = {
     # Soft non-green city tints (no green)
-    "סיאול": {"red": 0.96, "green": 0.93, "blue": 0.98},       # soft lilac
-    "טוקיו": {"red": 0.93, "green": 0.95, "blue": 0.99},       # soft blue
-    "הקונה": {"red": 0.98, "green": 0.95, "blue": 0.91},       # warm sand
-    "קוואגוצ׳יקו": {"red": 0.93, "green": 0.95, "blue": 0.98}, # cool blue-gray
-    "קיוטו": {"red": 1.00, "green": 0.95, "blue": 0.92},       # soft peach
-    "אוסקה": {"red": 0.99, "green": 0.93, "blue": 0.94},       # soft rose
-    "תל אביב": {"red": 0.94, "green": 0.95, "blue": 0.97},     # soft slate
+    "תל אביב": {"red": 0.90, "green": 0.93, "blue": 0.97},
+    "אדיס אבבה": {"red": 0.95, "green": 0.92, "blue": 0.88},
+    "סיאול": {"red": 0.96, "green": 0.91, "blue": 0.97},
+    "טוקיו": {"red": 0.90, "green": 0.94, "blue": 0.99},
+    "קוואגוצ׳יקו": {"red": 0.90, "green": 0.95, "blue": 0.96},
+    "גוטמבה": {"red": 0.94, "green": 0.94, "blue": 0.90},
+    "הקונה": {"red": 0.98, "green": 0.94, "blue": 0.88},
+    "אודאווארה": {"red": 0.93, "green": 0.93, "blue": 0.95},
+    "קיוטו": {"red": 1.00, "green": 0.94, "blue": 0.90},
+    "אוג'י": {"red": 0.93, "green": 0.96, "blue": 0.92},
+    "אוג׳י": {"red": 0.93, "green": 0.96, "blue": 0.92},
+    "אוסקה": {"red": 0.99, "green": 0.91, "blue": 0.93},
+    "נארה": {"red": 0.95, "green": 0.93, "blue": 0.90},
+    "איקדה": {"red": 0.92, "green": 0.95, "blue": 0.93},
+    "קובה": {"red": 0.93, "green": 0.91, "blue": 0.96},
+    "ניקו": {"red": 0.91, "green": 0.95, "blue": 0.91},
+    "קמאקורה": {"red": 0.90, "green": 0.94, "blue": 0.95},
+    "אנושימה": {"red": 0.90, "green": 0.93, "blue": 0.96},
+    "דובאי": {"red": 0.97, "green": 0.93, "blue": 0.88},
+    "טירנה": {"red": 0.94, "green": 0.92, "blue": 0.96},
 }
 HEADER_BG = {"red": 0.11, "green": 0.16, "blue": 0.24}  # deep navy
 HEADER_FG = {"red": 1, "green": 1, "blue": 1}
