@@ -221,6 +221,34 @@ window.PLACES = {
     "lng": 126.9869,
     "blurb": "K-beauty, street food, neon shopping."
   },
+  "olive-young-myeongdong": {
+    "id": "olive-young-myeongdong",
+    "name": "Olive Young Myeongdong",
+    "nameJa": "올리브영 명동",
+    "city": "Seoul",
+    "country": "KR",
+    "tags": [
+      "shopping",
+      "must-see"
+    ],
+    "lat": 37.5639,
+    "lng": 126.9854,
+    "blurb": "Flagship Olive Young on Myeongdong's main strip — K-beauty, sunscreen, and travel sizes."
+  },
+  "don-quijote-kabukicho": {
+    "id": "don-quijote-kabukicho",
+    "name": "Don Quijote Kabukicho",
+    "nameJa": "ドン・キホーテ 歌舞伎町店",
+    "city": "Tokyo",
+    "country": "JP",
+    "tags": [
+      "shopping",
+      "must-see"
+    ],
+    "lat": 35.6955,
+    "lng": 139.7028,
+    "blurb": "Mega Donki in Kabukicho, two minutes from Hotel Gracery — snacks, beauty, souvenirs, and weird."
+  },
   "hongdae": {
     "id": "hongdae",
     "name": "Hongdae",
@@ -3592,10 +3620,11 @@ window.DAYS = [
     "country": "KR",
     "hotelId": "nine-bricks",
     "title": "Downtown, N Tower & Itaewon",
-    "summary": "Namdaemun and Myeongdong in the morning, Cheonggyecheon after, then Seongsu-dong (Dior Seongsu, designer.",
+    "summary": "Namdaemun and Myeongdong in the morning (including a timed Olive Young stop), Cheonggyecheon after, then.",
     "food": "Myeongdong street food; dinner in Itaewon.",
     "placeIds": [
       "namdaemun",
+      "olive-young-myeongdong",
       "myeongdong",
       "cheonggyecheon",
       "seongsu",
@@ -3628,14 +3657,22 @@ window.DAYS = [
       },
       {
         "time": "11:15",
-        "title": "Myeongdong",
+        "title": "Olive Young Myeongdong",
+        "note": "",
+        "timed": false,
+        "placeId": "olive-young-myeongdong",
+        "category": "shopping"
+      },
+      {
+        "time": "12:20",
+        "title": "Myeongdong street food & shopping",
         "note": "",
         "timed": false,
         "placeId": "myeongdong",
         "category": "dining"
       },
       {
-        "time": "12:45",
+        "time": "13:20",
         "title": "Cheonggyecheon Stream walk",
         "note": "",
         "timed": false,
@@ -3643,7 +3680,7 @@ window.DAYS = [
         "category": "attraction"
       },
       {
-        "time": "13:50",
+        "time": "14:15",
         "title": "Travel by subway · from Cheonggyecheon to Seongsu",
         "note": "",
         "timed": false,
@@ -3651,7 +3688,7 @@ window.DAYS = [
         "category": "transit"
       },
       {
-        "time": "14:00",
+        "time": "14:25",
         "title": "Seongsu-dong — Dior, designer shops & pop-ups",
         "note": "",
         "timed": false,
@@ -3850,7 +3887,7 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": "gracery-shinjuku",
-    "title": "Meiji, Shibuya & Shibuya Sky",
+    "title": "Meiji, Harajuku & Shibuya",
     "summary": "Full west-Tokyo loop, north to south: Meiji Jingu at opening, Yoyogi shortcut, Takeshita as shops lift.",
     "food": "Takeshita crepe if the stall is open; cafe or light lunch on Omotesando; café at.",
     "placeIds": [
@@ -3863,7 +3900,6 @@ window.DAYS = [
       "shibuya-crossing",
       "shibuya-parco",
       "miyashita-park",
-      "shibuya-sky",
       "nonbei-yokocho"
     ],
     "transport": [
@@ -3944,7 +3980,7 @@ window.DAYS = [
         "category": "shopping"
       },
       {
-        "time": "16:20",
+        "time": "16:50",
         "title": "Miyashita Park café",
         "note": "",
         "timed": false,
@@ -3952,17 +3988,7 @@ window.DAYS = [
         "category": "dining"
       },
       {
-        "time": "17:00",
-        "title": "Shibuya Sky sunset",
-        "note": "Shibuya Sky · arrive 15 min early.",
-        "timed": true,
-        "placeId": "shibuya-sky",
-        "end": "19:00",
-        "kind": "ticket",
-        "category": "attraction"
-      },
-      {
-        "time": "19:30",
+        "time": "18:15",
         "title": "Dinner in Nonbei Yokocho",
         "note": "",
         "timed": false,
@@ -4203,21 +4229,24 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": "gracery-shinjuku",
-    "title": "Kichijoji, Shimokitazawa & Street Kart",
-    "summary": "Easy west-Tokyo Sunday: Inokashira and Harmonica lunch in Kichijoji, vintage Shimokitazawa afternoon (Bonus.",
-    "food": "Lunch in Harmonica Yokocho / Satou menchi-katsu in Kichijoji (cash in the alleys); early.",
+    "title": "Kichijoji, Shibuya Sky & Street Kart",
+    "summary": "Easy west-Tokyo Sunday: Inokashira and Harmonica lunch in Kichijoji, vintage Shimokitazawa afternoon, timed.",
+    "food": "Lunch in Harmonica Yokocho / Satou menchi-katsu in Kichijoji (cash in the alleys); light.",
     "placeIds": [
       "inokashira",
       "kichijoji",
       "harmonica",
       "shimokitazawa",
       "bonus-track",
-      "street-kart"
+      "shibuya-sky",
+      "street-kart",
+      "don-quijote-kabukicho",
+      "gracery-shinjuku"
     ],
     "transport": [
       "Chuo Rapid Shinjuku → Kichijoji (~20–25 min).",
       "Keio Inokashira or Odakyu to Shimokita (~15–25 min).",
-      "Evening: Street Kart shop (Shibuya works for neon) — arrive 30 min before the slot."
+      "Leave Shimokita by ~16:00 for the Shibuya Sky slot; Street Kart shop after — arrive 30."
     ],
     "tips": [],
     "timeline": [
@@ -4246,7 +4275,7 @@ window.DAYS = [
         "category": "dining"
       },
       {
-        "time": "14:15",
+        "time": "14:00",
         "title": "Travel by Keio Inokashira / Odakyu · from Kichijoji to Shimokitazawa",
         "note": "",
         "timed": false,
@@ -4254,7 +4283,7 @@ window.DAYS = [
         "category": "transit"
       },
       {
-        "time": "14:30",
+        "time": "14:15",
         "title": "Shimokitazawa vintage, Bonus Track & Reload",
         "note": "",
         "timed": false,
@@ -4262,11 +4291,29 @@ window.DAYS = [
         "category": "dining"
       },
       {
-        "time": "17:30",
-        "title": "Early dinner near Shibuya",
+        "time": "16:05",
+        "title": "Travel by train · from Shimokitazawa to Shibuya",
         "note": "",
         "timed": false,
-        "category": "dining"
+        "placeId": "shibuya-sky",
+        "category": "transit"
+      },
+      {
+        "time": "16:45",
+        "title": "Shibuya Sky sunset",
+        "note": "Shibuya Sky · booked 6/9 · arrive 15 min early.",
+        "timed": true,
+        "placeId": "shibuya-sky",
+        "end": "18:00",
+        "kind": "ticket",
+        "category": "attraction"
+      },
+      {
+        "time": "18:05",
+        "title": "Early bite near Shibuya",
+        "note": "",
+        "timed": false,
+        "category": "attraction"
       },
       {
         "time": "18:30",
@@ -4294,6 +4341,14 @@ window.DAYS = [
         "timed": false,
         "placeId": "gracery-shinjuku",
         "category": "transit"
+      },
+      {
+        "time": "21:40",
+        "title": "Don Quijote Kabukicho",
+        "note": "",
+        "timed": false,
+        "placeId": "don-quijote-kabukicho",
+        "category": "shopping"
       }
     ]
   },
@@ -6366,11 +6421,11 @@ window.DAYS = [
     "id": "d31",
     "date": "2026-09-26",
     "weekday": "Saturday",
-    "city": "Dubai",
-    "country": "AE",
+    "city": "Home",
+    "country": null,
     "hotelId": null,
-    "title": "Dubai → Tirana",
-    "summary": "Land in Dubai at 04:05, remain airside for the three-hour connection, then fly Emirates EK2478 at 07:05 to.",
+    "title": "Connection home (airside)",
+    "summary": "Land DXB at 04:05, remain airside for the three-hour connection, then fly Emirates EK2478 at 07:05 and land.",
     "food": "Airport connection; breakfast/snacks airside if time allows.",
     "placeIds": [
       "dxb",
@@ -6384,7 +6439,7 @@ window.DAYS = [
     "timeline": [
       {
         "time": "04:05",
-        "title": "Land Dubai (DXB) — connection",
+        "title": "Land DXB — airside connection",
         "note": "DXB · 3h connection.",
         "timed": true,
         "placeId": "dxb",
@@ -6393,7 +6448,7 @@ window.DAYS = [
       },
       {
         "time": "07:05",
-        "title": "Travel by Emirates EK2478 · from Dubai to Tirana",
+        "title": "Travel by Emirates EK2478 · DXB → TIA",
         "note": "EK2478 · DXB → TIA · booked.",
         "timed": true,
         "placeId": "dxb",
@@ -6403,7 +6458,7 @@ window.DAYS = [
       },
       {
         "time": "10:45",
-        "title": "Land Tirana (TIA)",
+        "title": "Land TIA",
         "note": "Land Tirana.",
         "timed": true,
         "placeId": "tia",
@@ -6413,7 +6468,7 @@ window.DAYS = [
     ],
     "transfer": {
       "mode": "flight",
-      "label": "Dubai → Tirana",
+      "label": "DXB → TIA",
       "detail": "Emirates EK2478 DXB 07:05 → TIA 10:45",
       "duration": "~5h40"
     }

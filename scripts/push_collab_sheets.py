@@ -45,17 +45,24 @@ CITY = {
     "Ikeda": "איקדה",
     "Gotemba": "גוטמבה",
     "Hiroshima": "הירושימה",
-    "Tel Aviv": "תל אביב",
-    "Addis Ababa": "אדיס אבבה",
-    "Dubai": "דובאי",
-    "Tirana": "טירנה",
     "Bangkok": "בנגקוק",
     "Home": "הבית",
 }
+# Connection / home hubs — never treat as trip cities (no color, no hotels row).
+NON_TRIP_CITIES = {
+    "Dubai",
+    "Tirana",
+    "Addis Ababa",
+    "Tel Aviv",
+    "Home",
+    "דובאי",
+    "טירנה",
+    "אדיס אבבה",
+    "תל אביב",
+    "הבית",
+}
 CITY_COLORS = {
-    # Distinct soft fills — one unique tint per city (workbook-wide)
-    "תל אביב": {"red": 0.82, "green": 0.90, "blue": 1.00},
-    "אדיס אבבה": {"red": 0.96, "green": 0.88, "blue": 0.78},
+    # Distinct soft fills — one unique tint per trip city
     "סיאול": {"red": 0.98, "green": 0.82, "blue": 0.90},
     "טוקיו": {"red": 0.78, "green": 0.88, "blue": 0.98},
     "קוואגוצ׳יקו": {"red": 0.75, "green": 0.93, "blue": 0.95},
@@ -73,8 +80,6 @@ CITY_COLORS = {
     "ניקו": {"red": 0.78, "green": 0.90, "blue": 0.78},
     "קמאקורה": {"red": 0.78, "green": 0.86, "blue": 0.96},
     "אנושימה": {"red": 0.90, "green": 0.82, "blue": 0.96},
-    "דובאי": {"red": 0.98, "green": 0.86, "blue": 0.74},
-    "טירנה": {"red": 0.90, "green": 0.86, "blue": 0.96},
 }
 HEADER_BG = {"red": 0.11, "green": 0.16, "blue": 0.24}  # deep navy
 HEADER_FG = {"red": 1, "green": 1, "blue": 1}
@@ -190,14 +195,19 @@ def place_name(places, pid):
 
 
 def city_for_item(day, item, places) -> str:
-    """Specific city for this stop (Nara/Kobe/Uji…), not only the hotel-base city."""
+    """Specific trip city for this stop — never Dubai / Tirana / Addis / Tel Aviv."""
     pid = item.get("placeId")
     if pid and pid in places:
         pc = (places[pid].get("city") or "").strip()
+        if pc in NON_TRIP_CITIES:
+            return ""
         if pc:
             return CITY.get(pc, pc)
     title = f"{item.get('title') or ''} {item.get('note') or ''}"
     low = title.lower()
+    # Connection hubs mentioned in titles — blank city, not a colored trip city.
+    if re.search(r"dubai|דובאי|(?<![a-z])dxb(?![a-z])|tirana|טירנה|(?<![a-z])tia(?![a-z])|addis|אדיס|tel aviv|תל אביב|(?<![a-z])tlv(?![a-z])", low, re.I):
+        return ""
     heuristics = [
         (r"(?<![א-תa-z])nara(?![a-z])|(?<![א-ת])נארה(?![א-ת])", "נארה"),
         (r"(?<![א-תa-z])kobe(?![a-z])|(?<![א-ת])קובה(?![א-ת])|sannomiya|kitano|nunobiki|(?<![a-z])nada(?![a-z])|(?<![a-z])maya(?![a-z])", "קובה"),
@@ -207,15 +217,14 @@ def city_for_item(day, item, places) -> str:
         (r"(?<![א-תa-z])uji(?![a-z])|(?<![א-ת])אוג׳י(?![א-ת])|byodo", "אוג׳י"),
         (r"(?<![א-תa-z])ikeda(?![a-z])|(?<![א-ת])איקדה(?![א-ת])|cup noodle|ramen museum", "איקדה"),
         (r"(?<![א-תa-z])gotemba(?![a-z])|(?<![א-ת])גוטמבה(?![א-ת])", "גוטמבה"),
-        (r"(?<![א-תa-z])dubai(?![a-z])|(?<![א-ת])דובאי(?![א-ת])|(?<![a-z])dxb(?![a-z])", "דובאי"),
-        (r"(?<![א-תa-z])tirana(?![a-z])|(?<![א-ת])טירנה(?![א-ת])|(?<![a-z])tia(?![a-z])", "טירנה"),
-        (r"addis|אדיס", "אדיס אבבה"),
-        (r"tel aviv|תל אביב|(?<![a-z])tlv(?![a-z])", "תל אביב"),
     ]
     for pat, he in heuristics:
         if re.search(pat, low, re.I) or re.search(pat, title):
             return he
-    return CITY.get(day.get("city") or "", day.get("city") or "")
+    base = day.get("city") or ""
+    if base in NON_TRIP_CITIES:
+        return ""
+    return CITY.get(base, base)
 
 
 def place_label(places, he_places, pid):
@@ -324,7 +333,7 @@ def build_days(days, places, he_places=None):
             [
                 fmt_date(d["date"]),
                 WD.get(d["weekday"], d["weekday"]),
-                CITY.get(d["city"], d["city"]),
+                "" if d.get("city") in NON_TRIP_CITIES else CITY.get(d["city"], d["city"]),
                 d.get("title") or "",
                 plan_bullets(d, places, he_places),
                 hotel_name,
@@ -366,7 +375,7 @@ def build_hotels(days):
     tokyo_i = 0
     for block in _stay_ranges(days):
         city = block["city"]
-        if city == "Home" or city == "Tel Aviv":
+        if city in NON_TRIP_CITIES or city in ("Home",):
             continue
         key_i = tokyo_i if city == "Tokyo" else 0
         if city == "Tokyo":
@@ -422,11 +431,31 @@ def build_hotels(days):
     return rows
 
 
+def _parse_sheet_date(raw: str) -> str:
+    """Return ISO yyyy-mm-dd from Sheet date text, or '' if unparseable."""
+    raw = (raw or "").strip()
+    if not raw:
+        return ""
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", raw):
+        return raw
+    if "/" in raw:
+        parts = raw.split("/")
+        if len(parts) == 3:
+            a, b, c = parts
+            # dd/mm/yyyy (iw_IL) or already ISO-ish
+            if len(c) == 4:
+                return f"{c.zfill(4)}-{b.zfill(2)}-{a.zfill(2)}"
+            if len(a) == 4:
+                return f"{a.zfill(4)}-{b.zfill(2)}-{c.zfill(2)}"
+    return ""
+
+
 def build_bookings(days):
     """Tickets / reservations only — no flights or hotels (those live elsewhere)."""
     by_id = {d["id"]: d["date"] for d in days}
-    # Preserve statuses collaborators already set in the Sheet.
-    preserved = {}
+    # Preserve status + date collaborators already set in the Sheet.
+    preserved_status = {}
+    preserved_date = {}
     path = ROOT / "collab" / "CURRENT_FROM_SHEETS.txt"
     if path.exists():
         text = path.read_text(encoding="utf-8")
@@ -437,9 +466,15 @@ def build_bookings(days):
             for ln in section.strip().splitlines()[1:]:
                 cols = ln.split("\t")
                 if len(cols) >= 3:
-                    preserved[(cols[0] or "").strip()] = (cols[2] or "").strip()
+                    key = (cols[0] or "").strip()
+                    preserved_status[key] = (cols[2] or "").strip()
+                    if len(cols) >= 2:
+                        iso = _parse_sheet_date(cols[1])
+                        if iso:
+                            preserved_date[key] = iso
 
     # (name, day_id, default_status, notes without redundant dates)
+    # Shibuya Sky is booked for 6/9 (d11), not 3/9.
     items = [
         ("רישיון נהיגה בינלאומי פיזי (IDP 1949)", "d11", "לטפל", "חובה ל־Street Kart · להנפיק בארץ"),
         ("K-ETA לקוריאה", "d00", "לטפל", "רק אם נדרש לפי הדרכון"),
@@ -447,7 +482,7 @@ def build_bookings(days):
         ("Visit Japan Web (VJW)", "d07", "לטפל", "למלא כמה ימים לפני נחיתה בנריטה"),
         ("USJ Studio Pass (כרטיס כניסה)", "d21", "לטפל", "חובה בנפרד מה־Express Pass"),
         ("USJ Express Pass 7 Minecart & Selection", "d21", "הוזמן", "Minecart & Selection"),
-        ("Shibuya Sky sunset", "d08", "לטפל", "נפתח 28 ימים מראש · כרטיס sunset"),
+        ("Shibuya Sky sunset", "d11", "הוזמן", "כרטיס sunset · 6/9 · נפתח 28 ימים מראש"),
         ("Street Kart Tokyo — תור ערב", "d11", "לטפל", "~19:00 · IDP פיזי חובה"),
         ("teamLab Planets Tokyo", "d09", "לטפל", "כרטיס מתוזמן"),
         ("teamLab Biovortex Kyoto", "d19", "הוזמן", "כניסה 18:00–18:30"),
@@ -469,13 +504,17 @@ def build_bookings(days):
         ("ארוחת טונה — Maguro Mart", "d26", "הוזמן", "20:45 · מזומן בלבד · Nakano"),
         ("ארוחת פרידה מיפן", "d29", "לטפל", "וואגיו / אומקאסה בגינזה או בקמאקורה"),
     ]
+    # Force-correct dates that a previous push wrongly reset (Sheet may still show 3/9).
+    force_date = {
+        "Shibuya Sky sunset": by_id.get("d11", "2026-09-06"),
+    }
     rows = [["מה להזמין", "תאריך", "סטטוס", "הערות"]]
     for name, day_id, status, notes in items:
         st = status
-        if name in preserved and preserved[name] in STATUS_OPTIONS:
-            st = preserved[name]
+        if name in preserved_status and preserved_status[name] in STATUS_OPTIONS:
+            st = preserved_status[name]
         else:
-            for old_name, old_st in preserved.items():
+            for old_name, old_st in preserved_status.items():
                 if old_st not in STATUS_OPTIONS:
                     continue
                 if name in old_name or old_name in name or (
@@ -483,7 +522,20 @@ def build_bookings(days):
                 ):
                     st = old_st
                     break
-        rows.append([name, fmt_date(by_id.get(day_id, "")), st, notes])
+        if name in force_date:
+            date_iso = force_date[name]
+        elif name in preserved_date:
+            date_iso = preserved_date[name]
+        else:
+            matched = None
+            for old_name, old_iso in preserved_date.items():
+                if name in old_name or old_name in name or (
+                    len(old_name) > 12 and old_name[:12] in name
+                ):
+                    matched = old_iso
+                    break
+            date_iso = matched or by_id.get(day_id, "")
+        rows.append([name, fmt_date(date_iso), st, notes])
     return rows
 
 
@@ -724,12 +776,9 @@ def color_by_city(wb, ws, values: list[list[str]], city_col: int, ncols: int, ex
     for r_idx, row in enumerate(values[1:], start=1):
         if len(row) <= city_col:
             continue
-        city = row[city_col]
+        city = (row[city_col] or "").strip()
         if not city:
-            for up in range(r_idx - 1, 0, -1):
-                if len(values[up]) > city_col and values[up][city_col]:
-                    city = values[up][city_col]
-                    break
+            continue  # connection hubs (Dubai/Addis/…) stay uncolored
         color = color_for_city(city)
         if not color:
             continue
