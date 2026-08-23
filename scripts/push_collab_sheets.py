@@ -194,24 +194,23 @@ def place_name(places, pid):
     return (places.get(pid) or {}).get("name") or pid
 
 
+# Airport / connection place IDs — never paint as trip cities.
+HUB_PLACE_IDS = {"tlv", "add", "dxb", "tia"}
+
+
 def city_for_item(day, item, places) -> str:
     """Specific trip city for this stop — never Dubai / Tirana / Addis / Tel Aviv."""
-    title = f"{item.get('title') or ''} {item.get('note') or ''}"
-    low = title.lower()
-    # Connection hubs — blank city even when the airport place is tagged Tokyo/Seoul.
-    if re.search(
-        r"dubai|דובאי|(?<![a-z])dxb(?![a-z])|tirana|טירנה|(?<![a-z])tia(?![a-z])|addis|אדיס|tel aviv|תל אביב|(?<![a-z])tlv(?![a-z])",
-        low,
-        re.I,
-    ):
-        return ""
     pid = item.get("placeId")
+    if pid in HUB_PLACE_IDS:
+        return ""
     if pid and pid in places:
         pc = (places[pid].get("city") or "").strip()
         if pc in NON_TRIP_CITIES:
             return ""
         if pc:
             return CITY.get(pc, pc)
+    title = f"{item.get('title') or ''} {item.get('note') or ''}"
+    low = title.lower()
     heuristics = [
         (r"(?<![א-תa-z])nara(?![a-z])|(?<![א-ת])נארה(?![א-ת])", "נארה"),
         (r"(?<![א-תa-z])kobe(?![a-z])|(?<![א-ת])קובה(?![א-ת])|sannomiya|kitano|nunobiki|(?<![a-z])nada(?![a-z])|(?<![a-z])maya(?![a-z])", "קובה"),
