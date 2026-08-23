@@ -37,35 +37,44 @@ CITY = {
     "Kyoto": "קיוטו",
     "Osaka": "אוסקה",
     "Kobe": "קובה",
-    "Hiroshima": "הירושימה",
     "Nara": "נארה",
+    "Nikko": "ניקו",
+    "Kamakura": "קמאקורה",
+    "Enoshima": "אנושימה",
+    "Uji": "אוג׳י",
+    "Ikeda": "איקדה",
+    "Gotemba": "גוטמבה",
+    "Hiroshima": "הירושימה",
     "Tel Aviv": "תל אביב",
     "Addis Ababa": "אדיס אבבה",
+    "Dubai": "דובאי",
+    "Tirana": "טירנה",
     "Bangkok": "בנגקוק",
     "Home": "הבית",
 }
 CITY_COLORS = {
-    # Soft distinct tints — same city = same color everywhere in the workbook
-    "תל אביב": {"red": 0.88, "green": 0.92, "blue": 0.98},
-    "אדיס אבבה": {"red": 0.96, "green": 0.91, "blue": 0.84},
-    "סיאול": {"red": 0.96, "green": 0.88, "blue": 0.94},
-    "טוקיו": {"red": 0.86, "green": 0.92, "blue": 0.99},
-    "קוואגוצ׳יקו": {"red": 0.84, "green": 0.94, "blue": 0.95},
-    "גוטמבה": {"red": 0.94, "green": 0.93, "blue": 0.86},
-    "הקונה": {"red": 0.99, "green": 0.92, "blue": 0.82},
-    "אודאווארה": {"red": 0.90, "green": 0.90, "blue": 0.94},
-    "קיוטו": {"red": 1.00, "green": 0.90, "blue": 0.84},
-    "אוג'י": {"red": 0.88, "green": 0.95, "blue": 0.88},
-    "אוג׳י": {"red": 0.88, "green": 0.95, "blue": 0.88},
-    "אוסקה": {"red": 0.99, "green": 0.88, "blue": 0.90},
-    "נארה": {"red": 0.94, "green": 0.90, "blue": 0.84},
-    "איקדה": {"red": 0.86, "green": 0.94, "blue": 0.90},
-    "קובה": {"red": 0.90, "green": 0.86, "blue": 0.96},
-    "ניקו": {"red": 0.86, "green": 0.93, "blue": 0.86},
-    "קמאקורה": {"red": 0.86, "green": 0.91, "blue": 0.96},
-    "אנושימה": {"red": 0.92, "green": 0.88, "blue": 0.96},
-    "דובאי": {"red": 0.98, "green": 0.90, "blue": 0.82},
-    "טירנה": {"red": 0.92, "green": 0.90, "blue": 0.96},
+    # Distinct soft fills — one unique tint per city (workbook-wide)
+    "תל אביב": {"red": 0.82, "green": 0.90, "blue": 1.00},
+    "אדיס אבבה": {"red": 0.96, "green": 0.88, "blue": 0.78},
+    "סיאול": {"red": 0.98, "green": 0.82, "blue": 0.90},
+    "טוקיו": {"red": 0.78, "green": 0.88, "blue": 0.98},
+    "קוואגוצ׳יקו": {"red": 0.75, "green": 0.93, "blue": 0.95},
+    "גוטמבה": {"red": 0.93, "green": 0.91, "blue": 0.78},
+    "הקונה": {"red": 1.00, "green": 0.88, "blue": 0.72},
+    "אודאווארה": {"red": 0.86, "green": 0.86, "blue": 0.93},
+    "קיוטו": {"red": 1.00, "green": 0.84, "blue": 0.74},
+    "אוג'י": {"red": 0.80, "green": 0.94, "blue": 0.80},
+    "אוג׳י": {"red": 0.80, "green": 0.94, "blue": 0.80},
+    "ארשיאמה": {"red": 0.84, "green": 0.92, "blue": 0.84},
+    "אוסקה": {"red": 1.00, "green": 0.80, "blue": 0.84},
+    "נארה": {"red": 0.92, "green": 0.86, "blue": 0.76},
+    "איקדה": {"red": 0.78, "green": 0.92, "blue": 0.86},
+    "קובה": {"red": 0.86, "green": 0.78, "blue": 0.96},
+    "ניקו": {"red": 0.78, "green": 0.90, "blue": 0.78},
+    "קמאקורה": {"red": 0.78, "green": 0.86, "blue": 0.96},
+    "אנושימה": {"red": 0.90, "green": 0.82, "blue": 0.96},
+    "דובאי": {"red": 0.98, "green": 0.86, "blue": 0.74},
+    "טירנה": {"red": 0.90, "green": 0.86, "blue": 0.96},
 }
 HEADER_BG = {"red": 0.11, "green": 0.16, "blue": 0.24}  # deep navy
 HEADER_FG = {"red": 1, "green": 1, "blue": 1}
@@ -180,16 +189,38 @@ def place_name(places, pid):
     return (places.get(pid) or {}).get("name") or pid
 
 
+def city_for_item(day, item, places) -> str:
+    """Specific city for this stop (Nara/Kobe/Uji…), not only the hotel-base city."""
+    pid = item.get("placeId")
+    if pid and pid in places:
+        pc = (places[pid].get("city") or "").strip()
+        if pc:
+            return CITY.get(pc, pc)
+    title = f"{item.get('title') or ''} {item.get('note') or ''}"
+    low = title.lower()
+    heuristics = [
+        (r"(?<![א-תa-z])nara(?![a-z])|(?<![א-ת])נארה(?![א-ת])", "נארה"),
+        (r"(?<![א-תa-z])kobe(?![a-z])|(?<![א-ת])קובה(?![א-ת])|sannomiya|kitano|nunobiki|(?<![a-z])nada(?![a-z])|(?<![a-z])maya(?![a-z])", "קובה"),
+        (r"(?<![א-תa-z])nikko(?![a-z])|(?<![א-ת])ניקו(?![א-ת])|chuzenji|kegon|toshogu", "ניקו"),
+        (r"(?<![א-תa-z])enoshima(?![a-z])|(?<![א-ת])אנושימה(?![א-ת])|sea candle", "אנושימה"),
+        (r"(?<![א-תa-z])kamakura(?![a-z])|(?<![א-ת])קמאקורה(?![א-ת])|kotoku|hasedera|enoden", "קמאקורה"),
+        (r"(?<![א-תa-z])uji(?![a-z])|(?<![א-ת])אוג׳י(?![א-ת])|byodo", "אוג׳י"),
+        (r"(?<![א-תa-z])ikeda(?![a-z])|(?<![א-ת])איקדה(?![א-ת])|cup noodle|ramen museum", "איקדה"),
+        (r"(?<![א-תa-z])gotemba(?![a-z])|(?<![א-ת])גוטמבה(?![א-ת])", "גוטמבה"),
+        (r"(?<![א-תa-z])dubai(?![a-z])|(?<![א-ת])דובאי(?![א-ת])|(?<![a-z])dxb(?![a-z])", "דובאי"),
+        (r"(?<![א-תa-z])tirana(?![a-z])|(?<![א-ת])טירנה(?![א-ת])|(?<![a-z])tia(?![a-z])", "טירנה"),
+        (r"addis|אדיס", "אדיס אבבה"),
+        (r"tel aviv|תל אביב|(?<![a-z])tlv(?![a-z])", "תל אביב"),
+    ]
+    for pat, he in heuristics:
+        if re.search(pat, low, re.I) or re.search(pat, title):
+            return he
+    return CITY.get(day.get("city") or "", day.get("city") or "")
+
+
 def place_label(places, he_places, pid):
-    """English/roman place name + Hebrew what-it-is blurb."""
-    if not pid:
-        return ""
-    name = place_name(places, pid)
-    blurb = ((he_places or {}).get(pid) or {}).get("blurb") or ""
-    blurb = blurb.strip()
-    if name and blurb:
-        return f"{name} — {blurb}"
-    return name or blurb
+    """Attraction name only — the city sits in the עיר / מקום columns."""
+    return place_name(places, pid)
 
 
 def plan_bullets(d, places, he_places):
@@ -217,19 +248,19 @@ def build_timeline(days, places, he_places=None):
     header = ["תאריך", "יום", "עיר", "שעה", "עד", "מה עושים", "פרטים", "מקום", "הערות שלנו"]
     rows = [header]
     for d in days:
-        city = CITY.get(d["city"], d["city"])
         wd = WD.get(d["weekday"], d["weekday"])
         for item in d.get("timeline") or []:
+            city_he = city_for_item(d, item, places)
             rows.append(
                 [
-                    fmt_date(d["date"]),  # =DATE(...) → displays dd/mm/yyyy on every tab
+                    fmt_date(d["date"]),
                     wd,
-                    city,
+                    city_he,
                     item.get("time") or "",
                     item.get("end") or "",
                     item.get("title") or "",
                     item.get("note") or "",
-                    place_label(places, he_places, item.get("placeId")),
+                    city_he,  # מקום = עיר ספציפית (נארה / קובה / …)
                     "",
                 ]
             )
@@ -392,45 +423,67 @@ def build_hotels(days):
 
 
 def build_bookings(days):
-    """Bookings with real trip dates from matching days when possible."""
+    """Tickets / reservations only — no flights or hotels (those live elsewhere)."""
     by_id = {d["id"]: d["date"] for d in days}
+    # Preserve statuses collaborators already set in the Sheet.
+    preserved = {}
+    path = ROOT / "collab" / "CURRENT_FROM_SHEETS.txt"
+    if path.exists():
+        text = path.read_text(encoding="utf-8")
+        if "===== להזמין =====" in text:
+            section = text.split("===== להזמין =====", 1)[1]
+            if "=====" in section:
+                section = section.split("=====", 1)[0]
+            for ln in section.strip().splitlines()[1:]:
+                cols = ln.split("\t")
+                if len(cols) >= 3:
+                    preserved[(cols[0] or "").strip()] = (cols[2] or "").strip()
+
+    # (name, day_id, default_status, notes without redundant dates)
     items = [
-        ("רישיון נהיגה בינלאומי פיזי (IDP 1949)", "d11", "לטפל", "חובה ל־Street Kart · להנפיק בארץ עכשיו"),
+        ("רישיון נהיגה בינלאומי פיזי (IDP 1949)", "d11", "לטפל", "חובה ל־Street Kart · להנפיק בארץ"),
         ("K-ETA לקוריאה", "d00", "לטפל", "רק אם נדרש לפי הדרכון"),
         ("ביטוח נסיעות", "d00", "לטפל", "לפני היציאה"),
-        ("Visit Japan Web (VJW)", "d07", "לטפל", "כמה ימים לפני נחיתה בנריטה"),
-        ("טיסת אמירייטס מנריטה לדובאי לטירנה", "d30", "הוזמן", "EK319 NRT 22:30→DXB 04:05 + EK2478 DXB 07:05→TIA 10:45 · Economy Flex"),
-        ("USJ Studio Pass (כרטיס כניסה)", "d21", "לטפל", "16/9 · חובה בנפרד מה־Express"),
-        ("USJ Express Pass 7 Minecart & Selection", "d21", "הוזמן", "16/9"),
-        ("Shibuya Sky sunset", "d08", "לטפל", "3/9 · נפתח 28 ימים מראש"),
-        ("Street Kart Tokyo — תור מוזמן לערב", "d11", "לטפל", "06/9 · ~19:00 · IDP פיזי"),
-        ("teamLab Planets Tokyo", "d09", "לטפל", "4/9 שישי · כרטיס מתוזמן"),
-        ("teamLab Biovortex Kyoto", "d19", "הוזמן", "14/9 · כניסה 18:00–18:30"),
-        ("Fuji-Q Freepass", "d13", "לטפל", "8/9 · יום מלא"),
-        ("Changdeokgung Secret Garden", "d03", "לטפל", "סיור מודרך · שבת 29 באוג׳"),
-        ("Unni Guide Center", "d03", "הוזמן", "15:00–16:00 · אחריו Moclock לא טיפול קליניקה"),
-        ("Moclock Gangnam — טיפול שיער (שחר)", "d03", "הוזמן", "29 באוג׳ · 16:30–18:00 · יציאה 3 בנונהיון"),
-        ("Forena Clinic — ייעוץ + טיפול", "d04", "הוזמן", "30 באוג׳ · 10:30"),
-        ("ארוחת צהריים Yeonnam Chwihyang", "d04", "לטפל", "30 באוג׳ · 15:00 · לרוב walk-in עם תור"),
-        ("N Seoul Tower sunset", "d06", "לטפל", "שלישי 1 בספט׳"),
-        ("Lotte World", "d05", "הוזמן", "31 באוג׳"),
-        ("אוטובוס בין-עירוני משינג׳וקו לקוואגוצ׳יקו", "d12", "לטפל", "07/9 · מושב שמור מ־Busta Shinjuku"),
-        ("שינקנסן Hikari 653 מאודאווארה לקיוטו", "d15", "לטפל", "10/9 · 18:07–20:12 · כרטיסים במכונות באודאווארה 17:45"),
-        ("שינקנסן Nozomi מאוסקה לטוקיו", "d26", "לטפל", "21/9 · SmartEX"),
-        ("Tobu Spacia X לניקו", "d27", "לטפל", "22/9 · יציאה ~06:30 מאסאקוסה"),
-        ("Hotel Zagakukan", "d14", "הוזמן", "לילה 9/9 · צ׳ק־אין 17:00 · צ׳ק־אאוט 10/9 · הגעה ~15:20 אחרי גוטמבה"),
-        ("KABIN Koji", "d15", "הוזמן", "לילות 10–14/9 · צ׳ק־אאוט 15/9"),
-        ("ארוחת ערב קוואגוצ׳יקו", "d12", "הוזמן", "18:00 Beef Cutlet Restaurant Koushiya"),
-        ("פנקייקים בקיוטו", "d20", "הוזמן", "10:00 Panel Cafe Kyoto"),
-        ("ארוחת בשר קובה", "d25", "הוזמן", "19:30 Kobe Beef Gennkichi"),
-        ("ארוחת טונה בטוקיו", "d26", "הוזמן", "20:45 Maguro Mart (מזומן בלבד)"),
-        ("ארוחת פרידה מיפן", "d29", "לטפל", "24/9 · וואגיו / אומקאסה"),
-        ("טיסת יציאה ET0419 + ET0672", "d00", "הוזמן", "26–27 באוג׳ · Ethiopian"),
-        ("טיסת סיאול לטוקיו YP7321", "d07", "הוזמן", "Air Premia · 2 בספט׳"),
+        ("Visit Japan Web (VJW)", "d07", "לטפל", "למלא כמה ימים לפני נחיתה בנריטה"),
+        ("USJ Studio Pass (כרטיס כניסה)", "d21", "לטפל", "חובה בנפרד מה־Express Pass"),
+        ("USJ Express Pass 7 Minecart & Selection", "d21", "הוזמן", "Minecart & Selection"),
+        ("Shibuya Sky sunset", "d08", "לטפל", "נפתח 28 ימים מראש · כרטיס sunset"),
+        ("Street Kart Tokyo — תור ערב", "d11", "לטפל", "~19:00 · IDP פיזי חובה"),
+        ("teamLab Planets Tokyo", "d09", "לטפל", "כרטיס מתוזמן"),
+        ("teamLab Biovortex Kyoto", "d19", "הוזמן", "כניסה 18:00–18:30"),
+        ("Fuji-Q Freepass", "d13", "לטפל", "יום מלא בפארק"),
+        ("Changdeokgung Secret Garden", "d03", "לטפל", "סיור מודרך מתוזמן"),
+        ("Unni Guide Center", "d03", "הוזמן", "15:00–16:00 · אחריו Moclock"),
+        ("Moclock Gangnam — טיפול שיער", "d03", "הוזמן", "16:30–18:00 · Nonhyeon exit 3"),
+        ("Forena Clinic — ייעוץ + טיפול", "d04", "הוזמן", "10:30 · Hongdae H-CUBE"),
+        ("ארוחת צהריים Yeonnam Chwihyang", "d04", "הוזמן", "15:00 · לרוב walk-in עם תור"),
+        ("N Seoul Tower sunset", "d06", "הוזמן", "אוטובוס נאמסן למגדל"),
+        ("Lotte World", "d05", "הוזמן", "יום מלא בפארק"),
+        ("אוטובוס בין-עירוני Shinjuku → Kawaguchiko", "d12", "לטפל", "מושב שמור · Busta Shinjuku 09:15"),
+        ("שינקנסן Hikari 653 Odawara → Kyoto", "d15", "לטפל", "18:07–20:12 · כרטיסים במכונות ~17:45"),
+        ("שינקנסן Nozomi Osaka → Tokyo", "d26", "לטפל", "SmartEX · כל Nozomi שמורים ב־Silver Week"),
+        ("Tobu Spacia X → Nikko", "d27", "לטפל", "יציאה ~07:30 מאסאקוסה · מושבים שמורים"),
+        ("ארוחת ערב Koushiya (קוואגוצ׳יקו)", "d12", "הוזמן", "18:00 · Beef Cutlet"),
+        ("פנקייקים Panel Cafe Kyoto", "d20", "הוזמן", "10:00"),
+        ("ארוחת בשר קובה — Gennkichi", "d25", "הוזמן", "19:30 · ליד Sannomiya"),
+        ("ארוחת טונה — Maguro Mart", "d26", "הוזמן", "20:45 · מזומן בלבד · Nakano"),
+        ("ארוחת פרידה מיפן", "d29", "לטפל", "וואגיו / אומקאסה בגינזה או בקמאקורה"),
     ]
     rows = [["מה להזמין", "תאריך", "סטטוס", "הערות"]]
     for name, day_id, status, notes in items:
-        rows.append([name, fmt_date(by_id.get(day_id, "")), status, notes])
+        st = status
+        if name in preserved and preserved[name] in STATUS_OPTIONS:
+            st = preserved[name]
+        else:
+            for old_name, old_st in preserved.items():
+                if old_st not in STATUS_OPTIONS:
+                    continue
+                if name in old_name or old_name in name or (
+                    len(old_name) > 12 and old_name[:12] in name
+                ):
+                    st = old_st
+                    break
+        rows.append([name, fmt_date(by_id.get(day_id, "")), st, notes])
     return rows
 
 
@@ -664,8 +717,9 @@ def color_for_city(city: str) -> dict | None:
     return None
 
 
-def color_by_city(wb, ws, values: list[list[str]], city_col: int, ncols: int):
-    """Soft city tint on the city column only — same palette workbook-wide."""
+def color_by_city(wb, ws, values: list[list[str]], city_col: int, ncols: int, extra_cols: list[int] | None = None):
+    """City tint on the city column (+ optional twin columns like מקום)."""
+    cols = [city_col] + list(extra_cols or [])
     requests = []
     for r_idx, row in enumerate(values[1:], start=1):
         if len(row) <= city_col:
@@ -679,30 +733,33 @@ def color_by_city(wb, ws, values: list[list[str]], city_col: int, ncols: int):
         color = color_for_city(city)
         if not color:
             continue
-        requests.append(
-            {
-                "repeatCell": {
-                    "range": {
-                        "sheetId": ws.id,
-                        "startRowIndex": r_idx,
-                        "endRowIndex": r_idx + 1,
-                        "startColumnIndex": city_col,
-                        "endColumnIndex": city_col + 1,
-                    },
-                    "cell": {
-                        "userEnteredFormat": {
-                            "backgroundColor": color,
-                            "textFormat": {
-                                "fontFamily": FONT_FAMILY,
-                                "bold": True,
-                                "fontSize": 11,
-                            },
-                        }
-                    },
-                    "fields": "userEnteredFormat(backgroundColor,textFormat)",
+        for col in cols:
+            if col < 0 or col >= ncols:
+                continue
+            requests.append(
+                {
+                    "repeatCell": {
+                        "range": {
+                            "sheetId": ws.id,
+                            "startRowIndex": r_idx,
+                            "endRowIndex": r_idx + 1,
+                            "startColumnIndex": col,
+                            "endColumnIndex": col + 1,
+                        },
+                        "cell": {
+                            "userEnteredFormat": {
+                                "backgroundColor": color,
+                                "textFormat": {
+                                    "fontFamily": FONT_FAMILY,
+                                    "bold": True,
+                                    "fontSize": 11,
+                                },
+                            }
+                        },
+                        "fields": "userEnteredFormat(backgroundColor,textFormat)",
+                    }
                 }
-            }
-        )
+            )
     for i in range(0, len(requests), 80):
         wb.batch_update({"requests": requests[i : i + 80]})
 
@@ -795,7 +852,7 @@ def add_status_dropdown(wb, ws, col_index: int, nrows: int):
     wb.batch_update({"requests": requests})
 
 
-def push_table(wb, title: str, values: list[list[str]], *, city_col=None, status_col=None, date_cols=None):
+def push_table(wb, title: str, values: list[list[str]], *, city_col=None, status_col=None, date_cols=None, extra_city_cols=None):
     ncols = max(len(r) for r in values)
     nrows = len(values)
     ws = ensure_worksheet(wb, title, rows=max(nrows + 20, 60), cols=max(ncols + 2, 10))
@@ -811,7 +868,7 @@ def push_table(wb, title: str, values: list[list[str]], *, city_col=None, status
     if date_cols:
         format_date_columns(wb, ws, date_cols, nrows)
     if city_col is not None:
-        color_by_city(wb, ws, padded, city_col, ncols)
+        color_by_city(wb, ws, padded, city_col, ncols, extra_cols=extra_city_cols)
     style_tab(wb, ws, title)
     # auto-size after formatting
     wb.batch_update(
@@ -973,7 +1030,7 @@ def main() -> int:
         pass
 
     tabs = {
-        "לוח זמנים": (build_timeline(days, places, he_places), {"city_col": 2, "date_cols": [0]}),
+        "לוח זמנים": (build_timeline(days, places, he_places), {"city_col": 2, "extra_city_cols": [7], "date_cols": [0]}),
         "ימים": (build_days(days, places, he_places), {"city_col": 2, "date_cols": [0]}),
         "מלונות": (build_hotels(days), {"city_col": 0, "status_col": 5, "date_cols": [1, 2]}),
         "להזמין": (build_bookings(days), {"status_col": 2, "date_cols": [1]}),
@@ -991,6 +1048,7 @@ def main() -> int:
             city_col=opts.get("city_col"),
             status_col=opts.get("status_col"),
             date_cols=opts.get("date_cols"),
+            extra_city_cols=opts.get("extra_city_cols"),
         )
         if title == "ימים":
             format_days_plan_column(wb, wb.worksheet(title), len(values))

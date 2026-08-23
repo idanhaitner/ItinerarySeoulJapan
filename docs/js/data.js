@@ -1298,7 +1298,7 @@ window.PLACES = {
     "id": "gotemba-outlets",
     "name": "Gotemba Premium Outlets",
     "nameJa": "御殿場プレミアム・アウトレット",
-    "city": "Hakone",
+    "city": "Gotemba",
     "country": "JP",
     "tags": [
       "shopping",
@@ -1501,7 +1501,7 @@ window.PLACES = {
     "id": "byodoin",
     "name": "Byodo-in",
     "nameJa": "平等院",
-    "city": "Kyoto",
+    "city": "Uji",
     "country": "JP",
     "tags": [
       "must-see",
@@ -1516,7 +1516,7 @@ window.PLACES = {
     "id": "uji-omotesando",
     "name": "Uji Omotesando",
     "nameJa": "宇治表参道",
-    "city": "Kyoto",
+    "city": "Uji",
     "country": "JP",
     "tags": [
       "must-see",
@@ -1531,7 +1531,7 @@ window.PLACES = {
     "id": "uji-river",
     "name": "Uji River",
     "nameJa": "宇治川",
-    "city": "Kyoto",
+    "city": "Uji",
     "country": "JP",
     "tags": [
       "nature",
@@ -1826,7 +1826,7 @@ window.PLACES = {
     "id": "uji",
     "name": "Uji / Byodo-in",
     "nameJa": "宇治・平等院",
-    "city": "Kyoto",
+    "city": "Uji",
     "country": "JP",
     "tags": [
       "food",
@@ -1924,7 +1924,7 @@ window.PLACES = {
     "id": "nunobiki",
     "name": "Nunobiki Herb Garden / Ropeway",
     "nameJa": "布引ハーブ園",
-    "city": "Osaka",
+    "city": "Kobe",
     "country": "JP",
     "tags": [
       "must-see",
@@ -1939,7 +1939,7 @@ window.PLACES = {
     "id": "kitano-ijinkan",
     "name": "Kitano Ijinkan",
     "nameJa": "北野異人館",
-    "city": "Osaka",
+    "city": "Kobe",
     "country": "JP",
     "tags": [
       "must-see",
@@ -1954,7 +1954,7 @@ window.PLACES = {
     "id": "ikuta-shrine",
     "name": "Ikuta Shrine",
     "nameJa": "生田神社",
-    "city": "Osaka",
+    "city": "Kobe",
     "country": "JP",
     "tags": [
       "shrine",
@@ -1969,7 +1969,7 @@ window.PLACES = {
     "id": "nankinmachi",
     "name": "Nankinmachi (Kobe Chinatown)",
     "nameJa": "南京町",
-    "city": "Osaka",
+    "city": "Kobe",
     "country": "JP",
     "tags": [
       "food",
@@ -1984,7 +1984,7 @@ window.PLACES = {
     "id": "nada-sake",
     "name": "Nada sake breweries (Hakutsuru)",
     "nameJa": "白鶴酒造資料館",
-    "city": "Osaka",
+    "city": "Kobe",
     "country": "JP",
     "tags": [
       "food",
@@ -1999,7 +1999,7 @@ window.PLACES = {
     "id": "mt-maya",
     "name": "Kikuseidai (Mt. Maya)",
     "nameJa": "掬星台（摩耶山）",
-    "city": "Osaka",
+    "city": "Kobe",
     "country": "JP",
     "tags": [
       "must-see",
@@ -2014,7 +2014,7 @@ window.PLACES = {
     "id": "gennkichi",
     "name": "Kobe Beef Gennkichi",
     "nameJa": "神戸牛 源吉",
-    "city": "Osaka",
+    "city": "Kobe",
     "country": "JP",
     "tags": [
       "food",
@@ -2030,7 +2030,7 @@ window.PLACES = {
     "id": "meriken-park",
     "name": "Meriken Park & Harborland",
     "nameJa": "メリケンパーク・ハーバーランド",
-    "city": "Osaka",
+    "city": "Kobe",
     "country": "JP",
     "tags": [
       "must-see",
@@ -2146,7 +2146,7 @@ window.PLACES = {
     "id": "nara-park",
     "name": "Sarusawa-ike / Nara Park",
     "nameJa": "猿沢池・奈良公園",
-    "city": "Osaka",
+    "city": "Nara",
     "country": "JP",
     "tags": [
       "must-see",
@@ -2176,7 +2176,7 @@ window.PLACES = {
     "id": "wakakusa",
     "name": "Mt. Wakakusa",
     "nameJa": "若草山",
-    "city": "Osaka",
+    "city": "Nara",
     "country": "JP",
     "tags": [
       "must-see",
@@ -2191,7 +2191,7 @@ window.PLACES = {
     "id": "todai-ji",
     "name": "Todai-ji (Great Buddha)",
     "nameJa": "東大寺",
-    "city": "Osaka",
+    "city": "Nara",
     "country": "JP",
     "tags": [
       "must-see",
@@ -2221,7 +2221,7 @@ window.PLACES = {
     "id": "yoshikien",
     "name": "Yoshikien Garden",
     "nameJa": "吉城園",
-    "city": "Osaka",
+    "city": "Nara",
     "country": "JP",
     "tags": [
       "must-see",
@@ -2236,7 +2236,7 @@ window.PLACES = {
     "id": "naramachi",
     "name": "Naramachi",
     "nameJa": "奈良町",
-    "city": "Osaka",
+    "city": "Nara",
     "country": "JP",
     "tags": [
       "neighborhood",
@@ -2265,7 +2265,7 @@ window.PLACES = {
     "id": "nakatanidou",
     "name": "Nakatanidou",
     "nameJa": "中谷堂",
-    "city": "Osaka",
+    "city": "Nara",
     "country": "JP",
     "tags": [
       "food",
@@ -2279,7 +2279,7 @@ window.PLACES = {
     "id": "kofuku-ji",
     "name": "Kofuku-ji & Higashimuki",
     "nameJa": "興福寺・東向商店街",
-    "city": "Osaka",
+    "city": "Nara",
     "country": "JP",
     "tags": [
       "temple",
@@ -2336,7 +2336,7 @@ window.PLACES = {
     "id": "ramen-museum",
     "name": "Instant Ramen Museum",
     "nameJa": "カップヌードルミュージアム池田",
-    "city": "Osaka",
+    "city": "Ikeda",
     "country": "JP",
     "tags": [
       "food",
@@ -2781,7 +2781,7 @@ window.PLACES = {
     "id": "shinkyo",
     "name": "Shinkyo Bridge",
     "nameJa": "神橋",
-    "city": "Tokyo",
+    "city": "Nikko",
     "country": "JP",
     "tags": [
       "icon",
@@ -2825,7 +2825,7 @@ window.PLACES = {
     "id": "komachi-dori",
     "name": "Komachi-dori",
     "nameJa": "小町通り",
-    "city": "Tokyo",
+    "city": "Kamakura",
     "country": "JP",
     "tags": [
       "shopping",
@@ -2839,7 +2839,7 @@ window.PLACES = {
     "id": "kamakurakokomae",
     "name": "Kamakurakokomae crossing",
     "nameJa": "鎌倉高校前",
-    "city": "Tokyo",
+    "city": "Kamakura",
     "country": "JP",
     "tags": [
       "icon",
@@ -2853,7 +2853,7 @@ window.PLACES = {
     "id": "enoshima-shrine",
     "name": "Enoshima Shrine",
     "nameJa": "江島神社",
-    "city": "Tokyo",
+    "city": "Enoshima",
     "country": "JP",
     "tags": [
       "shrine",
@@ -2867,7 +2867,7 @@ window.PLACES = {
     "id": "sea-candle",
     "name": "Enoshima Sea Candle",
     "nameJa": "江の島シーキャンドル",
-    "city": "Tokyo",
+    "city": "Enoshima",
     "country": "JP",
     "tags": [
       "view",
@@ -2909,7 +2909,7 @@ window.PLACES = {
     "id": "kamakura",
     "name": "Kamakura / Kotoku-in",
     "nameJa": "鎌倉・高徳院",
-    "city": "Tokyo",
+    "city": "Kamakura",
     "country": "JP",
     "tags": [
       "must-see",
@@ -2924,7 +2924,7 @@ window.PLACES = {
     "id": "hasedera",
     "name": "Hasedera Temple",
     "nameJa": "長谷寺",
-    "city": "Tokyo",
+    "city": "Kamakura",
     "country": "JP",
     "tags": [
       "temple",
@@ -2938,7 +2938,7 @@ window.PLACES = {
     "id": "enoshima",
     "name": "Enoshima",
     "nameJa": "江の島",
-    "city": "Tokyo",
+    "city": "Enoshima",
     "country": "JP",
     "tags": [
       "must-see",
@@ -2953,7 +2953,7 @@ window.PLACES = {
     "id": "nikko-toshogu",
     "name": "Nikko Toshogu Shrine",
     "nameJa": "日光東照宮",
-    "city": "Tokyo",
+    "city": "Nikko",
     "country": "JP",
     "tags": [
       "must-see",
@@ -2968,7 +2968,7 @@ window.PLACES = {
     "id": "chuzenji",
     "name": "Lake Chuzenji",
     "nameJa": "中禅寺湖",
-    "city": "Tokyo",
+    "city": "Nikko",
     "country": "JP",
     "tags": [
       "nature",
@@ -2982,7 +2982,7 @@ window.PLACES = {
     "id": "kegon-falls",
     "name": "Kegon Falls",
     "nameJa": "華厳の滝",
-    "city": "Tokyo",
+    "city": "Nikko",
     "country": "JP",
     "tags": [
       "nature",
@@ -2996,7 +2996,7 @@ window.PLACES = {
     "id": "kasuga",
     "name": "Kasuga Taisha",
     "nameJa": "春日大社",
-    "city": "Osaka",
+    "city": "Nara",
     "country": "JP",
     "tags": [
       "shrine",
