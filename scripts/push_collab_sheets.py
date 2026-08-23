@@ -196,6 +196,15 @@ def place_name(places, pid):
 
 def city_for_item(day, item, places) -> str:
     """Specific trip city for this stop — never Dubai / Tirana / Addis / Tel Aviv."""
+    title = f"{item.get('title') or ''} {item.get('note') or ''}"
+    low = title.lower()
+    # Connection hubs — blank city even when the airport place is tagged Tokyo/Seoul.
+    if re.search(
+        r"dubai|דובאי|(?<![a-z])dxb(?![a-z])|tirana|טירנה|(?<![a-z])tia(?![a-z])|addis|אדיס|tel aviv|תל אביב|(?<![a-z])tlv(?![a-z])",
+        low,
+        re.I,
+    ):
+        return ""
     pid = item.get("placeId")
     if pid and pid in places:
         pc = (places[pid].get("city") or "").strip()
@@ -203,11 +212,6 @@ def city_for_item(day, item, places) -> str:
             return ""
         if pc:
             return CITY.get(pc, pc)
-    title = f"{item.get('title') or ''} {item.get('note') or ''}"
-    low = title.lower()
-    # Connection hubs mentioned in titles — blank city, not a colored trip city.
-    if re.search(r"dubai|דובאי|(?<![a-z])dxb(?![a-z])|tirana|טירנה|(?<![a-z])tia(?![a-z])|addis|אדיס|tel aviv|תל אביב|(?<![a-z])tlv(?![a-z])", low, re.I):
-        return ""
     heuristics = [
         (r"(?<![א-תa-z])nara(?![a-z])|(?<![א-ת])נארה(?![א-ת])", "נארה"),
         (r"(?<![א-תa-z])kobe(?![a-z])|(?<![א-ת])קובה(?![א-ת])|sannomiya|kitano|nunobiki|(?<![a-z])nada(?![a-z])|(?<![a-z])maya(?![a-z])", "קובה"),
