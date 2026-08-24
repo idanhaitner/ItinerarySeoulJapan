@@ -26,6 +26,7 @@ Myeongdong,37.563600,126.986900,"רחוב הקניות התיירותי: K-beaut
 N Seoul Tower,37.551200,126.988200,התצפית הקלאסית של סיאול: שקיעה על העיר ומנעולי אהבה.,attraction,view,Seoul,KR,N서울타워,1/9,n-tower
 Namdaemun Market,37.559500,126.977000,"השוק המרכזי הקלאסי של סיאול: בגדים, מזכרות ואוכל רחוב בלב העיר.",attraction,market,Seoul,KR,남대문시장,1/9,namdaemun
 Namsan Cable Car,37.548600,126.990500,רכבל להר נאמסן בדרך למגדל N. ביום שלישי עולים באוטובוס 01A/01B במקום התור בשקיעה.,attraction,view,Seoul,KR,남산케이블카,,namsan-cable
+Olive Young Myeongdong,37.563900,126.985400,"סניף הדגל של Olive Young ברחוב הראשי של מיונגדונג — K-beauty, קרם הגנה וגדלי נסיעה. tax-free עם דרכון מעל ₩50,000.",attraction,shopping,Seoul,KR,올리브영 명동,1/9,olive-young-myeongdong
 Seokchon Lake,37.509500,127.103500,טיילת אגם ליד מגדל לוטה. נשימה קצרה אחרי הפארק.,attraction,nature,Seoul,KR,석촌호수,31/8,seokchon
 Seongsu-dong,37.544500,127.055700,"הברוקלין של סיאול: חנויות מעצבים, פופ־אפים ובתי קפה.",attraction,food,Seoul,KR,성수동,1/9,seongsu
 Seoul Forest,37.544300,127.037500,פארק גדול ליד סונגסו. הליכה ירוקה בין בתי הקפה.,attraction,park,Seoul,KR,서울숲,,seoul-forest
@@ -33,7 +34,6 @@ Unni Guide Center,37.504500,127.025000,"מרכז בגנגנאם שמתאים מ�
 Yeonnam Chwihyang,37.561900,126.925400,מסעדת אוכל מערבי ביונאם — ארוחת צהריים 30 באוג׳ 15:00. לעיתים תור; נפתח 12:30.,attraction,food,Seoul,KR,연남취향,30/8,yeonnam-chwihyang
 Yeonnam-dong,37.566200,126.925400,"שכונת קפה ובוטיקים שקטה ליד הונגדה, לאורך פסי הרכבת הישנים.",attraction,food,Seoul,KR,연남동,30/8,yeonnam
 Akihabara,35.702300,139.774500,"עיירת החשמל — כלבו אנימה בקומות, משחקי רטרו, ארקיידים ומסעדות מייד. חובה: עשר הקומות של Radio Kaikan, ואז ארקייד GiGO. טיפ: המציאות הנדירות בקומות העליונות — להתחיל למעלה ולרדת; דרכון ל־tax-free.",attraction,shopping,Tokyo,JP,秋葉原,5/9,akihabara
-Ameyoko Market,35.709500,139.774500,שוק רחוב תוסס מתחת למסילות ליד אואינו. נשנושים בדרך לאקיהברה.,attraction,market,Tokyo,JP,アメ横,5/9,ameyoko
 Asakusa / Senso-ji,35.714800,139.796700,"המקדש העתיק של טוקיו (645 לספירה) — הפנס האדום של Kaminarimon, קדרת הקטורת, פגודה בת חמש קומות. חובה: אומיקוג׳י + צילומי Nakamise לפני שהדוכנים נפתחים (~09:30–10:00). טיפ: השטח פתוח 24 שעות והאולם מ־6:00 — לפני 8:30 מנצחים את הקבוצות.",attraction,culture,Tokyo,JP,浅草寺,5/9,asakusa
 Azabudai Hills,35.660500,139.740000,מתחם גורדי השחקים החדש של טוקיו. חנויות ותצפית מקרוב על המגדל האדום.,attraction,culture,Tokyo,JP,麻布台ヒルズ,"4/9, 21/9",azabudai
 Bonus Track / Reload,35.661000,139.667200,"שני מתחמים חדשים בשימוקיטה: ספרים עצמאיים, קליית קפה וישיבה בחוץ.",attraction,food,Tokyo,JP,ボーナストラック / リロード,6/9,bonus-track
@@ -41,35 +41,26 @@ Cat Street,35.665800,139.703800,"רחוב אחורי נמוך של סטריטו�
 Cross Shinjuku Vision (3D Cat),35.691200,139.701800,חתול תלת־ממדי ענק על בניין ביציאה המזרחית של שינג׳וקו. עצירת 2 דקות.,attraction,icon,Tokyo,JP,クロス新宿ビジョン,2/9,cross-shinjuku-vision
 Daikanyama T-Site,35.649200,139.703200,"כפר חנויות הספרים של Tsutaya — שלושה בניינים מכוסי קיסוס, ספרי אמנות, ויניל וקפה מרפסת. חובה: קיר המגזינים והמרפסת בערב. טיפ: לא במסלול; 10 דק׳ משיבויה אם מדלגים על PARCO.",attraction,culture,Tokyo,JP,代官山T-SITE,,daikanyama
 Daimaru Tokyo depachika,35.681400,139.767900,קומת האוכל של הכלבו בתחנה. Tokyo Banana ומתנות מתוקות הביתה.,attraction,food,Tokyo,JP,大丸東京店,25/9,daimaru-tokyo
-Enoshima,35.299700,139.480800,אי קטן שמחובר לגשר. סמטאות שעולות למקדש ושקיעה מול הים.,attraction,nature,Tokyo,JP,江の島,24/9,enoshima
-Enoshima Sea Candle,35.299500,139.475800,מגדלור־תצפית על האי. השקיעה הכי טובה באנושימה.,attraction,view,Tokyo,JP,江の島シーキャンドル,24/9,sea-candle
-Enoshima Shrine,35.300300,139.479600,מקדש בראש האי אנושימה. מגיעים אחרי עלייה בסמטאות.,attraction,shrine,Tokyo,JP,江島神社,24/9,enoshima-shrine
+Don Quijote Kabukicho,35.695500,139.702800,"Donki ענק בקבוקיצ׳ו, שתי דקות מ־Gracery — נשנושים, יופי ומזכרות בניאון. פתוח 24/7; tax-free עם דרכון. קונים בערב הראשון בשינג׳וקו כדי שערב ראשון יישאר לאריזה.",attraction,shopping,Tokyo,JP,ドン・キホーテ 歌舞伎町店,2/9,don-quijote-kabukicho
 Ghibli Museum,35.696200,139.570300,"המוזיאון ההפכפך של מיאזאקי במיטאקה — כרטיסים רק במכירה מראש ב־10 לחודש הקודם (10:00 שעון יפן, Lawson), בלי מכירה בדלת. לא במסלול אלא אם יופיעו החזרות.",attraction,park,Tokyo,JP,三鷹の森ジブリ美術館,,ghibli
-Ginza,35.671200,139.764900,"הרחוב המלוטש של טוקיו — חנויות דגל ב־12 קומות (Uniqlo, Itoya), Ginza Six ואולמות אוכל במרתף. חובה: קומת האוכל של Mitsukoshi + גן הגג החינמי של Ginza Six. טיפ: בסופי שבוע וחגים Chuo-dori נסגר לרכבים 12:00–18:00 (אפר׳–ספט׳).",attraction,food,Tokyo,JP,銀座,23/9,ginza
+Ginza,35.671200,139.764900,"הרחוב המלוטש של טוקיו — חנויות דגל ב־12 קומות (Uniqlo, Itoya), Ginza Six ואולמות אוכל במרתף. חובה: קומת האוכל של Mitsukoshi + גן הגג החינמי של Ginza Six. טיפ: בסופי שבוע וחגים Chuo-dori נסגר לרכבים 12:00–18:00 (אפר׳–ספט׳).",attraction,food,Tokyo,JP,銀座,"22/9, 23/9",ginza
 Hama-rikyu Gardens,35.659700,139.763500,"שטח ציד הברווזים של השוגון על מפרץ טוקיו — בריכות מי ים, אי בית תה, וגורדי שחקים מעל האורנים. חובה: בית התה Nakajima-no-ichiken באמצע הבריכה. טיפ: נפתח 9:00, 300 ין, כניסה אחרונה 16:30; 10 דק׳ מגינזה 8 — הגן שחסר בלינה הזו.",attraction,park,Tokyo,JP,浜離宮恩賜庭園,23/9,hamarikyu
 Harmonica Yokocho,35.703300,139.579200,סמטאות מקורות עם אוכל וברים ליד תחנת קיצ׳וג׳י.,attraction,food,Tokyo,JP,ハモニカ横丁,6/9,harmonica
-Hasedera Temple,35.312800,139.533300,מקדש על גבעה בקמאקורה עם גנים ונוף למפרץ.,attraction,temple,Tokyo,JP,長谷寺,24/9,hasedera
 Imperial Palace East Gardens,35.686500,139.757500,"גני מצודת אדו חינם כ־10 דק׳ מתחנת טוקיו — הגן הפנימי שאי אפשר לבקר בו בטיול הזה. חובה: לדלג. טיפ: סגור בימי שני ושישי (25/9 זה שישי); Kokyo Gaien / ניג׳ובאשי ליד הוא התחליף, פתוח 24/7.",attraction,park,Tokyo,JP,皇居東御苑,,imperial-east
 Inokashira Park,35.700000,139.575000,פארק אגם עם סירות ליד קיצ׳וג׳י. הליכה ירוקה רגועה.,attraction,park,Tokyo,JP,井の頭恩賜公園,6/9,inokashira
 Isetan Shinjuku depachika,35.691700,139.704600,"מרתף האוכל הכי רציני בכלבו ביפן — וואגיו, ווגאשי עונתי, בנטו ארוז ומרתף שהמקומיים באמת משתמשים בו. חובה: כמה דלפקים ואז ישיבה באיט־אין. טיפ: בדרך מגיון לתחנת שינג׳וקו; דרכון ל־tax-free למעלה, מזומן או IC במרתף.",attraction,food,Tokyo,JP,伊勢丹新宿店,2/9,isetan-shinjuku
 Kabukicho,35.695000,139.702600,"רובע חיי הלילה הניאון ליד המלון בשינג׳וקו. לטייל בחוץ, לא להיכנס למועדונים חשודים.",attraction,nightlife,Tokyo,JP,歌舞伎町,2/9,kabukicho
-Kamakura / Kotoku-in,35.316700,139.535700,פסל הבודהה הענק (דאיבוצו) יושב בחוץ במקדש Kotoku-in.,attraction,temple,Tokyo,JP,鎌倉・高徳院,24/9,kamakura
-Kamakurakokomae crossing,35.306600,139.500400,מעבר החצייה המפורסם עם המסילה והים. עצירת Enoden קצרה לצילום.,attraction,icon,Tokyo,JP,鎌倉高校前,24/9,kamakurakokomae
 Kappabashi Street,35.715500,139.787000,"800 מ׳ של חנויות ציוד למסעדות בין אסאקוסה לאואינו — סכינים מחושלים, קרמיקה, אוכל פלסטיק מטעה. חובה: סכין מטבח עם חריטת שם במקום. טיפ: רוב החנויות נסגרות ~17:00; הגדולות עושות tax-free עם דרכון.",attraction,food,Tokyo,JP,合羽橋道具街,5/9,kappabashi
-Kegon Falls,36.738000,139.445000,מפל גבוה ליד האגם. יורדים במעלית לתצפית הקרובה.,attraction,nature,Tokyo,JP,華厳の滝,22/9,kegon-falls
 Kichijoji,35.703100,139.579800,"נבחרת שוב ושוב כשכונה הכי טובה למגורים בטוקיו — ארקדת Sun Road, בוטיקים, קפה ג׳אז ליד אינוקאשירה. חובה: התור למנצ׳י־קאצו של Satou. טיפ: קודם לולאת הפארק, צהריים אחרי.",attraction,food,Tokyo,JP,吉祥寺,6/9,kichijoji
 Kokyo Gaien & Nijubashi,35.679000,139.755000,"הגן הטקסי של הארמון — מדשאות אורנים, תעלות ברבורים, ותצפית ניג׳ובאשי עם המגדל מאחור. חובה: ניג׳ובאשי מעבר למואט מהכיכר. טיפ: חינם ופתוח תמיד — בניגוד לגנים המזרחיים שלידם, שסגורים בימי שני ושישי (לכן זו תמונת הארמון של 25/9).",attraction,park,Tokyo,JP,皇居外苑・二重橋,25/9,kokyo-gaien
-Komachi-dori,35.319200,139.551000,רחוב מזכרות ואוכל רחוב ליד תחנת קמאקורה.,attraction,food,Tokyo,JP,小町通り,24/9,komachi-dori
-Lake Chuzenji,36.739000,139.447000,אגם הררי מעל ניקו. אוויר קריר וצהריים מול המים.,attraction,nature,Tokyo,JP,中禅寺湖,22/9,chuzenji
 Maguro Mart,35.707000,139.664000,מסעדת טונה בנאקאנו. הוזמן ל־21/9 ב־20:45 · מזומן בלבד.,attraction,food,Tokyo,JP,マグロマート,21/9,maguro-mart
 Meiji Jingu,35.676400,139.699300,"מקדש שינטו לקיסר מייג׳י מוסתר ביער של 100,000 עצים — שקט מוחלט חמש דקות מהראג׳וקו. חובה: הטוריי הענק מקפריס וקיר חביות הסאקה. טיפ: פתוח מזריחה; לפני 9:00 אפשר לתפוס תהלוכת חתונה במקום אוטובוסים.",attraction,shrine,Tokyo,JP,明治神宮,3/9,meiji-jingu
-Miyashita Park,35.661600,139.701100,פארק על גג קניון ליד תחנת שיבויה. עצירת קפה לפני Shibuya Sky.,attraction,park,Tokyo,JP,宮下パーク,3/9,miyashita-park
+Miyashita Park,35.661600,139.701100,פארק על גג קניון ליד תחנת שיבויה. עצירת קפה לפני סניף Street Kart ביום חמישי.,attraction,park,Tokyo,JP,宮下パーク,3/9,miyashita-park
 Nakameguro / Meguro River,35.644200,139.698800,"בוטיקים וקפה לאורך תעלת מגורו, תחנה אחת דרומית לדאיקאנמה. חובה: שביל הדובדבן לאורך התעלה (יפה גם מחוץ לעונה). טיפ: לא מתוזמן — רק אם מוותרים על בלוק קניות בשיבויה.",attraction,food,Tokyo,JP,中目黒,,nakameguro
 Nakano Broadway,35.709300,139.665200,"מבוך קומות של וינטג׳, דמויות, Mandarake ושעונים יד־שנייה.",attraction,culture,Tokyo,JP,中野ブロードウェイ,21/9,nakano-broadway
 New York Bar (Park Hyatt),35.685500,139.690500,"בר הג׳אז מ־Lost in Translation בקומה 52 של Park Hyatt שינג׳וקו. חובה: מושב ליד החלון בשעה כחולה. טיפ: נפתח מחדש בדצמ׳ 2025; להזמין שבועות מראש, לא walk-in.",attraction,view,Tokyo,JP,ニューヨークバー,,ny-bar
 Nihonbashi,35.684000,139.774400,"הגשר ההיסטורי שממנו נמדדה יפן, פלוס Pokémon Center DX במתחם ליד.",attraction,icon,Tokyo,JP,日本橋,23/9,nihonbashi
-Nikko Toshogu Shrine,36.758100,139.598800,"המקדש המוזהב והמפואר ביותר בניקו (UNESCO). כניסה אחרונה ~16:00, סגירה 17:00.",attraction,shrine,Tokyo,JP,日光東照宮,22/9,nikko-toshogu
-Nonbei Yokocho,35.659200,139.701600,"רצועת פנסים של ~30 איזאקאיה זעירים ליד מסילות JR, שתי דקות מיציאת Shibuya Sky. חובה: דלפק אחד, היייבול אחד, רכבות מעליכם. טיפ: רוב המקומות רוצים מזומן ודמי כיסוי קטנים; ללכת ישר אחרי ה־Sky לפני הרעש של Center-gai.",attraction,food,Tokyo,JP,のんべい横丁,3/9,nonbei-yokocho
+Nonbei Yokocho,35.659200,139.701600,"רצועת פנסים של ~30 איזאקאיה זעירים ליד מסילות JR, שתי דקות מאזור Street Kart / Shibuya Sky. חובה: דלפק אחד, היייבול אחד, רכבות מעליכם. טיפ: רוב המקומות רוצים מזומן ודמי כיסוי קטנים; ארוחת ערב ביום חמישי אחרי הקארט, לפני הרעש של Center-gai.",attraction,food,Tokyo,JP,のんべい横丁,3/9,nonbei-yokocho
 Odaiba / DiverCity Gundam,35.625100,139.775500,"אי מלאכותי במפרץ — גאנדאם יוניקורן 20 מ׳, קניון DiverCity, פסל חירות רטרו. חובה: מופעי טרנספורמציה 11:00/13:00/15:00/17:00 (מופעי אור אחרי החשכה). טיפ: הפארק הימי ממסגר את Rainbow Bridge עם העיר מאחור — הכי יפה באור מאוחר.",attraction,park,Tokyo,JP,お台場,4/9,odaiba
 Omoide Yokocho (Memory Lane),35.693500,139.699500,"סמטת יקיטורי ממלחמת העולם השנייה, פנסים אדומים מתחת למסילות שינג׳וקו. חובה: שיפודי פחם + בירה, כתף-אל-כתף בדלפק. טיפ: כמעט רק מזומן ודמי ישיבה נורמליים; לשבת לפני 21:00.",attraction,food,Tokyo,JP,思い出横丁,2/9,omoide-yokocho
 Omotesando,35.665200,139.712200,"שדרת הזלקובה של חנויות דגל — השאנז־אליזה של טוקיו. חובה: בניין הקריסטל של פראדה וחזית דיור של SANAA. טיפ: חנויות דגל עושות tax-free מעל 5,000 ין — דרכון בדלפק.",attraction,shopping,Tokyo,JP,表参道,3/9,omotesando
@@ -79,14 +70,13 @@ Senkyaku Banrai (Toyosu),35.645000,139.784200,מתחם אוכל ליד שוק ט
 Shiba Park,35.654800,139.748500,מדשאות מול המגדל האדום. זווית לילה רחבה ופסטורלית.,attraction,park,Tokyo,JP,芝公園,21/9,shiba-park
 Shibuya Crossing,35.659500,139.700500,"עד 3,000 איש בכל אור ירוק בהצלבה הסואנת בעולם, מתחת למסכי וידאו. חובה: חלון הסטארבקס ב־Tsutaya או Mag's Park מעל 109. טיפ: לחצות כמה פעמים — לילות גשם עם מטריות הם הכי קולנועיים.",attraction,icon,Tokyo,JP,渋谷スクランブル交差点,3/9,shibuya-crossing
 Shibuya PARCO,35.661900,139.698300,"קומה 6 לחובבי פופ: Nintendo, Pokémon Center, JUMP Shop ו־Capcom.",attraction,shopping,Tokyo,JP,渋谷PARCO,3/9,shibuya-parco
-Shibuya Sky,35.658500,139.702400,"דק פתוח 229 מ׳ מעל ההצלבה — פינות זכוכית, מדשאת גג, פוג׳י בשקיעה כשבהיר. חובה: הפינה בדיוק מעל ההצלבה בשעה הזהובה. טיפ: כרטיסים נפתחים בדיוק 4 שבועות מראש בחצות יפן ונחטפים בדקות — ב־3/9 שקיעה ~18:05, כניסה 17:00–17:30. בלי חצובות.",attraction,view,Tokyo,JP,渋谷スカイ,3/9,shibuya-sky
+Shibuya Sky,35.658500,139.702400,"דק פתוח 229 מ׳ מעל ההצלבה — פינות זכוכית, מדשאת גג, פוג׳י בשקיעה כשבהיר. חובה: הפינה מעל ההצלבה בשעה הזהובה. טיפ: הוזמן ל־6/9 ~16:45 (לא 3/9); שקיעה ~18:05. להגיע 15–20 דק׳ מוקדם; בלי חצובות. Street Kart ביום חמישי — להישאר לשקיעה, לא לרוץ מהסיפון.",attraction,view,Tokyo,JP,渋谷スカイ,6/9,shibuya-sky
 Shimokitazawa,35.661600,139.668300,"רובע וינטג׳, תקליטים וקפה אינדי. לא לפספס את Bonus Track / Reload.",attraction,shopping,Tokyo,JP,下北沢,6/9,shimokitazawa
 Shin-Okubo Koreatown,35.701300,139.700100,"קוריאה־טאון של טוקיו, 10 דק׳ צפונית למלון. אוכל רחוב וקוסמטיקה אם יש כוח.",attraction,food,Tokyo,JP,新大久保,,shin-okubo
 Shinjuku,35.693800,139.703400,"חדר המנוע הניאון של טוקיו — התחנה העמוסה בעולם, חנויות ענק וקומות איזאקאיה. חובה: ניאון יסוקוני־דורי משער קבוקיצ׳ו. טיפ: לנווט לפי ציוני דרך ביציאה המזרחית; התחנה עצמה בולעת מתחילים.",attraction,food,Tokyo,JP,新宿,,shinjuku
 Shinjuku Golden Gai,35.693800,139.704700,"שש סמטאות פנסים, 200+ ברים בגודל ארון — לכל אחד נושא וקבועים. חובה: לבחור דלת לפי המוזיקה ולדבר עם הבעלים. טיפ: לבדוק שלטי דמי כיסוי (~500–1,000 ין נורמלי); כוס אחת לכל בר, ואז לעבור.",attraction,nightlife,Tokyo,JP,新宿ゴールデン街,2/9,golden-gai
 Shinjuku Gyoen,35.685200,139.710100,"גן אימפריאלי לשעבר שמשלב נוף צרפתי, אנגלי ויפני — הנשימה העמוקה ביותר בטוקיו. חובה: הבריכה והביתן בגן היפני. טיפ: 500 ין; עד סוף ספטמבר פתוח עד 18:00 (כניסה אחרונה 17:30), סגור בימי שני; בלי אלכוהול.",attraction,park,Tokyo,JP,新宿御苑,2/9,shinjuku-gyoen
-Shinkyo Bridge,36.753600,139.600400,הגשר האדום על הנהר בכניסה למתחם המקדשים בניקו. עצירת צילום.,attraction,icon,Tokyo,JP,神橋,22/9,shinkyo
-Street Kart Tokyo,35.658500,139.701500,"קארטים אמיתיים בתחפושת שזולגים בתוך התנועה בלילה — אבסורדי, רועש, בלתי נשכח. חובה: לנהוג בקניוני הניאון בתחפושת מלאה. טיפ: IDP פיזי לפי אמנת 1949 + דרכון חובה (רישיון ישראלי או דיגיטלי = סירוב בלי החזר); תור ערב ~19:00 ולהתלבש חם.",attraction,park,Tokyo,JP,ストリートカート東京,6/9,street-kart
+Street Kart Tokyo,35.658500,139.701500,"קארטים אמיתיים בתחפושת שזולגים בתוך התנועה בלילה — אבסורדי, רועש, בלתי נשכח. חובה: לנהוג בקניוני הניאון בתחפושת מלאה. טיפ: IDP פיזי לפי אמנת 1949 + דרכון חובה (רישיון ישראלי או דיגיטלי = סירוב בלי החזר); תור יום חמישי 3/9 ~19:00, לא אחרי Shibuya Sky; להתלבש חם.",attraction,park,Tokyo,JP,ストリートカート東京,3/9,street-kart
 Takeshita Street,35.670200,139.705000,"מסדרון אופנת הנוער של הראג׳וקו, 350 מ׳ — קרפים, פוריקורה ומרצ׳ איידולים. חובה: קרפ קצפת מ־Marion Crepes. טיפ: חנויות נפתחות ~10:00–10:30 וזה כתף-אל-כתף עד הצהריים — לבוא ממש בפתיחה.",attraction,food,Tokyo,JP,竹下通り,3/9,takeshita
 teamLab Borderless,35.660600,139.740300,מוזיאון דיגיטלי בתוך Azabudai Hills. חדרים בלי סוף; כרטיס עם שעה אם הולכים.,attraction,culture,Tokyo,JP,チームラボボーダレス,21/9,teamlab-borderless
 teamLab Planets Tokyo,35.649000,139.786800,"אמנות דיגיטלית יחפה שצועדים בתוכה — מים עד הברך עם קוי מוקרן, חדרי מראות, גן פרחים צף. חובה: אורות הקוי מתפזרים סביב הקרסוליים בחדר המים. טיפ: חובה כרטיס עם שעה; מכנסיים שאפשר להפשיל, לוקרים במקום, כשעה וחצי–שעתיים.",attraction,culture,Tokyo,JP,チームラボプラネッツ,4/9,teamlab-planets
@@ -108,7 +98,6 @@ Fuji-Q Highland,35.487100,138.780600,פארק רכבות הרים מהקשים �
 Lawson Kawaguchiko Station,35.498300,138.768900,חנות הנוחות המפורסמת עם הר פוג׳י ברקע. צילום של 30 שניות ליד התחנה.,attraction,icon,Kawaguchiko,JP,ローソン河口湖駅前,"7/9, 8/9, 9/9",fuji-lawson
 Mount Fuji Panoramic Ropeway,35.505400,138.760700,רכבל קצר לנקודת תצפית על האגם ופוג׳י מלמעלה.,attraction,view,Kawaguchiko,JP,富士山パノラマロープウェイ,7/9,fuji-panoramic-ropeway
 Oishi Park,35.524500,138.747000,פארק על שפת האגם מול פוג׳י. התצפית הכי פתוחה בקו האדום.,attraction,view,Kawaguchiko,JP,大石公園,7/9,oishi-park
-Gotemba Premium Outlets,35.308600,138.936500,אאוטלט גדול עם נוף לפוג׳י. עצירת קניות בדרך מקוואגוצ׳יקו להקונה.,attraction,shopping,Hakone,JP,御殿場プレミアム・アウトレット,9/9,gotemba-outlets
 Hakone Open-Air Museum,35.244500,139.051500,מוזיאון פסלים באוויר הפתוח בהקונה.,attraction,culture,Hakone,JP,箱根彫刻の森美術館,,open-air
 Hakone Shrine,35.205100,139.025600,הטוריי האדום הצף באגם אשי. צילום הקלאסיקה של הקונה.,attraction,shrine,Hakone,JP,箱根神社,10/9,hakone-shrine
 Hakone-Yumoto,35.233500,139.106800,"עיירת האונסן של הקונה ליד התחנה. חנויות, קפה ומסלול לריוקאן.",attraction,food,Hakone,JP,箱根湯本,"9/9, 10/9",hakone-yumoto
@@ -116,7 +105,6 @@ Lake Ashi Pirate Ship,35.206500,139.025000,"שיט תיירותי על האגם 
 Owakudani,35.242400,139.020400,"עמק געשי בהקונה: קיטור, ריח גופרית וביצים שחורות. מגיעים ברכבל.",attraction,nature,Hakone,JP,大涌谷,10/9,owakudani
 Adashino Nenbutsu-ji,35.026700,135.664500,"במבוק ואלפי פסלי בודהה באבן. ליד אוטגי, בדרך לארשיאמה.",attraction,temple,Kyoto,JP,化野念仏寺,13/9,adashino
 Arashiyama Bamboo Grove,35.017300,135.672100,"שביל הבמבוק האייקוני של ארשיאמה. עמוס, אבל שווה כמה דקות.",attraction,nature,Kyoto,JP,竹林の小径,13/9,bamboo
-Byodo-in,34.889400,135.807700,היכל הפניקס באוג׳י — המקדש שמופיע על מטבע ה־10 ין.,attraction,temple,Kyoto,JP,平等院,12/9,byodoin
 Fushimi Inari Taisha,34.967100,135.772700,אלפי שערי טוריי אדומים במעלה ההר. להגיע מוקדם לפני הקהל.,attraction,shrine,Kyoto,JP,伏見稲荷大社,12/9,fushimi-inari
 Ginkaku-ji,35.026400,135.798600,"ביתן הכסף: מקדש זן עם גן חול, לא מצופה כסף באמת.",attraction,temple,Kyoto,JP,銀閣寺,15/9,ginkakuji
 Gion,35.003700,135.778800,"רובע הגיישות של קיוטו. לצלם בכבוד, בלי לרדוף אחרי מישהי בקימונו.",attraction,neighborhood,Kyoto,JP,祇園,11/9,gion
@@ -141,42 +129,55 @@ teamLab Biovortex Kyoto,34.982800,135.756800,"ה־teamLab הגדול ביפן, �
 Tenryu-ji,35.015600,135.673600,גן זן UNESCO ליד חורשת הבמבוק. שקט יחסית לצילום.,attraction,temple,Kyoto,JP,天龍寺,13/9,tenryuji
 Tofuku-ji,34.960600,135.780000,מקדש זן ליד פושימי — גשר Tsutenkyo וגנים.,attraction,temple,Kyoto,JP,東福寺,,tofukuji
 Togetsukyo Bridge,35.013500,135.677800,הגשר הראשי של ארשיאמה מעל הנהר. נקודת הציון של הרובע.,attraction,nature,Kyoto,JP,渡月橋,13/9,togetsukyo
-Uji / Byodo-in,34.889400,135.807700,"בירת המאצ׳ה של יפן, עם מקדש Byodo-in.",attraction,temple,Kyoto,JP,宇治・平等院,,uji
-Uji Omotesando,34.890500,135.808800,רחוב חנויות תה היסטורי. המקום לטעום מאצ׳ה וקינוחים.,attraction,food,Kyoto,JP,宇治表参道,12/9,uji-omotesando
-Uji River,34.891200,135.809500,טיילת וגשרים מול המקדש באוג׳י. הליכה קצרה אחרי Byodo-in.,attraction,nature,Kyoto,JP,宇治川,12/9,uji-river
 Amerikamura,34.672800,135.498500,רובע אופנת נוער וערב קל ליד שינסאיבאשי.,attraction,shopping,Osaka,JP,アメリカ村,,amerikamura
-Dotonbori,34.668700,135.501300,"נהר הניאון של אוסקה: שלטי גיזה, טקאויאקי ואוכל רחוב עד הלילה.",attraction,food,Osaka,JP,道頓堀,"15/9, 19/9",dotonbori
+Dotonbori,34.668700,135.501300,"נהר הניאון של אוסקה: שלטי גיזה, טקאויאקי ואוכל רחוב עד הלילה.",attraction,food,Osaka,JP,道頓堀,"15/9, 18/9, 19/9",dotonbori
 Gango-ji & Koshi-no-Ie,34.677800,135.831500,"מקדש יונסקו בנאראמאצ׳י, ולידו בית סוחר משוחזר מתקופת אדו.",attraction,temple,Osaka,JP,元興寺・格子の家,17/9,gango-ji
 Hozenji Yokocho,34.667800,135.502500,סמטת פנסים עם אזוב ליד דוטונבורי. שקטה יותר מהנהר הראשי.,attraction,culture,Osaka,JP,法善寺横丁,"15/9, 18/9",hozenji
-Ikuta Shrine,34.695000,135.188600,מקדש שינטו עתיק מוסתר בחורשה קטנה בלב סנומיה.,attraction,shrine,Osaka,JP,生田神社,20/9,ikuta-shrine
-Instant Ramen Museum,34.819500,135.425800,מוזיאון שבו מכינים את ה־Cup Noodle שלכם. כיף קליל באיקדה.,attraction,park,Osaka,JP,カップヌードルミュージアム池田,18/9,ramen-museum
-Kasuga Taisha,34.681400,135.848200,מקדש בנארה עם אלפי פנסי אבן וברונזה ביער — להגיע לפני העומס.,attraction,shrine,Osaka,JP,春日大社,17/9,kasuga
-Kikuseidai (Mt. Maya),34.733600,135.203600,תצפית Kikuseidai על הר מאיה — נוף הלילה המפורסם של קובה. רכבל + כבל.,attraction,view,Osaka,JP,掬星台（摩耶山）,20/9,mt-maya
-Kitano Ijinkan,34.698500,135.190000,בתי סוחרים אירופיים ישנים על גבעת קיטנו. הכי יפה בבוקר שקט.,attraction,culture,Osaka,JP,北野異人館,20/9,kitano-ijinkan
-Kobe Beef Gennkichi,34.693700,135.192500,טפניאקי בשר קובה ליד סנומיה. הוזמן ל־20/9 ב־19:30.,attraction,food,Osaka,JP,神戸牛 源吉,20/9,gennkichi
-Kofuku-ji & Higashimuki,34.683200,135.831400,"פגודת חמש הקומות של קופוקו־ג׳י, ואז מדרחוב Higashimuki ליד התחנה.",attraction,temple,Osaka,JP,興福寺・東向商店街,17/9,kofuku-ji
 Kuromon Market,34.666400,135.506400,"שוק הדגים והאוכל של אוסקה. שיפודים, פירות ים ונשנושים.",attraction,food,Osaka,JP,黒門市場,18/9,kuromon
-Meriken Park & Harborland,34.682500,135.186500,"פארק הנמל של קובה: מגדל פורט מואר, טיילת ו־Harborland בלילה.",attraction,view,Osaka,JP,メリケンパーク・ハーバーランド,20/9,meriken-park
-Mt. Wakakusa,34.691700,135.854700,הר דשא קצר מעל נארה. 15–20 דקות טיפוס ותצפית עם איילים.,attraction,view,Osaka,JP,若草山,17/9,wakakusa
-Nada sake breweries (Hakutsuru),34.712900,135.247800,מוזיאון מבשלת Hakutsuru בנאדה — סיור וטעימות. חלופה: Kikumasamune. כניסה אחרונה ~16:00.,attraction,culture,Osaka,JP,白鶴酒造資料館,20/9,nada-sake
-Nakatanidou,34.682400,135.829800,"מופע הכנת מוצ׳י המהיר בנארה, ואז מוצ׳י ירוק חם וטרי.",attraction,food,Osaka,JP,中谷堂,17/9,nakatanidou
-Nankinmachi (Kobe Chinatown),34.688500,135.189000,"צ׳יינהטאון הקטן של קובה. כיסוני סטימר, באנס ואוכל רחוב בין מוטומאצ׳י לסנומיה.",attraction,food,Osaka,JP,南京町,20/9,nankinmachi
-Naramachi,34.675600,135.829800,"שכונת הסוחרים ההיסטורית של נארה. סומן, קארי ובתי מאצ׳יה.",attraction,culture,Osaka,JP,奈良町,17/9,naramachi
 Nigatsu-do,34.689200,135.844400,אולם משנה של טודאי־ג׳י עם מרפסת תצפית מעל נארה.,attraction,temple,Osaka,JP,二月堂,17/9,nigatsu-do
-Nunobiki Herb Garden / Ropeway,34.719400,135.190600,"רכבל שינ־קובה לגני התבלינים, נוף למפרץ והליכה קצרה למפלי נונוביקי.",attraction,view,Osaka,JP,布引ハーブ園,20/9,nunobiki
 Osaka Castle,34.687300,135.526200,טירה משוחזרת בפארק גדול. בוקר טוב לפני שינסקאי.,attraction,culture,Osaka,JP,大阪城,19/9,osaka-castle
-Sarusawa-ike / Nara Park,34.681900,135.830000,"אגם סארוסאווה ופארק האיילים — הכי יפה מוקדם, לפני האוטובוסים.",attraction,park,Osaka,JP,猿沢池・奈良公園,17/9,nara-park
 Shinsaibashi,34.675000,135.501300,"ארקדת הקניות הראשית של אוסקה, ליד נמבה והמלון.",attraction,shopping,Osaka,JP,心斎橋,,shinsaibashi
 Shinsekai / Tsutenkaku,34.652500,135.506300,אוסקה רטרו סביב מגדל צוטנקאקו: קושיקאצו וניאון ישן.,attraction,food,Osaka,JP,新世界・通天閣,19/9,shinsekai
 teamLab Botanical Garden Osaka,34.611900,135.523600,לא במסלול (נבחר Biovortex בקיוטו).,attraction,park,Osaka,JP,チームラボ ボタニカルガーデン 大阪,,teamlab-botanical
 Tenjinbashi-suji,34.704500,135.511000,הארקדה הארוכה ביפן. קניות מקומיות מקורות לאורך קילומטרים.,attraction,food,Osaka,JP,天神橋筋商店街,18/9,tenjinbashi
-Todai-ji (Great Buddha),34.689000,135.839800,הבודהה הענק (Daibutsu) באולם העץ הגדול ביפן.,attraction,temple,Osaka,JP,東大寺,17/9,todai-ji
 Ukimido Pavilion,34.685400,135.843700,ביתן עץ משושה שצף על אגם סאגי בפארק נארה.,attraction,park,Osaka,JP,浮見堂,17/9,ukimido
 Umeda Sky Building,34.705500,135.489700,שני מגדלים מחוברים עם תצפית “גן מרחף” על הגג.,attraction,view,Osaka,JP,梅田スカイビル,19/9,umeda-sky
 Universal Studios Japan,34.665400,135.432300,יוניברסל סטודיוס יפן — פארק שעשועים שלם. יש לכם Express Pass 7 ליום 16/9.,attraction,park,Osaka,JP,ユニバーサル・スタジオ・ジャパン,16/9,usj
-Yoshikien Garden,34.685500,135.836400,שלושה גנים יפניים מסורתיים. חינם לתיירים זרים בהצגת דרכון.,attraction,park,Osaka,JP,吉城園,17/9,yoshikien
 Itsukushima Shrine,34.296000,132.319800,הטורי הצף של מיאג׳ימה.,attraction,shrine,Hiroshima,JP,厳島神社,,miyajima
 Mt. Misen Ropeway,34.290500,132.318500,פסגת האי מיאג׳ימה.,attraction,view,Hiroshima,JP,弥山ロープウェイ,,misen
 Okonomi-mura,34.393800,132.462200,אולם okonomiyaki ב־Hiroshima.,attraction,food,Hiroshima,JP,お好み村,,okonomiyaki
 Peace Memorial Park,34.395500,132.453600,כיפת השלום והמוזיאון בהירושימה.,attraction,culture,Hiroshima,JP,平和記念公園,,peace-park
 Shukkeien Garden,34.399500,132.467400,גן נוף מיניאטורי.,attraction,park,Hiroshima,JP,縮景園,,shukkeien
+Enoshima,35.299700,139.480800,אי קטן שמחובר לגשר. סמטאות שעולות למקדש ושקיעה מול הים.,attraction,nature,Enoshima,JP,江の島,24/9,enoshima
+Enoshima Sea Candle,35.299500,139.475800,מגדלור־תצפית על האי. השקיעה הכי טובה באנושימה.,attraction,view,Enoshima,JP,江の島シーキャンドル,24/9,sea-candle
+Enoshima Shrine,35.300300,139.479600,מקדש בראש האי אנושימה. מגיעים אחרי עלייה בסמטאות.,attraction,shrine,Enoshima,JP,江島神社,24/9,enoshima-shrine
+Gotemba Premium Outlets,35.308600,138.936500,אאוטלט גדול עם נוף לפוג׳י. עצירת קניות בדרך מקוואגוצ׳יקו להקונה.,attraction,shopping,Gotemba,JP,御殿場プレミアム・アウトレット,9/9,gotemba-outlets
+Instant Ramen Museum,34.819500,135.425800,מוזיאון שבו מכינים את ה־Cup Noodle שלכם. כיף קליל באיקדה.,attraction,park,Ikeda,JP,カップヌードルミュージアム池田,18/9,ramen-museum
+Hasedera Temple,35.312800,139.533300,מקדש על גבעה בקמאקורה עם גנים ונוף למפרץ.,attraction,temple,Kamakura,JP,長谷寺,24/9,hasedera
+Kamakura / Kotoku-in,35.316700,139.535700,פסל הבודהה הענק (דאיבוצו) יושב בחוץ במקדש Kotoku-in.,attraction,temple,Kamakura,JP,鎌倉・高徳院,24/9,kamakura
+Kamakurakokomae crossing,35.306600,139.500400,מעבר החצייה המפורסם עם המסילה והים. עצירת Enoden קצרה לצילום.,attraction,icon,Kamakura,JP,鎌倉高校前,24/9,kamakurakokomae
+Komachi-dori,35.319200,139.551000,רחוב מזכרות ואוכל רחוב ליד תחנת קמאקורה.,attraction,food,Kamakura,JP,小町通り,24/9,komachi-dori
+Ikuta Shrine,34.695000,135.188600,מקדש שינטו עתיק מוסתר בחורשה קטנה בלב סנומיה.,attraction,shrine,Kobe,JP,生田神社,20/9,ikuta-shrine
+Kikuseidai (Mt. Maya),34.733600,135.203600,תצפית Kikuseidai על הר מאיה — נוף הלילה המפורסם של קובה. רכבל + כבל.,attraction,view,Kobe,JP,掬星台（摩耶山）,20/9,mt-maya
+Kitano Ijinkan,34.698500,135.190000,בתי סוחרים אירופיים ישנים על גבעת קיטנו. הכי יפה בבוקר שקט.,attraction,culture,Kobe,JP,北野異人館,20/9,kitano-ijinkan
+Kobe Beef Gennkichi,34.693700,135.192500,טפניאקי בשר קובה ליד סנומיה. הוזמן ל־20/9 ב־19:30.,attraction,food,Kobe,JP,神戸牛 源吉,20/9,gennkichi
+Meriken Park & Harborland,34.682500,135.186500,"פארק הנמל של קובה: מגדל פורט מואר, טיילת ו־Harborland בלילה.",attraction,view,Kobe,JP,メリケンパーク・ハーバーランド,20/9,meriken-park
+Nada sake breweries (Hakutsuru),34.712900,135.247800,מוזיאון מבשלת Hakutsuru בנאדה — סיור וטעימות. חלופה: Kikumasamune. כניסה אחרונה ~16:00.,attraction,culture,Kobe,JP,白鶴酒造資料館,20/9,nada-sake
+Nankinmachi (Kobe Chinatown),34.688500,135.189000,"צ׳יינהטאון הקטן של קובה. כיסוני סטימר, באנס ואוכל רחוב בין מוטומאצ׳י לסנומיה.",attraction,food,Kobe,JP,南京町,20/9,nankinmachi
+Nunobiki Herb Garden / Ropeway,34.719400,135.190600,"רכבל שינ־קובה לגני התבלינים, נוף למפרץ והליכה קצרה למפלי נונוביקי.",attraction,view,Kobe,JP,布引ハーブ園,20/9,nunobiki
+Kasuga Taisha,34.681400,135.848200,מקדש בנארה עם אלפי פנסי אבן וברונזה ביער — להגיע לפני העומס.,attraction,shrine,Nara,JP,春日大社,17/9,kasuga
+Kofuku-ji & Higashimuki,34.683200,135.831400,"פגודת חמש הקומות של קופוקו־ג׳י, ואז מדרחוב Higashimuki ליד התחנה.",attraction,temple,Nara,JP,興福寺・東向商店街,17/9,kofuku-ji
+Mt. Wakakusa,34.691700,135.854700,הר דשא קצר מעל נארה. 15–20 דקות טיפוס ותצפית עם איילים.,attraction,view,Nara,JP,若草山,17/9,wakakusa
+Nakatanidou,34.682400,135.829800,"מופע הכנת מוצ׳י המהיר בנארה, ואז מוצ׳י ירוק חם וטרי.",attraction,food,Nara,JP,中谷堂,17/9,nakatanidou
+Naramachi,34.675600,135.829800,"שכונת הסוחרים ההיסטורית של נארה. סומן, קארי ובתי מאצ׳יה.",attraction,culture,Nara,JP,奈良町,17/9,naramachi
+Sarusawa-ike / Nara Park,34.681900,135.830000,"אגם סארוסאווה ופארק האיילים — הכי יפה מוקדם, לפני האוטובוסים.",attraction,park,Nara,JP,猿沢池・奈良公園,17/9,nara-park
+Todai-ji (Great Buddha),34.689000,135.839800,הבודהה הענק (Daibutsu) באולם העץ הגדול ביפן.,attraction,temple,Nara,JP,東大寺,17/9,todai-ji
+Yoshikien Garden,34.685500,135.836400,שלושה גנים יפניים מסורתיים. חינם לתיירים זרים בהצגת דרכון.,attraction,park,Nara,JP,吉城園,17/9,yoshikien
+Kegon Falls,36.738000,139.445000,מפל גבוה ליד האגם. יורדים במעלית לתצפית הקרובה.,attraction,nature,Nikko,JP,華厳の滝,22/9,kegon-falls
+Lake Chuzenji,36.739000,139.447000,אגם הררי מעל ניקו. אוויר קריר וצהריים מול המים.,attraction,nature,Nikko,JP,中禅寺湖,22/9,chuzenji
+Nikko Toshogu Shrine,36.758100,139.598800,"המקדש המוזהב והמפואר ביותר בניקו (UNESCO). כניסה אחרונה ~16:00, סגירה 17:00.",attraction,shrine,Nikko,JP,日光東照宮,22/9,nikko-toshogu
+Shinkyo Bridge,36.753600,139.600400,הגשר האדום על הנהר בכניסה למתחם המקדשים בניקו. עצירת צילום.,attraction,icon,Nikko,JP,神橋,22/9,shinkyo
+Byodo-in,34.889400,135.807700,היכל הפניקס באוג׳י — המקדש שמופיע על מטבע ה־10 ין.,attraction,temple,Uji,JP,平等院,12/9,byodoin
+Uji / Byodo-in,34.889400,135.807700,"בירת המאצ׳ה של יפן, עם מקדש Byodo-in.",attraction,temple,Uji,JP,宇治・平等院,,uji
+Uji Omotesando,34.890500,135.808800,רחוב חנויות תה היסטורי. המקום לטעום מאצ׳ה וקינוחים.,attraction,food,Uji,JP,宇治表参道,12/9,uji-omotesando
+Uji River,34.891200,135.809500,טיילת וגשרים מול המקדש באוג׳י. הליכה קצרה אחרי Byodo-in.,attraction,nature,Uji,JP,宇治川,12/9,uji-river

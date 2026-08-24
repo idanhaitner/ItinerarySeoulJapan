@@ -114,11 +114,11 @@ window.TRIP = {
     "Route: Tel Aviv → Seoul → Tokyo → Kawaguchiko → Hakone → Kyoto → Osaka (+ Kobe day) → Tokyo → Tirana (via Dubai).",
     "Outbound booked: ET0419 + ET0672 (26–27 Aug).",
     "Seoul→Tokyo booked: Air Premia YP7321 (2 Sep · ICN 08:50 → NRT 11:20).",
-    "Sep 4: Tsukiji sushi/fish + teamLab Planets (~1.5–2h) + Senkyaku Banrai lunch + Odaiba + Azabudai/Tokyo Tower/Roppongi.",
-    "Sep 5: Asakusa + Skytree + Akihabara.",
-    "Sep 6: Kichijoji + Shimokitazawa (Bonus Track / Reload) day, night Street Kart ~19:00 (1949 IDP).",
-    "Sep 7: Bus 09:15 Busta Shinjuku → Kawaguchiko; lockers; Red Line Oishi + panoramic ropeway; dinner near MYSTAYS.",
-    "Sep 10: Hakone Loop, Odawara 17:00, Hikari 653 18:07 → Kyoto 20:12, dinner near KABIN."
+    "Sep 3: Meiji / Harajuku / Shibuya day, night Street Kart ~19:00 (1949 IDP).",
+    "Sep 4: Tsukiji sushi/fish + teamLab Planets (~1.5–2h) + Senkyaku Banrai lunch + Odaiba (leave 17:00) + Azabudai ~17:30.",
+    "Sep 5: Asakusa + Skytree + Kappabashi + Akihabara (skip Ameyoko).",
+    "Sep 6: Kichijoji + Shimokitazawa (Bonus Track / Reload) day, Shibuya Sky sunset; pack for Kawaguchiko.",
+    "Sep 7: Bus 09:15 Busta Shinjuku → Kawaguchiko; lockers; Red Line Oishi + panoramic ropeway; dinner near MYSTAYS."
   ]
 };
 window.PLACES = {
@@ -3077,7 +3077,7 @@ window.PLACES = {
     ],
     "lat": 35.6592,
     "lng": 139.7016,
-    "blurb": "A lantern-lit strip of ~30 micro-izakaya beside the JR tracks, two minutes from Shibuya Sky's exit."
+    "blurb": "A lantern-lit strip of ~30 micro-izakaya beside the JR tracks, two minutes from the Street Kart /."
   },
   "zojoji": {
     "id": "zojoji",
@@ -3750,13 +3750,14 @@ window.DAYS = [
       "tocho",
       "omoide-yokocho",
       "kabukicho",
-      "golden-gai"
+      "golden-gai",
+      "don-quijote-kabukicho"
     ],
     "transport": [
       "9 Brick → ICN T1 (~1h).",
       "Air Premia YP7321.",
       "N'EX ~75 min → Hotel Gracery Shinjuku (Kabukicho).",
-      "Evening: east (Gyoen/Isetan) → west (Tocho/Omoide) → east (Kabukicho/Golden Gai/hotel)."
+      "Evening: east (Gyoen/Isetan) → west (Tocho/Omoide) → east (Kabukicho/Golden."
     ],
     "tips": [],
     "timeline": [
@@ -3869,6 +3870,14 @@ window.DAYS = [
         "timed": false,
         "placeId": "golden-gai",
         "category": "dining"
+      },
+      {
+        "time": "23:10",
+        "title": "Don Quijote Kabukicho",
+        "note": "",
+        "timed": false,
+        "placeId": "don-quijote-kabukicho",
+        "category": "shopping"
       }
     ],
     "transfer": {
@@ -3887,7 +3896,7 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": "gracery-shinjuku",
-    "title": "Meiji, Harajuku & Shibuya",
+    "title": "Meiji, Harajuku, Shibuya & Street Kart",
     "summary": "Full west-Tokyo loop, north to south: Meiji Jingu at opening, Yoyogi shortcut, Takeshita as shops lift.",
     "food": "Takeshita crepe if the stall is open; cafe or light lunch on Omotesando; café at.",
     "placeIds": [
@@ -3900,10 +3909,12 @@ window.DAYS = [
       "shibuya-crossing",
       "shibuya-parco",
       "miyashita-park",
+      "street-kart",
       "nonbei-yokocho"
     ],
     "transport": [
-      "Walk Meiji → Harajuku → Omotesando → Shibuya (or one Yamanote hop if legs are done)."
+      "Walk Meiji → Harajuku → Omotesando → Shibuya (or one Yamanote hop if legs are done).",
+      "Street Kart shop in Shibuya — be there 30 min before the 19:00 drive."
     ],
     "tips": [],
     "timeline": [
@@ -3988,7 +3999,26 @@ window.DAYS = [
         "category": "dining"
       },
       {
-        "time": "18:15",
+        "time": "18:30",
+        "title": "Arrive Street Kart shop",
+        "note": "Street Kart shop call · 1949 IDP + passport.",
+        "timed": true,
+        "placeId": "street-kart",
+        "kind": "ticket",
+        "category": "shopping"
+      },
+      {
+        "time": "19:00",
+        "title": "Night Street Kart Tokyo",
+        "note": "Night Street Kart · Shibuya · 3/9.",
+        "timed": true,
+        "placeId": "street-kart",
+        "end": "21:00",
+        "kind": "ticket",
+        "category": "attraction"
+      },
+      {
+        "time": "21:15",
         "title": "Dinner in Nonbei Yokocho",
         "note": "",
         "timed": false,
@@ -4020,7 +4050,7 @@ window.DAYS = [
     "transport": [
       "Subway Shinjuku → Tsukiji (~25–35 min) — leave by 07:15.",
       "Yurikamome Toyosu → Odaiba (above-ground, scenic).",
-      "Yurikamome / metro Odaiba → Azabudai / Kamiyacho (skip Ginza tonight)."
+      "Leave Odaiba at 17:00 · Yurikamome / metro to Azabudai / Kamiyacho (~25–40 min, arrive."
     ],
     "tips": [],
     "timeline": [
@@ -4083,7 +4113,7 @@ window.DAYS = [
         "category": "shopping"
       },
       {
-        "time": "17:30",
+        "time": "17:00",
         "title": "Travel by Yurikamome / subway · from Odaiba to Azabudai",
         "note": "",
         "timed": false,
@@ -4091,7 +4121,7 @@ window.DAYS = [
         "category": "transit"
       },
       {
-        "time": "18:05",
+        "time": "17:30",
         "title": "Azabudai Hills",
         "note": "",
         "timed": false,
@@ -4130,13 +4160,12 @@ window.DAYS = [
       "asakusa",
       "skytree",
       "kappabashi",
-      "ameyoko",
       "akihabara"
     ],
     "transport": [
       "Subway to Asakusa.",
       "Walk Asakusa → Mizumachi → Skytree (east).",
-      "Then west: Skytree → Kappabashi → Ameyoko → Akihabara."
+      "Then west: Skytree → Kappabashi → Akihabara (no Ueno detour)."
     ],
     "tips": [],
     "timeline": [
@@ -4189,15 +4218,7 @@ window.DAYS = [
         "category": "dining"
       },
       {
-        "time": "15:15",
-        "title": "Optional Ameyoko snack stop",
-        "note": "",
-        "timed": false,
-        "placeId": "ameyoko",
-        "category": "dining"
-      },
-      {
-        "time": "16:00",
+        "time": "16:40",
         "title": "Travel by JR / subway · toward Akihabara",
         "note": "",
         "timed": false,
@@ -4205,7 +4226,7 @@ window.DAYS = [
         "category": "transit"
       },
       {
-        "time": "16:15",
+        "time": "17:00",
         "title": "Akihabara Electric Town",
         "note": "",
         "timed": false,
@@ -4213,7 +4234,7 @@ window.DAYS = [
         "category": "shopping"
       },
       {
-        "time": "19:15",
+        "time": "19:30",
         "title": "Izakaya dinner — Akihabara or Kanda",
         "note": "",
         "timed": false,
@@ -4229,9 +4250,9 @@ window.DAYS = [
     "city": "Tokyo",
     "country": "JP",
     "hotelId": "gracery-shinjuku",
-    "title": "Kichijoji, Shibuya Sky & Street Kart",
+    "title": "Kichijoji & Shibuya Sky",
     "summary": "Easy west-Tokyo Sunday: Inokashira and Harmonica lunch in Kichijoji, vintage Shimokitazawa afternoon, timed.",
-    "food": "Lunch in Harmonica Yokocho / Satou menchi-katsu in Kichijoji (cash in the alleys); light.",
+    "food": "Lunch in Harmonica Yokocho / Satou menchi-katsu in Kichijoji (cash in the alleys); dinner.",
     "placeIds": [
       "inokashira",
       "kichijoji",
@@ -4239,14 +4260,12 @@ window.DAYS = [
       "shimokitazawa",
       "bonus-track",
       "shibuya-sky",
-      "street-kart",
-      "don-quijote-kabukicho",
       "gracery-shinjuku"
     ],
     "transport": [
       "Chuo Rapid Shinjuku → Kichijoji (~20–25 min).",
       "Keio Inokashira or Odakyu to Shimokita (~15–25 min).",
-      "Leave Shimokita by ~16:00 for the Shibuya Sky slot; Street Kart shop after — arrive 30."
+      "Leave Shimokita by ~16:00 for the Shibuya Sky slot."
     ],
     "tips": [],
     "timeline": [
@@ -4304,38 +4323,19 @@ window.DAYS = [
         "note": "Shibuya Sky · booked 6/9 · arrive 15 min early.",
         "timed": true,
         "placeId": "shibuya-sky",
-        "end": "18:00",
+        "end": "18:30",
         "kind": "ticket",
         "category": "attraction"
       },
       {
-        "time": "18:05",
-        "title": "Early bite near Shibuya",
+        "time": "18:45",
+        "title": "Dinner in Shibuya",
         "note": "",
         "timed": false,
-        "category": "attraction"
+        "category": "dining"
       },
       {
-        "time": "18:30",
-        "title": "Arrive Street Kart shop",
-        "note": "Street Kart shop call · 1949 IDP + passport.",
-        "timed": true,
-        "placeId": "street-kart",
-        "kind": "ticket",
-        "category": "shopping"
-      },
-      {
-        "time": "19:00",
-        "title": "Night Street Kart Tokyo",
-        "note": "Night Street Kart · Shibuya.",
-        "timed": true,
-        "placeId": "street-kart",
-        "end": "21:00",
-        "kind": "ticket",
-        "category": "attraction"
-      },
-      {
-        "time": "21:15",
+        "time": "20:30",
         "title": "Travel by train · back to Shinjuku hotel",
         "note": "",
         "timed": false,
@@ -4343,12 +4343,12 @@ window.DAYS = [
         "category": "transit"
       },
       {
-        "time": "21:40",
-        "title": "Don Quijote Kabukicho",
+        "time": "21:00",
+        "title": "Pack at Hotel Gracery",
         "note": "",
         "timed": false,
-        "placeId": "don-quijote-kabukicho",
-        "category": "shopping"
+        "placeId": "gracery-shinjuku",
+        "category": "hotel"
       }
     ]
   },

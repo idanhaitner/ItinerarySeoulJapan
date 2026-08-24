@@ -477,16 +477,16 @@ def build_bookings(days):
                             preserved_date[key] = iso
 
     # (name, day_id, default_status, notes without redundant dates)
-    # Shibuya Sky is booked for 6/9 (d11), not 3/9.
+    # Shibuya Sky is booked for 6/9 (d11). Street Kart is Thursday 3/9 (d08).
     items = [
-        ("רישיון נהיגה בינלאומי פיזי (IDP 1949)", "d11", "לטפל", "חובה ל־Street Kart · להנפיק בארץ"),
+        ("רישיון נהיגה בינלאומי פיזי (IDP 1949)", "d08", "לטפל", "חובה ל־Street Kart ב־3/9 · להנפיק בארץ"),
         ("K-ETA לקוריאה", "d00", "לטפל", "רק אם נדרש לפי הדרכון"),
         ("ביטוח נסיעות", "d00", "לטפל", "לפני היציאה"),
         ("Visit Japan Web (VJW)", "d07", "לטפל", "למלא כמה ימים לפני נחיתה בנריטה"),
         ("USJ Studio Pass (כרטיס כניסה)", "d21", "לטפל", "חובה בנפרד מה־Express Pass"),
         ("USJ Express Pass 7 Minecart & Selection", "d21", "הוזמן", "Minecart & Selection"),
         ("Shibuya Sky sunset", "d11", "הוזמן", "כרטיס sunset · 6/9 · נפתח 28 ימים מראש"),
-        ("Street Kart Tokyo — תור ערב", "d11", "לטפל", "~19:00 · IDP פיזי חובה"),
+        ("Street Kart Tokyo — תור ערב", "d08", "לטפל", "~19:00 ב־3/9 · IDP פיזי חובה"),
         ("teamLab Planets Tokyo", "d09", "לטפל", "כרטיס מתוזמן"),
         ("teamLab Biovortex Kyoto", "d19", "הוזמן", "כניסה 18:00–18:30"),
         ("Fuji-Q Freepass", "d13", "לטפל", "יום מלא בפארק"),
@@ -510,6 +510,8 @@ def build_bookings(days):
     # Force-correct dates that a previous push wrongly reset (Sheet may still show 3/9).
     force_date = {
         "Shibuya Sky sunset": by_id.get("d11", "2026-09-06"),
+        "Street Kart Tokyo — תור ערב": by_id.get("d08", "2026-09-03"),
+        "רישיון נהיגה בינלאומי פיזי (IDP 1949)": by_id.get("d08", "2026-09-03"),
     }
     rows = [["מה להזמין", "תאריך", "סטטוס", "הערות"]]
     for name, day_id, status, notes in items:
