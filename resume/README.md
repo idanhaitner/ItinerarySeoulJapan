@@ -9,9 +9,9 @@ Downloadable PDFs (no EnhanceCV watermark):
 
 ### Grades added in the second file
 
-Under **Education** (Ben-Gurion University):
+Under **Education** (Ben-Gurion University), as bullets:
 
 - Introduction to Computer Science — **90**
 - Data Structures — **95**
 
-Overall GPA line is unchanged (`GPA 85 / 100`).
+Overall GPA line is unchanged (`GPA 85 / 100`). New lines use Rubik to match the resume body.
